@@ -74,18 +74,25 @@ function admin_exigir_lectura(): void
     fallo('Esta sección es solo para el equipo de administración.', 403, 'SIN_PERMISO');
 }
 
-/** Solo admin_total muta. Los subroles (kyc, soporte, finanzas) son de consulta. */
-function admin_exigir_mutacion(): void
+/** Solo admin_total muta, salvo los ámbitos donde el panel PHP acepta un subrol. */
+function admin_exigir_mutacion(array $tambien = []): void
 {
     admin_exigir_lectura();
 
-    if (!admin_es_total()) {
-        fallo(
-            'Tu rol puede consultar esta sección pero no modificarla. Se necesita admin_total.',
-            403,
-            'SOLO_ADMIN_TOTAL'
-        );
+    if (admin_es_total()) {
+        return;
     }
+
+    $rol = (string) (api_rol() ?? '');
+    if (in_array($rol, $tambien, true)) {
+        return;
+    }
+
+    fallo(
+        'Tu rol puede consultar esta sección pero no modificarla. Se necesita admin_total.',
+        403,
+        'SOLO_ADMIN_TOTAL'
+    );
 }
 
 function admin_ip(): ?string
@@ -593,7 +600,8 @@ if ($adminSeccion === 'kyc') {
 
     // POST /admin/kyc/{id}
     if ($adminMetodo === 'POST' && count($adminPartes) === 2) {
-        admin_exigir_mutacion();
+        // Igual que el panel PHP: admin_kyc también aprueba y rechaza documentos.
+        admin_exigir_mutacion(['admin_kyc']);
 
         $id = (int) $adminPartes[1];
         $cuerpo = api_cuerpo();

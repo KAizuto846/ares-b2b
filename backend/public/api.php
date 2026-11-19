@@ -140,10 +140,18 @@ try {
 
     // ------------------------------------------------------------ sesión
     if ($ruta === '/session' && $metodo === 'GET') {
+        $tema = 'claro';
+        if ($usuarioId > 0) {
+            $stmt = $pdo->prepare('SELECT tema FROM preferencias_usuario WHERE usuario_id = ? LIMIT 1');
+            $stmt->execute([$usuarioId]);
+            $tema = (string) ($stmt->fetchColumn() ?: 'claro');
+        }
+
         responder([
             'ok'      => true,
             'usuario' => $usuarioId > 0 ? $datosUsuario() : null,
             'rol'     => $rol,
+            'tema'    => $tema === 'oscuro' ? 'oscuro' : 'claro',
         ]);
     }
 
@@ -170,7 +178,14 @@ try {
         Session::poner('roles', $resultado['roles']);
 
         $roles = (array) (Session::obtener('roles') ?? []);
-        responder(['ok' => true, 'usuario' => $datosUsuario(), 'rol' => $roles[0] ?? null]);
+        $tema = $pdo->prepare('SELECT tema FROM preferencias_usuario WHERE usuario_id = ? LIMIT 1');
+        $tema->execute([(int) $resultado['usuario']['id']]);
+        responder([
+            'ok'      => true,
+            'usuario' => $datosUsuario(),
+            'rol'     => $roles[0] ?? null,
+            'tema'    => ((string) ($tema->fetchColumn() ?: 'claro')) === 'oscuro' ? 'oscuro' : 'claro',
+        ]);
     }
 
     if ($ruta === '/logout' && $metodo === 'POST') {

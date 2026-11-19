@@ -73,7 +73,12 @@ export function Proveedor({ children }: { children: ReactNode }) {
   useEffect(() => {
     let vivo = true
     api.session()
-      .then((r) => { if (vivo) { setUsuario(r.usuario); setRol(r.rol) } })
+      .then((r) => {
+        if (!vivo) return
+        setUsuario(r.usuario)
+        setRol(r.rol)
+        document.documentElement.dataset.tema = r.tema === 'oscuro' ? 'oscuro' : 'claro'
+      })
       .catch(() => { if (vivo) { setUsuario(null); setRol(null) } })
       .finally(() => { if (vivo) setCargando(false) })
     return () => { vivo = false }
@@ -91,6 +96,7 @@ export function Proveedor({ children }: { children: ReactNode }) {
     const r = await api.login(email, password)
     setUsuario(r.usuario)
     setRol(r.rol)
+    document.documentElement.dataset.tema = r.tema === 'oscuro' ? 'oscuro' : 'claro'
     if (r.rol === 'comercio') await refrescarCarrito()
   }, [refrescarCarrito])
 
@@ -99,6 +105,7 @@ export function Proveedor({ children }: { children: ReactNode }) {
     setUsuario(null)
     setRol(null)
     setCarrito(null)
+    document.documentElement.dataset.tema = 'claro'
   }, [])
 
   const volar = useCallback((origen: HTMLElement | null, cantidad: number) => {
