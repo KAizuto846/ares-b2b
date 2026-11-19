@@ -1,6 +1,7 @@
 export type ApiError = { code: string; message: string }
 
-async function req<T>(path: string, init: RequestInit = {}): Promise<T> {
+/** Petición JSON genérica. Los módulos la reutilizan para no duplicar manejo de errores. */
+export async function pedir<T>(path: string, init: RequestInit = {}): Promise<T> {
   const res = await fetch(`/api${path}`, {
     credentials: 'same-origin',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
@@ -13,6 +14,8 @@ async function req<T>(path: string, init: RequestInit = {}): Promise<T> {
   }
   return data as T
 }
+
+const req = pedir
 
 export type Usuario = { id: number; nombre: string; email: string; telefono?: string; avatar: string | null; roles: string[] }
 export type Metrica = { valor: string; etiqueta: string; nota?: string; href: string }

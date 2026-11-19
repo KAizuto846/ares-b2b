@@ -1,0 +1,252 @@
+/* Módulo comercio: estilos propios. No tocar app.css para reglas de una sola pantalla. */
+
+/* ==========================================================================
+   Inicio (explorar): accesos, carrito y franja de atajos
+   ========================================================================== */
+.inicio-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.inicio-accesos { display: grid; gap: 6px; }
+
+.acceso {
+  display: flex; align-items: center; gap: 12px; padding: 11px 12px;
+  border: 1px solid transparent; border-radius: 12px;
+  text-decoration: none; color: inherit;
+  transition: background var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
+}
+.acceso:hover { background: #fafbf6; border-color: var(--line-soft); transform: translateX(2px); }
+.acceso__icono {
+  width: 38px; height: 38px; flex: 0 0 auto; border-radius: 11px;
+  display: grid; place-items: center;
+  background: var(--verde-suave); color: var(--verde);
+}
+.acceso__texto { display: grid; gap: 1px; flex: 1; min-width: 0; }
+.acceso__texto strong { font-size: 14px; }
+.acceso__texto span { font-size: 12.5px; color: var(--muted); }
+.acceso__globo {
+  min-width: 22px; height: 22px; padding: 0 6px; border-radius: 99px;
+  display: grid; place-items: center;
+  background: var(--oro); color: #fff; font-size: 11.5px; font-weight: 700;
+}
+
+.inicio-carrito { display: flex; align-items: baseline; gap: 8px; }
+.inicio-carrito__valor { font-size: 30px; font-weight: 750; letter-spacing: -.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+.inicio-carrito__texto { font-size: 12.5px; color: var(--muted); }
+
+.atajos { display: grid; gap: 10px; }
+.atajos__titulo { font-size: 13px; letter-spacing: .07em; text-transform: uppercase; color: var(--faint); font-weight: 700; }
+.atajos__fila { display: grid; grid-template-columns: repeat(auto-fit, minmax(186px, 1fr)); gap: 10px; }
+.atajo {
+  display: flex; align-items: center; gap: 10px;
+  padding: 11px 12px; border: 1px solid var(--line); border-radius: 12px;
+  background: #fff; text-decoration: none; color: inherit;
+  transition: transform var(--t-base) var(--ease-out), box-shadow var(--t-base), border-color var(--t-base);
+}
+.atajo:hover { transform: translateY(-2px); box-shadow: var(--s-2); border-color: #cfd6cd; }
+.atajo__icono {
+  width: 34px; height: 34px; flex: 0 0 auto; border-radius: 10px;
+  display: grid; place-items: center;
+  background: var(--oro-suave); color: #8a6413;
+}
+.atajo__texto { display: grid; gap: 1px; flex: 1; min-width: 0; }
+.atajo__texto strong { font-size: 13.5px; }
+.atajo__texto span { font-size: 11.5px; color: var(--muted); }
+.atajo__globo {
+  min-width: 20px; height: 20px; padding: 0 5px; border-radius: 99px;
+  display: grid; place-items: center;
+  background: var(--oro); color: #fff; font-size: 11px; font-weight: 700;
+}
+
+/* ==========================================================================
+   Carrito como página
+   ========================================================================== */
+.carrito-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(280px, .9fr); gap: 16px; align-items: start; }
+.carrito-acciones { display: flex; gap: 8px; flex-wrap: wrap; }
+.carrito-acciones__peligro { color: var(--rojo) !important; }
+.carrito-pie { position: sticky; top: 16px; }
+
+.clista { list-style: none; margin: 0; padding: 0; }
+.clinea {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+  padding: 11px 14px; border-top: 1px solid var(--line-soft);
+}
+.clinea--alerta { background: #fdf6f5; }
+.clinea__info { flex: 1 1 190px; min-width: 0; display: grid; gap: 1px; }
+.clinea__nom { font-size: 13.5px; font-weight: 600; }
+.clinea__aviso { margin-left: 6px; font-size: 11.5px; font-weight: 600; color: var(--rojo); }
+.clinea__sub { font-size: 12px; color: var(--faint); }
+.clinea__unit { font-size: 12.5px; color: var(--muted); display: grid; justify-items: end; }
+.clinea__unit small { font-size: 10.5px; color: var(--faint); letter-spacing: .04em; }
+.clinea__total { font-size: 13.5px; font-weight: 700; min-width: 82px; text-align: right; margin-left: auto; }
+.clinea__quitar {
+  border: 0; background: none; padding: 6px 2px; cursor: pointer;
+  font-size: 12.5px; font-weight: 600; color: var(--rojo);
+  border-radius: 8px; transition: background var(--t-fast);
+}
+.clinea__quitar:hover { background: var(--rojo-suave); }
+.clinea__quitar:disabled { opacity: .5; cursor: not-allowed; }
+
+/* El carrito hereda .aviso--alerta: app.css no lo trae y el PHP sí lo usa. */
+.aviso--alerta {
+  background: var(--oro-suave); color: #6c4d0e;
+  border: 1px solid rgba(185, 138, 31, .32);
+}
+
+/* ==========================================================================
+   Portafolio
+   ========================================================================== */
+.portafolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(236px, 1fr)); gap: 14px; }
+.portafolio {
+  position: relative; display: grid; gap: 6px; align-content: start;
+  padding: 16px; border: 1px solid var(--line); border-radius: var(--r-md);
+  background: #fff; box-shadow: var(--s-1);
+  transition: transform var(--t-base) var(--ease-out), box-shadow var(--t-base), border-color var(--t-base);
+}
+.portafolio:hover { transform: translateY(-2px); box-shadow: var(--s-2); border-color: #cfd6cd; }
+.portafolio--agotado { background: #fcfcfa; }
+.portafolio__estrella {
+  position: absolute; top: 12px; right: 12px;
+  width: 24px; height: 24px; border-radius: 99px;
+  display: grid; place-items: center;
+  background: var(--oro-suave); color: var(--oro);
+}
+.portafolio__nombre { font-size: 14.5px; line-height: 1.25; padding-right: 30px; }
+.portafolio__mayorista { font-size: 12.5px; color: var(--muted); }
+.portafolio__mayorista span { color: var(--faint); }
+.portafolio__datos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 6px 0 0; }
+.portafolio__datos div { display: grid; gap: 1px; }
+.portafolio__datos dt { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); font-weight: 700; }
+.portafolio__datos dd { margin: 0; font-size: 15px; font-weight: 700; letter-spacing: -.02em; }
+.portafolio__unidad { font-size: 11.5px; color: var(--faint); }
+.portafolio__pedir { margin-top: 8px; width: 100%; }
+.portafolio__agotado {
+  margin-top: 8px; padding: 11px 0; text-align: center;
+  font-size: 12.5px; font-weight: 650; color: var(--rojo);
+  background: var(--rojo-suave); border-radius: 12px;
+}
+.portafolio__quitar {
+  margin-top: 2px; border: 0; background: none; padding: 6px 0; cursor: pointer;
+  font-size: 12px; color: var(--muted); text-decoration: underline; text-underline-offset: 3px;
+}
+.portafolio__quitar:hover { color: var(--rojo); }
+.portafolio__quitar:disabled { opacity: .5; cursor: not-allowed; }
+
+.sugerencias { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.sugerencias li {
+  display: flex; justify-content: space-between; gap: 12px; align-items: baseline;
+  padding-bottom: 8px; border-bottom: 1px dashed var(--line);
+  font-size: 13.5px;
+}
+.sugerencias li:last-child { border-bottom: 0; padding-bottom: 0; }
+.sugerencias small { color: var(--faint); font-size: 12px; white-space: nowrap; }
+
+/* ==========================================================================
+   Agendar
+   ========================================================================== */
+.agendar-cabeza { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.agendar-cabeza h2 { font-size: 15px; }
+.lista-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(268px, 1fr)); gap: 14px; }
+.lista {
+  display: grid; gap: 10px; padding: 16px;
+  border: 1px solid var(--line); border-radius: var(--r-md); background: #fff;
+  box-shadow: var(--s-1);
+}
+.lista--cancelada { opacity: .68; }
+.lista__cab { display: flex; align-items: flex-start; gap: 10px; }
+.lista__cab h3 { font-size: 14.5px; }
+.lista__cab p { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+.lista__cab .chip { margin-left: auto; }
+.lista__cuando {
+  display: grid; gap: 2px; padding: 10px 12px;
+  background: #fafbf6; border: 1px solid var(--line-soft); border-radius: 10px;
+}
+.lista__etiqueta { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); font-weight: 700; }
+.lista__cuando strong { font-size: 13.5px; }
+.lista__items { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.lista__items li { display: flex; justify-content: space-between; gap: 10px; font-size: 12.5px; color: var(--muted); }
+.lista__items .num { color: var(--ink-2); font-weight: 650; }
+.lista__acciones { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.lista__cancelar {
+  border: 0; background: none; padding: 6px 0; cursor: pointer;
+  font-size: 12.5px; color: var(--rojo); font-weight: 600;
+}
+.lista__cancelar:disabled { opacity: .5; cursor: not-allowed; }
+.agendar-volver {
+  justify-self: start; display: inline-flex; align-items: center; gap: 6px;
+  border: 0; background: none; padding: 4px 0; cursor: pointer;
+  font-size: 12.5px; color: var(--verde-2); font-weight: 600;
+}
+.agendar-volver:hover { text-decoration: underline; }
+
+/* Diálogo propio (nunca confirm() del navegador) */
+.dialogo {
+  position: fixed; inset: 0; z-index: 130;
+  display: grid; place-items: center; padding: 18px;
+  background: rgba(15, 23, 20, .42);
+  animation: aparecer var(--t-base) var(--ease-out) both;
+}
+.dialogo__caja {
+  width: min(520px, 100%); max-height: calc(100vh - 36px); overflow: auto;
+  background: var(--card); border-radius: var(--r-lg);
+  box-shadow: var(--s-3); border: 1px solid var(--line);
+  animation: rise var(--t-base) var(--ease-spring) both;
+}
+.dialogo__caja--ancha { width: min(660px, 100%); }
+.dialogo__cab {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 16px; border-bottom: 1px solid var(--line-soft);
+}
+.dialogo__cab h2 { font-size: 16px; }
+.dialogo__cab .icono-btn { margin-left: auto; }
+.dialogo__cuerpo { display: grid; gap: 12px; padding: 16px; }
+.dialogo__acciones {
+  display: flex; justify-content: flex-end; gap: 10px;
+  padding: 12px 16px; border-top: 1px solid var(--line-soft); background: #fbfcf7;
+}
+
+.fila { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.campo--corto { width: 108px; }
+.campo input[type='date'], .campo input[type='time'] {
+  height: 44px; padding: 0 12px;
+  border: 1px solid var(--line); border-radius: 11px; background: #fff; color: var(--ink);
+}
+.campo input[type='date']:focus, .campo input[type='time']:focus {
+  outline: none; border-color: var(--verde-3); box-shadow: 0 0 0 3px rgba(47, 158, 99, .16);
+}
+
+.lineas { display: grid; gap: 10px; }
+.linea-form { display: grid; grid-template-columns: minmax(0, 1fr) 108px 36px; gap: 10px; align-items: end; }
+.linea-form__quitar {
+  width: 36px; height: 44px; border: 1px solid var(--line); border-radius: 11px;
+  background: #fff; color: var(--muted); cursor: pointer;
+  display: grid; place-items: center;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+}
+.linea-form__quitar:hover:not(:disabled) { background: var(--rojo-suave); color: var(--rojo); border-color: rgba(179, 38, 30, .35); }
+.linea-form__quitar:disabled { opacity: .4; cursor: not-allowed; }
+.lineas__mas {
+  justify-self: start; display: inline-flex; align-items: center; gap: 6px;
+  border: 0; background: none; padding: 6px 0; cursor: pointer;
+  font-size: 13px; font-weight: 650; color: var(--verde-2);
+}
+.lineas__mas:hover { text-decoration: underline; }
+
+/* Tablas anchas: desplazamiento horizontal sin romper la página. */
+.tabla-scroll { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.tabla-scroll .tabla { min-width: 620px; }
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 980px) {
+  .inicio-grid { grid-template-columns: minmax(0, 1fr); }
+  .carrito-grid { grid-template-columns: minmax(0, 1fr); }
+  .carrito-pie { position: static; }
+}
+
+@media (max-width: 620px) {
+  .fila { grid-template-columns: 1fr; }
+  .linea-form { grid-template-columns: minmax(0, 1fr) 92px 36px; }
+  .clinea__unit { display: none; }
+  .clinea__total { min-width: 0; }
+  .portafolio-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  .lista-grid { grid-template-columns: minmax(0, 1fr); }
+}

@@ -95,6 +95,16 @@ try {
     $roles = (array) (Session::obtener('roles') ?? []);
     $rol = $roles[0] ?? null;
 
+    // Contexto para los módulos de app/Api/*.php
+    $GLOBALS['API'] = [
+        'pdo'    => $pdo,
+        'uid'    => $usuarioId,
+        'rol'    => (string) ($rol ?? ''),
+        'cuerpo' => $cuerpo,
+        'metodo' => $metodo,
+        'ruta'   => $ruta,
+    ];
+
     $perfilRepo = new PerfilRepository($pdo);
 
     $comercioId = static function () use ($pdo): int {
@@ -430,6 +440,16 @@ try {
                 'reclamos'   => (int) $pdo->query("SELECT COUNT(*) FROM reclamos WHERE estado = 'abierto'")->fetchColumn(),
             ],
         ]);
+    }
+
+    // ------------------------------------------------------------ módulos
+    // Cada archivo atiende sus rutas y devuelve el control si no es suya.
+    $directorio = __DIR__ . '/../app/Api';
+    foreach (glob($directorio . '/*.php') ?: [] as $archivo) {
+        if (str_starts_with(basename($archivo), '_')) {
+            continue;
+        }
+        require $archivo;
     }
 
     fallo('Ruta no encontrada: ' . $ruta, 404, 'NO_ENCONTRADA');

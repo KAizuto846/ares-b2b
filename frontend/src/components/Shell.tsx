@@ -1,38 +1,112 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import Icon from './Icon'
 import { useSesion, useNavegar } from '../store/session'
 import { money } from '../lib/format'
+import { pedir } from '../lib/api'
 import type { Carrito } from '../lib/api'
 
 const TITULOS: Record<string, string> = {
-  '/checkout': 'Confirmar pedido',
-  '/perfil': 'Mi perfil',
-  '/pedidos': 'Pedidos',
+  '/': 'Inicio',
   '/buscar': 'Buscar',
+  '/carrito': 'Mi carrito',
+  '/checkout': 'Confirmar pedido',
+  '/pedidos': 'Pedidos',
+  '/perfil': 'Mi perfil',
+  '/finanzas': 'Finanzas',
+  '/facturacion': 'Facturación',
+  '/portafolio': 'Portafolio',
+  '/agendar': 'Agendar pedido',
+  '/mensajes': 'Mensajes',
   '/productos': 'Catálogo',
   '/admin': 'Administración',
+  '/pos': 'Caja',
+  '/pos/inventario': 'Inventario',
+  '/pos/ventas': 'Ventas',
+  '/pos/corte': 'Corte de caja',
+  '/pos/clientes': 'Clientes',
+  '/repartidor': 'Reparto',
+  '/ayuda': 'Ayuda',
+  '/kyc': 'Verificación',
 }
 
-const NAV: Record<string, { to: string; texto: string; icono: string }[]> = {
-  comercio: [
-    { to: '/', texto: 'Inicio', icono: 'inicio' },
-    { to: '/buscar', texto: 'Buscar', icono: 'buscar' },
-    { to: '/pedidos', texto: 'Pedidos', icono: 'pedidos' },
-    { to: '/perfil', texto: 'Perfil', icono: 'perfil' },
-  ],
-  mayorista: [
-    { to: '/', texto: 'Inicio', icono: 'inicio' },
-    { to: '/productos', texto: 'Catálogo', icono: 'productos' },
-    { to: '/pedidos', texto: 'Pedidos', icono: 'pedidos' },
-    { to: '/perfil', texto: 'Perfil', icono: 'perfil' },
-  ],
-  admin: [
-    { to: '/', texto: 'Inicio', icono: 'inicio' },
-    { to: '/admin', texto: 'Admin', icono: 'admin' },
-    { to: '/perfil', texto: 'Perfil', icono: 'perfil' },
-  ],
+type Enlace = { to: string; texto: string; icono: string; movil?: boolean }
+type Bloque = { grupo?: string; items: Enlace[] }
+
+function navDe(rol: string | null): Bloque[] {
+  if (rol === 'comercio') {
+    return [
+      {
+        items: [
+          { to: '/', texto: 'Inicio', icono: 'inicio', movil: true },
+          { to: '/buscar', texto: 'Buscar', icono: 'buscar', movil: true },
+          { to: '/carrito', texto: 'Carrito', icono: 'carrito', movil: true },
+          { to: '/pedidos', texto: 'Pedidos', icono: 'pedidos' },
+          { to: '/finanzas', texto: 'Finanzas', icono: 'finanzas' },
+          { to: '/portafolio', texto: 'Portafolio', icono: 'estrella' },
+          { to: '/agendar', texto: 'Agendar', icono: 'calendario' },
+          { to: '/mensajes', texto: 'Mensajes', icono: 'mensajes', movil: true },
+          { to: '/perfil', texto: 'Perfil', icono: 'perfil', movil: true },
+        ],
+      },
+      {
+        grupo: 'Punto de venta',
+        items: [
+          { to: '/pos', texto: 'Caja', icono: 'pos' },
+          { to: '/pos/inventario', texto: 'Inventario', icono: 'inventario' },
+          { to: '/pos/ventas', texto: 'Ventas', icono: 'ventas' },
+          { to: '/pos/corte', texto: 'Corte', icono: 'corte' },
+          { to: '/pos/clientes', texto: 'Clientes', icono: 'clientes' },
+        ],
+      },
+    ]
+  }
+
+  if (rol === 'mayorista') {
+    return [{
+      items: [
+        { to: '/', texto: 'Inicio', icono: 'inicio', movil: true },
+        { to: '/buscar', texto: 'Buscar', icono: 'buscar' },
+        { to: '/productos', texto: 'Mis productos', icono: 'productos', movil: true },
+        { to: '/pedidos', texto: 'Pedidos', icono: 'pedidos', movil: true },
+        { to: '/facturacion', texto: 'Facturación', icono: 'facturacion' },
+        { to: '/finanzas', texto: 'Finanzas', icono: 'finanzas' },
+        { to: '/mensajes', texto: 'Mensajes', icono: 'mensajes', movil: true },
+        { to: '/perfil', texto: 'Perfil', icono: 'perfil', movil: true },
+      ],
+    }]
+  }
+
+  if (rol === 'repartidor') {
+    return [{
+      items: [
+        { to: '/', texto: 'Inicio', icono: 'inicio', movil: true },
+        { to: '/repartidor', texto: 'Reparto', icono: 'reparto', movil: true },
+        { to: '/buscar', texto: 'Buscar', icono: 'buscar' },
+        { to: '/finanzas', texto: 'Finanzas', icono: 'finanzas' },
+        { to: '/mensajes', texto: 'Mensajes', icono: 'mensajes', movil: true },
+        { to: '/perfil', texto: 'Perfil', icono: 'perfil', movil: true },
+      ],
+    }]
+  }
+
+  if (rol && rol.startsWith('admin')) {
+    return [{
+      items: [
+        { to: '/', texto: 'Inicio', icono: 'inicio', movil: true },
+        { to: '/admin', texto: 'Panel', icono: 'admin', movil: true },
+        { to: '/admin/usuarios', texto: 'Usuarios', icono: 'usuarios' },
+        { to: '/admin/kyc', texto: 'Verificaciones', icono: 'kyc' },
+        { to: '/admin/reclamos', texto: 'Reclamos', icono: 'reclamos' },
+        { to: '/admin/parametros', texto: 'Parámetros', icono: 'parametros' },
+        { to: '/mensajes', texto: 'Mensajes', icono: 'mensajes', movil: true },
+        { to: '/perfil', texto: 'Perfil', icono: 'perfil', movil: true },
+      ],
+    }]
+  }
+
+  return [{ items: [{ to: '/', texto: 'Inicio', icono: 'inicio', movil: true }] }]
 }
 
 function Drawer({ carrito }: { carrito: Carrito | null }) {
@@ -185,8 +259,41 @@ export default function Shell({ children }: { children: ReactNode }) {
   const navegar = useNavegar()
   const { pathname } = useLocation()
   const rolUi = rol && rol.startsWith('admin') ? 'admin' : rol
-  const items = NAV[rolUi ?? 'comercio'] ?? NAV.comercio
+  const bloques = navDe(rol)
   const unidades = carrito?.grupos.reduce((s, g) => s + g.items.reduce((x, i) => x + i.cantidad, 0), 0) ?? 0
+  const [sinLeer, setSinLeer] = useState(0)
+
+  // Globo de mensajes sin leer; si el módulo aún no responde, se queda en 0.
+  useEffect(() => {
+    let vivo = true
+    pedir<{ sin_leer: number }>('/mensajes/resumen')
+      .then((r) => { if (vivo) setSinLeer(Number(r.sin_leer) || 0) })
+      .catch(() => { if (vivo) setSinLeer(0) })
+    return () => { vivo = false }
+  }, [pathname])
+
+  const titulo = TITULOS[pathname]
+    ?? bloques.flatMap((b) => b.items).find((n) => n.to === pathname)?.texto
+    ?? (pathname.startsWith('/pedidos/') ? 'Detalle del pedido'
+      : pathname.startsWith('/productos') ? 'Productos'
+      : pathname.startsWith('/admin') ? 'Administración'
+      : pathname.startsWith('/pos') ? 'Punto de venta'
+      : pathname.startsWith('/perfil') ? 'Mi perfil'
+      : 'Ares')
+
+  const enlace = (n: Enlace) => (
+    <NavLink
+      key={n.to}
+      to={n.to}
+      end={n.to === '/'}
+      className={({ isActive }) => `nav__item ${isActive ? 'activo' : ''} ${n.movil ? '' : 'nav__item--no-movil'}`}
+    >
+      <Icon name={n.icono} size={19} />
+      <span>{n.texto}</span>
+      {n.to === '/mensajes' && sinLeer > 0 && <span className="nav__globo">{sinLeer > 9 ? '9+' : sinLeer}</span>}
+      {n.to === '/carrito' && unidades > 0 && <span className="nav__globo">{unidades > 99 ? '99+' : unidades}</span>}
+    </NavLink>
+  )
 
   return (
     <div className="app">
@@ -197,12 +304,11 @@ export default function Shell({ children }: { children: ReactNode }) {
         </a>
 
         <nav className="nav" aria-label="Principal">
-          {items.map((n) => (
-            <NavLink key={n.to} to={n.to} end={n.to === '/'} className={({ isActive }) => `nav__item ${isActive ? 'activo' : ''}`}>
-              <Icon name={n.icono} size={19} />
-              <span>{n.texto}</span>
-              {n.to === '/pedidos' && rolUi === 'mayorista' && <span className="nav__globo" style={{ display: 'none' }} />}
-            </NavLink>
+          {bloques.map((b, i) => (
+            <div key={`b${i}`} style={{ display: 'contents' }}>
+              {b.grupo && <div className="nav__grupo">{b.grupo}</div>}
+              {b.items.map(enlace)}
+            </div>
           ))}
         </nav>
 
@@ -225,7 +331,7 @@ export default function Shell({ children }: { children: ReactNode }) {
 
       <div className="main">
         <header className="topbar">
-          <span className="topbar__titulo">{TITULOS[pathname] ?? items.find((n) => n.to === pathname)?.texto ?? 'Ares'}</span>
+          <span className="topbar__titulo">{titulo}</span>
           <div className="topbar__acciones">
             {rolUi === 'comercio' && (
               <button id="boton-carrito" className="icono-btn carrito-btn" aria-label="Abrir carrito" onClick={abrirCarrito}>

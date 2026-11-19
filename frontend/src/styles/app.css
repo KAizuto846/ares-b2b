@@ -435,6 +435,29 @@ input::placeholder { color: var(--faint); }
 .tabla tbody tr:hover { background: #fafbf6; }
 .num { font-variant-numeric: tabular-nums; }
 
+/* Tablas anchas: se desplazan dentro de su tarjeta, nunca rompen la página. */
+.tabla-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.tabla-scroll > .tabla { min-width: 560px; }
+
+/* Hoja imprimible (ticket, factura, corte). */
+.hoja {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg);
+  padding: 28px; max-width: 780px; box-shadow: var(--s-2);
+}
+.hoja__cab { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; padding-bottom: 14px; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
+.hoja__totales { margin-left: auto; min-width: 240px; }
+.hoja table { width: 100%; border-collapse: collapse; }
+.hoja th { text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--faint); padding: 8px 6px; border-bottom: 1px solid var(--line); }
+.hoja td { padding: 9px 6px; border-bottom: 1px solid var(--line-soft); font-size: 13.5px; }
+
+@media print {
+  .rail, .topbar, .toasts, .no-print, .cajon { display: none !important; }
+  .app { grid-template-columns: 1fr; }
+  .contenido { padding: 0; max-width: none; }
+  body { background: #fff; }
+  .hoja { box-shadow: none; border: 0; max-width: none; padding: 0; }
+}
+
 /* ---------------------------------------------------------------- movimiento */
 @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 .rise { animation: rise var(--t-slow) var(--ease-out) both; animation-delay: calc(var(--i, 0) * 45ms); }
@@ -475,6 +498,7 @@ input::placeholder { color: var(--faint); }
 
 @media (max-width: 760px) {
   .app { grid-template-columns: minmax(0, 1fr); }
+  .nav__item--no-movil { display: none !important; }
   .rail {
     position: fixed; left: 0; right: 0; bottom: 0; top: auto; height: auto;
     flex-direction: row; align-items: center; justify-content: space-around;
