@@ -1,0 +1,27 @@
+# Dependencias
+/vendor/
+
+# Entorno y secretos
+.env
+.env.*
+
+# Almacenamiento en tiempo de ejecución
+/storage/logs/
+/storage/sessions/
+/storage/cache/
+/storage/rate/
+/storage/kyc/
+/storage/*.log
+
+# Base de datos local
+*.sqlite
+*.db
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Router local de php -S y fotos de perfil subidas en tiempo de ejecución
+/server-router.php
+/storage/avatars/
+/storage/correos/

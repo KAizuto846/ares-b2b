@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Ares · propuestas de marca</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 38px 44px 30px;
+    background: #0b1a13; color: #e8f0ea;
+    font-family: 'Manrope', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background-image: radial-gradient(900px 480px at 85% -10%, rgba(47,158,99,.16), transparent 60%);
+  }
+  header { display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid rgba(255,255,255,.08); padding-bottom: 14px; }
+  header h1 { margin: 0; font-size: 21px; letter-spacing: -.02em; }
+  header span { color: #7f9889; font-size: 12.5px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 22px; }
+  .prop { background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 16px; }
+  .prop h2 { margin: 2px 0 0; font-size: 16px; letter-spacing: -.01em; }
+  .prop .num { color: #4fbf80; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; }
+  .prop p { margin: 6px 0 0; color: #9ab0a3; font-size: 12px; line-height: 1.45; min-height: 52px; }
+  .hero { display: flex; align-items: flex-end; justify-content: center; margin: 14px 0 10px; }
+  .marca {
+    display: grid; place-items: center;
+    background: linear-gradient(145deg, #2f9e63, #14532d);
+    box-shadow: 0 10px 26px -14px rgba(47,158,99,.95), inset 0 1px 0 rgba(255,255,255,.14);
+  }
+  .fila { display: flex; align-items: flex-end; justify-content: center; gap: 12px; }
+  .fila .marca { box-shadow: 0 4px 12px -8px rgba(0,0,0,.8); }
+  .et { font-size: 9.5px; color: #6f8a7c; text-align: center; margin-top: 4px; letter-spacing: .04em; }
+  .claro { display: flex; gap: 12px; margin-top: 22px; padding: 16px 18px; background: #f5f6f1; border-radius: 16px; align-items: center; }
+  .claro .marca { background: #14532d; }
+  .claro span { color: #5f6e66; font-size: 11.5px; }
+  .nota { color: #6f8a7c; font-size: 11px; margin-top: 18px; }
+  svg { display: block; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Ares · tres propuestas de marca</h1>
+  <span>mismo verde, misma geometría · la A se conserva</span>
+</header>
+
+<div class="grid">
+
+  <section class="prop">
+    <span class="num">Propuesta 1</span>
+    <h2>La lanza</h2>
+    <p>La barra de la A es una lanza dórica con la hoja de olivo al frente. La alusión al dios es inmediata sin romper la letra.</p>
+    <div class="hero" id="h1"></div>
+    <div class="fila" id="s1"></div>
+  </section>
+
+  <section class="prop">
+    <span class="num">Propuesta 2</span>
+    <h2>El yelmo</h2>
+    <p>El visor es la barra y el nasal sube hasta el vértice: el contramuro se parte en dos ojos. Penacho corto en la cima. La más «Ares».</p>
+    <div class="hero" id="h2"></div>
+    <div class="fila" id="s2"></div>
+  </section>
+
+  <section class="prop">
+    <span class="num">Propuesta 3</span>
+    <h2>El escudo</h2>
+    <p>La A va recortada dentro de un escudo de hoplita. La más sólida como icono de app y la que mejor aguanta el tamaño de 16 px.</p>
+    <div class="hero" id="h3"></div>
+    <div class="fila" id="s3"></div>
+  </section>
+
+</div>
+
+<div class="claro" id="claro"></div>
+<p class="nota">Arriba: 128 px · abajo: 64, 32, 24 y 16 px · última fila: sobre el fondo claro de la app.</p>
+
+<script>
+const W = '#ffffff'
+
+/* 1 · lanza */
+const p1 = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="${W}" stroke-width="2.65" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7.9 27 16 6.6 24.1 27"/>
+  </g>
+  <path d="M2.6 18.7h21" fill="none" stroke="${W}" stroke-width="2.15" stroke-linecap="round"/>
+  <path d="M23.6 18.7 27 15.9l4.6 2.8L27 21.5z" fill="${W}"/>
+</svg>`
+
+/* 2 · yelmo */
+const p2 = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <path d="M16 7.6C14.6 4.2 11.4 2.5 7.7 3.1c1.9 3.2 4.6 5.1 7.4 5.9z" fill="${W}"/>
+  <g fill="none" stroke="${W}" stroke-width="2.65" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8.2 27 16 7.4 23.8 27"/>
+    <path d="M10.8 19.4h10.4"/>
+  </g>
+  <path d="M16 19.4V8.6" fill="none" stroke="${W}" stroke-width="2.15" stroke-linecap="round"/>
+</svg>`
+
+/* 3 · escudo con A recortada */
+const p3 = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="recorte">
+      <rect width="32" height="32" fill="#000"/>
+      <path d="M16 4.2 26.6 7.2v8.8c0 6.3-4.5 10.4-10.6 13.1C9.9 26.4 5.4 22.3 5.4 16V7.2z" fill="#fff"/>
+      <g fill="none" stroke="#000" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11.6 21.8 16 11.4l4.4 10.4"/>
+        <path d="M13.2 18.8h5.6"/>
+      </g>
+    </mask>
+  </defs>
+  <rect width="32" height="32" fill="#fff" mask="url(#recorte)"/>
+</svg>`
+
+const props = [[p1, 'h1', 's1'], [p2, 'h2', 's2'], [p3, 'h3', 's3']]
+
+for (const [svg, heroId, filaId] of props) {
+  const hero = document.getElementById(heroId)
+  const m = document.createElement('div'); m.className = 'marca'
+  m.style.cssText = 'width:126px;height:126px;border-radius:35px'
+  m.innerHTML = svg
+  const s = m.querySelector('svg'); s.setAttribute('width', 90); s.setAttribute('height', 90)
+  const cont = document.createElement('div')
+  cont.append(m, Object.assign(document.createElement('div'), { className: 'et', textContent: '128' }))
+  hero.append(cont)
+
+  const fila = document.getElementById(filaId)
+  for (const t of [64, 32, 24, 16]) {
+    const c = document.createElement('div')
+    const mm = document.createElement('div'); mm.className = 'marca'
+    mm.style.width = mm.style.height = t + 'px'; mm.style.borderRadius = Math.max(5, Math.round(t * .28)) + 'px'
+    mm.innerHTML = svg
+    const ss = mm.querySelector('svg'); ss.setAttribute('width', t * .74); ss.setAttribute('height', t * .74)
+    c.append(mm, Object.assign(document.createElement('div'), { className: 'et', textContent: t }))
+    fila.append(c)
+  }
+}
+
+const claro = document.getElementById('claro')
+for (const svg of [p1, p2, p3]) {
+  const m = document.createElement('div'); m.className = 'marca'
+  m.style.cssText = 'width:54px;height:54px;border-radius:15px'
+  m.innerHTML = svg
+  const s = m.querySelector('svg'); s.setAttribute('width', 38); s.setAttribute('height', 38)
+  claro.append(m)
+}
+claro.append(Object.assign(document.createElement('span'), { textContent: 'Las tres sobre el fondo claro de la app' }))
+</script>
+</body>
+</html>

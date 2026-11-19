@@ -1,0 +1,25 @@
+const { chromium } = require('/home/rizutov/didi2-b2b/node_modules/playwright');
+const BASE = 'https://riz0308.tail0820b4.ts.net:8443';
+(async () => {
+  const b = await chromium.launch({ channel: 'chrome', args: ['--no-sandbox'] });
+  const ctx = await b.newContext({ ignoreHTTPSErrors: true, viewport: { width: 1440, height: 900 }, serviceWorkers: 'block' });
+  const p = await ctx.newPage();
+  const errores = [];
+  p.on('pageerror', (e) => errores.push(e.message));
+  p.on('console', (m) => { if (m.type() === 'error') errores.push(m.text()); });
+  await p.goto(BASE + '/', { waitUntil: 'networkidle' });
+  console.log('url tras raiz:', p.url());
+  await p.screenshot({ path: '/home/rizutov/ares-react/qa/publico-login.png' });
+  await p.fill('input[type=email]', 'comercio@didi2.mx');
+  await p.fill('input[type=password]', 'comercio123');
+  await p.click('button[type=submit]');
+  await p.waitForSelector('.rail', { timeout: 15000 });
+  await p.waitForTimeout(900);
+  await p.screenshot({ path: '/home/rizutov/ares-react/qa/publico-inicio.png' });
+  await p.click('a[href="/spa/buscar"]');
+  await p.waitForTimeout(900);
+  await p.screenshot({ path: '/home/rizutov/ares-react/qa/publico-buscar.png' });
+  console.log('productos:', await p.locator('.producto').count());
+  console.log('errores:', JSON.stringify(errores.slice(0, 4)));
+  await b.close();
+})();

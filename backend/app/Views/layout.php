@@ -1,0 +1,837 @@
+<?php
+/**
+ * Plantilla base. Todo lo que se imprime pasa por $e() para escapar.
+ *
+ * @var callable $e
+ * @var string   $nonce
+ * @var string   $titulo
+ * @var string   $contenido
+ */
+$usuario = \App\Core\Session::obtener('user_id', null);
+$roles = \App\Core\Session::obtener('roles', []);
+$rol = is_array($roles) && $roles !== [] ? (string) $roles[0] : null;
+
+// Nombre y foto para el menú de cuenta (una sola consulta por página).
+$nombreCuenta = '';
+$avatarUrl = null;
+$tema = 'claro';
+if ($usuario !== null) {
+    try {
+        $stmtCuenta = \App\Config\Database::conexion()->prepare(
+            'SELECT u.email, c.nombre_negocio, m.nombre_comercial
+               FROM usuarios u
+               LEFT JOIN comercios_perfil c ON c.usuario_id = u.id
+               LEFT JOIN mayoristas_perfil m ON m.usuario_id = u.id
+              WHERE u.id = ? LIMIT 1'
+        );
+        $stmtCuenta->execute([$usuario]);
+        $filaCuenta = $stmtCuenta->fetch() ?: [];
+        $nombreCuenta = (string) ($filaCuenta['nombre_negocio'] ?? $filaCuenta['nombre_comercial'] ?? $filaCuenta['email'] ?? '');
+        $avatarUrl = \App\Modules\Perfil\AvatarService::url((int) $usuario);
+
+        $stmtTema = \App\Config\Database::conexion()->prepare(
+            'SELECT tema FROM preferencias_usuario WHERE usuario_id = ? LIMIT 1'
+        );
+        $stmtTema->execute([$usuario]);
+        $tema = $stmtTema->fetchColumn() === 'oscuro' ? 'oscuro' : 'claro';
+    } catch (\Throwable) {
+        $nombreCuenta = '';
+    }
+}
+
+$enlaces = [];
+if ($usuario !== null) {
+    $enlaces[] = ['/explorar', 'Explorar'];
+
+    if ($rol === 'comercio') {
+        // Menú del comercio: las cuatro áreas de trabajo. El punto de venta
+        // vive en la tarjeta de Explorar para no llenar la barra.
+        $enlaces[] = ['/buscar', 'Buscar'];
+        $enlaces[] = ['/finanzas', 'Finanzas'];
+        $enlaces[] = ['/portafolio', 'Portafolio'];
+        $enlaces[] = ['/agendar', 'Agendar'];
+    } else {
+        $enlaces[] = ['/buscar', 'Buscar'];
+    }
+
+    if ($rol === 'mayorista') {
+        $enlaces[] = ['/mayorista/productos', 'Mis productos'];
+        $enlaces[] = ['/mayorista/pedidos', 'Pedidos'];
+    }
+
+    if ($rol !== 'comercio') {
+        $enlaces[] = ['/finanzas', 'Finanzas'];
+        $enlaces[] = ['/facturacion', 'Facturación'];
+    }
+    if (in_array($rol, ['admin_total', 'admin_kyc', 'admin_soporte', 'admin_finanzas'], true)) {
+        $enlaces[] = ['/admin', 'Admin'];
+    }
+    if (in_array($rol, ['admin_total', 'admin_kyc'], true)) {
+        $enlaces[] = ['/admin/kyc', 'Verificaciones'];
+    }
+}
+
+// Mensajes sin leer para el globo del menú.
+$sinLeerMsg = 0;
+if ($usuario !== null) {
+    try {
+        $stmtMsg = \App\Config\Database::conexion()->prepare(
+            'SELECT COUNT(*) FROM mensajes_directos m
+               JOIN conversacion_participantes p
+                 ON p.conversacion_id = m.conversacion_id AND p.usuario_id = ?
+              WHERE m.id > p.ultimo_leido_id AND m.autor_id <> ?'
+        );
+        $stmtMsg->execute([$usuario, $usuario]);
+        $sinLeerMsg = (int) $stmtMsg->fetchColumn();
+    } catch (\Throwable) {
+        $sinLeerMsg = 0;
+    }
+}
+
+// Contador del carrito: se usa en el botón lateral y en la barra inferior.
+$articulosCarrito = 0;
+if ($usuario !== null && $rol === 'comercio') {
+    try {
+        $articulosCarrito = \App\Modules\Carrito\CarritoContador::paraUsuario((int) $usuario);
+    } catch (\Throwable) {
+        $articulosCarrito = 0;
+    }
+}
+
+/**
+ * Iconos de la barra lateral. Se dibujan con trazo y heredan el color, así
+ * funcionan igual en claro y en oscuro sin duplicar archivos.
+ */
+$iconoNav = static fn (string $ruta): string => \App\Core\Iconos::svg($ruta);
+
+$uriActual = (string) ($_SERVER['REQUEST_URI'] ?? '');
+
+$nav = '';
+foreach ($enlaces as [$href, $texto]) {
+    $activo = str_starts_with($uriActual, $href);
+    $globo = $href === '/mensajes' && $sinLeerMsg > 0
+        ? '<span class="nav-globo">' . ($sinLeerMsg > 9 ? '9+' : $sinLeerMsg) . '</span>'
+        : '';
+    $nav .= '<a class="nav-enlace' . ($activo ? ' activo' : '') . '" href="' . $e($href) . '"'
+        . ' title="' . $e($texto) . '"' . ($activo ? ' aria-current="page"' : '') . '>'
+        . '<span class="nav-enlace__icono">' . $iconoNav($href) . '</span>'
+        . '<span class="nav-enlace__texto">' . $e($texto) . $globo . '</span></a>';
+}
+
+// Barra inferior del celular: cuatro accesos, siempre los mismos, para que no
+// cambien de sitio según el rol.
+$enlacePrincipal = match ($rol) {
+    'comercio'  => ['/buscar', 'Buscar'],
+    'mayorista' => ['/mayorista/pedidos', 'Pedidos'],
+    'admin_total', 'admin_kyc', 'admin_soporte', 'admin_finanzas' => ['/admin', 'Admin'],
+    default     => ['/buscar', 'Buscar'],
+};
+
+$inferior = [
+    ['/explorar', 'Explorar'],
+    $enlacePrincipal,
+];
+if ($rol === 'comercio') {
+    $inferior[] = ['/carrito', 'Carrito'];
+}
+$inferior[] = ['/mensajes', 'Mensajes'];
+$inferior[] = ['/perfil', 'Cuenta'];
+
+$navInferior = '';
+foreach ($inferior as [$href, $texto]) {
+    $activo = str_starts_with($uriActual, $href);
+    $globo = '';
+    if ($href === '/mensajes' && $sinLeerMsg > 0) {
+        $globo = '<span class="inferior__globo">' . ($sinLeerMsg > 9 ? '9+' : $sinLeerMsg) . '</span>';
+    } elseif ($href === '/carrito') {
+        $globo = '<span class="inferior__globo carrito-globo" data-carrito-badge' . ($articulosCarrito > 0 ? '' : ' hidden') . '>'
+            . ($articulosCarrito > 99 ? '99+' : (string) $articulosCarrito) . '</span>';
+    }
+    $navInferior .= '<a class="inferior__item' . ($activo ? ' activo' : '') . '" href="' . $e($href) . '"'
+        . ($href === '/carrito' ? ' data-abrir-carrito' : '')
+        . ($activo ? ' aria-current="page"' : '') . '>'
+        . '<span class="inferior__icono">' . $iconoNav($href) . $globo . '</span>'
+        . '<span class="inferior__texto">' . $e($texto) . '</span></a>';
+}
+?>
+<!doctype html>
+<html lang="es" data-tema="<?= $tema ?>">
+<head>
+    <meta charset="utf-8">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/assets/img/ares-logo.svg">
+    <link rel="apple-touch-icon" href="/assets/img/ares-192.png">
+    <meta name="theme-color" content="#0B0C0E">
+    <link rel="icon" href="/icon-192.svg" type="image/svg+xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?= $e($titulo) ?> · Ares</title>
+    <?php if (!empty($mapa)): ?>
+        <link rel="stylesheet" href="/assets/leaflet/leaflet.css">
+    <?php endif; ?>
+    <style nonce="<?= $e($nonce) ?>">
+        :root {
+            --tinta: #1a1a1a;
+            --gris: #6b7280;
+            --gris-claro: #9ca3af;
+            --linea: #e8e6df;
+            --fondo: #fafaf7;
+            --marca: #1f4d3a;
+            --marca-suave: #eaf1ec;
+            --alerta: #a56a12;
+            --error: #b91c1c;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            background: var(--fondo);
+            color: var(--tinta);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        header.barra {
+            background: #fff;
+            border-bottom: 1px solid var(--linea);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .barra__interior {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+        .marca {
+            font-weight: 650;
+            font-size: 17px;
+            letter-spacing: -.02em;
+            color: var(--marca);
+            text-decoration: none;
+        }
+        .marca span { color: var(--gris-claro); font-weight: 400; }
+        nav { display: flex; gap: 20px; flex: 1; }
+        nav a {
+            color: var(--gris);
+            text-decoration: none;
+            font-size: 14px;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+        }
+        nav a:hover { color: var(--tinta); }
+        nav a.activo { color: var(--marca); border-bottom-color: var(--marca); }
+        .salir {
+            font-size: 14px;
+            color: var(--gris);
+            text-decoration: none;
+        }
+        .salir:hover { color: var(--error); }
+        main {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 24px 72px;
+        }
+        /* Pantallas que necesitan todo el ancho (buscador con mapa). */
+        .ancho-completo .barra__interior { max-width: 100%; padding: 0 24px; }
+        .ancho-completo main { max-width: 100%; padding: 24px 24px 48px; }
+        h1 {
+            font-size: 26px;
+            letter-spacing: -.02em;
+            margin: 0 0 6px;
+            font-weight: 650;
+        }
+        h2 {
+            font-size: 17px;
+            letter-spacing: -.01em;
+            margin: 32px 0 10px;
+            font-weight: 600;
+        }
+        p { color: var(--gris); margin: 0 0 12px; }
+        a { color: var(--marca); }
+        code {
+            background: #f2f1ec;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        /* Formularios */
+        input, select, textarea {
+            font: inherit;
+            color: var(--tinta);
+            background: #fff;
+            border: 1px solid var(--linea);
+            border-radius: 8px;
+            padding: 9px 12px;
+            width: 100%;
+            transition: border-color .15s, box-shadow .15s;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--marca);
+            box-shadow: 0 0 0 3px rgba(31, 77, 58, .1);
+        }
+        input[type=checkbox] { width: auto; accent-color: var(--marca); }
+        label { display: block; margin-bottom: 12px; }
+        label > span {
+            display: block;
+            font-size: 13px;
+            color: var(--gris);
+            margin-bottom: 4px;
+        }
+        button, .boton {
+            font: inherit;
+            font-size: 14px;
+            font-weight: 500;
+            background: var(--marca);
+            color: #fff;
+            border: 0;
+            border-radius: 8px;
+            padding: 10px 18px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        button:hover, .boton:hover { background: #17392b; }
+        .boton--claro {
+            background: #fff;
+            color: var(--tinta);
+            border: 1px solid var(--linea);
+        }
+        .boton--claro:hover { background: #f7f6f2; }
+        /* Tablas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            background: #fff;
+            border: 1px solid var(--linea);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        thead th {
+            text-align: left;
+            font-weight: 500;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            color: var(--gris-claro);
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--linea);
+            background: #fcfcfa;
+        }
+        tbody td { padding: 12px 14px; border-bottom: 1px solid #f4f2ec; }
+        tbody tr:last-child td { border-bottom: 0; }
+        tbody tr:hover { background: #fcfcfa; }
+        /* Avisos */
+        .aviso {
+            padding: 11px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin: 0 0 16px;
+        }
+        .aviso--ok { background: var(--marca-suave); border: 1px solid #cfdcd3; color: #1f4d3a; }
+        .aviso--alerta { background: #fdf6e6; border: 1px solid #efe0bd; color: #7a5a12; }
+        .aviso--error { background: #fef2f2; border: 1px solid #f6d5d5; color: var(--error); }
+        .error-campo { font-size: 12px; color: var(--error); display: block; margin-top: 3px; }
+        .vacio { color: var(--gris-claro); padding: 20px 0; }
+        <?= $estilos ?? '' ?>
+        /* --- Selector de cantidad (compartido) --------------------------- */
+        .stepper { display:inline-flex; align-items:center; border:1px solid #E5E7EB; border-radius:8px; overflow:hidden; background:#fff; }
+        .stepper button {
+            width:32px; height:36px; padding:0; background:#fff; border:0; color:#4b5563;
+            font-size:16px; line-height:1; cursor:pointer;
+            transition: background .12s ease, color .12s ease;
+        }
+        .stepper button:hover { background:#f3f4f6; color:#111827; }
+        .stepper button:active { background:#e5e7eb; }
+        .stepper input {
+            width:52px; height:36px; padding:0; border:0; border-left:1px solid #E5E7EB; border-right:1px solid #E5E7EB;
+            text-align:center; font-size:14px; border-radius:0; appearance:textfield; -moz-appearance:textfield;
+        }
+        .stepper input:focus { outline:none; box-shadow:none; }
+        .stepper input::-webkit-outer-spin-button,
+        .stepper input::-webkit-inner-spin-button { -webkit-appearance:none; margin:0; }
+
+        /* --- Botón flotante del carrito ---------------------------------- */
+        .fab-carrito {
+            position: fixed; right: 24px; bottom: 24px; z-index: 90;
+            width: 58px; height: 58px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background: #1f4d3a; color: #fff; text-decoration: none;
+            box-shadow: 0 8px 24px rgba(17,24,39,.22), 0 2px 6px rgba(17,24,39,.12);
+            transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+        }
+        .fab-carrito:hover { background:#17392b; transform: translateY(-2px); box-shadow: 0 12px 28px rgba(17,24,39,.26); }
+        .fab-carrito:active { transform: translateY(0); }
+        .fab-carrito__badge {
+            position: absolute; top: -4px; right: -4px; min-width: 22px; height: 22px; padding: 0 6px;
+            border-radius: 999px; background: #b91c1c; color: #fff;
+            font-size: 12px; font-weight: 600; line-height: 22px; text-align: center;
+            border: 2px solid #fafaf7;
+        }
+        @media (max-width: 640px) {
+            .fab-carrito { right: 16px; bottom: 16px; width: 54px; height: 54px; }
+        }
+
+        @media (max-width: 640px) {
+            .barra__interior { gap: 14px; padding: 0 16px; height: 56px; }
+            /* En móvil la marca se queda en "Didi2" y el menú se desliza. */
+            .marca span { display: none; }
+            nav {
+                gap: 16px; overflow-x: auto; white-space: nowrap;
+                scrollbar-width: none; -ms-overflow-style: none;
+            }
+            nav::-webkit-scrollbar { display: none; }
+            nav a { flex: 0 0 auto; }
+            main { padding: 24px 16px 48px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+    <link rel="stylesheet" href="/assets/css/app.css?v=20261118r">
+</head>
+<body class="<?= !empty($anchoCompleto) ? 'ancho-completo' : '' ?><?= !empty($auth) ? ' auth' : '' ?>">
+<?php if (empty($auth)): ?>
+<?php if ($usuario !== null): ?>
+<aside class="lateral" id="nav-principal" aria-label="Menú principal">
+    <a class="lateral__marca" href="/explorar" aria-label="Ares, ir al inicio">
+        <img class="lateral__logo" src="/assets/img/ares-logo.svg" alt="" width="38" height="38">
+        <span class="lateral__nombre">Ares <em>· B2B</em></span>
+    </a>
+
+    <?php if ($rol === 'comercio'): ?>
+    <a class="carrito-nav" id="boton-carrito" href="/carrito" data-abrir-carrito>
+        <span class="carrito-nav__icono">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="8.5" cy="20.5" r="1.6" fill="currentColor" stroke="none"></circle>
+                <circle cx="18.5" cy="20.5" r="1.6" fill="currentColor" stroke="none"></circle>
+                <path d="M2.5 3h2.2l2.5 11.6a1.9 1.9 0 0 0 1.9 1.5h8.6a1.9 1.9 0 0 0 1.85-1.45L21.5 7H5.4"></path>
+            </svg>
+            <span class="carrito-nav__globo" data-carrito-badge<?= $articulosCarrito > 0 ? '' : ' hidden' ?>><?= $articulosCarrito > 99 ? '99+' : (string) $articulosCarrito ?></span>
+        </span>
+        <span class="carrito-nav__texto">Mi carrito</span>
+    </a>
+    <?php endif; ?>
+
+    <nav class="lateral__nav" aria-label="Principal"><?= $nav ?></nav>
+
+    <div class="lateral__pie">
+<div class="cuenta">
+                <button type="button" class="cuenta__boton" id="cuenta-boton" aria-haspopup="true" aria-expanded="false" aria-controls="cuenta-menu">
+                    <?php if ($avatarUrl !== null): ?>
+                        <img class="cuenta__foto" src="<?= $e($avatarUrl) ?>" alt="" width="32" height="32" decoding="async">
+                    <?php else: ?>
+                        <span class="cuenta__iniciales" aria-hidden="true"><?= $e(\App\Modules\Perfil\AvatarService::iniciales($nombreCuenta)) ?></span>
+                    <?php endif; ?>
+                    <span class="cuenta__chevron" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                    </span>
+                    <span class="visually-hidden">Mi cuenta</span>
+                </button>
+
+                <div class="cuenta__menu" id="cuenta-menu" role="menu" data-abierto="0">
+                    <div class="cuenta__cabecera">
+                        <div class="cuenta__nombre"><?= $e($nombreCuenta) ?></div>
+                        <div class="cuenta__rol"><?= $e(str_replace('_', ' ', (string) $rol)) ?></div>
+                    </div>
+                    <a role="menuitem" href="/perfil">
+                        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"></circle><path d="M4.5 20a7.5 7.5 0 0 1 15 0"></path></svg>
+                        <span>Mi perfil</span></a>
+                    <?php if ($rol === 'comercio'): ?>
+                        <a role="menuitem" href="/pedidos">
+                            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"></path><path d="M14 3v5h5"></path><path d="M9 13h6M9 17h4"></path></svg>
+                            <span>Mis pedidos</span></a>
+                    <?php elseif ($rol === 'mayorista'): ?>
+                        <a role="menuitem" href="/mayorista/pedidos">
+                            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"></path><path d="M14 3v5h5"></path><path d="M9 13h6M9 17h4"></path></svg>
+                            <span>Pedidos recibidos</span></a>
+                    <?php endif; ?>
+                    <a role="menuitem" href="/mensajes">
+                        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.9-.9L3 21l1.9-4.6A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5Z"></path></svg>
+                        <span>Mensajes</span></a>
+                    <div class="cuenta__sep"></div>
+                    <form method="post" action="/logout" style="margin:0">
+                        <input type="hidden" name="_csrf" value="<?= $e(\App\Core\Csrf::token()) ?>">
+                        <button type="submit" role="menuitem" class="cuenta__salir">Cerrar sesión</button>
+                    </form>
+                </div>
+    </div>
+</aside>
+<?php endif; ?>
+<header class="barra barra--movil">
+    <div class="barra__interior">
+        <a class="marca" href="<?= $usuario !== null ? '/explorar' : '/login' ?>"><img class="marca__logo" src="/assets/img/ares-logo.svg" alt="" width="28" height="28">Ares <span>· B2B</span></a>
+    </div>
+</header>
+<?php endif; ?>
+<main class="<?= !empty($auth) ? 'auth' : '' ?>">
+    <?= $contenido ?>
+</main>
+<?php if ($usuario !== null && empty($auth)): ?>
+<nav class="inferior" aria-label="Navegación principal"><?= $navInferior ?></nav>
+<?php endif; ?>
+<?php if (!empty($mapa)): ?>
+    <script src="/assets/leaflet/leaflet.js"></script>
+<?php endif; ?>
+<?php
+$rolActual = is_array($roles) && $roles !== [] ? (string) $roles[0] : null;
+$rutaActual = (string) ($_SERVER['REQUEST_URI'] ?? '');
+$enCarrito = str_starts_with($rutaActual, '/carrito');
+// En la caja el carrito flotante estorba: ahí se cobra, no se compra.
+$enCaja = str_starts_with($rutaActual, '/pos');
+// En el chat y en finanzas el botón flotante tapa contenido que no se aparta.
+$enConversacion = str_starts_with($rutaActual, '/mensajes');
+$enFinanzas = str_starts_with($rutaActual, '/finanzas');
+?>
+<?php if ($usuario !== null && $rolActual === 'comercio'): ?>
+<div class="cajon" id="cajon-carrito" data-cajon aria-hidden="true">
+    <div class="cajon__velo" data-cajon-cerrar></div>
+    <aside class="cajon__caja" role="dialog" aria-modal="true" aria-label="Mi carrito" tabindex="-1" data-cajon-caja>
+        <div class="cajon__contenido" data-cajon-contenido>
+            <div class="cajon__cargando">Cargando…</div>
+        </div>
+    </aside>
+</div>
+<?php endif; ?>
+<?php if (!empty($scripts)): ?>
+    <script nonce="<?= $e($nonce) ?>"><?= $scripts ?></script>
+<?php endif; ?>
+<script nonce="<?= $nonce ?? '' ?>">
+if ("serviceWorker" in navigator) { window.addEventListener("load", function() { navigator.serviceWorker.register("/sw.js"); }); }
+
+// Mostrar u ocultar contraseña. El botón conserva el foco y anuncia el
+// cambio de estado a los lectores de pantalla.
+document.querySelectorAll('.ojo').forEach(function (boton) {
+    boton.addEventListener('click', function () {
+        var campo = document.getElementById(boton.dataset.para);
+        if (!campo) return;
+        var visible = campo.type === 'password';
+        campo.type = visible ? 'text' : 'password';
+        boton.classList.toggle('activo', visible);
+        boton.setAttribute('aria-pressed', visible ? 'true' : 'false');
+        boton.setAttribute('aria-label', visible ? 'Ocultar contraseña' : 'Mostrar contraseña');
+        campo.focus();
+    });
+});
+
+// Medidor de fuerza: longitud, mayúscula, número y símbolo.
+var medidor = document.getElementById('medidor');
+if (medidor) {
+    var entrada = document.querySelector('[data-fuerza="medidor"]');
+    var texto = document.getElementById('fuerza-texto');
+    var etiquetas = ['Muy débil', 'Débil', 'Aceptable', 'Buena', 'Excelente'];
+    entrada.addEventListener('input', function () {
+        var v = entrada.value, nivel = 0;
+        if (v.length >= 12) nivel++;
+        if (/[A-ZÁÉÍÓÚÑ]/.test(v)) nivel++;
+        if (/[0-9]/.test(v)) nivel++;
+        if (/[^A-Za-z0-9]/.test(v)) nivel++;
+        if (v.length === 0) nivel = 0;
+        medidor.dataset.nivel = String(nivel);
+        if (texto) texto.textContent = v.length === 0 ? 'Usa mayúsculas, números y un símbolo.' : etiquetas[nivel];
+    });
+}
+
+// Cambio de tema: se aplica al instante y se guarda en la cuenta. Si el
+// navegador no ejecuta JS, el botón Guardar del <noscript> hace lo mismo.
+var formTema = document.getElementById('form-tema');
+if (formTema) {
+    var casillaTema = formTema.querySelector('input[name="tema"]');
+    casillaTema.addEventListener('change', function () {
+        document.documentElement.dataset.tema = casillaTema.checked ? 'oscuro' : 'claro';
+        formTema.submit();
+    });
+}
+
+// Diálogos: se abren desde un botón y se cierran con Cancelar o Escape.
+document.querySelectorAll('[data-abrir]').forEach(function (boton) {
+    boton.addEventListener('click', function () {
+        var dialogo = document.getElementById(boton.dataset.abrir);
+        if (!dialogo) return;
+        if (typeof dialogo.showModal === 'function') { dialogo.showModal(); }
+        else { dialogo.setAttribute('open', ''); }
+    });
+});
+document.querySelectorAll('dialog [data-cerrar]').forEach(function (boton) {
+    boton.addEventListener('click', function () {
+        var dialogo = boton.closest('dialog');
+        if (dialogo) { dialogo.close(); }
+    });
+});
+
+// Menú de cuenta y navegación móvil.
+(function () {
+    var boton = document.getElementById('cuenta-boton');
+    var menu = document.getElementById('cuenta-menu');
+    var navToggle = document.getElementById('nav-toggle');
+    var nav = document.getElementById('nav-principal');
+
+    function cerrarMenu() {
+        if (!menu) return;
+        menu.setAttribute('data-abierto', '0');
+        boton.setAttribute('aria-expanded', 'false');
+    }
+
+    if (boton && menu) {
+        boton.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var abierto = menu.getAttribute('data-abierto') === '1';
+            menu.setAttribute('data-abierto', abierto ? '0' : '1');
+            boton.setAttribute('aria-expanded', abierto ? 'false' : 'true');
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!menu.contains(e.target) && e.target !== boton) cerrarMenu();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') { cerrarMenu(); boton.focus(); }
+        });
+    }
+
+    if (navToggle && nav) {
+        navToggle.addEventListener('click', function () {
+            var abierto = nav.getAttribute('data-abierto') === '1';
+            nav.setAttribute('data-abierto', abierto ? '0' : '1');
+            navToggle.setAttribute('aria-expanded', abierto ? 'false' : 'true');
+        });
+    }
+})();
+</script>
+<script nonce="<?= $e($nonce ?? '') ?>">
+/* Las tablas de datos se pintan como tarjetas en móvil: cada celda necesita
+   el nombre de su columna. Se copia del <thead> para no repetirlo en 20 vistas. */
+(function () {
+    var tablas = document.querySelectorAll('main table:not(.tabla-recibo)');
+    for (var i = 0; i < tablas.length; i++) {
+        var ths = tablas[i].querySelectorAll('thead th');
+        if (!ths.length) continue;
+        var filas = tablas[i].querySelectorAll('tbody tr');
+        for (var f = 0; f < filas.length; f++) {
+            var celdas = filas[f].children;
+            for (var c = 0; c < celdas.length; c++) {
+                if (!celdas[c].hasAttribute('data-label') && ths[c]) {
+                    celdas[c].setAttribute('data-label', (ths[c].textContent || '').trim());
+                }
+            }
+        }
+    }
+})();
+</script>
+<script nonce="<?= $e($nonce ?? '') ?>">
+/* Carrito: cajón lateral, contadores, deshacer y "volar al carrito". */
+(function () {
+  'use strict';
+
+  /* ------------------------------------------------------------ toasts */
+  var toastEl = null, toastTimer = null;
+  function toast(texto, etiquetaAccion, accion) {
+    if (!toastEl) { toastEl = document.createElement('div'); toastEl.className = 'toast'; toastEl.setAttribute('role', 'status'); document.body.appendChild(toastEl); }
+    toastEl.innerHTML = '';
+    var txt = document.createElement('span');
+    txt.textContent = texto;
+    toastEl.appendChild(txt);
+    if (etiquetaAccion && accion) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'toast__accion'; b.textContent = etiquetaAccion;
+      b.addEventListener('click', function () { ocultarToast(); accion(); });
+      toastEl.appendChild(b);
+    }
+    toastEl.classList.add('toast--visible');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(ocultarToast, 4000);
+  }
+  function ocultarToast() { if (toastEl) toastEl.classList.remove('toast--visible'); }
+
+  function globos(n) {
+    document.querySelectorAll('[data-carrito-badge]').forEach(function (b) {
+      b.textContent = n > 99 ? '99+' : String(n);
+      b.hidden = !(n > 0);
+    });
+  }
+
+  function brinco() {
+    document.querySelectorAll('[data-abrir-carrito]').forEach(function (b) {
+      b.classList.remove('carrito-brinco');
+      void b.offsetWidth;
+      b.classList.add('carrito-brinco');
+    });
+  }
+
+  window.aresToast = toast;
+
+  /* ------------------------------------------------------------ cajón */
+  var cajon = document.querySelector('[data-cajon]');
+  if (cajon) {
+    var caja = cajon.querySelector('[data-cajon-caja]');
+    var contenido = cajon.querySelector('[data-cajon-contenido]');
+    var listo = false;
+
+    var csrf = function () {
+      var i = contenido.querySelector('input[name="_csrf"]');
+      var fd = new FormData();
+      fd.append('_csrf', i ? i.value : '');
+      fd.append('ajax', '1');
+      return fd;
+    };
+
+    var pintar = function (html) { contenido.innerHTML = html; };
+
+    var cargar = function (forzar) {
+      if (listo && !forzar) return;
+      fetch('/carrito/panel', { credentials: 'same-origin', headers: { 'X-Requested-With': 'fetch' } })
+        .then(function (r) { return r.ok ? r.text() : null; })
+        .then(function (html) { if (html !== null) { pintar(html); listo = true; } });
+    };
+
+    var abrir = function () {
+      cajon.classList.add('cajon--abierto');
+      cajon.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('sin-scroll');
+      cargar(false);
+      setTimeout(function () { caja.focus(); }, 30);
+    };
+    var cerrar = function () {
+      cajon.classList.remove('cajon--abierto');
+      cajon.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('sin-scroll');
+    };
+    window.aresAbrirCarrito = abrir;
+
+    var enviar = function (url, fd) {
+      return fetch(url, { method: 'POST', body: fd, credentials: 'same-origin' })
+        .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+        .then(function (res) {
+          if (res.ok && res.d.ok) { pintar(res.d.panel); globos(res.d.contador); return res.d; }
+          toast((res.d && res.d.mensaje) || 'No se pudo actualizar el carrito.');
+          return null;
+        })
+        .catch(function () { toast('Sin conexión. Intenta de nuevo.'); return null; });
+    };
+
+    var quitar = function (uuid, nombre, cantidad) {
+      var fd = csrf();
+      fd.append('producto', uuid);
+      enviar('/carrito/quitar', fd).then(function (res) {
+        if (!res) return;
+        toast(nombre + ' eliminado', 'Deshacer', function () {
+          var f2 = csrf();
+          f2.append('producto', uuid);
+          f2.append('cantidad', String(cantidad || 1));
+          enviar('/carrito/agregar', f2).then(function (r2) { if (r2) toast('Producto restaurado'); });
+        });
+      });
+    };
+
+    document.addEventListener('click', function (e) {
+      var abre = e.target.closest('[data-abrir-carrito]');
+      if (abre) { e.preventDefault(); abrir(); return; }
+      if (e.target.closest('[data-cajon-cerrar]') && !e.target.closest('.cajon__caja form')) { cerrar(); return; }
+      var paso = e.target.closest('[data-paso]');
+      if (paso) {
+        var actual = parseInt(paso.dataset.cantidad, 10) || 1;
+        var max = parseInt(paso.dataset.max, 10) || 999;
+        var nueva = actual + parseInt(paso.dataset.paso, 10);
+        if (nueva < 1) { quitar(paso.dataset.uuid, paso.dataset.nombre, actual); return; }
+        if (nueva > max) { toast('No hay más existencias.'); return; }
+        var fd = csrf();
+        fd.append('producto', paso.dataset.uuid);
+        fd.append('cantidad', String(nueva));
+        enviar('/carrito/actualizar', fd);
+        return;
+      }
+      var vaciar = e.target.closest('.cajon__vaciar');
+      if (vaciar) { e.preventDefault(); enviar('/carrito/vaciar', csrf()); }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && cajon.classList.contains('cajon--abierto')) cerrar();
+    });
+
+    // Al volver con el botón "atrás" desde /checkout el panel se recarga.
+    window.aresRecargarCarrito = function () { cargar(true); };
+  }
+
+  /* --------------------------------------------------- volar al carrito */
+  document.addEventListener('submit', function (e) {
+    var form = e.target.closest('form[action="/carrito/agregar"]');
+    if (!form) return;
+    e.preventDefault();
+
+    var boton = e.submitter || form.querySelector('.btn-agregar') || form.querySelector('button[type="submit"]');
+    var destino = document.querySelector('#boton-carrito') || document.querySelector('[data-abrir-carrito]');
+    if (!boton || !destino) { form.submit(); return; }
+
+    var cantidad = parseInt((form.querySelector('input[name="cantidad"]') || {}).value, 10) || 1;
+
+    // El globo se pinta como "último valor del servidor + unidades en vuelo":
+    // si la respuesta llega antes que la animación no se cuenta dos veces.
+    var base = parseInt((destino.querySelector('[data-carrito-badge]') || {}).textContent, 10) || 0;
+    var pendientes = 0;
+    var respondido = false;
+    var aplicado = false;
+
+    var pintarGlobo = function () { globos(Math.max(0, base + pendientes)); };
+
+    var a = boton.getBoundingClientRect();
+    var b = destino.getBoundingClientRect();
+    var x0 = a.left + a.width / 2, y0 = a.top + a.height / 2;
+    var x1 = b.left + b.width / 2, y1 = b.top + b.height / 2;
+    var xm = (x0 + x1) / 2, ym = Math.min(y0, y1) - 90;
+
+    var p = document.createElement('div');
+    p.className = 'vuelo';
+    p.textContent = '+' + cantidad;
+    document.body.appendChild(p);
+
+    var anim = p.animate([
+      { transform: 'translate(' + x0 + 'px,' + y0 + 'px) translate(-50%,-50%) scale(.85)', opacity: .95 },
+      { transform: 'translate(' + xm + 'px,' + ym + 'px) translate(-50%,-50%) scale(1.1)', offset: .55, opacity: 1 },
+      { transform: 'translate(' + x1 + 'px,' + y1 + 'px) translate(-50%,-50%) scale(.5)', opacity: .85 }
+    ], { duration: 380, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'forwards' });
+
+    anim.onfinish = function () {
+      p.remove();
+      aplicado = true;
+      if (!respondido) { pendientes += cantidad; }
+      pintarGlobo();
+      brinco();
+    };
+
+    var fd = new FormData(form);
+    fd.append('ajax', '1');
+    fetch('/carrito/agregar', { method: 'POST', body: fd, credentials: 'same-origin' })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        respondido = true;
+
+        if (!d || !d.ok) {
+          if (aplicado) { pendientes = Math.max(0, pendientes - cantidad); }
+          pintarGlobo();
+          toast((d && d.mensaje) || 'No se pudo agregar el producto.');
+          return;
+        }
+
+        base = parseInt(d.contador, 10) || 0;
+        if (aplicado) { pendientes = Math.max(0, pendientes - cantidad); }
+        pintarGlobo();
+
+        if (d.panel && document.querySelector('[data-cajon]')) {
+          var cont = document.querySelector('[data-cajon-contenido]');
+          if (cont) cont.innerHTML = d.panel;
+        }
+      })
+      .catch(function () {
+        respondido = true;
+        if (aplicado) { pendientes = Math.max(0, pendientes - cantidad); }
+        pintarGlobo();
+        toast('Sin conexión. El producto no se agregó.');
+      });
+  });
+})();
+</script>
+</body>
+</html>

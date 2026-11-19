@@ -1,0 +1,8 @@
+node_modules/
+frontend/node_modules/
+backend/vendor/
+backend/storage/logs/
+backend/storage/rate/
+backend/storage/avatars/
+dbdata/
+qa/*.png

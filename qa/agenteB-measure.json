@@ -1,0 +1,5988 @@
+[
+  {
+    "vp": "360x640",
+    "route": "/spa/",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-360x640-inicio.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 367,
+        "right": 727,
+        "w": 360
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 368,
+        "right": 727,
+        "w": 359
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 388,
+        "right": 495,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 471,
+        "right": 495,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 591,
+        "right": 655,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 669,
+        "right": 707,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 680,
+        "right": 697,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 684,
+        "right": 692,
+        "w": 9
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > div.cajon__scroll",
+        "left": 368,
+        "right": 727,
+        "w": 359
+      },
+      {
+        "sel": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "left": 384,
+        "right": 711,
+        "w": 327
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > div.grupo__cab",
+        "left": 385,
+        "right": 710,
+        "w": 325
+      },
+      {
+        "sel": "section.grupo > div.grupo__cab > span.grupo__nom",
+        "left": 399,
+        "right": 500,
+        "w": 101
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 10.5,
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Perfil"
+      },
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > nav.nav > a.nav__item.activo (bg-image)",
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Perfil"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Inicio"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "¿Con qué empezamos hoy? Esto es lo que t"
+      },
+      {
+        "sel": "section.kpis.rise > a.kpi > span.kpi__nota",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > section.kpis.rise > a.kpi",
+        "text": "Ver pedidos"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item.activo",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 43,
+        "h": 48
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Perfil",
+        "w": 42,
+        "h": 48
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [
+      {
+        "sel": "section.card.rise > div.card__cuerpo > a.acceso",
+        "text": "Mi perfilDatos, direcciones y ",
+        "top": 607,
+        "railTop": 575
+      }
+    ],
+    "rail": {
+      "pos": "fixed",
+      "top": 575,
+      "bottom": 640,
+      "h": 65,
+      "w": 360
+    },
+    "mainPadBottom": "96px",
+    "bodyH": 784,
+    "vh": 640
+  },
+  {
+    "vp": "360x640",
+    "route": "/spa/buscar",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-360x640-buscar.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 367,
+        "right": 727,
+        "w": 360
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 368,
+        "right": 727,
+        "w": 359
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 388,
+        "right": 495,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 471,
+        "right": 495,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 591,
+        "right": 655,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 669,
+        "right": 707,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 680,
+        "right": 697,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 684,
+        "right": 692,
+        "w": 9
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > div.cajon__scroll",
+        "left": 368,
+        "right": 727,
+        "w": 359
+      },
+      {
+        "sel": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "left": 384,
+        "right": 711,
+        "w": 327
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > div.grupo__cab",
+        "left": 385,
+        "right": 710,
+        "w": 325
+      },
+      {
+        "sel": "section.grupo > div.grupo__cab > span.grupo__nom",
+        "left": 399,
+        "right": 500,
+        "w": 101
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 10.5,
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Perfil"
+      },
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "text": "+ IVA ·cajade12 piezas"
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "text": "+ IVA ·cajade6 piezas"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > nav.nav > a.nav__item.activo (bg-image)",
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Perfil"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Buscar"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "10 productos de proveedores verificados "
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "+ IVA ·cajade12 piezas"
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "+ IVA ·cajade6 piezas"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 43,
+        "h": 48
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Perfil",
+        "w": 42,
+        "h": 48
+      },
+      {
+        "sel": "div.producto__compra > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar uno de Azúcar estándar 50 kg",
+        "w": 42,
+        "h": 42
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [
+      {
+        "sel": "div.producto__compra > div.stepper > button",
+        "text": "",
+        "top": 607,
+        "railTop": 575
+      },
+      {
+        "sel": "div.producto__compra > div.stepper > button",
+        "text": "",
+        "top": 607,
+        "railTop": 575
+      },
+      {
+        "sel": "article.producto.rise > div.producto__compra > button.btn.btn--mini",
+        "text": "Agregar",
+        "top": 606,
+        "railTop": 575
+      },
+      {
+        "sel": "div.producto__cab > div > p.producto__prov",
+        "text": "Ferretera Nortea 5.6 km",
+        "top": 714,
+        "railTop": 575
+      },
+      {
+        "sel": "div.producto__compra > div.stepper > button",
+        "text": "",
+        "top": 777,
+        "railTop": 575
+      },
+      {
+        "sel": "div.producto__compra > div.stepper > button",
+        "text": "",
+        "top": 777,
+        "railTop": 575
+      },
+      {
+        "sel": "article.producto.rise > div.producto__compra > button.btn.btn--mini",
+        "text": "Agregar",
+        "top": 776,
+        "railTop": 575
+      },
+      {
+        "sel": "div.producto__cab > div > p.producto__prov",
+        "text": "Ferretera Nortea 5.6 km",
+        "top": 884,
+        "railTop": 575
+      }
+    ],
+    "rail": {
+      "pos": "fixed",
+      "top": 575,
+      "bottom": 640,
+      "h": 65,
+      "w": 360
+    },
+    "mainPadBottom": "96px",
+    "bodyH": 2121,
+    "vh": 640
+  },
+  {
+    "vp": "360x640",
+    "route": "/spa/pedidos",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-360x640-pedidos.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div > div.card.rise > table.tabla",
+        "left": 15,
+        "right": 535,
+        "w": 520
+      },
+      {
+        "sel": "div.card.rise > table.tabla > thead",
+        "left": 15,
+        "right": 535,
+        "w": 520
+      },
+      {
+        "sel": "table.tabla > thead > tr",
+        "left": 15,
+        "right": 535,
+        "w": 520
+      },
+      {
+        "sel": "thead > tr > th",
+        "left": 211,
+        "right": 376,
+        "w": 165
+      },
+      {
+        "sel": "thead > tr > th",
+        "left": 376,
+        "right": 444,
+        "w": 68
+      },
+      {
+        "sel": "thead > tr > th",
+        "left": 444,
+        "right": 535,
+        "w": 91
+      },
+      {
+        "sel": "div.card.rise > table.tabla > tbody",
+        "left": 15,
+        "right": 535,
+        "w": 520
+      },
+      {
+        "sel": "table.tabla > tbody > tr",
+        "left": 15,
+        "right": 535,
+        "w": 520
+      },
+      {
+        "sel": "tbody > tr > td",
+        "left": 211,
+        "right": 376,
+        "w": 165
+      },
+      {
+        "sel": "tbody > tr > td",
+        "left": 376,
+        "right": 444,
+        "w": 68
+      },
+      {
+        "sel": "tr > td > span",
+        "left": 390,
+        "right": 428,
+        "w": 38
+      },
+      {
+        "sel": "tbody > tr > td.num",
+        "left": 444,
+        "right": 535,
+        "w": 91
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 10.5,
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Perfil"
+      },
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Pedido"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Proveedor"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Estado"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Fecha"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Total"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > nav.nav > a.nav__item.activo (bg-image)",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Perfil"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "Todo lo que has comprado y en qué va."
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Pedido"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Proveedor"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Estado"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Fecha"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Total"
+      },
+      {
+        "sel": "tr > td > div",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "2líneas"
+      },
+      {
+        "sel": "tr > td > div",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "1línea"
+      },
+      {
+        "sel": "tr > td > div",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "3líneas"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 43,
+        "h": 48
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Perfil",
+        "w": 42,
+        "h": 48
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [],
+    "rail": {
+      "pos": "fixed",
+      "top": 575,
+      "bottom": 640,
+      "h": 65,
+      "w": 360
+    },
+    "mainPadBottom": "96px",
+    "bodyH": 919,
+    "vh": 640
+  },
+  {
+    "vp": "360x640",
+    "route": "/spa/perfil",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-360x640-perfil.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 367,
+        "right": 727,
+        "w": 360
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 368,
+        "right": 727,
+        "w": 359
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 388,
+        "right": 495,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 471,
+        "right": 495,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 591,
+        "right": 655,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 669,
+        "right": 707,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 680,
+        "right": 697,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 684,
+        "right": 692,
+        "w": 9
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > div.cajon__scroll",
+        "left": 368,
+        "right": 727,
+        "w": 359
+      },
+      {
+        "sel": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "left": 384,
+        "right": 711,
+        "w": 327
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > div.grupo__cab",
+        "left": 385,
+        "right": 710,
+        "w": 325
+      },
+      {
+        "sel": "section.grupo > div.grupo__cab > span.grupo__nom",
+        "left": 399,
+        "right": 500,
+        "w": 101
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 10.5,
+        "text": "Perfil"
+      },
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > nav.nav > a.nav__item.activo (bg-image)",
+        "text": "Perfil"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Mi perfil"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "Tus datos y direcciones de entrega."
+      },
+      {
+        "sel": "section.card.rise > div.card__cuerpo > div",
+        "fs": 24,
+        "need": 3,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "section.card.rise > div.card__cuerpo > div (bg-image)",
+        "text": "CD"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 43,
+        "h": 48
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item.activo",
+        "tag": "a",
+        "label": "Perfil",
+        "w": 42,
+        "h": 48
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [],
+    "rail": {
+      "pos": "fixed",
+      "top": 575,
+      "bottom": 640,
+      "h": 65,
+      "w": 360
+    },
+    "mainPadBottom": "96px",
+    "bodyH": 711,
+    "vh": 640
+  },
+  {
+    "vp": "390x844",
+    "route": "/spa/",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-390x844-inicio.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 398,
+        "right": 788,
+        "w": 390
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 399,
+        "right": 788,
+        "w": 389
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 419,
+        "right": 525,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 501,
+        "right": 525,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 652,
+        "right": 716,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 730,
+        "right": 768,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 740,
+        "right": 757,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 745,
+        "right": 753,
+        "w": 9
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > div.cajon__scroll",
+        "left": 399,
+        "right": 788,
+        "w": 389
+      },
+      {
+        "sel": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "left": 415,
+        "right": 772,
+        "w": 357
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > div.grupo__cab",
+        "left": 416,
+        "right": 771,
+        "w": 355
+      },
+      {
+        "sel": "section.grupo > div.grupo__cab > span.grupo__nom",
+        "left": 430,
+        "right": 531,
+        "w": 101
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 10.5,
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Perfil"
+      },
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > nav.nav > a.nav__item.activo (bg-image)",
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Perfil"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Inicio"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "¿Con qué empezamos hoy? Esto es lo que t"
+      },
+      {
+        "sel": "section.kpis.rise > a.kpi > span.kpi__nota",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > section.kpis.rise > a.kpi",
+        "text": "Ver pedidos"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item.activo",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 43,
+        "h": 48
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Perfil",
+        "w": 42,
+        "h": 48
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [],
+    "rail": {
+      "pos": "fixed",
+      "top": 779,
+      "bottom": 844,
+      "h": 65,
+      "w": 390
+    },
+    "mainPadBottom": "96px",
+    "bodyH": 844,
+    "vh": 844
+  },
+  {
+    "vp": "390x844",
+    "route": "/spa/buscar",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-390x844-buscar.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 398,
+        "right": 788,
+        "w": 390
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 399,
+        "right": 788,
+        "w": 389
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 419,
+        "right": 525,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 501,
+        "right": 525,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 652,
+        "right": 716,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 730,
+        "right": 768,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 740,
+        "right": 757,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 745,
+        "right": 753,
+        "w": 9
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > div.cajon__scroll",
+        "left": 399,
+        "right": 788,
+        "w": 389
+      },
+      {
+        "sel": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "left": 415,
+        "right": 772,
+        "w": 357
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > div.grupo__cab",
+        "left": 416,
+        "right": 771,
+        "w": 355
+      },
+      {
+        "sel": "section.grupo > div.grupo__cab > span.grupo__nom",
+        "left": 430,
+        "right": 531,
+        "w": 101
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 10.5,
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Perfil"
+      },
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "text": "+ IVA ·cajade12 piezas"
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "text": "+ IVA ·cajade6 piezas"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > nav.nav > a.nav__item.activo (bg-image)",
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Perfil"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Buscar"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "10 productos de proveedores verificados "
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "+ IVA ·cajade12 piezas"
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "+ IVA ·cajade6 piezas"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 43,
+        "h": 48
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Perfil",
+        "w": 42,
+        "h": 48
+      },
+      {
+        "sel": "div.producto__compra > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar uno de Azúcar estándar 50 kg",
+        "w": 42,
+        "h": 42
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [
+      {
+        "sel": "div.producto__cab > div > p.producto__prov",
+        "text": "Ferretera Nortea 5.6 km",
+        "top": 865,
+        "railTop": 779
+      },
+      {
+        "sel": "div.producto__compra > div.stepper > button",
+        "text": "",
+        "top": 928,
+        "railTop": 779
+      },
+      {
+        "sel": "div.producto__compra > div.stepper > button",
+        "text": "",
+        "top": 928,
+        "railTop": 779
+      },
+      {
+        "sel": "article.producto.rise > div.producto__compra > button.btn.btn--mini",
+        "text": "Agregar",
+        "top": 927,
+        "railTop": 779
+      },
+      {
+        "sel": "div.producto__cab > div > p.producto__prov",
+        "text": "Insumos del Vallea 6.1 km",
+        "top": 1035,
+        "railTop": 779
+      },
+      {
+        "sel": "div.producto__compra > div.stepper > button",
+        "text": "",
+        "top": 1098,
+        "railTop": 779
+      },
+      {
+        "sel": "div.producto__compra > div.stepper > button",
+        "text": "",
+        "top": 1098,
+        "railTop": 779
+      },
+      {
+        "sel": "article.producto.rise > div.producto__compra > button.btn.btn--mini",
+        "text": "Agregar",
+        "top": 1097,
+        "railTop": 779
+      }
+    ],
+    "rail": {
+      "pos": "fixed",
+      "top": 779,
+      "bottom": 844,
+      "h": 65,
+      "w": 390
+    },
+    "mainPadBottom": "96px",
+    "bodyH": 2102,
+    "vh": 844
+  },
+  {
+    "vp": "390x844",
+    "route": "/spa/pedidos",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-390x844-pedidos.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div > div.card.rise > table.tabla",
+        "left": 15,
+        "right": 535,
+        "w": 520
+      },
+      {
+        "sel": "div.card.rise > table.tabla > thead",
+        "left": 15,
+        "right": 535,
+        "w": 520
+      },
+      {
+        "sel": "table.tabla > thead > tr",
+        "left": 15,
+        "right": 535,
+        "w": 520
+      },
+      {
+        "sel": "thead > tr > th",
+        "left": 376,
+        "right": 444,
+        "w": 68
+      },
+      {
+        "sel": "thead > tr > th",
+        "left": 444,
+        "right": 535,
+        "w": 91
+      },
+      {
+        "sel": "div.card.rise > table.tabla > tbody",
+        "left": 15,
+        "right": 535,
+        "w": 520
+      },
+      {
+        "sel": "table.tabla > tbody > tr",
+        "left": 15,
+        "right": 535,
+        "w": 520
+      },
+      {
+        "sel": "tbody > tr > td",
+        "left": 376,
+        "right": 444,
+        "w": 68
+      },
+      {
+        "sel": "tr > td > span",
+        "left": 390,
+        "right": 421,
+        "w": 31
+      },
+      {
+        "sel": "tbody > tr > td.num",
+        "left": 444,
+        "right": 535,
+        "w": 91
+      },
+      {
+        "sel": "table.tabla > tbody > tr",
+        "left": 15,
+        "right": 535,
+        "w": 520
+      },
+      {
+        "sel": "tbody > tr > td",
+        "left": 376,
+        "right": 444,
+        "w": 68
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 10.5,
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Perfil"
+      },
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Pedido"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Proveedor"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Estado"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Fecha"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Total"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > nav.nav > a.nav__item.activo (bg-image)",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Perfil"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "Todo lo que has comprado y en qué va."
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Pedido"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Proveedor"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Estado"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Fecha"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Total"
+      },
+      {
+        "sel": "tr > td > div",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "2líneas"
+      },
+      {
+        "sel": "tr > td > div",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "1línea"
+      },
+      {
+        "sel": "tr > td > div",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "3líneas"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 43,
+        "h": 48
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Perfil",
+        "w": 42,
+        "h": 48
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [],
+    "rail": {
+      "pos": "fixed",
+      "top": 779,
+      "bottom": 844,
+      "h": 65,
+      "w": 390
+    },
+    "mainPadBottom": "96px",
+    "bodyH": 937,
+    "vh": 844
+  },
+  {
+    "vp": "390x844",
+    "route": "/spa/perfil",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-390x844-perfil.png",
+    "overflow": 34,
+    "overEls": [
+      {
+        "sel": "div.card__cuerpo > div > h2",
+        "left": 123,
+        "right": 424,
+        "w": 301
+      },
+      {
+        "sel": "div.card__cuerpo > div > span",
+        "left": 123,
+        "right": 424,
+        "w": 301
+      },
+      {
+        "sel": "div.card__cuerpo > div > div",
+        "left": 123,
+        "right": 424,
+        "w": 301
+      },
+      {
+        "sel": "div > div > span.chip",
+        "left": 204,
+        "right": 424,
+        "w": 219
+      },
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 398,
+        "right": 788,
+        "w": 390
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 399,
+        "right": 788,
+        "w": 389
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 419,
+        "right": 525,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 501,
+        "right": 525,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 652,
+        "right": 716,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 730,
+        "right": 768,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 740,
+        "right": 757,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 745,
+        "right": 753,
+        "w": 9
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 10.5,
+        "text": "Perfil"
+      },
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 10.5,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > nav.nav > a.nav__item.activo (bg-image)",
+        "text": "Perfil"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Mi perfil"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "Tus datos y direcciones de entrega."
+      },
+      {
+        "sel": "section.card.rise > div.card__cuerpo > div",
+        "fs": 24,
+        "need": 3,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "section.card.rise > div.card__cuerpo > div (bg-image)",
+        "text": "CD"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 43,
+        "h": 48
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item.activo",
+        "tag": "a",
+        "label": "Perfil",
+        "w": 42,
+        "h": 48
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [],
+    "rail": {
+      "pos": "fixed",
+      "top": 779,
+      "bottom": 844,
+      "h": 65,
+      "w": 390
+    },
+    "mainPadBottom": "96px",
+    "bodyH": 844,
+    "vh": 844
+  },
+  {
+    "vp": "768x1024",
+    "route": "/spa/",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-768x1024-inicio.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 777,
+        "right": 1217,
+        "w": 440
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 778,
+        "right": 1217,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 798,
+        "right": 904,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 880,
+        "right": 904,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 1081,
+        "right": 1145,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 1159,
+        "right": 1197,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 1169,
+        "right": 1186,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 1174,
+        "right": 1182,
+        "w": 9
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > div.cajon__scroll",
+        "left": 778,
+        "right": 1217,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "left": 794,
+        "right": 1201,
+        "w": 407
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > div.grupo__cab",
+        "left": 795,
+        "right": 1200,
+        "w": 405
+      },
+      {
+        "sel": "section.grupo > div.grupo__cab > span.grupo__nom",
+        "left": 809,
+        "right": 910,
+        "w": 101
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "aside.rail > a.marca > span.marca__logo",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > a.marca > span.marca__logo (bg-image)",
+        "text": "A"
+      },
+      {
+        "sel": "a.rail__cuenta > span > strong",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 1.17,
+        "fg": "rgb(230, 239, 233)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "Casa de Toño"
+      },
+      {
+        "sel": "aside.rail > div.rail__pie > button.btn.btn--fantasma",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Cerrar sesión"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Inicio"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "¿Con qué empezamos hoy? Esto es lo que t"
+      },
+      {
+        "sel": "section.kpis.rise > a.kpi > span.kpi__nota",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > section.kpis.rise > a.kpi",
+        "text": "Ver pedidos"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item.activo",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 47,
+        "h": 43
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Buscar",
+        "w": 47,
+        "h": 43
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [],
+    "rail": {
+      "pos": "sticky",
+      "top": 0,
+      "bottom": 1024,
+      "h": 1024,
+      "w": 76
+    },
+    "mainPadBottom": "80px",
+    "bodyH": 1024,
+    "vh": 1024
+  },
+  {
+    "vp": "768x1024",
+    "route": "/spa/buscar",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-768x1024-buscar.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 777,
+        "right": 1217,
+        "w": 440
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 778,
+        "right": 1217,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 798,
+        "right": 904,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 880,
+        "right": 904,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 1081,
+        "right": 1145,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 1159,
+        "right": 1197,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 1169,
+        "right": 1186,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 1174,
+        "right": 1182,
+        "w": 9
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > div.cajon__scroll",
+        "left": 778,
+        "right": 1217,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "left": 794,
+        "right": 1201,
+        "w": 407
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > div.grupo__cab",
+        "left": 795,
+        "right": 1200,
+        "w": 405
+      },
+      {
+        "sel": "section.grupo > div.grupo__cab > span.grupo__nom",
+        "left": 809,
+        "right": 910,
+        "w": 101
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "text": "+ IVA ·cajade12 piezas"
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "text": "+ IVA ·cajade6 piezas"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "aside.rail > a.marca > span.marca__logo",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > a.marca > span.marca__logo (bg-image)",
+        "text": "A"
+      },
+      {
+        "sel": "a.rail__cuenta > span > strong",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 1.17,
+        "fg": "rgb(230, 239, 233)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "Casa de Toño"
+      },
+      {
+        "sel": "aside.rail > div.rail__pie > button.btn.btn--fantasma",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Cerrar sesión"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Buscar"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "10 productos de proveedores verificados "
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "+ IVA ·cajade12 piezas"
+      },
+      {
+        "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "Abarrotes"
+      },
+      {
+        "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "Ferretería"
+      },
+      {
+        "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "Limpieza"
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "+ IVA ·cajade6 piezas"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 47,
+        "h": 43
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item.activo",
+        "tag": "a",
+        "label": "Buscar",
+        "w": 47,
+        "h": 43
+      },
+      {
+        "sel": "div.producto__compra > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar uno de Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      },
+      {
+        "sel": "article.producto.rise > div.producto__compra > button.btn.btn--mini",
+        "tag": "button",
+        "label": "Agregar",
+        "w": 98,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [],
+    "rail": {
+      "pos": "sticky",
+      "top": 0,
+      "bottom": 1024,
+      "h": 1024,
+      "w": 76
+    },
+    "mainPadBottom": "80px",
+    "bodyH": 2016,
+    "vh": 1024
+  },
+  {
+    "vp": "768x1024",
+    "route": "/spa/pedidos",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-768x1024-pedidos.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 777,
+        "right": 1217,
+        "w": 440
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 778,
+        "right": 1217,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 798,
+        "right": 904,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 880,
+        "right": 904,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 1081,
+        "right": 1145,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 1159,
+        "right": 1197,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 1169,
+        "right": 1186,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 1174,
+        "right": 1182,
+        "w": 9
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > div.cajon__scroll",
+        "left": 778,
+        "right": 1217,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "left": 794,
+        "right": 1201,
+        "w": 407
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > div.grupo__cab",
+        "left": 795,
+        "right": 1200,
+        "w": 405
+      },
+      {
+        "sel": "section.grupo > div.grupo__cab > span.grupo__nom",
+        "left": 809,
+        "right": 910,
+        "w": 101
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Pedido"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Proveedor"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Estado"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Fecha"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Total"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "aside.rail > a.marca > span.marca__logo",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > a.marca > span.marca__logo (bg-image)",
+        "text": "A"
+      },
+      {
+        "sel": "a.rail__cuenta > span > strong",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 1.17,
+        "fg": "rgb(230, 239, 233)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "Casa de Toño"
+      },
+      {
+        "sel": "aside.rail > div.rail__pie > button.btn.btn--fantasma",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Cerrar sesión"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "Todo lo que has comprado y en qué va."
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Pedido"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Proveedor"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Estado"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Fecha"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Total"
+      },
+      {
+        "sel": "tr > td > div",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "2líneas"
+      },
+      {
+        "sel": "tr > td > div",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "1línea"
+      },
+      {
+        "sel": "tr > td > div",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "3líneas"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 47,
+        "h": 43
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item.activo",
+        "tag": "a",
+        "label": "Pedidos",
+        "w": 47,
+        "h": 43
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [],
+    "rail": {
+      "pos": "sticky",
+      "top": 0,
+      "bottom": 1024,
+      "h": 1024,
+      "w": 76
+    },
+    "mainPadBottom": "80px",
+    "bodyH": 1024,
+    "vh": 1024
+  },
+  {
+    "vp": "768x1024",
+    "route": "/spa/perfil",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-768x1024-perfil.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 777,
+        "right": 1217,
+        "w": 440
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 778,
+        "right": 1217,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 798,
+        "right": 904,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 880,
+        "right": 904,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 1081,
+        "right": 1145,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 1159,
+        "right": 1197,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 1169,
+        "right": 1186,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 1174,
+        "right": 1182,
+        "w": 9
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > div.cajon__scroll",
+        "left": 778,
+        "right": 1217,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "left": 794,
+        "right": 1201,
+        "w": 407
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > div.grupo__cab",
+        "left": 795,
+        "right": 1200,
+        "w": 405
+      },
+      {
+        "sel": "section.grupo > div.grupo__cab > span.grupo__nom",
+        "left": 809,
+        "right": 910,
+        "w": 101
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "aside.rail > a.marca > span.marca__logo",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > a.marca > span.marca__logo (bg-image)",
+        "text": "A"
+      },
+      {
+        "sel": "a.rail__cuenta > span > strong",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 1.17,
+        "fg": "rgb(230, 239, 233)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "Casa de Toño"
+      },
+      {
+        "sel": "aside.rail > div.rail__pie > button.btn.btn--fantasma",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Cerrar sesión"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Mi perfil"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "Tus datos y direcciones de entrega."
+      },
+      {
+        "sel": "section.card.rise > div.card__cuerpo > div",
+        "fs": 24,
+        "need": 3,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "section.card.rise > div.card__cuerpo > div (bg-image)",
+        "text": "CD"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 47,
+        "h": 43
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item.activo",
+        "tag": "a",
+        "label": "Perfil",
+        "w": 47,
+        "h": 43
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [],
+    "rail": {
+      "pos": "sticky",
+      "top": 0,
+      "bottom": 1024,
+      "h": 1024,
+      "w": 76
+    },
+    "mainPadBottom": "80px",
+    "bodyH": 1024,
+    "vh": 1024
+  },
+  {
+    "vp": "1280x900",
+    "route": "/spa/",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-1280x900-inicio.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 1289,
+        "right": 1729,
+        "w": 440
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 1290,
+        "right": 1729,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 1310,
+        "right": 1416,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 1392,
+        "right": 1416,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 1593,
+        "right": 1657,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 1671,
+        "right": 1709,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 1681,
+        "right": 1698,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 1686,
+        "right": 1694,
+        "w": 9
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > div.cajon__scroll",
+        "left": 1290,
+        "right": 1729,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "left": 1306,
+        "right": 1713,
+        "w": 407
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > div.grupo__cab",
+        "left": 1307,
+        "right": 1712,
+        "w": 405
+      },
+      {
+        "sel": "section.grupo > div.grupo__cab > span.grupo__nom",
+        "left": 1321,
+        "right": 1422,
+        "w": 101
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "a.marca > span.marca__texto > span",
+        "fs": 11,
+        "text": "B2B"
+      },
+      {
+        "sel": "a.rail__cuenta > span > small",
+        "fs": 11.5,
+        "text": "comercio"
+      },
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "aside.rail > a.marca > span.marca__logo",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > a.marca > span.marca__logo (bg-image)",
+        "text": "A"
+      },
+      {
+        "sel": "a.marca > span.marca__texto > strong",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Ares"
+      },
+      {
+        "sel": "a.marca > span.marca__texto > span",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.37,
+        "fg": "rgb(143, 167, 154)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "B2B"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > nav.nav > a.nav__item.activo (bg-image)",
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Perfil"
+      },
+      {
+        "sel": "a.rail__cuenta > span > strong",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 1.17,
+        "fg": "rgb(230, 239, 233)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "Casa de Toño"
+      },
+      {
+        "sel": "a.rail__cuenta > span > small",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.57,
+        "fg": "rgb(143, 167, 154)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "comercio"
+      },
+      {
+        "sel": "aside.rail > div.rail__pie > button.btn.btn--fantasma",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Cerrar sesión"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Inicio"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "¿Con qué empezamos hoy? Esto es lo que t"
+      },
+      {
+        "sel": "section.kpis.rise > a.kpi > span.kpi__nota",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > section.kpis.rise > a.kpi",
+        "text": "Ver pedidos"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item.activo",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 207,
+        "h": 39
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Buscar",
+        "w": 207,
+        "h": 39
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [],
+    "rail": {
+      "pos": "sticky",
+      "top": 0,
+      "bottom": 900,
+      "h": 900,
+      "w": 236
+    },
+    "mainPadBottom": "64px",
+    "bodyH": 900,
+    "vh": 900
+  },
+  {
+    "vp": "1280x900",
+    "route": "/spa/buscar",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-1280x900-buscar.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 1289,
+        "right": 1729,
+        "w": 440
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 1290,
+        "right": 1729,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 1310,
+        "right": 1416,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 1392,
+        "right": 1416,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 1593,
+        "right": 1657,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 1671,
+        "right": 1709,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 1681,
+        "right": 1698,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 1686,
+        "right": 1694,
+        "w": 9
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > div.cajon__scroll",
+        "left": 1290,
+        "right": 1729,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "left": 1306,
+        "right": 1713,
+        "w": 407
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > div.grupo__cab",
+        "left": 1307,
+        "right": 1712,
+        "w": 405
+      },
+      {
+        "sel": "section.grupo > div.grupo__cab > span.grupo__nom",
+        "left": 1321,
+        "right": 1422,
+        "w": 101
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "a.marca > span.marca__texto > span",
+        "fs": 11,
+        "text": "B2B"
+      },
+      {
+        "sel": "a.rail__cuenta > span > small",
+        "fs": 11.5,
+        "text": "comercio"
+      },
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "text": "+ IVA ·cajade12 piezas"
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "text": "+ IVA ·cajade6 piezas"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "aside.rail > a.marca > span.marca__logo",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > a.marca > span.marca__logo (bg-image)",
+        "text": "A"
+      },
+      {
+        "sel": "a.marca > span.marca__texto > strong",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Ares"
+      },
+      {
+        "sel": "a.marca > span.marca__texto > span",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.37,
+        "fg": "rgb(143, 167, 154)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "B2B"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > nav.nav > a.nav__item.activo (bg-image)",
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Perfil"
+      },
+      {
+        "sel": "a.rail__cuenta > span > strong",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 1.17,
+        "fg": "rgb(230, 239, 233)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "Casa de Toño"
+      },
+      {
+        "sel": "a.rail__cuenta > span > small",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.57,
+        "fg": "rgb(143, 167, 154)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "comercio"
+      },
+      {
+        "sel": "aside.rail > div.rail__pie > button.btn.btn--fantasma",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Cerrar sesión"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Buscar"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "10 productos de proveedores verificados "
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "+ IVA ·cajade12 piezas"
+      },
+      {
+        "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "Abarrotes"
+      },
+      {
+        "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "Ferretería"
+      },
+      {
+        "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "Limpieza"
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "+ IVA ·cajade6 piezas"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 207,
+        "h": 39
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item.activo",
+        "tag": "a",
+        "label": "Buscar",
+        "w": 207,
+        "h": 39
+      },
+      {
+        "sel": "div.producto__compra > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar uno de Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      },
+      {
+        "sel": "article.producto.rise > div.producto__compra > button.btn.btn--mini",
+        "tag": "button",
+        "label": "Agregar",
+        "w": 98,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [],
+    "rail": {
+      "pos": "sticky",
+      "top": 0,
+      "bottom": 900,
+      "h": 900,
+      "w": 236
+    },
+    "mainPadBottom": "64px",
+    "bodyH": 1177,
+    "vh": 900
+  },
+  {
+    "vp": "1280x900",
+    "route": "/spa/pedidos",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-1280x900-pedidos.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 1289,
+        "right": 1729,
+        "w": 440
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 1290,
+        "right": 1729,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 1310,
+        "right": 1416,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 1392,
+        "right": 1416,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 1593,
+        "right": 1657,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 1671,
+        "right": 1709,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 1681,
+        "right": 1698,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 1686,
+        "right": 1694,
+        "w": 9
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > div.cajon__scroll",
+        "left": 1290,
+        "right": 1729,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "left": 1306,
+        "right": 1713,
+        "w": 407
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > div.grupo__cab",
+        "left": 1307,
+        "right": 1712,
+        "w": 405
+      },
+      {
+        "sel": "section.grupo > div.grupo__cab > span.grupo__nom",
+        "left": 1321,
+        "right": 1422,
+        "w": 101
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "a.marca > span.marca__texto > span",
+        "fs": 11,
+        "text": "B2B"
+      },
+      {
+        "sel": "a.rail__cuenta > span > small",
+        "fs": 11.5,
+        "text": "comercio"
+      },
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Pedido"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Proveedor"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Estado"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Fecha"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Total"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "aside.rail > a.marca > span.marca__logo",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > a.marca > span.marca__logo (bg-image)",
+        "text": "A"
+      },
+      {
+        "sel": "a.marca > span.marca__texto > strong",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Ares"
+      },
+      {
+        "sel": "a.marca > span.marca__texto > span",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.37,
+        "fg": "rgb(143, 167, 154)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "B2B"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > nav.nav > a.nav__item.activo (bg-image)",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Perfil"
+      },
+      {
+        "sel": "a.rail__cuenta > span > strong",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 1.17,
+        "fg": "rgb(230, 239, 233)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "Casa de Toño"
+      },
+      {
+        "sel": "a.rail__cuenta > span > small",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.57,
+        "fg": "rgb(143, 167, 154)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "comercio"
+      },
+      {
+        "sel": "aside.rail > div.rail__pie > button.btn.btn--fantasma",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Cerrar sesión"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "Todo lo que has comprado y en qué va."
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Pedido"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Proveedor"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Estado"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Fecha"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Total"
+      },
+      {
+        "sel": "tr > td > div",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "2líneas"
+      },
+      {
+        "sel": "tr > td > div",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "1línea"
+      },
+      {
+        "sel": "tr > td > div",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "3líneas"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 207,
+        "h": 39
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item.activo",
+        "tag": "a",
+        "label": "Pedidos",
+        "w": 207,
+        "h": 39
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [],
+    "rail": {
+      "pos": "sticky",
+      "top": 0,
+      "bottom": 900,
+      "h": 900,
+      "w": 236
+    },
+    "mainPadBottom": "64px",
+    "bodyH": 900,
+    "vh": 900
+  },
+  {
+    "vp": "1280x900",
+    "route": "/spa/perfil",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-1280x900-perfil.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 1289,
+        "right": 1729,
+        "w": 440
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 1290,
+        "right": 1729,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 1310,
+        "right": 1416,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 1392,
+        "right": 1416,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 1593,
+        "right": 1657,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 1671,
+        "right": 1709,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 1681,
+        "right": 1698,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 1686,
+        "right": 1694,
+        "w": 9
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > div.cajon__scroll",
+        "left": 1290,
+        "right": 1729,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "left": 1306,
+        "right": 1713,
+        "w": 407
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > div.grupo__cab",
+        "left": 1307,
+        "right": 1712,
+        "w": 405
+      },
+      {
+        "sel": "section.grupo > div.grupo__cab > span.grupo__nom",
+        "left": 1321,
+        "right": 1422,
+        "w": 101
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "a.marca > span.marca__texto > span",
+        "fs": 11,
+        "text": "B2B"
+      },
+      {
+        "sel": "a.rail__cuenta > span > small",
+        "fs": 11.5,
+        "text": "comercio"
+      },
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "aside.rail > a.marca > span.marca__logo",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > a.marca > span.marca__logo (bg-image)",
+        "text": "A"
+      },
+      {
+        "sel": "a.marca > span.marca__texto > strong",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Ares"
+      },
+      {
+        "sel": "a.marca > span.marca__texto > span",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.37,
+        "fg": "rgb(143, 167, 154)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "B2B"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > nav.nav > a.nav__item.activo (bg-image)",
+        "text": "Perfil"
+      },
+      {
+        "sel": "a.rail__cuenta > span > strong",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 1.17,
+        "fg": "rgb(230, 239, 233)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "Casa de Toño"
+      },
+      {
+        "sel": "a.rail__cuenta > span > small",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.57,
+        "fg": "rgb(143, 167, 154)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "comercio"
+      },
+      {
+        "sel": "aside.rail > div.rail__pie > button.btn.btn--fantasma",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Cerrar sesión"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Mi perfil"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "Tus datos y direcciones de entrega."
+      },
+      {
+        "sel": "section.card.rise > div.card__cuerpo > div",
+        "fs": 24,
+        "need": 3,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "section.card.rise > div.card__cuerpo > div (bg-image)",
+        "text": "CD"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 207,
+        "h": 39
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item.activo",
+        "tag": "a",
+        "label": "Perfil",
+        "w": 207,
+        "h": 39
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [],
+    "rail": {
+      "pos": "sticky",
+      "top": 0,
+      "bottom": 900,
+      "h": 900,
+      "w": 236
+    },
+    "mainPadBottom": "64px",
+    "bodyH": 900,
+    "vh": 900
+  },
+  {
+    "vp": "1440x900",
+    "route": "/spa/",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-1440x900-inicio.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 1449,
+        "right": 1889,
+        "w": 440
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 1450,
+        "right": 1889,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 1470,
+        "right": 1576,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 1552,
+        "right": 1576,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 1753,
+        "right": 1817,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 1831,
+        "right": 1869,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 1841,
+        "right": 1858,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 1846,
+        "right": 1854,
+        "w": 9
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > div.cajon__scroll",
+        "left": 1450,
+        "right": 1889,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "left": 1466,
+        "right": 1873,
+        "w": 407
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > div.grupo__cab",
+        "left": 1467,
+        "right": 1872,
+        "w": 405
+      },
+      {
+        "sel": "section.grupo > div.grupo__cab > span.grupo__nom",
+        "left": 1481,
+        "right": 1582,
+        "w": 101
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "a.marca > span.marca__texto > span",
+        "fs": 11,
+        "text": "B2B"
+      },
+      {
+        "sel": "a.rail__cuenta > span > small",
+        "fs": 11.5,
+        "text": "comercio"
+      },
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "aside.rail > a.marca > span.marca__logo",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > a.marca > span.marca__logo (bg-image)",
+        "text": "A"
+      },
+      {
+        "sel": "a.marca > span.marca__texto > strong",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Ares"
+      },
+      {
+        "sel": "a.marca > span.marca__texto > span",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.37,
+        "fg": "rgb(143, 167, 154)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "B2B"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > nav.nav > a.nav__item.activo (bg-image)",
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Perfil"
+      },
+      {
+        "sel": "a.rail__cuenta > span > strong",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 1.17,
+        "fg": "rgb(230, 239, 233)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "Casa de Toño"
+      },
+      {
+        "sel": "a.rail__cuenta > span > small",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.57,
+        "fg": "rgb(143, 167, 154)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "comercio"
+      },
+      {
+        "sel": "aside.rail > div.rail__pie > button.btn.btn--fantasma",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Cerrar sesión"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Inicio"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "¿Con qué empezamos hoy? Esto es lo que t"
+      },
+      {
+        "sel": "section.kpis.rise > a.kpi > span.kpi__nota",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > section.kpis.rise > a.kpi",
+        "text": "Ver pedidos"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item.activo",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 207,
+        "h": 39
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Buscar",
+        "w": 207,
+        "h": 39
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [],
+    "rail": {
+      "pos": "sticky",
+      "top": 0,
+      "bottom": 900,
+      "h": 900,
+      "w": 236
+    },
+    "mainPadBottom": "64px",
+    "bodyH": 900,
+    "vh": 900
+  },
+  {
+    "vp": "1440x900",
+    "route": "/spa/buscar",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-1440x900-buscar.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 1449,
+        "right": 1889,
+        "w": 440
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 1450,
+        "right": 1889,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 1470,
+        "right": 1576,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 1552,
+        "right": 1576,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 1753,
+        "right": 1817,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 1831,
+        "right": 1869,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 1841,
+        "right": 1858,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 1846,
+        "right": 1854,
+        "w": 9
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > div.cajon__scroll",
+        "left": 1450,
+        "right": 1889,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "left": 1466,
+        "right": 1873,
+        "w": 407
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > div.grupo__cab",
+        "left": 1467,
+        "right": 1872,
+        "w": 405
+      },
+      {
+        "sel": "section.grupo > div.grupo__cab > span.grupo__nom",
+        "left": 1481,
+        "right": 1582,
+        "w": 101
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "a.marca > span.marca__texto > span",
+        "fs": 11,
+        "text": "B2B"
+      },
+      {
+        "sel": "a.rail__cuenta > span > small",
+        "fs": 11.5,
+        "text": "comercio"
+      },
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "text": "+ IVA ·cajade12 piezas"
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "text": "+ IVA ·cajade6 piezas"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "aside.rail > a.marca > span.marca__logo",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > a.marca > span.marca__logo (bg-image)",
+        "text": "A"
+      },
+      {
+        "sel": "a.marca > span.marca__texto > strong",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Ares"
+      },
+      {
+        "sel": "a.marca > span.marca__texto > span",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.37,
+        "fg": "rgb(143, 167, 154)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "B2B"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > nav.nav > a.nav__item.activo (bg-image)",
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Perfil"
+      },
+      {
+        "sel": "a.rail__cuenta > span > strong",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 1.17,
+        "fg": "rgb(230, 239, 233)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "Casa de Toño"
+      },
+      {
+        "sel": "a.rail__cuenta > span > small",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.57,
+        "fg": "rgb(143, 167, 154)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "comercio"
+      },
+      {
+        "sel": "aside.rail > div.rail__pie > button.btn.btn--fantasma",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Cerrar sesión"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Buscar"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "10 productos de proveedores verificados "
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "+ IVA ·cajade12 piezas"
+      },
+      {
+        "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "Abarrotes"
+      },
+      {
+        "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "Ferretería"
+      },
+      {
+        "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "Limpieza"
+      },
+      {
+        "sel": "div.producto__cab > div.producto__precio > span",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "div > div.rejilla > article.producto.rise",
+        "text": "+ IVA ·cajade6 piezas"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 207,
+        "h": 39
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item.activo",
+        "tag": "a",
+        "label": "Buscar",
+        "w": 207,
+        "h": 39
+      },
+      {
+        "sel": "div.producto__compra > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar uno de Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      },
+      {
+        "sel": "article.producto.rise > div.producto__compra > button.btn.btn--mini",
+        "tag": "button",
+        "label": "Agregar",
+        "w": 98,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [],
+    "rail": {
+      "pos": "sticky",
+      "top": 0,
+      "bottom": 900,
+      "h": 900,
+      "w": 236
+    },
+    "mainPadBottom": "64px",
+    "bodyH": 1011,
+    "vh": 900
+  },
+  {
+    "vp": "1440x900",
+    "route": "/spa/pedidos",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-1440x900-pedidos.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 1449,
+        "right": 1889,
+        "w": 440
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 1450,
+        "right": 1889,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 1470,
+        "right": 1576,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 1552,
+        "right": 1576,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 1753,
+        "right": 1817,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 1831,
+        "right": 1869,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 1841,
+        "right": 1858,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 1846,
+        "right": 1854,
+        "w": 9
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > div.cajon__scroll",
+        "left": 1450,
+        "right": 1889,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "left": 1466,
+        "right": 1873,
+        "w": 407
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > div.grupo__cab",
+        "left": 1467,
+        "right": 1872,
+        "w": 405
+      },
+      {
+        "sel": "section.grupo > div.grupo__cab > span.grupo__nom",
+        "left": 1481,
+        "right": 1582,
+        "w": 101
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "a.marca > span.marca__texto > span",
+        "fs": 11,
+        "text": "B2B"
+      },
+      {
+        "sel": "a.rail__cuenta > span > small",
+        "fs": 11.5,
+        "text": "comercio"
+      },
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Pedido"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Proveedor"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Estado"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Fecha"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "text": "Total"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "aside.rail > a.marca > span.marca__logo",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > a.marca > span.marca__logo (bg-image)",
+        "text": "A"
+      },
+      {
+        "sel": "a.marca > span.marca__texto > strong",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Ares"
+      },
+      {
+        "sel": "a.marca > span.marca__texto > span",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.37,
+        "fg": "rgb(143, 167, 154)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "B2B"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > nav.nav > a.nav__item.activo (bg-image)",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Perfil"
+      },
+      {
+        "sel": "a.rail__cuenta > span > strong",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 1.17,
+        "fg": "rgb(230, 239, 233)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "Casa de Toño"
+      },
+      {
+        "sel": "a.rail__cuenta > span > small",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.57,
+        "fg": "rgb(143, 167, 154)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "comercio"
+      },
+      {
+        "sel": "aside.rail > div.rail__pie > button.btn.btn--fantasma",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Cerrar sesión"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "Todo lo que has comprado y en qué va."
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Pedido"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Proveedor"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Estado"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Fecha"
+      },
+      {
+        "sel": "thead > tr > th",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "Total"
+      },
+      {
+        "sel": "tr > td > div",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "2líneas"
+      },
+      {
+        "sel": "tr > td > div",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "1línea"
+      },
+      {
+        "sel": "tr > td > div",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "main.contenido > div > div.card.rise",
+        "text": "3líneas"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 207,
+        "h": 39
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item.activo",
+        "tag": "a",
+        "label": "Pedidos",
+        "w": 207,
+        "h": 39
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [],
+    "rail": {
+      "pos": "sticky",
+      "top": 0,
+      "bottom": 900,
+      "h": 900,
+      "w": 236
+    },
+    "mainPadBottom": "64px",
+    "bodyH": 900,
+    "vh": 900
+  },
+  {
+    "vp": "1440x900",
+    "route": "/spa/perfil",
+    "shot": "/home/rizutov/ares-react/qa/agenteB-1440x900-perfil.png",
+    "overflow": 0,
+    "overEls": [
+      {
+        "sel": "div.app > div.cajon > aside.cajon__caja",
+        "left": 1449,
+        "right": 1889,
+        "w": 440
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > header.cajon__cab",
+        "left": 1450,
+        "right": 1889,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > h2.cajon__titulo",
+        "left": 1470,
+        "right": 1576,
+        "w": 106
+      },
+      {
+        "sel": "header.cajon__cab > h2.cajon__titulo > span.cajon__cuenta",
+        "left": 1552,
+        "right": 1576,
+        "w": 24
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "left": 1753,
+        "right": 1817,
+        "w": 64
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "left": 1831,
+        "right": 1869,
+        "w": 38
+      },
+      {
+        "sel": "header.cajon__cab > button.icono-btn > svg",
+        "left": 1841,
+        "right": 1858,
+        "w": 17
+      },
+      {
+        "sel": "button.icono-btn > svg > path",
+        "left": 1846,
+        "right": 1854,
+        "w": 9
+      },
+      {
+        "sel": "div.cajon > aside.cajon__caja > div.cajon__scroll",
+        "left": 1450,
+        "right": 1889,
+        "w": 439
+      },
+      {
+        "sel": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "left": 1466,
+        "right": 1873,
+        "w": 407
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > div.grupo__cab",
+        "left": 1467,
+        "right": 1872,
+        "w": 405
+      },
+      {
+        "sel": "section.grupo > div.grupo__cab > span.grupo__nom",
+        "left": 1481,
+        "right": 1582,
+        "w": 101
+      }
+    ],
+    "smallFont": [
+      {
+        "sel": "a.marca > span.marca__texto > span",
+        "fs": 11,
+        "text": "B2B"
+      },
+      {
+        "sel": "a.rail__cuenta > span > small",
+        "fs": 11.5,
+        "text": "comercio"
+      },
+      {
+        "sel": "button#boton-carrito > span.carrito-btn__globo",
+        "fs": 11.5,
+        "text": "3"
+      }
+    ],
+    "lowContrast": [
+      {
+        "sel": "aside.rail > a.marca > span.marca__logo",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > a.marca > span.marca__logo (bg-image)",
+        "text": "A"
+      },
+      {
+        "sel": "a.marca > span.marca__texto > strong",
+        "fs": 15,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Ares"
+      },
+      {
+        "sel": "a.marca > span.marca__texto > span",
+        "fs": 11,
+        "need": 4.5,
+        "ratio": 2.37,
+        "fg": "rgb(143, 167, 154)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "B2B"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Inicio"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Buscar"
+      },
+      {
+        "sel": "nav.nav > a.nav__item > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Pedidos"
+      },
+      {
+        "sel": "nav.nav > a.nav__item.activo > span",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "aside.rail > nav.nav > a.nav__item.activo (bg-image)",
+        "text": "Perfil"
+      },
+      {
+        "sel": "a.rail__cuenta > span > strong",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 1.17,
+        "fg": "rgb(230, 239, 233)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "Casa de Toño"
+      },
+      {
+        "sel": "a.rail__cuenta > span > small",
+        "fs": 11.5,
+        "need": 4.5,
+        "ratio": 2.57,
+        "fg": "rgb(143, 167, 154)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.rail > div.rail__pie > a.rail__cuenta",
+        "text": "comercio"
+      },
+      {
+        "sel": "aside.rail > div.rail__pie > button.btn.btn--fantasma",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 1.43,
+        "fg": "rgb(195, 211, 201)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div#root > div.app > aside.rail (bg-image)",
+        "text": "Cerrar sesión"
+      },
+      {
+        "sel": "div.main > header.topbar > span.topbar__titulo",
+        "fs": 13,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "div.app > div.main > header.topbar",
+        "text": "Mi perfil"
+      },
+      {
+        "sel": "header.pagina-cab > div.rise > p",
+        "fs": 14,
+        "need": 4.5,
+        "ratio": 4.16,
+        "fg": "rgb(107, 122, 114)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "html > body",
+        "text": "Tus datos y direcciones de entrega."
+      },
+      {
+        "sel": "section.card.rise > div.card__cuerpo > div",
+        "fs": 24,
+        "need": 3,
+        "ratio": 1.09,
+        "fg": "rgb(255, 255, 255)",
+        "bg": "rgb(245, 246, 241)",
+        "bgSrc": "section.card.rise > div.card__cuerpo > div (bg-image)",
+        "text": "CD"
+      },
+      {
+        "sel": "div.linea > div.linea__info > span.linea__sub",
+        "fs": 12,
+        "need": 4.5,
+        "ratio": 2.48,
+        "fg": "rgb(154, 168, 160)",
+        "bg": "rgb(255, 255, 255)",
+        "bgSrc": "aside.cajon__caja > div.cajon__scroll > section.grupo",
+        "text": "cajade12 piezas"
+      }
+    ],
+    "smallTargets": [
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item",
+        "tag": "a",
+        "label": "Inicio",
+        "w": 207,
+        "h": 39
+      },
+      {
+        "sel": "aside.rail > nav.nav > a.nav__item.activo",
+        "tag": "a",
+        "label": "Perfil",
+        "w": 207,
+        "h": 39
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.btn.btn--fantasma",
+        "tag": "button",
+        "label": "Vaciar",
+        "w": 64,
+        "h": 36
+      },
+      {
+        "sel": "aside.cajon__caja > header.cajon__cab > button.icono-btn",
+        "tag": "button",
+        "label": "Cerrar carrito",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "div.cajon__scroll > section.grupo > a.grupo__mas",
+        "tag": "a",
+        "label": "+ Agregar más de este proveedor",
+        "w": 195,
+        "h": 17
+      },
+      {
+        "sel": "div.linea > div.stepper > button",
+        "tag": "button",
+        "label": "Quitar Azúcar estándar 50 kg",
+        "w": 34,
+        "h": 34
+      }
+    ],
+    "covered": [],
+    "rail": {
+      "pos": "sticky",
+      "top": 0,
+      "bottom": 900,
+      "h": 900,
+      "w": 236
+    },
+    "mainPadBottom": "64px",
+    "bodyH": 900,
+    "vh": 900
+  }
+]

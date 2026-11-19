@@ -1,0 +1,3421 @@
+{
+  "measure": [
+    {
+      "vp": "360x640",
+      "route": "/spa/",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-360x640-inicio.png",
+      "overflow": 0,
+      "overEls": [],
+      "smallFont": [
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 10.5,
+          "text": "Inicio"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Buscar"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Pedidos"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Perfil"
+        }
+      ],
+      "lowContrast": [
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 10.5,
+          "bold": false,
+          "ratio": 3.39,
+          "need": 4.5,
+          "fg": "rgb(255, 255, 255)",
+          "bg": "rgb(47, 158, 99)",
+          "text": "Inicio"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Inicio"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "¿Con qué empezamos hoy? Esto es lo q"
+        },
+        {
+          "sel": "section.kpis.rise > a.kpi > span.kpi__nota",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Ver pedidos"
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item.activo",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 43,
+          "h": 48
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Perfil",
+          "w": 42,
+          "h": 48
+        }
+      ],
+      "rail": {
+        "pos": "fixed",
+        "top": 575,
+        "h": 65,
+        "w": 360
+      },
+      "vh": 640,
+      "scrollH": 784
+    },
+    {
+      "vp": "360x640",
+      "route": "/spa/buscar",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-360x640-buscar.png",
+      "overflow": 0,
+      "overEls": [],
+      "smallFont": [
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Inicio"
+        },
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 10.5,
+          "text": "Buscar"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Pedidos"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Perfil"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "text": "+ IVA ·cajade12 piezas"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "text": "+ IVA ·cajade6 piezas"
+        }
+      ],
+      "lowContrast": [
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 10.5,
+          "bold": false,
+          "ratio": 3.39,
+          "need": 4.5,
+          "fg": "rgb(255, 255, 255)",
+          "bg": "rgb(47, 158, 99)",
+          "text": "Buscar"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Buscar"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "10 productos de proveedores verifica"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "+ IVA ·cajade12 piezas"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "+ IVA ·cajade6 piezas"
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 43,
+          "h": 48
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Perfil",
+          "w": 42,
+          "h": 48
+        },
+        {
+          "sel": "div.producto__compra > div.stepper > button",
+          "tag": "button",
+          "label": "Quitar uno de Azúcar estándar 50 k",
+          "w": 42,
+          "h": 42
+        }
+      ],
+      "rail": {
+        "pos": "fixed",
+        "top": 575,
+        "h": 65,
+        "w": 360
+      },
+      "vh": 640,
+      "scrollH": 2121
+    },
+    {
+      "vp": "360x640",
+      "route": "/spa/pedidos",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-360x640-pedidos.png",
+      "overflow": 0,
+      "overEls": [
+        {
+          "sel": "div > div.card.rise > table.tabla",
+          "left": 15,
+          "right": 535,
+          "w": 520,
+          "text": "PedidoProveedorEstadoFechaTota"
+        },
+        {
+          "sel": "div.card.rise > table.tabla > thead",
+          "left": 15,
+          "right": 535,
+          "w": 520,
+          "text": "PedidoProveedorEstadoFechaTota"
+        },
+        {
+          "sel": "table.tabla > thead > tr",
+          "left": 15,
+          "right": 535,
+          "w": 520,
+          "text": "PedidoProveedorEstadoFechaTota"
+        },
+        {
+          "sel": "thead > tr > th",
+          "left": 211,
+          "right": 376,
+          "w": 165,
+          "text": "Estado"
+        },
+        {
+          "sel": "thead > tr > th",
+          "left": 376,
+          "right": 444,
+          "w": 68,
+          "text": "Fecha"
+        },
+        {
+          "sel": "thead > tr > th",
+          "left": 444,
+          "right": 535,
+          "w": 91,
+          "text": "Total"
+        },
+        {
+          "sel": "div.card.rise > table.tabla > tbody",
+          "left": 15,
+          "right": 535,
+          "w": 520,
+          "text": "f5c501fb2 líneasAbarrotes Maru"
+        },
+        {
+          "sel": "table.tabla > tbody > tr",
+          "left": 15,
+          "right": 535,
+          "w": 520,
+          "text": "f5c501fb2 líneasAbarrotes Maru"
+        }
+      ],
+      "smallFont": [
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Inicio"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Buscar"
+        },
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 10.5,
+          "text": "Pedidos"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Perfil"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Pedido"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Proveedor"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Estado"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Fecha"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Total"
+        }
+      ],
+      "lowContrast": [
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 10.5,
+          "bold": false,
+          "ratio": 3.39,
+          "need": 4.5,
+          "fg": "rgb(255, 255, 255)",
+          "bg": "rgb(47, 158, 99)",
+          "text": "Pedidos"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Pedidos"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Todo lo que has comprado y en qué va"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Pedido"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Proveedor"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Estado"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Fecha"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Total"
+        },
+        {
+          "sel": "tr > td > div",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "2líneas"
+        },
+        {
+          "sel": "tr > td > div",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "1línea"
+        },
+        {
+          "sel": "tr > td > div",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "3líneas"
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 43,
+          "h": 48
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Perfil",
+          "w": 42,
+          "h": 48
+        }
+      ],
+      "rail": {
+        "pos": "fixed",
+        "top": 575,
+        "h": 65,
+        "w": 360
+      },
+      "vh": 640,
+      "scrollH": 937
+    },
+    {
+      "vp": "360x640",
+      "route": "/spa/perfil",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-360x640-perfil.png",
+      "overflow": 0,
+      "overEls": [],
+      "smallFont": [
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Inicio"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Buscar"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Pedidos"
+        },
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 10.5,
+          "text": "Perfil"
+        }
+      ],
+      "lowContrast": [
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 10.5,
+          "bold": false,
+          "ratio": 3.39,
+          "need": 4.5,
+          "fg": "rgb(255, 255, 255)",
+          "bg": "rgb(47, 158, 99)",
+          "text": "Perfil"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Mi perfil"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Tus datos y direcciones de entrega."
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 43,
+          "h": 48
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item.activo",
+          "tag": "a",
+          "label": "Perfil",
+          "w": 42,
+          "h": 48
+        }
+      ],
+      "rail": {
+        "pos": "fixed",
+        "top": 575,
+        "h": 65,
+        "w": 360
+      },
+      "vh": 640,
+      "scrollH": 711
+    },
+    {
+      "vp": "390x844",
+      "route": "/spa/",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-390x844-inicio.png",
+      "overflow": 0,
+      "overEls": [],
+      "smallFont": [
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 10.5,
+          "text": "Inicio"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Buscar"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Pedidos"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Perfil"
+        }
+      ],
+      "lowContrast": [
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 10.5,
+          "bold": false,
+          "ratio": 3.39,
+          "need": 4.5,
+          "fg": "rgb(255, 255, 255)",
+          "bg": "rgb(47, 158, 99)",
+          "text": "Inicio"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Inicio"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "¿Con qué empezamos hoy? Esto es lo q"
+        },
+        {
+          "sel": "section.kpis.rise > a.kpi > span.kpi__nota",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Ver pedidos"
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item.activo",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 43,
+          "h": 48
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Perfil",
+          "w": 42,
+          "h": 48
+        }
+      ],
+      "rail": {
+        "pos": "fixed",
+        "top": 779,
+        "h": 65,
+        "w": 390
+      },
+      "vh": 844,
+      "scrollH": 844
+    },
+    {
+      "vp": "390x844",
+      "route": "/spa/buscar",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-390x844-buscar.png",
+      "overflow": 0,
+      "overEls": [],
+      "smallFont": [
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Inicio"
+        },
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 10.5,
+          "text": "Buscar"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Pedidos"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Perfil"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "text": "+ IVA ·cajade12 piezas"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "text": "+ IVA ·cajade6 piezas"
+        }
+      ],
+      "lowContrast": [
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 10.5,
+          "bold": false,
+          "ratio": 3.39,
+          "need": 4.5,
+          "fg": "rgb(255, 255, 255)",
+          "bg": "rgb(47, 158, 99)",
+          "text": "Buscar"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Buscar"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "10 productos de proveedores verifica"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "+ IVA ·cajade12 piezas"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "+ IVA ·cajade6 piezas"
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 43,
+          "h": 48
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Perfil",
+          "w": 42,
+          "h": 48
+        },
+        {
+          "sel": "div.producto__compra > div.stepper > button",
+          "tag": "button",
+          "label": "Quitar uno de Azúcar estándar 50 k",
+          "w": 42,
+          "h": 42
+        }
+      ],
+      "rail": {
+        "pos": "fixed",
+        "top": 779,
+        "h": 65,
+        "w": 390
+      },
+      "vh": 844,
+      "scrollH": 2102
+    },
+    {
+      "vp": "390x844",
+      "route": "/spa/pedidos",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-390x844-pedidos.png",
+      "overflow": 0,
+      "overEls": [
+        {
+          "sel": "div > div.card.rise > table.tabla",
+          "left": 15,
+          "right": 535,
+          "w": 520,
+          "text": "PedidoProveedorEstadoFechaTota"
+        },
+        {
+          "sel": "div.card.rise > table.tabla > thead",
+          "left": 15,
+          "right": 535,
+          "w": 520,
+          "text": "PedidoProveedorEstadoFechaTota"
+        },
+        {
+          "sel": "table.tabla > thead > tr",
+          "left": 15,
+          "right": 535,
+          "w": 520,
+          "text": "PedidoProveedorEstadoFechaTota"
+        },
+        {
+          "sel": "thead > tr > th",
+          "left": 376,
+          "right": 444,
+          "w": 68,
+          "text": "Fecha"
+        },
+        {
+          "sel": "thead > tr > th",
+          "left": 444,
+          "right": 535,
+          "w": 91,
+          "text": "Total"
+        },
+        {
+          "sel": "div.card.rise > table.tabla > tbody",
+          "left": 15,
+          "right": 535,
+          "w": 520,
+          "text": "f5c501fb2 líneasAbarrotes Maru"
+        },
+        {
+          "sel": "table.tabla > tbody > tr",
+          "left": 15,
+          "right": 535,
+          "w": 520,
+          "text": "f5c501fb2 líneasAbarrotes Maru"
+        },
+        {
+          "sel": "tbody > tr > td",
+          "left": 376,
+          "right": 444,
+          "w": 68,
+          "text": "hace 26 min"
+        }
+      ],
+      "smallFont": [
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Inicio"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Buscar"
+        },
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 10.5,
+          "text": "Pedidos"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Perfil"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Pedido"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Proveedor"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Estado"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Fecha"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Total"
+        }
+      ],
+      "lowContrast": [
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 10.5,
+          "bold": false,
+          "ratio": 3.39,
+          "need": 4.5,
+          "fg": "rgb(255, 255, 255)",
+          "bg": "rgb(47, 158, 99)",
+          "text": "Pedidos"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Pedidos"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Todo lo que has comprado y en qué va"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Pedido"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Proveedor"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Estado"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Fecha"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Total"
+        },
+        {
+          "sel": "tr > td > div",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "2líneas"
+        },
+        {
+          "sel": "tr > td > div",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "1línea"
+        },
+        {
+          "sel": "tr > td > div",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "3líneas"
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 43,
+          "h": 48
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Perfil",
+          "w": 42,
+          "h": 48
+        }
+      ],
+      "rail": {
+        "pos": "fixed",
+        "top": 779,
+        "h": 65,
+        "w": 390
+      },
+      "vh": 844,
+      "scrollH": 937
+    },
+    {
+      "vp": "390x844",
+      "route": "/spa/perfil",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-390x844-perfil.png",
+      "overflow": 34,
+      "overEls": [
+        {
+          "sel": "div.card__cuerpo > div > h2",
+          "left": 123,
+          "right": 424,
+          "w": 301,
+          "text": "Casa de Toño"
+        },
+        {
+          "sel": "div.card__cuerpo > div > span",
+          "left": 123,
+          "right": 424,
+          "w": 301,
+          "text": "comercio@didi2.mx"
+        },
+        {
+          "sel": "div.card__cuerpo > div > div",
+          "left": 123,
+          "right": 424,
+          "w": 301,
+          "text": "comercioMiembro desde noviembr"
+        },
+        {
+          "sel": "div > div > span.chip",
+          "left": 204,
+          "right": 424,
+          "w": 219,
+          "text": "Miembro desde noviembre de 202"
+        }
+      ],
+      "smallFont": [
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Inicio"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Buscar"
+        },
+        {
+          "sel": "nav.nav > a.nav__item > span",
+          "fs": 10.5,
+          "text": "Pedidos"
+        },
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 10.5,
+          "text": "Perfil"
+        }
+      ],
+      "lowContrast": [
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 10.5,
+          "bold": false,
+          "ratio": 3.39,
+          "need": 4.5,
+          "fg": "rgb(255, 255, 255)",
+          "bg": "rgb(47, 158, 99)",
+          "text": "Perfil"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Mi perfil"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Tus datos y direcciones de entrega."
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 43,
+          "h": 48
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item.activo",
+          "tag": "a",
+          "label": "Perfil",
+          "w": 42,
+          "h": 48
+        }
+      ],
+      "rail": {
+        "pos": "fixed",
+        "top": 779,
+        "h": 65,
+        "w": 390
+      },
+      "vh": 844,
+      "scrollH": 844
+    },
+    {
+      "vp": "768x1024",
+      "route": "/spa/",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-768x1024-inicio.png",
+      "overflow": 0,
+      "overEls": [],
+      "smallFont": [],
+      "lowContrast": [
+        {
+          "sel": "a.rail__cuenta > span > strong",
+          "fs": 13,
+          "bold": true,
+          "ratio": 1.17,
+          "need": 4.5,
+          "fg": "rgb(230, 239, 233)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Casa de Toño"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Inicio"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "¿Con qué empezamos hoy? Esto es lo q"
+        },
+        {
+          "sel": "section.kpis.rise > a.kpi > span.kpi__nota",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Ver pedidos"
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item.activo",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 47,
+          "h": 43
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Buscar",
+          "w": 47,
+          "h": 43
+        }
+      ],
+      "rail": {
+        "pos": "sticky",
+        "top": 0,
+        "h": 1024,
+        "w": 76
+      },
+      "vh": 1024,
+      "scrollH": 1024
+    },
+    {
+      "vp": "768x1024",
+      "route": "/spa/buscar",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-768x1024-buscar.png",
+      "overflow": 0,
+      "overEls": [],
+      "smallFont": [
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "text": "+ IVA ·cajade12 piezas"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "text": "+ IVA ·cajade6 piezas"
+        }
+      ],
+      "lowContrast": [
+        {
+          "sel": "a.rail__cuenta > span > strong",
+          "fs": 13,
+          "bold": true,
+          "ratio": 1.17,
+          "need": 4.5,
+          "fg": "rgb(230, 239, 233)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Casa de Toño"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Buscar"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "10 productos de proveedores verifica"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "+ IVA ·cajade12 piezas"
+        },
+        {
+          "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Abarrotes"
+        },
+        {
+          "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Ferretería"
+        },
+        {
+          "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Limpieza"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "+ IVA ·cajade6 piezas"
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 47,
+          "h": 43
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item.activo",
+          "tag": "a",
+          "label": "Buscar",
+          "w": 47,
+          "h": 43
+        },
+        {
+          "sel": "div.producto__compra > div.stepper > button",
+          "tag": "button",
+          "label": "Quitar uno de Azúcar estándar 50 k",
+          "w": 34,
+          "h": 34
+        },
+        {
+          "sel": "article.producto.rise > div.producto__compra > button.btn.btn--mini",
+          "tag": "button",
+          "label": "Agregar",
+          "w": 98,
+          "h": 36
+        }
+      ],
+      "rail": {
+        "pos": "sticky",
+        "top": 0,
+        "h": 1024,
+        "w": 76
+      },
+      "vh": 1024,
+      "scrollH": 2016
+    },
+    {
+      "vp": "768x1024",
+      "route": "/spa/pedidos",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-768x1024-pedidos.png",
+      "overflow": 0,
+      "overEls": [],
+      "smallFont": [
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Pedido"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Proveedor"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Estado"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Fecha"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Total"
+        }
+      ],
+      "lowContrast": [
+        {
+          "sel": "a.rail__cuenta > span > strong",
+          "fs": 13,
+          "bold": true,
+          "ratio": 1.17,
+          "need": 4.5,
+          "fg": "rgb(230, 239, 233)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Casa de Toño"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Pedidos"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Todo lo que has comprado y en qué va"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Pedido"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Proveedor"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Estado"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Fecha"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Total"
+        },
+        {
+          "sel": "tr > td > div",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "2líneas"
+        },
+        {
+          "sel": "tr > td > div",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "1línea"
+        },
+        {
+          "sel": "tr > td > div",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "3líneas"
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 47,
+          "h": 43
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item.activo",
+          "tag": "a",
+          "label": "Pedidos",
+          "w": 47,
+          "h": 43
+        }
+      ],
+      "rail": {
+        "pos": "sticky",
+        "top": 0,
+        "h": 1024,
+        "w": 76
+      },
+      "vh": 1024,
+      "scrollH": 1024
+    },
+    {
+      "vp": "768x1024",
+      "route": "/spa/perfil",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-768x1024-perfil.png",
+      "overflow": 0,
+      "overEls": [],
+      "smallFont": [],
+      "lowContrast": [
+        {
+          "sel": "a.rail__cuenta > span > strong",
+          "fs": 13,
+          "bold": true,
+          "ratio": 1.17,
+          "need": 4.5,
+          "fg": "rgb(230, 239, 233)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Casa de Toño"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Mi perfil"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Tus datos y direcciones de entrega."
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 47,
+          "h": 43
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item.activo",
+          "tag": "a",
+          "label": "Perfil",
+          "w": 47,
+          "h": 43
+        }
+      ],
+      "rail": {
+        "pos": "sticky",
+        "top": 0,
+        "h": 1024,
+        "w": 76
+      },
+      "vh": 1024,
+      "scrollH": 1024
+    },
+    {
+      "vp": "1280x900",
+      "route": "/spa/",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-1280x900-inicio.png",
+      "overflow": 0,
+      "overEls": [],
+      "smallFont": [
+        {
+          "sel": "a.marca > span.marca__texto > span",
+          "fs": 11,
+          "text": "B2B"
+        },
+        {
+          "sel": "a.rail__cuenta > span > small",
+          "fs": 11.5,
+          "text": "comercio"
+        }
+      ],
+      "lowContrast": [
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 14,
+          "bold": false,
+          "ratio": 3.39,
+          "need": 4.5,
+          "fg": "rgb(255, 255, 255)",
+          "bg": "rgb(47, 158, 99)",
+          "text": "Inicio"
+        },
+        {
+          "sel": "a.rail__cuenta > span > strong",
+          "fs": 13,
+          "bold": true,
+          "ratio": 1.17,
+          "need": 4.5,
+          "fg": "rgb(230, 239, 233)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Casa de Toño"
+        },
+        {
+          "sel": "a.rail__cuenta > span > small",
+          "fs": 11.5,
+          "bold": false,
+          "ratio": 2.57,
+          "need": 4.5,
+          "fg": "rgb(143, 167, 154)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "comercio"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Inicio"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "¿Con qué empezamos hoy? Esto es lo q"
+        },
+        {
+          "sel": "section.kpis.rise > a.kpi > span.kpi__nota",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Ver pedidos"
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item.activo",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 207,
+          "h": 39
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Buscar",
+          "w": 207,
+          "h": 39
+        }
+      ],
+      "rail": {
+        "pos": "sticky",
+        "top": 0,
+        "h": 900,
+        "w": 236
+      },
+      "vh": 900,
+      "scrollH": 900
+    },
+    {
+      "vp": "1280x900",
+      "route": "/spa/buscar",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-1280x900-buscar.png",
+      "overflow": 0,
+      "overEls": [],
+      "smallFont": [
+        {
+          "sel": "a.marca > span.marca__texto > span",
+          "fs": 11,
+          "text": "B2B"
+        },
+        {
+          "sel": "a.rail__cuenta > span > small",
+          "fs": 11.5,
+          "text": "comercio"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "text": "+ IVA ·cajade12 piezas"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "text": "+ IVA ·cajade6 piezas"
+        }
+      ],
+      "lowContrast": [
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 14,
+          "bold": false,
+          "ratio": 3.39,
+          "need": 4.5,
+          "fg": "rgb(255, 255, 255)",
+          "bg": "rgb(47, 158, 99)",
+          "text": "Buscar"
+        },
+        {
+          "sel": "a.rail__cuenta > span > strong",
+          "fs": 13,
+          "bold": true,
+          "ratio": 1.17,
+          "need": 4.5,
+          "fg": "rgb(230, 239, 233)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Casa de Toño"
+        },
+        {
+          "sel": "a.rail__cuenta > span > small",
+          "fs": 11.5,
+          "bold": false,
+          "ratio": 2.57,
+          "need": 4.5,
+          "fg": "rgb(143, 167, 154)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "comercio"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Buscar"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "10 productos de proveedores verifica"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "+ IVA ·cajade12 piezas"
+        },
+        {
+          "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Abarrotes"
+        },
+        {
+          "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Ferretería"
+        },
+        {
+          "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Limpieza"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "+ IVA ·cajade6 piezas"
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 207,
+          "h": 39
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item.activo",
+          "tag": "a",
+          "label": "Buscar",
+          "w": 207,
+          "h": 39
+        },
+        {
+          "sel": "div.producto__compra > div.stepper > button",
+          "tag": "button",
+          "label": "Quitar uno de Azúcar estándar 50 k",
+          "w": 34,
+          "h": 34
+        },
+        {
+          "sel": "article.producto.rise > div.producto__compra > button.btn.btn--mini",
+          "tag": "button",
+          "label": "Agregar",
+          "w": 98,
+          "h": 36
+        }
+      ],
+      "rail": {
+        "pos": "sticky",
+        "top": 0,
+        "h": 900,
+        "w": 236
+      },
+      "vh": 900,
+      "scrollH": 1177
+    },
+    {
+      "vp": "1280x900",
+      "route": "/spa/pedidos",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-1280x900-pedidos.png",
+      "overflow": 0,
+      "overEls": [],
+      "smallFont": [
+        {
+          "sel": "a.marca > span.marca__texto > span",
+          "fs": 11,
+          "text": "B2B"
+        },
+        {
+          "sel": "a.rail__cuenta > span > small",
+          "fs": 11.5,
+          "text": "comercio"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Pedido"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Proveedor"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Estado"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Fecha"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "text": "Total"
+        }
+      ],
+      "lowContrast": [
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 14,
+          "bold": false,
+          "ratio": 3.39,
+          "need": 4.5,
+          "fg": "rgb(255, 255, 255)",
+          "bg": "rgb(47, 158, 99)",
+          "text": "Pedidos"
+        },
+        {
+          "sel": "a.rail__cuenta > span > strong",
+          "fs": 13,
+          "bold": true,
+          "ratio": 1.17,
+          "need": 4.5,
+          "fg": "rgb(230, 239, 233)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Casa de Toño"
+        },
+        {
+          "sel": "a.rail__cuenta > span > small",
+          "fs": 11.5,
+          "bold": false,
+          "ratio": 2.57,
+          "need": 4.5,
+          "fg": "rgb(143, 167, 154)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "comercio"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Pedidos"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Todo lo que has comprado y en qué va"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Pedido"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Proveedor"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Estado"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Fecha"
+        },
+        {
+          "sel": "thead > tr > th",
+          "fs": 11,
+          "bold": true,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Total"
+        },
+        {
+          "sel": "tr > td > div",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "2líneas"
+        },
+        {
+          "sel": "tr > td > div",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "1línea"
+        },
+        {
+          "sel": "tr > td > div",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "3líneas"
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 207,
+          "h": 39
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item.activo",
+          "tag": "a",
+          "label": "Pedidos",
+          "w": 207,
+          "h": 39
+        }
+      ],
+      "rail": {
+        "pos": "sticky",
+        "top": 0,
+        "h": 900,
+        "w": 236
+      },
+      "vh": 900,
+      "scrollH": 900
+    },
+    {
+      "vp": "1280x900",
+      "route": "/spa/perfil",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-1280x900-perfil.png",
+      "overflow": 0,
+      "overEls": [],
+      "smallFont": [
+        {
+          "sel": "a.marca > span.marca__texto > span",
+          "fs": 11,
+          "text": "B2B"
+        },
+        {
+          "sel": "a.rail__cuenta > span > small",
+          "fs": 11.5,
+          "text": "comercio"
+        }
+      ],
+      "lowContrast": [
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 14,
+          "bold": false,
+          "ratio": 3.39,
+          "need": 4.5,
+          "fg": "rgb(255, 255, 255)",
+          "bg": "rgb(47, 158, 99)",
+          "text": "Perfil"
+        },
+        {
+          "sel": "a.rail__cuenta > span > strong",
+          "fs": 13,
+          "bold": true,
+          "ratio": 1.17,
+          "need": 4.5,
+          "fg": "rgb(230, 239, 233)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Casa de Toño"
+        },
+        {
+          "sel": "a.rail__cuenta > span > small",
+          "fs": 11.5,
+          "bold": false,
+          "ratio": 2.57,
+          "need": 4.5,
+          "fg": "rgb(143, 167, 154)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "comercio"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Mi perfil"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Tus datos y direcciones de entrega."
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 207,
+          "h": 39
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item.activo",
+          "tag": "a",
+          "label": "Perfil",
+          "w": 207,
+          "h": 39
+        }
+      ],
+      "rail": {
+        "pos": "sticky",
+        "top": 0,
+        "h": 900,
+        "w": 236
+      },
+      "vh": 900,
+      "scrollH": 900
+    },
+    {
+      "vp": "1440x900",
+      "route": "/spa/",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-1440x900-inicio.png",
+      "overflow": 0,
+      "overEls": [],
+      "smallFont": [
+        {
+          "sel": "a.marca > span.marca__texto > span",
+          "fs": 11,
+          "text": "B2B"
+        },
+        {
+          "sel": "a.rail__cuenta > span > small",
+          "fs": 11.5,
+          "text": "comercio"
+        }
+      ],
+      "lowContrast": [
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 14,
+          "bold": false,
+          "ratio": 3.39,
+          "need": 4.5,
+          "fg": "rgb(255, 255, 255)",
+          "bg": "rgb(47, 158, 99)",
+          "text": "Inicio"
+        },
+        {
+          "sel": "a.rail__cuenta > span > strong",
+          "fs": 13,
+          "bold": true,
+          "ratio": 1.17,
+          "need": 4.5,
+          "fg": "rgb(230, 239, 233)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Casa de Toño"
+        },
+        {
+          "sel": "a.rail__cuenta > span > small",
+          "fs": 11.5,
+          "bold": false,
+          "ratio": 2.57,
+          "need": 4.5,
+          "fg": "rgb(143, 167, 154)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "comercio"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Inicio"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "¿Con qué empezamos hoy? Esto es lo q"
+        },
+        {
+          "sel": "section.kpis.rise > a.kpi > span.kpi__nota",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Ver pedidos"
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item.activo",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 207,
+          "h": 39
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Buscar",
+          "w": 207,
+          "h": 39
+        }
+      ],
+      "rail": {
+        "pos": "sticky",
+        "top": 0,
+        "h": 900,
+        "w": 236
+      },
+      "vh": 900,
+      "scrollH": 900
+    },
+    {
+      "vp": "1440x900",
+      "route": "/spa/buscar",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-1440x900-buscar.png",
+      "overflow": 0,
+      "overEls": [],
+      "smallFont": [
+        {
+          "sel": "a.marca > span.marca__texto > span",
+          "fs": 11,
+          "text": "B2B"
+        },
+        {
+          "sel": "a.rail__cuenta > span > small",
+          "fs": 11.5,
+          "text": "comercio"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "text": "+ IVA ·cajade12 piezas"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "text": "+ IVA ·cajade6 piezas"
+        }
+      ],
+      "lowContrast": [
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 14,
+          "bold": false,
+          "ratio": 3.39,
+          "need": 4.5,
+          "fg": "rgb(255, 255, 255)",
+          "bg": "rgb(47, 158, 99)",
+          "text": "Buscar"
+        },
+        {
+          "sel": "a.rail__cuenta > span > strong",
+          "fs": 13,
+          "bold": true,
+          "ratio": 1.17,
+          "need": 4.5,
+          "fg": "rgb(230, 239, 233)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Casa de Toño"
+        },
+        {
+          "sel": "a.rail__cuenta > span > small",
+          "fs": 11.5,
+          "bold": false,
+          "ratio": 2.57,
+          "need": 4.5,
+          "fg": "rgb(143, 167, 154)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "comercio"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Buscar"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "10 productos de proveedores verifica"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "+ IVA ·cajade12 piezas"
+        },
+        {
+          "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Abarrotes"
+        },
+        {
+          "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Ferretería"
+        },
+        {
+          "sel": "article.producto.rise > div.producto__meta > span.chip.chip--plano",
+          "fs": 12,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Limpieza"
+        },
+        {
+          "sel": "div.producto__cab > div.producto__precio > span",
+          "fs": 11.5,
+          "bold": false,
+          "ratio": 2.48,
+          "need": 4.5,
+          "fg": "rgb(154, 168, 160)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "+ IVA ·cajade6 piezas"
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 207,
+          "h": 39
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item.activo",
+          "tag": "a",
+          "label": "Buscar",
+          "w": 207,
+          "h": 39
+        },
+        {
+          "sel": "div.producto__compra > div.stepper > button",
+          "tag": "button",
+          "label": "Quitar uno de Azúcar estándar 50 k",
+          "w": 34,
+          "h": 34
+        },
+        {
+          "sel": "article.producto.rise > div.producto__compra > button.btn.btn--mini",
+          "tag": "button",
+          "label": "Agregar",
+          "w": 98,
+          "h": 36
+        }
+      ],
+      "rail": {
+        "pos": "sticky",
+        "top": 0,
+        "h": 900,
+        "w": 236
+      },
+      "vh": 900,
+      "scrollH": 1011
+    },
+    {
+      "vp": "1440x900",
+      "route": "/spa/pedidos",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-1440x900-pedidos.png",
+      "overflow": 0,
+      "overEls": [],
+      "smallFont": [],
+      "lowContrast": [],
+      "smallTargets": [],
+      "rail": null,
+      "vh": 900,
+      "scrollH": 900
+    },
+    {
+      "vp": "1440x900",
+      "route": "/spa/perfil",
+      "shot": "/home/rizutov/ares-react/qa/agenteB-1440x900-perfil.png",
+      "overflow": 0,
+      "overEls": [],
+      "smallFont": [
+        {
+          "sel": "a.marca > span.marca__texto > span",
+          "fs": 11,
+          "text": "B2B"
+        },
+        {
+          "sel": "a.rail__cuenta > span > small",
+          "fs": 11.5,
+          "text": "comercio"
+        }
+      ],
+      "lowContrast": [
+        {
+          "sel": "nav.nav > a.nav__item.activo > span",
+          "fs": 14,
+          "bold": false,
+          "ratio": 3.39,
+          "need": 4.5,
+          "fg": "rgb(255, 255, 255)",
+          "bg": "rgb(47, 158, 99)",
+          "text": "Perfil"
+        },
+        {
+          "sel": "a.rail__cuenta > span > strong",
+          "fs": 13,
+          "bold": true,
+          "ratio": 1.17,
+          "need": 4.5,
+          "fg": "rgb(230, 239, 233)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "Casa de Toño"
+        },
+        {
+          "sel": "a.rail__cuenta > span > small",
+          "fs": 11.5,
+          "bold": false,
+          "ratio": 2.57,
+          "need": 4.5,
+          "fg": "rgb(143, 167, 154)",
+          "bg": "rgb(255, 255, 255)",
+          "text": "comercio"
+        },
+        {
+          "sel": "div.main > header.topbar > span.topbar__titulo",
+          "fs": 13,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Mi perfil"
+        },
+        {
+          "sel": "header.pagina-cab > div.rise > p",
+          "fs": 14,
+          "bold": false,
+          "ratio": 4.16,
+          "need": 4.5,
+          "fg": "rgb(107, 122, 114)",
+          "bg": "rgb(245, 246, 241)",
+          "text": "Tus datos y direcciones de entrega."
+        }
+      ],
+      "smallTargets": [
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item",
+          "tag": "a",
+          "label": "Inicio",
+          "w": 207,
+          "h": 39
+        },
+        {
+          "sel": "aside.rail > nav.nav > a.nav__item.activo",
+          "tag": "a",
+          "label": "Perfil",
+          "w": 207,
+          "h": 39
+        }
+      ],
+      "rail": {
+        "pos": "sticky",
+        "top": 0,
+        "h": 900,
+        "w": 236
+      },
+      "vh": 900,
+      "scrollH": 900
+    }
+  ],
+  "bottom": {
+    "360x640 /spa/": {
+      "fixed": true,
+      "railTop": 575,
+      "railH": 65,
+      "padBottom": 96,
+      "lastEl": "acceso__texto",
+      "lastBottom": 513,
+      "coveredBy": null,
+      "atBottom": true,
+      "gap": 62
+    },
+    "360x640 /spa/buscar": {
+      "fixed": true,
+      "railTop": 575,
+      "railH": 65,
+      "padBottom": 96,
+      "lastEl": "btn btn--mini producto__btn",
+      "lastBottom": 529,
+      "coveredBy": null,
+      "atBottom": true,
+      "gap": 46
+    },
+    "360x640 /spa/pedidos": {
+      "fixed": true,
+      "railTop": 575,
+      "railH": 65,
+      "padBottom": 96,
+      "lastEl": "num",
+      "lastBottom": 543,
+      "coveredBy": null,
+      "atBottom": true,
+      "gap": 32
+    },
+    "360x640 /spa/perfil": {
+      "fixed": true,
+      "railTop": 575,
+      "railH": 65,
+      "padBottom": 96,
+      "lastEl": "DIV",
+      "lastBottom": 512,
+      "coveredBy": null,
+      "atBottom": true,
+      "gap": 63
+    },
+    "390x844 /spa/": {
+      "fixed": true,
+      "railTop": 779,
+      "railH": 65,
+      "padBottom": 96,
+      "lastEl": "acceso__texto",
+      "lastBottom": 641,
+      "coveredBy": null,
+      "atBottom": true,
+      "gap": 138
+    },
+    "390x844 /spa/buscar": {
+      "fixed": true,
+      "railTop": 779,
+      "railH": 65,
+      "padBottom": 96,
+      "lastEl": "btn btn--mini producto__btn",
+      "lastBottom": 733,
+      "coveredBy": null,
+      "atBottom": true,
+      "gap": 46
+    },
+    "390x844 /spa/pedidos": {
+      "fixed": true,
+      "railTop": 779,
+      "railH": 65,
+      "padBottom": 96,
+      "lastEl": "num",
+      "lastBottom": 747,
+      "coveredBy": null,
+      "atBottom": true,
+      "gap": 32
+    },
+    "390x844 /spa/perfil": {
+      "fixed": true,
+      "railTop": 779,
+      "railH": 65,
+      "padBottom": 96,
+      "lastEl": "DIV",
+      "lastBottom": 493,
+      "coveredBy": null,
+      "atBottom": true,
+      "gap": 286
+    }
+  },
+  "keyboard": {
+    "360x640": [
+      {
+        "tag": "a",
+        "cls": "nav__item ",
+        "label": "Inicio",
+        "inRail": true,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "a",
+        "cls": "nav__item activo",
+        "label": "Buscar",
+        "inRail": true,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "a",
+        "cls": "nav__item ",
+        "label": "Pedidos",
+        "inRail": true,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "a",
+        "cls": "nav__item ",
+        "label": "Perfil",
+        "inRail": true,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "icono-btn carrito-btn",
+        "label": "Abrir carrito",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "input",
+        "cls": "",
+        "label": "Buscar productos",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "none 3px rgb(15, 23, 20)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "select",
+        "cls": "",
+        "label": "Radio de búsqueda",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "none 3px rgb(15, 23, 20)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "select",
+        "cls": "",
+        "label": "Ordenar por",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "none 3px rgb(15, 23, 20)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "label": "Agregar uno de Azúcar está",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "btn btn--mini producto__btn",
+        "label": "Agregar",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "label": "Agregar uno de Café molido",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "btn btn--mini producto__btn",
+        "label": "Agregar",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "label": "Agregar uno de Martillo de",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "btn btn--mini producto__btn",
+        "label": "Agregar",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "label": "Agregar uno de Tornillo 1/",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "btn btn--mini producto__btn",
+        "label": "Agregar",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "label": "Agregar uno de Cloro 1 L",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "btn btn--mini producto__btn",
+        "label": "Agregar",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "label": "Agregar uno de Detergente ",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "btn btn--mini producto__btn",
+        "label": "Agregar",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "label": "Agregar uno de Producto CS",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "btn btn--mini producto__btn",
+        "label": "Agregar",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "label": "Agregar uno de Producto CS",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "btn btn--mini producto__btn",
+        "label": "Agregar",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "label": "Agregar uno de Café en gra",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "btn btn--mini producto__btn",
+        "label": "Agregar",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "yes"
+      }
+    ],
+    "1280x900": [
+      {
+        "tag": "a",
+        "cls": "marca",
+        "label": "AAresB2B",
+        "inRail": true,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "a",
+        "cls": "nav__item ",
+        "label": "Inicio",
+        "inRail": true,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "a",
+        "cls": "nav__item activo",
+        "label": "Buscar",
+        "inRail": true,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "a",
+        "cls": "nav__item ",
+        "label": "Pedidos",
+        "inRail": true,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "a",
+        "cls": "nav__item ",
+        "label": "Perfil",
+        "inRail": true,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "a",
+        "cls": "rail__cuenta",
+        "label": "CACasa de Toñocomercio",
+        "inRail": true,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "btn btn--fantasma",
+        "label": "Cerrar sesión",
+        "inRail": true,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "icono-btn carrito-btn",
+        "label": "Abrir carrito",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "input",
+        "cls": "",
+        "label": "Buscar productos",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "none 3px rgb(15, 23, 20)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "select",
+        "cls": "",
+        "label": "Radio de búsqueda",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "none 3px rgb(15, 23, 20)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "select",
+        "cls": "",
+        "label": "Ordenar por",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "none 3px rgb(15, 23, 20)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "label": "Agregar uno de Azúcar está",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "btn btn--mini producto__btn",
+        "label": "Agregar",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "label": "Agregar uno de Café molido",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "btn btn--mini producto__btn",
+        "label": "Agregar",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "label": "Agregar uno de Martillo de",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "btn btn--mini producto__btn",
+        "label": "Agregar",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "label": "Agregar uno de Tornillo 1/",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "btn btn--mini producto__btn",
+        "label": "Agregar",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "label": "Agregar uno de Cloro 1 L",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "btn btn--mini producto__btn",
+        "label": "Agregar",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "label": "Agregar uno de Detergente ",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "btn btn--mini producto__btn",
+        "label": "Agregar",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "label": "Agregar uno de Producto CS",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      },
+      {
+        "tag": "button",
+        "cls": "btn btn--mini producto__btn",
+        "label": "Agregar",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "yes"
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "label": "Agregar uno de Producto CS",
+        "inRail": false,
+        "inClosedDrawer": false,
+        "visible": true,
+        "focusVisible": true,
+        "outline": "solid 2px rgb(47, 158, 99)",
+        "shadow": "none"
+      }
+    ]
+  },
+  "drawer": {
+    "360x640": {
+      "before": {
+        "focusWidth": "BODY",
+        "caja": {
+          "w": 360,
+          "transform": "matrix(1, 0, 0, 1, 367.2, 0)",
+          "display": "flex",
+          "visibility": "visible",
+          "transition": "0.42s"
+        }
+      },
+      "open": {
+        "clase": "cajon abierto",
+        "ariaHidden": "false",
+        "cajaW": 360,
+        "cajaLeft": 0,
+        "cajaRight": 360,
+        "vw": 360,
+        "vh": 640,
+        "cajaH": 640,
+        "pctW": 100,
+        "focusInside": false,
+        "focusTag": "BUTTON",
+        "focusLabel": "Abrir carrito",
+        "scrollLock": "visible"
+      },
+      "afterEsc": {
+        "clase": "cajon ",
+        "ariaHidden": "true",
+        "focusTag": "BUTTON",
+        "focusLabel": "Abrir carrito"
+      }
+    },
+    "390x844": {
+      "before": {
+        "focusWidth": "BODY",
+        "caja": {
+          "w": 390,
+          "transform": "matrix(1, 0, 0, 1, 397.8, 0)",
+          "display": "flex",
+          "visibility": "visible",
+          "transition": "0.42s"
+        }
+      },
+      "open": {
+        "clase": "cajon abierto",
+        "ariaHidden": "false",
+        "cajaW": 390,
+        "cajaLeft": 0,
+        "cajaRight": 390,
+        "vw": 390,
+        "vh": 844,
+        "cajaH": 844,
+        "pctW": 100,
+        "focusInside": false,
+        "focusTag": "BUTTON",
+        "focusLabel": "Abrir carrito",
+        "scrollLock": "visible"
+      },
+      "afterEsc": {
+        "clase": "cajon ",
+        "ariaHidden": "true",
+        "focusTag": "BUTTON",
+        "focusLabel": "Abrir carrito"
+      }
+    },
+    "1280x900": {
+      "before": {
+        "focusWidth": "BODY",
+        "caja": {
+          "w": 440,
+          "transform": "matrix(1, 0, 0, 1, 448.8, 0)",
+          "display": "flex",
+          "visibility": "visible",
+          "transition": "0.42s"
+        }
+      },
+      "open": {
+        "clase": "cajon abierto",
+        "ariaHidden": "false",
+        "cajaW": 440,
+        "cajaLeft": 840,
+        "cajaRight": 1280,
+        "vw": 1280,
+        "vh": 900,
+        "cajaH": 900,
+        "pctW": 34,
+        "focusInside": false,
+        "focusTag": "BUTTON",
+        "focusLabel": "Abrir carrito",
+        "scrollLock": "visible"
+      },
+      "afterEsc": {
+        "clase": "cajon ",
+        "ariaHidden": "true",
+        "focusTag": "BUTTON",
+        "focusLabel": "Abrir carrito"
+      }
+    }
+  },
+  "perfilDiag": {
+    "scrollW": 424,
+    "clientW": 390,
+    "chain": [
+      {
+        "tag": "div",
+        "cls": "",
+        "w": 390,
+        "left": 0,
+        "right": 390,
+        "display": "block",
+        "minWidth": "0px",
+        "flex": "0 1 auto",
+        "whiteSpace": "normal",
+        "overflowX": "visible",
+        "text": "AAresB2BInicioBuscarPedidosPerfilCACasa "
+      },
+      {
+        "tag": "div",
+        "cls": "app",
+        "w": 390,
+        "left": 0,
+        "right": 390,
+        "display": "grid",
+        "minWidth": "0px",
+        "flex": "0 1 auto",
+        "whiteSpace": "normal",
+        "overflowX": "visible",
+        "text": "AAresB2BInicioBuscarPedidosPerfilCACasa "
+      },
+      {
+        "tag": "div",
+        "cls": "main",
+        "w": 390,
+        "left": 0,
+        "right": 390,
+        "display": "flex",
+        "minWidth": "0px",
+        "flex": "0 1 auto",
+        "whiteSpace": "normal",
+        "overflowX": "visible",
+        "text": "Mi perfilMi perfilTus datos y direccione"
+      },
+      {
+        "tag": "main",
+        "cls": "contenido",
+        "w": 390,
+        "left": 0,
+        "right": 390,
+        "display": "block",
+        "minWidth": "auto",
+        "flex": "0 1 auto",
+        "whiteSpace": "normal",
+        "overflowX": "visible",
+        "text": "Mi perfilTus datos y direcciones de entr"
+      },
+      {
+        "tag": "div",
+        "cls": "",
+        "w": 362,
+        "left": 14,
+        "right": 376,
+        "display": "grid",
+        "minWidth": "0px",
+        "flex": "0 1 auto",
+        "whiteSpace": "normal",
+        "overflowX": "visible",
+        "text": "Mi perfilTus datos y direcciones de entr"
+      },
+      {
+        "tag": "section",
+        "cls": "card rise",
+        "w": 362,
+        "left": 14,
+        "right": 376,
+        "display": "block",
+        "minWidth": "auto",
+        "flex": "0 1 auto",
+        "whiteSpace": "normal",
+        "overflowX": "visible",
+        "text": "CDCasa de Toñocomercio@didi2.mxcomercioM"
+      },
+      {
+        "tag": "div",
+        "cls": "card__cuerpo",
+        "w": 360,
+        "left": 15,
+        "right": 375,
+        "display": "flex",
+        "minWidth": "0px",
+        "flex": "0 1 auto",
+        "whiteSpace": "normal",
+        "overflowX": "visible",
+        "text": "CDCasa de Toñocomercio@didi2.mxcomercioM"
+      },
+      {
+        "tag": "div",
+        "cls": "",
+        "w": 234,
+        "left": 123,
+        "right": 357,
+        "display": "grid",
+        "minWidth": "220px",
+        "flex": "1 1 0%",
+        "whiteSpace": "normal",
+        "overflowX": "visible",
+        "text": "Casa de Toñocomercio@didi2.mxcomercioMie"
+      },
+      {
+        "tag": "h2",
+        "cls": "",
+        "w": 301,
+        "left": 123,
+        "right": 424,
+        "display": "block",
+        "minWidth": "auto",
+        "flex": "0 1 auto",
+        "whiteSpace": "normal",
+        "overflowX": "visible",
+        "text": "Casa de Toño"
+      }
+    ]
+  }
+}
