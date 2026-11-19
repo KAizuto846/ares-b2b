@@ -4,7 +4,7 @@ import { NavLink, useLocation } from 'react-router-dom'
 import Icon from './Icon'
 import { useSesion, useNavegar } from '../store/session'
 import { money } from '../lib/format'
-import { pedir } from '../lib/api'
+import { pedir, urlApp } from '../lib/api'
 import type { Carrito } from '../lib/api'
 
 const TITULOS: Record<string, string> = {
@@ -315,7 +315,7 @@ export default function Shell({ children }: { children: ReactNode }) {
         <div className="rail__pie">
           <a className="rail__cuenta" href="/spa/perfil" onClick={(e) => { e.preventDefault(); navegar('/perfil') }}>
             {usuario?.avatar
-              ? <img src={usuario.avatar} alt="" />
+              ? <img src={urlApp(usuario.avatar)} alt="" />
               : <span className="iniciales">{(usuario?.nombre ?? 'A').slice(0, 2).toUpperCase()}</span>}
             <span>
               <strong style={{ fontSize: 13, display: 'block' }}>{usuario?.nombre ?? 'Cuenta'}</strong>

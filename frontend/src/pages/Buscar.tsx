@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Icon from '../components/Icon'
 import { Skeleton, Vacio } from '../components/UI'
 import { money } from '../lib/format'
+import { urlApp } from '../lib/api'
 import { apiBusqueda } from '../lib/api-busqueda'
 import type { PuntoMapa, RespuestaMapa, RespuestaBusqueda, RespuestaOpciones, ResultadoBusqueda } from '../lib/api-busqueda'
 import { useSesion } from '../store/session'
@@ -60,13 +61,13 @@ function cargarLeaflet(): Promise<Leaflet> {
     if (!document.querySelector('link[data-leaflet]')) {
       const css = document.createElement('link')
       css.rel = 'stylesheet'
-      css.href = '/assets/leaflet/leaflet.css'
+      css.href = urlApp('/assets/leaflet/leaflet.css')
       css.dataset.leaflet = '1'
       document.head.appendChild(css)
     }
 
     const script = document.createElement('script')
-    script.src = '/assets/leaflet/leaflet.js'
+    script.src = urlApp('/assets/leaflet/leaflet.js')
     script.async = true
     script.dataset.leaflet = '1'
     script.onload = () => {
@@ -664,7 +665,7 @@ export default function Buscar() {
               {p.foto && (
                 <img
                   className="busq-ficha__foto"
-                  src={p.foto}
+                  src={urlApp(p.foto)}
                   alt=""
                   loading="lazy"
                   onError={(e) => {

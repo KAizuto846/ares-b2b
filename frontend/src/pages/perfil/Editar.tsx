@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { urlApp } from '../../lib/api'
 import { apiPerfil, leerDataUrl } from '../../lib/api-perfil'
 import type { Direccion, PerfilDetalle } from '../../lib/api-perfil'
 import { useNavegar } from '../../store/session'
@@ -185,7 +186,7 @@ export default function EditarPerfil() {
         <div className="card__cuerpo perfil-avatar-editor">
           <div className="perfil-avatar-editor__foto">
             {datos.usuario.avatar
-              ? <img src={datos.usuario.avatar} alt="Tu foto de perfil" width={96} height={96} />
+              ? <img src={urlApp(datos.usuario.avatar)} alt="Tu foto de perfil" width={96} height={96} />
               : <span aria-hidden="true">{datos.usuario.iniciales}</span>}
           </div>
           <div className="perfil-avatar-editor__acciones">

@@ -1,4 +1,4 @@
-import { pedir } from './api'
+import { pedir, urlApp } from './api'
 
 /**
  * Contrato JSON del punto de venta (backend/app/Api/pos.php).
@@ -189,7 +189,7 @@ export const claveProducto = (p: PosProducto) =>
   sinAcentos(`${p.nombre} ${p.sku ?? ''} ${p.codigo_barras ?? ''}`)
 
 /** Foto del producto; sin foto entra la genérica, nunca un hueco. */
-export const fotoProducto = (p: PosProducto) => p.imagen || '/assets/img/productos/generico.svg'
+export const fotoProducto = (p: PosProducto) => urlApp(p.imagen || '/assets/img/productos/generico.svg')
 
 /** Fecha y hora cortas para tablas y ticket (el helper fecha() es solo día). */
 export const fechaHora = (iso: string) => {

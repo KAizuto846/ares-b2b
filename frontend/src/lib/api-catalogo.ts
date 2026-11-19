@@ -1,4 +1,4 @@
-import { pedir } from './api'
+import { pedir, URL_API } from './api'
 
 /** Categoría activa del catálogo (las restringidas dejan el producto inactivo). */
 export type Categoria = { id: number; nombre: string; restringida: boolean }
@@ -102,7 +102,7 @@ export type ResultadoImportacion = {
 export type ErrorCatalogo = Error & { code?: string; campos?: Record<string, string> }
 
 async function pedirConCampos<T>(path: string, init: RequestInit): Promise<T> {
-  const res = await fetch(`/api${path}`, {
+  const res = await fetch(`${URL_API}${path}`, {
     credentials: 'same-origin',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
     ...init,
@@ -158,7 +158,7 @@ export const apiCatalogo = {
 }
 
 /** URL de la foto guardada (SIEMPRE por la API, nunca un archivo suelto). */
-export const urlFoto = (uuid: string) => `/api/catalogo/imagen/${uuid}`
+export const urlFoto = (uuid: string) => `${URL_API}/catalogo/imagen/${uuid}`
 
 /** Enlace de descarga de la plantilla CSV. */
-export const URL_PLANTILLA = '/api/catalogo/plantilla'
+export const URL_PLANTILLA = `${URL_API}/catalogo/plantilla`

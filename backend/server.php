@@ -3,11 +3,24 @@
 declare(strict_types=1);
 
 /**
- * Router para `php -S`: /api → JSON, /avatar y assets del panel → app PHP,
- * cualquier otra ruta → la SPA de React.
+ * Router para `php -S`.
+ *
+ * Sirve igual en dos escenarios:
+ *   · local:  http://127.0.0.1:8081/spa/…  (el navegador pide /spa/assets y /spa/api)
+ *   · Funnel: https://<nodo>.ts.net/spa/…  (Tailscale recorta el prefijo, así que
+ *             al proceso llegan /assets/… y /api/…)
  */
 
 $uri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
+
+// ---------------------------------------------------------------- API JSON
+// La SPA arma sus llamadas sobre su propia base: /spa/api/… en local.
+if (str_starts_with($uri, '/spa/api/')) {
+    $_SERVER['REQUEST_URI'] = substr($uri, 4);
+    require __DIR__ . '/public/api.php';
+
+    return true;
+}
 
 if (str_starts_with($uri, '/api/')) {
     require __DIR__ . '/public/api.php';
@@ -15,7 +28,50 @@ if (str_starts_with($uri, '/api/')) {
     return true;
 }
 
-// Endpoints del panel original que la SPA sigue usando (avatares, iconos).
+// ------------------------------------------------- archivos del build de React
+$tipos = [
+    'js'    => 'application/javascript; charset=utf-8',
+    'mjs'   => 'application/javascript; charset=utf-8',
+    'css'   => 'text/css; charset=utf-8',
+    'map'   => 'application/json; charset=utf-8',
+    'json'  => 'application/json; charset=utf-8',
+    'svg'   => 'image/svg+xml',
+    'png'   => 'image/png',
+    'jpg'   => 'image/jpeg',
+    'jpeg'  => 'image/jpeg',
+    'webp'  => 'image/webp',
+    'gif'   => 'image/gif',
+    'ico'   => 'image/x-icon',
+    'woff'  => 'font/woff',
+    'woff2' => 'font/woff2',
+    'ttf'   => 'font/ttf',
+    'txt'   => 'text/plain; charset=utf-8',
+];
+
+$extension = strtolower(pathinfo($uri, PATHINFO_EXTENSION));
+
+if (isset($tipos[$extension])) {
+    foreach ([__DIR__ . '/public' . $uri, __DIR__ . '/public/spa' . $uri] as $archivo) {
+        if (is_file($archivo)) {
+            header('Content-Type: ' . $tipos[$extension]);
+            header('Content-Length: ' . (string) filesize($archivo));
+            header('Cache-Control: public, max-age=31536000, immutable');
+            readfile($archivo);
+
+            return true;
+        }
+    }
+}
+
+// ------------------------------- piezas del panel viejo que la SPA reutiliza
+// Con la base de la app delante (/spa/avatar/2, /spa/assets/img/…).
+if (preg_match('#^/spa/(avatar|assets|manifest\.json|icon-)#', $uri) === 1) {
+    $_SERVER['REQUEST_URI'] = substr($uri, 4);
+    require __DIR__ . '/public/index.php';
+
+    return true;
+}
+
 if (preg_match('#^/(avatar|assets|manifest\.json|icon-)#', $uri) === 1) {
     require __DIR__ . '/public/index.php';
 
@@ -26,10 +82,12 @@ if ($uri !== '/' && is_file(__DIR__ . '/public' . $uri)) {
     return false;
 }
 
+// ------------------------------------------------------------------- la SPA
 $spa = __DIR__ . '/public/spa/index.html';
 
 if (is_file($spa)) {
     header('Content-Type: text/html; charset=utf-8');
+    header('Cache-Control: no-cache, must-revalidate');
     readfile($spa);
 
     return true;

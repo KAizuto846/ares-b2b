@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom'
 import Icon from '../components/Icon'
 import { Skeleton, Vacio } from '../components/UI'
 import { useNavegar } from '../store/session'
+import { urlApp } from '../lib/api'
 import { mensajes } from '../lib/api-mensajes'
 import type { Aviso, Contacto, Hilo, HiloAbierto, Mensaje, TabMensajes } from '../lib/api-mensajes'
 
@@ -356,7 +357,7 @@ export default function Mensajes() {
   // ---------------------------------------------------------------- piezas ui
   const glifo = (h: Hilo) =>
     h.avatar ? (
-      <img className="msg-avatar" src={h.avatar} alt="" width={38} height={38} />
+      <img className="msg-avatar" src={urlApp(h.avatar)} alt="" width={38} height={38} />
     ) : (
       <span className={`msg-avatar msg-avatar--iniciales ${h.tipo === 'soporte' ? 'msg-avatar--soporte' : ''}`}>
         {h.tipo === 'soporte' ? <Icon name="ayuda" size={19} /> : iniciales(h.titulo)}

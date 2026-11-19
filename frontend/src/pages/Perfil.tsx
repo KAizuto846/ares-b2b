@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
+import { urlApp } from '../lib/api'
 import { apiPerfil } from '../lib/api-perfil'
 import type { PerfilDetalle } from '../lib/api-perfil'
 import { fecha } from '../lib/format'
@@ -160,7 +161,7 @@ export default function Perfil() {
         <div className="perfil-ficha__cuerpo">
           <div className="perfil-ficha__foto">
             {datos.usuario.avatar
-              ? <img src={datos.usuario.avatar} alt={`Foto de ${datos.usuario.nombre}`} width={96} height={96} />
+              ? <img src={urlApp(datos.usuario.avatar)} alt={`Foto de ${datos.usuario.nombre}`} width={96} height={96} />
               : <span aria-hidden="true">{datos.usuario.iniciales}</span>}
           </div>
 

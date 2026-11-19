@@ -1,4 +1,4 @@
-import { pedir } from './api'
+import { pedir, URL_API } from './api'
 
 /** Punto de la serie de gastos/ingresos que pinta la gráfica de barras. */
 export type SeriePunto = { etiqueta: string; valor: number; alto?: number }
@@ -173,7 +173,7 @@ export const apiSolicitarFactura = (uuid: string) =>
 
 /** URL del CSV (se usa en un <a download>; lleva la cookie de sesión). */
 export const urlExport = (desde: string, hasta: string) =>
-  `/api/finanzas/export?desde=${encodeURIComponent(desde)}&hasta=${encodeURIComponent(hasta)}`
+  `${URL_API}/finanzas/export?desde=${encodeURIComponent(desde)}&hasta=${encodeURIComponent(hasta)}`
 
 /** RFC del SAT (persona física o moral). Misma regla que el backend. */
 export const RFC_VALIDO = /^[A-ZÑ&]{3,4}[0-9]{6}[A-Z0-9]{3}$/

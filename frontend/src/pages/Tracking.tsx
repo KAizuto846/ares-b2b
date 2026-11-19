@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { urlApp } from '../lib/api'
 import { estado } from '../lib/format'
 import { Skeleton } from '../components/UI'
 import { useNavegar } from '../store/session'
@@ -41,13 +42,13 @@ function cargarLeaflet(): Promise<LeafletGlobal> {
     if (!document.querySelector('link[data-leaflet]')) {
       const css = document.createElement('link')
       css.rel = 'stylesheet'
-      css.href = '/assets/leaflet/leaflet.css'
+      css.href = urlApp('/assets/leaflet/leaflet.css')
       css.dataset.leaflet = '1'
       document.head.appendChild(css)
     }
 
     const script = document.createElement('script')
-    script.src = '/assets/leaflet/leaflet.js'
+    script.src = urlApp('/assets/leaflet/leaflet.js')
     script.async = true
     script.dataset.leaflet = '1'
     script.onload = () => (window.L ? resolve(window.L) : reject(new Error('Leaflet no quedó disponible')))

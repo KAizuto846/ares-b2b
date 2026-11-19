@@ -1,8 +1,26 @@
 export type ApiError = { code: string; message: string }
 
+/**
+ * Base de la app tal como la ve el navegador ("/spa"). Se usa para armar las
+ * rutas de la API: en local quedan en /spa/api y el Funnel, que recorta el
+ * prefijo, las recibe como /api. Así funciona igual servida en la raíz.
+ */
+export const BASE_APP = import.meta.env.BASE_URL.replace(/\/$/, '')
+export const URL_API = `${BASE_APP}/api`
+
+/**
+ * Convierte una ruta del servidor (/avatar/2, /assets/img/…) en una que sobrevive
+ * al Funnel: se pide bajo la base de la app y el proxy recorta el prefijo.
+ */
+export const urlApp = (ruta?: string | null): string => {
+  if (!ruta) return ''
+  if (/^(https?:|data:|blob:)/.test(ruta)) return ruta
+  return `${BASE_APP}${ruta.startsWith('/') ? '' : '/'}${ruta}`
+}
+
 /** Petición JSON genérica. Los módulos la reutilizan para no duplicar manejo de errores. */
 export async function pedir<T>(path: string, init: RequestInit = {}): Promise<T> {
-  const res = await fetch(`/api${path}`, {
+  const res = await fetch(`${URL_API}${path}`, {
     credentials: 'same-origin',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
     ...init,

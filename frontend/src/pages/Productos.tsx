@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { urlApp } from '../lib/api'
 import { apiCatalogo } from '../lib/api-catalogo'
 import type { ListaCatalogo, ProductoCatalogo } from '../lib/api-catalogo'
 import { money, money0 } from '../lib/format'
@@ -233,7 +234,7 @@ export default function Productos() {
                       <tr key={p.uuid}>
                         <td>
                           <div className={`prod-foto${p.foto ? '' : ' prod-foto--vacia'}`}>
-                            {p.foto ? <img src={p.foto} alt={`Foto de ${p.nombre}`} loading="lazy" /> : <Icon name="productos" size={17} />}
+                            {p.foto ? <img src={urlApp(p.foto)} alt={`Foto de ${p.nombre}`} loading="lazy" /> : <Icon name="productos" size={17} />}
                           </div>
                         </td>
                         <td>
