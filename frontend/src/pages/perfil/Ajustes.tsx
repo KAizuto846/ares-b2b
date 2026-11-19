@@ -14,7 +14,10 @@ export default function Ajustes() {
 
   useEffect(() => {
     apiPerfil.detalle()
-      .then((d) => setDatos(d))
+      .then((d) => {
+        setDatos(d)
+        document.documentElement.dataset.tema = d.tema
+      })
       .catch((e) => setError((e as Error).message))
   }, [])
 

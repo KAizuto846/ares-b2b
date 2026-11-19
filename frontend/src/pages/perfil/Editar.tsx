@@ -41,6 +41,7 @@ export default function EditarPerfil() {
     apiPerfil.detalle()
       .then((d) => {
         setDatos(d)
+        document.documentElement.dataset.tema = d.tema
         const p = d.direcciones[0] ?? null
         setPrincipal(p)
         setForm({

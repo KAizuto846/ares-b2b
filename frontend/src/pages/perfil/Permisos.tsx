@@ -19,7 +19,10 @@ export default function Permisos() {
 
   useEffect(() => {
     apiPerfil.permisos()
-      .then(setDatos)
+      .then((d) => {
+        setDatos(d)
+        document.documentElement.dataset.tema = d.tema
+      })
       .catch((e) => setError((e as Error).message))
   }, [])
 

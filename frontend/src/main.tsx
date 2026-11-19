@@ -11,6 +11,7 @@ import './styles/mod-pos.css'
 import './styles/mod-admin.css'
 import './styles/mod-reparto.css'
 import './styles/mod-catalogo.css'
+import './styles/mod-buscar.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

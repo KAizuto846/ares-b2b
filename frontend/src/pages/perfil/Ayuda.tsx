@@ -12,7 +12,10 @@ export default function Ayuda() {
 
   useEffect(() => {
     apiPerfil.ayuda()
-      .then(setDatos)
+      .then((d) => {
+        setDatos(d)
+        document.documentElement.dataset.tema = d.tema
+      })
       .catch((e) => setError((e as Error).message))
   }, [])
 

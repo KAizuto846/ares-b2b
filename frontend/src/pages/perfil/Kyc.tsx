@@ -39,6 +39,7 @@ export default function Kyc() {
       .then((d) => {
         setDatos(d)
         setTipo(d.tipos[0] ?? 'identificacion')
+        document.documentElement.dataset.tema = d.tema
       })
       .catch((e) => setError((e as Error).message))
   }, [])

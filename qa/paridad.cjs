@@ -56,13 +56,18 @@ const slug = (r) => (r === '/' ? 'inicio' : r.replace(/^\//, '').replace(/\//g, 
 
 ;(async () => {
   const objetivo = process.argv[2] || 'todos'
+  const movil = process.argv.includes('--movil')
   const roles = objetivo === 'todos' ? Object.keys(RUTAS) : [objetivo]
   fs.mkdirSync(SALIDA, { recursive: true })
   const navegador = await chromium.launch({ channel: 'chrome', args: ['--no-sandbox', '--disable-gpu'] })
   const informe = []
 
   for (const rol of roles) {
-    const ctx = await navegador.newContext({ viewport: { width: 1360, height: 900 } })
+    const ctx = await navegador.newContext({
+      viewport: movil ? { width: 390, height: 844 } : { width: 1360, height: 900 },
+      isMobile: movil,
+      hasTouch: movil,
+    })
     const page = await ctx.newPage()
     const errores = []
     page.on('console', (m) => { if (m.type() === 'error') errores.push(m.text().slice(0, 200)) })
@@ -86,9 +91,9 @@ const slug = (r) => (r === '/' ? 'inicio' : r.replace(/^\//, '').replace(/\//g, 
       await page.goto(destino, { waitUntil: 'networkidle', timeout: 30000 }).catch(() => {})
       await page.waitForTimeout(650)
       const m = await page.evaluate(MEDIR).catch(() => ({ desborde: -1, chicos: [], taps: [], pendiente: false, vacio: true }))
-      await page.screenshot({ path: path.join(SALIDA, `${rol}_${slug(ruta)}.png`), fullPage: false })
+      await page.screenshot({ path: path.join(SALIDA, `${rol}_${slug(ruta)}${movil ? '_390' : ''}.png`), fullPage: false })
       informe.push({ rol, ruta, url: page.url().replace(BASE, ''), ...m, errores: [...new Set(errores)].slice(0, 5) })
-      const marca = m.pendiente ? 'PENDIENTE' : (m.errores === 0 ? 'ok' : 'ERRORES')
+      const marca = m.pendiente ? 'PENDIENTE' : (errores.length ? 'ERRORES' : 'ok')
       console.log(`${rol.padEnd(10)} ${ruta.padEnd(28)} ${String(m.desborde).padStart(4)}px  ${m.chicos.length}c ${m.taps.length}t  ${marca}`)
     }
 

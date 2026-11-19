@@ -1,0 +1,720 @@
+[
+  {
+    "rol": "comercio",
+    "ruta": "/",
+    "url": "/spa/",
+    "desborde": 0,
+    "chicos": [
+      "SPAN.acceso__globo 11.5px",
+      "SPAN. 11.5px"
+    ],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/buscar",
+    "url": "/spa/buscar",
+    "desborde": 0,
+    "chicos": [
+      "SPAN. 11.5px"
+    ],
+    "taps": [
+      "A.busq-ficha__ver 92x18",
+      "A.busq-ficha__ver 91x18",
+      "A.busq-ficha__ver 102x18",
+      "A.busq-ficha__ver 101x18"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/carrito",
+    "url": "/spa/carrito",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/checkout",
+    "url": "/spa/checkout",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/pedidos",
+    "url": "/spa/pedidos",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [
+      "BUTTON.filtro-estado activo 83x33",
+      "BUTTON.filtro-estado filtro-estado--alerta 109x33",
+      "BUTTON.filtro-estado filtro-estado--info 109x33",
+      "BUTTON.filtro-estado filtro-estado--alerta 162x33",
+      "BUTTON.filtro-estado filtro-estado--info 161x33",
+      "BUTTON.filtro-estado filtro-estado--ok 92x33",
+      "BUTTON.filtro-estado filtro-estado--neutro 92x33"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/finanzas",
+    "url": "/spa/finanzas",
+    "desborde": 0,
+    "chicos": [
+      "SPAN.fin-cuenta 11.5px",
+      "SPAN. 11px",
+      "B. 10.5px",
+      "SPAN.fin-barra__pista 10.5px"
+    ],
+    "taps": [
+      "BUTTON.fin-tab activo 144x40",
+      "BUTTON.fin-tab 143x40",
+      "BUTTON.activo 64x36",
+      "BUTTON. 81x36",
+      "SELECT. 130x40",
+      "BUTTON.fin-enlace 60x16"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/portafolio",
+    "url": "/spa/portafolio",
+    "desborde": 0,
+    "chicos": [
+      "DT. 11px",
+      "P.portafolio__unidad 11.5px"
+    ],
+    "taps": [
+      "BUTTON.portafolio__quitar 328x29"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/agendar",
+    "url": "/spa/agendar",
+    "desborde": 0,
+    "chicos": [
+      "SPAN.lista__etiqueta 11px"
+    ],
+    "taps": [
+      "BUTTON.lista__cancelar 54x29",
+      "BUTTON.agendar-volver 247x25"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/mensajes",
+    "url": "/spa/mensajes",
+    "desborde": 0,
+    "chicos": [
+      "SPAN.msg-hilo__hora 11.5px"
+    ],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/perfil",
+    "url": "/spa/perfil",
+    "desborde": 0,
+    "chicos": [
+      "DT. 11px",
+      "SMALL. 11.8px"
+    ],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/perfil/editar",
+    "url": "/spa/perfil/editar",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [
+      "BUTTON.perfil-enlace 62x18"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/perfil/privacidad",
+    "url": "/spa/perfil/privacidad",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [
+      "INPUT. 48x28"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/perfil/ajustes",
+    "url": "/spa/perfil/ajustes",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [
+      "INPUT. 48x28"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/perfil/seguridad",
+    "url": "/spa/perfil/seguridad",
+    "desborde": 0,
+    "chicos": [
+      "DT. 11px"
+    ],
+    "taps": [
+      "BUTTON.perfil-ojo 34x34"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/perfil/permisos",
+    "url": "/spa/perfil/permisos",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/ayuda",
+    "url": "/spa/ayuda",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [
+      "BUTTON.perfil-enlace 121x22",
+      "BUTTON.perfil-enlace 124x22",
+      "BUTTON.perfil-enlace 122x22",
+      "BUTTON.perfil-enlace 106x22",
+      "BUTTON.perfil-enlace 92x22"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/kyc",
+    "url": "/spa/kyc",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [
+      "INPUT. 324x21"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/pos",
+    "url": "/spa/pos",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/pos/inventario",
+    "url": "/spa/pos/inventario",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [
+      "INPUT. 18x18"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/pos/ventas",
+    "url": "/spa/pos/ventas",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/pos/corte",
+    "url": "/spa/pos/corte",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "comercio",
+    "ruta": "/pos/clientes",
+    "url": "/spa/pos/clientes",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "mayorista",
+    "ruta": "/",
+    "url": "/spa/",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "mayorista",
+    "ruta": "/buscar",
+    "url": "/spa/buscar",
+    "desborde": 0,
+    "chicos": [
+      "SPAN. 11.5px"
+    ],
+    "taps": [
+      "A.busq-ficha__ver 92x18",
+      "A.busq-ficha__ver 91x18",
+      "A.busq-ficha__ver 102x18",
+      "A.busq-ficha__ver 101x18"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "mayorista",
+    "ruta": "/productos",
+    "url": "/spa/productos",
+    "desborde": 0,
+    "chicos": [
+      "SPAN.cat-chip__n 11.5px"
+    ],
+    "taps": [
+      "BUTTON.cat-chip cat-chip--activo 67x38",
+      "BUTTON.cat-chip 125x38",
+      "BUTTON.cat-chip 117x38",
+      "BUTTON.cat-chip 126x38"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "mayorista",
+    "ruta": "/productos/nuevo",
+    "url": "/spa/productos/nuevo",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [
+      "INPUT. 110x42",
+      "INPUT. 17x17"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "mayorista",
+    "ruta": "/productos/importar",
+    "url": "/spa/productos/importar",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "mayorista",
+    "ruta": "/pedidos",
+    "url": "/spa/pedidos",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [
+      "BUTTON.filtro-estado activo 76x33",
+      "BUTTON.filtro-estado filtro-estado--alerta 109x33",
+      "BUTTON.filtro-estado filtro-estado--info 109x33",
+      "BUTTON.filtro-estado filtro-estado--alerta 162x33",
+      "BUTTON.filtro-estado filtro-estado--info 161x33"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "mayorista",
+    "ruta": "/facturacion",
+    "url": "/spa/facturacion",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [
+      "INPUT. 324x28"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "mayorista",
+    "ruta": "/finanzas",
+    "url": "/spa/finanzas",
+    "desborde": 0,
+    "chicos": [
+      "SPAN. 11px",
+      "B. 10.5px"
+    ],
+    "taps": [
+      "INPUT. 161x40"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "mayorista",
+    "ruta": "/mensajes",
+    "url": "/spa/mensajes",
+    "desborde": 0,
+    "chicos": [
+      "SPAN.msg-hilo__hora 11.5px"
+    ],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "mayorista",
+    "ruta": "/perfil",
+    "url": "/spa/perfil",
+    "desborde": 0,
+    "chicos": [
+      "DT. 11px",
+      "SMALL. 11.8px"
+    ],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "mayorista",
+    "ruta": "/perfil/editar",
+    "url": "/spa/perfil/editar",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [
+      "BUTTON.perfil-enlace 62x18"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "mayorista",
+    "ruta": "/ayuda",
+    "url": "/spa/ayuda",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [
+      "BUTTON.perfil-enlace 121x22",
+      "BUTTON.perfil-enlace 124x22",
+      "BUTTON.perfil-enlace 122x22",
+      "BUTTON.perfil-enlace 106x22",
+      "BUTTON.perfil-enlace 92x22"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "repartidor",
+    "ruta": "/",
+    "url": "/spa/",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "repartidor",
+    "ruta": "/repartidor",
+    "url": "/spa/repartidor",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [
+      "INPUT. 298x42"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "repartidor",
+    "ruta": "/buscar",
+    "url": "/spa/buscar",
+    "desborde": 0,
+    "chicos": [
+      "SPAN. 11.5px"
+    ],
+    "taps": [
+      "A.busq-ficha__ver 92x18",
+      "A.busq-ficha__ver 91x18",
+      "A.busq-ficha__ver 102x18",
+      "A.busq-ficha__ver 101x18"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "repartidor",
+    "ruta": "/finanzas",
+    "url": "/spa/finanzas",
+    "desborde": 0,
+    "chicos": [
+      "SPAN. 11px",
+      "B. 10.5px"
+    ],
+    "taps": [
+      "INPUT. 161x40"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "repartidor",
+    "ruta": "/mensajes",
+    "url": "/spa/mensajes",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "repartidor",
+    "ruta": "/perfil",
+    "url": "/spa/perfil",
+    "desborde": 0,
+    "chicos": [
+      "DT. 11px",
+      "SMALL. 11.8px"
+    ],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "repartidor",
+    "ruta": "/ayuda",
+    "url": "/spa/ayuda",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [
+      "BUTTON.perfil-enlace 121x22",
+      "BUTTON.perfil-enlace 124x22",
+      "BUTTON.perfil-enlace 122x22",
+      "BUTTON.perfil-enlace 106x22",
+      "BUTTON.perfil-enlace 92x22"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "admin",
+    "ruta": "/",
+    "url": "/spa/",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "admin",
+    "ruta": "/admin",
+    "url": "/spa/admin",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "admin",
+    "ruta": "/admin/usuarios",
+    "url": "/spa/admin/usuarios",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [
+      "A. 183x18"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "admin",
+    "ruta": "/admin/kyc",
+    "url": "/spa/admin/kyc",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "admin",
+    "ruta": "/admin/reclamos",
+    "url": "/spa/admin/reclamos",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "admin",
+    "ruta": "/admin/parametros",
+    "url": "/spa/admin/parametros",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "admin",
+    "ruta": "/admin/postmvp",
+    "url": "/spa/admin/postmvp",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "admin",
+    "ruta": "/mensajes",
+    "url": "/spa/mensajes",
+    "desborde": 0,
+    "chicos": [
+      "SPAN.msg-hilo__hora 11.5px"
+    ],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "admin",
+    "ruta": "/perfil",
+    "url": "/spa/perfil",
+    "desborde": 0,
+    "chicos": [
+      "DT. 11px",
+      "SMALL. 11.8px"
+    ],
+    "taps": [],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "admin",
+    "ruta": "/perfil/editar",
+    "url": "/spa/perfil/editar",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [
+      "BUTTON.perfil-enlace 62x18"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  },
+  {
+    "rol": "admin",
+    "ruta": "/ayuda",
+    "url": "/spa/ayuda",
+    "desborde": 0,
+    "chicos": [],
+    "taps": [
+      "BUTTON.perfil-enlace 121x22",
+      "BUTTON.perfil-enlace 124x22",
+      "BUTTON.perfil-enlace 122x22",
+      "BUTTON.perfil-enlace 106x22",
+      "BUTTON.perfil-enlace 92x22"
+    ],
+    "pendiente": false,
+    "vacio": false,
+    "errores": []
+  }
+]

@@ -79,6 +79,7 @@ export type Acceso = { accion: string; entidad: string; descripcion: string; ip:
 
 export type Seguridad = {
   ok: true
+  tema: 'claro' | 'oscuro'
   correo: string
   telefono: string
   ultimo_login: string
@@ -92,6 +93,7 @@ export type RolPermisos = { nombre: string; etiqueta: string; permite: string[];
 
 export type Permisos = {
   ok: true
+  tema: 'claro' | 'oscuro'
   roles: RolPermisos[]
   dispositivo: { clave: string; titulo: string; texto: string }[]
 }
@@ -99,6 +101,7 @@ export type Permisos = {
 export type Kyc = {
   ok: true
   rol: string
+  tema: 'claro' | 'oscuro'
   estado: KycEstado
   tipos: string[]
   limites: { max_bytes: number; mimes: string[] }
@@ -108,6 +111,7 @@ export type Faq = { pregunta: string; respuesta: string; enlace?: { texto: strin
 
 export type Ayuda = {
   ok: true
+  tema: 'claro' | 'oscuro'
   soporte: { href: string; texto: string; horario: string }
   faqs: Faq[]
   legal: { texto: string; href: string }[]

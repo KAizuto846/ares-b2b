@@ -881,6 +881,7 @@ if ($perfilRuta === '/perfil/seguridad' && $perfilMetodo === 'GET') {
         'miembro'       => api_fecha((string) $cuenta['created_at']),
         'roles'         => $roles,
         'accesos'       => $accesos,
+        'tema'          => perfil_preferencias($uid)['tema'],
         'reglas_password' => [
             'minimo'    => 12,
             'mayuscula' => true,
@@ -922,6 +923,7 @@ if ($perfilRuta === '/perfil/permisos' && $perfilMetodo === 'GET') {
 
     responder([
         'ok'    => true,
+        'tema'  => perfil_preferencias($uid)['tema'],
         'roles' => $roles,
         'dispositivo' => [
             ['clave' => 'camara', 'titulo' => 'Cámara', 'texto' => 'Escanear códigos de barras y tomar fotos de productos.'],
@@ -946,6 +948,7 @@ if ($perfilRuta === '/kyc' && $perfilMetodo === 'GET') {
     responder([
         'ok'    => true,
         'rol'   => $rol,
+        'tema'  => perfil_preferencias($uid)['tema'],
         'estado' => $estado,
         'tipos' => perfil_kyc_tipos(),
         'limites' => ['max_bytes' => 10 * 1024 * 1024, 'mimes' => ['image/jpeg', 'image/png', 'application/pdf']],
@@ -1021,7 +1024,8 @@ if ($perfilRuta === '/ayuda' && $perfilMetodo === 'GET') {
     perfil_exigir_cuenta();
 
     responder([
-        'ok' => true,
+        'ok'    => true,
+        'tema'  => perfil_preferencias(api_uid())['tema'],
         'soporte' => [
             'href'  => '/mensajes?soporte=1',
             'texto' => 'Escríbenos desde tu cuenta: el mensaje llega con tu nombre, tu rol y el pedido que estabas viendo.',

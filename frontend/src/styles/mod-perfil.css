@@ -79,8 +79,10 @@
 
 /* ============================================================ formularios */
 .perfil-form { display: grid; gap: 16px; }
+.perfil-form > * { min-width: 0; }
 .perfil-form__campos { display: grid; gap: 16px; }
 .perfil-form__rejilla { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.perfil-form__rejilla > * { min-width: 0; }
 .perfil-form__ancho { grid-column: 1 / -1; }
 .perfil-form__acciones { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
 
@@ -131,6 +133,7 @@ input[type='file'] { font-size: 13px; color: var(--ink-2); max-width: 100%; }
 .perfil-interruptor__pista {
   width: 48px; height: 28px; border-radius: 999px; background: #d8dcd2;
   position: relative; transition: background var(--t-fast);
+  pointer-events: none;
 }
 .perfil-interruptor__pista::after {
   content: ''; position: absolute; top: 3px; left: 3px; width: 22px; height: 22px;
@@ -216,14 +219,14 @@ input[type='file'] { font-size: 13px; color: var(--ink-2); max-width: 100%; }
 .perfil-kyc__cifras strong { color: var(--ink); }
 
 /* tablas anchas dentro de la tarjeta */
-.tabla-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.tabla-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
 .tabla-scroll .tabla { min-width: 520px; }
 
 @media (max-width: 720px) {
-  .perfil-atajos { grid-template-columns: 1fr; width: 100%; }
+  .perfil-atajos { grid-template-columns: minmax(0, 1fr); width: 100%; }
   .perfil-sesion { width: 100%; }
   .perfil-peligro { width: 100%; }
-  .perfil-form__rejilla { grid-template-columns: 1fr; }
+  .perfil-form__rejilla { grid-template-columns: minmax(0, 1fr); }
   .perfil-calif__resumen { grid-template-columns: 1fr; }
   .perfil-ficha__editar { margin-left: 0; width: 100%; }
   .perfil-ficha__foto { width: 76px; height: 76px; font-size: 24px; border-radius: 18px; }
