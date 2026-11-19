@@ -45,6 +45,7 @@
 }
 
 .perfil-ojo { width: 44px; height: 44px; padding: 0; }
+.auth-ojo { width: 44px; height: 44px; right: 2px; }
 
 /* Casillas y radios: el objetivo real es la etiqueta que las envuelve */
 input[type='checkbox'],

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useSesion } from '../store/session'
 import Icon from '../components/Icon'
+import { CampoClave } from './auth/Registro'
 
 export default function Login() {
   const { entrar } = useSesion()
@@ -60,10 +61,14 @@ export default function Login() {
             <input type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="tu@negocio.mx" />
           </label>
 
-          <label className="campo">
-            <span>Contraseña</span>
-            <input type="password" autoComplete="current-password" required value={password} onChange={(e) => setPassword(e.target.value)} placeholder="••••••••" />
-          </label>
+          <CampoClave
+            id="clave"
+            etiqueta="Contraseña"
+            valor={password}
+            alCambiar={setPassword}
+            autoComplete="current-password"
+            placeholder="••••••••"
+          />
 
           <button className="btn btn--bloque" type="submit" disabled={cargando}>
             {cargando ? 'Entrando…' : 'Entrar'}
