@@ -43,6 +43,7 @@ import AdminParametroHistorial from './pages/admin/ParametroHistorial'
 import AdminPostMvp from './pages/admin/PostMvp'
 import Tracking from './pages/Tracking'
 import PagoSimulado from './pages/PagoSimulado'
+import ProveedorFicha from './pages/Proveedor'
 
 function Cargando() {
   return (
@@ -71,6 +72,7 @@ function Gate() {
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/buscar" element={<Buscar />} />
+        <Route path="/proveedor/:uuid" element={<ProveedorFicha />} />
 
         {/* comercio */}
         <Route path="/carrito" element={solo(esComercio, <Carrito />)} />

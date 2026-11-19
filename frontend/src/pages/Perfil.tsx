@@ -145,7 +145,6 @@ export default function Perfil() {
   const direccion = principal
     ? [principal.calle, principal.colonia, principal.ciudad].filter((p) => p.trim() !== '').join(', ')
     : ''
-  const sumaEstrellas = Object.values(datos.desglose.por_estrella).reduce((a, b) => a + b, 0)
   const mayorBarra = Math.max(1, ...Object.values(datos.desglose.por_estrella))
 
   return (
@@ -173,9 +172,11 @@ export default function Perfil() {
 
             <div className="perfil-ficha__chips">
               <span className="chip chip--info">{datos.etiqueta_rol}</span>
-              {datos.verificado
-                ? <span className="chip chip--ok"><Icon name="ok" size={13} /> Cuenta verificada</span>
-                : <span className="chip chip--alerta">Verificación pendiente</span>}
+              {datos.kyc.requeridos.length === 0
+                ? <span className="chip chip--neutro">Sin verificación requerida</span>
+                : datos.verificado
+                  ? <span className="chip chip--ok"><Icon name="ok" size={13} /> Cuenta verificada</span>
+                  : <span className="chip chip--alerta">Verificación pendiente</span>}
               <span className="chip chip--neutro">Miembro desde {miembroLegible(datos.miembro)}</span>
             </div>
 
@@ -243,10 +244,6 @@ export default function Perfil() {
                 </article>
               ))}
           </div>
-
-          {sumaEstrellas > 0 && datos.calificacion.promedio === null && (
-            <p className="perfil-pista">Tu promedio aparecerá cuando alguien te califique.</p>
-          )}
         </div>
       </section>
 

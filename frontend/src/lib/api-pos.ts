@@ -30,6 +30,8 @@ export type PosTurno = {
   fondo_inicial: number
   estado: string
   cerrado_at?: string | null
+  efectivo_ventas?: number
+  efectivo_esperado?: number
 }
 
 export type PosVenta = {

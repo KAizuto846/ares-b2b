@@ -37,13 +37,16 @@ if (!$esRutaPropia($rutaModulo)) {
     return;
 }
 
-api_exigir('comercio');
-
+// /explorar sirve a todos los roles (es la casa de la SPA); el resto es solo comercio.
 $pdoModulo = api_pdo();
 $comercioIdModulo = api_comercio_id();
 
-if ($comercioIdModulo <= 0) {
-    fallo('Tu cuenta no tiene perfil de comercio. Complétalo en Mi perfil.', 409, 'SIN_PERFIL');
+if ($rutaModulo !== '/explorar') {
+    api_exigir('comercio');
+
+    if ($comercioIdModulo <= 0) {
+        fallo('Tu cuenta no tiene perfil de comercio. Complétalo en Mi perfil.', 409, 'SIN_PERFIL');
+    }
 }
 
 /** Servicio de carrito listo para recalcular (misma fuente de verdad que el checkout). */

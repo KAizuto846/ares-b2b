@@ -87,6 +87,7 @@ function Delta({ datos }: { datos: FinanzasDatos }) {
 }
 
 export default function Finanzas() {
+  const { rol } = useSesion()
   const navegar = useNavegar()
   const [datos, setDatos] = useState<FinanzasDatos | null>(null)
   const [error, setError] = useState('')
@@ -102,9 +103,10 @@ export default function Finanzas() {
   const [solicitando, setSolicitando] = useState('')
 
   const params = useMemo<ParamsFinanzas>(() => {
-    if (datos?.rol === 'comercio' || datos === null) return { vista, anio, mes }
+    const comercio = (datos?.rol ?? rol ?? '') === 'comercio'
+    if (comercio) return { vista, anio, mes }
     return rango ? { desde: rango.desde, hasta: rango.hasta } : {}
-  }, [datos?.rol, vista, anio, mes, rango])
+  }, [datos?.rol, rol, vista, anio, mes, rango])
 
   useEffect(() => {
     let vivo = true
@@ -115,7 +117,7 @@ export default function Finanzas() {
     return () => { vivo = false }
   }, [params])
 
-  const esComercio = datos?.rol === 'comercio'
+  const esComercio = (datos?.rol ?? rol) === 'comercio'
   const mensual = datos?.vista === 'mensual'
 
   const kpis = useMemo(() => {
@@ -203,7 +205,7 @@ export default function Finanzas() {
     : [{ titulo: 'Pedido' }, { titulo: 'Fecha' }, { titulo: datos.rol === 'comercio' ? 'Mayorista' : 'Contraparte' }, { titulo: 'Estado' }, { titulo: 'Monto', alineada: true }]
 
   return (
-    <div style={{ display: 'grid', gap: 18 }}>
+    <div className="fin-pagina">
       <header className="pagina-cab">
         <div className="rise">
           <h1>{titulo}</h1>
@@ -211,7 +213,7 @@ export default function Finanzas() {
         </div>
         {datos.periodo.desde && (
           <a className="btn btn--claro" href={urlExport(datos.periodo.desde, datos.periodo.hasta)} download>
-            <Icon name="documento" size={17} /> Exportar CSV
+            <Icon name="descargar" size={17} /> Exportar CSV
           </a>
         )}
       </header>
@@ -310,10 +312,10 @@ export default function Finanzas() {
                     </tr>
                   </thead>
                   <tbody>
-                    {datos.movimientos.map((m: Movimiento) => {
+                    {datos.movimientos.map((m: Movimiento, i) => {
                       const e = estado(m.estado)
                       return (
-                        <tr key={m.uuid + m.fecha}>
+                        <tr key={`${m.uuid}-${i}`}>
                           <td>
                             <button type="button" className="fin-enlace" onClick={() => navegar(`/pedidos/${m.uuid}`)}>
                               {m.uuid.slice(0, 8)}
@@ -381,13 +383,12 @@ export default function Finanzas() {
                   <thead><tr><th>Folio</th><th>Emisor</th><th>Fecha</th><th>Estado</th><th style={{ textAlign: 'right' }}>Total</th><th /></tr></thead>
                   <tbody>
                     {datos.facturas.map((f) => {
-                      const e = estado(f.estado)
                       return (
                         <tr key={f.uuid}>
                           <td><code style={{ fontSize: 12.5 }}>{f.folio_texto}</code></td>
                           <td>{f.razon_social_emisor}</td>
                           <td>{f.fecha}</td>
-                          <td><span className={`chip chip--${e.tono}`}>{e.texto}</span></td>
+                          <td><span className={`chip chip--${tonoFactura(f.estado)}`}>{estado(f.estado).texto}</span></td>
                           <td className="num" style={{ textAlign: 'right', fontWeight: 650 }}>{money(f.total)}</td>
                           <td style={{ textAlign: 'right' }}>
                             <button type="button" className="btn btn--claro btn--mini" onClick={() => navegar(`/finanzas/factura/${f.uuid}`)}>

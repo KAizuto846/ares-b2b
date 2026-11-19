@@ -231,8 +231,8 @@ export default function Agendar() {
 
                 {l.items.length > 0 && (
                   <ul className="lista__items">
-                    {l.items.map((i) => (
-                      <li key={`${l.id}-${i.producto_uuid}`}>
+                    {l.items.map((i, idx) => (
+                      <li key={`${l.id}-${idx}-${i.producto_uuid}`}>
                         <span>{i.nombre}</span>
                         <span className="num">×{i.cantidad}</span>
                       </li>

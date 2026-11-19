@@ -604,7 +604,7 @@ if ($perfilRuta === '/perfil/direccion' && $perfilMetodo === 'POST') {
              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
         )->execute([
             $uid,
-            trim((string) ($cuerpo['alias'] ?? '')) ?: 'Principal',
+            trim((string) ($cuerpo['alias'] ?? '')) ?: ($principal ? 'Principal' : 'Dirección'),
             $calle,
             trim((string) ($cuerpo['colonia'] ?? '')),
             $ciudad,
@@ -675,6 +675,10 @@ if (preg_match('#^/perfil/direccion/(\d+)$#', $perfilRuta, $mm) === 1 && in_arra
 
     $principal = (bool) ($cuerpo['es_principal'] ?? false);
 
+    $stmtAlias = $pdo->prepare('SELECT alias FROM direcciones WHERE id = ? AND usuario_id = ? LIMIT 1');
+    $stmtAlias->execute([$id, $uid]);
+    $aliasActual = (string) ($stmtAlias->fetchColumn() ?: 'Dirección');
+
     $pdo->beginTransaction();
 
     try {
@@ -688,7 +692,7 @@ if (preg_match('#^/perfil/direccion/(\d+)$#', $perfilRuta, $mm) === 1 && in_arra
                     latitud = ?, longitud = ?, referencias = ?, es_principal = ?
               WHERE id = ? AND usuario_id = ?'
         )->execute([
-            trim((string) ($cuerpo['alias'] ?? '')) ?: 'Principal',
+            trim((string) ($cuerpo['alias'] ?? '')) ?: $aliasActual,
             $calle,
             trim((string) ($cuerpo['colonia'] ?? '')),
             $ciudad,
@@ -1142,7 +1146,7 @@ if ($perfilRuta === '/perfil/calificar' && $perfilMetodo === 'POST') {
     }
 
     if ($pedidoId > 0) {
-        $stmt = api_pdo()->prepare('SELECT comercio_id, mayorista_id, estado FROM pedidos WHERE id = ? LIMIT 1');
+        $stmt = api_pdo()->prepare('SELECT id, comercio_id, mayorista_id, estado FROM pedidos WHERE id = ? LIMIT 1');
         $stmt->execute([$pedidoId]);
         $pedido = $stmt->fetch();
 
@@ -1150,9 +1154,38 @@ if ($perfilRuta === '/perfil/calificar' && $perfilMetodo === 'POST') {
             fallo('Ese pedido no existe.', 404, 'NO_ENCONTRADO');
         }
 
+        $rolEvaluado = $rolDe($evaluado);
+
+        $perfilDe = static function (string $tabla, int $usuarioId): int {
+            $stmt = api_pdo()->prepare("SELECT id FROM {$tabla} WHERE usuario_id = ? LIMIT 1");
+            $stmt->execute([$usuarioId]);
+
+            return (int) ($stmt->fetchColumn() ?: 0);
+        };
+
+        $esContraparte = match ($rolEvaluado) {
+            'comercio'   => (int) $pedido['comercio_id'] === $perfilDe('comercios_perfil', $evaluado),
+            'mayorista'  => (int) $pedido['mayorista_id'] === $perfilDe('mayoristas_perfil', $evaluado),
+            'repartidor' => (static function () use ($pedido, $evaluado): bool {
+                $stmtPerfil = api_pdo()->prepare('SELECT id FROM repartidores_perfil WHERE usuario_id = ? LIMIT 1');
+                $stmtPerfil->execute([$evaluado]);
+                $perfilRepartidor = (int) ($stmtPerfil->fetchColumn() ?: 0);
+
+                $stmt = api_pdo()->prepare('SELECT 1 FROM envios WHERE pedido_id = ? AND repartidor_id IN (?, ?) LIMIT 1');
+                $stmt->execute([(int) $pedido['id'], $evaluado, $perfilRepartidor]);
+
+                return (bool) $stmt->fetchColumn();
+            })(),
+            default      => false,
+        };
+
         $mio = (int) $pedido['comercio_id'] === api_comercio_id() || (int) $pedido['mayorista_id'] === api_mayorista_id();
         if (!$mio) {
             fallo('Solo puedes calificar pedidos que hayas recibido.', 403, 'SIN_PERMISO');
+        }
+
+        if (!$esContraparte) {
+            fallo('Ese pedido no relaciona a las dos partes: elige el pedido que compartieron.', 422, 'PEDIDO_TERCERO');
         }
 
         if (!in_array((string) $pedido['estado'], ['entregado', 'recibido', 'pagado'], true)) {

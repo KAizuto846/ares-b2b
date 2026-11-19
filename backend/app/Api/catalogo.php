@@ -571,13 +571,14 @@ if ($catRuta === '/catalogo/importar' && $catMetodo === 'POST') {
     $contenido = (string) ($cuerpo['contenido'] ?? $cuerpo['csv'] ?? '');
 
     if ($contenido === '' && isset($cuerpo['data_url'])) {
-        $dataUrl = (string) $cuerpo['data_url'];
+        $contenido = (string) $cuerpo['data_url'];
+    }
 
-        if (preg_match('#^data:[^,]*;base64,(.*)$#is', $dataUrl, $partes)) {
+    // Acepta el data URL tanto en `data_url` como pegado en `contenido`.
+    if (str_starts_with($contenido, 'data:')) {
+        if (preg_match('#^data:[^,]*;base64,(.*)$#is', $contenido, $partes)) {
             $decodificado = base64_decode(preg_replace('/\s+/', '', $partes[1]), true);
             $contenido = $decodificado === false ? '' : $decodificado;
-        } else {
-            $contenido = $dataUrl;
         }
     }
 
@@ -589,10 +590,19 @@ if ($catRuta === '/catalogo/importar' && $catMetodo === 'POST') {
         cat_fallo_campos('El CSV pasa de 5 MB.', ['csv' => 'Divide el archivo en partes más pequeñas.']);
     }
 
-    // BOM y saltos Windows fuera antes de partir líneas.
+    // BOM y saltos Windows fuera antes de partir líneas. Se conserva el número
+    // real de línea de cada fila para poder reportar el error donde toca.
     $contenido = preg_replace('/^\xEF\xBB\xBF/', '', $contenido) ?? $contenido;
-    $lineas = preg_split('/\r\n|\r|\n/', $contenido) ?: [];
-    $lineas = array_values(array_filter($lineas, static fn (string $l): bool => trim($l) !== ''));
+    $crudas = preg_split('/\r\n|\r|\n/', $contenido) ?: [];
+    $lineas = [];
+
+    foreach ($crudas as $indice => $linea) {
+        if (trim($linea) === '') {
+            continue;
+        }
+
+        $lineas[$indice + 1] = $linea;
+    }
 
     if ($lineas === []) {
         cat_fallo_campos('El CSV está vacío.', ['csv' => 'Descarga la plantilla y llena una fila por producto.']);
@@ -610,7 +620,9 @@ if ($catRuta === '/catalogo/importar' && $catMetodo === 'POST') {
         default            => cat_normalizar($encabezado),
     };
 
-    $cabecera = array_map($normalizar, str_getcsv(array_shift($lineas), ',', '"', ''));
+    $numeroCabecera = (int) array_key_first($lineas);
+    $cabecera = array_map($normalizar, str_getcsv((string) $lineas[$numeroCabecera], ',', '"', ''));
+    unset($lineas[$numeroCabecera]);
     $requeridas = ['nombre', 'categoria', 'unidad', 'contenido', 'precio', 'stock', 'minimo', 'multiplo'];
     $faltan = array_diff($requeridas, $cabecera);
 
@@ -627,11 +639,8 @@ if ($catRuta === '/catalogo/importar' && $catMetodo === 'POST') {
 
     $creados = 0;
     $errores = [];
-    $numeroLinea = 1;
 
-    foreach ($lineas as $linea) {
-        $numeroLinea++;
-
+    foreach ($lineas as $numeroLinea => $linea) {
         if ($numeroLinea > CAT_MAX_CSV_FILAS + 1) {
             $errores[] = ['linea' => $numeroLinea, 'motivo' => 'El archivo pasa de 5 000 filas; lo demás no se importó.'];
             break;

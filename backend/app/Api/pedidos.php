@@ -465,6 +465,7 @@ if ($metodoApi === 'POST' && preg_match('#^/pedidos/(' . $uuidPatron . ')/estado
 
     $ultimo = $estado;
     $pinGenerado = null;
+    $pinRecoleccion = null;
 
     foreach ($destinos as $destino) {
         $resultado = ped_pedidos()->transicionar($id, $destino, api_uid(), [$rol], $motivo);
@@ -476,7 +477,8 @@ if ($metodoApi === 'POST' && preg_match('#^/pedidos/(' . $uuidPatron . ')/estado
 
         // Efectos secundarios que en el PHP hacía el controlador.
         if ($destino === 'listo_para_recoger') {
-            ped_pruebas()->generarRecoleccion($id);
+            // El PIN se guarda hasheado; se devuelve una sola vez a quien debe dictarlo.
+            $pinRecoleccion = ped_pruebas()->generarRecoleccion($id);
         }
 
         if ($destino === 'buscando_repartidor') {
@@ -508,6 +510,8 @@ if ($metodoApi === 'POST' && preg_match('#^/pedidos/(' . $uuidPatron . ')/estado
         'pin_entrega' => $papeles['comercio'] && $ultimo === 'en_puerta'
             ? ($pinGenerado ?? ped_pruebas()->pinEntregaVisible($id))
             : null,
+        // El mayorista recibe el PIN de recolección al marcar el pedido como listo.
+        'pin_recoleccion' => $papeles['mayorista'] ? $pinRecoleccion : null,
     ]);
 }
 
@@ -928,7 +932,7 @@ if ($metodoApi === 'GET' && preg_match('#^/tracking/(' . $uuidPatron . ')$#', $r
             'disponible' => false,
             'motivo'   => in_array($estado, ['en_camino', 'en_puerta'], true)
                 ? 'El mapa en vivo lo ve el comercio que recibe el pedido.'
-                : 'El seguimiento en mapa empieza cuando el repartidor sale con tu pedido.',
+                : 'El mapa en vivo se activa cuando el repartidor sale con el pedido.',
             'destino'  => $papeles['repartidor'] && $fila['latitud'] !== null ? [
                 'lat' => (float) $fila['latitud'],
                 'lng' => (float) $fila['longitud'],

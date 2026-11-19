@@ -23,6 +23,7 @@ export default function PedidoDetalle() {
   const [puntaje, setPuntaje] = useState(0)
   const [comentario, setComentario] = useState('')
   const [calificando, setCalificando] = useState(false)
+  const [pinRecoleccion, setPinRecoleccion] = useState<string | null>(null)
 
   const cargar = useCallback(async () => {
     try {
@@ -44,6 +45,7 @@ export default function PedidoDetalle() {
     try {
       const r = await apiPedidos.estado(uuid, accion, nota)
       aviso(r.mensaje)
+      if (r.pin_recoleccion) setPinRecoleccion(r.pin_recoleccion)
       setCancelando(false)
       setMotivo('')
       setPinAccion(null)
@@ -145,6 +147,14 @@ export default function PedidoDetalle() {
 
       {error && <div className="aviso aviso--error">{error}</div>}
 
+      {pinRecoleccion && (
+        <div className="pin-aviso pin-aviso--rec">
+          <span>PIN de recolección: dictalo al repartidor cuando llegue</span>
+          <strong>{pinRecoleccion}</strong>
+          <span className="apunte">Se muestra solo esta vez. Si lo pierdes, pide a soporte reemitirlo.</span>
+        </div>
+      )}
+
       {p.pin_entrega && (
         <div className="pin-aviso">
           <span>Da este código al repartidor cuando llegue</span>
@@ -184,7 +194,7 @@ export default function PedidoDetalle() {
             aria-label="PIN"
             autoFocus
           />
-          <button className="btn" type="submit" disabled={ocupado !== '' || pin.length < 4}>Confirmar</button>
+          <button className="btn" type="submit" disabled={ocupado !== '' || pin.length < (pinAccion.pin_largo ?? 4)}>Confirmar</button>
           <button className="btn btn--claro" type="button" onClick={() => { setPinAccion(null); setPin('') }}>Cancelar</button>
         </form>
       )}

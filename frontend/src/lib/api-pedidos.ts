@@ -163,7 +163,7 @@ export type Punto = { lat: number; lng: number; precision_m?: number; capturado_
 export const apiPedidos = {
   detalle: (uuid: string) => pedir<{ pedido: PedidoDetalle }>(`/pedidos/${uuid}`),
   estado: (uuid: string, accion: string, motivo?: string) =>
-    pedir<{ mensaje: string; estado: string; estado_texto: string; pin_entrega: string | null }>(
+    pedir<{ mensaje: string; estado: string; estado_texto: string; pin_entrega: string | null; pin_recoleccion: string | null }>(
       `/pedidos/${uuid}/estado`,
       { method: 'POST', body: JSON.stringify({ accion, motivo }) },
     ),

@@ -286,13 +286,25 @@ if ($posRuta === '/pos' && $posMetodo === 'GET') {
 
     $ultimo = $posRepo->ultimoTurno($posUid);
 
+    // Efectivo que debería haber en el cajón ahora mismo (fondo + cobros en efectivo).
+    $efectivoCaja = 0.0;
+    if ($turno !== null) {
+        foreach (pos_resumen_turno($posPdo, (int) $turno['id']) as $r) {
+            if ($r['metodo'] === 'efectivo') {
+                $efectivoCaja = $r['total'];
+            }
+        }
+    }
+
     responder([
         'ok'          => true,
         'turno'       => $turno === null ? null : [
-            'id'            => (int) $turno['id'],
-            'abierto_at'    => (string) $turno['abierto_at'],
-            'fondo_inicial' => (float) $turno['fondo_inicial'],
-            'estado'        => (string) $turno['estado'],
+            'id'               => (int) $turno['id'],
+            'abierto_at'       => (string) $turno['abierto_at'],
+            'fondo_inicial'    => (float) $turno['fondo_inicial'],
+            'estado'           => (string) $turno['estado'],
+            'efectivo_ventas'  => round($efectivoCaja, 2),
+            'efectivo_esperado' => round((float) $turno['fondo_inicial'] + $efectivoCaja, 2),
         ],
         'ultimo_turno' => $ultimo === null ? null : [
             'id'         => (int) $ultimo['id'],

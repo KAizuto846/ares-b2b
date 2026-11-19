@@ -1,1 +1,167 @@
 /* Módulo reparto: estilos propios. No tocar app.css para reglas de una sola pantalla. */
+
+/* --- piezas compartidas por pedidos, reparto y seguimiento --------------- */
+.apunte { font-size: 12.5px; color: var(--faint); line-height: 1.45; }
+.folio { font-size: 12.5px; letter-spacing: .02em; color: var(--ink-2); }
+
+.tabla-scroll { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.tabla-scroll > .tabla { min-width: 620px; }
+
+.tabla--clicable tbody tr { cursor: pointer; }
+.tabla--clicable tbody tr:focus-visible { outline: 2px solid var(--verde-2); outline-offset: -2px; }
+
+.volver {
+  display: inline-flex; align-items: center; gap: 6px; align-self: start;
+  background: none; border: 0; padding: 4px 2px; cursor: pointer;
+  color: var(--muted); font: inherit; font-size: 13px;
+}
+.volver svg { transform: rotate(180deg); }
+.volver:hover { color: var(--verde); }
+
+.seccion-cab { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.seccion-cab h2 { font-size: 16px; }
+
+/* --- filtro por estado --------------------------------------------------- */
+.filtro-estados { display: flex; flex-wrap: wrap; gap: 8px; }
+.filtro-estado {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 12px; border-radius: var(--r-full);
+  border: 1px solid var(--line); background: #fff; color: var(--ink-2);
+  font: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer;
+  transition: border-color var(--t-fast), background var(--t-fast), color var(--t-fast);
+}
+.filtro-estado strong { font-weight: 750; color: var(--faint); font-variant-numeric: tabular-nums; }
+.filtro-estado:hover { border-color: #cfd6cd; background: #fafbf6; }
+.filtro-estado.activo { border-color: var(--verde-2); background: var(--verde-suave); color: var(--verde); }
+.filtro-estado.activo strong { color: var(--verde); }
+.filtro-estado--alerta.activo { border-color: var(--oro); background: var(--oro-suave); color: #7a4d00; }
+.filtro-estado--malo.activo { border-color: var(--rojo); background: var(--rojo-suave); color: var(--rojo); }
+.filtro-estado--ok.activo { border-color: var(--verde-2); background: var(--verde-suave); color: var(--verde); }
+
+/* --- detalle del pedido -------------------------------------------------- */
+.detalle-cab__lado { display: grid; justify-items: end; gap: 4px; }
+.detalle-total { font-size: 26px; font-weight: 750; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+
+.detalle-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+
+.acciones-pedido { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.pin-aviso {
+  display: grid; justify-items: center; gap: 2px;
+  padding: 14px 18px; border-radius: var(--r-md);
+  border: 1px solid #e7cf9a; background: var(--oro-suave); color: #6b4200;
+}
+.pin-aviso span { font-size: 12.5px; }
+.pin-aviso strong { font-size: 34px; letter-spacing: .28em; font-variant-numeric: tabular-nums; }
+.pin-aviso--rec { border-color: #bcd8c6; background: var(--verde-suave); color: var(--verde); }
+
+.caja-pin {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+  padding: 12px 14px; border-radius: var(--r-md);
+  border: 1px solid var(--line); background: #fff; box-shadow: var(--s-1);
+}
+.caja-pin > div { display: grid; gap: 2px; min-width: 180px; }
+.caja-pin input {
+  width: 190px; height: 42px; text-align: center; letter-spacing: .3em;
+  border: 1px solid var(--line); border-radius: var(--r-sm);
+  font: inherit; font-size: 16px; font-variant-numeric: tabular-nums;
+}
+.caja-pin input:focus { outline: 2px solid var(--verde-2); outline-offset: 1px; }
+.caja-pin--viaje { margin-top: 10px; background: #fbfcfa; }
+
+.linea-tiempo { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.linea-tiempo__paso { position: relative; display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; padding-bottom: 14px; }
+.linea-tiempo__paso::before {
+  content: ''; position: absolute; left: 10px; top: 14px; bottom: 0; width: 2px; background: var(--line);
+}
+.linea-tiempo__paso:last-child { padding-bottom: 0; }
+.linea-tiempo__paso:last-child::before { display: none; }
+.linea-tiempo__punto {
+  width: 11px; height: 11px; margin: 4px 0 0 5px; border-radius: 99px;
+  background: #fff; border: 2px solid var(--line);
+}
+.linea-tiempo__paso strong { display: block; font-size: 13.5px; }
+.linea-tiempo__paso p { margin: 2px 0 0; font-size: 12.5px; color: var(--muted); }
+.linea-tiempo__paso.actual .linea-tiempo__punto { border-color: var(--verde-2); background: var(--verde-2); }
+
+.dato { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13.5px; }
+.dato > span:first-child { color: var(--muted); }
+
+.estrellas { display: flex; gap: 4px; }
+.estrella {
+  background: none; border: 0; padding: 2px 4px; cursor: pointer;
+  font-size: 26px; line-height: 1; color: var(--line); transition: transform var(--t-fast), color var(--t-fast);
+}
+.estrella:hover { transform: scale(1.1); }
+.estrella.llena { color: var(--oro); }
+
+.modal-velo {
+  position: fixed; inset: 0; z-index: 60; display: grid; place-items: center;
+  padding: 20px; background: rgba(15, 23, 20, .38);
+}
+.modal {
+  width: min(440px, 100%); display: grid; gap: 14px;
+  background: #fff; border-radius: var(--r-lg); padding: 22px;
+  box-shadow: var(--s-3);
+}
+.modal h2 { font-size: 18px; }
+.modal__pie { display: flex; justify-content: flex-end; gap: 10px; }
+
+/* --- panel del repartidor ------------------------------------------------ */
+.barra-disponible { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.barra-disponible > div { display: grid; gap: 3px; }
+
+.ofertas { display: grid; gap: 10px; }
+.oferta {
+  display: grid; gap: 6px; padding: 14px 16px;
+  background: #fff; border: 1px solid #cfdcd3; border-radius: var(--r-md);
+  box-shadow: var(--s-1);
+}
+.oferta__cab { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.oferta__cab strong { font-size: 15px; }
+.oferta__tarifa { font-size: 20px; font-weight: 750; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.oferta__pie { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+.viaje {
+  display: grid; gap: 10px; padding: 15px 16px;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--r-md);
+  box-shadow: var(--s-1);
+}
+.viaje--activo { border-color: var(--verde-2); box-shadow: 0 0 0 3px var(--verde-suave); }
+.viaje__cab { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.viaje__cab > div:first-child { display: grid; gap: 3px; }
+.viaje__tarifa { margin-top: 4px; font-size: 17px; font-weight: 750; font-variant-numeric: tabular-nums; }
+.viaje__pie { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+/* --- seguimiento --------------------------------------------------------- */
+.mapa-reparto {
+  height: 58vh; min-height: 340px; width: 100%;
+  border-radius: var(--r-lg); overflow: hidden;
+  border: 1px solid var(--line); box-shadow: var(--s-2);
+  background: #eef1ea; z-index: 1;
+}
+.mapa-reparto--vacio { display: grid; place-items: center; padding: 20px; background: #f7f8f4; }
+.mapa-reparto__leyenda { display: grid; gap: 10px; width: min(420px, 100%); }
+.mapa-reparto__leyenda > div:not(.mapa-reparto__linea) { display: grid; gap: 2px; }
+.mapa-reparto__linea {
+  height: 42px; margin-left: 6px; width: 2px;
+  background: repeating-linear-gradient(to bottom, var(--verde-2) 0 6px, transparent 6px 12px);
+}
+
+.pago-monto { font-size: 34px; font-weight: 750; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+
+/* --- responsive ---------------------------------------------------------- */
+@media (max-width: 900px) {
+  .detalle-grid { grid-template-columns: minmax(0, 1fr); }
+  .detalle-cab__lado { justify-items: start; }
+}
+
+@media (max-width: 560px) {
+  .mapa-reparto { height: 44vh; min-height: 280px; }
+  .oferta__pie, .viaje__pie { gap: 8px; }
+  .oferta__pie > div, .viaje__pie > button { flex: 1 1 auto; }
+  .oferta__pie > div { margin-left: 0 !important; }
+  .caja-pin input { width: 100%; }
+  .caja-pin > div { min-width: 100%; }
+  .pin-aviso strong { font-size: 28px; }
+}

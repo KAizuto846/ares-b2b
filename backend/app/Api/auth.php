@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+// Como el resto de los módulos, cada archivo se trae las ayudas compartidas.
+require_once __DIR__ . '/_comun.php';
+
 /**
  * Módulo Auth público de la SPA (alta de cuenta, recuperación, verificación
  * de correo y textos legales).

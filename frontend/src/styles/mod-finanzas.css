@@ -1,1 +1,352 @@
 /* Módulo finanzas: estilos propios. No tocar app.css para reglas de una sola pantalla. */
+
+/* Contenedor de página: las tablas anchas no deben empujar el ancho del documento.
+   Sin `min-width: 0` la pista del grid crece al min-content de la tabla (620px). */
+.fin-pagina { display: grid; gap: 18px; min-width: 0; }
+.fin-pagina > * { min-width: 0; }
+
+/* ------------------------------------------------------------------ pestañas */
+.fin-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: #eff1ea;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.fin-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ink-2);
+  font-size: 13.5px;
+  font-weight: 650;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--t-fast), color var(--t-fast), box-shadow var(--t-fast);
+}
+.fin-tab:hover { background: rgba(255, 255, 255, .6); }
+.fin-tab.activo { background: #fff; color: var(--verde); box-shadow: var(--s-1); }
+.fin-cuenta {
+  display: inline-grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--verde-suave);
+  color: #14532d;
+  font-size: 11.5px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ------------------------------------------------------------- herramientas */
+.fin-herramientas {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+}
+.fin-segmento {
+  display: inline-flex;
+  padding: 3px;
+  background: #eff1ea;
+  border-radius: 10px;
+  gap: 2px;
+}
+.fin-segmento button {
+  min-height: 36px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink-2);
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+.fin-segmento button:hover { background: rgba(255, 255, 255, .65); }
+.fin-segmento button.activo { background: #fff; color: var(--verde); box-shadow: var(--s-1); }
+.fin-campo { min-width: 130px; }
+.fin-campo select, .fin-campo input[type='date'] {
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+.fin-campo select:focus, .fin-campo input[type='date']:focus {
+  outline: none;
+  border-color: var(--verde-3);
+  box-shadow: 0 0 0 3px rgba(47, 158, 99, .16);
+}
+.fin-nota { font-size: 12.5px; color: var(--muted); }
+.fin-total { margin-left: auto; font-size: 15px; font-weight: 750; font-variant-numeric: tabular-nums; }
+.fin-enlace {
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--verde-2);
+  cursor: pointer;
+  border-bottom: 1px dotted rgba(31, 122, 77, .45);
+}
+.fin-enlace:hover { color: var(--verde); }
+
+/* ------------------------------------------------------------------ gráfica */
+.fin-grafica {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 10px;
+  margin: 4px 0 24px;
+}
+.fin-eje-y { position: relative; height: 220px; }
+.fin-eje-y span {
+  position: absolute;
+  right: 0;
+  transform: translateY(50%);
+  font-size: 11px;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.fin-plot {
+  position: relative;
+  height: 220px;
+  border-left: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.fin-linea {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--line-soft);
+}
+.fin-barras {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  padding: 0 8px;
+}
+.fin-barra {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.fin-barra > i {
+  display: block;
+  width: 100%;
+  max-width: 36px;
+  min-height: 2px;
+  border-radius: 6px 6px 2px 2px;
+  background: linear-gradient(180deg, var(--verde-3), var(--verde));
+  transition: height var(--t-slow) var(--ease-out), background var(--t-fast);
+}
+.fin-barra:hover > i { background: linear-gradient(180deg, #3cb673, #175f34); }
+.fin-barra--vacia > i { background: #e0e5db; }
+.fin-barra > b {
+  position: absolute;
+  bottom: -19px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.fin-barra > b.fin-oculta { visibility: hidden; }
+.fin-barra__pista {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10.5px;
+  font-weight: 650;
+  color: var(--ink-2);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity var(--t-fast);
+  pointer-events: none;
+}
+.fin-barra:hover .fin-barra__pista { opacity: 1; }
+
+/* ------------------------------------------------------------------- tablas */
+.tabla-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+.tabla-scroll .tabla { min-width: 620px; }
+
+/* --------------------------------------------------------- formulario fiscal */
+.fin-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+  max-width: 760px;
+  margin-top: 12px;
+}
+.fin-form__pie {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.fin-error { color: var(--rojo); font-size: 12px; }
+
+/* --------------------------------------------------------------- hoja factura */
+.fin-factura { display: grid; gap: 16px; min-width: 0; }
+.fin-factura > * { min-width: 0; }
+.fin-hoja-tabla { margin: 10px 0 0; }
+.fin-hoja-tabla .tabla { min-width: 460px; }
+.fin-factura__acciones { display: flex; gap: 10px; flex-wrap: wrap; }
+.fin-factura__acciones .btn { display: inline-flex; align-items: center; gap: 8px; }
+
+.factura-hoja {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 28px 30px;
+  max-width: 840px;
+  box-shadow: var(--s-1);
+}
+.factura-hoja__cabeza {
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+  flex-wrap: wrap;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+.factura-hoja__emisor { display: grid; gap: 4px; font-size: 12.5px; color: var(--muted); }
+.factura-hoja__emisor strong { font-size: 16px; color: var(--ink); letter-spacing: -.01em; }
+.factura-hoja__folio { display: grid; gap: 6px; justify-items: end; text-align: right; }
+.factura-hoja__tipo {
+  font-size: 10.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-weight: 700;
+}
+.factura-hoja__folio strong {
+  font-size: 21px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.02em;
+}
+.factura-hoja__partes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  padding: 18px 0 6px;
+}
+.factura-hoja__partes > div { display: grid; gap: 4px; font-size: 13px; color: var(--ink-2); align-content: start; }
+.factura-hoja__partes h3 {
+  margin: 0 0 4px;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.factura-hoja__tabla { margin: 10px 0 0; }
+.factura-hoja__tabla th { font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; }
+.factura-hoja__tabla td, .factura-hoja__tabla th { padding-left: 0; padding-right: 0; }
+.factura-hoja__tabla td:last-child, .factura-hoja__tabla th:last-child { padding-right: 4px; }
+.factura-hoja__totales {
+  display: grid;
+  gap: 6px;
+  justify-content: end;
+  margin-top: 16px;
+  min-width: 240px;
+}
+.factura-hoja__totales > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  font-size: 13.5px;
+  color: var(--ink-2);
+}
+.factura-hoja__totales b { font-variant-numeric: tabular-nums; }
+.factura-hoja__total {
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  font-size: 16.5px !important;
+  font-weight: 750;
+  color: var(--ink);
+}
+.factura-hoja__pie {
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--faint);
+}
+.factura-hoja__uuid { font-family: var(--mono); font-size: 11.5px; word-break: break-all; }
+.factura-hoja__nota { color: #8a6410; font-weight: 600; }
+
+@media (max-width: 760px) {
+  .factura-hoja { padding: 20px 18px; }
+  .factura-hoja__folio { justify-items: start; text-align: left; }
+  .fin-grafica { grid-template-columns: 44px minmax(0, 1fr); }
+}
+
+/* ------------------------------------------------------------------ impresión */
+@media print {
+  .rail,
+  .topbar,
+  .toasts,
+  .cajon,
+  .fin-no-imprimir,
+  .fin-factura__acciones { display: none !important; }
+
+  html, body { background: #fff !important; }
+  .app { display: block !important; grid-template-columns: none !important; }
+  .main { margin: 0 !important; display: block !important; }
+  .contenido { padding: 0 !important; max-width: none !important; width: auto !important; }
+
+  .fin-factura { gap: 0 !important; }
+  .factura-hoja {
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    max-width: none !important;
+    padding: 0 !important;
+    color: #000;
+  }
+  .factura-hoja .chip { border: 1px solid #999; background: #fff !important; color: #000 !important; }
+  .factura-hoja__tabla .tabla th { background: #fff !important; }
+  .tabla-scroll { overflow: visible !important; }
+  .tabla-scroll .tabla { min-width: 0 !important; }
+
+  @page { margin: 14mm; }
+}

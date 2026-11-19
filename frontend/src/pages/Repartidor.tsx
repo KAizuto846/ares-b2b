@@ -273,7 +273,7 @@ export default function Repartidor() {
                       placeholder={'•'.repeat(pinActual.largo)}
                       aria-label={`PIN de ${pinActual.tipo}`}
                     />
-                    <button className="btn" type="submit" disabled={ocupado !== '' || (pines[v.uuid] ?? '').length < 4}>
+                    <button className="btn" type="submit" disabled={ocupado !== '' || (pines[v.uuid] ?? '').length < pinActual.largo}>
                       {pinActual.tipo === 'recoleccion' ? 'Confirmar recolección' : 'Confirmar entrega'}
                     </button>
                   </form>

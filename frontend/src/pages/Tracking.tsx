@@ -65,6 +65,7 @@ export default function Tracking() {
   const [sinMapa, setSinMapa] = useState(false)
 
   const caja = useRef<HTMLDivElement | null>(null)
+  const mapaEn = useRef<HTMLDivElement | null>(null)
   const mapa = useRef<LeafletMapa | null>(null)
   const marcadorRep = useRef<LeafletCapa | null>(null)
   const marcadorDestino = useRef<LeafletCapa | null>(null)
@@ -98,8 +99,16 @@ export default function Tracking() {
       .then((L) => {
         if (!vivo || !caja.current) return
 
-        if (!mapa.current) {
+        if (!mapa.current || mapaEn.current !== caja.current) {
+          // El contenedor cambia cuando el mapa se oculta y se vuelve a mostrar:
+          // Leaflet no puede reengancharse, se crea de nuevo.
+          mapa.current?.remove()
+          marcadorRep.current = null
+          marcadorDestino.current = null
+          linea.current = null
+          encuadrado.current = false
           mapa.current = L.map(caja.current, { scrollWheelZoom: true })
+          mapaEn.current = caja.current
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '© OpenStreetMap',

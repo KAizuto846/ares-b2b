@@ -1373,7 +1373,7 @@ if ($adminSeccion === 'postmvp') {
         )->fetchAll() ?: [];
 
         $pedidos = $adminPdo->query(
-            "SELECT p.id, p.uuid, p.total, p.envio, p.estado, m.nombre_comercial AS mayorista
+            "SELECT p.id, p.uuid, p.total, p.envio, p.estado, p.mayorista_id, m.nombre_comercial AS mayorista
              FROM pedidos p JOIN mayoristas_perfil m ON m.id = p.mayorista_id
              WHERE p.estado IN ('recibido','entregado','en_camino','preparando','pendiente_aceptacion')
              ORDER BY p.created_at DESC LIMIT 60"

@@ -200,7 +200,8 @@ export default function Caja() {
         <div>
           <h1 style={{ margin: 0 }}>Caja</h1>
           <p style={{ margin: '2px 0 0', color: 'var(--muted)', fontSize: 14 }}>
-            Turno #{datos.turno.id} abierto · vendido hoy {money(datos.vendido)}
+            Turno #{datos.turno.id} abierto · vendido hoy {money(datos.vendido)} · en caja{' '}
+            {money(datos.turno.efectivo_esperado ?? datos.turno.fondo_inicial)}
           </p>
         </div>
         <div className="pos-atajos">

@@ -1,0 +1,209 @@
+/* ==========================================================================
+   Módulo auth (SPA): alta de cuenta, recuperación, restablecimiento,
+   verificación y páginas legales. Solo se apoyan en los tokens y clases de
+   app.css (.login, .login__caja, .campo, .btn, .aviso); aquí vive lo propio.
+   ========================================================================== */
+
+/* ------------------------------------------------------ lienzo de una columna */
+.auth-pantalla { grid-template-columns: 1fr; }
+.auth-pantalla__form { min-height: 100vh; width: 100%; padding: 40px 20px; }
+
+/* La tarjeta del login, pero con fondo: estas pantallas no tienen panel de arte. */
+.auth-tarjeta {
+  width: min(470px, 100%);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: 26px;
+  box-shadow: var(--s-2);
+}
+.auth-tarjeta h1 { font-size: 26px; letter-spacing: -.03em; }
+.auth-tarjeta p { color: var(--muted); font-size: 13.5px; line-height: 1.5; }
+
+.auth-cab { display: flex; gap: 12px; align-items: center; }
+.auth-cab > div { display: grid; gap: 4px; min-width: 0; }
+
+.auth-form { display: grid; gap: 16px; }
+.auth-doble { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+
+.auth-tarjeta .campo input,
+.auth-tarjeta .campo select { width: 100%; }
+input[type='tel'] {
+  height: 44px; padding: 0 12px;
+  border: 1px solid var(--line); border-radius: 11px;
+  background: #fff; color: var(--ink);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+input[type='tel']:focus { outline: none; border-color: var(--verde-3); box-shadow: 0 0 0 3px rgba(47, 158, 99, .16); }
+
+/* ------------------------------------------------------------- pistas y error */
+.auth-pista { font-size: 12px; color: var(--faint); line-height: 1.4; font-weight: 400; }
+.auth-campo-error { font-size: 12px; color: var(--rojo); font-weight: 600; line-height: 1.4; }
+
+/* --------------------------------------------------------- contraseña con ojo */
+.auth-clave { position: relative; display: block; }
+.auth-clave input { width: 100%; padding-right: 46px; }
+.auth-ojo {
+  position: absolute; right: 5px; top: 50%; transform: translateY(-50%);
+  width: 34px; height: 34px; display: grid; place-items: center;
+  border: 0; border-radius: 8px; background: transparent; color: var(--faint); cursor: pointer;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+.auth-ojo:hover { background: var(--line-soft); color: var(--ink-2); }
+.auth-ojo[aria-pressed='true'] { color: var(--verde-2); background: var(--verde-suave); }
+
+/* -------------------------------------------------- medidor de fuerza (4 señales) */
+.auth-fuerza { display: flex; gap: 6px; margin-top: -6px; }
+.auth-fuerza i { flex: 1; height: 5px; border-radius: var(--r-full); background: var(--line); transition: background var(--t-base); }
+.auth-fuerza--1 i:nth-child(1) { background: var(--rojo); }
+.auth-fuerza--2 i:nth-child(-n + 2) { background: var(--oro); }
+.auth-fuerza--3 i:nth-child(-n + 3) { background: var(--verde-3); }
+.auth-fuerza--4 i { background: var(--verde); }
+.auth-fuerza__texto { font-size: 12px; color: var(--muted); margin-top: -8px; }
+
+/* ----------------------------------------------------------- selector de rol */
+.auth-roles { border: 0; margin: 0; padding: 0; display: grid; gap: 10px; }
+.auth-roles legend {
+  padding: 0 0 2px; font-size: 12.5px; font-weight: 600; color: var(--ink-2);
+}
+.auth-roles__rejilla { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.auth-rol {
+  display: grid; gap: 5px; align-content: start; text-align: left;
+  padding: 12px; border: 1px solid var(--line); border-radius: var(--r-md);
+  background: var(--card); color: var(--ink); font: inherit; cursor: pointer;
+  transition: border-color var(--t-fast), box-shadow var(--t-base), transform var(--t-fast) var(--ease-out);
+}
+.auth-rol:hover { border-color: #cfd6cd; transform: translateY(-1px); }
+.auth-rol strong { font-size: 13px; line-height: 1.25; }
+.auth-rol small { color: var(--muted); font-size: 11.5px; line-height: 1.35; }
+.auth-rol--activo {
+  border-color: var(--verde-3);
+  box-shadow: 0 0 0 3px rgba(47, 158, 99, .14);
+  background: linear-gradient(180deg, var(--verde-suave), var(--card) 70%);
+}
+.auth-rol__detalle { font-size: 11px; color: var(--verde-2); line-height: 1.35; font-weight: 600; }
+.auth-rol:focus-visible { outline: 2px solid var(--verde-3); outline-offset: 2px; }
+
+/* ------------------------------------------------------------- pie y legal */
+.auth-pie { font-size: 13px; color: var(--muted); text-align: center; }
+.auth-pie a, .auth-legal a { color: var(--verde-2); font-weight: 650; text-decoration: none; }
+.auth-pie a:hover, .auth-legal a:hover { text-decoration: underline; text-underline-offset: 2px; }
+.auth-legal { font-size: 12px; color: var(--faint); text-align: center; line-height: 1.5; }
+
+/* --------------------------------------------------------- estado final (ok) */
+.auth-hecho { display: grid; gap: 10px; justify-items: start; }
+.auth-hecho__icono {
+  width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center;
+  background: var(--verde-suave); color: var(--verde);
+}
+.auth-hecho__icono--ok { background: var(--verde-suave); color: var(--verde-2); }
+.auth-hecho__icono--malo { background: var(--oro-suave); color: #6b4a08; }
+.auth-hecho h1 { font-size: 24px; }
+.auth-hecho p { margin: 0; }
+
+/* ------------------------------------------- ayudas de modo local (sin correo) */
+.auth-dev {
+  display: grid; gap: 8px; padding: 12px 14px;
+  border: 1px dashed var(--line); border-radius: var(--r-md);
+  background: #fbfcf7; font-size: 12.5px; color: var(--ink-2);
+}
+.auth-dev__titulo {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-weight: 700; font-size: 12px; color: var(--verde-2);
+  text-transform: uppercase; letter-spacing: .05em;
+}
+.auth-dev code {
+  font-family: var(--mono); font-size: 11.5px;
+  background: var(--line-soft); padding: 2px 6px; border-radius: 6px;
+  word-break: break-all;
+}
+.auth-dev__token code { display: inline-block; max-height: 3.6em; overflow: hidden; }
+.auth-codigo { font-size: 15px !important; letter-spacing: .18em; font-weight: 700; }
+
+/* ============================================================ páginas legales */
+.legal-pantalla {
+  min-height: 100vh; padding: 0 20px 64px;
+  display: grid; justify-items: center; align-content: start;
+}
+.legal-pantalla__barra {
+  width: min(820px, 100%); display: flex; align-items: center; justify-content: space-between;
+  gap: 14px; flex-wrap: wrap; padding: 20px 0 8px;
+}
+.legal-pantalla__marca {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-weight: 800; letter-spacing: -.02em; text-decoration: none; color: var(--ink);
+}
+.legal-pantalla__nav { display: flex; gap: 6px; flex-wrap: wrap; }
+.legal-tab {
+  padding: 7px 12px; border-radius: var(--r-full); text-decoration: none;
+  font-size: 12.5px; font-weight: 650; color: var(--muted);
+  border: 1px solid transparent; transition: background var(--t-fast), color var(--t-fast);
+}
+.legal-tab:hover { background: rgba(15, 23, 20, .05); color: var(--ink); }
+.legal-tab--activo { background: var(--verde-suave); color: var(--verde); border-color: #cfe3d5; }
+
+.legal { width: min(820px, 100%); display: grid; gap: 16px; }
+.legal__doc {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg);
+  padding: clamp(22px, 3vw, 38px); box-shadow: var(--s-1);
+  display: grid; gap: 22px;
+}
+.legal__cab { display: grid; gap: 8px; }
+.legal__cab h1 { font-size: clamp(24px, 3vw, 32px); }
+.legal__fecha { font-size: 12.5px; color: var(--faint); margin: 0; }
+.legal__intro { font-size: 14px; color: var(--ink-2); line-height: 1.6; margin: 0; max-width: 68ch; }
+
+.legal__indice {
+  border: 1px solid var(--line); border-radius: var(--r-md);
+  padding: 14px 16px; background: #fbfcf7;
+  display: grid; gap: 8px;
+}
+.legal__indice-titulo {
+  display: inline-flex; align-items: center; gap: 6px; margin: 0;
+  font-size: 11.5px; font-weight: 750; letter-spacing: .07em; text-transform: uppercase; color: var(--faint);
+}
+.legal__indice ol {
+  margin: 0; padding-left: 18px; display: grid; gap: 4px;
+  columns: 2; column-gap: 24px; font-size: 13px;
+}
+.legal__indice a { color: var(--ink-2); text-decoration: none; }
+.legal__indice a:hover { color: var(--verde-2); text-decoration: underline; text-underline-offset: 2px; }
+
+.legal__cuerpo { display: grid; gap: 22px; max-width: 72ch; }
+.legal__bloque { display: grid; gap: 8px; scroll-margin-top: 18px; }
+.legal__bloque h2 { font-size: 17px; letter-spacing: -.02em; }
+.legal__bloque p { margin: 0; font-size: 14px; line-height: 1.68; color: var(--ink-2); }
+.legal__bloque ul { margin: 2px 0 0; padding-left: 20px; display: grid; gap: 5px; }
+.legal__bloque li { font-size: 14px; line-height: 1.6; color: var(--ink-2); }
+
+.legal__pie {
+  border-top: 1px solid var(--line-soft); padding-top: 18px;
+  display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap;
+}
+.legal__pie p { margin: 0; font-size: 13px; color: var(--muted); }
+.legal__acciones { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* ------------------------------------------------------------------ responsive */
+@media (max-width: 640px) {
+  .auth-pantalla__form { padding: 20px 14px; align-content: start; }
+  .auth-tarjeta { padding: 20px; border-radius: var(--r-lg); }
+  .auth-roles__rejilla { grid-template-columns: 1fr; }
+  .auth-doble { grid-template-columns: 1fr; }
+  .legal__indice ol { columns: 1; }
+  .legal__pie { flex-direction: column; align-items: flex-start; }
+  .legal__acciones .btn { flex: 1 1 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-rol, .auth-ojo, .auth-fuerza i { transition: none; }
+}
+
+/* ------------------------------------------------------------------ tema oscuro */
+html[data-tema='oscuro'] .auth-dev { background: #131b17; }
+html[data-tema='oscuro'] .legal__indice { background: #131b17; }
+html[data-tema='oscuro'] .auth-tarjeta,
+html[data-tema='oscuro'] .legal__doc { background: var(--card); }
+html[data-tema='oscuro'] .auth-rol--activo { background: linear-gradient(180deg, #16241c, var(--card) 70%); }
+html[data-tema='oscuro'] input[type='tel'] { background: #121a16; color: var(--ink); border-color: var(--line); }
+html[data-tema='oscuro'] .legal-tab:hover { background: rgba(255, 255, 255, .06); }
+html[data-tema='oscuro'] .auth-hecho__icono--malo { background: #34280d; color: #f0cd85; }
