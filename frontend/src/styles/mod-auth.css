@@ -86,9 +86,13 @@ input[type='tel']:focus { outline: none; border-color: var(--verde-3); box-shado
 
 /* ------------------------------------------------------------- pie y legal */
 .auth-pie { font-size: 13px; color: var(--muted); text-align: center; }
+/* Enlaces sueltos del pie: objetivo táctil completo, no sólo el texto. */
+.auth-pie a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 2px; }
+.auth-pie { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0 6px; }
 .auth-pie a, .auth-legal a { color: var(--verde-2); font-weight: 650; text-decoration: none; }
 .auth-pie a:hover, .auth-legal a:hover { text-decoration: underline; text-underline-offset: 2px; }
 .auth-legal { font-size: 12px; color: var(--faint); text-align: center; line-height: 1.5; }
+.auth-legal a { display: inline-block; padding: 3px 0; }
 
 /* --------------------------------------------------------- estado final (ok) */
 .auth-hecho { display: grid; gap: 10px; justify-items: start; }
@@ -130,12 +134,13 @@ input[type='tel']:focus { outline: none; border-color: var(--verde-3); box-shado
   gap: 14px; flex-wrap: wrap; padding: 20px 0 8px;
 }
 .legal-pantalla__marca {
-  display: inline-flex; align-items: center; gap: 9px;
+  display: inline-flex; align-items: center; gap: 9px; min-height: 44px;
   font-weight: 800; letter-spacing: -.02em; text-decoration: none; color: var(--ink);
 }
 .legal-pantalla__nav { display: flex; gap: 6px; flex-wrap: wrap; }
 .legal-tab {
-  padding: 7px 12px; border-radius: var(--r-full); text-decoration: none;
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px;
+  border-radius: var(--r-full); text-decoration: none;
   font-size: 12.5px; font-weight: 650; color: var(--muted);
   border: 1px solid transparent; transition: background var(--t-fast), color var(--t-fast);
 }
@@ -156,8 +161,10 @@ input[type='tel']:focus { outline: none; border-color: var(--verde-3); box-shado
 .legal__indice {
   border: 1px solid var(--line); border-radius: var(--r-md);
   padding: 14px 16px; background: #fbfcf7;
-  display: grid; gap: 8px;
+  display: grid; gap: 4px;
 }
+/* El índice son enlaces en prosa: 24 px de alto (WCAG 2.2) sin romper el renglón. */
+.legal__indice a, .legal__doc a { display: inline-block; padding: 3px 0; }
 .legal__indice-titulo {
   display: inline-flex; align-items: center; gap: 6px; margin: 0;
   font-size: 12px; font-weight: 750; letter-spacing: .07em; text-transform: uppercase; color: var(--faint);
