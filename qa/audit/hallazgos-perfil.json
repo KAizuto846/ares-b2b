@@ -1,0 +1,44 @@
+[
+ {
+  "pagina": "/perfil/permisos",
+  "falta": "Interruptores de permisos del dispositivo (Cámara, Ubicación, Micrófono, Notificaciones, Fotos y videos) con guardado por equipo en localStorage ('ares-permisos') y aviso al cambiar",
+  "donde_estaria": "SPA: frontend/src/pages/perfil/Permisos.tsx, sección «Permisos del dispositivo» (hoy solo lista estática con chip «Se pide al usarse»)",
+  "evidencia": "VIEJA: 5 checkboxes marcados («Cámara»/«Compartir ubicación»/«Micrófono»/«Notificaciones»/«Fotos y videos») y texto «Estos permisos se guardan en este equipo, no en tu cuenta. Si los desactivas, Ares te los vuelve a pedir la próxima vez que lo necesite.» — NUEVA: 0 inputs y 0 role=switch en el DOM; en su lugar «Ares te los pide al navegador solo cuando de verdad los necesita; puedes revocarlos…» y el chip «Se pide al usarse» en cada permiso",
+  "severidad": "media"
+ },
+ {
+  "pagina": "/ayuda y /perfil/ajustes (bloque Legal)",
+  "falta": "Enlaces a Términos y condiciones y Aviso de privacidad: en la SPA son filas estáticas con la ruta impresa como texto, no navegan (aunque la SPA sí tiene /terminos y /privacidad)",
+  "donde_estaria": "SPA: pages/perfil/Ayuda.tsx (sección Legal, usa div.perfil-fila--estatica) y pages/perfil/Ajustes.tsx (bloque Legal)",
+  "evidencia": "VIEJA: «Consulta el los términos y condiciones o el aviso de privacidad.» con <a href=\"/terminos\"> y <a href=\"/aviso-privacidad\">; en Ajustes, fila enlazada «Términos y condiciones — Uso del servicio y responsabilidades ›» → /terminos. NUEVA: «Términos y condiciones — Disponible en el sitio principal de Ares — /terminos» y «Aviso de privacidad — … — /aviso-privacidad»; al pulsar «Términos y condiciones» la URL sigue en /spa/ayuda (igual en /spa/perfil/ajustes)",
+  "severidad": "media"
+ },
+ {
+  "pagina": "/mensajes?tab=notificaciones (aviso «Pago confirmado»)",
+  "falta": "El enlace profundo del aviso de pago a la facturación: en la SPA cae en el inicio",
+  "donde_estaria": "SPA: mapeo de href de notificaciones (api «notificaciones») → debería apuntar a /finanzas (pestaña facturación); hoy resuelve a /spa",
+  "evidencia": "VIEJA: «Pago confirmado — Recibimos $348.00 por el pedido de harina. La factura ya está disponible.» + «Ver detalle ›» → http://127.0.0.1:3110/finanzas?tab=facturacion — NUEVA: mismo aviso, «Ver detalle ›» → http://127.0.0.1:8081/spa",
+  "severidad": "media"
+ },
+ {
+  "pagina": "/mensajes?tab=notificaciones (contador de pestaña)",
+  "falta": "El contador de la pestaña «Conversaciones» se calcula sobre la pestaña activa: en Notificaciones muestra 0 aunque haya hilos",
+  "donde_estaria": "SPA: pages/Mensajes.tsx, badge de la pestaña Conversaciones",
+  "evidencia": "VIEJA en /mensajes?tab=notificaciones: «Conversaciones 1 / Notificaciones» — NUEVA en la misma URL: «Conversaciones 0 / Notificaciones»; en /mensajes (pestaña conversaciones) ambas muestran 1",
+  "severidad": "baja"
+ },
+ {
+  "pagina": "/kyc",
+  "falta": "La tabla «Mis documentos» con columnas TIPO / ESTADO / FECHA / MOTIVO desaparece cuando no hay documentos: solo queda la frase, sin columnas visibles",
+  "donde_estaria": "SPA: pages/perfil/Kyc.tsx, bloque «Mis documentos» (la tabla solo se renderiza si documentos.length > 0)",
+  "evidencia": "VIEJA: encabezado «Mis documentos» + tabla con «TIPO ESTADO FECHA MOTIVO» y fila «Sin documentos todavía.» — NUEVA: «Mis documentos» + «Sin documentos todavía.» y 0 tablas en el DOM (misma URL, misma cuenta comercio y también con rol repartidor)",
+  "severidad": "baja"
+ },
+ {
+  "pagina": "/perfil (ficha)",
+  "falta": "El estado real de verificación en la ficha: la SPA lo sustituye por un texto derivado del rol («Sin verificación requerida») y ya no refleja el estado pendiente de la cuenta",
+  "donde_estaria": "SPA: pages/Perfil.tsx, chip junto al tipo de cuenta (debería leer el estado KYC, como /perfil/seguridad y /kyc)",
+  "evidencia": "VIEJA: «Comercio / Verificación pendiente» (y en /kyc «Tu rol no requiere documentos.») — NUEVA: «Comercio / Sin verificación requerida»; con rol repartidor ambas coinciden en «Verificación pendiente»",
+  "severidad": "baja"
+ }
+]

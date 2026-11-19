@@ -65,6 +65,7 @@
   "texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\nMi perfil\n\nTus datos, la verificación de la cuenta y las opciones de la app.\n\nCerrar sesión\nCasa de Toño\n★\n4.5\nde 5,\n4 calificaciones\nComercio\nVerificación pendiente\nCORREO\ncomercio@didi2.mx\nANTIGÜEDAD\nMiembro desde noviembre de 2026\nTELÉFONO\n5512345678\nDIRECCIÓN PRINCIPAL\nAv. Insurgentes Sur 123, Del Valle, Ciudad de México\nEditar\nVerificación\nIdentidad, documentos y estado de la cuenta\nAyuda\nPreguntas frecuentes, soporte y contacto\nAjustes\nPrivacidad, permisos, tema y seguridad",
   "urlFinal": "http://127.0.0.1:3110/perfil",
   "errores": [
+   "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
    "404 http://127.0.0.1:3110/avatar/2?v=1795038291"
   ]
  },
@@ -1247,6 +1248,7 @@
    "Abrir carrito",
    "Volver a mi perfil",
    "Quitar foto",
+   "Ubicar en el mapa",
    "Cancelar",
    "Guardar cambios",
    "Seguridad"
@@ -1330,11 +1332,11 @@
    "Datos de la cuenta Nombre del negocio Nombre comercial Correo Teléfono",
    "Datos de la cuenta",
    "Nombre del negocio Nombre comercial Correo Teléfono",
-   "Dirección de entrega Calle y número Colonia Ciudad Estado C.P. Referencias Latitud Longitud Las coordenadas ubican el pu",
+   "Dirección de entrega Calle y número Colonia Ciudad Estado C.P. Referencias Latitud Longitud Ubicar en el mapa Las coorde",
    "Dirección de entrega",
-   "Calle y número Colonia Ciudad Estado C.P. Referencias Latitud Longitud Las coordenadas ubican el punto exacto de entrega"
+   "Calle y número Colonia Ciudad Estado C.P. Referencias Latitud Longitud Ubicar en el mapa Las coordenadas ubican el punto"
   ],
-  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMi perfil\nEditar cuenta\n\nNombre, contacto, foto y dirección de entrega.\n\nVolver a mi perfil\nFoto de perfil\nElegir imagen\nQuitar foto\n\nJPG, PNG o WebP · máximo 2 MB. Se recorta en cuadrado a 256 px.\n\nDatos de la cuenta\nNombre del negocio\nNombre comercial\nCorreo\nTeléfono\nDirección de entrega\nCalle y número\nColonia\nCiudad\nEstado\nC.P.\nReferencias\nLatitud\nLongitud\n\nLas coordenadas ubican el punto exacto de entrega. Si no las cambias se usa el centro de la ciudad.\n\nCancelar\nGuardar cambios\n\nLa contraseña y la baja de la cuenta se manejan en Seguridad.",
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMi perfil\nEditar cuenta\n\nNombre, contacto, foto y dirección de entrega.\n\nVolver a mi perfil\nFoto de perfil\nElegir imagen\nQuitar foto\n\nJPG, PNG o WebP · máximo 2 MB. Se recorta en cuadrado a 256 px.\n\nDatos de la cuenta\nNombre del negocio\nNombre comercial\nCorreo\nTeléfono\nDirección de entrega\nCalle y número\nColonia\nCiudad\nEstado\nC.P.\nReferencias\nLatitud\nLongitud\nUbicar en el mapa\n\nLas coordenadas ubican el punto exacto de entrega. Si no las cambias se usa el centro de la ciudad.\n\nCancelar\nGuardar cambios\n\nLa contraseña y la baja de la cuenta se manejan en Seguridad.",
   "urlFinal": "http://127.0.0.1:8081/spa/perfil/editar",
   "errores": []
  },
@@ -1712,14 +1714,14 @@
    "Contraseña Al cambiarla se cierran las demás sesiones. Contraseña actual Nueva Repite la nueva Al menos 12 caracteres Un",
    "Contraseña",
    "Al cambiarla se cierran las demás sesiones. Contraseña actual Nueva Repite la nueva Al menos 12 caracteres Una mayúscula",
-   "Tu cuenta CORREO comercio@didi2.mx TELÉFONO 5512345678 ÚLTIMO ACCESO 2026-11-19 06:17 MIEMBRO DESDE 2026-11-16 20:26 Com",
+   "Tu cuenta CORREO comercio@didi2.mx TELÉFONO 5512345678 ÚLTIMO ACCESO 2026-11-19 06:22 MIEMBRO DESDE 2026-11-16 20:26 Com",
    "Tu cuenta",
-   "CORREO comercio@didi2.mx TELÉFONO 5512345678 ÚLTIMO ACCESO 2026-11-19 06:17 MIEMBRO DESDE 2026-11-16 20:26 Comercio",
-   "Últimos accesos ACCIÓN CUÁNDO IP EQUIPO login exitoso 2026-11-19 06:17 127.0.0.1 — login exitoso 2026-11-19 06:17 127.0.",
+   "CORREO comercio@didi2.mx TELÉFONO 5512345678 ÚLTIMO ACCESO 2026-11-19 06:22 MIEMBRO DESDE 2026-11-16 20:26 Comercio",
+   "Últimos accesos ACCIÓN CUÁNDO IP EQUIPO login exitoso 2026-11-19 06:22 127.0.0.1 — login exitoso 2026-11-19 06:20 127.0.",
    "Últimos accesos",
    "Eliminar mi cuenta Se borran tu foto, tus direcciones y el acceso. Los pedidos realizados se conservan por obligaciones "
   ],
-  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMi perfil\nSeguridad\n\nContraseña, últimos accesos y baja de la cuenta.\n\nAjustes\nContraseña\n\nAl cambiarla se cierran las demás sesiones.\n\nContraseña actual\nNueva\nRepite la nueva\nAl menos 12 caracteres\nUna mayúscula\nUn número\nUn símbolo (! ? # $ …)\nGuardar contraseña\nTu cuenta\nCORREO\ncomercio@didi2.mx\nTELÉFONO\n5512345678\nÚLTIMO ACCESO\n2026-11-19 06:17\nMIEMBRO DESDE\n2026-11-16 20:26\nComercio\nÚltimos accesos\nACCIÓN\tCUÁNDO\tIP\tEQUIPO\nlogin exitoso\t2026-11-19 06:17\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:17\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:16\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:16\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:16\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:13\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:13\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:12\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:11\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:11\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:11\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:08\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:08\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:07\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:04\t127.0.0.1\t—\nEliminar mi cuenta\n\nSe borran tu foto, tus direcciones y el acceso. Los pedidos realizados se conservan por obligaciones fiscales.\n\nEliminar cuenta",
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMi perfil\nSeguridad\n\nContraseña, últimos accesos y baja de la cuenta.\n\nAjustes\nContraseña\n\nAl cambiarla se cierran las demás sesiones.\n\nContraseña actual\nNueva\nRepite la nueva\nAl menos 12 caracteres\nUna mayúscula\nUn número\nUn símbolo (! ? # $ …)\nGuardar contraseña\nTu cuenta\nCORREO\ncomercio@didi2.mx\nTELÉFONO\n5512345678\nÚLTIMO ACCESO\n2026-11-19 06:22\nMIEMBRO DESDE\n2026-11-16 20:26\nComercio\nÚltimos accesos\nACCIÓN\tCUÁNDO\tIP\tEQUIPO\nlogin exitoso\t2026-11-19 06:22\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:20\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:20\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:17\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:17\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:16\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:16\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:16\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:13\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:13\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:12\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:11\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:11\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:11\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:08\t127.0.0.1\t—\nEliminar mi cuenta\n\nSe borran tu foto, tus direcciones y el acceso. Los pedidos realizados se conservan por obligaciones fiscales.\n\nEliminar cuenta",
   "urlFinal": "http://127.0.0.1:8081/spa/perfil/seguridad",
   "errores": []
  },

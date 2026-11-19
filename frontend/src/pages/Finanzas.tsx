@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { useNavegar, useSesion } from '../store/session'
 import { estado, money, money0 } from '../lib/format'
 import { Skeleton, Vacio, Aviso } from '../components/UI'
@@ -91,7 +92,9 @@ export default function Finanzas() {
   const navegar = useNavegar()
   const [datos, setDatos] = useState<FinanzasDatos | null>(null)
   const [error, setError] = useState('')
-  const [tab, setTab] = useState<'gastos' | 'facturas'>('gastos')
+  // La pestaña se puede abrir por enlace (/finanzas?tab=facturacion), como en el panel PHP.
+  const [parametros] = useSearchParams()
+  const [tab, setTab] = useState<'gastos' | 'facturas'>(parametros.get('tab') === 'facturacion' ? 'facturas' : 'gastos')
   const [vista, setVista] = useState<VistaFinanzas>('anual')
   const hoy = useMemo(() => new Date(), [])
   const [anio, setAnio] = useState(hoy.getFullYear())

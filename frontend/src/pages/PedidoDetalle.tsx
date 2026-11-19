@@ -6,6 +6,8 @@ import { Skeleton } from '../components/UI'
 import { useNavegar, useSesion } from '../store/session'
 import Icon from '../components/Icon'
 import { apiPedidos, apiRepartidor } from '../lib/api-pedidos'
+import { mensajes } from '../lib/api-mensajes'
+import type { Mensaje } from '../lib/api-mensajes'
 import type { AccionPedido, PedidoDetalle as Pedido } from '../lib/api-pedidos'
 
 export default function PedidoDetalle() {
@@ -24,6 +26,49 @@ export default function PedidoDetalle() {
   const [comentario, setComentario] = useState('')
   const [calificando, setCalificando] = useState(false)
   const [pinRecoleccion, setPinRecoleccion] = useState<string | null>(null)
+  const [cobrando, setCobrando] = useState(false)
+  const [chat, setChat] = useState<{ uuid: string; mensajes: Mensaje[] } | null>(null)
+  const [textoChat, setTextoChat] = useState('')
+  const [enviandoChat, setEnviandoChat] = useState(false)
+
+  // El hilo del pedido se abre solo: el comercio habla con el mayorista, el
+  // mayorista con el comercio y el repartidor con el comercio.
+  useEffect(() => {
+    if (!uuid) return
+    let vivo = true
+    mensajes.directo({ pedido_uuid: uuid })
+      .then((r) => mensajes.abrir(r.uuid))
+      .then((a) => { if (vivo) setChat({ uuid: a.hilo.uuid, mensajes: a.mensajes }) })
+      .catch(() => { if (vivo) setChat(null) })
+    return () => { vivo = false }
+  }, [uuid])
+
+  const enviarChat = async (e: FormEvent) => {
+    e.preventDefault()
+    if (!chat || textoChat.trim() === '') return
+    setEnviandoChat(true)
+    try {
+      const r = await mensajes.enviar(chat.uuid, textoChat.trim())
+      setChat({ ...chat, mensajes: [...chat.mensajes, r.mensaje] })
+      setTextoChat('')
+    } catch (err) {
+      aviso((err as Error).message)
+    } finally {
+      setEnviandoChat(false)
+    }
+  }
+
+  const pagarPedido = async () => {
+    setCobrando(true)
+    try {
+      const r = await apiPedidos.pagar(uuid)
+      navegar(r.url)
+    } catch (e) {
+      aviso((e as Error).message)
+    } finally {
+      setCobrando(false)
+    }
+  }
 
   const cargar = useCallback(async () => {
     try {
@@ -288,6 +333,54 @@ export default function PedidoDetalle() {
                   El mayorista debe aceptar antes de {p.acepta_antes_de}.
                 </div>
               )}
+            </div>
+          </section>
+
+          {!p.pago && (p.estado === 'borrador' || p.estado === 'pendiente_pago') && (
+            <section className="card rise" style={{ ['--i' as string]: 3 }}>
+              <div className="card__cab"><h2>Pago</h2><span className="chip chip--alerta">Sin cobrar</span></div>
+              <div className="card__cuerpo" style={{ display: 'grid', gap: 8 }}>
+                <span className="apunte">Todavía no se ha iniciado el cobro de este pedido.</span>
+                <button className="btn btn--bloque" onClick={pagarPedido} disabled={cobrando}>
+                  {cobrando ? 'Abriendo…' : 'Pagar pedido'}
+                </button>
+              </div>
+            </section>
+          )}
+
+          <section className="card rise" style={{ ['--i' as string]: 4 }}>
+            <div className="card__cab"><h2>Mensajes del pedido</h2></div>
+            <div className="card__cuerpo pedido-chat">
+              {chat === null ? (
+                <span className="apunte">Abriendo el chat…</span>
+              ) : chat.mensajes.length === 0 ? (
+                <span className="apunte">
+                  Todavía no hay mensajes. Usa el chat para coordinar la entrega; no compartas teléfonos ni correos.
+                </span>
+              ) : (
+                <ul className="pedido-chat__lista">
+                  {chat.mensajes.map((m) => (
+                    <li key={m.id} className={m.mio ? 'pedido-chat__msg pedido-chat__msg--mio' : 'pedido-chat__msg'}>
+                      <span>{m.cuerpo}</span>
+                      <em>{m.autor}</em>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <form className="pedido-chat__form" onSubmit={enviarChat}>
+                <input
+                  type="text"
+                  value={textoChat}
+                  onChange={(e) => setTextoChat(e.target.value)}
+                  placeholder="Escribe un mensaje…"
+                  maxLength={1000}
+                  aria-label="Mensaje para el pedido"
+                />
+                <button className="btn btn--mini" type="submit" disabled={enviandoChat || textoChat.trim() === ''}>
+                  {enviandoChat ? 'Enviando…' : 'Enviar'}
+                </button>
+              </form>
             </div>
           </section>
 

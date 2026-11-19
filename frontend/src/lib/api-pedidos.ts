@@ -161,6 +161,9 @@ export type PedidoDelPago = { uuid: string; total: number; estado: string; estad
 export type Punto = { lat: number; lng: number; precision_m?: number; capturado_en?: string }
 
 export const apiPedidos = {
+  /** Inicia el cobro de un pedido en borrador o esperando pago. Devuelve la URL de la pasarela. */
+  pagar: (uuid: string) =>
+    pedir<{ url: string; referencia: string; monto: number }>(`/pedidos/${uuid}/pagar`, { method: 'POST', body: '{}' }),
   detalle: (uuid: string) => pedir<{ pedido: PedidoDetalle }>(`/pedidos/${uuid}`),
   estado: (uuid: string, accion: string, motivo?: string) =>
     pedir<{ mensaje: string; estado: string; estado_texto: string; pin_entrega: string | null; pin_recoleccion: string | null }>(

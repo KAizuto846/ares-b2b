@@ -16,6 +16,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/_comun.php';
 
 use App\Modules\Pos\PosRepository;
+use App\Modules\Pos\PosService;
 
 $posRuta = (string) (api_ctx()['ruta'] ?? '/');
 $posMetodo = strtoupper((string) (api_ctx()['metodo'] ?? 'GET'));
@@ -649,6 +650,26 @@ if (preg_match('#^/pos/productos/(\d+)$#', $posRuta, $m) === 1 && in_array($posM
     $posRepo->guardarProducto($posUid, $datos, $id);
 
     responder(['ok' => true, 'mensaje' => 'Producto actualizado.', 'producto' => pos_producto_json(array_merge($actual, $datos))]);
+}
+
+// ------------------------------------------- POST /pos/reposicion (pedido real)
+if ($posRuta === '/pos/reposicion' && $posMetodo === 'POST') {
+    $cuerpo = api_cuerpo();
+    $ids = array_values(array_filter(array_map('intval', (array) ($cuerpo['ids'] ?? [])), fn ($id) => $id > 0));
+
+    $servicio = new PosService(
+        $posRepo,
+        new App\Core\AuditLogger($posPdo),
+        new App\Modules\Notificaciones\NotificacionService($posPdo, __DIR__ . '/../../storage/correos'),
+    );
+
+    $r = $servicio->pedidoReposicion($posUid, $ids);
+
+    if (! $r['ok']) {
+        fallo((string) $r['mensaje'], 422, 'SIN_REPOSICION');
+    }
+
+    responder(['ok' => true, 'mensaje' => (string) $r['mensaje'], 'uuid' => (string) $r['uuid']]);
 }
 
 // --------------------------------------------------------- POST /pos/reponer

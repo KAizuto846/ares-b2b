@@ -146,6 +146,12 @@ export const apiPos = {
 
   desactivarProducto: (id: number) => pedir<{ id: number }>(`/pos/productos/${id}`, { method: 'DELETE' }),
 
+  repoPedido: (ids: number[]) =>
+    pedir<{ mensaje: string; uuid: string }>('/pos/reposicion', {
+      method: 'POST',
+      body: JSON.stringify({ ids }),
+    }),
+
   reponer: (producto_id: number, cantidad: number) =>
     pedir<{ stock: number; mensaje: string }>('/pos/reponer', {
       method: 'POST',

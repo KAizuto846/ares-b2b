@@ -162,14 +162,14 @@ export default function Kyc() {
       <section className="card rise" style={{ ['--i' as string]: 3 }}>
         <div className="card__cab"><h2 style={{ fontSize: 16 }}>Mis documentos</h2></div>
         <div className="tabla-scroll">
-          {k.documentos.length === 0 ? (
-            <div className="card__cuerpo"><p className="perfil-pista" style={{ margin: 0 }}>Sin documentos todavía.</p></div>
-          ) : (
-            <table className="tabla">
-              <thead>
-                <tr><th>Documento</th><th>Estado</th><th>Enviado</th><th>Motivo</th></tr>
-              </thead>
-              <tbody>
+          <table className="tabla">
+            <thead>
+              <tr><th>Documento</th><th>Estado</th><th>Enviado</th><th>Motivo</th></tr>
+            </thead>
+            <tbody>
+              {k.documentos.length === 0 && (
+                <tr><td colSpan={4}><span className="perfil-pista">Sin documentos todavía.</span></td></tr>
+              )}
                 {k.documentos.map((d) => {
                   const e = estado(d.estado)
                   return (
@@ -181,9 +181,8 @@ export default function Kyc() {
                     </tr>
                   )
                 })}
-              </tbody>
-            </table>
-          )}
+            </tbody>
+          </table>
         </div>
       </section>
     </div>

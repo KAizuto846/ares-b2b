@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useNavegar } from '../../store/session'
 import Icon from '../../components/Icon'
 import { Skeleton, Vacio } from '../../components/UI'
 import { money } from '../../lib/format'
@@ -16,6 +17,21 @@ export default function Inventario() {
   const [quitando, setQuitando] = useState<PosProducto | null>(null)
   const [ajustes, setAjustes] = useState({ margen: '30', iva: true, reorden: true })
   const [guardandoAjustes, setGuardandoAjustes] = useState(false)
+  const [elegidos, setElegidos] = useState<number[]>([])
+  const [creandoPedido, setCreandoPedido] = useState(false)
+  const navegar = useNavegar()
+
+  const crearPedidoReposicion = async () => {
+    setCreandoPedido(true)
+    try {
+      const r = await apiPos.repoPedido(elegidos)
+      navegar(`/pedidos/${r.uuid}`)
+    } catch (e) {
+      setError((e as Error).message)
+    } finally {
+      setCreandoPedido(false)
+    }
+  }
 
   const cargar = useCallback(() => {
     apiPos
@@ -97,6 +113,13 @@ export default function Inventario() {
           <div className="card__cuerpo" style={{ display: 'grid', gap: 8 }}>
             {inv.sugerencias.map((s) => (
               <div className="pos-sug" key={s.producto_id}>
+                <input
+                  type="checkbox"
+                  checked={elegidos.includes(s.producto_id)}
+                  onChange={(e) => setElegidos((v) => e.target.checked ? [...v, s.producto_id] : v.filter((id) => id !== s.producto_id))}
+                  aria-label={`Incluir ${s.nombre} en el pedido`}
+                  style={{ width: 20, height: 20, accentColor: 'var(--verde)' }}
+                />
                 <div>
                   <strong>{s.nombre}</strong>
                   <div style={{ color: 'var(--muted)', fontSize: 12.5 }}>
@@ -116,6 +139,19 @@ export default function Inventario() {
                 </button>
               </div>
             ))}
+            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center', justifyContent: 'flex-end' }}>
+              <span style={{ color: 'var(--muted)', fontSize: 12.5 }}>
+                {elegidos.length === 0 ? 'Elige los productos a pedir' : `${elegidos.length} producto${elegidos.length === 1 ? '' : 's'}`}
+              </span>
+              <button
+                type="button"
+                className="btn btn--mini"
+                disabled={creandoPedido}
+                onClick={crearPedidoReposicion}
+              >
+                {creandoPedido ? 'Creando…' : 'Crear pedido de reposición'}
+              </button>
+            </div>
           </div>
         </div>
       )}

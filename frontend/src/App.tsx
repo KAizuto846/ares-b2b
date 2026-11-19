@@ -110,7 +110,8 @@ function Gate() {
         <Route path="/pedidos/:uuid" element={<PedidoDetalle />} />
         <Route path="/finanzas" element={<Finanzas />} />
         <Route path="/finanzas/factura/:uuid" element={<Factura />} />
-        <Route path="/facturacion" element={solo(!esComercio, <Facturacion />)} />
+        {/* El comercio factura desde su pestaña de Finanzas, como en el panel PHP. */}
+        <Route path="/facturacion" element={esComercio ? <Navigate to="/finanzas?tab=facturacion" replace /> : solo(!esComercio, <Facturacion />)} />
         <Route path="/mensajes" element={<Mensajes />} />
         <Route path="/notificaciones" element={<Navigate to="/mensajes?tab=notificaciones" replace />} />
         <Route path="/perfil" element={<Perfil />} />

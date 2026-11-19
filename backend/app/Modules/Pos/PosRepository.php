@@ -277,8 +277,7 @@ final class PosRepository
     {
         $stmt = $this->pdo->prepare(
             'SELECT d.id FROM direcciones d
-               JOIN comercios_perfil c ON c.id = d.comercio_id
-              WHERE c.usuario_id = ? AND d.activa = 1
+              WHERE d.usuario_id = ? AND d.deleted_at IS NULL
               ORDER BY d.es_principal DESC, d.id ASC LIMIT 1'
         );
         $stmt->execute([$usuarioId]);

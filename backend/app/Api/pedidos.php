@@ -949,6 +949,65 @@ if ($metodoApi === 'GET' && preg_match('#^/tracking/(' . $uuidPatron . ')$#', $r
     ]);
 }
 
+// ------------------------------------------------- POST /pedidos/{uuid}/pagar
+if (preg_match('#^/pedidos/([0-9a-fA-F-]{36})/pagar$#', $rutaApi, $m) === 1 && $metodoApi === 'POST') {
+    $pedido = ped_cargar($m[1]);
+
+    if ($pedido === []) {
+        fallo('Ese pedido no existe.', 404, 'NO_ENCONTRADO');
+    }
+
+    $papeles = ped_papeles($pedido);
+
+    if (! $papeles['comercio']) {
+        fallo('Solo el comercio que hizo el pedido puede pagarlo.', 403, 'SIN_PERMISO');
+    }
+
+    $estado = (string) $pedido['estado'];
+
+    if (! in_array($estado, ['borrador', 'pendiente_pago'], true)) {
+        fallo('Este pedido ya no se puede pagar (estado: ' . ped_etiqueta($estado) . ').', 422, 'ESTADO');
+    }
+
+    // El pedido sólo avanza a `pendiente_pago`; el cobro real lo confirma la
+    // pasarela por webhook, igual que en el panel PHP.
+    if ($estado === 'borrador') {
+        $transicion = ped_pedidos()->transicionar(
+            (int) $pedido['id'],
+            'pendiente_pago',
+            api_uid(),
+            (array) (App\Core\Session::obtener('roles') ?? []),
+            'Confirmado por el comercio',
+        );
+
+        if (! $transicion['ok']) {
+            fallo((string) $transicion['mensaje'], 422, 'TRANSICION');
+        }
+    }
+
+    $configPagos = require __DIR__ . '/../Config/pagos.php';
+    $pagos = new PagoService(
+        ped_pdo(),
+        ped_pedidos(),
+        new SimuladoGateway((string) $configPagos['webhook_secret'], 300),
+        new AuditLogger(ped_pdo()),
+        $configPagos,
+    );
+
+    $intencion = $pagos->crearIntencion((int) $pedido['checkout_id']);
+
+    if (! $intencion['ok']) {
+        fallo((string) ($intencion['mensaje'] ?? 'No se pudo iniciar el pago.'), 422, 'PAGO');
+    }
+
+    responder([
+        'ok'         => true,
+        'url'        => (string) $intencion['intencion']['url_pago'],
+        'referencia' => (string) $intencion['intencion']['referencia'],
+        'monto'      => (float) $intencion['intencion']['monto'],
+    ]);
+}
+
 // ----------------------------------------------------------- pago simulado
 if (preg_match('#^/pago/simulado/([A-Za-z0-9_\-]{4,100})$#', $rutaApi, $m) === 1 && in_array($metodoApi, ['GET', 'POST'], true)) {
     $referencia = $m[1];

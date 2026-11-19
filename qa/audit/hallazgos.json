@@ -1,0 +1,74 @@
+[
+  {
+    "rol": "mayorista",
+    "pagina": "/mayorista/pedidos/{uuid} (detalle del pedido)",
+    "falta": "Chat del pedido: bloque «Mensajes con <comercio>» con compositor «Escribe un mensaje…» y botón Enviar",
+    "donde_estaria": "En el detalle del pedido, tras la cronología; o como botón «Mensajes» junto a las acciones de estado. La API nueva ya soporta conversación ligada al pedido (/mensajes/directo {pedido_uuid}) pero ninguna pantalla la usa",
+    "evidencia": "VIEJA: «Mensajes con Casa de Toño — Todavía no hay mensajes. Usa el chat para coordinar la entrega; no compartas teléfonos ni correos. [Escribe un mensaje…] [Enviar]». NUEVA: el detalle acaba en «Envío / Repartidor / Aún sin asignar / Distancia / Tu calificación ★★★★★»; no existe sección de mensajes ni enlace a /spa/mensajes",
+    "severidad": "media"
+  },
+  {
+    "rol": "mayorista",
+    "pagina": "/mayorista/pedidos/{uuid} (detalle del pedido)",
+    "falta": "Enlace «Hoja de surtido» (/pedidos/{uuid}/surtido, hoja imprimible de picking)",
+    "donde_estaria": "Junto a los botones de transición de estado del detalle, en cualquier estado del pedido",
+    "evidencia": "VIEJA: «Preparando … Listo para recoger  Hoja de surtido» (el enlace aparece en todos los estados, también en «Buscando repartidor»). NUEVA: solo botones de estado; no hay enlace y el frontend React no contiene la palabra «surtido» (solo aparece en /spa/productos/importar). La ruta PHP /pedidos/{uuid}/surtido sigue viva en el backend, pero es inalcanzable desde la SPA",
+    "severidad": "media"
+  },
+  {
+    "rol": "mayorista",
+    "pagina": "/mayorista/pedidos",
+    "falta": "Acciones por fila en la tabla: «Ver», «Aceptar» y «Listo para recoger»",
+    "donde_estaria": "Última columna («Acciones») de cada fila de la tabla de pedidos",
+    "evidencia": "VIEJA: fila «Casa de Toño · 1 productos · $619.44 · Por aceptar · [Aceptar] [Ver]» y «Preparando · [Listo para recoger]». NUEVA: la tabla tiene columnas PEDIDO/COMERCIO/ESTADO/FECHA/TOTAL y la última celda va vacía; solo el clic en la fila navega al detalle (no hay <button> ni <a> por fila). Las mismas transiciones existen en el detalle, a un clic más",
+    "severidad": "media"
+  },
+  {
+    "rol": "repartidor",
+    "pagina": "/pedidos/{uuid} (detalle con tracking)",
+    "falta": "Chat con el mayorista dentro del pedido",
+    "donde_estaria": "En el detalle, tras la cronología, antes de la sección de entrega",
+    "evidencia": "VIEJA: «Mensajes con Insumos del Valle — Todavía no hay mensajes… [Escribe un mensaje…] [Enviar]». NUEVA: «Cronología / Entrega / Seguimiento / Envío / Repartidor / Distancia / Tarifa / Tu calificación», sin mensajes; el único acceso a chat es /spa/mensajes → «Nueva conversación» eligiendo contacto, sin contexto del pedido",
+    "severidad": "media"
+  },
+  {
+    "rol": "admin",
+    "pagina": "/postmvp/consolidaciones, /postmvp/bnpl, /postmvp/licitaciones",
+    "falta": "Rutas propias de cada listado de Post-MVP",
+    "donde_estaria": "Rutas separadas (/spa/admin/postmvp/consolidaciones|bnpl|licitaciones) o URLs con pestaña",
+    "evidencia": "VIEJA: /postmvp/consolidaciones («Consolidación de fletes», tabla ID/Mayorista/Flete original/Flete consolidado/Ahorro/Estado/Fecha), /postmvp/bnpl («Planes BNPL», ID/Mayorista/Total/Cuotas/Cuota actual/Estado/Fecha), /postmvp/licitaciones. NUEVA: las tres viven como pestañas dentro de /spa/admin/postmvp y las rutas profundas (/spa/admin/postmvp/bnpl, …/consolidaciones) redirigen a /spa (inicio), no a la pestaña",
+    "severidad": "baja"
+  },
+  {
+    "rol": "admin",
+    "pagina": "/postmvp/{consolidaciones,bnpl,licitaciones}",
+    "falta": "Filtro por estado de cada listado",
+    "donde_estaria": "Barra superior del listado, junto al selector de estado",
+    "evidencia": "VIEJA: «Estado: [todos|pendiente|activo|completado|moroso] [Filtrar]» en BNPL (equivalentes en consolidaciones y licitaciones). NUEVA: las pestañas no tienen filtro; solo hay un <select> por fila para cambiar el estado del registro",
+    "severidad": "baja"
+  },
+  {
+    "rol": "admin",
+    "pagina": "navegación lateral (todas las pantallas de admin)",
+    "falta": "Enlaces a Buscar, Finanzas y Facturación",
+    "donde_estaria": "Rail lateral, entre «Panel» y «Mensajes»",
+    "evidencia": "VIEJA: Explorar · Buscar · Finanzas · Facturación · Admin · Verificaciones · Mi perfil · Mensajes. NUEVA: Inicio · Panel · Usuarios · Verificaciones · Reclamos · Parámetros · Mensajes · Perfil. Las rutas /spa/finanzas («Finanzas de la plataforma») y /spa/facturacion siguen respondiendo para admin, pero ya no hay enlace",
+    "severidad": "baja"
+  },
+  {
+    "rol": "repartidor",
+    "pagina": "navegación lateral (todas las pantallas de repartidor)",
+    "falta": "Enlace a Facturación",
+    "donde_estaria": "Rail lateral, junto a Finanzas",
+    "evidencia": "VIEJA: Explorar · Buscar · Finanzas · Facturación · Mi cuenta · Mensajes. NUEVA: Inicio · Reparto · Buscar · Finanzas · Mensajes · Perfil. /spa/facturacion carga «Tus datos fiscales y las facturas en las que participas» con el formulario completo, pero no se llega desde la navegación",
+    "severidad": "baja"
+  },
+  {
+    "rol": "mayorista / admin",
+    "pagina": "rutas heredadas del panel PHP",
+    "falta": "Compatibilidad de URLs: /mayorista/productos, /mayorista/pedidos, /mayorista/productos/{uuid}/editar, /postmvp/*",
+    "donde_estaria": "Redirecciones al equivalente en la SPA (/spa/productos, /spa/pedidos, /spa/productos/{uuid}, /spa/admin/postmvp)",
+    "evidencia": "NUEVA: /spa/productos/{uuid}/editar y /spa/admin/postmvp/bnpl caen en /spa (inicio) sin aviso; la SPA usa /spa/productos/{uuid} (sin /editar) y pestañas. Un marcador o enlace guardado del panel viejo termina en el inicio del rol en vez de en la pantalla equivalente",
+    "severidad": "baja"
+  }
+]

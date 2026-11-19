@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { api } from '../lib/api'
+import { apiPedidos } from '../lib/api-pedidos'
 import type { Pedido } from '../lib/api'
 import { estado, fecha, money, relativo } from '../lib/format'
 import { Skeleton, Vacio } from '../components/UI'
@@ -16,12 +17,28 @@ const ORDEN_ESTADOS = [
 /** El API devuelve decimales de MySQL como texto: se normalizan antes de pintar. */
 const num = (v: number | string) => (typeof v === 'number' ? v : Number(v) || 0)
 
+/** Sólo se puede cobrar mientras el pedido no salga a preparación. */
+const puedePagar = (estadoPedido: string) => estadoPedido === 'borrador' || estadoPedido === 'pendiente_pago'
+
 export default function Pedidos() {
   const [pedidos, setPedidos] = useState<Pedido[] | null>(null)
   const [error, setError] = useState('')
   const [filtro, setFiltro] = useState('')
-  const { rol } = useSesion()
+  const { rol, aviso } = useSesion()
   const navegar = useNavegar()
+  const [cobrando, setCobrando] = useState('')
+
+  const pagarPedido = async (uuid: string) => {
+    setCobrando(uuid)
+    try {
+      const r = await apiPedidos.pagar(uuid)
+      navegar(r.url)
+    } catch (e) {
+      aviso((e as Error).message)
+    } finally {
+      setCobrando('')
+    }
+  }
 
   useEffect(() => {
     api.pedidos()
@@ -144,7 +161,20 @@ export default function Pedidos() {
                         <td><span className={`chip chip--${e.tono}`}>{e.texto}</span></td>
                         <td><span title={fecha(p.created_at)}>{relativo(p.created_at)}</span></td>
                         <td className="num" style={{ textAlign: 'right', fontWeight: 650 }}>{money(num(p.total))}</td>
-                        <td style={{ width: 34, color: 'var(--faint)' }}><Icon name="flecha" size={16} /></td>
+                        <td style={{ width: 120, textAlign: 'right' }} onClick={(ev) => ev.stopPropagation()}>
+                          {puedePagar(p.estado) ? (
+                            <button
+                              type="button"
+                              className="btn btn--mini"
+                              onClick={() => pagarPedido(p.uuid)}
+                              disabled={cobrando === p.uuid}
+                            >
+                              {cobrando === p.uuid ? 'Abriendo…' : 'Pagar'}
+                            </button>
+                          ) : (
+                            <Icon name="flecha" size={16} />
+                          )}
+                        </td>
                       </tr>
                     )
                   })}

@@ -75,6 +75,8 @@ export default function Mensajes() {
   const hiloUuid = params.get('hilo') ?? ''
 
   const [hilos, setHilos] = useState<Hilo[]>([])
+  // Cuenta estable de conversaciones: la pestaña de avisos no la trae en su respuesta.
+  const [totalHilos, setTotalHilos] = useState(0)
   const [contactos, setContactos] = useState<Contacto[]>([])
   const [avisos, setAvisos] = useState<Aviso[]>([])
   const [avisosSinLeer, setAvisosSinLeer] = useState(0)
@@ -124,6 +126,15 @@ export default function Mensajes() {
     [setParams],
   )
 
+  useEffect(() => {
+    if (tab !== 'notificaciones') return
+    let vivo = true
+    mensajes.bandeja('conversaciones')
+      .then((r) => { if (vivo && r.tab === 'conversaciones') setTotalHilos(r.hilos.length) })
+      .catch(() => {})
+    return () => { vivo = false }
+  }, [tab])
+
   // ---------------------------------------------------------------- bandeja
   useEffect(() => {
     let vivo = true
@@ -141,6 +152,7 @@ export default function Mensajes() {
         } else {
           setHilos(r.hilos)
           setContactos(r.contactos)
+          setTotalHilos(r.hilos.length)
         }
         setError('')
       })
@@ -397,7 +409,7 @@ export default function Mensajes() {
           onClick={() => poner('tab', null)}
         >
           Conversaciones
-          <span className="msg-tabs__cuenta">{hilos.length}</span>
+          <span className="msg-tabs__cuenta">{totalHilos}</span>
         </button>
         <button
           type="button"

@@ -1,0 +1,144 @@
+{
+  "recibido_viejo": {
+    "headings": [
+      "Pedido ae12fa30",
+      "Productos",
+      "Historial",
+      "Tu calificación para Abarrotes Maru"
+    ],
+    "buttons": [
+      "Mi cuenta",
+      "Actualizar calificación"
+    ],
+    "fields": [
+      "radio||puntaje",
+      "radio||puntaje",
+      "radio||puntaje",
+      "radio||puntaje",
+      "radio||puntaje",
+      "text|Llegó a tiempo y completo|comentario"
+    ],
+    "th": [
+      "PRODUCTO",
+      "CANT.",
+      "UNITARIO",
+      "SUBTOTAL"
+    ],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Pedido ae12fa30 Abarrotes Maru → Casa de Toño Estado recibido Total $348.00 Entrega Av. Insurgentes Sur 123, Ciudad de México Productos PRODUCTO CANT. UNITARIO SUBTOTAL Harina de trigo 25 kg 2 $150.00 $300.00 Subtotal $300.00 IVA $48.00 Total $348.00 Historial recibido 2026-11-17 20:42 Pedido de demostración Tu calificación para Abarrotes Maru Ya lo puntuaste con 5 de 5. Puedes cambiarlo cuando quieras. ★ ★ ★ ★ ★ Comentario (opcional) Actualizar calificación"
+  },
+  "recibido_nuevo": {
+    "headings": [
+      "Pedido ae12fa30",
+      "Productos",
+      "Cronología",
+      "Entrega",
+      "Envío",
+      "Tu calificación"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Pedidos",
+      "Seguimiento",
+      "★",
+      "★",
+      "★",
+      "★",
+      "★",
+      "Actualizar calificación"
+    ],
+    "fields": [
+      "text|Llegó a tiempo y completo|"
+    ],
+    "th": [
+      "PRODUCTO",
+      "CANT.",
+      "UNITARIO",
+      "SUBTOTAL"
+    ],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Detalle del pedido Pedidos Pedido ae12fa30 Abarrotes Maru → Casa de Toño · creado el 2026-11-17 20:42 Recibido $348.00 Productos 1 líneas PRODUCTO CANT. UNITARIO SUBTOTAL Harina de trigo 25 kg 2 $150.00 $300.00 Subtotal $300.00 IVA $48.00 Total $348.00 Cronología Recibido 2026-11-17 20:42 Pedido de demostración Entrega Av. Insurgentes Sur 123 Del Valle, Ciudad de México, 03100 Seguimiento Envío Repartidor Aún sin asignar Tu calificación Ya puntuaste a Abarrotes Maru con 5 de 5. Puedes cambiarlo. ★ ★ ★ ★ ★ Comentario (opcional) Actualizar calificación"
+  },
+  "preparando_viejo": {
+    "headings": [
+      "Pedido 7194e1c4",
+      "Productos",
+      "Historial",
+      "Mensajes con Insumos del Valle"
+    ],
+    "buttons": [
+      "Mi cuenta",
+      "Enviar"
+    ],
+    "fields": [
+      "text|Escribe un mensaje…|cuerpo"
+    ],
+    "th": [
+      "PRODUCTO",
+      "CANT.",
+      "UNITARIO",
+      "SUBTOTAL"
+    ],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Pedido 7194e1c4 Insumos del Valle → Casa de Toño Estado Preparando Total $1,198.28 Entrega Av. Insurgentes Sur 123, Ciudad de México Productos PRODUCTO CANT. UNITARIO SUBTOTAL Jabón en polvo 1 kg 10 $34.50 $345.00 Gel antibacterial 1 L 8 $41.00 $328.00 Fibra para trastes 3 pzas 20 $18.00 $360.00 Subtotal $1,033.00 IVA $165.28 Total $1,198.28 Historial Mensajes con Insumos del Valle Todavía no hay mensajes. Usa el chat para coordinar la entrega; no compartas teléfonos ni correos. Enviar"
+  },
+  "preparando_nuevo": {
+    "headings": [
+      "Pedido 7194e1c4",
+      "Productos",
+      "Cronología",
+      "Entrega",
+      "Envío"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Pedidos",
+      "Seguimiento"
+    ],
+    "fields": [],
+    "th": [
+      "PRODUCTO",
+      "CANT.",
+      "UNITARIO",
+      "SUBTOTAL"
+    ],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Detalle del pedido Pedidos Pedido 7194e1c4 Insumos del Valle → Casa de Toño · creado el 2026-11-18 01:13 Preparando $1,198.28 Productos 3 líneas PRODUCTO CANT. UNITARIO SUBTOTAL Jabón en polvo 1 kg 10 $34.50 $345.00 Gel antibacterial 1 L 8 $41.00 $328.00 Fibra para trastes 3 pzas 20 $18.00 $360.00 Subtotal $1,033.00 IVA $165.28 Total $1,198.28 Cronología Sin movimientos registrados. Entrega Av. Insurgentes Sur 123 Del Valle, Ciudad de México, 03100 Seguimiento Envío Repartidor Aún sin asignar Tu calificación ★★★★★"
+  },
+  "expirado_viejo": {
+    "headings": [
+      "Pedido b3ec91dc",
+      "Productos",
+      "Historial"
+    ],
+    "buttons": [
+      "Mi cuenta"
+    ],
+    "fields": [],
+    "th": [
+      "PRODUCTO",
+      "CANT.",
+      "UNITARIO",
+      "SUBTOTAL"
+    ],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Pedido b3ec91dc Abarrotes Maru → Casa de Toño Estado Expirado Total $2,900.00 Entrega Av. Insurgentes Sur 123, Ciudad de México Productos PRODUCTO CANT. UNITARIO SUBTOTAL Azúcar estándar 50 kg 2 $1,250.00 $2,500.00 Subtotal $2,500.00 IVA $400.00 Total $2,900.00 Historial Borrador 2026-11-16 21:00 Pedido creado desde el carrito Esperando pago 2026-11-16 21:01 Confirmado por el comercio Pago autorizado 2026-11-16 21:01 Pago autorizado (tarjeta) Por aceptar 2026-11-16 21:01 En espera del mayorista Expirado 2026-11-18 06:10 Reserva de stock vencida Expirado 2026-11-18 06:10 El mayorista no respondió en el plazo de 30 minutos"
+  },
+  "expirado_nuevo": {
+    "headings": [
+      "Pedido b3ec91dc",
+      "Productos",
+      "Cronología",
+      "Entrega",
+      "Envío"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Pedidos",
+      "Seguimiento"
+    ],
+    "fields": [],
+    "th": [
+      "PRODUCTO",
+      "CANT.",
+      "UNITARIO",
+      "SUBTOTAL"
+    ],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Detalle del pedido Pedidos Pedido b3ec91dc Abarrotes Maru → Casa de Toño · creado el 2026-11-16 21:00 Expirado $2,900.00 Productos 1 líneas PRODUCTO CANT. UNITARIO SUBTOTAL Azúcar estándar 50 kg 2 $1,250.00 $2,500.00 Subtotal $2,500.00 IVA $400.00 Total $2,900.00 Cronología Borrador 2026-11-16 21:00 Pedido creado desde el carrito Esperando pago 2026-11-16 21:01 Confirmado por el comercio Pago autorizado 2026-11-16 21:01 Pago autorizado (tarjeta) Por aceptar 2026-11-16 21:01 En espera del mayorista Expirado 2026-11-18 06:10 Reserva de stock vencida Expirado 2026-11-18 06:10 El mayorista no respondió en el plazo de 30 minutos Entrega Av. Insurgentes Sur 123 Del Valle, Ciudad de México, 03100 Seguimiento Envío Repartidor Aún sin asignar Tu calificación ★★★★★"
+  }
+}
