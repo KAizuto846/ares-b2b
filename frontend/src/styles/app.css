@@ -126,7 +126,7 @@ img { max-width: 100%; display: block; }
 
 .nav { display: flex; flex-direction: column; gap: 2px; }
 .nav__grupo {
-  font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
   color: #6f8a7c; padding: 14px 10px 6px;
 }
 .nav__item {
@@ -161,7 +161,7 @@ img { max-width: 100%; display: block; }
   display: inline-grid; place-items: center;
   border-radius: var(--r-full);
   background: #b3261e; color: #fff;
-  font-size: 11.5px; font-weight: 700;
+  font-size: 12px; font-weight: 700;
 }
 
 .rail__pie { margin-top: auto; display: flex; flex-direction: column; gap: 8px; }
@@ -319,7 +319,7 @@ input::placeholder { color: var(--faint); }
   display: grid; place-items: center;
   border-radius: var(--r-full);
   background: var(--rojo); color: #fff;
-  font-size: 11.5px; font-weight: 700;
+  font-size: 12px; font-weight: 700;
   border: 2px solid var(--paper);
   animation: pop var(--t-base) var(--ease-spring);
 }

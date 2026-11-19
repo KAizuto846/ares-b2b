@@ -68,11 +68,11 @@
 .msg-hilo__nombre { font-size: 13.5px; font-weight: 700; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .msg-hilo__resumen { font-size: 12.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .msg-hilo__lado { display: grid; gap: 4px; justify-items: end; }
-.msg-hilo__hora { font-size: 11.5px; color: var(--faint); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.msg-hilo__hora { font-size: 12px; color: var(--faint); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .msg-hilo__no-leido {
   display: grid; place-items: center;
   min-width: 20px; height: 20px; padding: 0 6px; border-radius: var(--r-full);
-  background: var(--verde); color: #fff; font-size: 11.5px; font-weight: 700;
+  background: var(--verde); color: #fff; font-size: 12px; font-weight: 700;
 }
 
 /* ------------------------------------------------------- modo selección */
@@ -121,9 +121,9 @@
 }
 .msg-burbuja--yo { align-self: flex-end; background: var(--verde); color: #fff; border-bottom-right-radius: 6px; }
 .msg-burbuja--otro { align-self: flex-start; background: #fff; border: 1px solid var(--line); color: var(--ink); border-bottom-left-radius: 6px; }
-.msg-burbuja__autor { font-size: 11.5px; font-weight: 700; color: var(--verde-2); }
+.msg-burbuja__autor { font-size: 12px; font-weight: 700; color: var(--verde-2); }
 .msg-burbuja__cuerpo { white-space: pre-wrap; overflow-wrap: anywhere; }
-.msg-burbuja__hora { justify-self: end; font-size: 10.5px; opacity: .72; font-variant-numeric: tabular-nums; }
+.msg-burbuja__hora { justify-self: end; font-size: 12px; opacity: .72; font-variant-numeric: tabular-nums; }
 
 .msg-forma { display: grid; gap: 8px; padding: 10px 12px; border-top: 1px solid var(--line-soft); background: #fff; }
 .msg-forma__campo { display: block; }
@@ -134,7 +134,7 @@
 }
 .msg-forma__area:focus { outline: none; border-color: var(--verde-3); box-shadow: 0 0 0 3px rgba(47, 158, 99, .16); }
 .msg-forma__pie { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.msg-forma__cuenta { font-size: 11.5px; color: var(--faint); font-variant-numeric: tabular-nums; }
+.msg-forma__cuenta { font-size: 12px; color: var(--faint); font-variant-numeric: tabular-nums; }
 .msg-oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
 /* ---------------------------------------------------------------- avisos */
@@ -147,7 +147,7 @@
 .msg-aviso__cuerpo { display: grid; gap: 4px; min-width: 0; }
 .msg-aviso__cab { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .msg-aviso__cab strong { font-size: 14px; }
-.msg-aviso__hora { font-size: 11.5px; color: var(--faint); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.msg-aviso__hora { font-size: 12px; color: var(--faint); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .msg-aviso__texto { font-size: 13.5px; color: var(--ink-2); white-space: pre-wrap; }
 .msg-aviso__enlace {
   justify-self: start; min-height: 44px; padding: 0 2px;

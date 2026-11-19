@@ -24,7 +24,7 @@
 .acceso__globo {
   min-width: 22px; height: 22px; padding: 0 6px; border-radius: 99px;
   display: grid; place-items: center;
-  background: var(--oro); color: #fff; font-size: 11.5px; font-weight: 700;
+  background: var(--oro); color: #fff; font-size: 12px; font-weight: 700;
 }
 
 .inicio-carrito { display: flex; align-items: baseline; gap: 8px; }
@@ -48,11 +48,11 @@
 }
 .atajo__texto { display: grid; gap: 1px; flex: 1; min-width: 0; }
 .atajo__texto strong { font-size: 13.5px; }
-.atajo__texto span { font-size: 11.5px; color: var(--muted); }
+.atajo__texto span { font-size: 12px; color: var(--muted); }
 .atajo__globo {
   min-width: 20px; height: 20px; padding: 0 5px; border-radius: 99px;
   display: grid; place-items: center;
-  background: var(--oro); color: #fff; font-size: 11px; font-weight: 700;
+  background: var(--oro); color: #fff; font-size: 12px; font-weight: 700;
 }
 
 /* ==========================================================================
@@ -71,10 +71,10 @@
 .clinea--alerta { background: #fdf6f5; }
 .clinea__info { flex: 1 1 190px; min-width: 0; display: grid; gap: 1px; }
 .clinea__nom { font-size: 13.5px; font-weight: 600; }
-.clinea__aviso { margin-left: 6px; font-size: 11.5px; font-weight: 600; color: var(--rojo); }
+.clinea__aviso { margin-left: 6px; font-size: 12px; font-weight: 600; color: var(--rojo); }
 .clinea__sub { font-size: 12px; color: var(--faint); }
 .clinea__unit { font-size: 12.5px; color: var(--muted); display: grid; justify-items: end; }
-.clinea__unit small { font-size: 10.5px; color: var(--faint); letter-spacing: .04em; }
+.clinea__unit small { font-size: 12px; color: var(--faint); letter-spacing: .04em; }
 .clinea__total { font-size: 13.5px; font-weight: 700; min-width: 82px; text-align: right; margin-left: auto; }
 .clinea__quitar {
   border: 0; background: none; padding: 6px 2px; cursor: pointer;
@@ -113,9 +113,9 @@
 .portafolio__mayorista span { color: var(--faint); }
 .portafolio__datos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 6px 0 0; }
 .portafolio__datos div { display: grid; gap: 1px; }
-.portafolio__datos dt { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); font-weight: 700; }
+.portafolio__datos dt { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); font-weight: 700; }
 .portafolio__datos dd { margin: 0; font-size: 15px; font-weight: 700; letter-spacing: -.02em; }
-.portafolio__unidad { font-size: 11.5px; color: var(--faint); }
+.portafolio__unidad { font-size: 12px; color: var(--faint); }
 .portafolio__pedir { margin-top: 8px; width: 100%; }
 .portafolio__agotado {
   margin-top: 8px; padding: 11px 0; text-align: center;
@@ -158,7 +158,7 @@
   display: grid; gap: 2px; padding: 10px 12px;
   background: #fafbf6; border: 1px solid var(--line-soft); border-radius: 10px;
 }
-.lista__etiqueta { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); font-weight: 700; }
+.lista__etiqueta { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); font-weight: 700; }
 .lista__cuando strong { font-size: 13.5px; }
 .lista__items { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
 .lista__items li { display: flex; justify-content: space-between; gap: 10px; font-size: 12.5px; color: var(--muted); }

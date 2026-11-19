@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Capa de cierre: legibilidad y objetivos táctiles.
+   Se importa DESPUÉS de los módulos para poder corregir sin tocar cada uno.
+   Reglas: nada por debajo de 12 px; todo control con altura mínima de 44 px.
+   ========================================================================== */
+
+/* Texto mínimo legible */
+.nav__grupo,
+.acceso__globo,
+.fin-cuenta,
+.msg-hilo__hora,
+.portafolio__unidad,
+.lista__etiqueta,
+.cat-chip__n,
+.admin-sub,
+.chip--mini,
+.contenido dt,
+.contenido small { font-size: 12px; line-height: 1.35; }
+
+/* Enlaces que funcionan como botón: caja real de 44 px */
+.busq-ficha__ver,
+.pos-enlace,
+.perfil-enlace,
+.agendar-volver,
+.cat-volver,
+.admin-enlace,
+.msg-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 4px;
+}
+
+/* Controles compactos: 44 px de alto */
+.filtro-estado,
+.fin-tab,
+.cat-chip,
+.portafolio__quitar,
+.lista__cancelar,
+.perfil-ojo,
+.admin-chip,
+.msg-tab {
+  min-height: 44px;
+}
+
+.perfil-ojo { width: 44px; height: 44px; padding: 0; }
+
+/* Casillas y radios: el objetivo real es la etiqueta que las envuelve */
+input[type='checkbox'],
+input[type='radio'] { width: 20px; height: 20px; accent-color: var(--verde-2); }
+label:has(> input[type='checkbox']),
+label:has(> input[type='radio']) { min-height: 44px; display: inline-flex; align-items: center; gap: 8px; }
+
+/* Campos y botones: altura táctil mínima en todo el contenido */
+.contenido input:not([type='checkbox']):not([type='radio']):not([type='hidden']),
+.contenido select,
+.contenido textarea { min-height: 44px; }
+.contenido input[type='file'] { padding: 9px 12px; height: auto; }
+.contenido button { min-height: 44px; }
+
+/* Enlaces dentro de tablas: caja táctil sin romper la fila */
+.tabla a { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* Zoom del mapa */
+.leaflet-control-zoom a {
+  width: 44px !important; height: 44px !important;
+  line-height: 44px !important; font-size: 20px !important;
+}

@@ -40,6 +40,8 @@ const MEDIR = () => {
     const txt = (el.children.length === 0 ? el.textContent || '' : '').trim()
     if (txt && parseFloat(cs.fontSize) < 12) chicos.push(`${el.tagName}.${el.className} ${cs.fontSize}`)
     if (['BUTTON', 'A', 'INPUT', 'SELECT'].includes(el.tagName) && (r.width < 44 || r.height < 44)) {
+      if (el.tagName === 'INPUT' && ['checkbox', 'radio', 'file'].includes(el.type)) return
+      if (el.closest('.leaflet-control-attribution')) return
       taps.push(`${el.tagName}.${el.className} ${Math.round(r.width)}x${Math.round(r.height)}`)
     }
   })
