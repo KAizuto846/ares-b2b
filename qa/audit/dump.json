@@ -1,0 +1,2355 @@
+{
+ "viejo:perfil": {
+  "titulo": "Mi perfil · Ares",
+  "heads": [
+   "H1: Mi perfil",
+   "H1: Casa de Toño"
+  ],
+  "campos": [],
+  "botones": [
+   "Mi cuenta",
+   "Cerrar sesión",
+   "★ 4.5 de 5, 4 calificaciones"
+  ],
+  "enlaces": [
+   {
+    "texto": "Ares · B2B",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Mi carrito",
+    "href": "/carrito"
+   },
+   {
+    "texto": "Explorar",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/buscar"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/agendar"
+   },
+   {
+    "texto": "Editar",
+    "href": "/perfil/editar"
+   },
+   {
+    "texto": "Verificación Identidad, documentos y estado de la cuenta",
+    "href": "/kyc"
+   },
+   {
+    "texto": "Ayuda Preguntas frecuentes, soporte y contacto",
+    "href": "/ayuda"
+   },
+   {
+    "texto": "Ajustes Privacidad, permisos, tema y seguridad",
+    "href": "/perfil/ajustes"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 0,
+  "secciones": [
+   "Casa de Toño ★ 4.5 de 5, 4 calificaciones Comercio Verificación pendiente CORREO comercio@didi2.mx ANTIGÜEDAD Miembro de"
+  ],
+  "texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\nMi perfil\n\nTus datos, la verificación de la cuenta y las opciones de la app.\n\nCerrar sesión\nCasa de Toño\n★\n4.5\nde 5,\n4 calificaciones\nComercio\nVerificación pendiente\nCORREO\ncomercio@didi2.mx\nANTIGÜEDAD\nMiembro desde noviembre de 2026\nTELÉFONO\n5512345678\nDIRECCIÓN PRINCIPAL\nAv. Insurgentes Sur 123, Del Valle, Ciudad de México\nEditar\nVerificación\nIdentidad, documentos y estado de la cuenta\nAyuda\nPreguntas frecuentes, soporte y contacto\nAjustes\nPrivacidad, permisos, tema y seguridad",
+  "urlFinal": "http://127.0.0.1:3110/perfil",
+  "errores": [
+   "404 http://127.0.0.1:3110/avatar/2?v=1795038291"
+  ]
+ },
+ "viejo:perfil-editar": {
+  "titulo": "Editar cuenta · Ares",
+  "heads": [
+   "H1: Editar cuenta",
+   "H2: Foto de perfil",
+   "H2: Datos de la cuenta",
+   "H2: Dirección de entrega"
+  ],
+  "campos": [
+   {
+    "tipo": "input[file]",
+    "nombre": "avatar",
+    "label": "Elegir imagen",
+    "placeholder": "",
+    "valor": "",
+    "requerido": true,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[text]",
+    "nombre": "nombre",
+    "label": "Nombre",
+    "placeholder": "",
+    "valor": "Casa de Toño",
+    "requerido": true,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[email]",
+    "nombre": "email",
+    "label": "Correo",
+    "placeholder": "",
+    "valor": "comercio@didi2.mx",
+    "requerido": true,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[tel]",
+    "nombre": "telefono",
+    "label": "Teléfono",
+    "placeholder": "",
+    "valor": "5512345678",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[text]",
+    "nombre": "calle",
+    "label": "Calle y número",
+    "placeholder": "Av. Insurgentes Sur 1234",
+    "valor": "Av. Insurgentes Sur 123",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[text]",
+    "nombre": "colonia",
+    "label": "Colonia",
+    "placeholder": "",
+    "valor": "Del Valle",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[text]",
+    "nombre": "ciudad",
+    "label": "Ciudad",
+    "placeholder": "",
+    "valor": "Ciudad de México",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[text]",
+    "nombre": "estado_mx",
+    "label": "Estado",
+    "placeholder": "",
+    "valor": "CDMX",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[text]",
+    "nombre": "cp",
+    "label": "C.P.",
+    "placeholder": "",
+    "valor": "03100",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[text]",
+    "nombre": "referencias",
+    "label": "Referencias",
+    "placeholder": "Portón negro",
+    "valor": "",
+    "requerido": false,
+    "deshabilitado": false
+   }
+  ],
+  "botones": [
+   "Mi cuenta",
+   "Subir",
+   "Quitar foto",
+   "Ubicar dirección en el mapa",
+   "Guardar cambios"
+  ],
+  "enlaces": [
+   {
+    "texto": "Ares · B2B",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Mi carrito",
+    "href": "/carrito"
+   },
+   {
+    "texto": "Explorar",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/buscar"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/agendar"
+   },
+   {
+    "texto": "‹ Mi cuenta",
+    "href": "/perfil"
+   },
+   {
+    "texto": "Ajustes › Seguridad",
+    "href": "/perfil/seguridad"
+   },
+   {
+    "texto": "Cancelar",
+    "href": "/perfil"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 0,
+  "secciones": [
+   "Foto de perfil Elegir imagen Subir Quitar foto JPG, PNG o WebP · máximo 2 MB. Se recorta en cuadrado.",
+   "Datos de la cuenta Nombre Correo Teléfono",
+   "Dirección de entrega Calle y número Colonia Ciudad Estado C.P. Referencias Ubicar dirección en el mapa Toca el mapa o ar"
+  ],
+  "texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\n‹ Mi cuenta\nEditar cuenta\nFoto de perfil\nElegir imagen\nSubir\nQuitar foto\n\nJPG, PNG o WebP · máximo 2 MB. Se recorta en cuadrado.\n\nDatos de la cuenta\nNombre\nCorreo\nTeléfono\n\nLa contraseña y la baja de la cuenta se manejan en\nAjustes › Seguridad\n.\n\nDirección de entrega\nCalle y número\nColonia\nCiudad\nEstado\nC.P.\nReferencias\nUbicar dirección en el mapa\n\nToca el mapa o arrastra el marcador para ajustar el punto exacto de entrega.\n\nCancelar\nGuardar cambios",
+  "urlFinal": "http://127.0.0.1:3110/perfil/editar",
+  "errores": [
+   "404 http://127.0.0.1:3110/avatar/2?v=1795038291"
+  ]
+ },
+ "viejo:perfil-privacidad": {
+  "titulo": "Privacidad · Ares",
+  "heads": [
+   "H1: Privacidad"
+  ],
+  "campos": [
+   {
+    "tipo": "input[checkbox]",
+    "nombre": "notificaciones",
+    "label": "Habilitar notificaciones Interruptor general. Si lo apagas, no llega ningún aviso salvo lo",
+    "placeholder": "",
+    "valor": "marcado",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[checkbox]",
+    "nombre": "sms",
+    "label": "Mensajes de texto Avisos de pedidos y códigos de seguridad por SMS.",
+    "placeholder": "",
+    "valor": "marcado",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[checkbox]",
+    "nombre": "correo",
+    "label": "Correo electrónico Resúmenes, facturas y novedades de tu cuenta.",
+    "placeholder": "",
+    "valor": "marcado",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[checkbox]",
+    "nombre": "ubicacion",
+    "label": "Compartir mi ubicación Solo mientras tengas un pedido en camino, para que el repartidor te",
+    "placeholder": "",
+    "valor": "marcado",
+    "requerido": false,
+    "deshabilitado": false
+   }
+  ],
+  "botones": [
+   "Mi cuenta",
+   "Guardar preferencias"
+  ],
+  "enlaces": [
+   {
+    "texto": "Ares · B2B",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Mi carrito",
+    "href": "/carrito"
+   },
+   {
+    "texto": "Explorar",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/buscar"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/agendar"
+   },
+   {
+    "texto": "‹ Mi cuenta",
+    "href": "/perfil"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 8,
+  "secciones": [],
+  "texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\n‹ Mi cuenta\nPrivacidad\n\nElige cómo quieres que te contactemos y qué compartes.\n\nHabilitar notificaciones\nInterruptor general. Si lo apagas, no llega ningún aviso salvo los de seguridad.\nMensajes de texto\nAvisos de pedidos y códigos de seguridad por SMS.\nCorreo electrónico\nResúmenes, facturas y novedades de tu cuenta.\nCompartir mi ubicación\nSolo mientras tengas un pedido en camino, para que el repartidor te encuentre.\nGuardar preferencias\n\nLos avisos de seguridad (recuperar contraseña, verificación) se envían siempre, incluso con los interruptores apagados: sin ellos podrías quedarte fuera de tu cuenta.",
+  "urlFinal": "http://127.0.0.1:3110/perfil/privacidad",
+  "errores": [
+   "404 http://127.0.0.1:3110/avatar/2?v=1795038291"
+  ]
+ },
+ "viejo:perfil-ajustes": {
+  "titulo": "Ajustes · Ares",
+  "heads": [
+   "H1: Ajustes",
+   "H2: Personalización de la app"
+  ],
+  "campos": [
+   {
+    "tipo": "input[checkbox]",
+    "nombre": "tema",
+    "label": "Modo oscuro Fondo negro y texto claro. Se guarda en tu cuenta, no solo en este equipo.",
+    "placeholder": "",
+    "valor": "sin marcar",
+    "requerido": false,
+    "deshabilitado": false
+   }
+  ],
+  "botones": [
+   "Mi cuenta"
+  ],
+  "enlaces": [
+   {
+    "texto": "Ares · B2B",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Mi carrito",
+    "href": "/carrito"
+   },
+   {
+    "texto": "Explorar",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/buscar"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/agendar"
+   },
+   {
+    "texto": "‹ Mi cuenta",
+    "href": "/perfil"
+   },
+   {
+    "texto": "Mi perfil",
+    "href": "/perfil"
+   },
+   {
+    "texto": "Seguridad Contraseña y baja de la cuenta ›",
+    "href": "/perfil/seguridad"
+   },
+   {
+    "texto": "Permisos del dispositivo Cámara, ubicación, micrófono, notif",
+    "href": "/perfil/permisos"
+   },
+   {
+    "texto": "Términos y condiciones Uso del servicio y responsabilidades ",
+    "href": "/terminos"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 2,
+  "secciones": [
+   "Seguridad Contraseña y baja de la cuenta › Permisos del dispositivo Cámara, ubicación, micrófono, notificaciones, fotos ",
+   "Personalización de la app Elige cómo se ve Ares en este dispositivo. Modo oscuro Fondo negro y texto claro. Se guarda en"
+  ],
+  "texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\n‹ Mi cuenta\nAjustes\n\nMi perfil\n\nSeguridad\nContraseña y baja de la cuenta\n›\nPermisos del dispositivo\nCámara, ubicación, micrófono, notificaciones, fotos\n›\nTérminos y condiciones\nUso del servicio y responsabilidades\n›\nPersonalización de la app\n\nElige cómo se ve Ares en este dispositivo.\n\nModo oscuro\nFondo negro y texto claro. Se guarda en tu cuenta, no solo en este equipo.\n\nEl modo oscuro se aplica al instante y se recuerda en tu cuenta: si entras desde otro equipo, lo verás igual.",
+  "urlFinal": "http://127.0.0.1:3110/perfil/ajustes",
+  "errores": [
+   "404 http://127.0.0.1:3110/avatar/2?v=1795038291"
+  ]
+ },
+ "viejo:perfil-seguridad": {
+  "titulo": "Seguridad · Ares",
+  "heads": [
+   "H1: Seguridad",
+   "H2: Contraseña"
+  ],
+  "campos": [
+   {
+    "tipo": "input[password]",
+    "nombre": "password_actual",
+    "label": "Contraseña actual",
+    "placeholder": "La que usas hoy",
+    "valor": "",
+    "requerido": true,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[password]",
+    "nombre": "password_nueva",
+    "label": "Nueva",
+    "placeholder": "Mínimo 12 caracteres",
+    "valor": "",
+    "requerido": true,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[password]",
+    "nombre": "password_repetir",
+    "label": "Repite la nueva",
+    "placeholder": "Otra vez",
+    "valor": "",
+    "requerido": true,
+    "deshabilitado": false
+   }
+  ],
+  "botones": [
+   "Mi cuenta",
+   "Mostrar contraseña",
+   "Mostrar contraseña",
+   "Mostrar contraseña",
+   "Guardar contraseña",
+   "Eliminar cuenta"
+  ],
+  "enlaces": [
+   {
+    "texto": "Ares · B2B",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Mi carrito",
+    "href": "/carrito"
+   },
+   {
+    "texto": "Explorar",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/buscar"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/agendar"
+   },
+   {
+    "texto": "‹ Ajustes",
+    "href": "/perfil/ajustes"
+   },
+   {
+    "texto": "Mi perfil",
+    "href": "/perfil"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 0,
+  "secciones": [
+   "Contraseña Al cambiarla se cierran las demás sesiones. Contraseña actual Nueva Repite la nueva Usa mayúsculas, números y"
+  ],
+  "texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\n‹ Ajustes\nSeguridad\n\nMi perfil\n\nContraseña\n\nAl cambiarla se cierran las demás sesiones.\n\nContraseña actual\nNueva\nRepite la nueva\nUsa mayúsculas, números y un símbolo.\nGuardar contraseña\nEliminar mi cuenta\n\nSe borran tu foto, tus direcciones y el acceso. Los pedidos realizados se conservan por obligaciones fiscales.\n\nEliminar cuenta",
+  "urlFinal": "http://127.0.0.1:3110/perfil/seguridad",
+  "errores": [
+   "404 http://127.0.0.1:3110/avatar/2?v=1795038291"
+  ]
+ },
+ "viejo:perfil-permisos": {
+  "titulo": "Fotos y videos · Ares",
+  "heads": [
+   "H1: Permisos del dispositivo"
+  ],
+  "campos": [
+   {
+    "tipo": "input[checkbox]",
+    "nombre": "",
+    "label": "Cámara Escanear códigos de barras y tomar fotos de productos.",
+    "placeholder": "",
+    "valor": "marcado",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[checkbox]",
+    "nombre": "",
+    "label": "Compartir ubicación Dirección de entrega y seguimiento del repartidor en vivo.",
+    "placeholder": "",
+    "valor": "marcado",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[checkbox]",
+    "nombre": "",
+    "label": "Micrófono Notas de voz en el chat y llamadas con el proveedor.",
+    "placeholder": "",
+    "valor": "marcado",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[checkbox]",
+    "nombre": "",
+    "label": "Notificaciones Pedidos, mensajes y avisos de la cuenta.",
+    "placeholder": "",
+    "valor": "marcado",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[checkbox]",
+    "nombre": "",
+    "label": "Fotos y videos Subir comprobantes, evidencias de entrega y fotos de perfil.",
+    "placeholder": "",
+    "valor": "marcado",
+    "requerido": false,
+    "deshabilitado": false
+   }
+  ],
+  "botones": [
+   "Mi cuenta"
+  ],
+  "enlaces": [
+   {
+    "texto": "Ares · B2B",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Mi carrito",
+    "href": "/carrito"
+   },
+   {
+    "texto": "Explorar",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/buscar"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/agendar"
+   },
+   {
+    "texto": "‹ Ajustes",
+    "href": "/perfil/ajustes"
+   },
+   {
+    "texto": "Mi perfil",
+    "href": "/perfil"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 10,
+  "secciones": [
+   "Cámara Escanear códigos de barras y tomar fotos de productos. Compartir ubicación Dirección de entrega y seguimiento del"
+  ],
+  "texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\n‹ Ajustes\nPermisos del dispositivo\n\nMi perfil\n\nEstos permisos se guardan en este equipo, no en tu cuenta. Si los desactivas, Ares te los vuelve a pedir la próxima vez que los necesite.\n\nCámara\nEscanear códigos de barras y tomar fotos de productos.\nCompartir ubicación\nDirección de entrega y seguimiento del repartidor en vivo.\nMicrófono\nNotas de voz en el chat y llamadas con el proveedor.\nNotificaciones\nPedidos, mensajes y avisos de la cuenta.\nFotos y videos\nSubir comprobantes, evidencias de entrega y fotos de perfil.",
+  "urlFinal": "http://127.0.0.1:3110/perfil/permisos",
+  "errores": [
+   "404 http://127.0.0.1:3110/avatar/2?v=1795038291"
+  ]
+ },
+ "viejo:kyc": {
+  "titulo": "Verificación de identidad · Ares",
+  "heads": [
+   "H1: Verificación de identidad",
+   "H2: Mis documentos"
+  ],
+  "campos": [
+   {
+    "tipo": "select[select-one]",
+    "nombre": "tipo",
+    "label": "Tipo de documento identificacion licencia tarjeta_circulacion antecedentes selfie constanc",
+    "placeholder": "",
+    "valor": "identificacion",
+    "requerido": false,
+    "deshabilitado": false,
+    "opciones": [
+     "identificacion",
+     "licencia",
+     "tarjeta_circulacion",
+     "antecedentes",
+     "selfie",
+     "constancia_sat",
+     "comprobante_domicilio",
+     "rfc_documento"
+    ]
+   },
+   {
+    "tipo": "input[file]",
+    "nombre": "documento",
+    "label": "Archivo",
+    "placeholder": "",
+    "valor": "",
+    "requerido": true,
+    "deshabilitado": false
+   }
+  ],
+  "botones": [
+   "Mi cuenta",
+   "Subir documento"
+  ],
+  "enlaces": [
+   {
+    "texto": "Ares · B2B",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Mi carrito",
+    "href": "/carrito"
+   },
+   {
+    "texto": "Explorar",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/buscar"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/agendar"
+   },
+   {
+    "texto": "Mi perfil",
+    "href": "/perfil"
+   }
+  ],
+  "tablas": [
+   {
+    "columnas": [
+     "TIPO",
+     "ESTADO",
+     "FECHA",
+     "MOTIVO"
+    ],
+    "filas": 1
+   }
+  ],
+  "interruptores": 0,
+  "secciones": [],
+  "texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\nVerificación de identidad\n\nMi perfil\n\nSube tus documentos en JPG, PNG o PDF (máximo 10 MB cada uno).\n\nTu rol no requiere documentos.\n\nTipo de documento\nidentificacion\nlicencia\ntarjeta_circulacion\nantecedentes\nselfie\nconstancia_sat\ncomprobante_domicilio\nrfc_documento\nArchivo\nSubir documento\nMis documentos\nTIPO\tESTADO\tFECHA\tMOTIVO\nSin documentos todavía.",
+  "urlFinal": "http://127.0.0.1:3110/kyc",
+  "errores": [
+   "404 http://127.0.0.1:3110/avatar/2?v=1795038291"
+  ]
+ },
+ "viejo:ayuda": {
+  "titulo": "Ayuda · Ares",
+  "heads": [
+   "H1: Ayuda",
+   "H2: Hablar con una persona",
+   "H2: Problemas frecuentes",
+   "H2: Legal"
+  ],
+  "campos": [],
+  "botones": [
+   "Mi cuenta"
+  ],
+  "enlaces": [
+   {
+    "texto": "Ares · B2B",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Mi carrito",
+    "href": "/carrito"
+   },
+   {
+    "texto": "Explorar",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/buscar"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/agendar"
+   },
+   {
+    "texto": "‹ Mi cuenta",
+    "href": "/perfil"
+   },
+   {
+    "texto": "Mi perfil",
+    "href": "/perfil"
+   },
+   {
+    "texto": "Abrir el chat de soporte",
+    "href": "/mensajes/soporte"
+   },
+   {
+    "texto": "tus datos",
+    "href": "/perfil/editar"
+   },
+   {
+    "texto": "Privacidad",
+    "href": "/perfil/privacidad"
+   },
+   {
+    "texto": "Editar cuenta",
+    "href": "/perfil/editar"
+   },
+   {
+    "texto": "Editar cuenta",
+    "href": "/perfil/editar"
+   },
+   {
+    "texto": "los términos y condiciones",
+    "href": "/terminos"
+   },
+   {
+    "texto": "aviso de privacidad",
+    "href": "/aviso-privacidad"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 0,
+  "secciones": [
+   "Hablar con una persona Escríbenos desde tu cuenta: el mensaje llega con tu nombre, tu rol y el pedido que estabas viendo",
+   "Problemas frecuentes Mi pedido no avanza de estado No me llega el código por SMS El repartidor no encuentra mi dirección",
+   "Legal Consulta el los términos y condiciones o el aviso de privacidad ."
+  ],
+  "texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\n‹ Mi cuenta\nAyuda\n\nMi perfil\n\nEstamos para resolverlo. La mayoría de los casos se contestan en menos de una hora en horario laboral.\n\nHablar con una persona\n\nEscríbenos desde tu cuenta: el mensaje llega con tu nombre, tu rol y el pedido que estabas viendo, así no tienes que explicarlo todo otra vez.\n\nAbrir el chat de soporte\nProblemas frecuentes\nMi pedido no avanza de estado\nNo me llega el código por SMS\nEl repartidor no encuentra mi dirección\nQuiero cambiar mi contraseña\n¿Cómo funciona la calificación?\nLegal\n\nConsulta el\nlos términos y condiciones\no el\naviso de privacidad\n.",
+  "urlFinal": "http://127.0.0.1:3110/ayuda",
+  "errores": [
+   "404 http://127.0.0.1:3110/avatar/2?v=1795038291"
+  ]
+ },
+ "viejo:mensajes": {
+  "titulo": "Centro de mensajes · Ares",
+  "heads": [
+   "H1: Centro de mensajes",
+   "H2: Tus mensajes"
+  ],
+  "campos": [
+   {
+    "tipo": "input[checkbox]",
+    "nombre": "hilos[]",
+    "label": "Seleccionar Soporte Didi2",
+    "placeholder": "",
+    "valor": "sin marcar",
+    "requerido": false,
+    "deshabilitado": false
+   }
+  ],
+  "botones": [
+   "Mi cuenta",
+   "Nueva conversación",
+   "Configuración",
+   "Eliminar conversaciones"
+  ],
+  "enlaces": [
+   {
+    "texto": "Ares · B2B",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Mi carrito",
+    "href": "/carrito"
+   },
+   {
+    "texto": "Explorar",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/buscar"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/agendar"
+   },
+   {
+    "texto": "Conversaciones 1",
+    "href": "/mensajes?tab=conversaciones"
+   },
+   {
+    "texto": "Notificaciones",
+    "href": "/mensajes?tab=notificaciones"
+   },
+   {
+    "texto": "SD Soporte Didi2 Que puedes hacer? 18/11 08:05",
+    "href": "/mensajes?hilo=bc6ed9cd-4e90-7ae0-5291-a9d5cd8af235"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 1,
+  "secciones": [],
+  "texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\nCentro de mensajes\n\nConversaciones y avisos del sitio, en un solo lugar.\n\nConversaciones\n1\nNotificaciones\nConversaciones\nSD\nSoporte Didi2\nQue puedes hacer?\n18/11 08:05\nTus mensajes\n\nElige una conversación de la izquierda. Aquí solo ves los hilos en los que participas.",
+  "urlFinal": "http://127.0.0.1:3110/mensajes",
+  "errores": [
+   "404 http://127.0.0.1:3110/avatar/2?v=1795038291"
+  ]
+ },
+ "viejo:mensajes-notif": {
+  "titulo": "Centro de mensajes · Ares",
+  "heads": [
+   "H1: Centro de mensajes"
+  ],
+  "campos": [],
+  "botones": [
+   "Mi cuenta"
+  ],
+  "enlaces": [
+   {
+    "texto": "Ares · B2B",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Mi carrito",
+    "href": "/carrito"
+   },
+   {
+    "texto": "Explorar",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/buscar"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/agendar"
+   },
+   {
+    "texto": "Conversaciones 1",
+    "href": "/mensajes?tab=conversaciones"
+   },
+   {
+    "texto": "Notificaciones",
+    "href": "/mensajes?tab=notificaciones"
+   },
+   {
+    "texto": "Ver detalle ›",
+    "href": "/pedidos/71942522-e349-11f1-9263-a4bb6d8495fd"
+   },
+   {
+    "texto": "Ver detalle ›",
+    "href": "/pedidos/71942522-e349-11f1-9263-a4bb6d8495fd"
+   },
+   {
+    "texto": "Ver detalle ›",
+    "href": "/pedidos/b3ec91dc-d5f9-4359-802b-f6caf1b5acbc"
+   },
+   {
+    "texto": "Ver detalle ›",
+    "href": "/pedidos"
+   },
+   {
+    "texto": "Ver detalle ›",
+    "href": "/facturacion"
+   },
+   {
+    "texto": "Ver detalle ›",
+    "href": "/kyc"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 0,
+  "secciones": [
+   "Tu pedido está en preparación 18/11 06:22 El mayorista está surtiendo tu pedido. Ver detalle › Tu pedido fue aceptado 18"
+  ],
+  "texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\nCentro de mensajes\n\nConversaciones y avisos del sitio, en un solo lugar.\n\nConversaciones\n1\nNotificaciones\nTu pedido está en preparación\n18/11 06:22\n\nEl mayorista está surtiendo tu pedido.\n\nVer detalle ›\nTu pedido fue aceptado\n18/11 06:22\n\nEl mayorista confirmó tu pedido y lo está preparando.\n\nVer detalle ›\nTu pedido expiró\n18/11 06:10\n\nEl pedido se canceló y el stock volvió al catálogo. Puedes volver a intentarlo.<br><br><em>El mayorista no respondió en el plazo de 30 minutos</em>\n\nVer detalle ›\nTu pedido salió del almacén\n17/11 21:19\n\nCentro Abarrotero preparó el pedido de 2 costales de harina. Llega hoy entre 14:00 y 17:00.\n\nVer detalle ›\nPago confirmado\n17/11 21:19\n\nRecibimos $348.00 por el pedido de harina. La factura ya está disponible.\n\nVer detalle ›\nVerifica tu cuenta\n17/11 21:19\n\nSube tu constancia de situación fiscal para emitir facturas sin interrupciones.\n\nVer detalle ›",
+  "urlFinal": "http://127.0.0.1:3110/mensajes?tab=notificaciones",
+  "errores": [
+   "404 http://127.0.0.1:3110/avatar/2?v=1795038291"
+  ]
+ },
+ "viejo:notificaciones": {
+  "titulo": "Centro de mensajes · Ares",
+  "heads": [
+   "H1: Centro de mensajes"
+  ],
+  "campos": [],
+  "botones": [
+   "Mi cuenta"
+  ],
+  "enlaces": [
+   {
+    "texto": "Ares · B2B",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Mi carrito",
+    "href": "/carrito"
+   },
+   {
+    "texto": "Explorar",
+    "href": "/explorar"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/buscar"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/agendar"
+   },
+   {
+    "texto": "Conversaciones 1",
+    "href": "/mensajes?tab=conversaciones"
+   },
+   {
+    "texto": "Notificaciones",
+    "href": "/mensajes?tab=notificaciones"
+   },
+   {
+    "texto": "Ver detalle ›",
+    "href": "/pedidos/71942522-e349-11f1-9263-a4bb6d8495fd"
+   },
+   {
+    "texto": "Ver detalle ›",
+    "href": "/pedidos/71942522-e349-11f1-9263-a4bb6d8495fd"
+   },
+   {
+    "texto": "Ver detalle ›",
+    "href": "/pedidos/b3ec91dc-d5f9-4359-802b-f6caf1b5acbc"
+   },
+   {
+    "texto": "Ver detalle ›",
+    "href": "/pedidos"
+   },
+   {
+    "texto": "Ver detalle ›",
+    "href": "/facturacion"
+   },
+   {
+    "texto": "Ver detalle ›",
+    "href": "/kyc"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 0,
+  "secciones": [
+   "Tu pedido está en preparación 18/11 06:22 El mayorista está surtiendo tu pedido. Ver detalle › Tu pedido fue aceptado 18"
+  ],
+  "texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\nCentro de mensajes\n\nConversaciones y avisos del sitio, en un solo lugar.\n\nConversaciones\n1\nNotificaciones\nTu pedido está en preparación\n18/11 06:22\n\nEl mayorista está surtiendo tu pedido.\n\nVer detalle ›\nTu pedido fue aceptado\n18/11 06:22\n\nEl mayorista confirmó tu pedido y lo está preparando.\n\nVer detalle ›\nTu pedido expiró\n18/11 06:10\n\nEl pedido se canceló y el stock volvió al catálogo. Puedes volver a intentarlo.<br><br><em>El mayorista no respondió en el plazo de 30 minutos</em>\n\nVer detalle ›\nTu pedido salió del almacén\n17/11 21:19\n\nCentro Abarrotero preparó el pedido de 2 costales de harina. Llega hoy entre 14:00 y 17:00.\n\nVer detalle ›\nPago confirmado\n17/11 21:19\n\nRecibimos $348.00 por el pedido de harina. La factura ya está disponible.\n\nVer detalle ›\nVerifica tu cuenta\n17/11 21:19\n\nSube tu constancia de situación fiscal para emitir facturas sin interrupciones.\n\nVer detalle ›",
+  "urlFinal": "http://127.0.0.1:3110/mensajes?tab=notificaciones",
+  "errores": [
+   "404 http://127.0.0.1:3110/avatar/2?v=1795038291"
+  ]
+ },
+ "nuevo:perfil": {
+  "titulo": "Ares · B2B",
+  "heads": [
+   "H1: Mi perfil",
+   "H2: Casa de Toño",
+   "H2: Verificaciones y calificaciones",
+   "H3: Comentarios recibidos"
+  ],
+  "campos": [],
+  "botones": [
+   "Cerrar sesión",
+   "Abrir carrito",
+   "Editar",
+   "Seguridad Contraseña y baja de la cuenta",
+   "Ayuda Preguntas frecuentes y soporte",
+   "Ajustes Privacidad, permisos y tema",
+   "Ir a verificación",
+   "Cerrar sesión",
+   "Eliminar cuenta"
+  ],
+  "enlaces": [
+   {
+    "texto": "A Ares B2B",
+    "href": "/spa/"
+   },
+   {
+    "texto": "Inicio",
+    "href": "/spa"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/spa/buscar"
+   },
+   {
+    "texto": "Carrito",
+    "href": "/spa/carrito"
+   },
+   {
+    "texto": "Pedidos",
+    "href": "/spa/pedidos"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/spa/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/spa/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/spa/agendar"
+   },
+   {
+    "texto": "Mensajes",
+    "href": "/spa/mensajes"
+   },
+   {
+    "texto": "Perfil",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Caja",
+    "href": "/spa/pos"
+   },
+   {
+    "texto": "Inventario",
+    "href": "/spa/pos/inventario"
+   },
+   {
+    "texto": "Ventas",
+    "href": "/spa/pos/ventas"
+   },
+   {
+    "texto": "Corte",
+    "href": "/spa/pos/corte"
+   },
+   {
+    "texto": "Clientes",
+    "href": "/spa/pos/clientes"
+   },
+   {
+    "texto": "Casa de Toño comercio",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Panel clásico",
+    "href": "/explorar"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 0,
+  "secciones": [
+   "Casa de Toño ★ 4.5 4 calificaciones Comercio Sin verificación requerida Miembro desde noviembre de 2026 CORREO comercio@",
+   "Verificaciones y calificaciones Ir a verificación 4.5 4 calificaciones 5 2 4 2 3 0 2 0 1 0 Comentarios recibidos Abarrot",
+   "Verificaciones y calificaciones Ir a verificación",
+   "4.5 4 calificaciones 5 2 4 2 3 0 2 0 1 0 Comentarios recibidos Abarrotes Maru 17 nov 2026 ★★★★★ Paga puntual y siempre r",
+   "Cerrar sesión",
+   "Eliminar cuenta"
+  ],
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMi perfil\nMi perfil\n\nTus datos, la verificación de la cuenta y las opciones de la app.\n\nCasa de Toño\n★\n4.5\n4 calificaciones\nComercio\nSin verificación requerida\nMiembro desde noviembre de 2026\nCORREO\ncomercio@didi2.mx\nTELÉFONO\n5512345678\nDIRECCIÓN PRINCIPAL\nAv. Insurgentes Sur 123, Del Valle, Ciudad de México\nÚLTIMO ACCESO\n19 nov 2026\nEditar\nSeguridad\nContraseña y baja de la cuenta\nAyuda\nPreguntas frecuentes y soporte\nAjustes\nPrivacidad, permisos y tema\nVerificaciones y calificaciones\nIr a verificación\n4.5\n4 calificaciones\n5\n2\n4\n2\n3\n0\n2\n0\n1\n0\nComentarios recibidos\nAbarrotes Maru\n17 nov 2026\n★★★★★\n\nPaga puntual y siempre recibe completo.\n\nInsumos del Valle\n17 nov 2026\n★★★★☆\n\nBuen cliente, a veces pide cambios de última hora.\n\nCerrar sesión\nEliminar cuenta",
+  "urlFinal": "http://127.0.0.1:8081/spa/perfil",
+  "errores": []
+ },
+ "nuevo:perfil-editar": {
+  "titulo": "Ares · B2B",
+  "heads": [
+   "H1: Editar cuenta",
+   "H2: Foto de perfil",
+   "H2: Datos de la cuenta",
+   "H2: Dirección de entrega"
+  ],
+  "campos": [
+   {
+    "tipo": "input[text]",
+    "nombre": "",
+    "label": "Nombre del negocio",
+    "placeholder": "",
+    "valor": "Casa de Toño",
+    "requerido": true,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[text]",
+    "nombre": "",
+    "label": "Nombre comercial",
+    "placeholder": "",
+    "valor": "Casa de Toño",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[email]",
+    "nombre": "",
+    "label": "Correo",
+    "placeholder": "",
+    "valor": "comercio@didi2.mx",
+    "requerido": true,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[tel]",
+    "nombre": "",
+    "label": "Teléfono",
+    "placeholder": "55 1234 5678",
+    "valor": "5512345678",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[text]",
+    "nombre": "",
+    "label": "Calle y número",
+    "placeholder": "Av. Insurgentes Sur 1234",
+    "valor": "Av. Insurgentes Sur 123",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[text]",
+    "nombre": "",
+    "label": "Colonia",
+    "placeholder": "",
+    "valor": "Del Valle",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[text]",
+    "nombre": "",
+    "label": "Ciudad",
+    "placeholder": "",
+    "valor": "Ciudad de México",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[text]",
+    "nombre": "",
+    "label": "Estado",
+    "placeholder": "",
+    "valor": "CDMX",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[text]",
+    "nombre": "",
+    "label": "C.P.",
+    "placeholder": "",
+    "valor": "03100",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[text]",
+    "nombre": "",
+    "label": "Referencias",
+    "placeholder": "Portón negro, entre calles…",
+    "valor": "",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[text]",
+    "nombre": "",
+    "label": "Latitud",
+    "placeholder": "",
+    "valor": "19.38",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[text]",
+    "nombre": "",
+    "label": "Longitud",
+    "placeholder": "",
+    "valor": "-99.17",
+    "requerido": false,
+    "deshabilitado": false
+   }
+  ],
+  "botones": [
+   "Cerrar sesión",
+   "Abrir carrito",
+   "Volver a mi perfil",
+   "Quitar foto",
+   "Cancelar",
+   "Guardar cambios",
+   "Seguridad"
+  ],
+  "enlaces": [
+   {
+    "texto": "A Ares B2B",
+    "href": "/spa/"
+   },
+   {
+    "texto": "Inicio",
+    "href": "/spa"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/spa/buscar"
+   },
+   {
+    "texto": "Carrito",
+    "href": "/spa/carrito"
+   },
+   {
+    "texto": "Pedidos",
+    "href": "/spa/pedidos"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/spa/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/spa/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/spa/agendar"
+   },
+   {
+    "texto": "Mensajes",
+    "href": "/spa/mensajes"
+   },
+   {
+    "texto": "Perfil",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Caja",
+    "href": "/spa/pos"
+   },
+   {
+    "texto": "Inventario",
+    "href": "/spa/pos/inventario"
+   },
+   {
+    "texto": "Ventas",
+    "href": "/spa/pos/ventas"
+   },
+   {
+    "texto": "Corte",
+    "href": "/spa/pos/corte"
+   },
+   {
+    "texto": "Clientes",
+    "href": "/spa/pos/clientes"
+   },
+   {
+    "texto": "Casa de Toño comercio",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Panel clásico",
+    "href": "/explorar"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 0,
+  "secciones": [
+   "Foto de perfil Elegir imagen Quitar foto JPG, PNG o WebP · máximo 2 MB. Se recorta en cuadrado a 256 px.",
+   "Foto de perfil",
+   "Elegir imagen Quitar foto JPG, PNG o WebP · máximo 2 MB. Se recorta en cuadrado a 256 px.",
+   "Datos de la cuenta Nombre del negocio Nombre comercial Correo Teléfono",
+   "Datos de la cuenta",
+   "Nombre del negocio Nombre comercial Correo Teléfono",
+   "Dirección de entrega Calle y número Colonia Ciudad Estado C.P. Referencias Latitud Longitud Las coordenadas ubican el pu",
+   "Dirección de entrega",
+   "Calle y número Colonia Ciudad Estado C.P. Referencias Latitud Longitud Las coordenadas ubican el punto exacto de entrega"
+  ],
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMi perfil\nEditar cuenta\n\nNombre, contacto, foto y dirección de entrega.\n\nVolver a mi perfil\nFoto de perfil\nElegir imagen\nQuitar foto\n\nJPG, PNG o WebP · máximo 2 MB. Se recorta en cuadrado a 256 px.\n\nDatos de la cuenta\nNombre del negocio\nNombre comercial\nCorreo\nTeléfono\nDirección de entrega\nCalle y número\nColonia\nCiudad\nEstado\nC.P.\nReferencias\nLatitud\nLongitud\n\nLas coordenadas ubican el punto exacto de entrega. Si no las cambias se usa el centro de la ciudad.\n\nCancelar\nGuardar cambios\n\nLa contraseña y la baja de la cuenta se manejan en Seguridad.",
+  "urlFinal": "http://127.0.0.1:8081/spa/perfil/editar",
+  "errores": []
+ },
+ "nuevo:perfil-privacidad": {
+  "titulo": "Ares · B2B",
+  "heads": [
+   "H1: Privacidad"
+  ],
+  "campos": [
+   {
+    "tipo": "input[checkbox]",
+    "nombre": "",
+    "label": "Habilitar notificaciones",
+    "placeholder": "",
+    "valor": "marcado",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[checkbox]",
+    "nombre": "",
+    "label": "Mensajes de texto",
+    "placeholder": "",
+    "valor": "marcado",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[checkbox]",
+    "nombre": "",
+    "label": "Correo electrónico",
+    "placeholder": "",
+    "valor": "marcado",
+    "requerido": false,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[checkbox]",
+    "nombre": "",
+    "label": "Compartir mi ubicación",
+    "placeholder": "",
+    "valor": "marcado",
+    "requerido": false,
+    "deshabilitado": false
+   }
+  ],
+  "botones": [
+   "Cerrar sesión",
+   "Abrir carrito",
+   "Mi cuenta",
+   "Guardar preferencias"
+  ],
+  "enlaces": [
+   {
+    "texto": "A Ares B2B",
+    "href": "/spa/"
+   },
+   {
+    "texto": "Inicio",
+    "href": "/spa"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/spa/buscar"
+   },
+   {
+    "texto": "Carrito",
+    "href": "/spa/carrito"
+   },
+   {
+    "texto": "Pedidos",
+    "href": "/spa/pedidos"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/spa/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/spa/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/spa/agendar"
+   },
+   {
+    "texto": "Mensajes",
+    "href": "/spa/mensajes"
+   },
+   {
+    "texto": "Perfil",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Caja",
+    "href": "/spa/pos"
+   },
+   {
+    "texto": "Inventario",
+    "href": "/spa/pos/inventario"
+   },
+   {
+    "texto": "Ventas",
+    "href": "/spa/pos/ventas"
+   },
+   {
+    "texto": "Corte",
+    "href": "/spa/pos/corte"
+   },
+   {
+    "texto": "Clientes",
+    "href": "/spa/pos/clientes"
+   },
+   {
+    "texto": "Casa de Toño comercio",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Panel clásico",
+    "href": "/explorar"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 4,
+  "secciones": [
+   "Habilitar notificaciones Interruptor general. Si lo apagas, no llega ningún aviso salvo los de seguridad. Mensajes de te",
+   "Habilitar notificaciones Interruptor general. Si lo apagas, no llega ningún aviso salvo los de seguridad. Mensajes de te"
+  ],
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMi perfil\nPrivacidad\n\nElige cómo quieres que te contactemos y qué compartes.\n\nMi cuenta\nHabilitar notificaciones\nInterruptor general. Si lo apagas, no llega ningún aviso salvo los de seguridad.\nMensajes de texto\nAvisos de pedidos y códigos de seguridad por SMS.\nCorreo electrónico\nResúmenes, facturas y novedades de tu cuenta.\nCompartir mi ubicación\nSolo mientras tengas un pedido en camino, para que el repartidor te encuentre.\nGuardar preferencias\n\nLos avisos de seguridad (recuperar contraseña, verificación) se envían siempre, incluso con los interruptores apagados: sin ellos podrías quedarte fuera de tu cuenta.",
+  "urlFinal": "http://127.0.0.1:8081/spa/perfil/privacidad",
+  "errores": []
+ },
+ "nuevo:perfil-ajustes": {
+  "titulo": "Ares · B2B",
+  "heads": [
+   "H1: Ajustes",
+   "H2: Cuenta y dispositivo",
+   "H2: Personalización de la app",
+   "H2: Legal"
+  ],
+  "campos": [
+   {
+    "tipo": "input[checkbox]",
+    "nombre": "",
+    "label": "Modo oscuro",
+    "placeholder": "",
+    "valor": "sin marcar",
+    "requerido": false,
+    "deshabilitado": false
+   }
+  ],
+  "botones": [
+   "Cerrar sesión",
+   "Abrir carrito",
+   "Mi cuenta",
+   "Seguridad Contraseña y baja de la cuenta",
+   "Permisos del dispositivo Qué permite tu cuenta y qué te pedirá el navegador",
+   "Privacidad Notificaciones, SMS, correo y ubicación"
+  ],
+  "enlaces": [
+   {
+    "texto": "A Ares B2B",
+    "href": "/spa/"
+   },
+   {
+    "texto": "Inicio",
+    "href": "/spa"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/spa/buscar"
+   },
+   {
+    "texto": "Carrito",
+    "href": "/spa/carrito"
+   },
+   {
+    "texto": "Pedidos",
+    "href": "/spa/pedidos"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/spa/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/spa/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/spa/agendar"
+   },
+   {
+    "texto": "Mensajes",
+    "href": "/spa/mensajes"
+   },
+   {
+    "texto": "Perfil",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Caja",
+    "href": "/spa/pos"
+   },
+   {
+    "texto": "Inventario",
+    "href": "/spa/pos/inventario"
+   },
+   {
+    "texto": "Ventas",
+    "href": "/spa/pos/ventas"
+   },
+   {
+    "texto": "Corte",
+    "href": "/spa/pos/corte"
+   },
+   {
+    "texto": "Clientes",
+    "href": "/spa/pos/clientes"
+   },
+   {
+    "texto": "Casa de Toño comercio",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Panel clásico",
+    "href": "/explorar"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 1,
+  "secciones": [
+   "Cuenta y dispositivo Seguridad Contraseña y baja de la cuenta Permisos del dispositivo Qué permite tu cuenta y qué te pe",
+   "Cuenta y dispositivo",
+   "Personalización de la app Modo oscuro Fondo oscuro y texto claro. Se guarda en tu cuenta, no solo en este equipo. El mod",
+   "Personalización de la app",
+   "Modo oscuro Fondo oscuro y texto claro. Se guarda en tu cuenta, no solo en este equipo. El modo oscuro se aplica al inst",
+   "Legal Términos y condiciones Uso del servicio y responsabilidades Sitio principal Aviso de privacidad Qué datos tratamos",
+   "Legal"
+  ],
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMi perfil\nAjustes\n\nSeguridad, permisos del dispositivo y apariencia de la app.\n\nMi cuenta\nCuenta y dispositivo\nSeguridad\nContraseña y baja de la cuenta\nPermisos del dispositivo\nQué permite tu cuenta y qué te pedirá el navegador\nPrivacidad\nNotificaciones, SMS, correo y ubicación\nPersonalización de la app\nModo oscuro\nFondo oscuro y texto claro. Se guarda en tu cuenta, no solo en este equipo.\n\nEl modo oscuro se aplica al instante y se recuerda en tu cuenta: si entras desde otro equipo, lo verás igual.\n\nLegal\nTérminos y condiciones\nUso del servicio y responsabilidades\nSitio principal\nAviso de privacidad\nQué datos tratamos y para qué\nSitio principal",
+  "urlFinal": "http://127.0.0.1:8081/spa/perfil/ajustes",
+  "errores": []
+ },
+ "nuevo:perfil-seguridad": {
+  "titulo": "Ares · B2B",
+  "heads": [
+   "H1: Seguridad",
+   "H2: Contraseña",
+   "H2: Tu cuenta",
+   "H2: Últimos accesos"
+  ],
+  "campos": [
+   {
+    "tipo": "input[password]",
+    "nombre": "p_actual",
+    "label": "Contraseña actual",
+    "placeholder": "La que usas hoy",
+    "valor": "",
+    "requerido": true,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[password]",
+    "nombre": "p_nueva",
+    "label": "Nueva",
+    "placeholder": "Mínimo 12 caracteres",
+    "valor": "",
+    "requerido": true,
+    "deshabilitado": false
+   },
+   {
+    "tipo": "input[password]",
+    "nombre": "p_repetir",
+    "label": "Repite la nueva",
+    "placeholder": "Otra vez",
+    "valor": "",
+    "requerido": true,
+    "deshabilitado": false
+   }
+  ],
+  "botones": [
+   "Cerrar sesión",
+   "Abrir carrito",
+   "Ajustes",
+   "Mostrar contraseña",
+   "Mostrar contraseña",
+   "Mostrar contraseña",
+   "Guardar contraseña",
+   "Eliminar cuenta"
+  ],
+  "enlaces": [
+   {
+    "texto": "A Ares B2B",
+    "href": "/spa/"
+   },
+   {
+    "texto": "Inicio",
+    "href": "/spa"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/spa/buscar"
+   },
+   {
+    "texto": "Carrito",
+    "href": "/spa/carrito"
+   },
+   {
+    "texto": "Pedidos",
+    "href": "/spa/pedidos"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/spa/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/spa/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/spa/agendar"
+   },
+   {
+    "texto": "Mensajes",
+    "href": "/spa/mensajes"
+   },
+   {
+    "texto": "Perfil",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Caja",
+    "href": "/spa/pos"
+   },
+   {
+    "texto": "Inventario",
+    "href": "/spa/pos/inventario"
+   },
+   {
+    "texto": "Ventas",
+    "href": "/spa/pos/ventas"
+   },
+   {
+    "texto": "Corte",
+    "href": "/spa/pos/corte"
+   },
+   {
+    "texto": "Clientes",
+    "href": "/spa/pos/clientes"
+   },
+   {
+    "texto": "Casa de Toño comercio",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Panel clásico",
+    "href": "/explorar"
+   }
+  ],
+  "tablas": [
+   {
+    "columnas": [
+     "ACCIÓN",
+     "CUÁNDO",
+     "IP",
+     "EQUIPO"
+    ],
+    "filas": 15
+   }
+  ],
+  "interruptores": 0,
+  "secciones": [
+   "Contraseña Al cambiarla se cierran las demás sesiones. Contraseña actual Nueva Repite la nueva Al menos 12 caracteres Un",
+   "Contraseña",
+   "Al cambiarla se cierran las demás sesiones. Contraseña actual Nueva Repite la nueva Al menos 12 caracteres Una mayúscula",
+   "Tu cuenta CORREO comercio@didi2.mx TELÉFONO 5512345678 ÚLTIMO ACCESO 2026-11-19 06:17 MIEMBRO DESDE 2026-11-16 20:26 Com",
+   "Tu cuenta",
+   "CORREO comercio@didi2.mx TELÉFONO 5512345678 ÚLTIMO ACCESO 2026-11-19 06:17 MIEMBRO DESDE 2026-11-16 20:26 Comercio",
+   "Últimos accesos ACCIÓN CUÁNDO IP EQUIPO login exitoso 2026-11-19 06:17 127.0.0.1 — login exitoso 2026-11-19 06:17 127.0.",
+   "Últimos accesos",
+   "Eliminar mi cuenta Se borran tu foto, tus direcciones y el acceso. Los pedidos realizados se conservan por obligaciones "
+  ],
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMi perfil\nSeguridad\n\nContraseña, últimos accesos y baja de la cuenta.\n\nAjustes\nContraseña\n\nAl cambiarla se cierran las demás sesiones.\n\nContraseña actual\nNueva\nRepite la nueva\nAl menos 12 caracteres\nUna mayúscula\nUn número\nUn símbolo (! ? # $ …)\nGuardar contraseña\nTu cuenta\nCORREO\ncomercio@didi2.mx\nTELÉFONO\n5512345678\nÚLTIMO ACCESO\n2026-11-19 06:17\nMIEMBRO DESDE\n2026-11-16 20:26\nComercio\nÚltimos accesos\nACCIÓN\tCUÁNDO\tIP\tEQUIPO\nlogin exitoso\t2026-11-19 06:17\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:17\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:16\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:16\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:16\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:13\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:13\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:12\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:11\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:11\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:11\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:08\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:08\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:07\t127.0.0.1\t—\nlogin exitoso\t2026-11-19 06:04\t127.0.0.1\t—\nEliminar mi cuenta\n\nSe borran tu foto, tus direcciones y el acceso. Los pedidos realizados se conservan por obligaciones fiscales.\n\nEliminar cuenta",
+  "urlFinal": "http://127.0.0.1:8081/spa/perfil/seguridad",
+  "errores": []
+ },
+ "nuevo:perfil-permisos": {
+  "titulo": "Ares · B2B",
+  "heads": [
+   "H1: Permisos",
+   "H2: Tu cuenta",
+   "H2: Permisos del dispositivo"
+  ],
+  "campos": [],
+  "botones": [
+   "Cerrar sesión",
+   "Abrir carrito",
+   "Ajustes"
+  ],
+  "enlaces": [
+   {
+    "texto": "A Ares B2B",
+    "href": "/spa/"
+   },
+   {
+    "texto": "Inicio",
+    "href": "/spa"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/spa/buscar"
+   },
+   {
+    "texto": "Carrito",
+    "href": "/spa/carrito"
+   },
+   {
+    "texto": "Pedidos",
+    "href": "/spa/pedidos"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/spa/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/spa/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/spa/agendar"
+   },
+   {
+    "texto": "Mensajes",
+    "href": "/spa/mensajes"
+   },
+   {
+    "texto": "Perfil",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Caja",
+    "href": "/spa/pos"
+   },
+   {
+    "texto": "Inventario",
+    "href": "/spa/pos/inventario"
+   },
+   {
+    "texto": "Ventas",
+    "href": "/spa/pos/ventas"
+   },
+   {
+    "texto": "Corte",
+    "href": "/spa/pos/corte"
+   },
+   {
+    "texto": "Clientes",
+    "href": "/spa/pos/clientes"
+   },
+   {
+    "texto": "Casa de Toño comercio",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Panel clásico",
+    "href": "/explorar"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 0,
+  "secciones": [
+   "Tu cuenta Comercio Rol «comercio» Sin verificar Comprar a mayoristas Programar pedidos y favoritos Punto de venta y clie",
+   "Tu cuenta",
+   "Comercio Rol «comercio» Sin verificar Comprar a mayoristas Programar pedidos y favoritos Punto de venta y clientes Calif",
+   "Permisos del dispositivo Ares te los pide al navegador solo cuando de verdad los necesita; puedes revocarlos en cualquie",
+   "Permisos del dispositivo",
+   "Ares te los pide al navegador solo cuando de verdad los necesita; puedes revocarlos en cualquier momento desde la config"
+  ],
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMi perfil\nPermisos\n\nQué puede hacer tu cuenta y qué te pedirá el navegador.\n\nAjustes\nTu cuenta\nComercio\nRol «comercio»\nSin verificar\nComprar a mayoristas\nProgramar pedidos y favoritos\nPunto de venta y clientes\nCalificar a proveedores y repartidores\nPermisos del dispositivo\n\nAres te los pide al navegador solo cuando de verdad los necesita; puedes revocarlos en cualquier momento desde la configuración del navegador y te los volverá a pedir la próxima vez.\n\nCámara\nEscanear códigos de barras y tomar fotos de productos.\nSe pide al usarse\nUbicación\nDirección de entrega y seguimiento del repartidor.\nSe pide al usarse\nMicrófono\nNotas de voz en el chat y llamadas con el proveedor.\nSe pide al usarse\nNotificaciones\nPedidos, mensajes y avisos de la cuenta.\nSe pide al usarse\nFotos y videos\nSubir comprobantes, evidencias y fotos de perfil.\nSe pide al usarse",
+  "urlFinal": "http://127.0.0.1:8081/spa/perfil/permisos",
+  "errores": []
+ },
+ "nuevo:kyc": {
+  "titulo": "Ares · B2B",
+  "heads": [
+   "H1: Verificación de identidad",
+   "H2: Estado de la cuenta",
+   "H2: Subir documento",
+   "H2: Mis documentos"
+  ],
+  "campos": [
+   {
+    "tipo": "select[select-one]",
+    "nombre": "",
+    "label": "Tipo de documento Identificación oficial Licencia de conducir Tarjeta de circulación Carta",
+    "placeholder": "",
+    "valor": "identificacion",
+    "requerido": false,
+    "deshabilitado": false,
+    "opciones": [
+     "Identificación oficial",
+     "Licencia de conducir",
+     "Tarjeta de circulación",
+     "Carta de antecedentes",
+     "Selfie con identificación",
+     "Constancia de situación fiscal",
+     "Comprobante de domicilio",
+     "Documento del RFC"
+    ]
+   },
+   {
+    "tipo": "input[file]",
+    "nombre": "",
+    "label": "Archivo",
+    "placeholder": "",
+    "valor": "",
+    "requerido": true,
+    "deshabilitado": false
+   }
+  ],
+  "botones": [
+   "Cerrar sesión",
+   "Abrir carrito",
+   "Mi perfil",
+   "Subir documento"
+  ],
+  "enlaces": [
+   {
+    "texto": "A Ares B2B",
+    "href": "/spa/"
+   },
+   {
+    "texto": "Inicio",
+    "href": "/spa"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/spa/buscar"
+   },
+   {
+    "texto": "Carrito",
+    "href": "/spa/carrito"
+   },
+   {
+    "texto": "Pedidos",
+    "href": "/spa/pedidos"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/spa/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/spa/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/spa/agendar"
+   },
+   {
+    "texto": "Mensajes",
+    "href": "/spa/mensajes"
+   },
+   {
+    "texto": "Perfil",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Caja",
+    "href": "/spa/pos"
+   },
+   {
+    "texto": "Inventario",
+    "href": "/spa/pos/inventario"
+   },
+   {
+    "texto": "Ventas",
+    "href": "/spa/pos/ventas"
+   },
+   {
+    "texto": "Corte",
+    "href": "/spa/pos/corte"
+   },
+   {
+    "texto": "Clientes",
+    "href": "/spa/pos/clientes"
+   },
+   {
+    "texto": "Casa de Toño comercio",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Panel clásico",
+    "href": "/explorar"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 0,
+  "secciones": [
+   "Estado de la cuenta Tu rol no requiere documentos Con tu rol actual no necesitas documentos para operar. Si más adelante",
+   "Estado de la cuenta Tu rol no requiere documentos",
+   "Con tu rol actual no necesitas documentos para operar. Si más adelante te sumas como mayorista o repartidor, aquí aparec",
+   "Subir documento Tipo de documento Identificación oficial Licencia de conducir Tarjeta de circulación Carta de antecedent",
+   "Subir documento",
+   "Tipo de documento Identificación oficial Licencia de conducir Tarjeta de circulación Carta de antecedentes Selfie con id",
+   "Mis documentos Sin documentos todavía.",
+   "Mis documentos",
+   "Sin documentos todavía."
+  ],
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nVerificación\nVerificación de identidad\n\nSube tus documentos en JPG, PNG o PDF (máximo 10 MB cada uno).\n\nMi perfil\nEstado de la cuenta\nTu rol no requiere documentos\n\nCon tu rol actual no necesitas documentos para operar. Si más adelante te sumas como mayorista o repartidor, aquí aparecerá la lista que te toca.\n\nSubir documento\nTipo de documento\nIdentificación oficial\nLicencia de conducir\nTarjeta de circulación\nCarta de antecedentes\nSelfie con identificación\nConstancia de situación fiscal\nComprobante de domicilio\nDocumento del RFC\nArchivo\nSubir documento\nMis documentos\n\nSin documentos todavía.",
+  "urlFinal": "http://127.0.0.1:8081/spa/kyc",
+  "errores": []
+ },
+ "nuevo:ayuda": {
+  "titulo": "Ares · B2B",
+  "heads": [
+   "H1: Ayuda",
+   "H2: Hablar con una persona",
+   "H2: Problemas frecuentes",
+   "H2: Tu cuenta",
+   "H2: Legal"
+  ],
+  "campos": [],
+  "botones": [
+   "Cerrar sesión",
+   "Abrir carrito",
+   "Mi cuenta",
+   "Abrir el chat de soporte",
+   "Ver mis pedidos",
+   "Editar mis datos",
+   "Editar dirección",
+   "Ir a Seguridad",
+   "Ver mi perfil",
+   "Verificación de identidad Documentos y estado de la cuenta",
+   "Seguridad Contraseña y baja de la cuenta"
+  ],
+  "enlaces": [
+   {
+    "texto": "A Ares B2B",
+    "href": "/spa/"
+   },
+   {
+    "texto": "Inicio",
+    "href": "/spa"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/spa/buscar"
+   },
+   {
+    "texto": "Carrito",
+    "href": "/spa/carrito"
+   },
+   {
+    "texto": "Pedidos",
+    "href": "/spa/pedidos"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/spa/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/spa/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/spa/agendar"
+   },
+   {
+    "texto": "Mensajes",
+    "href": "/spa/mensajes"
+   },
+   {
+    "texto": "Perfil",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Caja",
+    "href": "/spa/pos"
+   },
+   {
+    "texto": "Inventario",
+    "href": "/spa/pos/inventario"
+   },
+   {
+    "texto": "Ventas",
+    "href": "/spa/pos/ventas"
+   },
+   {
+    "texto": "Corte",
+    "href": "/spa/pos/corte"
+   },
+   {
+    "texto": "Clientes",
+    "href": "/spa/pos/clientes"
+   },
+   {
+    "texto": "Casa de Toño comercio",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Panel clásico",
+    "href": "/explorar"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 0,
+  "secciones": [
+   "Hablar con una persona Escríbenos desde tu cuenta: el mensaje llega con tu nombre, tu rol y el pedido que estabas viendo",
+   "Hablar con una persona",
+   "Escríbenos desde tu cuenta: el mensaje llega con tu nombre, tu rol y el pedido que estabas viendo. Abrir el chat de sopo",
+   "Problemas frecuentes Mi pedido no avanza de estado No me llega el código por SMS El repartidor no encuentra mi dirección",
+   "Problemas frecuentes",
+   "Tu cuenta Verificación de identidad Documentos y estado de la cuenta Seguridad Contraseña y baja de la cuenta",
+   "Tu cuenta",
+   "Legal Términos y condiciones Disponible en el sitio principal de Ares /terminos Aviso de privacidad Disponible en el sit",
+   "Legal"
+  ],
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nAyuda\nAyuda\n\nLa mayoría de los casos se contestan en menos de una hora en horario laboral.\n\nMi cuenta\nHablar con una persona\n\nEscríbenos desde tu cuenta: el mensaje llega con tu nombre, tu rol y el pedido que estabas viendo.\n\nAbrir el chat de soporte\nProblemas frecuentes\nMi pedido no avanza de estado\nNo me llega el código por SMS\nEl repartidor no encuentra mi dirección\nQuiero cambiar mi contraseña\n¿Cómo funciona la calificación?\nTu cuenta\nVerificación de identidad\nDocumentos y estado de la cuenta\nSeguridad\nContraseña y baja de la cuenta\nLegal\nTérminos y condiciones\nDisponible en el sitio principal de Ares\n/terminos\nAviso de privacidad\nDisponible en el sitio principal de Ares\n/aviso-privacidad",
+  "urlFinal": "http://127.0.0.1:8081/spa/ayuda",
+  "errores": []
+ },
+ "nuevo:mensajes": {
+  "titulo": "Ares · B2B",
+  "heads": [
+   "H1: Centro de mensajes"
+  ],
+  "campos": [],
+  "botones": [
+   "Cerrar sesión",
+   "Abrir carrito",
+   "Conversaciones 1",
+   "Notificaciones",
+   "Nueva conversación",
+   "Configuración",
+   "Eliminar conversaciones",
+   "Soporte Didi2 Que puedes hacer? 18/11 08:05"
+  ],
+  "enlaces": [
+   {
+    "texto": "A Ares B2B",
+    "href": "/spa/"
+   },
+   {
+    "texto": "Inicio",
+    "href": "/spa"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/spa/buscar"
+   },
+   {
+    "texto": "Carrito",
+    "href": "/spa/carrito"
+   },
+   {
+    "texto": "Pedidos",
+    "href": "/spa/pedidos"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/spa/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/spa/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/spa/agendar"
+   },
+   {
+    "texto": "Mensajes",
+    "href": "/spa/mensajes"
+   },
+   {
+    "texto": "Perfil",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Caja",
+    "href": "/spa/pos"
+   },
+   {
+    "texto": "Inventario",
+    "href": "/spa/pos/inventario"
+   },
+   {
+    "texto": "Ventas",
+    "href": "/spa/pos/ventas"
+   },
+   {
+    "texto": "Corte",
+    "href": "/spa/pos/corte"
+   },
+   {
+    "texto": "Clientes",
+    "href": "/spa/pos/clientes"
+   },
+   {
+    "texto": "Casa de Toño comercio",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Panel clásico",
+    "href": "/explorar"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 0,
+  "secciones": [
+   "Conversaciones Soporte Didi2 Que puedes hacer? 18/11 08:05",
+   "Conversaciones",
+   "Tus mensajes Elige una conversación de la lista. Aquí solo ves los hilos en los que participas."
+  ],
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMensajes\nCentro de mensajes\n\nConversaciones y avisos del sitio, en un solo lugar.\n\nConversaciones\n1\nNotificaciones\nConversaciones\nSoporte Didi2\nQue puedes hacer?\n18/11 08:05\nTus mensajes\n\nElige una conversación de la lista. Aquí solo ves los hilos en los que participas.",
+  "urlFinal": "http://127.0.0.1:8081/spa/mensajes",
+  "errores": []
+ },
+ "nuevo:mensajes-notif": {
+  "titulo": "Ares · B2B",
+  "heads": [
+   "H1: Centro de mensajes"
+  ],
+  "campos": [],
+  "botones": [
+   "Cerrar sesión",
+   "Abrir carrito",
+   "Conversaciones 0",
+   "Notificaciones",
+   "Ver detalle ›",
+   "Ver detalle ›",
+   "Ver detalle ›",
+   "Ver detalle ›",
+   "Ver detalle ›",
+   "Ver detalle ›"
+  ],
+  "enlaces": [
+   {
+    "texto": "A Ares B2B",
+    "href": "/spa/"
+   },
+   {
+    "texto": "Inicio",
+    "href": "/spa"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/spa/buscar"
+   },
+   {
+    "texto": "Carrito",
+    "href": "/spa/carrito"
+   },
+   {
+    "texto": "Pedidos",
+    "href": "/spa/pedidos"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/spa/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/spa/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/spa/agendar"
+   },
+   {
+    "texto": "Mensajes",
+    "href": "/spa/mensajes"
+   },
+   {
+    "texto": "Perfil",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Caja",
+    "href": "/spa/pos"
+   },
+   {
+    "texto": "Inventario",
+    "href": "/spa/pos/inventario"
+   },
+   {
+    "texto": "Ventas",
+    "href": "/spa/pos/ventas"
+   },
+   {
+    "texto": "Corte",
+    "href": "/spa/pos/corte"
+   },
+   {
+    "texto": "Clientes",
+    "href": "/spa/pos/clientes"
+   },
+   {
+    "texto": "Casa de Toño comercio",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Panel clásico",
+    "href": "/explorar"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 0,
+  "secciones": [
+   "Tu pedido está en preparación 18/11 06:22 El mayorista está surtiendo tu pedido. Ver detalle › Tu pedido fue aceptado 18"
+  ],
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMensajes\nCentro de mensajes\n\nConversaciones y avisos del sitio, en un solo lugar.\n\nConversaciones\n0\nNotificaciones\nTu pedido está en preparación\n18/11 06:22\n\nEl mayorista está surtiendo tu pedido.\n\nVer detalle ›\nTu pedido fue aceptado\n18/11 06:22\n\nEl mayorista confirmó tu pedido y lo está preparando.\n\nVer detalle ›\nTu pedido expiró\n18/11 06:10\n\nEl pedido se canceló y el stock volvió al catálogo. Puedes volver a intentarlo.<br><br><em>El mayorista no respondió en el plazo de 30 minutos</em>\n\nVer detalle ›\nTu pedido salió del almacén\n17/11 21:19\n\nCentro Abarrotero preparó el pedido de 2 costales de harina. Llega hoy entre 14:00 y 17:00.\n\nVer detalle ›\nPago confirmado\n17/11 21:19\n\nRecibimos $348.00 por el pedido de harina. La factura ya está disponible.\n\nVer detalle ›\nVerifica tu cuenta\n17/11 21:19\n\nSube tu constancia de situación fiscal para emitir facturas sin interrupciones.\n\nVer detalle ›",
+  "urlFinal": "http://127.0.0.1:8081/spa/mensajes?tab=notificaciones",
+  "errores": []
+ },
+ "nuevo:notificaciones": {
+  "titulo": "Ares · B2B",
+  "heads": [
+   "H1: Centro de mensajes"
+  ],
+  "campos": [],
+  "botones": [
+   "Cerrar sesión",
+   "Abrir carrito",
+   "Conversaciones 0",
+   "Notificaciones",
+   "Ver detalle ›",
+   "Ver detalle ›",
+   "Ver detalle ›",
+   "Ver detalle ›",
+   "Ver detalle ›",
+   "Ver detalle ›"
+  ],
+  "enlaces": [
+   {
+    "texto": "A Ares B2B",
+    "href": "/spa/"
+   },
+   {
+    "texto": "Inicio",
+    "href": "/spa"
+   },
+   {
+    "texto": "Buscar",
+    "href": "/spa/buscar"
+   },
+   {
+    "texto": "Carrito",
+    "href": "/spa/carrito"
+   },
+   {
+    "texto": "Pedidos",
+    "href": "/spa/pedidos"
+   },
+   {
+    "texto": "Finanzas",
+    "href": "/spa/finanzas"
+   },
+   {
+    "texto": "Portafolio",
+    "href": "/spa/portafolio"
+   },
+   {
+    "texto": "Agendar",
+    "href": "/spa/agendar"
+   },
+   {
+    "texto": "Mensajes",
+    "href": "/spa/mensajes"
+   },
+   {
+    "texto": "Perfil",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Caja",
+    "href": "/spa/pos"
+   },
+   {
+    "texto": "Inventario",
+    "href": "/spa/pos/inventario"
+   },
+   {
+    "texto": "Ventas",
+    "href": "/spa/pos/ventas"
+   },
+   {
+    "texto": "Corte",
+    "href": "/spa/pos/corte"
+   },
+   {
+    "texto": "Clientes",
+    "href": "/spa/pos/clientes"
+   },
+   {
+    "texto": "Casa de Toño comercio",
+    "href": "/spa/perfil"
+   },
+   {
+    "texto": "Panel clásico",
+    "href": "/explorar"
+   }
+  ],
+  "tablas": [],
+  "interruptores": 0,
+  "secciones": [
+   "Tu pedido está en preparación 18/11 06:22 El mayorista está surtiendo tu pedido. Ver detalle › Tu pedido fue aceptado 18"
+  ],
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMensajes\nCentro de mensajes\n\nConversaciones y avisos del sitio, en un solo lugar.\n\nConversaciones\n0\nNotificaciones\nTu pedido está en preparación\n18/11 06:22\n\nEl mayorista está surtiendo tu pedido.\n\nVer detalle ›\nTu pedido fue aceptado\n18/11 06:22\n\nEl mayorista confirmó tu pedido y lo está preparando.\n\nVer detalle ›\nTu pedido expiró\n18/11 06:10\n\nEl pedido se canceló y el stock volvió al catálogo. Puedes volver a intentarlo.<br><br><em>El mayorista no respondió en el plazo de 30 minutos</em>\n\nVer detalle ›\nTu pedido salió del almacén\n17/11 21:19\n\nCentro Abarrotero preparó el pedido de 2 costales de harina. Llega hoy entre 14:00 y 17:00.\n\nVer detalle ›\nPago confirmado\n17/11 21:19\n\nRecibimos $348.00 por el pedido de harina. La factura ya está disponible.\n\nVer detalle ›\nVerifica tu cuenta\n17/11 21:19\n\nSube tu constancia de situación fiscal para emitir facturas sin interrupciones.\n\nVer detalle ›",
+  "urlFinal": "http://127.0.0.1:8081/spa/mensajes?tab=notificaciones",
+  "errores": []
+ }
+}

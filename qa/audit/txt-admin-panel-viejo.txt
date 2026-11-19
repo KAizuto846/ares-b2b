@@ -1,0 +1,34 @@
+URL:/admin
+BOTONES:A Mi cuenta | Cerrar sesión | Gestionar usuarios | Parámetros de la plataforma | Cola de verificación
+HREFS:/explorar | /buscar | /finanzas | /facturacion | /admin | /admin/kyc | /perfil | /mensajes | /admin/usuarios | /admin/usuarios?rol=comercio | /admin/usuarios?rol=mayorista | /admin/reclamos | /admin/parametros
+----
+Panel de administración
+
+Resumen de la operación y lo que necesita una decisión hoy.
+
+COMUNIDAD
+11
+Usuarios
+Ver todos
+2
+Comercios
+Ver lista
+5
+Mayoristas
+Ver lista
+1
+KYC pendientes
+Requieren revisión
+0
+Reclamos abiertos
+Al día
+0
+Pedidos hoy
+Ver operación
+REQUIERE TU ATENCIÓN
+1 verificación pendiente
+Revisa los documentos para publicar sus productos.
+Revisar
+Gestionar usuarios
+Parámetros de la plataforma
+Cola de verificación

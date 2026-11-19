@@ -23,13 +23,14 @@ export default function Login() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [cargando, setCargando] = useState(false)
+  const [recordar, setRecordar] = useState(false)
 
   const enviar = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
     setCargando(true)
     try {
-      await entrar(email.trim(), password)
+      await entrar(email.trim(), password, recordar)
     } catch (err) {
       setError((err as Error).message)
     } finally {
@@ -92,6 +93,16 @@ export default function Login() {
               autoComplete="current-password"
               placeholder="••••••••"
             />
+
+            <label className="login__recordar" htmlFor="recordar">
+              <input
+                id="recordar"
+                type="checkbox"
+                checked={recordar}
+                onChange={(e) => setRecordar(e.target.checked)}
+              />
+              <span>Mantener sesión</span>
+            </label>
           </div>
 
           <div className="login__acciones">

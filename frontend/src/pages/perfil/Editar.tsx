@@ -27,10 +27,113 @@ const vacio: Formulario = {
   latitud: '19.432600', longitud: '-99.133200',
 }
 
+/** Carga Leaflet una sola vez desde los assets del backend. */
+function cargarLeaflet(): Promise<any> {
+  if ((window as any).L) return Promise.resolve((window as any).L)
+
+  return new Promise((resolve, reject) => {
+    if (!document.querySelector('link[data-leaflet]')) {
+      const css = document.createElement('link')
+      css.rel = 'stylesheet'
+      css.href = urlApp('/assets/leaflet/leaflet.css')
+      css.dataset.leaflet = '1'
+      document.head.appendChild(css)
+    }
+    const script = document.createElement('script')
+    script.src = urlApp('/assets/leaflet/leaflet.js')
+    script.async = true
+    script.dataset.leaflet = '1'
+    script.onload = () => ((window as any).L ? resolve((window as any).L) : reject(new Error('sin Leaflet')))
+    script.onerror = () => reject(new Error('no se pudo cargar el mapa'))
+    document.head.appendChild(script)
+  })
+}
+
+/** Mapa para mover el punto de entrega con el ratón o el dedo. */
+function Ubicador({
+  abierto, lat, lng, onCerrar, onElegir,
+}: {
+  abierto: boolean
+  lat: number
+  lng: number
+  onCerrar: () => void
+  onElegir: (lat: number, lng: number) => void
+}) {
+  const caja = useRef<HTMLDivElement | null>(null)
+  const mapa = useRef<any>(null)
+  const [punto, setPunto] = useState<[number, number]>([lat, lng])
+  const [fallo, setFallo] = useState('')
+
+  useEffect(() => {
+    if (!abierto || !caja.current) return
+    let vivo = true
+
+    cargarLeaflet()
+      .then((L) => {
+        if (!vivo || !caja.current || mapa.current) return
+        const m = L.map(caja.current, { center: [lat, lng], zoom: 15 })
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '© OpenStreetMap',
+        }).addTo(m)
+
+        const marca = L.marker([lat, lng], { draggable: true }).addTo(m)
+        const fijar = (la: number, ln: number) => {
+          setPunto([la, ln])
+          marca.setLatLng([la, ln])
+        }
+        marca.on('dragend', () => {
+          const p = marca.getLatLng()
+          fijar(p.lat, p.lng)
+        })
+        m.on('click', (e: any) => fijar(e.latlng.lat, e.latlng.lng))
+        mapa.current = m
+        setTimeout(() => m.invalidateSize(), 80)
+      })
+      .catch(() => vivo && setFallo('No se pudo cargar el mapa. Escribe las coordenadas a mano.'))
+
+    return () => {
+      vivo = false
+      if (mapa.current) {
+        mapa.current.remove()
+        mapa.current = null
+      }
+    }
+  }, [abierto, lat, lng])
+
+  if (!abierto) return null
+
+  return (
+    <div className="dialogo" onClick={onCerrar} role="presentation">
+      <div className="dialogo__caja dialogo__caja--ancha" role="dialog" aria-modal="true" aria-label="Ubicar dirección" onClick={(e) => e.stopPropagation()}>
+        <header className="dialogo__cab">
+          <h2>Ubicar la dirección</h2>
+          <button type="button" className="dialogo__x" onClick={onCerrar} aria-label="Cerrar"><Icon name="cerrar" size={18} /></button>
+        </header>
+        <div className="dialogo__cuerpo">
+          <p className="perfil-pista" style={{ marginTop: 0 }}>
+            Toca el mapa o arrastra el pin hasta la puerta del negocio.
+          </p>
+          {fallo && <div className="aviso aviso--error">{fallo}</div>}
+          <div ref={caja} className="perfil-mapa" />
+          <p className="perfil-pista num">
+            {punto[0].toFixed(6)}, {punto[1].toFixed(6)}
+          </p>
+        </div>
+        <footer className="dialogo__acciones">
+          <button type="button" className="btn btn--claro" onClick={onCerrar}>Cancelar</button>
+          <button type="button" className="btn" onClick={() => onElegir(punto[0], punto[1])}>Usar este punto</button>
+        </footer>
+      </div>
+    </div>
+  )
+}
+
 export default function EditarPerfil() {
   const [datos, setDatos] = useState<PerfilDetalle | null>(null)
   const [form, setForm] = useState<Formulario>(vacio)
   const [principal, setPrincipal] = useState<Direccion | null>(null)
+  const [ubicando, setUbicando] = useState(false)
   const [error, setError] = useState('')
   const [ok, setOk] = useState('')
   const [guardando, setGuardando] = useState(false)
@@ -274,9 +377,14 @@ export default function EditarPerfil() {
               <span>Longitud</span>
               <input type="text" value={form.longitud} onChange={cambiar('longitud')} inputMode="decimal" />
             </label>
-            <p className="perfil-pista perfil-form__ancho">
-              Las coordenadas ubican el punto exacto de entrega. Si no las cambias se usa el centro de la ciudad.
-            </p>
+            <div className="perfil-form__ancho">
+              <button type="button" className="btn btn--claro" onClick={() => setUbicando(true)}>
+                <Icon name="mapa" size={17} /> Ubicar en el mapa
+              </button>
+              <p className="perfil-pista">
+                Las coordenadas ubican el punto exacto de entrega. Si no las cambias se usa el centro de la ciudad.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -284,6 +392,17 @@ export default function EditarPerfil() {
           <button type="button" className="btn btn--claro" onClick={() => navegar('/perfil')}>Cancelar</button>
           <button type="submit" className="btn" disabled={guardando}>{guardando ? 'Guardando…' : 'Guardar cambios'}</button>
         </div>
+
+        <Ubicador
+          abierto={ubicando}
+          lat={Number(form.latitud) || 19.4326}
+          lng={Number(form.longitud) || -99.1332}
+          onCerrar={() => setUbicando(false)}
+          onElegir={(lat, lng) => {
+            setForm((f) => ({ ...f, latitud: lat.toFixed(6), longitud: lng.toFixed(6) }))
+            setUbicando(false)
+          }}
+        />
 
         <p className="perfil-pista">
           La contraseña y la baja de la cuenta se manejan en <button type="button" className="perfil-enlace" onClick={() => navegar('/perfil/seguridad')}>Seguridad</button>.

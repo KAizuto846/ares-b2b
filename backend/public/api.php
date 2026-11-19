@@ -172,6 +172,7 @@ try {
         }
 
         Session::regenerar();
+        Session::recordar((bool) ($cuerpo['recordar'] ?? false));
         Session::poner('user_id', (int) $resultado['usuario']['id']);
         Session::poner('uuid', (string) $resultado['usuario']['uuid']);
         Session::poner('email', (string) $resultado['usuario']['email']);

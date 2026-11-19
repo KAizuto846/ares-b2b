@@ -1,0 +1,41 @@
+URL:/spa/repartidor
+BOTONES:Cerrar sesión | Actualizar | Salir de línea | Confirmar recolección | Abrir pedido | Mapa
+HREFS:/spa/ | /spa | /spa/repartidor | /spa/buscar | /spa/finanzas | /spa/mensajes | /spa/perfil | /explorar
+----
+Mi ruta
+
+Ponte en línea para recibir ofertas. Durante el viaje compartes tu posición con el comercio.
+
+Actualizar
+En línea
+Disponibilidad
+camioneta · ABC123
+$0.00
+Ganado hoy
+0 entregas
+1
+Viajes activos
+0 ofertas esperando
+4.8
+Calificación
+Verificación aprobada
+Recibes ofertas de envío
+Última posición 2026-11-18 21:06
+Salir de línea
+Ofertas
+0 disponibles
+No tienes ofertas pendientes.
+Viajes asignados
+Insumos del Valle → Casa de Toño
+Av. Insurgentes Sur 123, Del Valle · Ciudad de México
+Repartidor asignado
+$106.80
+PIN de recoleccion
+6 dígitos · pídelo a el mayorista
+Confirmar recolección
+Abrir pedido
+Mapa
+0 km · total $705.28
+Entregas de hoy
+$0.00
+Todavía no has cerrado entregas hoy.

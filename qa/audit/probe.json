@@ -1,0 +1,115 @@
+{
+ "postmvp-tab-Planes BNPL": {
+  "url": "/spa/admin/postmvp",
+  "dialogs": [],
+  "text": "Post-MVP\n\nConsolidación de fletes, planes BNPL y licitaciones entre comercios y mayoristas.\n\nPanel\n0\nConsolidaciones activas\n0\nPlanes BNPL activos\n0\nLicitaciones abiertas\n$0.00\nAhorro en fletes\nConsolidación de fletes\nPlanes BNPL\nLicitaciones\nNuevo plan BNPL\nPlanes BNPL\n0 registro(s)\nSin planes BNPL\nDifiere un pedido en cuotas para que el comercio pague poco a poco.",
+  "botones": [
+   "Cerrar sesión",
+   "Consolidación de fletes",
+   "Planes BNPL",
+   "Licitaciones",
+   "Nuevo plan BNPL"
+  ],
+  "bad": []
+ },
+ "postmvp-tab-Licitaciones": {
+  "url": "/spa/admin/postmvp",
+  "dialogs": [],
+  "text": "Post-MVP\n\nConsolidación de fletes, planes BNPL y licitaciones entre comercios y mayoristas.\n\nPanel\n0\nConsolidaciones activas\n0\nPlanes BNPL activos\n0\nLicitaciones abiertas\n$0.00\nAhorro en fletes\nConsolidación de fletes\nPlanes BNPL\nLicitaciones\nNueva licitación\nLicitaciones\n0 registro(s)\nSin licitaciones\nAbre una licitación para que los comercios coticen.",
+  "botones": [
+   "Cerrar sesión",
+   "Consolidación de fletes",
+   "Planes BNPL",
+   "Licitaciones",
+   "Nueva licitación"
+  ],
+  "bad": []
+ },
+ "licitaciones-viejo": {
+  "url": "/postmvp/licitaciones",
+  "dialogs": [],
+  "text": "Licitaciones\nEstado: \ntodos\nabierta\ncerrada\nadjudicada\ncancelada\nFiltrar\nID\tTÍTULO\tMAYORISTA\tMÍN\tMÁX\tESTADO\tVENCE\t\nSin licitaciones.",
+  "botones": [
+   "A\n                                        \n                        \n                    \n                    Mi cuenta",
+   "Cerrar sesión",
+   "Filtrar"
+  ],
+  "bad": []
+ },
+ "licitaciones-nuevo": {
+  "url": "/spa",
+  "dialogs": [],
+  "text": "Hola, VICTOR\n\n¿Con qué empezamos hoy? Esto es lo que tienes en marcha.\n\nBuscar productos\n0\nPedidos hoy\ntoda la plataforma\n0\nKYC pendientes\ncuentas por verificar\n2\nEnvíos sin repartidor\nnecesitan atención\n0\nReclamos abiertos\nsin resolver\nTu día a día\nAdministración\nEl pulso de la plataforma.\nVerificaciones\nCuentas esperando revisión.\nReclamos\nLo que hay que atender.\nBuscar\nExplora el catálogo completo.",
+  "botones": [
+   "Cerrar sesión",
+   "Buscar productos"
+  ],
+  "bad": []
+ },
+ "pedidos-fila-click": {
+  "antes": "http://127.0.0.1:8081/spa/pedidos",
+  "despues": "http://127.0.0.1:8081/spa/pedidos/71948c57-e349-11f1-9263-a4bb6d8495fd",
+  "bad": [],
+  "url": "/spa/pedidos/71948c57-e349-11f1-9263-a4bb6d8495fd",
+  "dialogs": [],
+  "text": "Pedidos\nPedido 71948c57\n\nInsumos del Valle → Casa de Toño · creado el 2026-11-18 03:13\n\nPor aceptar\n$619.44\nAceptar pedido\nRechazar\nProductos\n1 líneas\nPRODUCTO\tCANT.\tUNITARIO\tSUBTOTAL\nPapel higiénico industrial (12)\t6\t$89.00\t$534.00\nSubtotal\n$534.00\nIVA\n$85.44\nTotal\n$619.44\nCronología\n\nSin movimientos registrados.\n\nEntrega\nAv. Insurgentes Sur 123\nDel Valle, Ciudad de México, 03100\nEnvío\nRepartidor\nAún sin asignar\nTu calificación\n★★★★★",
+  "botones": [
+   "Cerrar sesión",
+   "Pedidos",
+   "Aceptar pedido",
+   "Rechazar"
+  ]
+ },
+ "productos-escalas": {
+  "url": "/spa/productos/ce9cd884-1619-46c8-b4b3-39e2e6999670",
+  "dialogs": [],
+  "text": "Editar producto\n\nPrecio, peso y volumen son obligatorios: sin ellos no se puede calcular el envío. Las escalas por volumen son opcionales.\n\nCancelar\nGuardar producto\nDatos del producto\nNombre del producto\nCategoría\nElige una categoría…\nAbarrotes\nFerretería\nInflamables (restringida)\nLimpieza\nPerecederos (restringida)\nLas categorías restringidas dejan el producto como borrador hasta revisión.\nUnidad de venta\nContenido\nDescripción\nPeso por unidad (kg)\nVolumen por unidad (m³)\nPrecio\nPrecio base sin IVA\nIVA (%)\nEl comercio verá $23.20 con IVA por unidad de venta.\nStock y venta\nStock disponible\nCantidad mínima\nMúltiplo de venta\nSi cambias el stock se registra un ajuste con tu usuario y el motivo «Ajuste desde el catálogo».\nEscalas por volumen\n\nOpcional. Cada tramo empieza en una cantidad y baja el precio; el «hasta» se calcula solo: termina donde empieza el siguiente tramo. El último tramo no tiene tope.\n\nSin escalas: todos pagan el precio base.\n\nAñadir tramo\nFoto del producto\nElegir foto\n\nPNG, JPG o WebP. Se reduce a 1 200 px y se guarda con el producto.\n\nCaracterísticas\nPerecedero\nRequiere frío\nInflamable\nRestringido\nPublicar en el catálogo\n\nSin KYC aprobado, o en una categoría restringida, el producto se guarda como borrador aunque marques «Publicar».\n\nGuardar producto\nCancelar",
+  "botones": [
+   "Cerrar sesión",
+   "Cancelar",
+   "Guardar producto",
+   "Añadir tramo",
+   "Guardar producto",
+   "Cancelar"
+  ],
+  "bad": []
+ },
+ "detalle-viejo": {
+  "url": "/pedidos/71954494-e349-11f1-9263-a4bb6d8495fd",
+  "dialogs": [],
+  "text": "Pedido 71954494\n\nInsumos del Valle → Casa de Toño\n\nEstado\nRepartidor asignado\nTotal\n$705.28\nEntrega\nAv. Insurgentes Sur 123, Ciudad de México\nConfirmar recolección\nPídelo al mayorista\nProductos\nPRODUCTO\tCANT.\tUNITARIO\tSUBTOTAL\nBolsa de basura 60x90 (50)\t10\t$46.00\t$460.00\nEscoba de cerda suave\t4\t$37.00\t$148.00\nSubtotal $608.00\nIVA $97.28\nTotal $705.28\nHistorial\nBuscando repartidor 2026-11-18 06:25\nRepartidor asignado 2026-11-18 06:25\nRepartidor asignado\nMensajes con Insumos del Valle\n\nTodavía no hay mensajes. Usa el chat para coordinar la entrega; no compartas teléfonos ni correos.\n\nEnviar",
+  "botones": [
+   "R\n                                        \n                        \n                    \n                    Mi cuenta",
+   "Cerrar sesión",
+   "Confirmar recolección",
+   "Enviar"
+  ],
+  "bad": []
+ },
+ "detalle-seguimiento-viejo": {
+  "err": "no button"
+ },
+ "detalle-nuevo": {
+  "url": "/spa/pedidos/71954494-e349-11f1-9263-a4bb6d8495fd",
+  "dialogs": [],
+  "text": "Pedidos\nPedido 71954494\n\nInsumos del Valle → Casa de Toño · creado el 2026-11-17 21:13\n\nRepartidor asignado\n$705.28\nConfirmar recolección\nProductos\n2 líneas\nPRODUCTO\tCANT.\tUNITARIO\tSUBTOTAL\nBolsa de basura 60x90 (50)\t10\t$46.00\t$460.00\nEscoba de cerda suave\t4\t$37.00\t$148.00\nSubtotal\n$608.00\nIVA\n$97.28\nTotal\n$705.28\nCronología\nBuscando repartidor\n2026-11-18 06:25\nRepartidor asignado\n2026-11-18 06:25\n\nRepartidor asignado\n\nEntrega\nAv. Insurgentes Sur 123\nDel Valle, Ciudad de México, 03100\nSeguimiento\nEnvío\nRepartidor\nCasa de Toño\nDistancia\n0 km\nTarifa\n$106.80",
+  "botones": [
+   "Cerrar sesión",
+   "Pedidos",
+   "Confirmar recolección",
+   "Seguimiento"
+  ],
+  "bad": []
+ },
+ "detalle-seguimiento-nuevo": {
+  "url": "/spa/tracking/71954494-e349-11f1-9263-a4bb6d8495fd",
+  "dialogs": [],
+  "text": "Pedido 71954494\nSeguimiento\n\nInsumos del Valle · pedido 71954494\n\nRepartidor asignado\nEl mapa en vivo se activa cuando el repartidor sale con el pedido.\n—\nLlega en\n—\nDistancia\nRepartidor asignado\nEstado\nSe actualiza cada 15 s\nOrigen del viaje\nAv. Insurgentes Sur 123\nDel Valle, Ciudad de México\nRepartidor\nSin posición todavía\nEl mapa aparece cuando el repartidor empieza a transmitir.\nActualizar ahora\nVolver al pedido",
+  "botones": [
+   "Cerrar sesión",
+   "Pedido 71954494",
+   "Actualizar ahora",
+   "Volver al pedido"
+  ]
+ }
+}

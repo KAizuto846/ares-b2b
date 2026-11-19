@@ -1,0 +1,14 @@
+URL:/postmvp/bnpl
+BOTONES:A Mi cuenta | Cerrar sesión | Filtrar
+HREFS:/explorar | /buscar | /finanzas | /facturacion | /admin | /admin/kyc | /perfil | /mensajes
+----
+Planes BNPL
+Estado: 
+todos
+pendiente
+activo
+completado
+moroso
+Filtrar
+ID	MAYORISTA	TOTAL	CUOTAS	CUOTA ACTUAL	ESTADO	FECHA
+Sin planes BNPL.

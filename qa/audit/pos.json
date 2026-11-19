@@ -1,0 +1,112 @@
+{
+  "nuevo": {
+    "buscado": {
+      "buttons": [
+        "Cerrar sesión",
+        "Abrir carrito",
+        "Limpiar búsqueda",
+        "Aceite vegetal 900 ml $49.90 5 pieza",
+        "Cobrar",
+        "Limpiar ticket"
+      ],
+      "fields": [
+        "search|Buscar producto, clave o código…|Buscar producto, clave o código de barras"
+      ],
+      "selects": [],
+      "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Caja Caja Turno #1 abierto · vendido hoy $846.20 · en caja $1,346.20 Ventas Inventario Corte 1 producto Aceite vegetal 900 ml $49.90 5 pieza Ticket 0 artículos Toca un producto para agregarlo. Subtotal $0.00 IVA $0.00 Total $0.00 Cobrar Limpiar ticket"
+    },
+    "conTicket": {
+      "buttons": [
+        "Cerrar sesión",
+        "Abrir carrito",
+        "Limpiar búsqueda",
+        "Aceite vegetal 900 ml $49.90 5 pieza",
+        "Quitar uno de Aceite vegetal 900 ml",
+        "Agregar uno de Aceite vegetal 900 ml",
+        "Quitar Aceite vegetal 900 ml del ticket",
+        "Cobrar $49.90",
+        "Limpiar ticket"
+      ],
+      "fields": [
+        "search|Buscar producto, clave o código…|Buscar producto, clave o código de barras"
+      ],
+      "selects": [],
+      "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Caja Caja Turno #1 abierto · vendido hoy $846.20 · en caja $1,346.20 Ventas Inventario Corte 1 producto Aceite vegetal 900 ml $49.90 5 pieza Ticket 1 artículo Aceite vegetal 900 ml $49.90 · pieza 1 $49.90 Subtotal $49.90 IVA $0.00 Total $49.90 Cobrar $49.90 Limpiar ticket"
+    },
+    "cobro": {
+      "buttons": [
+        "Cerrar sesión",
+        "Abrir carrito",
+        "Limpiar búsqueda",
+        "Aceite vegetal 900 ml $49.90 5 pieza",
+        "Quitar uno de Aceite vegetal 900 ml",
+        "Agregar uno de Aceite vegetal 900 ml",
+        "Quitar Aceite vegetal 900 ml del ticket",
+        "Cobrar $49.90",
+        "Limpiar ticket",
+        "Exacto",
+        "$100",
+        "$200",
+        "$500",
+        "Cancelar",
+        "Cobrar $49.90"
+      ],
+      "fields": [
+        "search|Buscar producto, clave o código…|Buscar producto, clave o código de barras",
+        "select-one||Método de pago Efectivo Tarjeta Transferencia Crédito",
+        "number||Efectivo recibido",
+        "select-one||Cliente Público general"
+      ],
+      "selects": [
+        "Método de pago Efectivo Tarjeta Transferencia Crédito: Efectivo / Tarjeta / Transferencia / Crédito",
+        "Cliente Público general: Público general"
+      ],
+      "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Caja Caja Turno #1 abierto · vendido hoy $846.20 · en caja $1,346.20 Ventas Inventario Corte 1 producto Aceite vegetal 900 ml $49.90 5 pieza Ticket 1 artículo Aceite vegetal 900 ml $49.90 · pieza 1 $49.90 Subtotal $49.90 IVA $0.00 Total $49.90 Cobrar $49.90 Limpiar ticket Cobrar $49.90 Elige cómo paga el cliente. El cambio se calcula solo. Método de pago Efectivo Tarjeta Transferencia Crédito Efectivo recibido Exacto $100 $200 $500 Cliente Público general Cambio $0.00 Cancelar Cobrar $49.90"
+    }
+  },
+  "viejo": {
+    "buscado": {
+      "buttons": [
+        "Mi cuenta",
+        "Aceite vegetal 900 ml $49.90 5.00 pieza",
+        "Cobrar",
+        "Limpiar ticket",
+        "Cerrar caja"
+      ],
+      "fields": [
+        "search|Buscar producto, clave o código…|",
+        "select-one||Método Efectivo Tarjeta Transferencia Crédito",
+        "number|0.00|Recibido",
+        "select-one||Cliente Público general"
+      ],
+      "selects": [
+        "Método Efectivo Tarjeta Transferencia Crédito: Efectivo / Tarjeta / Transferencia / Crédito",
+        "Cliente Público general: Público general"
+      ],
+      "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Caja Turno abierto · vendido hoy $846.20 Aceite vegetal 900 ml $49.90 5.00 pieza 1 producto Ticket 0 artículos Toca un producto para agregarlo. Subtotal $0.00 IVA $0.00 Total $0.00 Método Efectivo Tarjeta Transferencia Crédito Recibido Cliente Público general Cobrar Limpiar ticket Ventas Inventario Cerrar caja"
+    },
+    "conTicket": {
+      "buttons": [
+        "Mi cuenta",
+        "Aceite vegetal 900 ml $49.90 5.00 pieza",
+        "−",
+        "+",
+        "×",
+        "Cobrar $49.90",
+        "Limpiar ticket",
+        "Cerrar caja"
+      ],
+      "fields": [
+        "search|Buscar producto, clave o código…|",
+        "select-one||Método Efectivo Tarjeta Transferencia Crédito",
+        "number|0.00|Recibido",
+        "select-one||Cliente Público general"
+      ],
+      "selects": [
+        "Método Efectivo Tarjeta Transferencia Crédito: Efectivo / Tarjeta / Transferencia / Crédito",
+        "Cliente Público general: Público general"
+      ],
+      "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Caja Turno abierto · vendido hoy $846.20 Aceite vegetal 900 ml $49.90 5.00 pieza 1 producto Ticket 1 artículo Aceite vegetal 900 ml $49.90 · pieza − 1 + × $49.90 Subtotal $49.90 IVA $0.00 Total $49.90 Método Efectivo Tarjeta Transferencia Crédito Recibido Cliente Público general Cobrar $49.90 Limpiar ticket Ventas Inventario Cerrar caja"
+    }
+  }
+}

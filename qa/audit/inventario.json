@@ -1,0 +1,3263 @@
+{
+  "explorar.viejo": {
+    "url": "/explorar",
+    "title": "Mensajes · Ares",
+    "h1": [
+      "Hola, Casa de Toño!",
+      "TU DÍA A DÍA",
+      "MÁS HERRAMIENTAS"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Buscar productos",
+      "Caja Cobrar en mostrador. ›",
+      "Inventario Existencias y altas de producto. ›",
+      "Ventas El historial del día. ›",
+      "Pedidos El seguimiento de tus compras. ›",
+      "Mensajes Habla con mayoristas y soporte. ›"
+    ],
+    "buttons": [
+      "Mi cuenta"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar",
+      "Buscar productos -> /buscar",
+      "6 Pedidos en curso compras sin cerrar -> /pedidos",
+      "$0 Vendido hoy en mostrador -> /pos/ventas",
+      "Buscar Encuentra productos y mayoristas cerca de ti. -> /buscar",
+      "Finanzas Tus gastos, la gráfica del año y tus facturas. -> /finanzas",
+      "Portafolio Los productos que guardaste, listos para repetir. -> /portafolio",
+      "Agendar Arma una lista y elige el día en que la quieres. -> /agendar",
+      "Caja Cobrar en mostrador. › -> /pos",
+      "Inventario Existencias y altas de producto. › -> /pos/inventario",
+      "Ventas El historial del día. › -> /pos/ventas",
+      "Pedidos El seguimiento de tus compras. › -> /pedidos",
+      "Mensajes Habla con mayoristas y soporte. › -> /mensajes"
+    ],
+    "fields": [],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Hola, Casa de Toño! ¿Con qué empezamos hoy? Buscar productos 6 Pedidos en curso compras sin cerrar $0 Vendido hoy en mostrador TU DÍA A DÍA Buscar Encuentra productos y mayoristas cerca de ti. Finanzas Tus gastos, la gráfica del año y tus facturas. Portafolio Los productos que guardaste, listos para repetir. Agendar Arma una lista y elige el día en que la quieres. MÁS HERRAMIENTAS Caja Cobrar en mostrador. › Inventario Existencias y altas de producto. › Ventas El historial del día. › Pedidos El seguimiento de tus compras. › Mensajes Habla con mayoristas y soporte. ›",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "explorar.nuevo": {
+    "url": "/spa/",
+    "title": "Ares · B2B",
+    "h1": [
+      "Hola, Casa de Toño",
+      "Tu día a día",
+      "Tu carrito",
+      "MÁS HERRAMIENTAS"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Buscar productos"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar",
+      "6 Pedidos en curso compras sin cerrar -> /spa/pedidos",
+      "$0 Vendido hoy en mostrador -> /spa/pos/ventas",
+      "Buscar Encuentra productos y mayoristas cerca de ti. -> /spa/buscar",
+      "Finanzas Tus gastos, la gráfica del año y tus facturas. -> /spa/finanzas",
+      "Portafolio Los productos que guardaste, listos para repetir. 4 -> /spa/portafolio",
+      "Agendar Arma una lista y elige el día en que la quieres. -> /spa/agendar",
+      "Caja Cobrar en mostrador. -> /spa/pos",
+      "Inventario Existencias y altas de producto. -> /spa/pos/inventario",
+      "Ventas El historial del día. -> /spa/pos/ventas",
+      "Pedidos El seguimiento de tus compras. -> /spa/pedidos",
+      "Mensajes Habla con mayoristas y soporte. -> /spa/mensajes"
+    ],
+    "fields": [],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Inicio Hola, Casa de Toño ¿Con qué empezamos hoy? Esto es lo que tienes en marcha. Buscar productos 6 Pedidos en curso compras sin cerrar $0 Vendido hoy en mostrador Tu día a día 4 accesos Buscar Encuentra productos y mayoristas cerca de ti. Finanzas Tus gastos, la gráfica del año y tus facturas. Portafolio Los productos que guardaste, listos para repetir. 4 Agendar Arma una lista y elige el día en que la quieres. Tu carrito Está vacío. Busca productos y arma tu pedido del día. Buscar productos MÁS HERRAMIENTAS Caja Cobrar en mostrador. Inventario Existencias y altas de producto. Ventas El historial del día. Pedidos El seguimiento de tus compras. Mensajes Habla con mayoristas y soporte.",
+    "errores": []
+  },
+  "buscar.viejo": {
+    "url": "/buscar",
+    "title": "Buscar productos · Ares",
+    "h1": [
+      "Buscar productos"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar"
+    ],
+    "buttons": [
+      "Mi cuenta",
+      "Todas las categorías",
+      "10 km",
+      "Más cercano",
+      "Buscar",
+      "−",
+      "+",
+      "Agregar"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar",
+      "Ver -> /mayoristas/9a5da605-e22e-11f1-8823-a4bb6d8495fd",
+      "Ver -> /mayoristas/9b2a0c70-e22e-11f1-8823-a4bb6d8495fd",
+      "Ver -> /mayoristas/9ac20d76-e22e-11f1-8823-a4bb6d8495fd",
+      "Ver -> /mayoristas/9b8dc25f-e22e-11f1-8823-a4bb6d8495fd",
+      "+ -> #",
+      "− -> #",
+      "Leaflet -> https://leafletjs.com"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "q",
+        "id": "",
+        "ph": "¿Qué buscas? café, cloro, tornillo…",
+        "label": ""
+      },
+      {
+        "tag": "select",
+        "type": "select-one",
+        "name": "categoria_id",
+        "id": "",
+        "ph": "",
+        "label": "",
+        "opts": [
+          "Todas las categorías",
+          "Abarrotes",
+          "Ferretería",
+          "Inflamables",
+          "Limpieza",
+          "Perecederos"
+        ]
+      },
+      {
+        "tag": "select",
+        "type": "select-one",
+        "name": "radio",
+        "id": "",
+        "ph": "",
+        "label": "",
+        "opts": [
+          "2 km",
+          "5 km",
+          "10 km",
+          "20 km",
+          "30 km"
+        ]
+      },
+      {
+        "tag": "select",
+        "type": "select-one",
+        "name": "orden",
+        "id": "",
+        "ph": "",
+        "label": "",
+        "opts": [
+          "Más cercano",
+          "Menor precio",
+          "Mayor precio",
+          "Mejor calificado"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "cantidad",
+        "id": "",
+        "ph": "",
+        "label": "Cantidad"
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "cantidad",
+        "id": "",
+        "ph": "",
+        "label": "Cantidad"
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "cantidad",
+        "id": "",
+        "ph": "",
+        "label": "Cantidad"
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "cantidad",
+        "id": "",
+        "ph": "",
+        "label": "Cantidad"
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "cantidad",
+        "id": "",
+        "ph": "",
+        "label": "Cantidad"
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "cantidad",
+        "id": "",
+        "ph": "",
+        "label": "Cantidad"
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "cantidad",
+        "id": "",
+        "ph": "",
+        "label": "Cantidad"
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "cantidad",
+        "id": "",
+        "ph": "",
+        "label": "Cantidad"
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "cantidad",
+        "id": "",
+        "ph": "",
+        "label": "Cantidad"
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "cantidad",
+        "id": "",
+        "ph": "",
+        "label": "Cantidad"
+      }
+    ],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Buscar productos 10 productos cerca de ti. Todas las categorías Abarrotes Ferretería Inflamables Limpieza Perecederos Todas las categorías 2 km 5 km 10 km 20 km 30 km 10 km Más cercano Menor precio Mayor precio Mejor calificado Más cercano Buscar Azúcar estándar 50 kg $1,250.00 + IVA · caja de 12 piezas Abarrotes Maru Abarrotes Ver − + Agregar 11 disponibles Café molido 1 kg $185.50 + IVA · caja de 12 piezas Abarrotes Maru Abarrotes Ver − + Agregar 28 disponibles Martillo de uña 16 oz $189.00 + IVA · caja de 12 piezas Ferretera Norte Ferretería Ver a 5.6 km − + Agregar 15 disponibles Tornillo 1/4 x 2\" $3.50 + IVA · caja de 12 piezas Ferretera Norte Ferretería Ver a 5.6 km − + Agregar 500 disponibles Cloro 1 L $19.90 + IVA · caja de 12 piezas Insumos del Valle Limpieza Ver a 6.1 km − + Agregar 80 disponibles Detergente 1 kg $52.00 + IVA · caja de 12 piezas Insumos del Valle Limpieza Ver a 6.1 km − + Agregar 60 disponibles Producto CSV dos $20.00 + IVA · caja de 6 piezas Insumos del Valle Abarrotes Ver a 6.1 km − + Agregar 10 disponibles Producto CSV uno $10.50 + IVA · caja de 12 piezas Insumos del Valle Abarrotes Ver a 6.1 km − + Agregar 25 disponibles Café en grano 5 kg $890.00 + IVA · caja de 12 piezas Distribuidora Sur Abarrotes Ver a 9.6 km − + Agregar 4 disponibles Jabón en polvo 10 kg $320.00 + IVA · caja de 12 piezas Distribuidora Sur Limpieza Ver a 9.6 km − + Agregar 25 disponibles 2 2 4 2 + − Leaflet | © OpenStreetMap",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "buscar.nuevo": {
+    "url": "/spa/buscar",
+    "title": "Ares · B2B",
+    "h1": [
+      "Buscar productos"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico",
+      "+",
+      "−",
+      "Leaflet"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Mi ubicación",
+      "Buscar",
+      "Quitar uno de Azúcar estándar 50 kg",
+      "Agregar uno de Azúcar estándar 50 kg",
+      "Agregar",
+      "Quitar uno de Café molido 1 kg",
+      "Agregar uno de Café molido 1 kg",
+      "Quitar uno de Martillo de uña 16 oz",
+      "Agregar uno de Martillo de uña 16 oz",
+      "Quitar uno de Tornillo 1/4 x 2\"",
+      "Agregar uno de Tornillo 1/4 x 2\"",
+      "Quitar uno de Cloro 1 L",
+      "Agregar uno de Cloro 1 L",
+      "Quitar uno de Detergente 1 kg",
+      "Agregar uno de Detergente 1 kg",
+      "Quitar uno de Producto CSV dos",
+      "Agregar uno de Producto CSV dos",
+      "Quitar uno de Producto CSV uno",
+      "Agregar uno de Producto CSV uno",
+      "Quitar uno de Café en grano 5 kg",
+      "Agregar uno de Café en grano 5 kg",
+      "Quitar uno de Jabón en polvo 10 kg",
+      "Agregar uno de Jabón en polvo 10 kg",
+      "Ocultar mapa",
+      "+",
+      "−"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar",
+      "Abarrotes Maru -> /spa/proveedor/9a5da605-e22e-11f1-8823-a4bb6d8495fd",
+      "Ferretera Norte -> /spa/proveedor/9b2a0c70-e22e-11f1-8823-a4bb6d8495fd",
+      "Insumos del Valle -> /spa/proveedor/9ac20d76-e22e-11f1-8823-a4bb6d8495fd",
+      "Distribuidora Sur -> /spa/proveedor/9b8dc25f-e22e-11f1-8823-a4bb6d8495fd",
+      "+ -> #",
+      "− -> #",
+      "Leaflet -> https://leafletjs.com"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "search",
+        "name": "",
+        "id": "",
+        "ph": "¿Qué buscas? café, cloro, tornillo…",
+        "label": "Buscar productos"
+      },
+      {
+        "tag": "select",
+        "type": "select-one",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Categoría Todas Abarrotes Ferretería Inflamables Limpieza Perecederos",
+        "opts": [
+          "Todas",
+          "Abarrotes",
+          "Ferretería",
+          "Inflamables",
+          "Limpieza",
+          "Perecederos"
+        ]
+      },
+      {
+        "tag": "select",
+        "type": "select-one",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Radio 2 km 5 km 10 km 20 km 30 km",
+        "opts": [
+          "2 km",
+          "5 km",
+          "10 km",
+          "20 km",
+          "30 km"
+        ]
+      },
+      {
+        "tag": "select",
+        "type": "select-one",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Orden Más cercano Menor precio Mayor precio Mejor calificado",
+        "opts": [
+          "Más cercano",
+          "Menor precio",
+          "Mayor precio",
+          "Mejor calificado"
+        ]
+      }
+    ],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Buscar Buscar productos 10 productos de mayoristas verificados cerca de ti. Mi ubicación Categoría Todas Abarrotes Ferretería Inflamables Limpieza Perecederos Radio 2 km 5 km 10 km 20 km 30 km Orden Más cercano Menor precio Mayor precio Mejor calificado Buscar Centro de la zona (sin GPS) · 19.4326, -99.1332 Azúcar estándar 50 kg Abarrotes Maru Abarrotes $1,250.00 + IVA · caja de 12 piezas 11 disponibles Mínimo de compra $1,500.00 1 Agregar Café molido 1 kg Abarrotes Maru Abarrotes $185.50 + IVA · caja de 12 piezas 28 disponibles Mínimo de compra $1,500.00 1 Agregar Martillo de uña 16 oz Ferretera Norte Ferretería a 5.6 km $189.00 + IVA · caja de 12 piezas 15 disponibles Mínimo de compra $1,000.00 1 Agregar Tornillo 1/4 x 2\" Ferretera Norte Ferretería a 5.6 km $3.50 + IVA · caja de 12 piezas 500 disponibles Mínimo de compra $1,000.00 1 Agregar Cloro 1 L Insumos del Valle Limpieza a 6.1 km $19.90 + IVA · caja de 12 piezas 80 disponibles Mínimo de compra $2,000.00 1 Agregar Detergente 1 kg Insumos del Valle Limpieza a 6.1 km $52.00 + IVA · caja de 12 piezas 60 disponibles Mínimo de compra $2,000.00 1 Agregar Producto CSV dos Insumos del Valle Abarrotes a 6.1 km $20.00 + IVA · caja de 6 piezas 10 disponibles Mínimo de compra $2,000.00 2 Agregar Producto CSV uno Insumos del Valle Abarrotes a 6.1 km $10.50 + IVA · caja de 12 piezas 25 disponibles Mínimo de compra $2,000.00 1 Agregar Café en grano 5 kg Distribuidora Sur Abarrotes a 9.6 km $890.00 + IVA · caja de 12 piezas 4 disponibles Mínimo de compra $2,500.00 1 Agregar Jabón en polvo 10 kg Distribuidora Sur Limpieza a 9.6 km $320.00 + IVA · caja de 12 piezas 25 disponibles Mínimo de compra $2,500.00 1 Agregar 4 mayoristas 10 productos en 10 km Ocultar mapa 📦 📦 📦 📦 + − Leaflet | © OpenStreetMap",
+    "errores": []
+  },
+  "carrito.viejo": {
+    "url": "/carrito",
+    "title": "Mi carrito · Ares",
+    "h1": [
+      "Mi carrito"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar"
+    ],
+    "buttons": [
+      "Mi cuenta"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar",
+      "Buscar productos -> /buscar"
+    ],
+    "fields": [],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Mi carrito Tu carrito está vacío. Buscar productos",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "carrito.nuevo": {
+    "url": "/spa/carrito",
+    "title": "Ares · B2B",
+    "h1": [
+      "Mi carrito"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Buscar productos"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar"
+    ],
+    "fields": [],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [
+      "Tu carrito está vacío Busca productos por proveedor y agrégalos: aquí verás cantidades, mínimos y totales. Buscar productos"
+    ],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Mi carrito Mi carrito Todavía no tienes productos. Lo que agregues se agrupa por proveedor. Tu carrito está vacío Busca productos por proveedor y agrégalos: aquí verás cantidades, mínimos y totales. Buscar productos",
+    "errores": []
+  },
+  "checkout.viejo": {
+    "url": "/checkout",
+    "title": "Confirmar pedido · Ares",
+    "h1": [
+      "Confirmar pedido",
+      "Dirección de entrega",
+      "Resumen",
+      "Qué pasa después"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar"
+    ],
+    "buttons": [
+      "Mi cuenta",
+      "Confirmar pedido"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar"
+    ],
+    "fields": [
+      {
+        "tag": "select",
+        "type": "select-one",
+        "name": "direccion_id",
+        "id": "",
+        "ph": "",
+        "label": "Entregar en Av. Insurgentes Sur 123, Del Valle · Ciudad de México",
+        "opts": [
+          "Av. Insurgentes Sur 123, Del Valle · Ciudad de México"
+        ]
+      }
+    ],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Confirmar pedido Dirección de entrega Entregar en Av. Insurgentes Sur 123, Del Valle · Ciudad de México Resumen Subtotal $0.00 IVA $0.00 Total $0.00 Confirmar pedido Al confirmar se reserva el stock por 15 minutos. Qué pasa después Se reserva el stock de cada mayorista Confirmas el pago Cada mayorista acepta su parte Se prepara y se asigna repartidor",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "checkout.nuevo": {
+    "url": "/spa/checkout",
+    "title": "Ares · B2B",
+    "h1": [
+      "Confirmar pedido"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Buscar productos"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar"
+    ],
+    "fields": [],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [
+      "Ningún proveedor alcanza su mínimo Agrega más productos para poder confirmar. Buscar productos"
+    ],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Confirmar pedido Confirmar pedido Revisa la dirección y lo que se va a cobrar. Ningún proveedor alcanza su mínimo Agrega más productos para poder confirmar. Buscar productos",
+    "errores": []
+  },
+  "pedidos.viejo": {
+    "url": "/pedidos",
+    "title": "Mis pedidos · Ares",
+    "h1": [
+      "Mis pedidos"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar"
+    ],
+    "buttons": [
+      "Mi cuenta"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar",
+      "Ver -> /pedidos/f5c501fb-8eb6-4b57-9ab7-0e7256a7cf8b",
+      "Ver -> /pedidos/750ab9cf-6eb2-4a2f-b502-f8224f23993d",
+      "Ver -> /pedidos/1f36024f-cebb-48af-a6f6-80d13676eea5",
+      "Ver -> /pedidos/71942522-e349-11f1-9263-a4bb6d8495fd",
+      "Ver -> /pedidos/71948c57-e349-11f1-9263-a4bb6d8495fd",
+      "Ver -> /pedidos/7194e1c4-e349-11f1-9263-a4bb6d8495fd",
+      "Ver -> /pedidos/71954494-e349-11f1-9263-a4bb6d8495fd",
+      "Ver -> /pedidos/ae12fa30-e2f9-11f1-9263-a4bb6d8495fd",
+      "Ver -> /pedidos/b3ec91dc-d5f9-4359-802b-f6caf1b5acbc",
+      "Ver -> /pedidos/9f9d8c29-e22e-11f1-8823-a4bb6d8495fd"
+    ],
+    "fields": [],
+    "tableHeads": [
+      "MAYORISTA",
+      "TOTAL",
+      "ESTADO"
+    ],
+    "rowActions": [
+      "Ver"
+    ],
+    "rows": 10,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Mis pedidos MAYORISTA TOTAL ESTADO Abarrotes Maru 2 productos · 2026-11-18 13:13 $1,880.36 Por aceptar Ver Abarrotes Maru 1 productos · 2026-11-18 06:23 $2,151.80 Por aceptar Ver Distribuidora Sur 1 productos · 2026-11-18 06:23 $4,129.60 Por aceptar Ver Insumos del Valle 2 productos · 2026-11-18 05:13 $1,277.86 Buscando repartidor Ver Insumos del Valle 1 productos · 2026-11-18 03:13 $619.44 Por aceptar Ver Insumos del Valle 3 productos · 2026-11-18 01:13 $1,198.28 Preparando Ver Insumos del Valle 2 productos · 2026-11-17 21:13 $705.28 Repartidor asignado Ver Abarrotes Maru 1 productos · 2026-11-17 20:42 $348.00 recibido Ver Abarrotes Maru 1 productos · 2026-11-16 21:00 $2,900.00 Expirado Ver Abarrotes Maru 1 productos · 2026-11-16 20:28 $1,347.08 Buscando repartidor Ver",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "pedidos.nuevo": {
+    "url": "/spa/pedidos",
+    "title": "Ares · B2B",
+    "h1": [
+      "Mis pedidos"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Todos 10",
+      "Por aceptar 4",
+      "Preparando 1",
+      "Buscando repartidor 2",
+      "Repartidor asignado 1",
+      "Recibido 1",
+      "Expirado 1"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar"
+    ],
+    "fields": [],
+    "tableHeads": [
+      "PEDIDO",
+      "PROVEEDOR",
+      "ESTADO",
+      "FECHA",
+      "TOTAL"
+    ],
+    "rowActions": [],
+    "rows": 10,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Pedidos Mis pedidos Todo lo que has comprado y en qué va. 10 pedidos Todos 10 Por aceptar 4 Preparando 1 Buscando repartidor 2 Repartidor asignado 1 Recibido 1 Expirado 1 PEDIDO PROVEEDOR ESTADO FECHA TOTAL f5c501fb 2 líneas Abarrotes Maru Por aceptar hace 17 h $1,880.36 1f36024f 1 línea Distribuidora Sur Por aceptar ayer $4,129.60 750ab9cf 1 línea Abarrotes Maru Por aceptar ayer $2,151.80 71942522 2 líneas Insumos del Valle Buscando repartidor ayer $1,277.86 71948c57 1 línea Insumos del Valle Por aceptar ayer $619.44 7194e1c4 3 líneas Insumos del Valle Preparando ayer $1,198.28 71954494 2 líneas Insumos del Valle Repartidor asignado ayer $705.28 ae12fa30 1 línea Abarrotes Maru Recibido ayer $348.00 b3ec91dc 1 línea Abarrotes Maru Expirado hace 2 días $2,900.00 9f9d8c29 1 línea Abarrotes Maru Buscando repartidor hace 2 días $1,347.08 ",
+    "errores": []
+  },
+  "mensajes.viejo": {
+    "url": "/mensajes",
+    "title": "Centro de mensajes · Ares",
+    "h1": [
+      "Centro de mensajes",
+      "Tus mensajes",
+      "Nueva conversación",
+      "Configuración",
+      "Eliminar conversaciones"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Conversaciones 1",
+      "Notificaciones"
+    ],
+    "buttons": [
+      "Mi cuenta",
+      "Nueva conversación",
+      "Configuración",
+      "Eliminar conversaciones"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar",
+      "Conversaciones 1 -> /mensajes?tab=conversaciones",
+      "Notificaciones -> /mensajes?tab=notificaciones",
+      "SD Soporte Didi2 Que puedes hacer? 18/11 08:05 -> /mensajes?hilo=bc6ed9cd-4e90-7ae0-5291-a9d5cd8af235"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "hilos[]",
+        "id": "sel-bc6ed9cd-4e90-7ae0-5291-a9d5cd8af235",
+        "ph": "",
+        "label": "Seleccionar Soporte Didi2"
+      }
+    ],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Centro de mensajes Conversaciones y avisos del sitio, en un solo lugar. Conversaciones 1 Notificaciones Conversaciones SD Soporte Didi2 Que puedes hacer? 18/11 08:05 Tus mensajes Elige una conversación de la izquierda. Aquí solo ves los hilos en los que participas.",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "mensajes.nuevo": {
+    "url": "/spa/mensajes",
+    "title": "Ares · B2B",
+    "h1": [
+      "Centro de mensajes",
+      "Nueva conversación",
+      "Configuración",
+      "Eliminar conversaciones"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Conversaciones 1",
+      "Notificaciones",
+      "Nueva conversación",
+      "Configuración",
+      "Eliminar conversaciones",
+      "Soporte Didi2 Que puedes hacer? 18/11 08:05"
+    ],
+    "tabs": [
+      "Conversaciones 1",
+      "Notificaciones"
+    ],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar"
+    ],
+    "fields": [],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Mensajes Centro de mensajes Conversaciones y avisos del sitio, en un solo lugar. Conversaciones 1 Notificaciones Conversaciones Soporte Didi2 Que puedes hacer? 18/11 08:05 Tus mensajes Elige una conversación de la lista. Aquí solo ves los hilos en los que participas.",
+    "errores": []
+  },
+  "finanzas.viejo": {
+    "url": "/finanzas",
+    "title": "Finanzas · Ares",
+    "h1": [
+      "Finanzas",
+      "Cada gasto 26"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Estado de gastos",
+      "Facturación"
+    ],
+    "buttons": [
+      "Mi cuenta"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar",
+      "Estado de gastos -> /finanzas?tab=gastos&periodo=2026",
+      "Facturación -> /finanzas?tab=facturacion",
+      "11 NOV Abarrotes Maru 11/11/2026 · En camino $6,900.00 -> /pedidos/c66f471a-f731-4e91-814d-1a428b00d366",
+      "03 NOV Abarrotes Maru 03/11/2026 · Recibido $4,800.00 -> /pedidos/b03c10f1-e89b-4d8b-8b29-1e4953cabaf6",
+      "19 OCT Abarrotes Maru 19/10/2026 · Recibido $3,200.00 -> /pedidos/22c03c9d-5310-4bd9-b9c2-71e3e26abf21",
+      "11 OCT Abarrotes Maru 11/10/2026 · Recibido $4,300.00 -> /pedidos/856fee17-c2a7-46b6-976d-2ee18e2b3f8d",
+      "03 OCT Abarrotes Maru 03/10/2026 · Buscando repartidor $5,600.00 -> /pedidos/868791c9-9492-4296-94ae-65b7a71603d1",
+      "19 SEP Abarrotes Maru 19/09/2026 · En camino $2,900.00 -> /pedidos/447559f6-bf82-4fc1-adb2-01e936d913a9",
+      "11 SEP Abarrotes Maru 11/09/2026 · Recibido $3,800.00 -> /pedidos/95480218-81e9-4b91-aa64-94aa2b314fd5",
+      "03 SEP Abarrotes Maru 03/09/2026 · Recibido $4,500.00 -> /pedidos/9a622acd-1cd7-4fa4-9eb6-b713cc1c47a4",
+      "-> /pedidos/2b88d6cc-f3f7-482d-b636-e4575017ae77",
+      "-> /pedidos/4b38b96d-9816-46e1-9c81-352ccbb7199f",
+      "-> /pedidos/6ed95601-8036-4fbd-b338-9ff51a614e99",
+      "-> /pedidos/a4ddb2e3-06f3-42be-be60-a0ad03316622",
+      "-> /pedidos/a99bfc48-173b-41d5-8c30-77b71edb5390",
+      "-> /pedidos/f05241b5-1a48-4b90-9eac-02842992ee13",
+      "-> /pedidos/1c48e091-e04d-414f-b793-4064fe504984",
+      "-> /pedidos/aeccad96-8612-4472-96ed-a3a1520c71e6",
+      "-> /pedidos/e4da47ac-c1b1-45b3-aa9d-378b719184bf",
+      "-> /pedidos/845be64f-44b6-4954-bbca-9e318ff41eaf",
+      "-> /pedidos/516e58b2-8ea1-4df5-a9e7-40776435d822",
+      "-> /pedidos/9b602932-5e3e-447a-9dd2-da6084b000f5",
+      "-> /pedidos/0a3e92c9-06d9-4cdc-a9db-d4ab1d624c58",
+      "-> /pedidos/96c1e1b0-005b-4937-8464-7640d29c1abc",
+      "-> /pedidos/506976fb-fe4d-4b29-9b2a-a40a8f9b1e1c",
+      "-> /pedidos/af31db05-d371-4f65-9ab2-663c550d9cf4",
+      "-> /pedidos/93dc6258-250d-4aa3-8de5-3ceb6909fcf2",
+      "-> /pedidos/642be094-60d6-4edc-a3cf-efaa05c69c7d"
+    ],
+    "fields": [
+      {
+        "tag": "select",
+        "type": "select-one",
+        "name": "periodo",
+        "id": "",
+        "ph": "",
+        "label": "Periodo Año 2026 Noviembre de 2026 Octubre de 2026 Septiembre de 2026 Agosto de 2026 Julio de 2026 Junio de 2026 Mayo de 2026 Abril de 2026 Marzo de 2026 Febrero de 2026 Enero de 2026 Año 2025 Diciembre de 2025 Noviembre de 2025 Octubre de 2025 Septiembre de 2025 Agosto de 2025 Julio de 2025 Junio de 2025 Mayo de 2025 Abril de 2025 Marzo de 2025 Febrero de 2025 Enero de 2025 Año 2024 Diciembre de 2024 Noviembre de 2024 Octubre de 2024 Septiembre de 2024 Agosto de 2024 Julio de 2024 Junio de 2024 Mayo de 2024 Abril de 2024 Marzo de 2024 Febrero de 2024 Enero de 2024",
+        "opts": [
+          "Año 2026",
+          "Noviembre de 2026",
+          "Octubre de 2026",
+          "Septiembre de 2026",
+          "Agosto de 2026",
+          "Julio de 2026",
+          "Junio de 2026",
+          "Mayo de 2026",
+          "Abril de 2026",
+          "Marzo de 2026",
+          "Febrero de 2026",
+          "Enero de 2026",
+          "Año 2025",
+          "Diciembre de 2025",
+          "Noviembre de 2025",
+          "Octubre de 2025",
+          "Septiembre de 2025",
+          "Agosto de 2025",
+          "Julio de 2025",
+          "Junio de 2025",
+          "Mayo de 2025",
+          "Abril de 2025",
+          "Marzo de 2025",
+          "Febrero de 2025",
+          "Enero de 2025",
+          "Año 2024",
+          "Diciembre de 2024",
+          "Noviembre de 2024",
+          "Octubre de 2024",
+          "Septiembre de 2024",
+          "Agosto de 2024",
+          "Julio de 2024",
+          "Junio de 2024",
+          "Mayo de 2024",
+          "Abril de 2024",
+          "Marzo de 2024",
+          "Febrero de 2024",
+          "Enero de 2024"
+        ]
+      }
+    ],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Finanzas Lo que has gastado y las facturas de tus pedidos, en un solo lugar. Estado de gastos Facturación Periodo Año 2026 Noviembre de 2026 Octubre de 2026 Septiembre de 2026 Agosto de 2026 Julio de 2026 Junio de 2026 Mayo de 2026 Abril de 2026 Marzo de 2026 Febrero de 2026 Enero de 2026 Año 2025 Diciembre de 2025 Noviembre de 2025 Octubre de 2025 Septiembre de 2025 Agosto de 2025 Julio de 2025 Junio de 2025 Mayo de 2025 Abril de 2025 Marzo de 2025 Febrero de 2025 Enero de 2025 Año 2024 Diciembre de 2024 Noviembre de 2024 Octubre de 2024 Septiembre de 2024 Agosto de 2024 Julio de 2024 Junio de 2024 Mayo de 2024 Abril de 2024 Marzo de 2024 Febrero de 2024 Enero de 2024 El gráfico y la lista se actualizan al elegir el periodo. Gastado en año 2026 $92,550.00 26 pedidos $16k $12k $8k $4k $0 $5,500.00 ene $8,600.00 feb $6,050.00 mar $1,450.00 abr $7,850.00 may $7,300.00 jun $10,300.00 jul $9,500.00 ago $11,200.00 sep $13,100.00 oct $11,700.00 nov dic Cada gasto 26 11 NOV Abarrotes Maru 11/11/2026 · En camino $6,900.00 03 NOV Abarrotes Maru 03/11/2026 · Recibido $4,800.00 19 OCT Abarrotes Maru 19/10/2026 · Recibido $3,200.00 11 OCT Abarrotes Maru 11/10/2026 · Recibido $4,300.00 03 OCT Abarrotes Maru 03/10/2026 · Buscando repartidor $5,600.00 19 SEP Abarrotes Maru 19/09/2026 · En camino $2,900.00 11 SEP Abarrotes Maru 11/09/2026 · Recibido $3,800.00 03 SEP Abarrotes Maru 03/09/2026 · Recibido $4,500.00 Ver los 26 gastos del periodo",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "finanzas.nuevo": {
+    "url": "/spa/finanzas",
+    "title": "Ares · B2B",
+    "h1": [
+      "Finanzas",
+      "Gasto por mes",
+      "Movimientos"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico",
+      "Exportar CSV"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Estado de gastos",
+      "Facturación 20",
+      "Anual",
+      "Mensual",
+      "f5c501fb",
+      "750ab9cf",
+      "1f36024f",
+      "71942522",
+      "71948c57",
+      "7194e1c4",
+      "71954494",
+      "ae12fa30",
+      "9f9d8c29"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar",
+      "Exportar CSV -> /spa/api/finanzas/export?desde=2026-01-01&hasta=2026-12-31"
+    ],
+    "fields": [
+      {
+        "tag": "select",
+        "type": "select-one",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Año Año 2026 Año 2025 Año 2024",
+        "opts": [
+          "Año 2026",
+          "Año 2025",
+          "Año 2024"
+        ]
+      }
+    ],
+    "tableHeads": [
+      "PEDIDO",
+      "FECHA",
+      "MAYORISTA",
+      "ESTADO",
+      "MONTO"
+    ],
+    "rowActions": [
+      "f5c501fb",
+      "750ab9cf",
+      "1f36024f",
+      "71942522",
+      "71948c57",
+      "7194e1c4",
+      "71954494",
+      "ae12fa30",
+      "9f9d8c29"
+    ],
+    "rows": 9,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Finanzas Finanzas Lo que has gastado y las facturas de tus pedidos, en un solo lugar. Exportar CSV Estado de gastos Facturación 20 Anual Mensual Año Año 2026 Año 2025 Año 2024 Periodo: Año 2026 $13,657.70 Gastado en el periodo 9 pedidos $1,876.10 IVA de tus compras $56.00 Envíos pagados $1,517.52 Ticket promedio — Vs periodo anterior Sin datos previos Gasto por mes $13,657.70 $16k $12k $8k $4k $0 ene feb mar abr may jun jul ago sep oct $13,658 nov dic Movimientos 9 en el periodo PEDIDO FECHA MAYORISTA ESTADO MONTO f5c501fb 2026-11-18 13:13 Abarrotes Maru Por aceptar $1,880.36 750ab9cf 2026-11-18 06:23 Abarrotes Maru Por aceptar $2,151.80 1f36024f 2026-11-18 06:23 Distribuidora Sur Por aceptar $4,129.60 71942522 2026-11-18 05:13 Insumos del Valle Buscando repartidor $1,277.86 71948c57 2026-11-18 03:13 Insumos del Valle Por aceptar $619.44 7194e1c4 2026-11-18 01:13 Insumos del Valle Preparando $1,198.28 71954494 2026-11-17 21:13 Insumos del Valle Repartidor asignado $705.28 ae12fa30 2026-11-17 20:42 Abarrotes Maru Recibido $348.00 9f9d8c29 2026-11-16 20:28 Abarrotes Maru Buscando repartidor $1,347.08",
+    "errores": []
+  },
+  "portafolio.viejo": {
+    "url": "/portafolio",
+    "title": "Portafolio · Ares",
+    "h1": [
+      "Portafolio"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar"
+    ],
+    "buttons": [
+      "Mi cuenta",
+      "Volver a pedir",
+      "Quitar del portafolio"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar"
+    ],
+    "fields": [],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Portafolio Los productos que guardaste, con su mayorista, precio y existencias. Azúcar estándar 50 kg Abarrotes Maru PRECIO $1,250.00 UNIDADES 11 Volver a pedir Quitar del portafolio Café molido 1 kg Abarrotes Maru PRECIO $185.50 UNIDADES 28 Volver a pedir Quitar del portafolio Martillo de uña 16 oz Ferretera Norte PRECIO $189.00 UNIDADES 15 Volver a pedir Quitar del portafolio Detergente 1 kg Insumos del Valle PRECIO $52.00 UNIDADES 60 Volver a pedir Quitar del portafolio",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "portafolio.nuevo": {
+    "url": "/spa/portafolio",
+    "title": "Ares · B2B",
+    "h1": [
+      "Portafolio"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Buscar productos",
+      "Volver a pedir",
+      "Quitar del portafolio"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar"
+    ],
+    "fields": [],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Portafolio Portafolio Los productos que guardaste, con su mayorista, precio y existencias. Buscar productos Azúcar estándar 50 kg Abarrotes Maru · Abarrotes PRECIO $1,250.00 UNIDADES 11 caja de 12 piezas Volver a pedir Quitar del portafolio Café molido 1 kg Abarrotes Maru · Abarrotes PRECIO $185.50 UNIDADES 28 caja de 12 piezas Volver a pedir Quitar del portafolio Martillo de uña 16 oz Ferretera Norte · Ferretería PRECIO $189.00 UNIDADES 15 caja de 12 piezas Volver a pedir Quitar del portafolio Detergente 1 kg Insumos del Valle · Limpieza PRECIO $52.00 UNIDADES 60 caja de 12 piezas Volver a pedir Quitar del portafolio",
+    "errores": []
+  },
+  "agendar.viejo": {
+    "url": "/agendar",
+    "title": "Agendar · Ares",
+    "h1": [
+      "Agendar",
+      "Mis listas",
+      "Tarjeta de pedido"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar"
+    ],
+    "buttons": [
+      "Mi cuenta",
+      "Crear nueva lista",
+      "Pausar",
+      "Cancelar"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar"
+    ],
+    "fields": [],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Agendar Arma tu lista de productos y elige el día y la hora en que la quieres recibir. Mis listas Crear nueva lista Abarrotes Maru 1 producto Agendada ENTREGA 21/11/2026 a las 09:30 Pausar Cancelar Abarrotes Maru 2 productos Agendada ENTREGA 25/11/2026 a las 08:30 Pausar Cancelar",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "agendar.nuevo": {
+    "url": "/spa/agendar",
+    "title": "Ares · B2B",
+    "h1": [
+      "Agendar",
+      "Mis listas"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Crear nueva lista",
+      "Pausar",
+      "Cancelar",
+      "Buscar productos para la próxima lista"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar"
+    ],
+    "fields": [],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Agendar pedido Agendar Arma tu lista de productos y elige el día y la hora en que la quieres recibir. Crear nueva lista Mis listas 2 activas de 2 Abarrotes Maru 1 producto Agendada ENTREGA 21 nov 2026 a las 09:30 Azúcar estándar 50 kg ×1 Pausar Cancelar Abarrotes Maru 2 productos Agendada ENTREGA 25 nov 2026 a las 08:30 Azúcar estándar 50 kg ×1 Azúcar estándar 50 kg ×4 Pausar Cancelar Buscar productos para la próxima lista",
+    "errores": []
+  },
+  "pos.viejo": {
+    "url": "/pos",
+    "title": "Caja · Ares",
+    "h1": [
+      "Caja",
+      "Venta registrada"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Ventas",
+      "Inventario"
+    ],
+    "buttons": [
+      "Mi cuenta",
+      "Cobrar",
+      "Limpiar ticket",
+      "Cerrar caja"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar",
+      "Ventas -> /pos/ventas",
+      "Inventario -> /pos/productos"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "search",
+        "name": "",
+        "id": "pos-buscar",
+        "ph": "Buscar producto, clave o código…",
+        "label": ""
+      },
+      {
+        "tag": "select",
+        "type": "select-one",
+        "name": "",
+        "id": "pos-metodo",
+        "ph": "",
+        "label": "Método Efectivo Tarjeta Transferencia Crédito",
+        "opts": [
+          "Efectivo",
+          "Tarjeta",
+          "Transferencia",
+          "Crédito"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "pos-recibido",
+        "ph": "0.00",
+        "label": "Recibido"
+      },
+      {
+        "tag": "select",
+        "type": "select-one",
+        "name": "",
+        "id": "pos-cliente",
+        "ph": "",
+        "label": "Cliente Público general",
+        "opts": [
+          "Público general"
+        ]
+      }
+    ],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Caja Turno abierto · vendido hoy $846.20 Busca un producto Escribe el nombre o la clave, o pasa el lector de código de barras. Ticket 0 artículos Toca un producto para agregarlo. Subtotal $0.00 IVA $0.00 Total $0.00 Método Efectivo Tarjeta Transferencia Crédito Recibido Cliente Público general Cobrar Limpiar ticket Ventas Inventario Cerrar caja",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "pos.nuevo": {
+    "url": "/spa/pos",
+    "title": "Ares · B2B",
+    "h1": [
+      "Caja"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Cobrar",
+      "Limpiar ticket"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "search",
+        "name": "",
+        "id": "",
+        "ph": "Buscar producto, clave o código…",
+        "label": "Buscar producto, clave o código de barras"
+      }
+    ],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Caja Caja Turno #1 abierto · vendido hoy $846.20 · en caja $1,346.20 Ventas Inventario Corte Busca un producto Escribe el nombre o la clave, o pasa el lector de código de barras. Ticket 0 artículos Toca un producto para agregarlo. Subtotal $0.00 IVA $0.00 Total $0.00 Cobrar Limpiar ticket",
+    "errores": []
+  },
+  "pos-inventario.viejo": {
+    "url": "/pos/inventario",
+    "title": "Inventario · Ares",
+    "h1": [
+      "Inventario",
+      "Nuevo producto",
+      "Ajustes"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar"
+    ],
+    "buttons": [
+      "Mi cuenta",
+      "Quitar",
+      "Agregar producto",
+      "Guardar ajustes"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar",
+      "Ir a caja -> /pos",
+      "Editar -> /pos/productos?editar=6",
+      "Editar -> /pos/productos?editar=51",
+      "Editar -> /pos/productos?editar=55",
+      "Editar -> /pos/productos?editar=53",
+      "Editar -> /pos/productos?editar=5",
+      "Editar -> /pos/productos?editar=4",
+      "Editar -> /pos/productos?editar=50",
+      "Editar -> /pos/productos?editar=54",
+      "Editar -> /pos/productos?editar=56",
+      "Editar -> /pos/productos?editar=52",
+      "Editar -> /pos/productos?editar=58",
+      "Editar -> /pos/productos?editar=57"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "nombre",
+        "id": "",
+        "ph": "",
+        "label": "Nombre"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "sku",
+        "id": "",
+        "ph": "",
+        "label": "SKU"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "codigo_barras",
+        "id": "",
+        "ph": "",
+        "label": "Código de barras"
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "precio_compra",
+        "id": "",
+        "ph": "",
+        "label": "Costo"
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "precio_venta",
+        "id": "",
+        "ph": "",
+        "label": "Precio venta"
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "stock",
+        "id": "",
+        "ph": "",
+        "label": "Stock"
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "stock_minimo",
+        "id": "",
+        "ph": "",
+        "label": "Mínimo"
+      },
+      {
+        "tag": "select",
+        "type": "select-one",
+        "name": "iva_tasa",
+        "id": "",
+        "ph": "",
+        "label": "IVA 16% 8% Exento",
+        "opts": [
+          "16%",
+          "8%",
+          "Exento"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "unidad",
+        "id": "",
+        "ph": "",
+        "label": "Unidad"
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "margen_venta",
+        "id": "",
+        "ph": "",
+        "label": "Margen al importar pedidos (%)"
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "iva_incluido",
+        "id": "",
+        "ph": "",
+        "label": "Los precios ya incluyen IVA"
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "reorden_auto",
+        "id": "",
+        "ph": "",
+        "label": "Avisarme cuando un producto llegue al mínimo"
+      }
+    ],
+    "tableHeads": [
+      "PRODUCTO",
+      "COMPRA",
+      "VENTA",
+      "STOCK",
+      "MÍNIMO"
+    ],
+    "rowActions": [
+      "Editar",
+      "Quitar"
+    ],
+    "rows": 12,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Inventario Precios, existencias y reposición. Ir a caja PRODUCTO COMPRA VENTA STOCK MÍNIMO Aceite vegetal 900 mlACE-900 $34.00 $49.90 5.00 pieza 2.00 Editar · Quitar Agua purificada 1.5 LAGU-15 $9.50 $14.50 36.00 pieza 12.00 Editar · Quitar Arroz grano largo 1 kgARR-1K $22.00 $32.00 18.00 pieza 5.00 Editar · Quitar Atún en agua 140 gATU-140 $15.00 $21.50 24.00 pieza 8.00 Editar · Quitar Azúcar estándar 1 kgAZU-1K $28.00 $38.50 20.00 pieza 5.00 Editar · Quitar Café molido 1 kgCAF-1K $140.00 $185.00 10.00 pieza 3.00 Editar · Quitar Detergente líquido 1 LDET-1L $44.00 $62.00 9.00 pieza 3.00 Editar · Quitar Frijol negro 1 kgFRI-1K $25.00 $36.00 15.00 pieza 4.00 Editar · Quitar Harina de trigo 1 kgHAR-1K $18.00 $26.50 11.00 pieza 3.00 Editar · Quitar Mayonesa 800 gMAY-800 $33.00 $48.00 7.00 pieza 2.00 Editar · Quitar Papel de baño 4 rollosPAP-4 $31.00 $45.00 13.00 pieza 4.00 Editar · Quitar Té verde 20 sobresTE-20 $27.00 $39.00 8.00 pieza 2.00 Editar · Quitar Nuevo producto Nombre SKU Código de barras Costo Precio venta Stock Mínimo IVA 16% 8% Exento Unidad Agregar producto Ajustes Margen al importar pedidos (%) Los precios ya incluyen IVA Avisarme cuando un producto llegue al mínimo Guardar ajustes",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "pos-inventario.nuevo": {
+    "url": "/spa/pos/inventario",
+    "title": "Ares · B2B",
+    "h1": [
+      "Inventario"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico",
+      "Ir a caja"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Producto",
+      "Reponer",
+      "Editar",
+      "Quitar",
+      "Guardar ajustes"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar",
+      "Ir a caja -> /spa/pos"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Margen al importar pedidos (%)"
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Los precios ya incluyen IVA"
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Avisarme cuando un producto llegue al mínimo"
+      }
+    ],
+    "tableHeads": [
+      "PRODUCTO",
+      "COMPRA",
+      "VENTA",
+      "STOCK",
+      "MÍNIMO"
+    ],
+    "rowActions": [
+      "Reponer",
+      "Editar",
+      "Quitar"
+    ],
+    "rows": 12,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Inventario Inventario Precios, existencias y reposición de la caja. Producto Ir a caja PRODUCTO COMPRA VENTA STOCK MÍNIMO Aceite vegetal 900 ml ACE-900 $34.00 $49.90 5 pieza 2 Reponer Editar Quitar Agua purificada 1.5 L AGU-15 $9.50 $14.50 36 pieza 12 Reponer Editar Quitar Arroz grano largo 1 kg ARR-1K $22.00 $32.00 18 pieza 5 Reponer Editar Quitar Atún en agua 140 g ATU-140 $15.00 $21.50 24 pieza 8 Reponer Editar Quitar Azúcar estándar 1 kg AZU-1K $28.00 $38.50 20 pieza 5 Reponer Editar Quitar Café molido 1 kg CAF-1K $140.00 $185.00 10 pieza 3 Reponer Editar Quitar Detergente líquido 1 L DET-1L $44.00 $62.00 9 pieza 3 Reponer Editar Quitar Frijol negro 1 kg FRI-1K $25.00 $36.00 15 pieza 4 Reponer Editar Quitar Harina de trigo 1 kg HAR-1K $18.00 $26.50 11 pieza 3 Reponer Editar Quitar Mayonesa 800 g MAY-800 $33.00 $48.00 7 pieza 2 Reponer Editar Quitar Papel de baño 4 rollos PAP-4 $31.00 $45.00 13 pieza 4 Reponer Editar Quitar Té verde 20 sobres TE-20 $27.00 $39.00 8 pieza 2 Reponer Editar Quitar Ajustes de la caja Margen al importar pedidos (%) Los precios ya incluyen IVA Avisarme cuando un producto llegue al mínimo Guardar ajustes",
+    "errores": []
+  },
+  "pos-ventas.viejo": {
+    "url": "/pos/ventas",
+    "title": "Ventas · Ares",
+    "h1": [
+      "Ventas"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar"
+    ],
+    "buttons": [
+      "Mi cuenta"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar",
+      "Ir a caja -> /pos",
+      "POS-261118-0005 -> /pos/ticket/cb704622-4544-43bf-be00-cddfa3b0cd4a",
+      "POS-261118-0004 -> /pos/ticket/0731c6a7-e3b6-4f6f-9304-6ab114e23e91",
+      "POS-261118-0003 -> /pos/ticket/097ba021-7645-43d9-bd7e-f8bb4a28efc1",
+      "POS-261118-0001 -> /pos/ticket/ea560dac-a746-45b1-9237-b203c543129c",
+      "POS-261118-0002 -> /pos/ticket/28ad2939-1a3e-4f42-834c-048c5b9b1d83",
+      "POS-261117-0001 -> /pos/ticket/d09c9281-566b-4a89-89ff-7d019f909cd0"
+    ],
+    "fields": [],
+    "tableHeads": [
+      "FOLIO",
+      "FECHA",
+      "CLIENTE",
+      "TOTAL",
+      "ESTADO"
+    ],
+    "rowActions": [
+      "POS-261118-0005",
+      "POS-261118-0004",
+      "POS-261118-0003",
+      "POS-261118-0001",
+      "POS-261118-0002",
+      "POS-261117-0001"
+    ],
+    "rows": 6,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Ventas Últimas 100 ventas de la caja. Ir a caja FOLIO FECHA CLIENTE TOTAL ESTADO POS-261118-0005 18/11/2026 06:25 Público general $185.00 pagada POS-261118-0004 18/11/2026 05:55 Público general $149.70 pagada POS-261118-0003 18/11/2026 05:55 Público general $185.00 pagada POS-261118-0001 18/11/2026 05:45 Público general $149.70 pagada POS-261118-0002 17/11/2026 19:24 Público general $49.90 pagada POS-261117-0001 17/11/2026 16:44 Público general $126.90 pagada ",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "pos-ventas.nuevo": {
+    "url": "/spa/pos/ventas",
+    "title": "Ares · B2B",
+    "h1": [
+      "Ventas"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico",
+      "Ir a caja"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Todo"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar",
+      "Ir a caja -> /spa/pos",
+      "POS-261118-0005 -> /spa/pos/ticket/cb704622-4544-43bf-be00-cddfa3b0cd4a",
+      "POS-261118-0004 -> /spa/pos/ticket/0731c6a7-e3b6-4f6f-9304-6ab114e23e91",
+      "POS-261118-0003 -> /spa/pos/ticket/097ba021-7645-43d9-bd7e-f8bb4a28efc1",
+      "POS-261118-0001 -> /spa/pos/ticket/ea560dac-a746-45b1-9237-b203c543129c",
+      "POS-261118-0002 -> /spa/pos/ticket/28ad2939-1a3e-4f42-834c-048c5b9b1d83",
+      "POS-261117-0001 -> /spa/pos/ticket/d09c9281-566b-4a89-89ff-7d019f909cd0"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "date",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Desde"
+      },
+      {
+        "tag": "input",
+        "type": "date",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Hasta"
+      }
+    ],
+    "tableHeads": [
+      "FOLIO",
+      "FECHA",
+      "CLIENTE",
+      "MÉTODO",
+      "TOTAL",
+      "ESTADO"
+    ],
+    "rowActions": [
+      "POS-261118-0005",
+      "POS-261118-0004",
+      "POS-261118-0003",
+      "POS-261118-0001",
+      "POS-261118-0002",
+      "POS-261117-0001"
+    ],
+    "rows": 6,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Ventas Ventas Últimas ventas de la caja, con su ticket. Ir a caja Corte Desde Hasta Todo $846.20 6 ventas FOLIO FECHA CLIENTE MÉTODO TOTAL ESTADO POS-261118-0005 18/11/2026, 06:25 a.m. Público general Efectivo $185.00 pagada POS-261118-0004 18/11/2026, 05:55 a.m. Público general Efectivo $149.70 pagada POS-261118-0003 18/11/2026, 05:55 a.m. Público general Efectivo $185.00 pagada POS-261118-0001 18/11/2026, 05:45 a.m. Público general Efectivo $149.70 pagada POS-261118-0002 17/11/2026, 07:24 p.m. Público general Efectivo $49.90 pagada POS-261117-0001 17/11/2026, 04:44 p.m. Público general Efectivo $126.90 pagada",
+    "errores": []
+  },
+  "pos-corte.viejo": {
+    "url": "/pos/corte",
+    "title": "Corte de caja · Ares",
+    "h1": [
+      "Corte de caja",
+      "Por método de pago",
+      "Cerrar turno"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar"
+    ],
+    "buttons": [
+      "Mi cuenta",
+      "Imprimir",
+      "Cerrar caja"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar",
+      "Ir a caja -> /pos"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "efectivo_contado",
+        "id": "",
+        "ph": "",
+        "label": "Efectivo contado"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "notas",
+        "id": "",
+        "ph": "",
+        "label": "Notas"
+      }
+    ],
+    "tableHeads": [
+      "MÉTODO",
+      "VENTAS",
+      "TOTAL"
+    ],
+    "rowActions": [],
+    "rows": 1,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Corte de caja Turno #1 · 17/11/2026 16:43 (abierto) Imprimir Ir a caja Total vendido $846.20 Fondo inicial $500.00 Efectivo en caja $1,346.20 Por método de pago MÉTODO VENTAS TOTAL Efectivo 6 $846.20 Cerrar turno Esperado en efectivo: $1,346.20 Efectivo contado Notas Cerrar caja",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "pos-corte.nuevo": {
+    "url": "/spa/pos/corte",
+    "title": "Ares · B2B",
+    "h1": [
+      "Corte de caja",
+      "Por método de pago",
+      "Movimientos de caja"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico",
+      "Ir a caja"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Imprimir",
+      "Cerrar caja"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar",
+      "Ir a caja -> /spa/pos"
+    ],
+    "fields": [],
+    "tableHeads": [
+      "MÉTODO",
+      "VENTAS",
+      "TOTAL",
+      "HORA",
+      "TIPO",
+      "CONCEPTO",
+      "MONTO"
+    ],
+    "rowActions": [],
+    "rows": 7,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Corte de caja Corte de caja Turno #1 · 17/11/2026, 04:43 p.m. (abierto) Imprimir Ir a caja Total vendido $846.20 Fondo inicial $500.00 Efectivo en caja $1,346.20 Por método de pago MÉTODO VENTAS TOTAL Efectivo 6 $846.20 Movimientos de caja HORA TIPO CONCEPTO MONTO 17/11/2026, 04:44 p.m. Venta Venta POS-261117-0001 $126.90 17/11/2026, 07:24 p.m. Venta Venta POS-261118-0002 $49.90 18/11/2026, 05:45 a.m. Venta Venta POS-261118-0001 $149.70 18/11/2026, 05:55 a.m. Venta Venta POS-261118-0003 $185.00 18/11/2026, 05:55 a.m. Venta Venta POS-261118-0004 $149.70 18/11/2026, 06:25 a.m. Venta Venta POS-261118-0005 $185.00 Cerrar turno Esperado en efectivo: $1,346.20 Cerrar caja",
+    "errores": []
+  },
+  "pos-clientes.viejo": {
+    "url": "/pos/clientes",
+    "title": "Clientes · Ares",
+    "h1": [
+      "Clientes de la caja",
+      "Nuevo cliente"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar"
+    ],
+    "buttons": [
+      "Mi cuenta",
+      "Guardar cliente"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar",
+      "Ir a caja -> /pos"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "nombre",
+        "id": "",
+        "ph": "",
+        "label": "Nombre"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "telefono",
+        "id": "",
+        "ph": "",
+        "label": "Teléfono"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "rfc",
+        "id": "",
+        "ph": "",
+        "label": "RFC"
+      },
+      {
+        "tag": "input",
+        "type": "email",
+        "name": "email",
+        "id": "",
+        "ph": "",
+        "label": "Correo"
+      }
+    ],
+    "tableHeads": [
+      "NOMBRE",
+      "TELÉFONO",
+      "CORREO",
+      "RFC"
+    ],
+    "rowActions": [],
+    "rows": 1,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Clientes de la caja Para tickets con nombre o factura. Ir a caja NOMBRE TELÉFONO CORREO RFC Sin clientes registrados. Nuevo cliente Nombre Teléfono RFC Correo Guardar cliente",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "pos-clientes.nuevo": {
+    "url": "/spa/pos/clientes",
+    "title": "Ares · B2B",
+    "h1": [
+      "Clientes de la caja"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico",
+      "Ir a caja"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Cliente"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar",
+      "Ir a caja -> /spa/pos"
+    ],
+    "fields": [],
+    "tableHeads": [
+      "NOMBRE",
+      "TELÉFONO",
+      "CORREO",
+      "RFC"
+    ],
+    "rowActions": [],
+    "rows": 1,
+    "empty": [
+      "Sin clientes registrados Agrégalos para emitir el ticket a nombre de quien compra."
+    ],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Clientes Clientes de la caja Para tickets con nombre o factura. Cliente Ir a caja NOMBRE TELÉFONO CORREO RFC Sin clientes registrados Agrégalos para emitir el ticket a nombre de quien compra.",
+    "errores": []
+  },
+  "perfil.viejo": {
+    "url": "/perfil",
+    "title": "Mi perfil · Ares",
+    "h1": [
+      "Mi perfil",
+      "Casa de Toño"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Verificación Identidad, documentos y estado de la cuenta",
+      "Ayuda Preguntas frecuentes, soporte y contacto",
+      "Ajustes Privacidad, permisos, tema y seguridad"
+    ],
+    "buttons": [
+      "Mi cuenta",
+      "Cerrar sesión",
+      "★ 4.5 de 5, 4 calificaciones"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar",
+      "Editar -> /perfil/editar",
+      "Verificación Identidad, documentos y estado de la cuenta -> /kyc",
+      "Ayuda Preguntas frecuentes, soporte y contacto -> /ayuda",
+      "Ajustes Privacidad, permisos, tema y seguridad -> /perfil/ajustes"
+    ],
+    "fields": [],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Mi perfil Tus datos, la verificación de la cuenta y las opciones de la app. Cerrar sesión Casa de Toño ★ 4.5 de 5, 4 calificaciones Comercio Verificación pendiente CORREO comercio@didi2.mx ANTIGÜEDAD Miembro desde noviembre de 2026 TELÉFONO 5512345678 DIRECCIÓN PRINCIPAL Av. Insurgentes Sur 123, Del Valle, Ciudad de México Editar Verificación Identidad, documentos y estado de la cuenta Ayuda Preguntas frecuentes, soporte y contacto Ajustes Privacidad, permisos, tema y seguridad",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "perfil.nuevo": {
+    "url": "/spa/perfil",
+    "title": "Ares · B2B",
+    "h1": [
+      "Mi perfil",
+      "Casa de Toño",
+      "Verificaciones y calificaciones"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Editar",
+      "Seguridad Contraseña y baja de la cuenta",
+      "Ayuda Preguntas frecuentes y soporte",
+      "Ajustes Privacidad, permisos y tema",
+      "Ir a verificación",
+      "Eliminar cuenta"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar"
+    ],
+    "fields": [],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Mi perfil Mi perfil Tus datos, la verificación de la cuenta y las opciones de la app. Casa de Toño ★ 4.5 4 calificaciones Comercio Sin verificación requerida Miembro desde noviembre de 2026 CORREO comercio@didi2.mx TELÉFONO 5512345678 DIRECCIÓN PRINCIPAL Av. Insurgentes Sur 123, Del Valle, Ciudad de México ÚLTIMO ACCESO 19 nov 2026 Editar Seguridad Contraseña y baja de la cuenta Ayuda Preguntas frecuentes y soporte Ajustes Privacidad, permisos y tema Verificaciones y calificaciones Ir a verificación 4.5 4 calificaciones 5 2 4 2 3 0 2 0 1 0 Comentarios recibidos Abarrotes Maru 17 nov 2026 ★★★★★ Paga puntual y siempre recibe completo. Insumos del Valle 17 nov 2026 ★★★★☆ Buen cliente, a veces pide cambios de última hora. Cerrar sesión Eliminar cuenta",
+    "errores": []
+  },
+  "perfil-editar.viejo": {
+    "url": "/perfil/editar",
+    "title": "Editar cuenta · Ares",
+    "h1": [
+      "Editar cuenta",
+      "Foto de perfil",
+      "Datos de la cuenta",
+      "Dirección de entrega"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar"
+    ],
+    "buttons": [
+      "Mi cuenta",
+      "Subir",
+      "Quitar foto",
+      "Ubicar dirección en el mapa",
+      "Guardar cambios"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar",
+      "‹ Mi cuenta -> /perfil",
+      "Ajustes › Seguridad -> /perfil/seguridad",
+      "Cancelar -> /perfil"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "file",
+        "name": "avatar",
+        "id": "",
+        "ph": "",
+        "label": "Elegir imagen"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "nombre",
+        "id": "",
+        "ph": "",
+        "label": "Nombre"
+      },
+      {
+        "tag": "input",
+        "type": "email",
+        "name": "email",
+        "id": "",
+        "ph": "",
+        "label": "Correo"
+      },
+      {
+        "tag": "input",
+        "type": "tel",
+        "name": "telefono",
+        "id": "",
+        "ph": "",
+        "label": "Teléfono"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "calle",
+        "id": "",
+        "ph": "Av. Insurgentes Sur 1234",
+        "label": "Calle y número"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "colonia",
+        "id": "",
+        "ph": "",
+        "label": "Colonia"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "ciudad",
+        "id": "",
+        "ph": "",
+        "label": "Ciudad"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "estado_mx",
+        "id": "",
+        "ph": "",
+        "label": "Estado"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "cp",
+        "id": "",
+        "ph": "",
+        "label": "C.P."
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "referencias",
+        "id": "",
+        "ph": "Portón negro",
+        "label": "Referencias"
+      }
+    ],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta ‹ Mi cuenta Editar cuenta Foto de perfil Elegir imagen Subir Quitar foto JPG, PNG o WebP · máximo 2 MB. Se recorta en cuadrado. Datos de la cuenta Nombre Correo Teléfono La contraseña y la baja de la cuenta se manejan en Ajustes › Seguridad . Dirección de entrega Calle y número Colonia Ciudad Estado C.P. Referencias Ubicar dirección en el mapa Toca el mapa o arrastra el marcador para ajustar el punto exacto de entrega. Cancelar Guardar cambios",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "perfil-editar.nuevo": {
+    "url": "/spa/perfil/editar",
+    "title": "Ares · B2B",
+    "h1": [
+      "Editar cuenta",
+      "Foto de perfil",
+      "Datos de la cuenta",
+      "Dirección de entrega"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Volver a mi perfil",
+      "Quitar foto",
+      "Cancelar",
+      "Guardar cambios",
+      "Seguridad"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Nombre del negocio"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Nombre comercial"
+      },
+      {
+        "tag": "input",
+        "type": "email",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Correo"
+      },
+      {
+        "tag": "input",
+        "type": "tel",
+        "name": "",
+        "id": "",
+        "ph": "55 1234 5678",
+        "label": "Teléfono"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "",
+        "ph": "Av. Insurgentes Sur 1234",
+        "label": "Calle y número"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Colonia"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Ciudad"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Estado"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "C.P."
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "",
+        "ph": "Portón negro, entre calles…",
+        "label": "Referencias"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Latitud"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Longitud"
+      }
+    ],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Mi perfil Editar cuenta Nombre, contacto, foto y dirección de entrega. Volver a mi perfil Foto de perfil Elegir imagen Quitar foto JPG, PNG o WebP · máximo 2 MB. Se recorta en cuadrado a 256 px. Datos de la cuenta Nombre del negocio Nombre comercial Correo Teléfono Dirección de entrega Calle y número Colonia Ciudad Estado C.P. Referencias Latitud Longitud Las coordenadas ubican el punto exacto de entrega. Si no las cambias se usa el centro de la ciudad. Cancelar Guardar cambios La contraseña y la baja de la cuenta se manejan en Seguridad.",
+    "errores": []
+  },
+  "perfil-ajustes.viejo": {
+    "url": "/perfil/ajustes",
+    "title": "Ajustes · Ares",
+    "h1": [
+      "Ajustes",
+      "Personalización de la app"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar"
+    ],
+    "buttons": [
+      "Mi cuenta"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar",
+      "‹ Mi cuenta -> /perfil",
+      "Mi perfil -> /perfil",
+      "Seguridad Contraseña y baja de la cuenta › -> /perfil/seguridad",
+      "Permisos del dispositivo Cámara, ubicación, micrófono, notificaciones, fotos › -> /perfil/permisos",
+      "Términos y condiciones Uso del servicio y responsabilidades › -> /terminos"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "tema",
+        "id": "tema-oscuro",
+        "ph": "",
+        "label": "Modo oscuro Fondo negro y texto claro. Se guarda en tu cuenta, no solo en este equipo."
+      }
+    ],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta ‹ Mi cuenta Ajustes Mi perfil Seguridad Contraseña y baja de la cuenta › Permisos del dispositivo Cámara, ubicación, micrófono, notificaciones, fotos › Términos y condiciones Uso del servicio y responsabilidades › Personalización de la app Elige cómo se ve Ares en este dispositivo. Modo oscuro Fondo negro y texto claro. Se guarda en tu cuenta, no solo en este equipo. El modo oscuro se aplica al instante y se recuerda en tu cuenta: si entras desde otro equipo, lo verás igual.",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "perfil-ajustes.nuevo": {
+    "url": "/spa/perfil/ajustes",
+    "title": "Ares · B2B",
+    "h1": [
+      "Ajustes",
+      "Cuenta y dispositivo",
+      "Personalización de la app",
+      "Legal"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Mi cuenta",
+      "Seguridad Contraseña y baja de la cuenta",
+      "Permisos del dispositivo Qué permite tu cuenta y qué te pedirá el navegador",
+      "Privacidad Notificaciones, SMS, correo y ubicación"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Modo oscuro"
+      }
+    ],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Mi perfil Ajustes Seguridad, permisos del dispositivo y apariencia de la app. Mi cuenta Cuenta y dispositivo Seguridad Contraseña y baja de la cuenta Permisos del dispositivo Qué permite tu cuenta y qué te pedirá el navegador Privacidad Notificaciones, SMS, correo y ubicación Personalización de la app Modo oscuro Fondo oscuro y texto claro. Se guarda en tu cuenta, no solo en este equipo. El modo oscuro se aplica al instante y se recuerda en tu cuenta: si entras desde otro equipo, lo verás igual. Legal Términos y condiciones Uso del servicio y responsabilidades Sitio principal Aviso de privacidad Qué datos tratamos y para qué Sitio principal",
+    "errores": []
+  },
+  "perfil-seguridad.viejo": {
+    "url": "/perfil/seguridad",
+    "title": "Seguridad · Ares",
+    "h1": [
+      "Seguridad",
+      "Contraseña",
+      "Eliminar mi cuenta"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar"
+    ],
+    "buttons": [
+      "Mi cuenta",
+      "Mostrar contraseña",
+      "Guardar contraseña",
+      "Eliminar cuenta"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar",
+      "‹ Ajustes -> /perfil/ajustes",
+      "Mi perfil -> /perfil"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "password",
+        "name": "password_actual",
+        "id": "p_actual",
+        "ph": "La que usas hoy",
+        "label": "Contraseña actual"
+      },
+      {
+        "tag": "input",
+        "type": "password",
+        "name": "password_nueva",
+        "id": "p_nueva",
+        "ph": "Mínimo 12 caracteres",
+        "label": "Nueva"
+      },
+      {
+        "tag": "input",
+        "type": "password",
+        "name": "password_repetir",
+        "id": "p_rep",
+        "ph": "Otra vez",
+        "label": "Repite la nueva"
+      }
+    ],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta ‹ Ajustes Seguridad Mi perfil Contraseña Al cambiarla se cierran las demás sesiones. Contraseña actual Nueva Repite la nueva Usa mayúsculas, números y un símbolo. Guardar contraseña Eliminar mi cuenta Se borran tu foto, tus direcciones y el acceso. Los pedidos realizados se conservan por obligaciones fiscales. Eliminar cuenta",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "perfil-seguridad.nuevo": {
+    "url": "/spa/perfil/seguridad",
+    "title": "Ares · B2B",
+    "h1": [
+      "Seguridad",
+      "Contraseña",
+      "Tu cuenta",
+      "Últimos accesos"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Ajustes",
+      "Mostrar contraseña",
+      "Guardar contraseña",
+      "Eliminar cuenta"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "password",
+        "name": "",
+        "id": "p_actual",
+        "ph": "La que usas hoy",
+        "label": "Contraseña actual"
+      },
+      {
+        "tag": "input",
+        "type": "password",
+        "name": "",
+        "id": "p_nueva",
+        "ph": "Mínimo 12 caracteres",
+        "label": "Nueva"
+      },
+      {
+        "tag": "input",
+        "type": "password",
+        "name": "",
+        "id": "p_repetir",
+        "ph": "Otra vez",
+        "label": "Repite la nueva"
+      }
+    ],
+    "tableHeads": [
+      "ACCIÓN",
+      "CUÁNDO",
+      "IP",
+      "EQUIPO"
+    ],
+    "rowActions": [],
+    "rows": 15,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Mi perfil Seguridad Contraseña, últimos accesos y baja de la cuenta. Ajustes Contraseña Al cambiarla se cierran las demás sesiones. Contraseña actual Nueva Repite la nueva Al menos 12 caracteres Una mayúscula Un número Un símbolo (! ? # $ …) Guardar contraseña Tu cuenta CORREO comercio@didi2.mx TELÉFONO 5512345678 ÚLTIMO ACCESO 2026-11-19 06:20 MIEMBRO DESDE 2026-11-16 20:26 Comercio Últimos accesos ACCIÓN CUÁNDO IP EQUIPO login exitoso 2026-11-19 06:20 127.0.0.1 — login exitoso 2026-11-19 06:20 127.0.0.1 — login exitoso 2026-11-19 06:17 127.0.0.1 — login exitoso 2026-11-19 06:17 127.0.0.1 — login exitoso 2026-11-19 06:16 127.0.0.1 — login exitoso 2026-11-19 06:16 127.0.0.1 — login exitoso 2026-11-19 06:16 127.0.0.1 — login exitoso 2026-11-19 06:13 127.0.0.1 — login exitoso 2026-11-19 06:13 127.0.0.1 — login exitoso 2026-11-19 06:12 127.0.0.1 — login exitoso 2026-11-19 06:11 127.0.0.1 — login exitoso 2026-11-19 06:11 127.0.0.1 — login exitoso 2026-11-19 06:11 127.0.0.1 — login exitoso 2026-11-19 06:08 127.0.0.1 — login exitoso 2026-11-19 06:08 127.0.0.1 — Eliminar mi cuenta Se borran tu foto, tus direcciones y el acceso. Los pedidos realizados se conservan por obligaciones fiscales. Eliminar cuenta",
+    "errores": []
+  },
+  "perfil-permisos.viejo": {
+    "url": "/perfil/permisos",
+    "title": "Fotos y videos · Ares",
+    "h1": [
+      "Permisos del dispositivo"
+    ],
+    "nav": [
+      "Ares · B2B",
+      "Mi carrito",
+      "Explorar",
+      "Buscar",
+      "Finanzas",
+      "Portafolio",
+      "Agendar"
+    ],
+    "buttons": [
+      "Mi cuenta"
+    ],
+    "tabs": [],
+    "links": [
+      "Ares · B2B -> /explorar",
+      "Mi carrito -> /carrito",
+      "Explorar -> /explorar",
+      "Buscar -> /buscar",
+      "Finanzas -> /finanzas",
+      "Portafolio -> /portafolio",
+      "Agendar -> /agendar",
+      "‹ Ajustes -> /perfil/ajustes",
+      "Mi perfil -> /perfil"
+    ],
+    "fields": [
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Cámara Escanear códigos de barras y tomar fotos de productos."
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Compartir ubicación Dirección de entrega y seguimiento del repartidor en vivo."
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Micrófono Notas de voz en el chat y llamadas con el proveedor."
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Notificaciones Pedidos, mensajes y avisos de la cuenta."
+      },
+      {
+        "tag": "input",
+        "type": "checkbox",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Fotos y videos Subir comprobantes, evidencias de entrega y fotos de perfil."
+      }
+    ],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta ‹ Ajustes Permisos del dispositivo Mi perfil Estos permisos se guardan en este equipo, no en tu cuenta. Si los desactivas, Ares te los vuelve a pedir la próxima vez que los necesite. Cámara Escanear códigos de barras y tomar fotos de productos. Compartir ubicación Dirección de entrega y seguimiento del repartidor en vivo. Micrófono Notas de voz en el chat y llamadas con el proveedor. Notificaciones Pedidos, mensajes y avisos de la cuenta. Fotos y videos Subir comprobantes, evidencias de entrega y fotos de perfil.",
+    "errores": [
+      "404 http://127.0.0.1:3110/avatar/2?v=1795038291",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "perfil-permisos.nuevo": {
+    "url": "/spa/perfil/permisos",
+    "title": "Ares · B2B",
+    "h1": [
+      "Permisos",
+      "Tu cuenta",
+      "Permisos del dispositivo"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Ajustes"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar"
+    ],
+    "fields": [],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Mi perfil Permisos Qué puede hacer tu cuenta y qué te pedirá el navegador. Ajustes Tu cuenta Comercio Rol «comercio» Sin verificar Comprar a mayoristas Programar pedidos y favoritos Punto de venta y clientes Calificar a proveedores y repartidores Permisos del dispositivo Ares te los pide al navegador solo cuando de verdad los necesita; puedes revocarlos en cualquier momento desde la configuración del navegador y te los volverá a pedir la próxima vez. Cámara Escanear códigos de barras y tomar fotos de productos. Se pide al usarse Ubicación Dirección de entrega y seguimiento del repartidor. Se pide al usarse Micrófono Notas de voz en el chat y llamadas con el proveedor. Se pide al usarse Notificaciones Pedidos, mensajes y avisos de la cuenta. Se pide al usarse Fotos y videos Subir comprobantes, evidencias y fotos de perfil. Se pide al usarse",
+    "errores": []
+  },
+  "perfil-kyc.viejo": {
+    "url": "/perfil/kyc",
+    "title": "",
+    "h1": [],
+    "nav": [],
+    "buttons": [],
+    "tabs": [],
+    "links": [],
+    "fields": [],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "{\"ok\":false,\"error\":{\"code\":\"NOT_FOUND\",\"message\":\"El recurso solicitado no existe.\"}}",
+    "errores": [
+      "404 http://127.0.0.1:3110/perfil/kyc",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "perfil-kyc.nuevo": {
+    "url": "/spa/kyc",
+    "title": "Ares · B2B",
+    "h1": [
+      "Verificación de identidad",
+      "Estado de la cuenta",
+      "Subir documento",
+      "Mis documentos"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Mi perfil",
+      "Subir documento"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar"
+    ],
+    "fields": [
+      {
+        "tag": "select",
+        "type": "select-one",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Tipo de documento Identificación oficial Licencia de conducir Tarjeta de circulación Carta de antecedentes Selfie con identificación Constancia de situación fiscal Comprobante de domicilio Documento del RFC",
+        "opts": [
+          "Identificación oficial",
+          "Licencia de conducir",
+          "Tarjeta de circulación",
+          "Carta de antecedentes",
+          "Selfie con identificación",
+          "Constancia de situación fiscal",
+          "Comprobante de domicilio",
+          "Documento del RFC"
+        ]
+      },
+      {
+        "tag": "input",
+        "type": "file",
+        "name": "",
+        "id": "",
+        "ph": "",
+        "label": "Archivo"
+      }
+    ],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Verificación Verificación de identidad Sube tus documentos en JPG, PNG o PDF (máximo 10 MB cada uno). Mi perfil Estado de la cuenta Tu rol no requiere documentos Con tu rol actual no necesitas documentos para operar. Si más adelante te sumas como mayorista o repartidor, aquí aparecerá la lista que te toca. Subir documento Tipo de documento Identificación oficial Licencia de conducir Tarjeta de circulación Carta de antecedentes Selfie con identificación Constancia de situación fiscal Comprobante de domicilio Documento del RFC Archivo Subir documento Mis documentos Sin documentos todavía.",
+    "errores": []
+  },
+  "perfil-ayuda.viejo": {
+    "url": "/perfil/ayuda",
+    "title": "",
+    "h1": [],
+    "nav": [],
+    "buttons": [],
+    "tabs": [],
+    "links": [],
+    "fields": [],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "{\"ok\":false,\"error\":{\"code\":\"NOT_FOUND\",\"message\":\"El recurso solicitado no existe.\"}}",
+    "errores": [
+      "404 http://127.0.0.1:3110/perfil/ayuda",
+      "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "perfil-ayuda.nuevo": {
+    "url": "/spa/ayuda",
+    "title": "Ares · B2B",
+    "h1": [
+      "Ayuda",
+      "Hablar con una persona",
+      "Problemas frecuentes",
+      "Tu cuenta",
+      "Legal"
+    ],
+    "nav": [
+      "A Ares B2B",
+      "Inicio",
+      "Buscar",
+      "Carrito",
+      "Pedidos",
+      "Finanzas",
+      "Portafolio",
+      "Agendar",
+      "Mensajes",
+      "Perfil",
+      "Caja",
+      "Inventario",
+      "Ventas",
+      "Corte",
+      "Clientes",
+      "Casa de Toño comercio",
+      "Panel clásico"
+    ],
+    "buttons": [
+      "Cerrar sesión",
+      "Abrir carrito",
+      "Mi cuenta",
+      "Abrir el chat de soporte",
+      "Verificación de identidad Documentos y estado de la cuenta",
+      "Seguridad Contraseña y baja de la cuenta"
+    ],
+    "tabs": [],
+    "links": [
+      "A Ares B2B -> /spa/",
+      "Inicio -> /spa",
+      "Buscar -> /spa/buscar",
+      "Carrito -> /spa/carrito",
+      "Pedidos -> /spa/pedidos",
+      "Finanzas -> /spa/finanzas",
+      "Portafolio -> /spa/portafolio",
+      "Agendar -> /spa/agendar",
+      "Mensajes -> /spa/mensajes",
+      "Perfil -> /spa/perfil",
+      "Caja -> /spa/pos",
+      "Inventario -> /spa/pos/inventario",
+      "Ventas -> /spa/pos/ventas",
+      "Corte -> /spa/pos/corte",
+      "Clientes -> /spa/pos/clientes",
+      "Casa de Toño comercio -> /spa/perfil",
+      "Panel clásico -> /explorar"
+    ],
+    "fields": [],
+    "tableHeads": [],
+    "rowActions": [],
+    "rows": 0,
+    "empty": [],
+    "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Ayuda Ayuda La mayoría de los casos se contestan en menos de una hora en horario laboral. Mi cuenta Hablar con una persona Escríbenos desde tu cuenta: el mensaje llega con tu nombre, tu rol y el pedido que estabas viendo. Abrir el chat de soporte Problemas frecuentes Mi pedido no avanza de estado No me llega el código por SMS El repartidor no encuentra mi dirección Quiero cambiar mi contraseña ¿Cómo funciona la calificación? Tu cuenta Verificación de identidad Documentos y estado de la cuenta Seguridad Contraseña y baja de la cuenta Legal Términos y condiciones Disponible en el sitio principal de Ares /terminos Aviso de privacidad Disponible en el sitio principal de Ares /aviso-privacidad",
+    "errores": []
+  }
+}

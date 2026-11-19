@@ -1,0 +1,43 @@
+URL:/mayorista/productos/nuevo
+BOTONES:ID Mi cuenta | Cerrar sesión | Guardar producto
+HREFS:/explorar | /buscar | /mayorista/productos | /mayorista/pedidos | /finanzas | /facturacion | /perfil | /mensajes
+----
+Nuevo producto
+
+Los campos de precio, peso y volumen son obligatorios: sin ellos no se puede calcular el envío.
+
+Nombre del producto
+Categoría
+Abarrotes
+Ferretería
+Inflamables
+Limpieza
+Perecederos
+Descripción
+Precio sin IVA
+IVA %
+Unidad de venta
+Contenido
+Peso (kg)
+Volumen (m³)
+Cantidad mínima
+Múltiplo de venta
+Stock inicial
+Características
+Perecedero
+Requiere frío
+Inflamable
+Restringido
+Publicar
+Escalas por volumen
+
+Opcional. Captúralas de menor a mayor cantidad. El precio de cada escala se calcula solo, no se guarda.
+
+% descuento
+precio fijo
+% descuento
+precio fijo
+% descuento
+precio fijo
+Guardar producto
+Cancelar

@@ -54,7 +54,7 @@ export type Pedido = { uuid: string; estado: string; total: number; created_at: 
 
 export const api = {
   session: () => req<{ usuario: Usuario | null; rol: string | null; tema?: 'claro' | 'oscuro' }>('/session'),
-  login: (email: string, password: string) => req<{ usuario: Usuario; rol: string; tema?: 'claro' | 'oscuro' }>('/login', { method: 'POST', body: JSON.stringify({ email, password }) }),
+  login: (email: string, password: string, recordar = false) => req<{ usuario: Usuario; rol: string; tema?: 'claro' | 'oscuro' }>('/login', { method: 'POST', body: JSON.stringify({ email, password, recordar }) }),
   logout: () => req('/logout', { method: 'POST' }),
   inicio: () => req<{ nombre: string; rol: string; metricas: Metrica[]; accesos: Acceso[]; herramientas: Acceso[] }>('/inicio'),
   buscar: (p: Record<string, string | number>) => req<{ resultados: Producto[]; total: number; paginas: number; page: number }>(`/buscar?${new URLSearchParams(p as never)}`),

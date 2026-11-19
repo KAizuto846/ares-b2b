@@ -12,6 +12,7 @@ final class Session
 {
     private const INACTIVIDAD_SEG = 1800;   // 30 minutos
     private const ABSOLUTA_SEG     = 43200; // 12 horas
+    private const RECORDAR_SEG     = 2592000; // 30 días con «Mantener sesión»
 
     public static function iniciar(): void
     {
@@ -57,14 +58,16 @@ final class Session
     private static function expirar(): void
     {
         $ahora = time();
+        $recordar = (int) ($_SESSION['recordar'] ?? 0);
+        $persistente = $recordar > $ahora;
 
-        if (isset($_SESSION['ultima_actividad']) && ($ahora - (int) $_SESSION['ultima_actividad']) > self::INACTIVIDAD_SEG) {
+        if (! $persistente && isset($_SESSION['ultima_actividad']) && ($ahora - (int) $_SESSION['ultima_actividad']) > self::INACTIVIDAD_SEG) {
             self::destruir();
 
             return;
         }
 
-        if (isset($_SESSION['inicio']) && ($ahora - (int) $_SESSION['inicio']) > self::ABSOLUTA_SEG) {
+        if (! $persistente && isset($_SESSION['inicio']) && ($ahora - (int) $_SESSION['inicio']) > self::ABSOLUTA_SEG) {
             self::destruir();
 
             return;
@@ -72,6 +75,38 @@ final class Session
 
         $_SESSION['ultima_actividad'] = $ahora;
         $_SESSION['inicio'] ??= $ahora;
+    }
+
+    /**
+     * «Mantener sesión»: cookie persistente de 30 días y sin caducidad por
+     * inactividad mientras el plazo siga vivo. Sin el flag, la sesión sigue
+     * siendo de 30 minutos y sólo de navegador.
+     */
+    public static function recordar(bool $activo = true): void
+    {
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            return;
+        }
+
+        if (! $activo) {
+            unset($_SESSION['recordar']);
+
+            return;
+        }
+
+        $_SESSION['recordar'] = time() + self::RECORDAR_SEG;
+
+        $p = session_get_cookie_params();
+        setcookie(session_name(), session_id(), [
+            'expires'  => time() + self::RECORDAR_SEG,
+            'path'     => $p['path'],
+            'domain'   => $p['domain'],
+            'secure'   => $p['secure'],
+            'httponly' => $p['httponly'],
+            'samesite' => $p['samesite'],
+        ]);
+
+        ini_set('session.gc_maxlifetime', (string) (self::RECORDAR_SEG + 300));
     }
 
     public static function poner(string $clave, mixed $valor): void

@@ -1,0 +1,392 @@
+{
+ "viejo:hilo": {
+  "url": "http://127.0.0.1:3110/mensajes?hilo=bc6ed9cd-4e90-7ae0-5291-a9d5cd8af235",
+  "campos": [
+   {
+    "tipo": "input[checkbox]",
+    "label": "Seleccionar Soporte Didi2",
+    "req": false
+   },
+   {
+    "tipo": "textarea[textarea]",
+    "label": "Escribe un mensaje…",
+    "req": true
+   }
+  ],
+  "botones": [
+   "Mi cuenta",
+   "Enviar"
+  ],
+  "dialogs": [],
+  "texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\nCentro de mensajes\n\nConversaciones y avisos del sitio, en un solo lugar.\n\nConversaciones\n1\nNotificaciones\nConversaciones\nSD\nSoporte Didi2\nQue puedes hacer?\n18/11 08:05\nSoporte Didi2\nsoporte\nHola, necesito ayuda con una factura de prueba.\n16:16\nHola, soy soporte. Ya reviso tu factura.\n16:16\nPrueba QA 0618\n06:26\nQue puedes hacer?\n08:05\nEnviar"
+ },
+ "viejo:borrar": {
+  "url": "http://127.0.0.1:3110/mensajes",
+  "campos": [
+   {
+    "tipo": "input[checkbox]",
+    "label": "Seleccionar Soporte Didi2",
+    "req": false
+   }
+  ],
+  "botones": [
+   "Mi cuenta"
+  ],
+  "dialogs": [],
+  "texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\nCentro de mensajes\n\nConversaciones y avisos del sitio, en un solo lugar.\n\nConversaciones\n1\nNotificaciones\nConversaciones\nSD\nSoporte Didi2\nQue puedes hacer?\n18/11 08:05\nTus mensajes\n\nElige una conversación de la izquierda. Aquí solo ves los hilos en los que participas."
+ },
+ "viejo:dlg-Nueva conversación": {
+  "url": "http://127.0.0.1:3110/mensajes",
+  "campos": [
+   {
+    "tipo": "input[checkbox]",
+    "label": "Seleccionar Soporte Didi2",
+    "req": false
+   },
+   {
+    "tipo": "select[select-one]",
+    "label": "Contacto Abarrotes Maru · mayorista Distribuidora Sur · mayorista Ferr",
+    "req": true
+   }
+  ],
+  "botones": [
+   "Mi cuenta",
+   "Abrir chat",
+   "Cancelar"
+  ],
+  "dialogs": [
+   "Nueva conversación Elige con quién quieres hablar. El chat queda dentro de Ares. Contacto Abarrotes Maru · mayorista Distribuidora Sur · mayorista Ferretera Norte · mayorista Insumos del Valle · mayorista Negocio comercio · comercio Negocio mayorista · mayorista prueba1794916339293@didi2.mx · mayori"
+  ],
+  "texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\nCentro de mensajes\n\nConversaciones y avisos del sitio, en un solo lugar.\n\nConversaciones\n1\nNotificaciones\nConversaciones\nSD\nSoporte Didi2\nQue puedes hacer?\n18/11 08:05\nTus mensajes\n\nElige una conversación de la izquierda. Aquí solo ves los hilos en los que participas.\n\nNueva conversación\n\nElige con quién quieres hablar. El chat queda dentro de Ares.\n\nContacto\nAbarrotes Maru · mayorista\nDistribuidora Sur · mayorista\nFerretera Norte · mayorista\nInsumos del Valle · mayorista\nNegocio comercio · comercio\nNegocio mayorista · mayorista\nprueba1794916339293@didi2.mx · mayorista\nAbrir chat\nCancelar"
+ },
+ "viejo:dlg-Configuración": {
+  "url": "http://127.0.0.1:3110/mensajes",
+  "campos": [
+   {
+    "tipo": "input[checkbox]",
+    "label": "Seleccionar Soporte Didi2",
+    "req": false
+   },
+   {
+    "tipo": "input[checkbox]",
+    "label": "Habilitar notificaciones Avisos de pedidos, pagos y cuenta. Si lo apag",
+    "req": false
+   }
+  ],
+  "botones": [
+   "Mi cuenta",
+   "Cancelar",
+   "Guardar"
+  ],
+  "dialogs": [
+   "Configuración Habilitar notificaciones Avisos de pedidos, pagos y cuenta. Si lo apagas, no llega ninguno salvo los de seguridad. Cancelar Guardar"
+  ],
+  "texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\nCentro de mensajes\n\nConversaciones y avisos del sitio, en un solo lugar.\n\nConversaciones\n1\nNotificaciones\nConversaciones\nSD\nSoporte Didi2\nQue puedes hacer?\n18/11 08:05\nTus mensajes\n\nElige una conversación de la izquierda. Aquí solo ves los hilos en los que participas.\n\nConfiguración\nHabilitar notificaciones\nAvisos de pedidos, pagos y cuenta. Si lo apagas, no llega ninguno salvo los de seguridad.\nCancelar\nGuardar"
+ },
+ "viejo:notif-detalle": {
+  "url": "http://127.0.0.1:3110/pedidos/71942522-e349-11f1-9263-a4bb6d8495fd",
+  "campos": [
+   {
+    "tipo": "input[text]",
+    "label": "Escribe un mensaje…",
+    "req": true
+   }
+  ],
+  "botones": [
+   "Mi cuenta",
+   "Enviar"
+  ],
+  "dialogs": [],
+  "texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\nPedido 71942522\n\nInsumos del Valle → Casa de Toño\n\nEstado\nBuscando repartidor\nTotal\n$1,277.86\nEntrega\nAv. Insurgentes Sur 123, Ciudad de México\nProductos\nPRODUCTO\tCANT.\tUNITARIO\tSUBTOTAL\nDetergente industrial 1 kg\t12\t$52.00\t$624.00\nCloro 1 L\t24\t$19.90\t$477.60\nSubtotal $1,101.60\nIVA $176.26\nTotal $1,277.86\nHistorial\nAceptado 2026-11-18 06:22\nPreparando 2026-11-18 06:22\nListo para recoger 2026-11-18 06:22\nBuscando repartidor 2026-11-18 06:22\nMensajes con Insumos del Valle\n\nTodavía no hay mensajes. Usa el chat para coordinar la entrega; no compartas teléfonos ni correos.\n\nEnviar"
+ },
+ "viejo:ayuda": {
+  "anchors": [
+   {
+    "txt": "Ares · B2B",
+    "href": "/explorar"
+   },
+   {
+    "txt": "Mi carrito",
+    "href": "/carrito"
+   },
+   {
+    "txt": "Explorar",
+    "href": "/explorar"
+   },
+   {
+    "txt": "Buscar",
+    "href": "/buscar"
+   },
+   {
+    "txt": "Finanzas",
+    "href": "/finanzas"
+   },
+   {
+    "txt": "Portafolio",
+    "href": "/portafolio"
+   },
+   {
+    "txt": "Agendar",
+    "href": "/agendar"
+   },
+   {
+    "txt": "Mi perfil",
+    "href": "/perfil"
+   },
+   {
+    "txt": "Mis pedidos",
+    "href": "/pedidos"
+   },
+   {
+    "txt": "Mensajes",
+    "href": "/mensajes"
+   },
+   {
+    "txt": "Ares · B2B",
+    "href": "/explorar"
+   },
+   {
+    "txt": "‹ Mi cuenta",
+    "href": "/perfil"
+   },
+   {
+    "txt": "Mi perfil",
+    "href": "/perfil"
+   },
+   {
+    "txt": "Abrir el chat de soporte",
+    "href": "/mensajes/soporte"
+   },
+   {
+    "txt": "",
+    "href": "/perfil/editar"
+   },
+   {
+    "txt": "",
+    "href": "/perfil/privacidad"
+   },
+   {
+    "txt": "",
+    "href": "/perfil/editar"
+   },
+   {
+    "txt": "",
+    "href": "/perfil/editar"
+   },
+   {
+    "txt": "los términos y condiciones",
+    "href": "/terminos"
+   },
+   {
+    "txt": "aviso de privacidad",
+    "href": "/aviso-privacidad"
+   },
+   {
+    "txt": "Explorar",
+    "href": "/explorar"
+   },
+   {
+    "txt": "Buscar",
+    "href": "/buscar"
+   },
+   {
+    "txt": "0Carrito",
+    "href": "/carrito"
+   },
+   {
+    "txt": "Mensajes",
+    "href": "/mensajes"
+   },
+   {
+    "txt": "Cuenta",
+    "href": "/perfil"
+   }
+  ],
+  "legales": [
+   {
+    "txt": "los términos y condiciones",
+    "tag": "A",
+    "clickable": true
+   }
+  ]
+ },
+ "viejo:errores": [],
+ "nuevo:hilo": {
+  "url": "http://127.0.0.1:8081/spa/mensajes?hilo=bc6ed9cd-4e90-7ae0-5291-a9d5cd8af235",
+  "campos": [
+   {
+    "tipo": "textarea[textarea]",
+    "label": "Escribe un mensaje",
+    "req": false
+   }
+  ],
+  "botones": [
+   "Cerrar sesión",
+   "Conversaciones 1",
+   "Notificaciones",
+   "Soporte Didi2 Que puedes hacer? 18/11 08:05",
+   "Enviar"
+  ],
+  "dialogs": [],
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMensajes\nCentro de mensajes\n\nConversaciones y avisos del sitio, en un solo lugar.\n\nConversaciones\n1\nNotificaciones\nConversaciones\nSoporte Didi2\nQue puedes hacer?\n18/11 08:05\nSoporte Didi2\nsoporte\nHola, necesito ayuda con una factura de prueba.\n16:16\nSoporte\nHola, soy soporte. Ya reviso tu factura.\n16:16\nPrueba QA 0618\n06:26\nQue puedes hacer?\n08:05\nEscribe un mensaje\n0/2000\nEnviar"
+ },
+ "nuevo:borrar": {
+  "url": "http://127.0.0.1:8081/spa/mensajes",
+  "campos": [
+   {
+    "tipo": "input[checkbox]",
+    "label": "Soporte Didi2 Que puedes hacer? 18/11 08:05",
+    "req": false
+   }
+  ],
+  "botones": [
+   "Cerrar sesión",
+   "Conversaciones 1",
+   "Notificaciones",
+   "Cancelar"
+  ],
+  "dialogs": [],
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMensajes\nCentro de mensajes\n\nConversaciones y avisos del sitio, en un solo lugar.\n\nConversaciones\n1\nNotificaciones\nConversaciones\nMarca las conversaciones que quieras quitar de tu bandeja.\nCancelar\nSoporte Didi2\nQue puedes hacer?\n18/11 08:05\nTus mensajes\n\nElige una conversación de la lista. Aquí solo ves los hilos en los que participas."
+ },
+ "nuevo:dlg-Nueva conversación": {
+  "url": "http://127.0.0.1:8081/spa/mensajes",
+  "campos": [
+   {
+    "tipo": "select[select-one]",
+    "label": "Contacto Elige un contacto Abarrotes Maru · mayorista Distribuidora Su",
+    "req": false
+   },
+   {
+    "tipo": "textarea[textarea]",
+    "label": "¿Qué necesitas?",
+    "req": false
+   }
+  ],
+  "botones": [
+   "Cerrar sesión",
+   "Conversaciones 1",
+   "Notificaciones",
+   "Soporte Didi2 Que puedes hacer? 18/11 08:05",
+   "Abrir chat",
+   "Abrir canal de soporte",
+   "Cancelar"
+  ],
+  "dialogs": [
+   "Nueva conversación Elige con quién quieres hablar. El chat queda dentro de Ares. Contacto Elige un contacto Abarrotes Maru · mayorista Distribuidora Sur · mayorista Ferretera Norte · mayorista Insumos del Valle · mayorista Negocio comercio · comercio Negocio mayorista · mayorista prueba1794916339293"
+  ],
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMensajes\nCentro de mensajes\n\nConversaciones y avisos del sitio, en un solo lugar.\n\nConversaciones\n1\nNotificaciones\nConversaciones\nSoporte Didi2\nQue puedes hacer?\n18/11 08:05\nTus mensajes\n\nElige una conversación de la lista. Aquí solo ves los hilos en los que participas.\n\nNueva conversación\n\nElige con quién quieres hablar. El chat queda dentro de Ares.\n\nContacto\nElige un contacto\nAbarrotes Maru · mayorista\nDistribuidora Sur · mayorista\nFerretera Norte · mayorista\nInsumos del Valle · mayorista\nNegocio comercio · comercio\nNegocio mayorista · mayorista\nprueba1794916339293@didi2.mx · mayorista\nAbrir chat\nSoporte Didi2\n\nUn solo canal con el equipo: no importa quién responda, siempre verás «Soporte».\n\n¿Qué necesitas?\nAbrir canal de soporte\nCancelar"
+ },
+ "nuevo:dlg-Configuración": {
+  "url": "http://127.0.0.1:8081/spa/mensajes",
+  "campos": [
+   {
+    "tipo": "input[checkbox]",
+    "label": "Habilitar notificaciones Avisos de pedidos, pagos y cuenta. Si lo apag",
+    "req": false
+   }
+  ],
+  "botones": [
+   "Cerrar sesión",
+   "Conversaciones 1",
+   "Notificaciones",
+   "Soporte Didi2 Que puedes hacer? 18/11 08:05",
+   "Cancelar",
+   "Guardar"
+  ],
+  "dialogs": [
+   "Configuración Habilitar notificaciones Avisos de pedidos, pagos y cuenta. Si lo apagas, no llega ninguno salvo los de seguridad. Cancelar Guardar"
+  ],
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMensajes\nCentro de mensajes\n\nConversaciones y avisos del sitio, en un solo lugar.\n\nConversaciones\n1\nNotificaciones\nConversaciones\nSoporte Didi2\nQue puedes hacer?\n18/11 08:05\nTus mensajes\n\nElige una conversación de la lista. Aquí solo ves los hilos en los que participas.\n\nConfiguración\nHabilitar notificaciones\nAvisos de pedidos, pagos y cuenta. Si lo apagas, no llega ninguno salvo los de seguridad.\nCancelar\nGuardar"
+ },
+ "nuevo:notif-detalle": {
+  "url": "http://127.0.0.1:8081/spa/pedidos/71942522-e349-11f1-9263-a4bb6d8495fd",
+  "campos": [],
+  "botones": [
+   "Cerrar sesión",
+   "Pedidos",
+   "Seguimiento"
+  ],
+  "dialogs": [],
+  "texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nDetalle del pedido\nPedidos\nPedido 71942522\n\nInsumos del Valle → Casa de Toño · creado el 2026-11-18 05:13\n\nBuscando repartidor\n$1,277.86\nProductos\n2 líneas\nPRODUCTO\tCANT.\tUNITARIO\tSUBTOTAL\nDetergente industrial 1 kg\t12\t$52.00\t$624.00\nCloro 1 L\t24\t$19.90\t$477.60\nSubtotal\n$1,101.60\nIVA\n$176.26\nTotal\n$1,277.86\nCronología\nAceptado\n2026-11-18 06:22\nPreparando\n2026-11-18 06:22\nListo para recoger\n2026-11-18 06:22\nBuscando repartidor\n2026-11-18 06:22\nEntrega\nAv. Insurgentes Sur 123\nDel Valle, Ciudad de México, 03100\nSeguimiento\nEnvío\nRepartidor\nAún sin asignar\nDistancia\n5.09 km\nTu calificación\n★★★★★"
+ },
+ "nuevo:ayuda": {
+  "anchors": [
+   {
+    "txt": "A Ares B2B",
+    "href": "/spa/"
+   },
+   {
+    "txt": "Inicio",
+    "href": "/spa"
+   },
+   {
+    "txt": "Buscar",
+    "href": "/spa/buscar"
+   },
+   {
+    "txt": "Carrito",
+    "href": "/spa/carrito"
+   },
+   {
+    "txt": "Pedidos",
+    "href": "/spa/pedidos"
+   },
+   {
+    "txt": "Finanzas",
+    "href": "/spa/finanzas"
+   },
+   {
+    "txt": "Portafolio",
+    "href": "/spa/portafolio"
+   },
+   {
+    "txt": "Agendar",
+    "href": "/spa/agendar"
+   },
+   {
+    "txt": "Mensajes",
+    "href": "/spa/mensajes"
+   },
+   {
+    "txt": "Perfil",
+    "href": "/spa/perfil"
+   },
+   {
+    "txt": "Caja",
+    "href": "/spa/pos"
+   },
+   {
+    "txt": "Inventario",
+    "href": "/spa/pos/inventario"
+   },
+   {
+    "txt": "Ventas",
+    "href": "/spa/pos/ventas"
+   },
+   {
+    "txt": "Corte",
+    "href": "/spa/pos/corte"
+   },
+   {
+    "txt": "Clientes",
+    "href": "/spa/pos/clientes"
+   },
+   {
+    "txt": "Casa de Toño comercio",
+    "href": "/spa/perfil"
+   },
+   {
+    "txt": "Panel clásico",
+    "href": "/explorar"
+   }
+  ],
+  "legales": [
+   {
+    "txt": "Términos y condiciones",
+    "tag": "STRONG",
+    "clickable": false
+   }
+  ]
+ },
+ "nuevo:errores": []
+}

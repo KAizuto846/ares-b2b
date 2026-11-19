@@ -1,0 +1,14 @@
+URL:/admin/reclamos
+BOTONES:A Mi cuenta | Cerrar sesión | Filtrar
+HREFS:/explorar | /buscar | /finanzas | /facturacion | /admin | /admin/kyc | /perfil | /mensajes
+----
+Reclamos y disputas
+Estado: 
+todos
+abierto
+respondido
+resuelto
+rechazado
+Filtrar
+RECLAMO	TIPO	ESTADO	COMERCIO → MAYORISTA	TOTAL	FECHA	
+Sin reclamos.

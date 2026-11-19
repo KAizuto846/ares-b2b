@@ -1,0 +1,32 @@
+URL:/pedidos/71954494-e349-11f1-9263-a4bb6d8495fd
+BOTONES:R Mi cuenta | Cerrar sesión | Confirmar recolección | Enviar
+HREFS:/explorar | /buscar | /finanzas | /facturacion | /perfil | /mensajes
+----
+Pedido 71954494
+
+Insumos del Valle → Casa de Toño
+
+Estado
+Repartidor asignado
+Total
+$705.28
+Entrega
+Av. Insurgentes Sur 123, Ciudad de México
+Confirmar recolección
+Pídelo al mayorista
+Productos
+PRODUCTO	CANT.	UNITARIO	SUBTOTAL
+Bolsa de basura 60x90 (50)	10	$46.00	$460.00
+Escoba de cerda suave	4	$37.00	$148.00
+Subtotal $608.00
+IVA $97.28
+Total $705.28
+Historial
+Buscando repartidor 2026-11-18 06:25
+Repartidor asignado 2026-11-18 06:25
+Repartidor asignado
+Mensajes con Insumos del Valle
+
+Todavía no hay mensajes. Usa el chat para coordinar la entrega; no compartas teléfonos ni correos.
+
+Enviar

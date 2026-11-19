@@ -1,0 +1,30 @@
+URL:/spa
+BOTONES:Cerrar sesión | Buscar productos
+HREFS:/spa/ | /spa | /spa/admin | /spa/admin/usuarios | /spa/admin/kyc | /spa/admin/reclamos | /spa/admin/parametros | /spa/mensajes | /spa/perfil | /explorar | /spa/buscar
+----
+Hola, VICTOR
+
+¿Con qué empezamos hoy? Esto es lo que tienes en marcha.
+
+Buscar productos
+0
+Pedidos hoy
+toda la plataforma
+0
+KYC pendientes
+cuentas por verificar
+2
+Envíos sin repartidor
+necesitan atención
+0
+Reclamos abiertos
+sin resolver
+Tu día a día
+Administración
+El pulso de la plataforma.
+Verificaciones
+Cuentas esperando revisión.
+Reclamos
+Lo que hay que atender.
+Buscar
+Explora el catálogo completo.

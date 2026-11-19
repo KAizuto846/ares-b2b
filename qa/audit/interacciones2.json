@@ -1,0 +1,44 @@
+{
+ "viejo:hilo-texto": "Ares · B2B\nMi carrito\nExplorar\nBuscar\nFinanzas\nPortafolio\nAgendar\nMi cuenta\nCentro de mensajes\n\nConversaciones y avisos del sitio, en un solo lugar.\n\nConversaciones\n1\nNotificaciones\nConversaciones\nSD\nSoporte Didi2\nQue puedes hacer?\n18/11 08:05\nSoporte Didi2\nsoporte\nHola, necesito ayuda con una factura de prueba.\n16:16\nHola, soy soporte. Ya reviso tu factura.\n16:16\nPrueba QA 0618\n06:26\nQue puedes hacer?\n08:05\nEnviar",
+ "viejo:notif-destinos": [
+  "http://127.0.0.1:3110/pedidos/71942522-e349-11f1-9263-a4bb6d8495fd",
+  "http://127.0.0.1:3110/pedidos/71942522-e349-11f1-9263-a4bb6d8495fd",
+  "http://127.0.0.1:3110/pedidos/b3ec91dc-d5f9-4359-802b-f6caf1b5acbc",
+  "http://127.0.0.1:3110/pedidos",
+  "http://127.0.0.1:3110/finanzas?tab=facturacion",
+  "http://127.0.0.1:3110/kyc"
+ ],
+ "viejo:kyc-repartidor": {
+  "url": "http://127.0.0.1:3110/kyc",
+  "tablas": [
+   {
+    "columnas": [
+     "TIPO",
+     "ESTADO",
+     "FECHA",
+     "MOTIVO"
+    ],
+    "filas": [
+     "Sin documentos todavía."
+    ]
+   }
+  ],
+  "texto": "Ares · B2B\nExplorar\nBuscar\nFinanzas\nFacturación\nR\nMi cuenta\nVerificación de identidad\n\nMi perfil\n\nSube tus documentos en JPG, PNG o PDF (máximo 10 MB cada uno).\n\nDocumentos obligatorios: identificacion, licencia, tarjeta_circulacion, antecedentes, selfie\n\nTipo de documento\nidentificacion\nlicencia\ntarjeta_circulacion\nantecedentes\nselfie\nconstancia_sat\ncomprobante_domicilio\nrfc_documento\nArchivo\nSubir documento\nMis documentos\nTIPO\tESTADO\tFECHA\tMOTIVO\nSin documentos todavía."
+ },
+ "viejo:perfil-repartidor": "Ares · B2B\nExplorar\nBuscar\nFinanzas\nFacturación\nR\nMi cuenta\nMi perfil\n\nTus datos, la verificación de la cuenta y las opciones de la app.\n\nCerrar sesión\nPP\nPedro Pazcal\nTodavía sin calificaciones\nRepartidor\nVerificación pendiente\nCORREO\nrepartidor@didi2.mx\nANTIGÜEDAD\nMiembro desde noviembre de 2026\nTELÉFONO\n5587654321\nDIRECCIÓN PRINCIPAL\nSin registrar\nEditar\nVerificación\nIdentidad, documentos y estado de la cuenta\nAyuda\nPreguntas frecuentes, soporte y contacto\nAjustes\nPrivacidad, permisos, tema y seguridad",
+ "nuevo:hilo-texto": "A\nAres\nB2B\nInicio\nBuscar\nCarrito\nPedidos\nFinanzas\nPortafolio\nAgendar\nMensajes\nPerfil\nPUNTO DE VENTA\nCaja\nInventario\nVentas\nCorte\nClientes\nCasa de Toño\ncomercio\nPanel clásico\nCerrar sesión\nMensajes\nCentro de mensajes\n\nConversaciones y avisos del sitio, en un solo lugar.\n\nConversaciones\n1\nNotificaciones\nConversaciones\nSoporte Didi2\nQue puedes hacer?\n18/11 08:05\nSoporte Didi2\nsoporte\nHola, necesito ayuda con una factura de prueba.\n16:16\nSoporte\nHola, soy soporte. Ya reviso tu factura.\n16:16\nPrueba QA 0618\n06:26\nQue puedes hacer?\n08:05\nEscribe un mensaje\n0/2000\nEnviar",
+ "nuevo:notif-destinos": [
+  "http://127.0.0.1:8081/spa/pedidos/71942522-e349-11f1-9263-a4bb6d8495fd",
+  "http://127.0.0.1:8081/spa/pedidos/71942522-e349-11f1-9263-a4bb6d8495fd",
+  "http://127.0.0.1:8081/spa/pedidos/b3ec91dc-d5f9-4359-802b-f6caf1b5acbc",
+  "http://127.0.0.1:8081/spa/pedidos",
+  "http://127.0.0.1:8081/spa",
+  "http://127.0.0.1:8081/spa/kyc"
+ ],
+ "nuevo:kyc-repartidor": {
+  "url": "http://127.0.0.1:8081/spa/kyc",
+  "tablas": [],
+  "texto": "A\nAres\nB2B\nInicio\nReparto\nBuscar\nFinanzas\nMensajes\nPerfil\nPE\nPedro Pazcal\nrepartidor\nPanel clásico\nCerrar sesión\nVerificación\nVerificación de identidad\n\nSube tus documentos en JPG, PNG o PDF (máximo 10 MB cada uno).\n\nMi perfil\nEstado de la cuenta\nVerificación pendiente\nDocumentos obligatorios\n\nIdentificación oficial · Licencia de conducir · Tarjeta de circulación · Carta de antecedentes · Selfie con identificación\n\n0 aprobados\n0 en revisión\n5 faltantes\nFalta aprobar: Identificación oficial, Licencia de conducir, Tarjeta de circulación, Carta de antecedentes, Selfie con identificación.\nSubir documento\nTipo de documento\nIdentificación oficial\nLicencia de conducir\nTarjeta de circulación\nCarta de antecedentes\nSelfie con identificación\nConstancia de situación fiscal\nComprobante de domicilio\nDocumento del RFC\nArchivo\nSubir documento\nMis documentos\n\nSin documentos todavía."
+ },
+ "nuevo:perfil-repartidor": "A\nAres\nB2B\nInicio\nReparto\nBuscar\nFinanzas\nMensajes\nPerfil\nPE\nPedro Pazcal\nrepartidor\nPanel clásico\nCerrar sesión\nMi perfil\nMi perfil\n\nTus datos, la verificación de la cuenta y las opciones de la app.\n\nPP\nPedro Pazcal\nTodavía sin calificaciones\nRepartidor\nVerificación pendiente\nMiembro desde noviembre de 2026\nCORREO\nrepartidor@didi2.mx\nTELÉFONO\n5587654321\nDIRECCIÓN PRINCIPAL\nSin registrar\nÚLTIMO ACCESO\n19 nov 2026\nEditar\nSeguridad\nContraseña y baja de la cuenta\nAyuda\nPreguntas frecuentes y soporte\nAjustes\nPrivacidad, permisos y tema\nVerificaciones y calificaciones\nIr a verificación\n—\n0 calificaciones\n5\n0\n4\n0\n3\n0\n2\n0\n1\n0\nComentarios recibidos\n\nAún no hay comentarios escritos.\n\nCerrar sesión\nEliminar cuenta"
+}

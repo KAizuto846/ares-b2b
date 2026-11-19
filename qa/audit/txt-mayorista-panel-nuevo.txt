@@ -1,0 +1,30 @@
+URL:/spa/
+BOTONES:Cerrar sesión | Buscar productos
+HREFS:/spa/ | /spa | /spa/buscar | /spa/productos | /spa/pedidos | /spa/facturacion | /spa/finanzas | /spa/mensajes | /spa/perfil | /explorar
+----
+Hola, Insumos del Valle
+
+¿Con qué empezamos hoy? Esto es lo que tienes en marcha.
+
+Buscar productos
+1
+Por aceptar
+esperan tu respuesta
+1
+Por surtir
+en preparación
+$0
+Vendido hoy
+sin cancelados
+0
+Agotados
+no se pueden vender
+Tu día a día
+Buscar
+Explora el catálogo completo.
+Mis productos
+Tu catálogo, precios y existencias.
+Pedidos
+Lo que te acaban de pedir.
+Finanzas
+Ventas, comisiones y lo que te queda.

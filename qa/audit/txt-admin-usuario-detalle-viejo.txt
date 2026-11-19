@@ -1,0 +1,19 @@
+URL:/admin/usuarios/13
+BOTONES:A Mi cuenta | Cerrar sesión | Actualizar | Suspender
+HREFS:/explorar | /buscar | /finanzas | /facturacion | /admin | /admin/kyc | /perfil | /mensajes
+----
+Usuario #13
+Correo: nuevo-repartidor-1794916444769@didi2.mx
+Estado: activo
+Roles: repartidor
+Creado: 2026-11-17
+Pedidos recientes
+PEDIDO	TOTAL	ESTADO	FECHA
+Sin pedidos.
+Rol: 
+comercio
+mayorista
+admin_total
+repartidor
+Actualizar
+Suspender

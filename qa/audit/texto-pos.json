@@ -1,0 +1,61 @@
+[
+  {
+    "slug": "pos",
+    "soloViejo": [
+      "Explorar",
+      "Mi cuenta",
+      "Método",
+      "Recibido",
+      "Cerrar caja"
+    ],
+    "viejo": 22,
+    "nuevo": 28
+  },
+  {
+    "slug": "inventario",
+    "soloViejo": [
+      "Explorar",
+      "Mi cuenta",
+      "Nuevo producto",
+      "Nombre",
+      "Código de barras",
+      "Costo",
+      "Precio venta",
+      "Unidad",
+      "Agregar producto"
+    ],
+    "viejo": 70,
+    "nuevo": 61
+  },
+  {
+    "slug": "ventas",
+    "soloViejo": [
+      "Explorar",
+      "Mi cuenta"
+    ],
+    "viejo": 27,
+    "nuevo": 44
+  },
+  {
+    "slug": "corte",
+    "soloViejo": [
+      "Explorar",
+      "Mi cuenta",
+      "Efectivo contado",
+      "Notas"
+    ],
+    "viejo": 26,
+    "nuevo": 42
+  },
+  {
+    "slug": "clientes",
+    "soloViejo": [
+      "Explorar",
+      "Mi cuenta",
+      "Nuevo cliente",
+      "Guardar cliente"
+    ],
+    "viejo": 20,
+    "nuevo": 30
+  }
+]

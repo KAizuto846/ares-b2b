@@ -1,0 +1,487 @@
+{
+  "pos-viejo": {
+    "url": "http://127.0.0.1:3110/pos",
+    "h": [
+      "Caja"
+    ],
+    "botones": [
+      "Mi cuenta",
+      "Cobrar",
+      "Limpiar ticket",
+      "Ventas",
+      "Inventario",
+      "Cerrar caja"
+    ],
+    "campos": [
+      {
+        "tag": "INPUT",
+        "tipo": "search",
+        "nombre": "pos-buscar",
+        "etiqueta": "ph:Buscar producto, clave o código…"
+      },
+      {
+        "tag": "SELECT",
+        "tipo": "select-one",
+        "nombre": "pos-metodo",
+        "etiqueta": "Método Efectivo Tarjeta Transferencia Crédito",
+        "opciones": [
+          "Efectivo",
+          "Tarjeta",
+          "Transferencia",
+          "Crédito"
+        ]
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "number",
+        "nombre": "pos-recibido",
+        "etiqueta": "Recibido"
+      },
+      {
+        "tag": "SELECT",
+        "tipo": "select-one",
+        "nombre": "pos-cliente",
+        "etiqueta": "Cliente Público general",
+        "opciones": [
+          "Público general"
+        ]
+      }
+    ],
+    "th": [],
+    "filas": 0,
+    "accionesFila": [],
+    "textos": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Caja Turno abierto · vendido hoy $846.20 Busca un producto Escribe el nombre o la clave, o pasa el lector de código de barras. Ticket 0 artículos Toca un producto para agregarlo. Subtotal $0.00 IVA $0.00 Total $0.00 Método Efectivo Tarjeta Transferencia Crédito Recibido Cliente Público general Cobrar Limpiar ticket Ventas Inventario Cerrar caja",
+    "dialogos": 0
+  },
+  "pos-nuevo": {
+    "url": "http://127.0.0.1:8081/spa/pos",
+    "h": [
+      "Caja"
+    ],
+    "botones": [
+      "Cerrar sesión",
+      "Ventas",
+      "Inventario",
+      "Corte",
+      "Cobrar",
+      "Limpiar ticket"
+    ],
+    "campos": [
+      {
+        "tag": "INPUT",
+        "tipo": "search",
+        "nombre": "",
+        "etiqueta": "Buscar producto, clave o código de barras"
+      }
+    ],
+    "th": [],
+    "filas": 0,
+    "accionesFila": [],
+    "textos": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Caja Caja Turno #1 abierto · vendido hoy $846.20 · en caja $1,346.20 Ventas Inventario Corte Busca un producto Escribe el nombre o la clave, o pasa el lector de código de barras. Ticket 0 artículos Toca un producto para agregarlo. Subtotal $0.00 IVA $0.00 Total $0.00 Cobrar Limpiar ticket",
+    "dialogos": 0
+  },
+  "inventario-viejo": {
+    "url": "http://127.0.0.1:3110/pos/inventario",
+    "h": [
+      "Inventario",
+      "Nuevo producto",
+      "Ajustes"
+    ],
+    "botones": [
+      "Mi cuenta",
+      "Ir a caja",
+      "Quitar",
+      "Quitar",
+      "Quitar",
+      "Quitar",
+      "Quitar",
+      "Quitar",
+      "Quitar",
+      "Quitar",
+      "Quitar",
+      "Quitar",
+      "Quitar",
+      "Quitar",
+      "Agregar producto",
+      "Guardar ajustes"
+    ],
+    "campos": [
+      {
+        "tag": "INPUT",
+        "tipo": "text",
+        "nombre": "nombre",
+        "etiqueta": "Nombre"
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "text",
+        "nombre": "sku",
+        "etiqueta": "SKU"
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "text",
+        "nombre": "codigo_barras",
+        "etiqueta": "Código de barras"
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "number",
+        "nombre": "precio_compra",
+        "etiqueta": "Costo"
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "number",
+        "nombre": "precio_venta",
+        "etiqueta": "Precio venta"
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "number",
+        "nombre": "stock",
+        "etiqueta": "Stock"
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "number",
+        "nombre": "stock_minimo",
+        "etiqueta": "Mínimo"
+      },
+      {
+        "tag": "SELECT",
+        "tipo": "select-one",
+        "nombre": "iva_tasa",
+        "etiqueta": "IVA 16% 8% Exento",
+        "opciones": [
+          "16%",
+          "8%",
+          "Exento"
+        ]
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "text",
+        "nombre": "unidad",
+        "etiqueta": "Unidad"
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "number",
+        "nombre": "margen_venta",
+        "etiqueta": "Margen al importar pedidos (%)"
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "checkbox",
+        "nombre": "iva_incluido",
+        "etiqueta": "Los precios ya incluyen IVA"
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "checkbox",
+        "nombre": "reorden_auto",
+        "etiqueta": "Avisarme cuando un producto llegue al mínimo"
+      }
+    ],
+    "th": [
+      "PRODUCTO",
+      "COMPRA",
+      "VENTA",
+      "STOCK",
+      "MÍNIMO",
+      ""
+    ],
+    "filas": 12,
+    "accionesFila": [
+      "Editar",
+      "Quitar"
+    ],
+    "textos": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Inventario Precios, existencias y reposición. Ir a caja PRODUCTO COMPRA VENTA STOCK MÍNIMO Aceite vegetal 900 mlACE-900 $34.00 $49.90 5.00 pieza 2.00 Editar · Quitar Agua purificada 1.5 LAGU-15 $9.50 $14.50 36.00 pieza 12.00 Editar · Quitar Arroz grano largo 1 kgARR-1K $22.00 $32.00 18.00 pieza 5.00 Editar · Quitar Atún en agua 140 gATU-140 $15.00 $21.50 24.00 pieza 8.00 Editar · Quitar Azúcar estándar 1 kgAZU-1K $28.00 $38.50 20.00 pieza 5.00 Editar · Quitar Café molido 1 kgCAF-1K $140.00 $185.00 10.00 pieza 3.00 Editar · Quitar Detergente líquido 1 LDET-1L $44.00 $62.00 9.00 pieza 3.00 Editar · Quitar Frijol negro 1 kgFRI-1K $25.00 $36.00 15.00 pieza 4.00 Editar · Quitar Harina de trigo 1 kgHAR-1K $18.00 $26.50 11.00 pieza 3.00 Editar · Quitar Mayonesa 800 gMAY-800 $33.00 $48.00 7.00 pieza 2.00 Editar · Quitar Papel de baño 4 rollosPAP-4 $31.00 $45.00 13.00 pieza 4.00 Editar · Quitar Té verde 20 sobresTE-20 $27.00 $39.00 8.00 pieza 2.00 Editar · Quitar Nuevo producto Nombre SKU Código de barras Costo Precio venta Stock Mínimo IVA 16% 8% Exento Unidad Agregar producto Ajustes Margen al importar pedidos (%) Los precios ya incluyen IVA Avisarme cuando un producto llegue al mínimo Guardar ajustes",
+    "dialogos": 0
+  },
+  "inventario-nuevo": {
+    "url": "http://127.0.0.1:8081/spa/pos/inventario",
+    "h": [
+      "Inventario"
+    ],
+    "botones": [
+      "Cerrar sesión",
+      "Producto",
+      "Ir a caja",
+      "Reponer",
+      "Editar",
+      "Quitar",
+      "Reponer",
+      "Editar",
+      "Quitar",
+      "Reponer",
+      "Editar",
+      "Quitar",
+      "Reponer",
+      "Editar",
+      "Quitar",
+      "Reponer",
+      "Editar",
+      "Quitar",
+      "Reponer",
+      "Editar",
+      "Quitar",
+      "Reponer",
+      "Editar",
+      "Quitar",
+      "Reponer",
+      "Editar",
+      "Quitar",
+      "Reponer",
+      "Editar",
+      "Quitar",
+      "Reponer",
+      "Editar",
+      "Quitar",
+      "Reponer",
+      "Editar",
+      "Quitar",
+      "Reponer",
+      "Editar",
+      "Quitar",
+      "Guardar ajustes"
+    ],
+    "campos": [
+      {
+        "tag": "INPUT",
+        "tipo": "number",
+        "nombre": "",
+        "etiqueta": "Margen al importar pedidos (%)"
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "checkbox",
+        "nombre": "",
+        "etiqueta": "Los precios ya incluyen IVA"
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "checkbox",
+        "nombre": "",
+        "etiqueta": "Avisarme cuando un producto llegue al mínimo"
+      }
+    ],
+    "th": [
+      "PRODUCTO",
+      "COMPRA",
+      "VENTA",
+      "STOCK",
+      "MÍNIMO",
+      ""
+    ],
+    "filas": 12,
+    "accionesFila": [
+      "Reponer",
+      "Editar",
+      "Quitar"
+    ],
+    "textos": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Inventario Inventario Precios, existencias y reposición de la caja. Producto Ir a caja PRODUCTO COMPRA VENTA STOCK MÍNIMO Aceite vegetal 900 ml ACE-900 $34.00 $49.90 5 pieza 2 Reponer Editar Quitar Agua purificada 1.5 L AGU-15 $9.50 $14.50 36 pieza 12 Reponer Editar Quitar Arroz grano largo 1 kg ARR-1K $22.00 $32.00 18 pieza 5 Reponer Editar Quitar Atún en agua 140 g ATU-140 $15.00 $21.50 24 pieza 8 Reponer Editar Quitar Azúcar estándar 1 kg AZU-1K $28.00 $38.50 20 pieza 5 Reponer Editar Quitar Café molido 1 kg CAF-1K $140.00 $185.00 10 pieza 3 Reponer Editar Quitar Detergente líquido 1 L DET-1L $44.00 $62.00 9 pieza 3 Reponer Editar Quitar Frijol negro 1 kg FRI-1K $25.00 $36.00 15 pieza 4 Reponer Editar Quitar Harina de trigo 1 kg HAR-1K $18.00 $26.50 11 pieza 3 Reponer Editar Quitar Mayonesa 800 g MAY-800 $33.00 $48.00 7 pieza 2 Reponer Editar Quitar Papel de baño 4 rollos PAP-4 $31.00 $45.00 13 pieza 4 Reponer Editar Quitar Té verde 20 sobres TE-20 $27.00 $39.00 8 pieza 2 Reponer Editar Quitar Ajustes de la caja Margen al importar pedidos (%) Los precios ya incluyen IVA Avisarme cuando un producto llegue al mínimo Guardar ajustes",
+    "dialogos": 0
+  },
+  "ventas-viejo": {
+    "url": "http://127.0.0.1:3110/pos/ventas",
+    "h": [
+      "Ventas"
+    ],
+    "botones": [
+      "Mi cuenta",
+      "Ir a caja"
+    ],
+    "campos": [],
+    "th": [
+      "FOLIO",
+      "FECHA",
+      "CLIENTE",
+      "TOTAL",
+      "ESTADO",
+      ""
+    ],
+    "filas": 6,
+    "accionesFila": [
+      "POS-261118-0005"
+    ],
+    "textos": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Ventas Últimas 100 ventas de la caja. Ir a caja FOLIO FECHA CLIENTE TOTAL ESTADO POS-261118-0005 18/11/2026 06:25 Público general $185.00 pagada POS-261118-0004 18/11/2026 05:55 Público general $149.70 pagada POS-261118-0003 18/11/2026 05:55 Público general $185.00 pagada POS-261118-0001 18/11/2026 05:45 Público general $149.70 pagada POS-261118-0002 17/11/2026 19:24 Público general $49.90 pagada POS-261117-0001 17/11/2026 16:44 Público general $126.90 pagada ",
+    "dialogos": 0
+  },
+  "ventas-nuevo": {
+    "url": "http://127.0.0.1:8081/spa/pos/ventas",
+    "h": [
+      "Ventas"
+    ],
+    "botones": [
+      "Cerrar sesión",
+      "Ir a caja",
+      "Corte",
+      "Todo"
+    ],
+    "campos": [
+      {
+        "tag": "INPUT",
+        "tipo": "date",
+        "nombre": "",
+        "etiqueta": "Desde"
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "date",
+        "nombre": "",
+        "etiqueta": "Hasta"
+      }
+    ],
+    "th": [
+      "FOLIO",
+      "FECHA",
+      "CLIENTE",
+      "MÉTODO",
+      "TOTAL",
+      "ESTADO"
+    ],
+    "filas": 6,
+    "accionesFila": [
+      "POS-261118-0005"
+    ],
+    "textos": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Ventas Ventas Últimas ventas de la caja, con su ticket. Ir a caja Corte Desde Hasta Todo $846.20 6 ventas FOLIO FECHA CLIENTE MÉTODO TOTAL ESTADO POS-261118-0005 18/11/2026, 06:25 a.m. Público general Efectivo $185.00 pagada POS-261118-0004 18/11/2026, 05:55 a.m. Público general Efectivo $149.70 pagada POS-261118-0003 18/11/2026, 05:55 a.m. Público general Efectivo $185.00 pagada POS-261118-0001 18/11/2026, 05:45 a.m. Público general Efectivo $149.70 pagada POS-261118-0002 17/11/2026, 07:24 p.m. Público general Efectivo $49.90 pagada POS-261117-0001 17/11/2026, 04:44 p.m. Público general Efectivo $126.90 pagada",
+    "dialogos": 0
+  },
+  "corte-viejo": {
+    "url": "http://127.0.0.1:3110/pos/corte",
+    "h": [
+      "Corte de caja",
+      "Por método de pago",
+      "Cerrar turno"
+    ],
+    "botones": [
+      "Mi cuenta",
+      "Imprimir",
+      "Ir a caja",
+      "Cerrar caja"
+    ],
+    "campos": [
+      {
+        "tag": "INPUT",
+        "tipo": "number",
+        "nombre": "efectivo_contado",
+        "etiqueta": "Efectivo contado"
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "text",
+        "nombre": "notas",
+        "etiqueta": "Notas"
+      }
+    ],
+    "th": [
+      "MÉTODO",
+      "VENTAS",
+      "TOTAL"
+    ],
+    "filas": 1,
+    "accionesFila": [],
+    "textos": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Corte de caja Turno #1 · 17/11/2026 16:43 (abierto) Imprimir Ir a caja Total vendido $846.20 Fondo inicial $500.00 Efectivo en caja $1,346.20 Por método de pago MÉTODO VENTAS TOTAL Efectivo 6 $846.20 Cerrar turno Esperado en efectivo: $1,346.20 Efectivo contado Notas Cerrar caja",
+    "dialogos": 0
+  },
+  "corte-nuevo": {
+    "url": "http://127.0.0.1:8081/spa/pos/corte",
+    "h": [
+      "Corte de caja",
+      "Por método de pago",
+      "Movimientos de caja"
+    ],
+    "botones": [
+      "Cerrar sesión",
+      "Imprimir",
+      "Ir a caja",
+      "Cerrar caja"
+    ],
+    "campos": [],
+    "th": [
+      "MÉTODO",
+      "VENTAS",
+      "TOTAL",
+      "HORA",
+      "TIPO",
+      "CONCEPTO",
+      "MONTO"
+    ],
+    "filas": 7,
+    "accionesFila": [],
+    "textos": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Corte de caja Corte de caja Turno #1 · 17/11/2026, 04:43 p.m. (abierto) Imprimir Ir a caja Total vendido $846.20 Fondo inicial $500.00 Efectivo en caja $1,346.20 Por método de pago MÉTODO VENTAS TOTAL Efectivo 6 $846.20 Movimientos de caja HORA TIPO CONCEPTO MONTO 17/11/2026, 04:44 p.m. Venta Venta POS-261117-0001 $126.90 17/11/2026, 07:24 p.m. Venta Venta POS-261118-0002 $49.90 18/11/2026, 05:45 a.m. Venta Venta POS-261118-0001 $149.70 18/11/2026, 05:55 a.m. Venta Venta POS-261118-0003 $185.00 18/11/2026, 05:55 a.m. Venta Venta POS-261118-0004 $149.70 18/11/2026, 06:25 a.m. Venta Venta POS-261118-0005 $185.00 Cerrar turno Esperado en efectivo: $1,346.20 Cerrar caja",
+    "dialogos": 0
+  },
+  "clientes-viejo": {
+    "url": "http://127.0.0.1:3110/pos/clientes",
+    "h": [
+      "Clientes de la caja",
+      "Nuevo cliente"
+    ],
+    "botones": [
+      "Mi cuenta",
+      "Ir a caja",
+      "Guardar cliente"
+    ],
+    "campos": [
+      {
+        "tag": "INPUT",
+        "tipo": "text",
+        "nombre": "nombre",
+        "etiqueta": "Nombre"
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "text",
+        "nombre": "telefono",
+        "etiqueta": "Teléfono"
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "text",
+        "nombre": "rfc",
+        "etiqueta": "RFC"
+      },
+      {
+        "tag": "INPUT",
+        "tipo": "email",
+        "nombre": "email",
+        "etiqueta": "Correo"
+      }
+    ],
+    "th": [
+      "NOMBRE",
+      "TELÉFONO",
+      "CORREO",
+      "RFC"
+    ],
+    "filas": 1,
+    "accionesFila": [],
+    "textos": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Clientes de la caja Para tickets con nombre o factura. Ir a caja NOMBRE TELÉFONO CORREO RFC Sin clientes registrados. Nuevo cliente Nombre Teléfono RFC Correo Guardar cliente",
+    "dialogos": 0
+  },
+  "clientes-nuevo": {
+    "url": "http://127.0.0.1:8081/spa/pos/clientes",
+    "h": [
+      "Clientes de la caja"
+    ],
+    "botones": [
+      "Cerrar sesión",
+      "Cliente",
+      "Ir a caja"
+    ],
+    "campos": [],
+    "th": [
+      "NOMBRE",
+      "TELÉFONO",
+      "CORREO",
+      "RFC"
+    ],
+    "filas": 1,
+    "accionesFila": [],
+    "textos": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Clientes Clientes de la caja Para tickets con nombre o factura. Cliente Ir a caja NOMBRE TELÉFONO CORREO RFC Sin clientes registrados Agrégalos para emitir el ticket a nombre de quien compra.",
+    "dialogos": 0
+  }
+}

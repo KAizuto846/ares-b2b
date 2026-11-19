@@ -1,0 +1,15 @@
+{
+  "cookies": [
+    {
+      "name": "didi2_sess",
+      "value": "102c849bd6ccacc9f2f9a0735c20227d",
+      "domain": "127.0.0.1",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}

@@ -1,0 +1,98 @@
+URL:/spa/admin/usuarios
+BOTONES:Cerrar sesión | Buscar | Anterior | Siguiente
+HREFS:/spa/ | /spa | /spa/admin | /spa/admin/usuarios | /spa/admin/kyc | /spa/admin/reclamos | /spa/admin/parametros | /spa/mensajes | /spa/perfil | /explorar | /spa/admin/usuarios/13 | /spa/admin/usuarios/12 | /spa/admin/usuarios/11 | /spa/admin/usuarios/10 | /spa/admin/usuarios/9 | /spa/admin/usuarios/8 | /spa/admin/usuarios/7 | /spa/admin/usuarios/6 | /spa/admin/usuarios/5 | /spa/admin/usuarios/4 | /spa/admin/usuarios/2
+----
+Usuarios
+
+Busca cuentas, revisa sus roles y su estado de verificación.
+
+Panel
+Buscar
+Rol
+Todos
+comercio
+mayorista
+repartidor
+admin_total
+admin_kyc
+admin_soporte
+admin_finanzas
+Estado
+Todos
+Activo
+Suspendido
+Pendiente
+Baneado
+Buscar
+Listado
+11 cuentas
+CUENTA	ROLES	ESTADO	KYC	ALTA	ÚLTIMO ACCESO	
+
+Usuario #13
+nuevo-repartidor-1794916444769@didi2.mx
+	
+repartidor
+	activo	pendiente	17 nov 2026	17 nov 2026	Ver
+
+Negocio mayorista
+nuevo-mayorista-1794916444769@didi2.mx
+	
+mayorista
+	activo	pendiente	17 nov 2026	17 nov 2026	Ver
+
+Negocio comercio
+nuevo-comercio-1794916444769@didi2.mx
+	
+comercio
+	activo	sin perfil	17 nov 2026	17 nov 2026	Ver
+
+Usuario #10
+prueba1794916339293@didi2.mx
+	
+mayorista
+	activo	sin perfil	17 nov 2026	17 nov 2026	Ver
+
+VICTOR
+admin@didi2.mx
+	
+admin_total
+	activo	sin perfil	16 nov 2026	19 nov 2026	Ver
+
+Pedro Pazcal
+repartidor@didi2.mx
+	
+repartidor
+	activo	aprobado	16 nov 2026	19 nov 2026	Ver
+
+Distribuidora Sur
+demo-distribuidora-sur@didi2.mx
+	
+mayorista
+	activo	aprobado	16 nov 2026	nunca	Ver
+
+Ferretera Norte
+demo-ferretera-norte@didi2.mx
+	
+mayorista
+	activo	aprobado	16 nov 2026	nunca	Ver
+
+Insumos del Valle
+demo-insumos-del-valle@didi2.mx
+	
+mayorista
+	activo	aprobado	16 nov 2026	19 nov 2026	Ver
+
+Abarrotes Maru
+mayorista@didi2.mx
+	
+mayorista
+	activo	aprobado	16 nov 2026	18 nov 2026	Ver
+
+Casa de Toño
+comercio@didi2.mx
+	
+comercio
+	activo	sin perfil	16 nov 2026	19 nov 2026	Ver
+Página 1 de 1
+Anterior
+Siguiente

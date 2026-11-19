@@ -1,0 +1,39 @@
+URL:/spa/finanzas
+BOTONES:Cerrar sesión | Aplicar
+HREFS:/spa/ | /spa | /spa/buscar | /spa/productos | /spa/pedidos | /spa/facturacion | /spa/finanzas | /spa/mensajes | /spa/perfil | /explorar | /spa/api/finanzas/export?desde=2026-11-01&hasta=2026-11-19
+----
+Finanzas
+
+Ventas cerradas, comisión y lo que te queda.
+
+Exportar CSV
+Desde
+Hasta
+Aplicar
+Periodo: Del 01/11/2026 al 19/11/2026
+$0.00
+Venta del periodo
+0 pedidos cerrados
+$0.00
+IVA trasladado
+$0.00
+Comisión de plataforma
+$0.00
+Neto a cobrar
+Ingresos por mes
+$0.00
+$200
+$150
+$100
+$50
+$0
+jun
+jul
+ago
+sep
+oct
+nov
+Movimientos
+0 en el periodo
+Sin movimientos en este periodo
+Prueba otro rango de fechas.

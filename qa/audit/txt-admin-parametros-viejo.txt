@@ -1,0 +1,23 @@
+URL:/admin/parametros
+BOTONES:A Mi cuenta | Cerrar sesión | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar
+HREFS:/explorar | /buscar | /finanzas | /facturacion | /admin | /admin/kyc | /perfil | /mensajes
+----
+Parámetros del sistema
+
+Los cambios se guardan con versionado automático y registro de quién los modificó.
+
+CLAVE	VALOR	TIPO	DESCRIPCIÓN	VERSIÓN	
+app.nombre		string	Nombre de la plataforma	v1	Guardar
+app.version		string	Versión actual	v3	Guardar
+bnpl.cuotas_max		int	Máximo de cuotas BNPL	v1	Guardar
+bnpl.interes_tasa		float	Tasa de interés mensual para BNPL	v1	Guardar
+comision.porcentaje		float	Comisión de la plataforma (%)	v1	Guardar
+envio.gratis_minimo		float	Envío gratis a partir de este monto	v3	Guardar
+envio.tarifa_base		float	Tarifa base de envío	v1	Guardar
+flete.consolidacion_min_pedidos		int	Mínimo de pedidos para consolidar flete	v1	Guardar
+licitacion.ventana_horas		int	Ventana de licitaciones en horas	v1	Guardar
+pago.limite_diario		float	Límite diario de pagos por mayorista	v1	Guardar
+reclamo.respuesta_horas		int	Plazo de respuesta del mayorista	v1	Guardar
+reclamo.ventana_horas		int	Ventana de reclamos en horas	v1	Guardar
+sistema.contacto		string	Correo de contacto del sistema	v1	Guardar
+sistema.mantenimiento		bool	Modo mantenimiento	v1	Guardar

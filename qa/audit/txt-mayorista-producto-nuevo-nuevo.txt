@@ -1,0 +1,57 @@
+URL:/spa/productos/nuevo
+BOTONES:Cerrar sesión | Cancelar | Guardar producto | Añadir tramo | Guardar producto | Cancelar
+HREFS:/spa/ | /spa | /spa/buscar | /spa/productos | /spa/pedidos | /spa/facturacion | /spa/finanzas | /spa/mensajes | /spa/perfil | /explorar
+----
+Nuevo producto
+
+Precio, peso y volumen son obligatorios: sin ellos no se puede calcular el envío. Las escalas por volumen son opcionales.
+
+Cancelar
+Guardar producto
+Datos del producto
+Nombre del producto
+Categoría
+Elige una categoría…
+Abarrotes
+Ferretería
+Inflamables (restringida)
+Limpieza
+Perecederos (restringida)
+Las categorías restringidas dejan el producto como borrador hasta revisión.
+Unidad de venta
+Contenido
+Descripción
+Peso por unidad (kg)
+Volumen por unidad (m³)
+Precio
+Precio base sin IVA
+IVA (%)
+Escribe el precio para ver cuánto pagará el comercio con IVA.
+Stock y venta
+Stock inicial
+Cantidad mínima
+Múltiplo de venta
+El stock inicial entra como movimiento de inventario, no se escribe a mano en la tabla.
+Escalas por volumen
+
+Opcional. Cada tramo empieza en una cantidad y baja el precio; el «hasta» se calcula solo: termina donde empieza el siguiente tramo. El último tramo no tiene tope.
+
+Sin escalas: todos pagan el precio base.
+
+Añadir tramo
+Foto del producto
+Elegir foto
+
+PNG, JPG o WebP. Se reduce a 1 200 px y se guarda con el producto.
+
+Características
+Perecedero
+Requiere frío
+Inflamable
+Restringido
+Publicar en el catálogo
+
+Sin KYC aprobado, o en una categoría restringida, el producto se guarda como borrador aunque marques «Publicar».
+
+Guardar producto
+Cancelar

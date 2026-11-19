@@ -1,0 +1,25 @@
+URL:/spa/admin/postmvp
+BOTONES:Cerrar sesión | Consolidación de fletes | Planes BNPL | Licitaciones | Nueva consolidación
+HREFS:/spa/ | /spa | /spa/admin | /spa/admin/usuarios | /spa/admin/kyc | /spa/admin/reclamos | /spa/admin/parametros | /spa/mensajes | /spa/perfil | /explorar
+----
+Post-MVP
+
+Consolidación de fletes, planes BNPL y licitaciones entre comercios y mayoristas.
+
+Panel
+0
+Consolidaciones activas
+0
+Planes BNPL activos
+0
+Licitaciones abiertas
+$0.00
+Ahorro en fletes
+Consolidación de fletes
+Planes BNPL
+Licitaciones
+Nueva consolidación
+Consolidaciones
+0 registro(s)
+Sin consolidaciones
+Agrupa pedidos de un mismo mayorista para ahorrar flete.

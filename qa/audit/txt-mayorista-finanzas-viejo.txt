@@ -1,0 +1,16 @@
+URL:/finanzas
+BOTONES:ID Mi cuenta | Cerrar sesión | Aplicar
+HREFS:/explorar | /buscar | /mayorista/productos | /mayorista/pedidos | /finanzas | /facturacion | /perfil | /mensajes
+----
+Finanzas
+Desde
+Hasta
+Aplicar
+Pedidos
+0
+Venta bruta
+$0.00
+Comisión
+$0.00
+Neto
+$0.00

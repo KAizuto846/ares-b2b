@@ -1,0 +1,123 @@
+URL:/spa/admin/parametros
+BOTONES:Cerrar sesión | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar | Guardar
+HREFS:/spa/ | /spa | /spa/admin | /spa/admin/usuarios | /spa/admin/kyc | /spa/admin/reclamos | /spa/admin/parametros | /spa/mensajes | /spa/perfil | /explorar | /spa/admin/parametros/app.nombre/historial | /spa/admin/parametros/app.version/historial | /spa/admin/parametros/bnpl.cuotas_max/historial | /spa/admin/parametros/bnpl.interes_tasa/historial | /spa/admin/parametros/comision.porcentaje/historial | /spa/admin/parametros/envio.gratis_minimo/historial | /spa/admin/parametros/envio.tarifa_base/historial | /spa/admin/parametros/flete.consolidacion_min_pedidos/historial | /spa/admin/parametros/licitacion.ventana_horas/historial | /spa/admin/parametros/pago.limite_diario/historial | /spa/admin/parametros/reclamo.respuesta_horas/historial | /spa/admin/parametros/reclamo.ventana_horas/historial | /spa/admin/parametros/sistema.contacto/historial | /spa/admin/parametros/sistema.mantenimiento/historial
+----
+Parámetros del sistema
+
+Los cambios se guardan con versionado automático y registro de quién y desde dónde los modificó.
+
+Panel
+Filtrar
+14 parámetro(s)
+CLAVE	VALOR	TIPO	DESCRIPCIÓN	VERSIÓN	CAMBIADO	
+app.nombre	
+	string	Nombre de la plataforma	v1	
+16 nov 2026
+sin registro
+	
+Guardar
+Historial
+
+app.version	
+	string	Versión actual	v3	
+16 nov 2026
+admin@didi2.mx
+	
+Guardar
+Historial
+
+bnpl.cuotas_max	
+	int	Máximo de cuotas BNPL	v1	
+16 nov 2026
+sin registro
+	
+Guardar
+Historial
+
+bnpl.interes_tasa	
+	float	Tasa de interés mensual para BNPL	v1	
+16 nov 2026
+sin registro
+	
+Guardar
+Historial
+
+comision.porcentaje	
+	float	Comisión de la plataforma (%)	v1	
+16 nov 2026
+sin registro
+	
+Guardar
+Historial
+
+envio.gratis_minimo	
+	float	Envío gratis a partir de este monto	v3	
+16 nov 2026
+admin@didi2.mx
+	
+Guardar
+Historial
+
+envio.tarifa_base	
+	float	Tarifa base de envío	v1	
+16 nov 2026
+sin registro
+	
+Guardar
+Historial
+
+flete.consolidacion_min_pedidos	
+	int	Mínimo de pedidos para consolidar flete	v1	
+16 nov 2026
+sin registro
+	
+Guardar
+Historial
+
+licitacion.ventana_horas	
+	int	Ventana de licitaciones en horas	v1	
+16 nov 2026
+sin registro
+	
+Guardar
+Historial
+
+pago.limite_diario	
+	float	Límite diario de pagos por mayorista	v1	
+16 nov 2026
+sin registro
+	
+Guardar
+Historial
+
+reclamo.respuesta_horas	
+	int	Plazo de respuesta del mayorista	v1	
+16 nov 2026
+sin registro
+	
+Guardar
+Historial
+
+reclamo.ventana_horas	
+	int	Ventana de reclamos en horas	v1	
+16 nov 2026
+sin registro
+	
+Guardar
+Historial
+
+sistema.contacto	
+	string	Correo de contacto del sistema	v1	
+16 nov 2026
+sin registro
+	
+Guardar
+Historial
+
+sistema.mantenimiento	
+	bool	Modo mantenimiento	v1	
+16 nov 2026
+sin registro
+	
+Guardar
+Historial

@@ -1,0 +1,18 @@
+URL:/admin/usuarios
+BOTONES:A Mi cuenta | Cerrar sesión | Buscar | Ver | Ver | Ver | Ver | Ver | Ver | Ver | Ver | Ver | Ver | Ver
+HREFS:/explorar | /buscar | /finanzas | /facturacion | /admin | /admin/kyc | /perfil | /mensajes | /admin/usuarios/13 | /admin/usuarios/12 | /admin/usuarios/11 | /admin/usuarios/10 | /admin/usuarios/9 | /admin/usuarios/8 | /admin/usuarios/7 | /admin/usuarios/6 | /admin/usuarios/4 | /admin/usuarios/5 | /admin/usuarios/2
+----
+Usuarios
+Buscar
+ID	CORREO	ESTADO	ROLES	CREADO	
+#13	nuevo-repartidor-1794916444769@didi2.mx	activo	repartidor	2026-11-17	Ver
+#12	nuevo-mayorista-1794916444769@didi2.mx	activo	mayorista	2026-11-17	Ver
+#11	nuevo-comercio-1794916444769@didi2.mx	activo	comercio	2026-11-17	Ver
+#10	prueba1794916339293@didi2.mx	activo	mayorista	2026-11-17	Ver
+#9	admin@didi2.mx	activo	admin_total	2026-11-16	Ver
+#8	repartidor@didi2.mx	activo	repartidor	2026-11-16	Ver
+#7	demo-distribuidora-sur@didi2.mx	activo	mayorista	2026-11-16	Ver
+#6	demo-ferretera-norte@didi2.mx	activo	mayorista	2026-11-16	Ver
+#4	mayorista@didi2.mx	activo	mayorista	2026-11-16	Ver
+#5	demo-insumos-del-valle@didi2.mx	activo	mayorista	2026-11-16	Ver
+#2	comercio@didi2.mx	activo	comercio	2026-11-16	Ver

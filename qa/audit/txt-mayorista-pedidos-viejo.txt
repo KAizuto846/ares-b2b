@@ -1,0 +1,29 @@
+URL:/mayorista/pedidos
+BOTONES:ID Mi cuenta | Cerrar sesión | Todos | Por aceptar (1) | Aceptados | Preparando (1) | Listos | Aceptar | Listo para recoger
+HREFS:/explorar | /buscar | /mayorista/productos | /mayorista/pedidos | /finanzas | /facturacion | /perfil | /mensajes | /mayorista/pedidos?estado=pendiente_aceptacion | /mayorista/pedidos?estado=aceptado | /mayorista/pedidos?estado=preparando | /mayorista/pedidos?estado=listo_para_recoger | /pedidos/71942522-e349-11f1-9263-a4bb6d8495fd | /pedidos/71948c57-e349-11f1-9263-a4bb6d8495fd | /pedidos/71954494-e349-11f1-9263-a4bb6d8495fd
+----
+Pedidos recibidos
+Todos
+Por aceptar
+(1)
+Aceptados
+Preparando
+(1)
+Listos
+COMERCIO	TOTAL	ESTADO	
+
+Casa de Toño
+2 productos · 2026-11-18 05:13
+	$1,277.86	Buscando repartidor	Ver
+
+Casa de Toño
+1 productos · 2026-11-18 03:13
+	$619.44	Por aceptar	Aceptar Ver
+
+Casa de Toño
+3 productos · 2026-11-18 01:13
+	$1,198.28	Preparando	Listo para recoger
+
+Casa de Toño
+2 productos · 2026-11-17 21:13
+	$705.28	Repartidor asignado	Ver

@@ -452,7 +452,10 @@ input::placeholder { color: var(--faint); }
 .login__cab p { color: var(--muted); margin-top: 8px; font-size: 14.5px; line-height: 1.45; }
 
 .login__campos { display: grid; gap: 16px; margin-top: 28px; }
-.login__acciones { display: grid; gap: 12px; margin-top: 24px; }
+.login__recordar { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 13.5px; color: var(--ink-2); cursor: pointer; }
+.login__recordar input { width: 20px; height: 20px; accent-color: var(--verde); }
+
+.login__acciones { display: grid; gap: 12px; margin-top: 18px; }
 .login__btn { min-height: 48px; font-size: 15px; }
 
 .login__enlaces { display: flex; justify-content: space-between; align-items: center; gap: 8px 16px; flex-wrap: wrap; margin-top: 14px; }

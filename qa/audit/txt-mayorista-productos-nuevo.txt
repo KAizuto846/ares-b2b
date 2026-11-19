@@ -1,0 +1,187 @@
+URL:/spa/productos
+BOTONES:Cerrar sesión | Importar CSV | Nuevo producto | Todos | Publicados4 | Agotados0 | Borradores8 | Editar | Escalas | Editar | Escalas | Editar | Escalas | Editar | Escalas | Editar | Escalas | Editar | Escalas | Editar | Escalas | Editar | Escalas | Editar | Escalas | Editar | Escalas | Editar | Escalas | Editar | Escalas
+HREFS:/spa/ | /spa | /spa/buscar | /spa/productos | /spa/pedidos | /spa/facturacion | /spa/finanzas | /spa/mensajes | /spa/perfil | /explorar
+----
+Mi catálogo
+
+Precios, presentación y existencias de tus productos. Captura uno por uno o carga todo tu inventario desde un CSV.
+
+Importar CSV
+Nuevo producto
+4
+Publicados
+Visibles para los comercios
+0
+Agotados
+Sin piezas disponibles
+8
+Borradores
+Aún no publicados
+$31,089
+Valor de inventario
+790 piezas sin IVA
+Todos
+Publicados
+4
+Agotados
+0
+Borradores
+8
+FOTO	PRODUCTO	PRECIO	PRESENTACIÓN	STOCK	ESTADO	ACCIONES
+
+	
+Producto CSV dos
+Abarrotes
+	$20.00
+sin IVA
+	
+caja
+de 6 piezas
+	10
+múltiplo 2
+	Publicado	
+Editar
+Escalas
+
+
+	
+Producto CSV uno
+Abarrotes
+	$10.50
+sin IVA
+	
+caja
+de 12 piezas
+	25	Publicado	
+Editar
+Escalas
+
+
+	
+QA Producto Prueba
+Abarrotes
+	$99.99
+sin IVA
+	
+pieza
+de 1
+	5	Borrador	
+Editar
+Escalas
+
+
+	
+Escoba de cerda suave
+Abarrotes
+	$37.00
+sin IVA
+	
+pieza
+de 1
+	40	Borrador	
+Editar
+Escalas
+
+
+	
+Gel antibacterial 1 L
+Abarrotes
+	$41.00
+sin IVA
+	
+pieza
+de 1
+	70	Borrador	
+Editar
+Escalas
+
+
+	
+Papel higiénico industrial (12)
+Abarrotes
+	$89.00
+sin IVA
+	
+pieza
+de 1
+	60	Borrador	
+Editar
+Escalas
+
+
+	
+Bolsa de basura 60x90 (50)
+Abarrotes
+	$46.00
+sin IVA
+	
+pieza
+de 1
+	80	Borrador	
+Editar
+Escalas
+
+
+	
+Fibra para trastes 3 pzas
+Abarrotes
+	$18.00
+sin IVA
+	
+pieza
+de 1
+	150	Borrador	
+Editar
+Escalas
+
+
+	
+Jabón en polvo 1 kg
+Abarrotes
+	$34.50
+sin IVA
+	
+pieza
+de 1
+	90	Borrador	
+Editar
+Escalas
+
+
+	
+Detergente industrial 1 kg
+Abarrotes
+	$52.00
+sin IVA
+	
+pieza
+de 1
+	120	Borrador	
+Editar
+Escalas
+
+
+	
+Cloro 1 L
+Limpieza
+	$19.90
+sin IVA
+	
+caja
+de 12 piezas
+	80	Publicado	
+Editar
+Escalas
+
+
+	
+Detergente 1 kg
+Limpieza
+	$52.00
+sin IVA
+	
+caja
+de 12 piezas
+	60	Publicado	
+Editar
+Escalas

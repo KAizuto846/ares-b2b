@@ -1,0 +1,78 @@
+URL:/mayorista/productos
+BOTONES:ID Mi cuenta | Cerrar sesión | Nuevo producto | Editar | Editar | Editar | Editar | Editar | Editar | Editar | Editar | Editar | Editar | Editar | Editar | Qué va en cada columna | Descargar plantilla | Importar inventario
+HREFS:/explorar | /buscar | /mayorista/productos | /mayorista/pedidos | /finanzas | /facturacion | /perfil | /mensajes | /mayorista/productos/nuevo | /mayorista/productos/ce9cd884-1619-46c8-b4b3-39e2e6999670/editar | /mayorista/productos/3eaa0325-6a55-473d-a915-00c2fb8bedb5/editar | /mayorista/productos/4a34fd56-5d90-4d96-ae49-a47769900a00/editar | /mayorista/productos/6ad40104-e349-11f1-9263-a4bb6d8495fd/editar | /mayorista/productos/6ad3a711-e349-11f1-9263-a4bb6d8495fd/editar | /mayorista/productos/6ad3d16c-e349-11f1-9263-a4bb6d8495fd/editar | /mayorista/productos/6ad36e5b-e349-11f1-9263-a4bb6d8495fd/editar | /mayorista/productos/6ad2fdf4-e349-11f1-9263-a4bb6d8495fd/editar | /mayorista/productos/6ad127c1-e349-11f1-9263-a4bb6d8495fd/editar | /mayorista/productos/6ad335d5-e349-11f1-9263-a4bb6d8495fd/editar | /mayorista/productos/9ac2b815-e22e-11f1-8823-a4bb6d8495fd/editar | /mayorista/productos/9ac43564-e22e-11f1-8823-a4bb6d8495fd/editar | /mayorista/productos/plantilla
+----
+Mis productos
+
+12 productos en tu catálogo.
+
+Nuevo producto
+PRODUCTO	PRECIO	UNIDAD	STOCK	ESTADO	
+
+Producto CSV dos
+Abarrotes
+	$20.00	caja de 6 piezas	10	activo	Editar
+
+Producto CSV uno
+Abarrotes
+	$10.50	caja de 12 piezas	25	activo	Editar
+
+QA Producto Prueba
+Abarrotes
+	$99.99	pieza de 1	5	inactivo	Editar
+
+Escoba de cerda suave
+Abarrotes
+	$37.00	pieza de 1	40	inactivo	Editar
+
+Papel higiénico industrial (12)
+Abarrotes
+	$89.00	pieza de 1	60	inactivo	Editar
+
+Gel antibacterial 1 L
+Abarrotes
+	$41.00	pieza de 1	70	inactivo	Editar
+
+Bolsa de basura 60x90 (50)
+Abarrotes
+	$46.00	pieza de 1	80	inactivo	Editar
+
+Jabón en polvo 1 kg
+Abarrotes
+	$34.50	pieza de 1	90	inactivo	Editar
+
+Detergente industrial 1 kg
+Abarrotes
+	$52.00	pieza de 1	120	inactivo	Editar
+
+Fibra para trastes 3 pzas
+Abarrotes
+	$18.00	pieza de 1	150	inactivo	Editar
+
+Detergente 1 kg
+Limpieza
+	$52.00	caja de 12 piezas	60	activo	Editar
+
+Cloro 1 L
+Limpieza
+	$19.90	caja de 12 piezas	80	activo	Editar
+Importar inventario
+
+Da de alta muchos productos de una vez con un archivo CSV. Sirve para montar el catálogo la primera vez o para cargar surtido nuevo sin capturar producto por producto.
+
+1
+Descarga la plantilla
+Trae los encabezados exactos y dos filas de ejemplo para que veas el formato.
+2
+Llena una fila por producto
+No cambies el nombre de las columnas y borra las filas de ejemplo antes de subir.
+3
+Sube el archivo
+Te decimos cuántos productos entraron y, si alguno falla, en qué línea está el problema.
+Qué va en cada columna
+
+Archivo CSV separado por comas · máximo 5 MB y 5 000 filas · un SKU repetido se reporta como error en su línea. Todos los productos entran en tu primera categoría; puedes cambiarla después al editarlos.
+
+Descargar plantilla
+Archivo CSV
+Importar inventario

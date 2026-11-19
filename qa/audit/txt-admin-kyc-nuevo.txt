@@ -1,0 +1,28 @@
+URL:/spa/admin/kyc
+BOTONES:Cerrar sesión
+HREFS:/spa/ | /spa | /spa/admin | /spa/admin/usuarios | /spa/admin/kyc | /spa/admin/reclamos | /spa/admin/parametros | /spa/mensajes | /spa/perfil | /explorar | /spa/admin/usuarios/13 | /spa/admin/usuarios/12
+----
+Cola de verificación
+
+Documentos esperando revisión, del más antiguo al más reciente.
+
+Estado
+Pendientes
+Aprobados
+Rechazados
+Vencidos
+Todos
+Panel
+Nada por revisar
+Cuando alguien suba un documento aparecerá aquí.
+Perfiles sin documentos aprobados
+2 cuenta(s)
+CUENTA	NEGOCIO	TIPO	ESTADO	
+
+nuevo-repartidor-1794916444769@didi2.mx
+nuevo-repartidor-1794916444769@didi2.mx
+	Repartidor #3	repartidor	pendiente	Ver cuenta
+
+Negocio mayorista
+nuevo-mayorista-1794916444769@didi2.mx
+	Negocio mayorista	mayorista	pendiente	Ver cuenta

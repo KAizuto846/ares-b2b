@@ -10,7 +10,7 @@ type Contexto = {
   usuario: Usuario | null
   rol: string | null
   cargando: boolean
-  entrar: (email: string, password: string) => Promise<void>
+  entrar: (email: string, password: string, recordar?: boolean) => Promise<void>
   salir: () => Promise<void>
   carrito: Carrito | null
   refrescarCarrito: () => Promise<void>
@@ -92,8 +92,8 @@ export function Proveedor({ children }: { children: ReactNode }) {
   // Cerrar el cajón al cambiar de ruta.
   useEffect(() => { setCajonAbierto(false) }, [ubicacion.pathname])
 
-  const entrar = useCallback(async (email: string, password: string) => {
-    const r = await api.login(email, password)
+  const entrar = useCallback(async (email: string, password: string, recordar = false) => {
+    const r = await api.login(email, password, recordar)
     setUsuario(r.usuario)
     setRol(r.rol)
     document.documentElement.dataset.tema = r.tema === 'oscuro' ? 'oscuro' : 'claro'

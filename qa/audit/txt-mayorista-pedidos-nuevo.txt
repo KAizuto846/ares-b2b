@@ -1,0 +1,32 @@
+URL:/spa/pedidos
+BOTONES:Cerrar sesión | Todos 4 | Por aceptar 1 | Preparando 1 | Buscando repartidor 1 | Repartidor asignado 1
+HREFS:/spa/ | /spa | /spa/buscar | /spa/productos | /spa/pedidos | /spa/facturacion | /spa/finanzas | /spa/mensajes | /spa/perfil | /explorar
+----
+Pedidos recibidos
+
+Acepta, prepara y despacha lo que te acaban de pedir.
+
+4 pedidos
+Todos
+4
+Por aceptar
+1
+Preparando
+1
+Buscando repartidor
+1
+Repartidor asignado
+1
+PEDIDO	COMERCIO	ESTADO	FECHA	TOTAL	
+71942522
+2 líneas
+	Casa de Toño	Buscando repartidor	ayer	$1,277.86	
+71948c57
+1 línea
+	Casa de Toño	Por aceptar	ayer	$619.44	
+7194e1c4
+3 líneas
+	Casa de Toño	Preparando	ayer	$1,198.28	
+71954494
+2 líneas
+	Casa de Toño	Repartidor asignado	ayer	$705.28	

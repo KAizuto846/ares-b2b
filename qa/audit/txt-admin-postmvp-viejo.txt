@@ -1,0 +1,16 @@
+URL:/postmvp
+BOTONES:A Mi cuenta | Cerrar sesión | Consolidar fletes | Planes BNPL | Licitaciones
+HREFS:/explorar | /buscar | /finanzas | /facturacion | /admin | /admin/kyc | /perfil | /mensajes | /postmvp/consolidaciones | /postmvp/bnpl | /postmvp/licitaciones
+----
+Post-MVP
+Consolidaciones activas
+0
+Planes BNPL activos
+0
+Licitaciones abiertas
+0
+Ahorro en fletes
+$0.00
+Consolidar fletes
+Planes BNPL
+Licitaciones

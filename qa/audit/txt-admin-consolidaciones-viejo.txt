@@ -1,0 +1,13 @@
+URL:/postmvp/consolidaciones
+BOTONES:A Mi cuenta | Cerrar sesión | Filtrar
+HREFS:/explorar | /buscar | /finanzas | /facturacion | /admin | /admin/kyc | /perfil | /mensajes
+----
+Consolidación de fletes
+Estado: 
+todos
+activa
+completada
+cancelada
+Filtrar
+ID	MAYORISTA	FLETE ORIGINAL	FLETE CONSOLIDADO	AHORRO	ESTADO	FECHA
+Sin consolidaciones.

@@ -1,0 +1,10 @@
+URL:/admin/kyc
+BOTONES:A Mi cuenta | Cerrar sesión
+HREFS:/explorar | /buscar | /finanzas | /facturacion | /admin | /admin/kyc | /perfil | /mensajes
+----
+Cola de verificación
+
+Documentos esperando revisión, del más antiguo al más reciente.
+
+USUARIO	DOCUMENTO	RECIBIDO	
+No hay documentos pendientes.

@@ -1,0 +1,242 @@
+{
+  "nuevo": {
+    "cajon": {
+      "headings": [
+        "Hola, Casa de Toño",
+        "Tu día a día",
+        "Tu carrito",
+        "MÁS HERRAMIENTAS",
+        "Mi carrito 0"
+      ],
+      "buttons": [
+        "Cerrar sesión",
+        "Abrir carrito",
+        "Buscar productos",
+        "Buscar productos",
+        "Cerrar carrito",
+        "Buscar productos"
+      ],
+      "fields": [],
+      "checks": [],
+      "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Inicio Hola, Casa de Toño ¿Con qué empezamos hoy? Esto es lo que tienes en marcha. Buscar productos 6 Pedidos en curso compras sin cerrar $0 Vendido hoy en mostrador Tu día a día 4 accesos Buscar Encuentra productos y mayoristas cerca de ti. Finanzas Tus gastos, la gráfica del año y tus facturas. Portafolio Los productos que guardaste, listos para repetir. 4 Agendar Arma una lista y elige el día en que la quieres. Tu carrito Está vacío. Busca productos y arma tu pedido del día. Buscar productos MÁS HERRAMIENTAS Caja Cobrar en mostrador. Inventario Existencias y altas de producto. Ventas El historial del día. Pedidos El seguimiento de tus compras. Mensajes Habla con mayoristas y soporte. Mi carrito 0 Tu carrito está vacío Busca productos y agrégalos desde aquí. Buscar productos"
+    },
+    "caja_ticket": {
+      "headings": [
+        "Caja"
+      ],
+      "buttons": [
+        "Cerrar sesión",
+        "Abrir carrito",
+        "Ventas",
+        "Inventario",
+        "Corte",
+        "Cobrar",
+        "Limpiar ticket"
+      ],
+      "fields": [
+        "search|Buscar producto, clave o código…|Buscar producto, clave o código de barras"
+      ],
+      "checks": [],
+      "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Caja Caja Turno #1 abierto · vendido hoy $846.20 · en caja $1,346.20 Ventas Inventario Corte Busca un producto Escribe el nombre o la clave, o pasa el lector de código de barras. Ticket 0 artículos Toca un producto para agregarlo. Subtotal $0.00 IVA $0.00 Total $0.00 Cobrar Limpiar ticket"
+    },
+    "caja_cobrar": {
+      "headings": [
+        "Caja"
+      ],
+      "buttons": [
+        "Cerrar sesión",
+        "Abrir carrito",
+        "Ventas",
+        "Inventario",
+        "Corte",
+        "Cobrar",
+        "Limpiar ticket"
+      ],
+      "fields": [
+        "search|Buscar producto, clave o código…|Buscar producto, clave o código de barras"
+      ],
+      "checks": [],
+      "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Caja Caja Turno #1 abierto · vendido hoy $846.20 · en caja $1,346.20 Ventas Inventario Corte Busca un producto Escribe el nombre o la clave, o pasa el lector de código de barras. Ticket 0 artículos Toca un producto para agregarlo. Subtotal $0.00 IVA $0.00 Total $0.00 Cobrar Limpiar ticket"
+    },
+    "hilo": {
+      "headings": [
+        "Centro de mensajes"
+      ],
+      "buttons": [
+        "Cerrar sesión",
+        "Abrir carrito",
+        "Conversaciones 1",
+        "Notificaciones",
+        "Nueva conversación",
+        "Configuración",
+        "Eliminar conversaciones",
+        "Soporte Didi2 Que puedes hacer? 18/11 08:05",
+        "Enviar"
+      ],
+      "fields": [
+        "textarea|Escribe un mensaje…|Escribe un mensaje"
+      ],
+      "checks": [
+        "Habilitar notificacionesAvisos de pedidos, pagos y cuenta. Si lo apagas, no llega ninguno salvo los de seguridad.=true"
+      ],
+      "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Mensajes Centro de mensajes Conversaciones y avisos del sitio, en un solo lugar. Conversaciones 1 Notificaciones Conversaciones Soporte Didi2 Que puedes hacer? 18/11 08:05 Soporte Didi2 soporte Hola, necesito ayuda con una factura de prueba. 16:16 Soporte Hola, soy soporte. Ya reviso tu factura. 16:16 Prueba QA 0618 06:26 Que puedes hacer? 08:05 Escribe un mensaje 0/2000 Enviar"
+    },
+    "editar": {
+      "headings": [
+        "Editar cuenta",
+        "Foto de perfil",
+        "Datos de la cuenta",
+        "Dirección de entrega"
+      ],
+      "buttons": [
+        "Cerrar sesión",
+        "Abrir carrito",
+        "Volver a mi perfil",
+        "Quitar foto",
+        "Ubicar en el mapa",
+        "Cancelar",
+        "Guardar cambios",
+        "Seguridad"
+      ],
+      "fields": [
+        "text||Nombre del negocio",
+        "text||Nombre comercial",
+        "email||Correo",
+        "tel|55 1234 5678|Teléfono",
+        "text|Av. Insurgentes Sur 1234|Calle y número",
+        "text||Colonia",
+        "text||Ciudad",
+        "text||Estado",
+        "text||C.P.",
+        "text|Portón negro, entre calles…|Referencias",
+        "text||Latitud",
+        "text||Longitud"
+      ],
+      "checks": [],
+      "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Mi perfil Editar cuenta Nombre, contacto, foto y dirección de entrega. Volver a mi perfil Foto de perfil Elegir imagen Quitar foto JPG, PNG o WebP · máximo 2 MB. Se recorta en cuadrado a 256 px. Datos de la cuenta Nombre del negocio Nombre comercial Correo Teléfono Dirección de entrega Calle y número Colonia Ciudad Estado C.P. Referencias Latitud Longitud Ubicar en el mapa Las coordenadas ubican el punto exacto de entrega. Si no las cambias se usa el centro de la ciudad. Cancelar Guardar cambios La contraseña y la baja de la cuenta se manejan en Seguridad."
+    },
+    "permisos": {
+      "headings": [
+        "Permisos",
+        "Tu cuenta",
+        "Permisos del dispositivo"
+      ],
+      "buttons": [
+        "Cerrar sesión",
+        "Abrir carrito",
+        "Ajustes"
+      ],
+      "fields": [],
+      "checks": [],
+      "text": "A Ares B2B Inicio Buscar Carrito Pedidos Finanzas Portafolio Agendar Mensajes Perfil PUNTO DE VENTA Caja Inventario Ventas Corte Clientes Casa de Toño comercio Panel clásico Cerrar sesión Mi perfil Permisos Qué puede hacer tu cuenta y qué te pedirá el navegador. Ajustes Tu cuenta Comercio Rol «comercio» Sin verificar Comprar a mayoristas Programar pedidos y favoritos Punto de venta y clientes Calificar a proveedores y repartidores Permisos del dispositivo Ares te los pide al navegador solo cuando de verdad los necesita; puedes revocarlos en cualquier momento desde la configuración del navegador y te los volverá a pedir la próxima vez. Cámara Escanear códigos de barras y tomar fotos de productos. Se pide al usarse Ubicación Dirección de entrega y seguimiento del repartidor. Se pide al usarse Micrófono Notas de voz en el chat y llamadas con el proveedor. Se pide al usarse Notificaciones Pedidos, mensajes y avisos de la cuenta. Se pide al usarse Fotos y videos Subir comprobantes, evidencias y fotos de perfil. Se pide al usarse"
+    }
+  },
+  "viejo": {
+    "cajon": {
+      "headings": [
+        "Hola, Casa de Toño!",
+        "TU DÍA A DÍA",
+        "MÁS HERRAMIENTAS",
+        "Mi carrito 0"
+      ],
+      "buttons": [
+        "Mi cuenta"
+      ],
+      "fields": [],
+      "checks": [],
+      "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Hola, Casa de Toño! ¿Con qué empezamos hoy? Buscar productos 6 Pedidos en curso compras sin cerrar $0 Vendido hoy en mostrador TU DÍA A DÍA Buscar Encuentra productos y mayoristas cerca de ti. Finanzas Tus gastos, la gráfica del año y tus facturas. Portafolio Los productos que guardaste, listos para repetir. Agendar Arma una lista y elige el día en que la quieres. MÁS HERRAMIENTAS Caja Cobrar en mostrador. › Inventario Existencias y altas de producto. › Ventas El historial del día. › Pedidos El seguimiento de tus compras. › Mensajes Habla con mayoristas y soporte. › Mi carrito 0 Tu carrito está vacío. Buscar productos"
+    },
+    "caja_ticket": {
+      "headings": [
+        "Caja"
+      ],
+      "buttons": [
+        "Mi cuenta",
+        "Cobrar",
+        "Limpiar ticket",
+        "Cerrar caja"
+      ],
+      "fields": [
+        "search|Buscar producto, clave o código…|",
+        "select-one||Método Efectivo Tarjeta Transferencia Crédito",
+        "number|0.00|Recibido",
+        "select-one||Cliente Público general"
+      ],
+      "checks": [],
+      "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Caja Turno abierto · vendido hoy $846.20 Busca un producto Escribe el nombre o la clave, o pasa el lector de código de barras. Ticket 0 artículos Toca un producto para agregarlo. Subtotal $0.00 IVA $0.00 Total $0.00 Método Efectivo Tarjeta Transferencia Crédito Recibido Cliente Público general Cobrar Limpiar ticket Ventas Inventario Cerrar caja"
+    },
+    "hilo": {
+      "headings": [
+        "Centro de mensajes"
+      ],
+      "buttons": [
+        "Mi cuenta",
+        "Nueva conversación",
+        "Configuración",
+        "Eliminar conversaciones",
+        "Enviar"
+      ],
+      "fields": [
+        "checkbox||Seleccionar Soporte Didi2",
+        "textarea|Escribe un mensaje…|"
+      ],
+      "checks": [
+        "=false",
+        "Habilitar notificacionesAvisos de pedidos, pagos y cuenta. Si lo apagas, no llega ninguno salvo los de seguridad.=true"
+      ],
+      "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta Centro de mensajes Conversaciones y avisos del sitio, en un solo lugar. Conversaciones 1 Notificaciones Conversaciones SD Soporte Didi2 Que puedes hacer? 18/11 08:05 Soporte Didi2 soporte Hola, necesito ayuda con una factura de prueba. 16:16 Hola, soy soporte. Ya reviso tu factura. 16:16 Prueba QA 0618 06:26 Que puedes hacer? 08:05 Enviar"
+    },
+    "editar": {
+      "headings": [
+        "Editar cuenta",
+        "Foto de perfil",
+        "Datos de la cuenta",
+        "Dirección de entrega"
+      ],
+      "buttons": [
+        "Mi cuenta",
+        "Subir",
+        "Quitar foto",
+        "Ubicar dirección en el mapa",
+        "Guardar cambios"
+      ],
+      "fields": [
+        "file||Elegir imagen",
+        "text||Nombre",
+        "email||Correo",
+        "tel||Teléfono",
+        "text|Av. Insurgentes Sur 1234|Calle y número",
+        "text||Colonia",
+        "text||Ciudad",
+        "text||Estado",
+        "text||C.P.",
+        "text|Portón negro|Referencias"
+      ],
+      "checks": [],
+      "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta ‹ Mi cuenta Editar cuenta Foto de perfil Elegir imagen Subir Quitar foto JPG, PNG o WebP · máximo 2 MB. Se recorta en cuadrado. Datos de la cuenta Nombre Correo Teléfono La contraseña y la baja de la cuenta se manejan en Ajustes › Seguridad . Dirección de entrega Calle y número Colonia Ciudad Estado C.P. Referencias Ubicar dirección en el mapa Toca el mapa o arrastra el marcador para ajustar el punto exacto de entrega. Cancelar Guardar cambios"
+    },
+    "permisos": {
+      "headings": [
+        "Permisos del dispositivo"
+      ],
+      "buttons": [
+        "Mi cuenta"
+      ],
+      "fields": [
+        "checkbox||Cámara Escanear códigos de barras y tomar fotos de productos.",
+        "checkbox||Compartir ubicación Dirección de entrega y seguimiento del repartidor en vivo.",
+        "checkbox||Micrófono Notas de voz en el chat y llamadas con el proveedor.",
+        "checkbox||Notificaciones Pedidos, mensajes y avisos de la cuenta.",
+        "checkbox||Fotos y videos Subir comprobantes, evidencias de entrega y fotos de perfil."
+      ],
+      "checks": [
+        "Cámara Escanear códigos de barras y tomar fotos de productos.=true",
+        "Compartir ubicación Dirección de entrega y seguimiento del repartidor en vivo.=true",
+        "Micrófono Notas de voz en el chat y llamadas con el proveedor.=true",
+        "Notificaciones Pedidos, mensajes y avisos de la cuenta.=true",
+        "Fotos y videos Subir comprobantes, evidencias de entrega y fotos de perfil.=true"
+      ],
+      "text": "Ares · B2B Mi carrito Explorar Buscar Finanzas Portafolio Agendar Mi cuenta ‹ Ajustes Permisos del dispositivo Mi perfil Estos permisos se guardan en este equipo, no en tu cuenta. Si los desactivas, Ares te los vuelve a pedir la próxima vez que los necesite. Cámara Escanear códigos de barras y tomar fotos de productos. Compartir ubicación Dirección de entrega y seguimiento del repartidor en vivo. Micrófono Notas de voz en el chat y llamadas con el proveedor. Notificaciones Pedidos, mensajes y avisos de la cuenta. Fotos y videos Subir comprobantes, evidencias de entrega y fotos de perfil."
+    }
+  }
+}

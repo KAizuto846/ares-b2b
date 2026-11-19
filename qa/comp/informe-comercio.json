@@ -1,0 +1,1566 @@
+[
+  {
+    "slug": "login",
+    "viejo": {
+      "h": [
+        "Entra en Ares"
+      ],
+      "btn": 1,
+      "etiquetas": [
+        "Correo",
+        "Correo",
+        "Contraseña",
+        "Contraseña",
+        "Mantener sesión"
+      ],
+      "tabs": [
+        "Entrar",
+        "Crear cuenta"
+      ],
+      "tablas": 0,
+      "inputs": 4,
+      "vacio": false,
+      "largo": 238
+    },
+    "nuevo": {
+      "h": [
+        "Hola, Casa de Toño",
+        "Tu día a día",
+        "Tu carrito",
+        "MÁS HERRAMIENTAS"
+      ],
+      "btn": 3,
+      "etiquetas": [],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 0,
+      "inputs": 0,
+      "vacio": true,
+      "largo": 883
+    },
+    "faltantes": [
+      "Entrar",
+      "Entra en Ares",
+      "Correo",
+      "Contraseña",
+      "Mantener sesión",
+      "Crear cuenta"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "explorar",
+    "viejo": {
+      "h": [
+        "Hola, Casa de Toño!",
+        "TU DÍA A DÍA",
+        "MÁS HERRAMIENTAS"
+      ],
+      "btn": 1,
+      "etiquetas": [],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 1,
+      "vacio": false,
+      "largo": 648
+    },
+    "nuevo": {
+      "h": [
+        "Buscar productos",
+        "Azúcar estándar 50 kg",
+        "Café molido 1 kg",
+        "Martillo de uña 16 oz",
+        "Tornillo 1/4 x 2\"",
+        "Cloro 1 L",
+        "Detergente 1 kg",
+        "Producto CSV dos",
+        "Producto CSV uno",
+        "Café en grano 5 kg",
+        "Jabón en polvo 10 kg"
+      ],
+      "btn": 16,
+      "etiquetas": [
+        "Categoría",
+        "Radio 2 km 5 km 10 km 20 km 30 km",
+        "Radio",
+        "Orden"
+      ],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 0,
+      "inputs": 4,
+      "vacio": false,
+      "largo": 1961
+    },
+    "faltantes": [
+      "Mi cuenta",
+      "Hola, Casa de Toño!",
+      "MÁS HERRAMIENTAS"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "buscar",
+    "viejo": {
+      "h": [
+        "Buscar productos",
+        "Azúcar estándar 50 kg",
+        "Café molido 1 kg",
+        "Martillo de uña 16 oz",
+        "Tornillo 1/4 x 2\"",
+        "Cloro 1 L",
+        "Detergente 1 kg",
+        "Producto CSV dos",
+        "Producto CSV uno",
+        "Café en grano 5 kg",
+        "Jabón en polvo 10 kg"
+      ],
+      "btn": 37,
+      "etiquetas": [],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 47,
+      "vacio": false,
+      "largo": 1525
+    },
+    "nuevo": {
+      "h": [
+        "Buscar productos",
+        "Azúcar estándar 50 kg",
+        "Café molido 1 kg",
+        "Martillo de uña 16 oz",
+        "Tornillo 1/4 x 2\"",
+        "Cloro 1 L",
+        "Detergente 1 kg",
+        "Producto CSV dos",
+        "Producto CSV uno",
+        "Café en grano 5 kg",
+        "Jabón en polvo 10 kg"
+      ],
+      "btn": 16,
+      "etiquetas": [
+        "Categoría",
+        "Radio 2 km 5 km 10 km 20 km 30 km",
+        "Radio",
+        "Orden"
+      ],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 0,
+      "inputs": 4,
+      "vacio": false,
+      "largo": 1961
+    },
+    "faltantes": [
+      "Mi cuenta",
+      "Todas las categorías",
+      "Más cercano"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "carrito",
+    "viejo": {
+      "h": [
+        "Mi carrito"
+      ],
+      "btn": 1,
+      "etiquetas": [],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 1,
+      "vacio": true,
+      "largo": 126
+    },
+    "nuevo": {
+      "h": [
+        "Mi carrito"
+      ],
+      "btn": 2,
+      "etiquetas": [],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 0,
+      "inputs": 0,
+      "vacio": true,
+      "largo": 403
+    },
+    "faltantes": [
+      "Mi cuenta"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "checkout",
+    "viejo": {
+      "h": [
+        "Confirmar pedido",
+        "Dirección de entrega",
+        "Resumen",
+        "Qué pasa después"
+      ],
+      "btn": 2,
+      "etiquetas": [],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 4,
+      "vacio": false,
+      "largo": 428
+    },
+    "nuevo": {
+      "h": [
+        "Confirmar pedido"
+      ],
+      "btn": 2,
+      "etiquetas": [],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 0,
+      "inputs": 0,
+      "vacio": false,
+      "largo": 361
+    },
+    "faltantes": [
+      "Mi cuenta",
+      "Dirección de entrega",
+      "Resumen",
+      "Qué pasa después"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "pedidos",
+    "viejo": {
+      "h": [
+        "Mis pedidos"
+      ],
+      "btn": 1,
+      "etiquetas": [
+        "MAYORISTA",
+        "TOTAL",
+        "ESTADO"
+      ],
+      "tabs": [],
+      "tablas": 1,
+      "inputs": 1,
+      "vacio": false,
+      "largo": 856
+    },
+    "nuevo": {
+      "h": [
+        "Mis pedidos"
+      ],
+      "btn": 8,
+      "etiquetas": [
+        "PEDIDO",
+        "PROVEEDOR",
+        "ESTADO",
+        "FECHA",
+        "TOTAL"
+      ],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 1,
+      "inputs": 0,
+      "vacio": false,
+      "largo": 1034
+    },
+    "faltantes": [
+      "Mi cuenta",
+      "MAYORISTA"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "favoritos",
+    "viejo": "/favoritos",
+    "nuevo": null,
+    "faltantes": [
+      "Mi cuenta",
+      "Volver a pedir",
+      "Quitar del portafolio",
+      "Volver a pedir",
+      "Quitar del portafolio",
+      "Volver a pedir",
+      "Quitar del portafolio",
+      "Volver a pedir",
+      "Quitar del portafolio",
+      "Portafolio",
+      "Azúcar estándar 50 kg",
+      "Café molido 1 kg",
+      "Martillo de uña 16 oz",
+      "Detergente 1 kg"
+    ],
+    "notas": [
+      "RUTA AUSENTE en la SPA"
+    ]
+  },
+  {
+    "slug": "programados",
+    "viejo": "/programados",
+    "nuevo": null,
+    "faltantes": [
+      "Mi cuenta",
+      "Crear nueva lista",
+      "Pausar",
+      "Cancelar",
+      "Pausar",
+      "Cancelar",
+      "Agendar",
+      "Mis listas",
+      "Abarrotes Maru",
+      "Abarrotes Maru"
+    ],
+    "notas": [
+      "RUTA AUSENTE en la SPA"
+    ]
+  },
+  {
+    "slug": "pos",
+    "viejo": {
+      "h": [
+        "Caja"
+      ],
+      "btn": 4,
+      "etiquetas": [
+        "Método Efectivo Tarjeta Transferencia Crédito",
+        "Método",
+        "Recibido",
+        "Recibido",
+        "Cliente Público general",
+        "Cliente"
+      ],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 3,
+      "vacio": false,
+      "largo": 422
+    },
+    "nuevo": {
+      "h": [
+        "Caja"
+      ],
+      "btn": 6,
+      "etiquetas": [],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 0,
+      "inputs": 0,
+      "vacio": false,
+      "largo": 477
+    },
+    "faltantes": [
+      "Mi cuenta",
+      "Cerrar caja",
+      "Método Efectivo Tarjeta Transferencia Crédito",
+      "Método",
+      "Recibido",
+      "Cliente Público general"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "pos-inventario",
+    "viejo": {
+      "h": [
+        "Inventario",
+        "Nuevo producto",
+        "Ajustes"
+      ],
+      "btn": 15,
+      "etiquetas": [
+        "PRODUCTO",
+        "COMPRA",
+        "VENTA",
+        "STOCK",
+        "MÍNIMO",
+        "Nombre",
+        "Nombre",
+        "SKU",
+        "SKU",
+        "Código de barras",
+        "Código de barras",
+        "Costo",
+        "Costo",
+        "Precio venta",
+        "Precio venta",
+        "Stock",
+        "Stock",
+        "Mínimo",
+        "Mínimo",
+        "IVA 16% 8% Exento",
+        "IVA",
+        "Unidad",
+        "Unidad",
+        "Margen al importar pedidos (%)",
+        "Margen al importar pedidos (%)",
+        "Los precios ya incluyen IVA",
+        "Los precios ya incluyen IVA",
+        "Avisarme cuando un producto llegue al mínimo",
+        "Avisarme cuando un producto llegue al mínimo"
+      ],
+      "tabs": [],
+      "tablas": 1,
+      "inputs": 27,
+      "vacio": false,
+      "largo": 1289
+    },
+    "nuevo": {
+      "h": [
+        "Inventario"
+      ],
+      "btn": 40,
+      "etiquetas": [
+        "PRODUCTO",
+        "COMPRA",
+        "VENTA",
+        "STOCK",
+        "MÍNIMO",
+        "Margen al importar pedidos (%)",
+        "Margen al importar pedidos (%)",
+        "Los precios ya incluyen IVA",
+        "Avisarme cuando un producto llegue al mínimo"
+      ],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 1,
+      "inputs": 0,
+      "vacio": false,
+      "largo": 1338
+    },
+    "faltantes": [
+      "Mi cuenta",
+      "Agregar producto",
+      "Nuevo producto",
+      "Nombre",
+      "Código de barras",
+      "Costo",
+      "Precio venta",
+      "IVA 16% 8% Exento",
+      "Unidad"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "pos-ventas",
+    "viejo": {
+      "h": [
+        "Ventas"
+      ],
+      "btn": 1,
+      "etiquetas": [
+        "FOLIO",
+        "FECHA",
+        "CLIENTE",
+        "TOTAL",
+        "ESTADO"
+      ],
+      "tabs": [],
+      "tablas": 1,
+      "inputs": 1,
+      "vacio": false,
+      "largo": 540
+    },
+    "nuevo": {
+      "h": [
+        "Ventas"
+      ],
+      "btn": 4,
+      "etiquetas": [
+        "Desde",
+        "Desde",
+        "Hasta",
+        "Hasta",
+        "FOLIO",
+        "FECHA",
+        "CLIENTE",
+        "MÉTODO",
+        "TOTAL",
+        "ESTADO"
+      ],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 1,
+      "inputs": 0,
+      "vacio": false,
+      "largo": 806
+    },
+    "faltantes": [
+      "Mi cuenta"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "pos-corte",
+    "viejo": {
+      "h": [
+        "Corte de caja",
+        "Por método de pago",
+        "Cerrar turno"
+      ],
+      "btn": 3,
+      "etiquetas": [
+        "MÉTODO",
+        "VENTAS",
+        "TOTAL",
+        "Efectivo contado",
+        "Efectivo contado",
+        "Notas",
+        "Notas"
+      ],
+      "tabs": [],
+      "tablas": 1,
+      "inputs": 4,
+      "vacio": false,
+      "largo": 355
+    },
+    "nuevo": {
+      "h": [
+        "Corte de caja",
+        "Por método de pago",
+        "Movimientos de caja"
+      ],
+      "btn": 4,
+      "etiquetas": [
+        "MÉTODO",
+        "VENTAS",
+        "TOTAL",
+        "HORA",
+        "TIPO",
+        "CONCEPTO",
+        "MONTO"
+      ],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 2,
+      "inputs": 0,
+      "vacio": false,
+      "largo": 862
+    },
+    "faltantes": [
+      "Mi cuenta",
+      "Cerrar turno",
+      "Efectivo contado",
+      "Notas"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "pos-clientes",
+    "viejo": {
+      "h": [
+        "Clientes de la caja",
+        "Nuevo cliente"
+      ],
+      "btn": 2,
+      "etiquetas": [
+        "NOMBRE",
+        "TELÉFONO",
+        "CORREO",
+        "RFC",
+        "Nombre",
+        "Nombre",
+        "Teléfono",
+        "Teléfono",
+        "RFC",
+        "RFC",
+        "Correo",
+        "Correo"
+      ],
+      "tabs": [],
+      "tablas": 1,
+      "inputs": 6,
+      "vacio": false,
+      "largo": 250
+    },
+    "nuevo": {
+      "h": [
+        "Clientes de la caja"
+      ],
+      "btn": 3,
+      "etiquetas": [
+        "NOMBRE",
+        "TELÉFONO",
+        "CORREO",
+        "RFC"
+      ],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 1,
+      "inputs": 0,
+      "vacio": false,
+      "largo": 379
+    },
+    "faltantes": [
+      "Mi cuenta",
+      "Guardar cliente",
+      "Nuevo cliente"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "finanzas",
+    "viejo": {
+      "h": [
+        "Finanzas",
+        "Cada gasto 26"
+      ],
+      "btn": 1,
+      "etiquetas": [],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 3,
+      "vacio": false,
+      "largo": 1525
+    },
+    "nuevo": {
+      "h": [
+        "Finanzas",
+        "Gasto por mes",
+        "Movimientos"
+      ],
+      "btn": 15,
+      "etiquetas": [
+        "Año Año 2026 Año 2025 Año 2024",
+        "Año",
+        "PEDIDO",
+        "FECHA",
+        "MAYORISTA",
+        "ESTADO",
+        "MONTO"
+      ],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 1,
+      "inputs": 0,
+      "vacio": false,
+      "largo": 1303
+    },
+    "faltantes": [
+      "Mi cuenta",
+      "Cada gasto 26"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "facturacion",
+    "viejo": {
+      "h": [
+        "Finanzas"
+      ],
+      "btn": 1,
+      "etiquetas": [],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 1,
+      "vacio": false,
+      "largo": 1374
+    },
+    "nuevo": {
+      "h": [
+        "Hola, Casa de Toño",
+        "Tu día a día",
+        "Tu carrito",
+        "MÁS HERRAMIENTAS"
+      ],
+      "btn": 3,
+      "etiquetas": [],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 0,
+      "inputs": 0,
+      "vacio": true,
+      "largo": 883
+    },
+    "faltantes": [
+      "Mi cuenta"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "portafolio",
+    "viejo": {
+      "h": [
+        "Portafolio",
+        "Azúcar estándar 50 kg",
+        "Café molido 1 kg",
+        "Martillo de uña 16 oz",
+        "Detergente 1 kg"
+      ],
+      "btn": 9,
+      "etiquetas": [
+        "PRECIO",
+        "UNIDADES",
+        "PRECIO",
+        "UNIDADES",
+        "PRECIO",
+        "UNIDADES",
+        "PRECIO",
+        "UNIDADES"
+      ],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 25,
+      "vacio": false,
+      "largo": 553
+    },
+    "nuevo": {
+      "h": [
+        "Portafolio",
+        "Azúcar estándar 50 kg",
+        "Café molido 1 kg",
+        "Martillo de uña 16 oz",
+        "Detergente 1 kg"
+      ],
+      "btn": 10,
+      "etiquetas": [
+        "PRECIO",
+        "UNIDADES",
+        "PRECIO",
+        "UNIDADES",
+        "PRECIO",
+        "UNIDADES",
+        "PRECIO",
+        "UNIDADES"
+      ],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 0,
+      "inputs": 0,
+      "vacio": false,
+      "largo": 813
+    },
+    "faltantes": [
+      "Mi cuenta"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "agendar",
+    "viejo": {
+      "h": [
+        "Agendar",
+        "Mis listas",
+        "Abarrotes Maru",
+        "Abarrotes Maru"
+      ],
+      "btn": 6,
+      "etiquetas": [],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 10,
+      "vacio": false,
+      "largo": 356
+    },
+    "nuevo": {
+      "h": [
+        "Agendar",
+        "Mis listas",
+        "Abarrotes Maru",
+        "Abarrotes Maru"
+      ],
+      "btn": 7,
+      "etiquetas": [],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 0,
+      "inputs": 0,
+      "vacio": false,
+      "largo": 614
+    },
+    "faltantes": [
+      "Mi cuenta"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "mensajes",
+    "viejo": {
+      "h": [
+        "Centro de mensajes",
+        "Tus mensajes"
+      ],
+      "btn": 1,
+      "etiquetas": [],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 8,
+      "vacio": false,
+      "largo": 341
+    },
+    "nuevo": {
+      "h": [
+        "Centro de mensajes"
+      ],
+      "btn": 3,
+      "etiquetas": [],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes",
+        "Conversaciones 1",
+        "Notificaciones"
+      ],
+      "tablas": 0,
+      "inputs": 0,
+      "vacio": false,
+      "largo": 455
+    },
+    "faltantes": [
+      "Mi cuenta"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "notificaciones",
+    "viejo": {
+      "h": [
+        "Centro de mensajes"
+      ],
+      "btn": 1,
+      "etiquetas": [],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 6,
+      "vacio": false,
+      "largo": 955
+    },
+    "nuevo": {
+      "h": [
+        "Centro de mensajes"
+      ],
+      "btn": 9,
+      "etiquetas": [],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes",
+        "Conversaciones 0",
+        "Notificaciones"
+      ],
+      "tablas": 0,
+      "inputs": 0,
+      "vacio": false,
+      "largo": 1076
+    },
+    "faltantes": [
+      "Mi cuenta"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "perfil",
+    "viejo": {
+      "h": [
+        "Mi perfil",
+        "Casa de Toño"
+      ],
+      "btn": 3,
+      "etiquetas": [
+        "CORREO",
+        "ANTIGÜEDAD",
+        "TELÉFONO",
+        "DIRECCIÓN PRINCIPAL"
+      ],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 2,
+      "vacio": false,
+      "largo": 558
+    },
+    "nuevo": {
+      "h": [
+        "Mi perfil",
+        "Casa de Toño",
+        "Verificaciones y calificaciones",
+        "Comentarios recibidos"
+      ],
+      "btn": 7,
+      "etiquetas": [
+        "CORREO",
+        "TELÉFONO",
+        "DIRECCIÓN PRINCIPAL",
+        "ÚLTIMO ACCESO"
+      ],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 0,
+      "inputs": 0,
+      "vacio": false,
+      "largo": 945
+    },
+    "faltantes": [
+      "ANTIGÜEDAD"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "perfil-editar",
+    "viejo": {
+      "h": [
+        "Editar cuenta",
+        "Foto de perfil",
+        "Datos de la cuenta",
+        "Dirección de entrega"
+      ],
+      "btn": 5,
+      "etiquetas": [
+        "Elegir imagen",
+        "Nombre",
+        "Nombre",
+        "Correo",
+        "Correo",
+        "Teléfono",
+        "Teléfono",
+        "Calle y número",
+        "Calle y número",
+        "Colonia",
+        "Colonia",
+        "Ciudad",
+        "Ciudad",
+        "Estado",
+        "Estado",
+        "C.P.",
+        "C.P.",
+        "Referencias",
+        "Referencias"
+      ],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 16,
+      "vacio": false,
+      "largo": 523
+    },
+    "nuevo": {
+      "h": [
+        "Editar cuenta",
+        "Foto de perfil",
+        "Datos de la cuenta",
+        "Dirección de entrega"
+      ],
+      "btn": 7,
+      "etiquetas": [
+        "Elegir imagen",
+        "Nombre del negocio",
+        "Nombre del negocio",
+        "Nombre comercial",
+        "Nombre comercial",
+        "Correo",
+        "Correo",
+        "Teléfono",
+        "Teléfono",
+        "Calle y número",
+        "Calle y número",
+        "Colonia",
+        "Colonia",
+        "Ciudad",
+        "Ciudad",
+        "Estado",
+        "Estado",
+        "C.P.",
+        "C.P.",
+        "Referencias",
+        "Referencias",
+        "Latitud",
+        "Latitud",
+        "Longitud",
+        "Longitud"
+      ],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 0,
+      "inputs": 12,
+      "vacio": false,
+      "largo": 732
+    },
+    "faltantes": [
+      "Subir",
+      "Ubicar dirección en el mapa"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "perfil-privacidad",
+    "viejo": {
+      "h": [
+        "Privacidad"
+      ],
+      "btn": 2,
+      "etiquetas": [],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 6,
+      "vacio": false,
+      "largo": 682
+    },
+    "nuevo": {
+      "h": [
+        "Privacidad"
+      ],
+      "btn": 3,
+      "etiquetas": [],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 0,
+      "inputs": 0,
+      "vacio": false,
+      "largo": 802
+    },
+    "faltantes": [],
+    "notas": []
+  },
+  {
+    "slug": "perfil-ajustes",
+    "viejo": {
+      "h": [
+        "Ajustes",
+        "Personalización de la app"
+      ],
+      "btn": 1,
+      "etiquetas": [],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 3,
+      "vacio": false,
+      "largo": 555
+    },
+    "nuevo": {
+      "h": [
+        "Ajustes",
+        "Cuenta y dispositivo",
+        "Personalización de la app",
+        "Legal"
+      ],
+      "btn": 2,
+      "etiquetas": [],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 0,
+      "inputs": 0,
+      "vacio": false,
+      "largo": 836
+    },
+    "faltantes": [],
+    "notas": []
+  },
+  {
+    "slug": "perfil-seguridad",
+    "viejo": {
+      "h": [
+        "Seguridad",
+        "Contraseña"
+      ],
+      "btn": 3,
+      "etiquetas": [
+        "Contraseña actual",
+        "Contraseña actual",
+        "Nueva",
+        "Nueva",
+        "Repite la nueva",
+        "Repite la nueva"
+      ],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 8,
+      "vacio": false,
+      "largo": 403
+    },
+    "nuevo": {
+      "h": [
+        "Seguridad",
+        "Contraseña",
+        "Tu cuenta",
+        "Últimos accesos"
+      ],
+      "btn": 4,
+      "etiquetas": [
+        "Contraseña actual",
+        "Contraseña actual",
+        "Nueva",
+        "Nueva",
+        "Repite la nueva",
+        "Repite la nueva",
+        "CORREO",
+        "TELÉFONO",
+        "ÚLTIMO ACCESO",
+        "MIEMBRO DESDE",
+        "ACCIÓN",
+        "CUÁNDO",
+        "IP",
+        "EQUIPO"
+      ],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 1,
+      "inputs": 3,
+      "vacio": false,
+      "largo": 1405
+    },
+    "faltantes": [],
+    "notas": []
+  },
+  {
+    "slug": "perfil-permisos",
+    "viejo": {
+      "h": [
+        "Permisos del dispositivo"
+      ],
+      "btn": 1,
+      "etiquetas": [
+        "Notificaciones Pedidos, mensajes y avisos de la cuenta."
+      ],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 1,
+      "vacio": false,
+      "largo": 594
+    },
+    "nuevo": {
+      "h": [
+        "Permisos",
+        "Tu cuenta",
+        "Permisos del dispositivo"
+      ],
+      "btn": 2,
+      "etiquetas": [],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 0,
+      "inputs": 0,
+      "vacio": false,
+      "largo": 1039
+    },
+    "faltantes": [
+      "Notificaciones Pedidos, mensajes y avisos de la cuenta."
+    ],
+    "notas": []
+  },
+  {
+    "slug": "kyc",
+    "viejo": {
+      "h": [
+        "Verificación de identidad",
+        "Mis documentos"
+      ],
+      "btn": 2,
+      "etiquetas": [
+        "Archivo",
+        "TIPO",
+        "ESTADO",
+        "FECHA",
+        "MOTIVO"
+      ],
+      "tabs": [],
+      "tablas": 1,
+      "inputs": 4,
+      "vacio": false,
+      "largo": 426
+    },
+    "nuevo": {
+      "h": [
+        "Verificación de identidad",
+        "Estado de la cuenta",
+        "Subir documento",
+        "Mis documentos"
+      ],
+      "btn": 3,
+      "etiquetas": [
+        "Tipo de documento",
+        "Archivo",
+        "Archivo"
+      ],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 0,
+      "inputs": 2,
+      "vacio": false,
+      "largo": 781
+    },
+    "faltantes": [
+      "FECHA",
+      "MOTIVO"
+    ],
+    "notas": []
+  },
+  {
+    "slug": "ayuda",
+    "viejo": {
+      "h": [
+        "Ayuda",
+        "Hablar con una persona",
+        "Problemas frecuentes",
+        "Legal"
+      ],
+      "btn": 1,
+      "etiquetas": [],
+      "tabs": [],
+      "tablas": 0,
+      "inputs": 1,
+      "vacio": false,
+      "largo": 651
+    },
+    "nuevo": {
+      "h": [
+        "Ayuda",
+        "Hablar con una persona",
+        "Problemas frecuentes",
+        "Tu cuenta",
+        "Legal"
+      ],
+      "btn": 3,
+      "etiquetas": [],
+      "tabs": [
+        "Inicio",
+        "Buscar",
+        "Carrito",
+        "Pedidos",
+        "Finanzas",
+        "Portafolio",
+        "Agendar",
+        "Mensajes",
+        "Perfil",
+        "Caja",
+        "Inventario",
+        "Ventas",
+        "Corte",
+        "Clientes"
+      ],
+      "tablas": 0,
+      "inputs": 0,
+      "vacio": false,
+      "largo": 885
+    },
+    "faltantes": [],
+    "notas": []
+  }
+]

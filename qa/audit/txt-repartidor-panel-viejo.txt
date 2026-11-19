@@ -1,0 +1,19 @@
+URL:/repartidor
+BOTONES:R Mi cuenta | Cerrar sesión | Salir de línea
+HREFS:/explorar | /buscar | /finanzas | /facturacion | /perfil | /mensajes | /pedidos/71954494-e349-11f1-9263-a4bb6d8495fd
+----
+Mi ruta
+En línea
+Recibes ofertas de envío.
+Salir de línea
+Ofertas
+
+No tienes ofertas pendientes.
+
+Entregas de hoy
+Insumos del Valle → Casa de Toño
+repartidor_asignado
+
+Av. Insurgentes Sur 123, Del Valle, Ciudad de México
+
+Abrir pedido

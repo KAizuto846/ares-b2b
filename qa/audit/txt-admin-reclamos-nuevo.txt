@@ -1,0 +1,19 @@
+URL:/spa/admin/reclamos
+BOTONES:Cerrar sesión
+HREFS:/spa/ | /spa | /spa/admin | /spa/admin/usuarios | /spa/admin/kyc | /spa/admin/reclamos | /spa/admin/parametros | /spa/mensajes | /spa/perfil | /explorar
+----
+Reclamos y disputas
+
+Resuelve faltantes, daños y productos incorrectos con reembolso o sin él.
+
+Estado
+Todos
+Abiertos
+Respondidos
+Resueltos
+Rechazados
+Panel
+Listado
+0 reclamo(s)
+Sin reclamos
+Nadie ha levantado un reclamo todavía.

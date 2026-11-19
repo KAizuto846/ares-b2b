@@ -1,0 +1,49 @@
+URL:/spa/admin/usuarios/13
+BOTONES:Cerrar sesión | Guardar roles | Suspender cuenta
+HREFS:/spa/ | /spa | /spa/admin | /spa/admin/usuarios | /spa/admin/kyc | /spa/admin/reclamos | /spa/admin/parametros | /spa/mensajes | /spa/perfil | /explorar
+----
+Usuario #13
+
+nuevo-repartidor-1794916444769@didi2.mx · alta 17 nov 2026
+
+← Usuarios
+Ficha
+activo
+repartidor
+Identificador
+#13
+Correo
+nuevo-repartidor-1794916444769@didi2.mx
+Teléfono
+5512345678
+Correo verificado
+no
+Teléfono verificado
+no
+Último acceso
+17 nov 2026
+Última actualización
+18 nov 2026
+Roles
+comercio
+mayorista
+repartidor
+admin_total
+admin_kyc
+admin_soporte
+admin_finanzas
+Guardar roles
+Suspender cuenta
+Perfiles
+Repartidor
+No disponible · calificación —
+KYC pendiente
+Pedidos recientes
+Sin pedidos
+Esta cuenta no ha comprado ni recibido pedidos.
+Documentos KYC
+Sin documentos cargados.
+Auditoría reciente
+CUÁNDO	ACCIÓN	ENTIDAD	DETALLE	IP
+2026-11-17 05:54	login_exitoso	usuario #13	—	127.0.0.1
+2026-11-17 05:54	registro	usuario #13	—	127.0.0.1

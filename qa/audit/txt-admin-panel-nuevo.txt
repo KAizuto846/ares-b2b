@@ -1,0 +1,88 @@
+URL:/spa/admin
+BOTONES:Cerrar sesión
+HREFS:/spa/ | /spa | /spa/admin | /spa/admin/usuarios | /spa/admin/kyc | /spa/admin/reclamos | /spa/admin/parametros | /spa/mensajes | /spa/perfil | /explorar | /spa/admin/usuarios?rol=comercio | /spa/admin/usuarios?rol=mayorista | /spa/pedidos | /spa/admin/postmvp
+----
+Panel de administración
+
+Resumen de la operación y lo que necesita una decisión hoy.
+
+admin_total
+11
+Usuarios
+Ver todos
+2
+Comercios
+Ver lista
+5
+Mayoristas
+Ver lista
+0
+Pedidos hoy
+19 en curso
+2
+KYC pendientes
+Requieren revisión
+0
+Reclamos abiertos
+Al día
+2
+Envíos sin repartidor
+Por asignar
+Requiere tu atención
+2
+Verificaciones KYC pendientes
+2 perfil(es) sin documentos aprobados.
+Revisar cola →
+2
+Envíos sin repartidor
+Pedidos aceptados que todavía no tienen quién los lleve.
+Ver pedidos →
+Ir a
+Usuarios
+Verificaciones
+Reclamos
+Parámetros
+Post-MVP
+Actividad reciente
+Últimos 10 movimientos auditados
+CUÁNDO	QUIÉN	ACCIÓN	ENTIDAD	DETALLE
+hace 1 min	
+Casa de Toño
+comercio
+	login_exitoso	usuario #2	—
+hace 1 min	
+Casa de Toño
+comercio
+	login_exitoso	usuario #2	—
+hace 3 min	
+VICTOR
+admin_total
+	login_exitoso	usuario #9	—
+hace 3 min	
+VICTOR
+admin_total
+	login_exitoso	usuario #9	—
+hace 3 min	
+Pedro Pazcal
+repartidor
+	login_exitoso	usuario #8	—
+hace 3 min	
+Pedro Pazcal
+repartidor
+	login_exitoso	usuario #8	—
+hace 3 min	
+Insumos del Valle
+mayorista
+	login_exitoso	usuario #5	—
+hace 3 min	
+Insumos del Valle
+mayorista
+	login_exitoso	usuario #5	—
+hace 3 min	
+Casa de Toño
+comercio
+	login_exitoso	usuario #2	—
+hace 3 min	
+Casa de Toño
+comercio
+	login_exitoso	usuario #2	—
