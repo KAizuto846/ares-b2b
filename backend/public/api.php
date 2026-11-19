@@ -178,7 +178,18 @@ try {
         responder(['ok' => true]);
     }
 
-    if ($usuarioId <= 0) {
+    // Rutas que la SPA necesita sin sesión (alta, recuperación, verificación y legales).
+    $publicas = [
+        '/auth/roles',
+        '/auth/registro',
+        '/auth/recuperar',
+        '/auth/restablecer',
+        '/auth/verificar',
+        '/legales/terminos',
+        '/legales/privacidad',
+    ];
+
+    if ($usuarioId <= 0 && !in_array($ruta, $publicas, true)) {
         fallo('Inicia sesión para continuar.', 401, 'SIN_SESION');
     }
 

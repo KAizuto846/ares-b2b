@@ -3,6 +3,11 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { Proveedor, useSesion } from './store/session'
 import Shell from './components/Shell'
 import Login from './pages/Login'
+import Registro from './pages/auth/Registro'
+import Recuperar from './pages/auth/Recuperar'
+import Restablecer from './pages/auth/Restablecer'
+import Verificar from './pages/auth/Verificar'
+import Legales from './pages/Legales'
 import Inicio from './pages/Inicio'
 import Buscar from './pages/Buscar'
 import Carrito from './pages/Carrito'
@@ -59,7 +64,21 @@ function Cargando() {
 function Gate() {
   const { usuario, rol, cargando } = useSesion()
   if (cargando) return <Cargando />
-  if (!usuario) return <Login />
+
+  if (!usuario) {
+    return (
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/registro" element={<Registro />} />
+        <Route path="/recuperar" element={<Recuperar />} />
+        <Route path="/restablecer" element={<Restablecer />} />
+        <Route path="/verificar" element={<Verificar />} />
+        <Route path="/terminos" element={<Legales documento="terminos" />} />
+        <Route path="/privacidad" element={<Legales documento="privacidad" />} />
+        <Route path="*" element={<Login />} />
+      </Routes>
+    )
+  }
 
   const esComercio = rol === 'comercio'
   const esMayorista = rol === 'mayorista'
@@ -124,6 +143,8 @@ function Gate() {
         <Route path="/admin/parametros/:clave/historial" element={solo(esAdmin, <AdminParametroHistorial />)} />
         <Route path="/admin/postmvp" element={solo(esAdmin, <AdminPostMvp />)} />
 
+        <Route path="/terminos" element={<Legales documento="terminos" />} />
+        <Route path="/privacidad" element={<Legales documento="privacidad" />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Shell>

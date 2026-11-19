@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useSesion } from '../store/session'
 import Icon from '../components/Icon'
 
@@ -68,8 +69,19 @@ export default function Login() {
             {cargando ? 'Entrando…' : 'Entrar'}
           </button>
 
+          <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap', fontSize: 13 }}>
+            <Link to="/registro" style={{ color: 'var(--verde-2)', fontWeight: 600 }}>Crear cuenta</Link>
+            <Link to="/recuperar" style={{ color: 'var(--muted)' }}>Olvidé mi contraseña</Link>
+          </div>
+
           <p style={{ fontSize: 12.5, color: 'var(--muted)', textAlign: 'center' }}>
             Demo: comercio@didi2.mx · comercio123
+          </p>
+
+          <p style={{ fontSize: 12.5, color: 'var(--muted)', textAlign: 'center' }}>
+            <Link to="/terminos" style={{ color: 'var(--muted)' }}>Términos</Link>
+            {' · '}
+            <Link to="/privacidad" style={{ color: 'var(--muted)' }}>Aviso de privacidad</Link>
           </p>
         </form>
       </section>
