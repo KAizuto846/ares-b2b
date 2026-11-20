@@ -281,6 +281,13 @@ export default function Shell({ children }: { children: ReactNode }) {
       : pathname.startsWith('/perfil') ? 'Mi perfil'
       : 'Ares')
 
+  // Título de la pestaña y regreso al inicio en cada navegación: sin esto la
+  // pantalla nueva se abría a media altura de la anterior.
+  useEffect(() => {
+    document.title = titulo === 'Inicio' ? 'Ares · B2B' : `${titulo} · Ares`
+    window.scrollTo(0, 0)
+  }, [titulo, pathname])
+
   const enlace = (n: Enlace) => (
     <NavLink
       key={n.to}

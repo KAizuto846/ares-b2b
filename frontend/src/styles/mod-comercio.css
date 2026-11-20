@@ -187,7 +187,7 @@
   width: min(520px, 100%); max-height: calc(100vh - 36px); overflow: auto;
   background: var(--card); border-radius: var(--r-lg);
   box-shadow: var(--s-3); border: 1px solid var(--line);
-  animation: rise var(--t-base) var(--ease-spring) both;
+  animation: rise var(--t-base) var(--ease-suave) both;
 }
 .dialogo__caja--ancha { width: min(660px, 100%); }
 .dialogo__cab {

@@ -57,7 +57,7 @@
 .dialogo__caja {
   position: relative; width: min(520px, 100%); max-height: calc(100vh - 36px); overflow: auto;
   background: #fbfbf7; border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--s-3);
-  animation: subir var(--t-base) var(--ease-spring);
+  animation: subir var(--t-base) var(--ease-suave);
 }
 .dialogo__cab { display: flex; align-items: center; gap: 10px; padding: 16px 18px; border-bottom: 1px solid var(--line-soft); }
 .dialogo__cab h2 { font-size: 16px; }

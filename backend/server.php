@@ -35,6 +35,7 @@ $tipos = [
     'css'   => 'text/css; charset=utf-8',
     'map'   => 'application/json; charset=utf-8',
     'json'  => 'application/json; charset=utf-8',
+    'webmanifest' => 'application/manifest+json; charset=utf-8',
     'svg'   => 'image/svg+xml',
     'png'   => 'image/png',
     'jpg'   => 'image/jpeg',
@@ -50,16 +51,35 @@ $tipos = [
 
 $extension = strtolower(pathinfo($uri, PATHINFO_EXTENSION));
 
+// Compresión: los .gz se generan junto al build (scripts/comprimir-build.sh).
+// Sin esto el bundle viaja a 252 kB en lugar de ~75 kB por el Funnel.
+$aceptaGzip = str_contains(strtolower($_SERVER['HTTP_ACCEPT_ENCODING'] ?? ''), 'gzip');
+$comprimibles = ['js', 'mjs', 'css', 'svg', 'json', 'webmanifest', 'map', 'txt'];
+
 if (isset($tipos[$extension])) {
     foreach ([__DIR__ . '/public' . $uri, __DIR__ . '/public/spa' . $uri] as $archivo) {
-        if (is_file($archivo)) {
+        if (!is_file($archivo)) {
+            continue;
+        }
+
+        if ($aceptaGzip && in_array($extension, $comprimibles, true) && is_file($archivo . '.gz')) {
             header('Content-Type: ' . $tipos[$extension]);
-            header('Content-Length: ' . (string) filesize($archivo));
+            header('Content-Encoding: gzip');
+            header('Vary: Accept-Encoding');
+            header('Content-Length: ' . (string) filesize($archivo . '.gz'));
             header('Cache-Control: public, max-age=31536000, immutable');
-            readfile($archivo);
+            readfile($archivo . '.gz');
 
             return true;
         }
+
+        header('Content-Type: ' . $tipos[$extension]);
+        header('Vary: Accept-Encoding');
+        header('Content-Length: ' . (string) filesize($archivo));
+        header('Cache-Control: public, max-age=31536000, immutable');
+        readfile($archivo);
+
+        return true;
     }
 }
 
