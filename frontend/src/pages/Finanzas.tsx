@@ -74,7 +74,10 @@ function Delta({ datos }: { datos: FinanzasDatos }) {
   const d = datos.comparacion.delta_pct
   const previo = datos.comparacion.total_anterior
   if (d === null) {
-    return <Kpi valor="—" etiqueta="Vs periodo anterior" nota={previo > 0 ? money(previo) : 'Sin datos previos'} />
+    // Sin periodo anterior no hay comparación: una tarjeta con «—» ocupa una
+    // fila entera y empuja el gráfico fuera de la pantalla.
+    if (previo <= 0) return null
+    return <Kpi valor="—" etiqueta="Vs periodo anterior" nota={money(previo)} />
   }
   const color = d > 0 ? 'var(--rojo)' : d < 0 ? 'var(--verde)' : 'var(--muted)'
   const signo = d > 0 ? '+' : ''

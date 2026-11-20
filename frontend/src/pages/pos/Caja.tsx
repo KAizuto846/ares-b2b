@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Icon from '../../components/Icon'
 import { Skeleton } from '../../components/UI'
-import { money } from '../../lib/format'
+import { fecha, money } from '../../lib/format'
 import { apiPos, centavos, claveProducto, fotoProducto, sinAcentos } from '../../lib/api-pos'
 import type { PosCliente, PosEstado, PosProducto, PosVentaHecha } from '../../lib/api-pos'
 
@@ -200,8 +200,11 @@ export default function Caja() {
         <div>
           <h1 style={{ margin: 0 }}>Caja</h1>
           <p style={{ margin: '2px 0 0', color: 'var(--muted)', fontSize: 14 }}>
-            Turno #{datos.turno.id} abierto · vendido hoy {money(datos.vendido)} · en caja{' '}
+            Turno #{datos.turno.id} abierto · vendido en el turno {money(datos.vendido)} · en caja{' '}
             {money(datos.turno.efectivo_esperado ?? datos.turno.fondo_inicial)}
+            {new Date(datos.turno.abierto_at.replace(' ', 'T')).toDateString() !== new Date().toDateString() && (
+              <> · abierto desde el {fecha(datos.turno.abierto_at)}</>
+            )}
           </p>
         </div>
         <div className="pos-atajos">
