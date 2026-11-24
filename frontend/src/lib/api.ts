@@ -52,9 +52,11 @@ export type Carrito = {
 }
 export type Pedido = { uuid: string; estado: string; total: number; created_at: string; contraparte: string; lineas: number }
 
+export type Suscripcion = { plan: string; flags: Record<string, boolean> }
+
 export const api = {
-  session: () => req<{ usuario: Usuario | null; rol: string | null; tema?: 'claro' | 'oscuro'; onboarding_completo?: boolean | null }>('/session'),
-  login: (email: string, password: string, recordar = false) => req<{ usuario: Usuario; rol: string; tema?: 'claro' | 'oscuro'; onboarding_completo?: boolean | null }>('/login', { method: 'POST', body: JSON.stringify({ email, password, recordar }) }),
+  session: () => req<{ usuario: Usuario | null; rol: string | null; tema?: 'claro' | 'oscuro'; onboarding_completo?: boolean | null; suscripcion?: Suscripcion | null }>('/session'),
+  login: (email: string, password: string, recordar = false) => req<{ usuario: Usuario; rol: string; tema?: 'claro' | 'oscuro'; onboarding_completo?: boolean | null; suscripcion?: Suscripcion | null }>('/login', { method: 'POST', body: JSON.stringify({ email, password, recordar }) }),
   completarOnboarding: () => req<{ ok: true; onboarding_completo: boolean }>('/session/onboarding', { method: 'POST', body: '{}' }),
   logout: () => req('/logout', { method: 'POST' }),
   inicio: () => req<{ nombre: string; rol: string; metricas: Metrica[]; accesos: Acceso[]; herramientas: Acceso[] }>('/inicio'),

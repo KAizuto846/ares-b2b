@@ -961,6 +961,8 @@ if (preg_match('#^/anuncios/imagen/(\d+)$#', $rutaModulo, $mImg) === 1 && $metod
 
 // POST /anuncios — alta de anuncio del mayorista (paso de pago simulado).
 if ($rutaModulo === '/anuncios/publicaciones' && $metodoModulo === 'POST') {
+    api_exigir('mayorista');
+    api_exigir_flag('banner');   // flag que el seed pone en premium
     $c = api_cuerpo();
     $titulo = trim((string) ($c['titulo'] ?? ''));
     $cuerpo = trim((string) ($c['cuerpo'] ?? ''));

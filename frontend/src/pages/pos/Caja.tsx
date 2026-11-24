@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Icon from '../../components/Icon'
+import TarjetaDemo from '../../components/TarjetaDemo'
 import { Skeleton } from '../../components/UI'
 import { fecha, money } from '../../lib/format'
 import { apiPos, centavos, claveProducto, fotoProducto, sinAcentos } from '../../lib/api-pos'
@@ -479,16 +480,20 @@ function DialogoCobro({
   const [cliente, setCliente] = useState('')
   const [ocupado, setOcupado] = useState(false)
   const [error, setError] = useState('')
+  // Pantalla de datos de tarjeta (demo). Los datos viven sólo dentro de
+  // <TarjetaDemo/>: aquí nunca se guarda número, titular, vencimiento ni CVV.
+  const [pasoTarjeta, setPasoTarjeta] = useState(false)
   const primero = useRef<HTMLSelectElement | null>(null)
 
   useEffect(() => {
     primero.current?.focus()
     const esc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onCerrar()
+      // En la pantalla de tarjeta el Esc lo maneja TarjetaDemo (vuelve atrás).
+      if (e.key === 'Escape' && !pasoTarjeta) onCerrar()
     }
     window.addEventListener('keydown', esc)
     return () => window.removeEventListener('keydown', esc)
-  }, [onCerrar])
+  }, [onCerrar, pasoTarjeta])
 
   const efectivo = metodo === 'efectivo'
   const pagado = efectivo ? Number(recibido || 0) : total
@@ -504,7 +509,31 @@ function DialogoCobro({
     } catch (e) {
       setError((e as Error).message)
       setOcupado(false)
+      // Si falla, volvemos al formulario de cobro donde se ve el error.
+      setPasoTarjeta(false)
     }
+  }
+
+  // Tarjeta: primero pasamos por la pantalla de datos (demo). El método que
+  // viaja al backend sigue siendo exactamente 'tarjeta'.
+  const continuar = () => {
+    if (metodo === 'tarjeta') {
+      setPasoTarjeta(true)
+      return
+    }
+    void cobrar()
+  }
+
+  if (pasoTarjeta) {
+    return (
+      <TarjetaDemo
+        total={total}
+        alListar={() => {
+          void cobrar()
+        }}
+        alCancelar={() => setPasoTarjeta(false)}
+      />
+    )
   }
 
   return (
@@ -583,8 +612,8 @@ function DialogoCobro({
             <button type="button" className="btn btn--claro" onClick={onCerrar} disabled={ocupado}>
               Cancelar
             </button>
-            <button type="button" className="btn" onClick={cobrar} disabled={!puede || ocupado}>
-              {ocupado ? 'Cobrando…' : `Cobrar ${money(total)}`}
+            <button type="button" className="btn" onClick={continuar} disabled={!puede || ocupado}>
+              {ocupado ? 'Cobrando…' : metodo === 'tarjeta' ? 'Continuar con tarjeta' : `Cobrar ${money(total)}`}
             </button>
           </div>
         </div>

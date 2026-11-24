@@ -48,6 +48,36 @@ function api_exigir(string ...$roles): void
     fallo('Tu cuenta no tiene permiso para esta acción.', 403, 'SIN_PERMISO');
 }
 
+/** Suscripción vigente del usuario en sesión: ['plan' => clave, 'flags' => array] o null. */
+function api_suscripcion(): ?array
+{
+    static $cache = null;
+    if ($cache !== null) return $cache;
+
+    $stmt = api_pdo()->prepare(
+        "SELECT p.clave, p.flags FROM suscripciones s JOIN planes p ON p.id = s.plan_id
+         WHERE s.usuario_id = ? AND s.estado = 'activa' AND (s.hasta IS NULL OR s.hasta >= CURDATE())
+         LIMIT 1"
+    );
+    $stmt->execute([api_uid()]);
+    $fila = $stmt->fetch();
+
+    $cache = $fila === false ? null : [
+        'plan'  => (string) $fila['clave'],
+        'flags' => json_decode((string) $fila['flags'], true) ?: [],
+    ];
+    return $cache;
+}
+
+/** Exige que la suscripción vigente tenga el flag; si no, 403 SUSCRIPCION con mensaje accionable. */
+function api_exigir_flag(string $flag): void
+{
+    $s = api_suscripcion();
+    if ($s === null || empty($s['flags'][$flag])) {
+        fallo('Esta función necesita una suscripción Premium. Actívala en Planes.', 403, 'SUSCRIPCION');
+    }
+}
+
 /** Id de comercios_perfil del usuario en sesión. */
 function api_comercio_id(): int
 {

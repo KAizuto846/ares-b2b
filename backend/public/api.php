@@ -139,6 +139,23 @@ try {
     };
 
     // ------------------------------------------------------------ sesión
+    // Suscripción vigente del usuario: ['plan' => clave, 'flags' => array] o null.
+    // La usan /session y /login para que el front pinte los muros sin llamada extra.
+    $suscripcionDe = static function (int $id) use ($pdo): ?array {
+        $stmt = $pdo->prepare(
+            "SELECT p.clave, p.flags FROM suscripciones s JOIN planes p ON p.id = s.plan_id
+             WHERE s.usuario_id = ? AND s.estado = 'activa' AND (s.hasta IS NULL OR s.hasta >= CURDATE()) LIMIT 1"
+        );
+        $stmt->execute([$id]);
+        $f = $stmt->fetch();
+        if ($f === false) return null;
+
+        return [
+            'plan'  => (string) $f['clave'],
+            'flags' => json_decode((string) $f['flags'], true) ?: [],
+        ];
+    };
+
     if ($ruta === '/session' && $metodo === 'GET') {
         $tema = 'claro';
         if ($usuarioId > 0) {
@@ -156,12 +173,16 @@ try {
             $onboarding = (bool) ((int) ($stmt->fetchColumn() ?: 0));
         }
 
+        // Suscripción vigente (para muros de POS y anuncios sin llamada extra).
+        $suscripcion = $usuarioId > 0 ? $suscripcionDe($usuarioId) : null;
+
         responder([
             'ok'      => true,
             'usuario' => $usuarioId > 0 ? $datosUsuario() : null,
             'rol'     => $rol,
             'tema'    => $tema === 'oscuro' ? 'oscuro' : 'claro',
             'onboarding_completo' => $onboarding,
+            'suscripcion' => $suscripcion,
         ]);
     }
 
@@ -201,6 +222,7 @@ try {
             'onboarding_completo' => ($rolLogin !== '' && !str_starts_with($rolLogin, 'admin'))
                 ? (bool) ((int) ($pref['onboarding'] ?? 0))
                 : null,
+            'suscripcion' => $suscripcionDe((int) $resultado['usuario']['id']),
         ]);
     }
 

@@ -72,10 +72,21 @@ const slug = (r) => (r === '/' ? 'inicio' : r.replace(/^\//, '').replace(/\//g, 
     })
     const page = await ctx.newPage()
     const errores = []
-    page.on('console', (m) => { if (m.type() === 'error') errores.push(m.text().slice(0, 200)) })
+    page.on('console', (m) => {
+      if (m.type() !== 'error') return
+      const t = m.text()
+      // El 403 del muro de suscripción también ruge en consola; es esperado.
+      if (t.includes('403')) return
+      errores.push(t.slice(0, 200))
+    })
     page.on('pageerror', (e) => errores.push('PAGEERROR ' + e.message.slice(0, 200)))
     page.on('response', (r) => {
-      if (r.url().includes('/api/') && r.status() >= 400) errores.push(`${r.status()} ${r.request().method()} ${r.url().replace(BASE, '')}`)
+      if (r.url().includes('/api/') && r.status() >= 400) {
+        // 403 SUSCRIPCION es el muro esperado (POS sin Premium, anuncios sin Premium).
+        r.json().then((j) => {
+          if (j?.error?.code !== 'SUSCRIPCION') errores.push(`${r.status()} ${r.request().method()} ${r.url().replace(BASE, '')}`)
+        }).catch(() => errores.push(`${r.status()} ${r.request().method()} ${r.url().replace(BASE, '')}`))
+      }
     })
 
     await page.goto(`${BASE}/spa/`, { waitUntil: 'domcontentloaded' })

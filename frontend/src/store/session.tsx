@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 import type { ReactNode } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { api } from '../lib/api'
-import type { Carrito, Usuario } from '../lib/api'
+import type { Carrito, Suscripcion, Usuario } from '../lib/api'
 
 type Aviso = { id: number; texto: string; accion?: { texto: string; hacer: () => void } }
 
@@ -12,6 +12,8 @@ type Contexto = {
   cargando: boolean
   /** Configuración inicial pendiente: true/false, o null para admin/sin sesión. */
   onboardingPendiente: boolean | null
+  /** Suscripción vigente (plan + flags) o null: el front pinta muros y bloqueos. */
+  suscripcion: Suscripcion | null
   completarOnboarding: () => Promise<void>
   /** Vuelve a leer /session para sincronizar nombre/foto editados en el panel. */
   refrescarUsuario: () => Promise<void>
@@ -59,6 +61,7 @@ export function Proveedor({ children }: { children: ReactNode }) {
   const [cajonAbierto, setCajonAbierto] = useState(false)
   const [avisos, setAvisos] = useState<Aviso[]>([])
   const [onboardingPendiente, setOnboardingPendiente] = useState<boolean | null>(null)
+  const [suscripcion, setSuscripcion] = useState<Suscripcion | null>(null)
   const secuencia = useRef(0)
   const ubicacion = useLocation()
 
@@ -84,9 +87,10 @@ export function Proveedor({ children }: { children: ReactNode }) {
         setUsuario(r.usuario)
         setRol(r.rol)
         setOnboardingPendiente(r.onboarding_completo === null || r.onboarding_completo === undefined ? null : !r.onboarding_completo)
+        setSuscripcion(r.suscripcion ?? null)
         document.documentElement.dataset.tema = r.tema === 'oscuro' ? 'oscuro' : 'claro'
       })
-      .catch(() => { if (vivo) { setUsuario(null); setRol(null) } })
+      .catch(() => { if (vivo) { setUsuario(null); setRol(null); setSuscripcion(null) } })
       .finally(() => { if (vivo) setCargando(false) })
     return () => { vivo = false }
   }, [])
@@ -103,6 +107,7 @@ export function Proveedor({ children }: { children: ReactNode }) {
     try {
       const r = await api.session()
       if (r.usuario) setUsuario(r.usuario)
+      setSuscripcion(r.suscripcion ?? null)
     } catch {
       /* la sesión sigue viva aunque falle el refresco */
     }
@@ -113,6 +118,7 @@ export function Proveedor({ children }: { children: ReactNode }) {
     setUsuario(r.usuario)
     setRol(r.rol)
     setOnboardingPendiente(r.onboarding_completo === null || r.onboarding_completo === undefined ? null : !r.onboarding_completo)
+    setSuscripcion(r.suscripcion ?? null)
     document.documentElement.dataset.tema = r.tema === 'oscuro' ? 'oscuro' : 'claro'
     if (r.rol === 'comercio') await refrescarCarrito()
   }, [refrescarCarrito])
@@ -122,6 +128,7 @@ export function Proveedor({ children }: { children: ReactNode }) {
     setUsuario(null)
     setRol(null)
     setOnboardingPendiente(null)
+    setSuscripcion(null)
     setCarrito(null)
     document.documentElement.dataset.tema = 'claro'
   }, [])
@@ -216,13 +223,13 @@ export function Proveedor({ children }: { children: ReactNode }) {
   }, [aviso])
 
   const valor = useMemo<Contexto>(() => ({
-    usuario, rol, cargando, onboardingPendiente, completarOnboarding, entrar, salir, refrescarUsuario,
+    usuario, rol, cargando, onboardingPendiente, suscripcion, completarOnboarding, entrar, salir, refrescarUsuario,
     carrito, refrescarCarrito, agregar, cambiar, quitarItem, vaciar,
     cajonAbierto,
     abrirCarrito: () => setCajonAbierto(true),
     cerrarCarrito: () => setCajonAbierto(false),
     aviso, avisos,
-  }), [usuario, rol, cargando, onboardingPendiente, completarOnboarding, entrar, salir, refrescarUsuario, carrito, refrescarCarrito, agregar, cambiar, quitarItem, vaciar, cajonAbierto, aviso, avisos])
+  }), [usuario, rol, cargando, onboardingPendiente, suscripcion, completarOnboarding, entrar, salir, refrescarUsuario, carrito, refrescarCarrito, agregar, cambiar, quitarItem, vaciar, cajonAbierto, aviso, avisos])
 
   return <Ctx.Provider value={valor}>{children}</Ctx.Provider>
 }

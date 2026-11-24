@@ -11,10 +11,25 @@ const FUNCIONES: Record<string, { texto: string; icono: string }[]> = {
   destacado: [{ texto: 'Tus fichas destacadas en la búsqueda', icono: 'estrella' }],
   analiticas: [{ texto: 'Analíticas avanzadas de ventas', icono: 'grafica' }],
   banner: [{ texto: 'Banner promocional en el explore', icono: 'etiqueta' }],
+  pos: [{ texto: 'Punto de venta completo (caja, inventario, corte)', icono: 'pos' }],
+}
+
+/** Beneficio estrella según el rol: lo primero que ve cada cuenta en Premium. */
+const MURO_POR_ROL: Record<string, { titulo: string; texto: string; icono: string }> = {
+  comercio: {
+    titulo: 'Con Premium tu punto de venta se desbloquea',
+    texto: 'Caja, inventario, ventas, corte y clientes. Sin suscripción el POS queda bloqueado.',
+    icono: 'pos',
+  },
+  mayorista: {
+    titulo: 'Con Premium publicas anuncios en miles de comercios',
+    texto: 'Diseña tu anuncio con imágenes o Canva y aparéce en el inicio de los comercios.',
+    icono: 'etiqueta',
+  },
 }
 
 export default function Planes() {
-  const { aviso } = useSesion()
+  const { aviso, rol } = useSesion()
   const [planes, setPlanes] = useState<Plan[] | null>(null)
   const [suscripcion, setSuscripcion] = useState<Suscrip>(null)
   const [guardando, setGuardando] = useState('')
@@ -63,6 +78,19 @@ export default function Planes() {
           </span>
         )}
       </header>
+
+      {/* Muro explicado: el beneficio estrella según el rol de la cuenta. */}
+      {rol && MURO_POR_ROL[rol] && (
+        <section className="card rise" style={{ ['--i' as string]: 0, display: 'flex', gap: 14, alignItems: 'center' }}>
+          <span className="acceso__icono" style={{ width: 44, height: 44, borderRadius: 13, flex: '0 0 auto' }}>
+            <Icon name={MURO_POR_ROL[rol].icono} size={22} />
+          </span>
+          <div style={{ minWidth: 0 }}>
+            <strong style={{ fontSize: 15 }}>{MURO_POR_ROL[rol].titulo}</strong>
+            <p style={{ margin: '3px 0 0', fontSize: 13.5, color: 'var(--muted)' }}>{MURO_POR_ROL[rol].texto}</p>
+          </div>
+        </section>
+      )}
 
       <div style={{ display: 'grid', gap: 14, gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', alignItems: 'start' }}>
         {planes.map((p, i) => {

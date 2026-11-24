@@ -6,6 +6,7 @@ import type { PerfilDetalle } from '../lib/api-perfil'
 import { useNavegar, useSesion } from '../store/session'
 import { Skeleton } from '../components/UI'
 import Icon from '../components/Icon'
+import Canva, { leerCanvaVinculado } from '../components/Canva'
 
 const PLANES = [
   { monto: 400, dias: 4 },
@@ -19,7 +20,16 @@ const DIA = new Intl.DateTimeFormat('es-MX', { day: 'numeric', month: 'long' })
 
 /* ============================== anuncios del comercio ==================== */
 
-/** Franja de anuncios sin título: dos columnas de hasta 10 fichas con scroll. */
+/** Iniciales para el avatar de marca: primeras letras de hasta dos palabras. */
+function iniciales(nombre: string): string {
+  const partes = nombre.trim().split(/\s+/).filter((p) => p.length > 0)
+  if (partes.length === 0) return 'AN'
+  const uno = (partes[0] ?? 'A').charAt(0)
+  const dos = (partes[1] ?? partes[0] ?? 'N').charAt(0)
+  return (uno + dos).toUpperCase()
+}
+
+/** Fichas de anuncio tipo Instagram: marca, media 4:5 dominante y pie de texto. */
 function Publicidades() {
   const [publicaciones, setPublicaciones] = useState<AnuncioPublicacion[] | null>(null)
   const navegar = useNavegar()
@@ -37,32 +47,30 @@ function Publicidades() {
   if (!anuncios) return null
   if (anuncios.length === 0) return null
 
-  // Reparto en dos columnas: 0-9 a la izquierda, 10-19 a la derecha.
-  const izquierda = anuncios.slice(0, 10)
-  const derecha = anuncios.slice(10, 20)
-
   const abrir = (a: AnuncioPublicacion) => {
     void apiAnuncios.clic(a.id).catch(() => {})
     if (a.mayorista_uuid) navegar(`/proveedor/${a.mayorista_uuid}`)
   }
 
   return (
-    <section className="publicidades rise" style={{ ['--i' as string]: 1 }} aria-label="Anuncios">
-      {[izquierda, derecha].map((columna, i) => (
-        <div className="publicidades__columna" key={i}>
-          {columna.map((a, j) => (
-            <button type="button" className="publicidad" key={a.id} style={{ ['--i' as string]: j }} onClick={() => abrir(a)}>
-              <span className="publicidad__imagen" aria-hidden="true">
-                {a.imagen ? <img src={a.imagen} alt="" loading="lazy" /> : <span className="publicidad__fallo">{a.mayorista.slice(0, 2).toUpperCase()}</span>}
-              </span>
-              <span className="publicidad__texto">
-                <strong>{a.titulo}</strong>
-                <small>{a.cuerpo}</small>
-              </span>
-              <Icon name="flecha" size={15} />
-            </button>
-          ))}
-        </div>
+    <section className="publicidades publicidades--visual rise" style={{ ['--i' as string]: 1 }} aria-label="Anuncios">
+      {anuncios.map((a, j) => (
+        <button type="button" className="publicidad publicidad--visual" key={a.id} style={{ ['--i' as string]: j }} onClick={() => abrir(a)}>
+          <span className="publicidad__marca">
+            <span className="publicidad__avatar" aria-hidden="true">{iniciales(a.mayorista || a.titulo)}</span>
+            <strong>{a.mayorista || 'Anunciante'}</strong>
+            <span className="publicidad__patrocinio">Publicidad</span>
+          </span>
+          <span className="publicidad__media" aria-hidden="true">
+            {a.imagen
+              ? <img src={a.imagen} alt="" loading="lazy" />
+              : <span className="publicidad__fallo">{iniciales(a.mayorista || a.titulo)}</span>}
+          </span>
+          <span className="publicidad__pie">
+            <strong>{a.titulo}</strong>
+            <small>{a.cuerpo}</small>
+          </span>
+        </button>
       ))}
     </section>
   )
@@ -82,6 +90,9 @@ function Publicador() {
   const [error, setError] = useState('')
   const [enviando, setEnviando] = useState(false)
   const archivo = useRef<HTMLInputElement>(null)
+  // Vínculo con Canva: bandera local del navegador (demo, sin OAuth real).
+  const [canvaAbierto, setCanvaAbierto] = useState(false)
+  const [canvaVinculado, setCanvaVinculado] = useState<boolean>(leerCanvaVinculado)
   const { aviso } = useSesion()
 
   const cargar = async () => {
@@ -112,7 +123,16 @@ function Publicador() {
     setAbierto(true)
   }
 
-  const cerrarPanel = () => setAbierto(false)
+  const cerrarPanel = () => {
+    setAbierto(false)
+    setCanvaAbierto(false)
+  }
+
+  // Al cerrar el diálogo se relee la bandera: Conectar/Desconectar pudo cambiarla.
+  const cerrarCanva = () => {
+    setCanvaAbierto(false)
+    setCanvaVinculado(leerCanvaVinculado())
+  }
 
   const elegirImagen = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const f = e.target.files?.[0]
@@ -255,6 +275,27 @@ function Publicador() {
                     : <span><Icon name="subir" size={22} /> Sube una imagen</span>}
                 </label>
                 <input ref={archivo} type="file" accept="image/jpeg,image/png,image/webp" onChange={elegirImagen} style={{ display: 'none' }} />
+
+                {/* Dos caminos para la imagen: archivo local o diseño de Canva. */}
+                <div className="publicador__acciones">
+                  <button
+                    type="button"
+                    className="btn btn--claro btn--mini"
+                    onClick={() => archivo.current?.click()}
+                  >
+                    <Icon name="subir" size={15} /> Subir imagen
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn--claro btn--mini"
+                    onClick={() => setCanvaAbierto(true)}
+                  >
+                    <Icon name="editar" size={15} /> {canvaVinculado ? 'Canva' : 'Conectar Canva'}
+                  </button>
+                  {canvaVinculado && (
+                    <span className="chip chip--ok"><Icon name="ok" size={12} /> Canva conectado</span>
+                  )}
+                </div>
               </section>
 
               {/* Paso 2: plan */}
@@ -312,6 +353,13 @@ function Publicador() {
               </button>
             </footer>
           </aside>
+
+          <Canva
+            abierto={canvaAbierto}
+            onCerrar={cerrarCanva}
+            onCambio={setCanvaVinculado}
+            onSubirImagen={() => { setCanvaAbierto(false); archivo.current?.click() }}
+          />
         </div>
       )}
     </section>

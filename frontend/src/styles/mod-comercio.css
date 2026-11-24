@@ -529,3 +529,113 @@
 .pos-tarjeta__texto { font-size: 12.5px; color: var(--muted); line-height: 1.35; }
 .pos-tarjeta__globo { position: absolute; top: 12px; right: 12px; }
 
+/* ==========================================================================
+   Fichas de anuncio tipo Instagram (media 4:5 dominante, marca y pie)
+   Variante del inicio del comercio: la clase .publicidad base conserva
+   borde, hover y sombra; --visual solo cambia la composición.
+   ========================================================================== */
+.publicidades--visual {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 16px; align-items: start;
+}
+.publicidad--visual { display: grid; gap: 0; padding: 0; overflow: hidden; }
+
+.publicidad__marca {
+  display: flex; align-items: center; gap: 8px;
+  padding: 11px 13px; min-width: 0;
+}
+.publicidad__marca strong {
+  font-size: 13px; font-weight: 700; min-width: 0;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.publicidad__avatar {
+  width: 30px; height: 30px; flex: 0 0 auto; border-radius: 50%;
+  background: var(--verde-suave); color: var(--verde);
+  display: grid; place-items: center;
+  font-size: 12px; font-weight: 800; letter-spacing: .02em;
+}
+.publicidad__patrocinio { margin-left: auto; flex: 0 0 auto; font-size: 11.5px; color: var(--faint); }
+
+.publicidad__media {
+  display: grid; place-items: center;
+  aspect-ratio: 4 / 5; overflow: hidden;
+  background: linear-gradient(135deg, var(--verde-suave), #dcefe2);
+}
+.publicidad__media img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform var(--t-base) var(--ease-out);
+}
+.publicidad--visual:hover .publicidad__media img { transform: scale(1.03); }
+.publicidad__fallo {
+  font-size: 44px; font-weight: 800; letter-spacing: .04em;
+  color: var(--verde); opacity: .55;
+}
+
+.publicidad__pie { display: grid; gap: 3px; padding: 12px 14px 14px; text-align: left; min-width: 0; }
+.publicidad__pie strong { font-size: 14px; line-height: 1.3; }
+.publicidad__pie small {
+  font-size: 12.5px; color: var(--muted); line-height: 1.4;
+  overflow: hidden; text-overflow: ellipsis;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+}
+
+html[data-tema='oscuro'] .publicidad__media { background: linear-gradient(135deg, #1b2f24, #16221c); }
+html[data-tema='oscuro'] .publicidad__avatar { background: #17301f; color: #a6e8bf; }
+
+@media (max-width: 720px) {
+  .publicidades--visual { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+}
+
+/* ==========================================================================
+   Diálogo de conexión con Canva (publicador de anuncios)
+   ========================================================================== */
+.publicador__acciones {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px;
+}
+.publicador__acciones .chip { margin-left: auto; }
+
+.canva__panel {
+  position: fixed; inset: 0; z-index: 140;
+  display: grid; place-items: center; padding: 18px;
+}
+.canva__caja {
+  position: relative; width: min(460px, 100%); max-height: min(88vh, 760px);
+  display: grid; grid-template-rows: auto 1fr auto;
+  background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+  box-shadow: var(--s-3); overflow: hidden;
+  animation: canva-entra var(--t-base) var(--ease-out) both;
+}
+@keyframes canva-entra {
+  from { transform: translateY(14px) scale(.985); opacity: .55; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+.canva__cuerpo {
+  padding: 16px 18px; display: grid; gap: 12px;
+  align-content: start; overflow-y: auto;
+}
+.canva__estado { display: flex; align-items: center; gap: 10px; }
+.canva__marca {
+  width: 40px; height: 40px; flex: 0 0 auto; border-radius: 12px;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, #00c4cc, #7d2ae8);
+  color: #fff; font-weight: 800; font-size: 16px;
+}
+.canva__estado div { display: grid; gap: 1px; min-width: 0; }
+.canva__estado strong { font-size: 14px; }
+.canva__estado small { font-size: 12px; color: var(--faint); }
+.canva__texto { margin: 0; font-size: 13.5px; line-height: 1.55; color: var(--muted); }
+.canva__texto .chip { vertical-align: middle; }
+.canva__pasos {
+  margin: 0; padding-left: 18px; display: grid; gap: 7px;
+  font-size: 13px; line-height: 1.45; color: var(--muted);
+}
+.canva__pasos li::marker { color: var(--verde-2); font-weight: 800; }
+.canva__pasos strong { color: var(--ink); }
+.canva__aviso { margin: 0; font-size: 12px; line-height: 1.45; color: var(--faint); }
+.canva__pie {
+  padding: 14px 18px; border-top: 1px solid var(--line-soft);
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.canva__pie .btn { flex: 1 1 auto; }
+

@@ -4,7 +4,9 @@
     "ruta": "/",
     "url": "/spa/",
     "desborde": 0,
-    "chicos": [],
+    "chicos": [
+      "SPAN.publicidad__patrocinio 11.5px"
+    ],
     "taps": [],
     "pendiente": false,
     "vacio": false,
@@ -29,7 +31,10 @@
     "url": "/spa/carrito",
     "desborde": 0,
     "chicos": [],
-    "taps": [],
+    "taps": [
+      "A.grupo__mas 195x17",
+      "BUTTON.clinea__quitar 41x44"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []

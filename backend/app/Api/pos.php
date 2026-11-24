@@ -27,6 +27,8 @@ if (!str_starts_with($posRuta, '/pos')) {
 }
 
 api_exigir('comercio');
+// El punto de venta es una función Premium: sin suscripción, 403 SUSCRIPCION.
+api_exigir_flag('pos');
 
 $posPdo = api_pdo();
 $posUid = api_uid();
