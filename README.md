@@ -1,5 +1,8 @@
 # Ares React
 
+[![CI](https://github.com/KAizuto846/ares-b2b/actions/workflows/ci.yml/badge.svg)](https://github.com/KAizuto846/ares-b2b/actions/workflows/ci.yml)
+
+
 Reescritura completa de la interfaz de Distribuidora como **SPA de React** sobre una **API JSON** que reutiliza el dominio ya probado (precios por escala, IVA, reservas de stock, checkout idempotente).
 
 Corre aparte del panel viejo: **puerto 8081**, cookie de sesión propia y sin tocar el servicio de producción, pero sobre la misma base de datos.
