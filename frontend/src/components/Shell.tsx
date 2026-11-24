@@ -347,7 +347,7 @@ export default function Shell({ children }: { children: ReactNode }) {
     <div className="app">
       <aside className="rail">
         <a className="marca" href="/spa/" onClick={(e) => { e.preventDefault(); navegar('/') }}>
-          <span className="marca__logo">A</span>
+          <span className="marca__logo"><img src="/spa/favicon.svg" alt="Ares" width="20" height="20" /></span>
           <span className="marca__texto"><strong>Ares</strong><span>B2B</span></span>
         </a>
 

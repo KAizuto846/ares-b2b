@@ -8,7 +8,7 @@ import { CampoClave } from './auth/Registro'
 function Marca() {
   return (
     <div className="login__marca">
-      <span className="marca__logo login__logo">A</span>
+      <span className="marca__logo login__logo"><img src="/spa/favicon.svg" alt="Ares" width="26" height="26" /></span>
       <span className="login__marca-texto">
         <strong>Ares</strong>
         <span>B2B</span>

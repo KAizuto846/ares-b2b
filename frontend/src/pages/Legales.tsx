@@ -43,7 +43,7 @@ export default function Legales({ documento }: Props) {
     <div className="legal-pantalla">
       <div className="legal-pantalla__barra">
         <Link className="legal-pantalla__marca" to="/login">
-          <span className="marca__logo" style={{ width: 34, height: 34, fontSize: 15 }}>A</span>
+          <span className="marca__logo" style={{ width: 34, height: 34, fontSize: 15 }}><img src="/spa/favicon.svg" alt="Ares" width="20" height="20" /></span>
           <span>Ares</span>
         </Link>
         <nav className="legal-pantalla__nav" aria-label="Documentos legales">

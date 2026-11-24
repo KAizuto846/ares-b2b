@@ -60,7 +60,7 @@ function Cargando() {
   return (
     <div style={{ minHeight: '100vh', display: 'grid', placeItems: 'center' }}>
       <div style={{ display: 'grid', gap: 12, justifyItems: 'center' }}>
-        <div className="marca__logo" style={{ width: 44, height: 44, fontSize: 18 }}>A</div>
+        <div className="marca__logo" style={{ width: 44, height: 44 }}><img src="/spa/favicon.svg" alt="Ares" width="26" height="26" /></div>
         <span style={{ color: 'var(--muted)', fontSize: 13 }}>Cargando Ares…</span>
       </div>
     </div>

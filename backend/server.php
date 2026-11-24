@@ -83,6 +83,27 @@ if (isset($tipos[$extension])) {
     }
 }
 
+// ---------------------------------------------------------------- landing
+// Página pública de marketing: /landing (HTML) y sus assets estáticos.
+if ($uri === '/landing' || $uri === '/landing/' || str_starts_with($uri, '/landing/')) {
+    $relativo = $uri === '/landing' || $uri === '/landing/' ? '/landing/index.html' : $uri;
+    $archivo = __DIR__ . '/public' . $relativo;
+    if (is_file($archivo)) {
+        $ext = strtolower(pathinfo($archivo, PATHINFO_EXTENSION));
+        if ($ext === 'html') {
+            header('Content-Type: text/html; charset=utf-8');
+            header('Cache-Control: no-cache, must-revalidate');
+        } else {
+            header('Content-Type: ' . ($tipos[$ext] ?? 'application/octet-stream'));
+            header('Cache-Control: public, max-age=86400');
+        }
+        header('Content-Length: ' . (string) filesize($archivo));
+        readfile($archivo);
+
+        return true;
+    }
+}
+
 // ------------------------------- piezas del panel viejo que la SPA reutiliza
 // Con la base de la app delante (/spa/avatar/2, /spa/assets/img/…).
 if (preg_match('#^/spa/(avatar|assets|manifest\.json|icon-)#', $uri) === 1) {

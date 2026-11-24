@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ares · El socio digital de tu negocio</title>
+<meta name="description" content="Ares conecta comercios con mayoristas: compras de mayoreo, punto de venta, inventario, facturación y reparto en un solo panel. Prueba Premium gratis hoy." />
+<meta property="og:title" content="Ares · El socio digital de tu negocio" />
+<meta property="og:description" content="Compras de mayoreo, punto de venta, inventario y reparto en un solo panel." />
+<meta property="og:image" content="/landing/hero-tienda.jpg" />
+<link rel="icon" type="image/jpeg" href="/landing/logo.jpg" />
+<style>
+  :root {
+    --verde-1: #2f9e63;
+    --verde-2: #1b6b41;
+    --verde-3: #14532d;
+    --verde-oscuro: #0d2018;
+    --crema: #f5f6f1;
+    --tinta: #14231b;
+    --tinta-2: #4c5f54;
+    --oro: #c9a227;
+    --r-lg: 22px;
+    --sombra: 0 24px 60px -24px rgba(13, 32, 24, .35);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--crema);
+    color: var(--tinta);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  /* ---------- cabecera ---------- */
+  .nav {
+    position: fixed; inset: 0 0 auto; z-index: 50;
+    display: flex; align-items: center; gap: 16px;
+    padding: 14px clamp(18px, 4vw, 48px);
+    background: rgba(13, 32, 24, .82);
+    backdrop-filter: blur(14px);
+    color: #fff;
+  }
+  .nav__logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; letter-spacing: -.02em; }
+  .nav__logo img { width: 34px; height: 34px; border-radius: 9px; box-shadow: 0 4px 14px rgba(0,0,0,.4); }
+  .nav__logo span { font-size: 11px; font-weight: 600; color: #9fc7ae; letter-spacing: .12em; display: block; }
+  .nav__cta { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+  .nav__enlace { color: #d7e5dc; text-decoration: none; font-size: 14px; font-weight: 600; }
+  .nav__enlace:hover { color: #fff; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 13px 26px; border-radius: 999px; border: 0; cursor: pointer;
+    font: inherit; font-weight: 700; font-size: 15px; text-decoration: none;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+  .btn--verde { background: linear-gradient(145deg, var(--verde-1), var(--verde-3)); color: #fff; box-shadow: 0 12px 30px -10px rgba(47, 158, 99, .65); }
+  .btn--verde:hover { transform: translateY(-2px); box-shadow: 0 18px 38px -10px rgba(47, 158, 99, .75); }
+  .btn--blanco { background: #fff; color: var(--verde-3); box-shadow: 0 10px 26px -12px rgba(0,0,0,.35); }
+  .btn--blanco:hover { transform: translateY(-2px); }
+  .btn--fantasma { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.35); }
+  .btn--fantasma:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+  .btn--sm { padding: 9px 18px; font-size: 13.5px; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative; min-height: 92vh;
+    display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(24px, 4vw, 60px);
+    align-items: center;
+    padding: 120px clamp(18px, 4vw, 48px) 80px;
+    background:
+      radial-gradient(1100px 500px at 85% -10%, rgba(47, 158, 99, .22), transparent 60%),
+      linear-gradient(160deg, var(--verde-oscuro) 0%, #123324 55%, #0d2018 100%);
+    color: #fff;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: ''; position: absolute; right: -140px; top: -140px;
+    width: 520px; height: 520px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(47, 158, 99, .35), transparent 65%);
+    pointer-events: none;
+  }
+  .hero__chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 16px; border-radius: 999px;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
+    font-size: 13px; font-weight: 600; color: #cfe7d8;
+    width: fit-content; margin-bottom: 22px;
+  }
+  .hero__chip::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--verde-1); box-shadow: 0 0 12px var(--verde-1); }
+  .hero h1 {
+    font-size: clamp(38px, 5.2vw, 68px);
+    line-height: 1.04; letter-spacing: -.035em; font-weight: 800;
+    margin-bottom: 18px;
+  }
+  .hero h1 em { font-style: normal; color: #7fd8a5; }
+  .hero__texto { font-size: clamp(16px, 1.6vw, 19px); color: #c4d6cb; max-width: 52ch; margin-bottom: 30px; }
+  .hero__acciones { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 34px; }
+  .hero__confianza { display: flex; gap: 26px; flex-wrap: wrap; }
+  .hero__confianza div strong { display: block; font-size: 24px; font-weight: 800; letter-spacing: -.02em; color: #fff; }
+  .hero__confianza div span { font-size: 13px; color: #9fb8a8; }
+
+  .hero__visual { position: relative; z-index: 1; }
+  .hero__foto {
+    border-radius: var(--r-lg); overflow: hidden;
+    box-shadow: var(--sombra), 0 0 0 1px rgba(255,255,255,.08);
+    transform: rotate(1.2deg);
+  }
+  .hero__foto img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; }
+  .hero__flotante {
+    position: absolute; left: -26px; bottom: 34px;
+    background: #fff; color: var(--tinta);
+    border-radius: 16px; padding: 14px 18px;
+    box-shadow: var(--sombra);
+    display: flex; align-items: center; gap: 12px;
+    animation: flota 5s ease-in-out infinite;
+  }
+  .hero__flotante strong { font-size: 22px; font-weight: 800; color: var(--verde-2); }
+  .hero__flotante span { font-size: 12.5px; color: var(--tinta-2); display: block; }
+  .hero__flotante .icono-caja {
+    width: 40px; height: 40px; border-radius: 12px; flex: 0 0 auto;
+    background: linear-gradient(145deg, #e8f5ec, #d2ecdc);
+    display: grid; place-items: center; font-size: 19px;
+  }
+  @keyframes flota { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+
+  /* ---------- secciones ---------- */
+  section { padding: clamp(64px, 9vw, 110px) clamp(18px, 4vw, 48px); }
+  .contenedor { max-width: 1180px; margin: 0 auto; }
+  .kicker {
+    display: inline-block; font-size: 12.5px; font-weight: 800;
+    letter-spacing: .14em; text-transform: uppercase; color: var(--verde-2);
+    margin-bottom: 12px;
+  }
+  h2 { font-size: clamp(28px, 3.6vw, 44px); letter-spacing: -.03em; line-height: 1.12; font-weight: 800; margin-bottom: 14px; }
+  .lead { font-size: clamp(15.5px, 1.5vw, 18px); color: var(--tinta-2); max-width: 60ch; }
+
+  /* ---------- funciones ---------- */
+  .funciones { background: #fff; }
+  .funciones__grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 20px; margin-top: 44px;
+  }
+  .funcion {
+    background: linear-gradient(180deg, #fff, #f7faf6);
+    border: 1px solid #e4ebe4; border-radius: var(--r-lg);
+    padding: 28px 26px; position: relative; overflow: hidden;
+    transition: transform .22s ease, box-shadow .22s ease;
+  }
+  .funcion:hover { transform: translateY(-5px); box-shadow: var(--sombra); }
+  .funcion::before { content: ''; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, var(--verde-1), var(--verde-3)); }
+  .funcion__icono {
+    width: 50px; height: 50px; border-radius: 15px;
+    background: linear-gradient(145deg, #e8f5ec, #d2ecdc);
+    display: grid; place-items: center; font-size: 24px; margin-bottom: 16px;
+  }
+  .funcion h3 { font-size: 18px; font-weight: 750; letter-spacing: -.01em; margin-bottom: 7px; }
+  .funcion p { font-size: 14.5px; color: var(--tinta-2); }
+
+  /* ---------- historias con foto ---------- */
+  .historia {
+    display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 70px);
+    align-items: center; max-width: 1180px; margin: 0 auto;
+  }
+  .historia + .historia { margin-top: clamp(60px, 8vw, 110px); }
+  .historia__foto { border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--sombra); }
+  .historia__foto img { aspect-ratio: 4/3; object-fit: cover; width: 100%; transition: transform .6s ease; }
+  .historia:hover .historia__foto img { transform: scale(1.035); }
+  .historia--inversa .historia__foto { order: 2; }
+  .historia--inversa .historia__texto { order: 1; }
+  .historia ul { list-style: none; margin-top: 18px; display: grid; gap: 10px; }
+  .historia li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; color: var(--tinta-2); }
+  .historia li::before { content: '✓'; color: var(--verde-1); font-weight: 800; flex: 0 0 auto; }
+  .historia .dato { margin-top: 20px; display: inline-flex; gap: 10px; align-items: center; background: #e9f4ec; border-radius: 12px; padding: 10px 16px; font-size: 13.5px; font-weight: 650; color: var(--verde-3); }
+
+  /* ---------- planes ---------- */
+  .planes { background: linear-gradient(160deg, var(--verde-oscuro), #123324); color: #fff; }
+  .planes .kicker { color: #7fd8a5; }
+  .planes .lead { color: #b6cdc0; }
+  .planes__grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 22px; margin-top: 46px; align-items: stretch;
+  }
+  .plan {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: var(--r-lg); padding: 30px 28px;
+    display: flex; flex-direction: column; gap: 14px;
+    transition: transform .22s ease, border-color .22s ease;
+  }
+  .plan:hover { transform: translateY(-5px); border-color: rgba(127, 216, 165, .5); }
+  .plan--premium {
+    background: linear-gradient(170deg, rgba(47, 158, 99, .25), rgba(20, 83, 45, .35));
+    border: 1.5px solid var(--verde-1);
+    position: relative;
+  }
+  .plan__cinta {
+    position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--verde-1), #56c98a);
+    color: #0b2417; font-size: 11.5px; font-weight: 800; letter-spacing: .1em;
+    text-transform: uppercase; padding: 5px 16px; border-radius: 999px; white-space: nowrap;
+  }
+  .plan h3 { font-size: 20px; font-weight: 800; }
+  .plan__precio { font-size: 38px; font-weight: 800; letter-spacing: -.03em; }
+  .plan__precio small { font-size: 14px; font-weight: 600; color: #9fb8a8; }
+  .plan ul { list-style: none; display: grid; gap: 9px; font-size: 14px; color: #cfe0d5; }
+  .plan li { display: flex; gap: 9px; align-items: flex-start; }
+  .plan li::before { content: '✓'; color: #7fd8a5; font-weight: 800; }
+  .plan .btn { margin-top: auto; }
+  .plan__nota { font-size: 12px; color: #8fa79a; text-align: center; }
+
+  /* ---------- cierre / CTA ---------- */
+  .cierre { text-align: center; background: #fff; }
+  .cierre__caja {
+    max-width: 900px; margin: 0 auto;
+    background: linear-gradient(150deg, var(--verde-3), var(--verde-oscuro) 70%);
+    border-radius: 28px; padding: clamp(40px, 6vw, 72px) clamp(24px, 5vw, 70px);
+    color: #fff; box-shadow: var(--sombra);
+    position: relative; overflow: hidden;
+  }
+  .cierre__caja::before {
+    content: ''; position: absolute; right: -80px; bottom: -80px;
+    width: 300px; height: 300px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(127, 216, 165, .25), transparent 65%);
+  }
+  .cierre__caja img { width: 64px; height: 64px; border-radius: 16px; margin: 0 auto 20px; box-shadow: 0 10px 30px rgba(0,0,0,.4); }
+  .cierre h2 { color: #fff; }
+  .cierre p { color: #c4d6cb; max-width: 52ch; margin: 0 auto 28px; }
+
+  footer { background: var(--verde-oscuro); color: #8fa79a; padding: 34px clamp(18px, 4vw, 48px); text-align: center; font-size: 13.5px; }
+  footer img { width: 26px; height: 26px; border-radius: 7px; display: inline-block; vertical-align: middle; margin-right: 8px; }
+
+  /* ---------- aparición al hacer scroll ---------- */
+  .revela { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+  .revela--visto { opacity: 1; transform: none; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding-top: 104px; min-height: auto; }
+    .hero__visual { max-width: 560px; }
+    .historia { grid-template-columns: 1fr; }
+    .historia--inversa .historia__foto { order: 0; }
+    .nav__enlace { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .revela { opacity: 1; transform: none; transition: none; }
+    .hero__flotante { animation: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__logo">
+    <img src="/landing/logo.jpg" alt="Ares" />
+    <div>Ares <span>DISTRIBUCIÓN B2B</span></div>
+  </div>
+  <div class="nav__cta">
+    <a class="nav__enlace" href="#funciones">Funciones</a>
+    <a class="nav__enlace" href="#historias">Historias</a>
+    <a class="nav__enlace" href="#planes">Planes</a>
+    <a class="btn btn--verde btn--sm" href="https://riz0308.tail0820b4.ts.net:8443/spa/login">Entrar a la app</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div>
+    <span class="hero__chip">Hecho en México para negocios de verdad</span>
+    <h1>El mayoreo de tu negocio, <em>en un solo panel</em>.</h1>
+    <p class="hero__texto">
+      Ares conecta tu tienda con los mayoristas de tu zona. Compra por catálogo,
+      cobra en mostrador con punto de venta, controla tu inventario y recibe en
+      puerta — sin cuadernos, sin llamadas, sin adivinar precios.
+    </p>
+    <div class="hero__acciones">
+      <a class="btn btn--verde" href="https://riz0308.tail0820b4.ts.net:8443/spa/login">Crear mi cuenta gratis</a>
+      <a class="btn btn--fantasma" href="#funciones">Ver cómo funciona</a>
+    </div>
+    <div class="hero__confianza">
+      <div><strong>3 roles</strong><span>comercio · mayorista · reparto</span></div>
+      <div><strong>1 panel</strong><span>compras, ventas y logística</span></div>
+      <div><strong>CFDI 4.0</strong><span>facturación integrada</span></div>
+    </div>
+  </div>
+  <div class="hero__visual">
+    <div class="hero__foto"><img src="/landing/hero-tienda.jpg" alt="Dueño de tienda usando Ares en su mostrador" /></div>
+    <div class="hero__flotante">
+      <span class="icono-caja">📦</span>
+      <div><strong>+38%</strong><span>de surtido con mayoreo local</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FUNCIONES ================= -->
+<section class="funciones" id="funciones">
+  <div class="contenedor">
+    <span class="kicker revela">Todo en un panel</span>
+    <h2 class="revela">Las herramientas que tu negocio usa todos los días</h2>
+    <p class="lead revela">Del pedido al ticket, del almacén a la puerta. Sin apps sueltas ni hojas de cálculo.</p>
+    <div class="funciones__grid">
+      <article class="funcion revela">
+        <div class="funcion__icono">🛒</div>
+        <h3>Compras de mayoreo</h3>
+        <p>Catálogos por proveedor con precios y escalas reales. Arma tu carrito, agenda la entrega y repite el pedido en un toque.</p>
+      </article>
+      <article class="funcion revela">
+        <div class="funcion__icono">🧾</div>
+        <h3>Punto de venta Premium</h3>
+        <p>Caja rápida con buscador, turnos, corte del día y tickets digitales. Cobra en efectivo o con tarjeta en segundos.</p>
+      </article>
+      <article class="funcion revela">
+        <div class="funcion__icono">📦</div>
+        <h3>Inventario vivo</h3>
+        <p>Existencias que se actualizan solas con cada venta y cada compra. Alertas de reorden antes de quedarte sin producto.</p>
+      </article>
+      <article class="funcion revela">
+        <div class="funcion__icono">🚚</div>
+        <h3>Reparto con rastreo</h3>
+        <p>Rutas optimizadas por OSRM y seguimiento en vivo para tu cliente. Cada entrega con evidencia y horario.</p>
+      </article>
+      <article class="funcion revela">
+        <div class="funcion__icono">🧮</div>
+        <h3>Finanzas y facturación</h3>
+        <p>CFDI 4.0 integrado, gráfica del año, gastos y comisiones. Saber lo que queda es cuestión de abrir la app.</p>
+      </article>
+      <article class="funcion revela">
+        <div class="funcion__icono">📣</div>
+        <h3>Anuncios que se ven</h3>
+        <p>Los mayoristas Premium publican con imágenes propias o diseños de Canva, estilo red social, frente a miles de comercios.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HISTORIAS ================= -->
+<section id="historias">
+  <div class="historia">
+    <div class="historia__texto revela">
+      <span class="kicker">Para tu tienda</span>
+      <h2>Compra al mayoreo sin salir del mostrador</h2>
+      <p class="lead">Encuentra proveedores cerca, compara precios y recibe en puerta el mismo día.</p>
+      <ul>
+        <li>Catálogo por mayorista con precios de escala reales</li>
+        <li>Punto de venta con ticket digital y corte por turno</li>
+        <li>Facturación CFDI 4.0 desde la misma venta</li>
+      </ul>
+      <span class="dato">⚡ El punto de venta es parte del plan Premium</span>
+    </div>
+    <div class="historia__foto revela"><img src="/landing/hero-tienda.jpg" alt="Tienda de abarrotes con Ares" loading="lazy" /></div>
+  </div>
+
+  <div class="historia historia--inversa">
+    <div class="historia__texto revela">
+      <span class="kicker">Para tu mayorista</span>
+      <h2>Vende más, a más tiendas, con menos esfuerzo</h2>
+      <p class="lead">Tu catálogo siempre actualizado, pedidos organizados y anuncios que sí se ven.</p>
+      <ul>
+        <li>Pedidos por estado: preparando, listo, en camino</li>
+        <li>Anuncios estilo red social con tus imágenes o Canva</li>
+        <li>Vendidos hoy: pedidos y monto del día en tu inicio</li>
+      </ul>
+      <span class="dato">📣 Publicar anuncios es parte del plan Premium</span>
+    </div>
+    <div class="historia__foto revela"><img src="/landing/mayorista-almacen.jpg" alt="Almacén mayorista cargando camión de reparto" loading="lazy" /></div>
+  </div>
+
+  <div class="historia">
+    <div class="historia__texto revela">
+      <span class="kicker">Para tu reparto</span>
+      <h2>Cada entrega, en ruta y a tiempo</h2>
+      <p class="lead">Rutas con paradas optimizadas y rastreo en vivo para el comercio que espera.</p>
+      <ul>
+        <li>Multi-parada calculada con OSRM Trip Planning</li>
+        <li>Link de rastreo para el cliente final</li>
+        <li>Evidencia de entrega y notas de operación</li>
+      </ul>
+      <span class="dato">📍 El cliente ve su pedido llegar en tiempo real</span>
+    </div>
+    <div class="historia__foto revela"><img src="/landing/reparto-calle.jpg" alt="Repartidor en moto por la calle" loading="lazy" /></div>
+  </div>
+</section>
+
+<!-- ================= PLANES ================= -->
+<section class="planes" id="planes">
+  <div class="contenedor">
+    <span class="kicker revela">Planes claros</span>
+    <h2 class="revela">Empieza gratis. Crece con Premium.</h2>
+    <p class="lead revela">El cobro es simulado con la pasarela de pruebas: puedes probar todo Premium hoy mismo.</p>
+    <div class="planes__grid">
+      <div class="plan revela">
+        <h3>Gratuito</h3>
+        <div class="plan__precio">Gratis <small>para siempre</small></div>
+        <ul>
+          <li>Hasta 30 productos en catálogo</li>
+          <li>Compras de mayoreo y pedidos</li>
+          <li>Mensajes con tus proveedores</li>
+          <li>Finanzas básicas</li>
+        </ul>
+        <a class="btn btn--blanco" href="https://riz0308.tail0820b4.ts.net:8443/spa/login">Empezar gratis</a>
+      </div>
+      <div class="plan plan--premium revela">
+        <span class="plan__cinta">Recomendado</span>
+        <h3>Premium</h3>
+        <div class="plan__precio">$299 <small>MXN / mes</small></div>
+        <ul>
+          <li>Punto de venta completo: caja, inventario, corte</li>
+          <li>Productos ilimitados y destaque en búsqueda</li>
+          <li>Publica anuncios con imagen y Canva (mayoristas)</li>
+          <li>Analíticas avanzadas y banner en el explore</li>
+        </ul>
+        <a class="btn btn--verde" href="https://riz0308.tail0820b4.ts.net:8443/spa/login">Activar Premium</a>
+        <span class="plan__nota">Cobro demo con tarjeta de prueba — sin cargo real</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CIERRE ================= -->
+<section class="cierre">
+  <div class="cierre__caja revela">
+    <img src="/landing/logo.jpg" alt="Ares" />
+    <h2>Tu negocio ya trabaja duro. Deja que Ares trabaje ordenado.</h2>
+    <p>Crea tu cuenta en dos minutos: como comercio, como mayorista o como repartidor. Todo el panel, sin instalación.</p>
+    <a class="btn btn--verde" href="https://riz0308.tail0820b4.ts.net:8443/spa/login">Entrar a Ares</a>
+  </div>
+</section>
+
+<footer>
+  <img src="/landing/logo.jpg" alt="" /> Ares · Distribución B2B — materia prima, insumos y logística para negocios. Hecho en México.
+</footer>
+
+<script>
+  // Revelado al hacer scroll (respeta prefers-reduced-motion vía CSS).
+  const obs = new IntersectionObserver((entradas) => {
+    for (const e of entradas) {
+      if (e.isIntersecting) { e.target.classList.add('revela--visto'); obs.unobserve(e.target); }
+    }
+  }, { threshold: 0.14 });
+  document.querySelectorAll('.revela').forEach((el) => obs.observe(el));
+</script>
+</body>
+</html>

@@ -88,7 +88,7 @@ export default function Restablecer() {
       <section className="login__form auth-pantalla__form">
         <form className="login__caja auth-tarjeta rise" onSubmit={enviar} noValidate>
           <div className="auth-cab">
-            <span className="marca__logo" style={{ width: 40, height: 40 }}>A</span>
+            <span className="marca__logo" style={{ width: 40, height: 40 }}><img src="/spa/favicon.svg" alt="Ares" width="20" height="20" /></span>
             <div>
               <h1>Elige una contraseña nueva</h1>
               <p>Al guardarla se cierran las demás sesiones abiertas.</p>
