@@ -166,7 +166,7 @@ if ($rutaModulo === '/explorar' && $metodoModulo === 'GET') {
                 'href'     => '/repartidor',
             ];
         } elseif (str_starts_with($rolModulo, 'admin')) {
-            $q = $pdoModulo->query('SELECT COUNT(*) FROM pedidos WHERE DATE(created_at) = CURDATE()');
+            $q = $pdoModulo->prepare('SELECT COUNT(*) FROM pedidos WHERE DATE(created_at) = CURDATE()'); $q->execute();
             $metricas[] = [
                 'valor'    => (string) (int) $q->fetchColumn(),
                 'etiqueta' => 'Pedidos hoy',
@@ -174,7 +174,7 @@ if ($rutaModulo === '/explorar' && $metodoModulo === 'GET') {
                 'href'     => '/admin',
             ];
 
-            $q = $pdoModulo->query("SELECT COUNT(*) FROM kyc_documentos WHERE estado = 'pendiente'");
+            $q = $pdoModulo->prepare("SELECT COUNT(*) FROM kyc_documentos WHERE estado = 'pendiente'"); $q->execute();
             $metricas[] = [
                 'valor'    => (string) (int) $q->fetchColumn(),
                 'etiqueta' => 'KYC pendientes',
@@ -754,6 +754,12 @@ if (preg_match('#^/agendar/(\d+)/estado$#', $rutaModulo, $partes) === 1 && $meto
 if ($rutaModulo === '/banners' && $metodoModulo === 'GET') {
     $hoy = date('Y-m-d');
 
+    $stmtBanners = api_pdo()->prepare(
+        "SELECT * FROM banners WHERE activo = 1
+           AND (desde IS NULL OR desde <= ?) AND (hasta IS NULL OR hasta >= ?)
+         ORDER BY orden, id LIMIT 6"
+    );
+    $stmtBanners->execute([$hoy, $hoy]);
     $banners = array_map(static fn (array $b): array => [
         'id'     => (int) $b['id'],
         'titulo' => (string) $b['titulo'],
@@ -761,11 +767,7 @@ if ($rutaModulo === '/banners' && $metodoModulo === 'GET') {
         'imagen' => $b['imagen'] !== null ? '/storage/banners/' . (string) $b['imagen'] : null,
         'color'  => (string) $b['color'],
         'href'   => (string) $b['href'],
-    ], api_pdo()->query(
-        "SELECT * FROM banners WHERE activo = 1
-           AND (desde IS NULL OR desde <= '{$hoy}') AND (hasta IS NULL OR hasta >= '{$hoy}')
-         ORDER BY orden, id LIMIT 6"
-    )->fetchAll() ?: []);
+    ], $stmtBanners->fetchAll() ?: []);
 
     responder(['ok' => true, 'banners' => $banners]);
 }
@@ -781,11 +783,12 @@ if ($rutaModulo === '/anuncios' && $metodoModulo === 'GET') {
     $uid = api_uid();
     $rol = api_rol();
 
-    $stmt = api_pdo()->query(
+    $stmt = api_pdo()->prepare(
         "SELECT * FROM anuncios WHERE activo = 1
-           AND (desde IS NULL OR desde <= '{$hoy}') AND (hasta IS NULL OR hasta >= '{$hoy}')
+           AND (desde IS NULL OR desde <= ?) AND (hasta IS NULL OR hasta >= ?)
          ORDER BY id DESC LIMIT 20"
     );
+    $stmt->execute([$hoy, $hoy]);
 
     $elegido = null;
 

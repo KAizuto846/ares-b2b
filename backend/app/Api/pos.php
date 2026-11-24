@@ -823,7 +823,9 @@ if (preg_match('#^/pos/ticket/([0-9a-fA-F-]{36})$#', $posRuta, $m) === 1 && $pos
         }
     }
 
-    $negocio = (string) $posPdo->query('SELECT nombre_negocio FROM comercios_perfil WHERE usuario_id = ' . $posUid . ' LIMIT 1')->fetchColumn();
+    $stmtNegocio = $posPdo->prepare('SELECT nombre_negocio FROM comercios_perfil WHERE usuario_id = ? LIMIT 1');
+    $stmtNegocio->execute([$posUid]);
+    $negocio = (string) $stmtNegocio->fetchColumn();
 
     responder([
         'ok'      => true,
