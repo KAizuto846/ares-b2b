@@ -52,7 +52,7 @@ export default function Ajustes() {
           <p>Seguridad, permisos del dispositivo y apariencia de la app.</p>
         </div>
         <button type="button" className="btn btn--claro rise" style={{ ['--i' as string]: 1 }} onClick={() => navegar('/perfil')}>
-          <Icon name="flecha" size={15} /> Mi cuenta
+          <Icon name="flecha" size={15} /> Mi perfil
         </button>
       </header>
 
@@ -62,13 +62,6 @@ export default function Ajustes() {
       <section className="card rise" style={{ ['--i' as string]: 1 }}>
         <div className="card__cab"><h2 style={{ fontSize: 16 }}>Cuenta y dispositivo</h2></div>
         <div className="perfil-lista">
-          <button type="button" className="perfil-fila" onClick={() => navegar('/perfil/seguridad')}>
-            <span>
-              <strong>Seguridad</strong>
-              <small>Contraseña y baja de la cuenta</small>
-            </span>
-            <Icon name="flecha" size={16} />
-          </button>
           <button type="button" className="perfil-fila" onClick={() => navegar('/perfil/permisos')}>
             <span>
               <strong>Permisos del dispositivo</strong>
@@ -108,26 +101,6 @@ export default function Ajustes() {
           <p className="perfil-pista">
             El modo oscuro se aplica al instante y se recuerda en tu cuenta: si entras desde otro equipo, lo verás igual.
           </p>
-        </div>
-      </section>
-
-      <section className="card rise" style={{ ['--i' as string]: 3 }}>
-        <div className="card__cab"><h2 style={{ fontSize: 16 }}>Legal</h2></div>
-        <div className="perfil-lista">
-          <div className="perfil-fila perfil-fila--estatica">
-            <span>
-              <strong>Términos y condiciones</strong>
-              <small>Uso del servicio y responsabilidades</small>
-            </span>
-            <span className="chip chip--neutro">Sitio principal</span>
-          </div>
-          <div className="perfil-fila perfil-fila--estatica">
-            <span>
-              <strong>Aviso de privacidad</strong>
-              <small>Qué datos tratamos y para qué</small>
-            </span>
-            <span className="chip chip--neutro">Sitio principal</span>
-          </div>
         </div>
       </section>
     </div>

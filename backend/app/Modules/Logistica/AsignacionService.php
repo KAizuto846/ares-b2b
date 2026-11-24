@@ -25,6 +25,8 @@ final class AsignacionService
         private readonly PDO $pdo,
         private readonly TarifaService $tarifas,
         private readonly PedidoService $pedidos,
+        private readonly \App\Modules\Logistica\ConsolidacionService $consolidacion,
+        private readonly \App\Modules\Logistica\ParametrosReparto $parametros,
     ) {
     }
 
@@ -39,6 +41,35 @@ final class AsignacionService
 
         if ($envio !== false) {
             return $envio;
+        }
+
+        // RN-15b: el destino del comercio también debe caer en una zona activa.
+        // Sin esta validación un pedido podría cobrarse sin poderse entregar.
+        $stmt = $this->pdo->prepare(
+            'SELECT d.latitud, d.longitud FROM pedidos p JOIN direcciones d ON d.id = p.direccion_entrega_id WHERE p.id = ? LIMIT 1'
+        );
+        $stmt->execute([$pedidoId]);
+        $destino = $stmt->fetch();
+
+        if ($destino !== false && $destino['latitud'] !== null) {
+            $zonas = $this->pdo->query('SELECT poligono FROM zonas_cobertura WHERE activa = 1')->fetchAll(PDO::FETCH_COLUMN) ?: [];
+
+            if ($zonas !== []) {
+                $dentro = false;
+
+                foreach ($zonas as $json) {
+                    $poligono = json_decode((string) $json, true);
+
+                    if (is_array($poligono) && \App\Core\Geo::puntoEnPoligono((float) $destino['latitud'], (float) $destino['longitud'], $poligono)) {
+                        $dentro = true;
+                        break;
+                    }
+                }
+
+                if (!$dentro) {
+                    return null;
+                }
+            }
         }
 
         $stmt = $this->pdo->prepare(
@@ -69,6 +100,17 @@ final class AsignacionService
      */
     public function lanzarRonda(int $pedidoId, int $ronda): int
     {
+        // Auto-dispatch (parámetro reparto.auto_dispatch): se asigna directo al
+        // mejor candidato sin esperar 60 s. Las ofertas quedan como respaldo
+        // si el asignado rechaza y el envío vuelve a rondas normales.
+        if ($ronda === 1 && (int) $this->parametros->dame('reparto.auto_dispatch', '0') === 1) {
+            $asignado = $this->autoAsignar($pedidoId);
+
+            if ($asignado > 0) {
+                return 0;
+            }
+        }
+
         $radio = self::RADIOS[$ronda] ?? self::RADIOS[3];
         $envio = $this->prepararEnvio($pedidoId);
 
@@ -232,6 +274,44 @@ final class AsignacionService
                 "UPDATE envios SET repartidor_id = ?, tarifa = ?, estado = 'asignado' WHERE id = ?"
             )->execute([$repartidorId, $oferta['tarifa'], (int) $oferta['envio_id']]);
 
+            // Consolidación: si el repartidor ya tiene un viaje compatible, el
+            // envío se suma con su parada ordenada y el comercio obtiene el
+            // descuento por compartir ruta.
+            $consolidado = false;
+            if ((int) $this->parametros->dame('reparto.consolidacion', '1') === 1) {
+                $coords = $this->coordsEnvio((int) $oferta['envio_id']);
+
+                if ($coords !== null) {
+                    $res = $this->consolidacion->consolidarConRepartidor(
+                        (int) $oferta['envio_id'],
+                        $repartidorId,
+                        $coords['origen_lat'], $coords['origen_lng'],
+                        $coords['destino_lat'], $coords['destino_lng'],
+                    );
+
+                    $consolidado = $res['consolidado'];
+
+                    if ($consolidado) {
+                        $stmtParadas = $this->pdo->prepare(
+                            'SELECT COUNT(*) FROM envios WHERE viaje_ruta_id = ? AND parada_completada_at IS NULL'
+                        );
+                        $stmtParadas->execute([$res['viaje_id']]);
+                        $nParadas = (int) $stmtParadas->fetchColumn();
+
+                        if ($nParadas >= 2) {
+                            $descuento = (float) $this->parametros->dame('reparto.descuento_consolidacion', '20');
+                            $nuevaTarifa = round((float) $oferta['tarifa'] * (1 - $descuento / 100), 2);
+                            $this->pdo->prepare('UPDATE envios SET tarifa = ? WHERE id = ?')
+                                ->execute([$nuevaTarifa, (int) $oferta['envio_id']]);
+                        }
+                    }
+                }
+            }
+
+            $this->pdo->prepare(
+                "UPDATE envios SET consolidado = ? WHERE id = ?"
+            )->execute([$consolidado ? 1 : 0, (int) $oferta['envio_id']]);
+
             // Las demás ofertas del mismo envío ya no sirven.
             $this->pdo->prepare(
                 "UPDATE ofertas_envio SET estado = 'expirada'
@@ -256,6 +336,118 @@ final class AsignacionService
 
             throw $e;
         }
+    }
+
+    /**
+     * Origen (mayorista) y destino (dirección del pedido) para la consolidación.
+     *
+     * @return array{origen_lat:float, origen_lng:float, destino_lat:float, destino_lng:float}|null
+     */
+    private function coordsEnvio(int $envioId): ?array
+    {
+        $stmt = $this->pdo->prepare(
+            'SELECT m.latitud AS origen_lat, m.longitud AS origen_lng,
+                    d.latitud AS destino_lat, d.longitud AS destino_lng
+             FROM envios e
+             JOIN pedidos pe ON pe.id = e.pedido_id
+             JOIN mayoristas_perfil m ON m.id = pe.mayorista_id
+             JOIN direcciones d ON d.id = pe.direccion_id
+             WHERE e.id = ? LIMIT 1'
+        );
+        $stmt->execute([$envioId]);
+        $fila = $stmt->fetch();
+
+        if ($fila === false || $fila['destino_lat'] === null || $fila['destino_lng'] === null) {
+            return null;
+        }
+
+        return [
+            'origen_lat'  => (float) $fila['origen_lat'],
+            'origen_lng'  => (float) $fila['origen_lng'],
+            'destino_lat' => (float) $fila['destino_lat'],
+            'destino_lng' => (float) $fila['destino_lng'],
+        ];
+    }
+
+    /**
+     * Auto-asignación: toma el mejor candidato disponible (más cercano y mejor
+     * calificado) y lo asigna sin crear ofertas. Devuelve el id del repartidor
+     * asignado, o 0 si no había candidato compatible.
+     */
+    private function autoAsignar(int $pedidoId): int
+    {
+        $envio = $this->prepararEnvio($pedidoId);
+
+        if ($envio === null || $envio['repartidor_id'] !== null) {
+            return 0;
+        }
+
+        $stmt = $this->pdo->prepare(
+            'SELECT pe.mayorista_id FROM pedidos pe WHERE pe.id = ? LIMIT 1'
+        );
+        $stmt->execute([$pedidoId]);
+        $mayoristaId = (int) ($stmt->fetchColumn() ?: 0);
+
+        if ($mayoristaId === 0) {
+            return 0;
+        }
+
+        $stmt = $this->pdo->prepare(
+            'SELECT m.latitud, m.longitud FROM mayoristas_perfil m WHERE m.id = ? LIMIT 1'
+        );
+        $stmt->execute([$mayoristaId]);
+        $origen = $stmt->fetch();
+
+        if ($origen === false) {
+            return 0;
+        }
+
+        $lat = (float) $origen['latitud'];
+        $lng = (float) $origen['longitud'];
+
+        $stmt = $this->pdo->prepare(
+            "SELECT r.id, r.calificacion_promedio, v.tipo,
+                    (6371 * ACOS(LEAST(1,
+                        COS(RADIANS(:lat1)) * COS(RADIANS(r.ultima_posicion_lat)) *
+                        COS(RADIANS(r.ultima_posicion_lng) - RADIANS(:lng1)) +
+                        SIN(RADIANS(:lat2)) * SIN(RADIANS(r.ultima_posicion_lat))
+                    ))) AS distancia_km
+             FROM repartidores_perfil r
+             JOIN vehiculos v ON v.repartidor_id = r.id AND v.activo = 1
+             WHERE r.disponible = 1
+               AND r.estado_kyc = 'aprobado'
+               AND r.ultima_posicion_lat IS NOT NULL
+               AND v.capacidad_peso_kg >= (SELECT COALESCE(SUM(d.cantidad * p.peso_kg), 0) FROM detalle_pedido d JOIN productos p ON p.id = d.producto_id WHERE d.pedido_id = {$pedidoId})
+               AND v.capacidad_volumen_m3 >= (SELECT COALESCE(SUM(d.cantidad * p.volumen_m3), 0) FROM detalle_pedido d JOIN productos p ON p.id = d.producto_id WHERE d.pedido_id = {$pedidoId})
+             ORDER BY distancia_km ASC, r.calificacion_promedio DESC
+             LIMIT 1"
+        );
+        $stmt->bindValue(':lat1', $lat);
+        $stmt->bindValue(':lat2', $lat);
+        $stmt->bindValue(':lng1', $lng);
+        $stmt->execute();
+
+        $candidato = $stmt->fetch();
+
+        if ($candidato === false || (float) $candidato['distancia_km'] > self::RADIOS[3]) {
+            return 0;
+        }
+
+        $tarifa = $this->tarifas->calcular((string) $candidato['tipo'], (float) $candidato['distancia_km'], 0.0);
+
+        $stmt = $this->pdo->prepare(
+            "UPDATE envios SET repartidor_id = ?, tarifa = ?, estado = 'asignado', distancia_km = ? WHERE id = ? AND repartidor_id IS NULL"
+        );
+        $stmt->execute([(int) $candidato['id'], $tarifa, (float) $candidato['distancia_km'], (int) $envio['id']]);
+
+        if ($stmt->rowCount() === 0) {
+            return 0;
+        }
+
+        // Transición del pedido a repartidor asignado.
+        $this->pedidos->transicionar($pedidoId, 'repartidor_asignado', null, ['sistema'], 'Repartidor asignado automáticamente');
+
+        return (int) $candidato['id'];
     }
 
     /**
@@ -307,6 +499,13 @@ final class AsignacionService
                 $rondas++;
             } else {
                 $this->alertarSinRepartidor($pedidoId);
+
+                // RN-07b: el rescate por red externa se encarga como job para
+                // no bloquear el worker si la red tarda.
+                $this->pdo->prepare(
+                    "INSERT INTO jobs (tipo, payload, estado) VALUES ('rescate_red', ?, 'pendiente')"
+                )->execute([json_encode(['pedido_id' => $pedidoId], JSON_UNESCAPED_UNICODE)]);
+
                 $alertas++;
             }
         }

@@ -4,6 +4,7 @@ import { apiDecidirKyc, apiKyc } from '../../lib/api-admin'
 import type { ColaKyc } from '../../lib/api-admin'
 import { fecha } from '../../lib/format'
 import Icon from '../../components/Icon'
+import DocPreview from '../../components/DocPreview'
 import { Skeleton, Vacio } from '../../components/UI'
 
 const tonoKyc = (valor: string) => {
@@ -147,6 +148,7 @@ export default function AdminKyc() {
                         {d.motivo_rechazo && <small style={{ color: 'var(--rojo)' }}>Motivo: {d.motivo_rechazo}</small>}
                       </span>
                       <span className={`chip chip--${tonoKyc(d.estado)}`}>{d.estado}</span>
+                      <DocPreview id={d.id} mime={d.mime} tipo={d.tipo.replace(/_/g, ' ')} />
                       {d.estado === 'pendiente' && puede && (
                         <span className="kyc-doc__acciones">
                           <button

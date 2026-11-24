@@ -3,16 +3,19 @@ import { useParams } from 'react-router-dom'
 import Icon from '../components/Icon'
 import { Skeleton, Vacio } from '../components/UI'
 import { money } from '../lib/format'
-import { useNavegar } from '../store/session'
+import { useNavegar, useSesion } from '../store/session'
 import { apiProveedor } from '../lib/api-proveedor'
 import type { ProductoProveedor, Proveedor as Ficha } from '../lib/api-proveedor'
+import { apiComercio } from '../lib/api-comercio'
 
 export default function Proveedor() {
   const { uuid } = useParams<{ uuid: string }>()
   const navegar = useNavegar()
+  const { aviso, rol } = useSesion()
   const [ficha, setFicha] = useState<Ficha | null>(null)
   const [productos, setProductos] = useState<ProductoProveedor[]>([])
   const [error, setError] = useState('')
+  const [guardados, setGuardados] = useState<string[]>([])
 
   useEffect(() => {
     if (!uuid) return
@@ -22,6 +25,16 @@ export default function Proveedor() {
       .catch((e) => { if (vivo) setError((e as Error).message) })
     return () => { vivo = false }
   }, [uuid])
+
+  const guardar = async (p: ProductoProveedor) => {
+    try {
+      await apiComercio.guardar(p.uuid)
+      setGuardados((g) => [...g, p.uuid])
+      aviso(`${p.nombre} guardado en tu portafolio`)
+    } catch (e) {
+      aviso((e as Error).message)
+    }
+  }
 
   if (error) return <div className="aviso aviso--error">{error}</div>
 
@@ -64,7 +77,10 @@ export default function Proveedor() {
             <div className="tabla-scroll">
               <table className="tabla">
                 <thead>
-                  <tr><th>Producto</th><th>Precio</th><th>Presentación</th><th>Stock</th></tr>
+                  <tr>
+                    <th>Producto</th><th>Precio</th><th>Presentación</th><th>Stock</th>
+                    {rol === 'comercio' && <th><span className="sr-solo">Guardar</span></th>}
+                  </tr>
                 </thead>
                 <tbody>
                   {productos.map((p) => (
@@ -76,6 +92,20 @@ export default function Proveedor() {
                       <td className="num">{money(p.precio)}</td>
                       <td>{p.unidad} · {p.contenido}</td>
                       <td className="num">{p.stock}</td>
+                      {rol === 'comercio' && (
+                        <td>
+                          <button
+                            type="button"
+                            className={`icono-btn icono-btn--mini${guardados.includes(p.uuid) ? ' icono-btn--oro' : ''}`}
+                            title={guardados.includes(p.uuid) ? 'Guardado en portafolio' : 'Guardar en portafolio'}
+                            aria-label={guardados.includes(p.uuid) ? 'Guardado en portafolio' : `Guardar ${p.nombre} en portafolio`}
+                            disabled={guardados.includes(p.uuid)}
+                            onClick={() => void guardar(p)}
+                          >
+                            <Icon name="estrella" size={15} />
+                          </button>
+                        </td>
+                      )}
                     </tr>
                   ))}
                 </tbody>

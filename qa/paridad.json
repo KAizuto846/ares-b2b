@@ -16,7 +16,9 @@
     "url": "/spa/buscar",
     "desborde": 0,
     "chicos": [],
-    "taps": [],
+    "taps": [
+      "BUTTON.icono-btn icono-btn--mini 34x44"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -376,7 +378,7 @@
   {
     "rol": "repartidor",
     "ruta": "/",
-    "url": "/spa/",
+    "url": "/spa/onboarding",
     "desborde": 0,
     "chicos": [],
     "taps": [],
@@ -387,7 +389,7 @@
   {
     "rol": "repartidor",
     "ruta": "/repartidor",
-    "url": "/spa/repartidor",
+    "url": "/spa/onboarding",
     "desborde": 0,
     "chicos": [],
     "taps": [],
@@ -398,7 +400,7 @@
   {
     "rol": "repartidor",
     "ruta": "/buscar",
-    "url": "/spa/buscar",
+    "url": "/spa/onboarding",
     "desborde": 0,
     "chicos": [],
     "taps": [],
@@ -409,7 +411,7 @@
   {
     "rol": "repartidor",
     "ruta": "/finanzas",
-    "url": "/spa/finanzas",
+    "url": "/spa/onboarding",
     "desborde": 0,
     "chicos": [],
     "taps": [],
@@ -420,7 +422,7 @@
   {
     "rol": "repartidor",
     "ruta": "/mensajes",
-    "url": "/spa/mensajes",
+    "url": "/spa/onboarding",
     "desborde": 0,
     "chicos": [],
     "taps": [],
@@ -431,7 +433,7 @@
   {
     "rol": "repartidor",
     "ruta": "/perfil",
-    "url": "/spa/perfil",
+    "url": "/spa/onboarding",
     "desborde": 0,
     "chicos": [],
     "taps": [],
@@ -442,7 +444,7 @@
   {
     "rol": "repartidor",
     "ruta": "/ayuda",
-    "url": "/spa/ayuda",
+    "url": "/spa/onboarding",
     "desborde": 0,
     "chicos": [],
     "taps": [],

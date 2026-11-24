@@ -67,6 +67,16 @@ final class ProductoService
             return ['ok' => false, 'mensaje' => $v->primerError() ?? 'Datos inválidos.', 'errores' => $v->errores(), 'id' => null];
         }
 
+        // Lista de productos prohibidos: el nombre/descripción no puede
+        // coincidir con patrones bloqueados (venta de ilícitos).
+        $prohibido = $this->coincideProhibido(
+            ($datos['nombre'] ?? '') . ' ' . ($datos['descripcion'] ?? '')
+        );
+
+        if ($prohibido !== null) {
+            return ['ok' => false, 'mensaje' => 'No puedes publicar este producto: ' . $prohibido['motivo'] . '.', 'errores' => ['nombre' => 'Producto no permitido en la plataforma'], 'id' => null];
+        }
+
         try {
             $this->precios->validarEscalas($datos['escalas'] ?? []);
         } catch (\App\Modules\Catalogo\Excepciones\EscalaInvalidaException $e) {
@@ -126,8 +136,24 @@ final class ProductoService
         return ['ok' => true, 'mensaje' => 'Producto actualizado.', 'errores' => []];
     }
 
-    private function validar(array $datos): Validator
+    /** Devuelve la regla prohibida que coincide (o null si no hay). */
+    private function coincideProhibido(string $texto): ?array
     {
+        $texto = mb_strtolower($texto);
+
+        $reglas = $this->pdo->query('SELECT patron, motivo FROM productos_prohibidos WHERE activo = 1')->fetchAll() ?: [];
+
+        foreach ($reglas as $r) {
+            if (str_contains($texto, mb_strtolower((string) $r['patron']))) {
+                return ['patron' => (string) $r['patron'], 'motivo' => (string) $r['motivo']];
+            }
+        }
+
+        return null;
+    }
+
+    private function validar(array $datos): Validator {
+
         $v = Validator::make($datos, [
             'nombre'          => 'required|max:160',
             'categoria_id'    => 'required',

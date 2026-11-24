@@ -17,6 +17,9 @@
 .contenido dt,
 .contenido small { font-size: 12px; line-height: 1.35; }
 
+/* El grupo de navegación es un botón compacto, no un control de 44 px. */
+.nav__grupo { min-height: 0; }
+
 /* Enlaces que funcionan como botón: caja real de 44 px */
 .busq-ficha__ver,
 .pos-enlace,
@@ -59,6 +62,8 @@ label:has(> input[type='radio']) { min-height: 44px; display: inline-flex; align
 .contenido textarea { min-height: 44px; }
 .contenido input[type='file'] { padding: 9px 12px; height: auto; }
 .contenido button { min-height: 44px; }
+/* Excepciones: controles del menú lateral, fuera de .contenido */
+.nav__grupo, .nav .nav__items .nav__item { min-height: 0; }
 
 /* Enlaces dentro de tablas: caja táctil sin romper la fila */
 .tabla a { display: inline-flex; align-items: center; min-height: 44px; }

@@ -145,6 +145,8 @@ export type DatosTracking = {
   eta_min: number | null
   distancia_km: number | null
   mayorista: string
+  /** Ruta multi-parada: posición del envío en la secuencia (si consolidado). */
+  consolidado?: { orden: number | null; pendientes: number; estado_viaje: string } | null
 }
 
 export type PagoSimulado = {
@@ -177,8 +179,33 @@ export const apiPedidos = {
     }),
 }
 
+export type ParadaRuta = {
+  id: number
+  orden_parada: number | null
+  estado: string
+  tarifa: number | null
+  parada_completada_at: string | null
+  uuid: string
+  total: string
+  mayorista: string
+  calle: string
+  colonia: string
+  ciudad: string
+  destino_lat: number | null
+  destino_lng: number | null
+}
+
+export type ViajeRuta = {
+  id: number
+  estado: 'planeada' | 'en_curso' | 'completada' | 'cancelada'
+  distancia_total_km: string | null
+  duracion_est_min: number | null
+  paradas: ParadaRuta[]
+}
+
 export const apiRepartidor = {
   panel: () => pedir<PanelRepartidor>('/repartidor'),
+  viajeActual: () => pedir<{ viaje: ViajeRuta | null }>('/repartidor/viaje-actual'),
   disponibilidad: (disponible: boolean, coords?: { lat: number; lng: number }) =>
     pedir<{ disponible: boolean; mensaje: string }>('/repartidor/disponibilidad', {
       method: 'POST',

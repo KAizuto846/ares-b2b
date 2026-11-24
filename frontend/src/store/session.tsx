@@ -10,6 +10,11 @@ type Contexto = {
   usuario: Usuario | null
   rol: string | null
   cargando: boolean
+  /** Configuración inicial pendiente: true/false, o null para admin/sin sesión. */
+  onboardingPendiente: boolean | null
+  completarOnboarding: () => Promise<void>
+  /** Vuelve a leer /session para sincronizar nombre/foto editados en el panel. */
+  refrescarUsuario: () => Promise<void>
   entrar: (email: string, password: string, recordar?: boolean) => Promise<void>
   salir: () => Promise<void>
   carrito: Carrito | null
@@ -53,6 +58,7 @@ export function Proveedor({ children }: { children: ReactNode }) {
   const [carrito, setCarrito] = useState<Carrito | null>(null)
   const [cajonAbierto, setCajonAbierto] = useState(false)
   const [avisos, setAvisos] = useState<Aviso[]>([])
+  const [onboardingPendiente, setOnboardingPendiente] = useState<boolean | null>(null)
   const secuencia = useRef(0)
   const ubicacion = useLocation()
 
@@ -77,6 +83,7 @@ export function Proveedor({ children }: { children: ReactNode }) {
         if (!vivo) return
         setUsuario(r.usuario)
         setRol(r.rol)
+        setOnboardingPendiente(r.onboarding_completo === null || r.onboarding_completo === undefined ? null : !r.onboarding_completo)
         document.documentElement.dataset.tema = r.tema === 'oscuro' ? 'oscuro' : 'claro'
       })
       .catch(() => { if (vivo) { setUsuario(null); setRol(null) } })
@@ -92,10 +99,20 @@ export function Proveedor({ children }: { children: ReactNode }) {
   // Cerrar el cajón al cambiar de ruta.
   useEffect(() => { setCajonAbierto(false) }, [ubicacion.pathname])
 
+  const refrescarUsuario = useCallback(async () => {
+    try {
+      const r = await api.session()
+      if (r.usuario) setUsuario(r.usuario)
+    } catch {
+      /* la sesión sigue viva aunque falle el refresco */
+    }
+  }, [])
+
   const entrar = useCallback(async (email: string, password: string, recordar = false) => {
     const r = await api.login(email, password, recordar)
     setUsuario(r.usuario)
     setRol(r.rol)
+    setOnboardingPendiente(r.onboarding_completo === null || r.onboarding_completo === undefined ? null : !r.onboarding_completo)
     document.documentElement.dataset.tema = r.tema === 'oscuro' ? 'oscuro' : 'claro'
     if (r.rol === 'comercio') await refrescarCarrito()
   }, [refrescarCarrito])
@@ -104,8 +121,15 @@ export function Proveedor({ children }: { children: ReactNode }) {
     await api.logout()
     setUsuario(null)
     setRol(null)
+    setOnboardingPendiente(null)
     setCarrito(null)
     document.documentElement.dataset.tema = 'claro'
+  }, [])
+
+  /** Marca la configuración inicial como completada en el servidor. */
+  const completarOnboarding = useCallback(async () => {
+    await api.completarOnboarding()
+    setOnboardingPendiente(false)
   }, [])
 
   const volar = useCallback((origen: HTMLElement | null, cantidad: number) => {
@@ -192,13 +216,13 @@ export function Proveedor({ children }: { children: ReactNode }) {
   }, [aviso])
 
   const valor = useMemo<Contexto>(() => ({
-    usuario, rol, cargando, entrar, salir,
+    usuario, rol, cargando, onboardingPendiente, completarOnboarding, entrar, salir, refrescarUsuario,
     carrito, refrescarCarrito, agregar, cambiar, quitarItem, vaciar,
     cajonAbierto,
     abrirCarrito: () => setCajonAbierto(true),
     cerrarCarrito: () => setCajonAbierto(false),
     aviso, avisos,
-  }), [usuario, rol, cargando, entrar, salir, carrito, refrescarCarrito, agregar, cambiar, quitarItem, vaciar, cajonAbierto, aviso, avisos])
+  }), [usuario, rol, cargando, onboardingPendiente, completarOnboarding, entrar, salir, refrescarUsuario, carrito, refrescarCarrito, agregar, cambiar, quitarItem, vaciar, cajonAbierto, aviso, avisos])
 
   return <Ctx.Provider value={valor}>{children}</Ctx.Provider>
 }

@@ -12,6 +12,7 @@ const Recuperar = lazy(() => import('./pages/auth/Recuperar'))
 const Restablecer = lazy(() => import('./pages/auth/Restablecer'))
 const Verificar = lazy(() => import('./pages/auth/Verificar'))
 const Legales = lazy(() => import('./pages/Legales'))
+const Onboarding = lazy(() => import('./pages/Onboarding'))
 const Inicio = lazy(() => import('./pages/Inicio'))
 const Buscar = lazy(() => import('./pages/Buscar'))
 const Carrito = lazy(() => import('./pages/Carrito'))
@@ -20,6 +21,7 @@ const Pedidos = lazy(() => import('./pages/Pedidos'))
 const PedidoDetalle = lazy(() => import('./pages/PedidoDetalle'))
 const Perfil = lazy(() => import('./pages/Perfil'))
 const EditarPerfil = lazy(() => import('./pages/perfil/Editar'))
+const Planes = lazy(() => import('./pages/Planes'))
 const Privacidad = lazy(() => import('./pages/perfil/Privacidad'))
 const Ajustes = lazy(() => import('./pages/perfil/Ajustes'))
 const Seguridad = lazy(() => import('./pages/perfil/Seguridad'))
@@ -98,7 +100,7 @@ function TituloPublico() {
 }
 
 function Gate() {
-  const { usuario, rol, cargando } = useSesion()
+  const { usuario, rol, cargando, onboardingPendiente } = useSesion()
   if (cargando) return <Cargando />
 
   if (!usuario) {
@@ -116,6 +118,22 @@ function Gate() {
           <Route path="/privacidad" element={<Legales documento="privacidad" />} />
           <Route path="*" element={<Login />} />
         </Routes>
+        </main>
+      </Suspense>
+    )
+  }
+
+  // Configuración inicial: toda cuenta sin admin aterriza aquí hasta completar
+  // (o saltar) los datos de arranque de su rol.
+  if (onboardingPendiente === true) {
+    return (
+      <Suspense fallback={<Cargando />}>
+        <TituloPublico />
+        <main id="principal">
+          <Routes>
+            <Route path="/onboarding" element={<Onboarding />} />
+            <Route path="*" element={<Navigate to="/onboarding" replace />} />
+          </Routes>
         </main>
       </Suspense>
     )
@@ -157,6 +175,7 @@ function Gate() {
           <Route path="/mensajes" element={<Mensajes />} />
           <Route path="/notificaciones" element={<Navigate to="/mensajes?tab=notificaciones" replace />} />
           <Route path="/perfil" element={<Perfil />} />
+          <Route path="/planes" element={<Planes />} />
           <Route path="/perfil/editar" element={<EditarPerfil />} />
           <Route path="/perfil/privacidad" element={<Privacidad />} />
           <Route path="/perfil/ajustes" element={<Ajustes />} />

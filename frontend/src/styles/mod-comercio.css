@@ -3,7 +3,8 @@
 /* ==========================================================================
    Inicio (explorar): accesos, carrito y franja de atajos
    ========================================================================== */
-.inicio-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.inicio-grid { display: grid; gap: 16px; align-items: start; }
+.inicio-grid--dos { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); }
 .inicio-accesos { display: grid; gap: 6px; }
 
 .acceso {
@@ -237,7 +238,6 @@
    Responsive
    ========================================================================== */
 @media (max-width: 980px) {
-  .inicio-grid { grid-template-columns: minmax(0, 1fr); }
   .carrito-grid { grid-template-columns: minmax(0, 1fr); }
   .carrito-pie { position: static; }
 }
@@ -250,3 +250,282 @@
   .portafolio-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
   .lista-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ---------------------------------------------------------------- banners */
+.banners { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); }
+.banner {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 18px; border-radius: var(--r-lg);
+  color: #fff; text-decoration: none;
+  box-shadow: var(--s-2);
+  transition: transform var(--t-base) var(--ease-out), box-shadow var(--t-base);
+}
+.banner:hover { transform: translateY(-2px); box-shadow: var(--s-3); }
+.banner > div { flex: 1; min-width: 0; display: grid; gap: 2px; }
+.banner strong { font-size: 15px; letter-spacing: -.01em; }
+.banner span { font-size: 12.5px; opacity: .85; }
+.banner svg { flex: 0 0 auto; opacity: .9; }
+
+/* ==========================================================================
+   Sección de anuncios del inicio (comercio): dos columnas con scroll
+   ========================================================================== */
+.publicidades {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(min(460px, 100%), 1fr));
+  gap: 14px; align-items: start;
+}
+.publicidades__columna {
+  display: grid; gap: 12px; align-content: start;
+  max-height: 560px; overflow-y: auto;
+  /* El espacio sigue presente aunque haya pocas o ninguna ficha. */
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+.publicidad {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 16px; border: 1px solid var(--line); border-radius: 15px;
+  background: #fff; box-shadow: var(--s-1); cursor: pointer;
+  font: inherit; color: var(--ink); text-align: left;
+  transition: transform var(--t-base) var(--ease-out), box-shadow var(--t-base), border-color var(--t-base);
+}
+.publicidad:hover { transform: translateY(-3px); box-shadow: var(--s-2); border-color: #c9d8cc; }
+.publicidad__imagen {
+  width: 62px; height: 62px; flex: 0 0 auto; border-radius: 13px; overflow: hidden;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--verde-suave) 0%, #dcefe2 100%);
+  color: var(--verde);
+  font-weight: 800; font-size: 17px; letter-spacing: .02em;
+}
+.publicidad__imagen img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.publicidad__texto { display: grid; gap: 2px; flex: 1; min-width: 0; }
+.publicidad__texto strong { font-size: 14px; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.publicidad__texto small { font-size: 12px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.publicidad > svg { flex: 0 0 auto; color: var(--muted); }
+
+@media (max-width: 720px) {
+  .publicidades { grid-template-columns: minmax(0, 1fr); }
+  .publicidades__columna { max-height: 420px; }
+  .pos-tarjetas { grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr)); padding: 14px; }
+  .kpi__valor { font-size: 26px; }
+}
+
+/* ==========================================================================
+   Publicador de anuncios del mayorista
+   ========================================================================== */
+.publicador__lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.publicador__item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 12px; border: 1px solid var(--line-soft); border-radius: 12px;
+}
+.publicador__progreso {
+  flex: 0 0 120px; height: 8px; border-radius: 999px;
+  background: var(--line-soft); overflow: hidden;
+}
+.publicador__progreso i { display: block; height: 100%; border-radius: 999px; background: var(--verde-3); }
+.publicador__detalle { flex: 1; min-width: 0; display: grid; gap: 2px; }
+.publicador__detalle strong { font-size: 13.5px; }
+.publicador__detalle small { font-size: 12px; color: var(--muted); }
+.publicador__clics {
+  flex: 0 0 auto; display: inline-flex; align-items: center; gap: 4px;
+  font-size: 12.5px; font-weight: 700; color: var(--ink-2);
+  background: var(--line-soft); border-radius: 99px; padding: 4px 10px;
+}
+
+/* Panel lateral deslizante de creación de anuncio. */
+.publicador__panel {
+  position: fixed; inset: 0; z-index: 120;
+  display: flex; justify-content: flex-end;
+}
+.publicador__velo {
+  position: absolute; inset: 0;
+  background: rgba(120, 128, 120, .45); /* gris claro semitransparente */
+}
+.publicador__caja {
+  position: relative; width: min(420px, 92vw); height: 100vh; height: 100dvh;
+  display: grid; grid-template-rows: auto 1fr auto;
+  background: var(--card); border-left: 1px solid var(--line);
+  box-shadow: var(--s-3);
+  animation: publicador-entra var(--t-base) var(--ease-out) both;
+}
+@keyframes publicador-entra {
+  from { transform: translateX(28px); opacity: .6; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.publicador__cab {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 16px 18px; border-bottom: 1px solid var(--line-soft);
+}
+.publicador__cab h2 { font-size: 17px; }
+.publicador__cuerpo { overflow-y: auto; padding: 16px 18px; display: grid; gap: 18px; align-content: start; }
+.publicador__paso h3 { font-size: 13px; letter-spacing: .05em; text-transform: uppercase; color: var(--faint); margin: 0 0 10px; }
+.publicador__archivo {
+  display: grid; place-items: center; min-height: 160px;
+  border: 2px dashed var(--line); border-radius: 14px; cursor: pointer;
+  color: var(--muted); font-size: 13.5px;
+  overflow: hidden; background: #fafbf6;
+}
+.publicador__archivo:hover { border-color: var(--verde-2); color: var(--verde-2); }
+.publicador__archivo img { width: 100%; height: 160px; object-fit: cover; display: block; }
+.publicador__planes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.publicador__plan {
+  display: grid; gap: 2px; justify-items: center; padding: 12px 8px;
+  border: 1.5px solid var(--line); border-radius: 12px;
+  background: var(--card); cursor: pointer; font: inherit; color: var(--ink);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+.publicador__plan strong { font-size: 15px; }
+.publicador__plan small { font-size: 11.5px; color: var(--muted); }
+.publicador__plan.elegido { border-color: var(--verde-3); box-shadow: 0 0 0 3px rgba(47, 158, 99, .16); }
+.publicador__pagos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.publicador__pago {
+  padding: 11px 0; border: 1.5px solid var(--line); border-radius: 12px;
+  background: var(--card); cursor: pointer; font: inherit; font-weight: 650; color: var(--ink);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+.publicador__pago.elegido { border-color: var(--verde-3); box-shadow: 0 0 0 3px rgba(47, 158, 99, .16); }
+.publicador__pie { padding: 14px 18px; border-top: 1px solid var(--line-soft); background: var(--card); }
+
+/* Estados de los pedidos en curso (ficha «En curso» del mayorista). */
+.inicio-estados { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+.inicio-estados li { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 13px; }
+
+/* ==========================================================================
+   Tarjeta Pedidos del mayorista: ficha de fondo con sub-fichas
+   ========================================================================== */
+.pedidos-ficha__cuerpo { display: grid; gap: 14px; }
+.pedidos-ficha__fila {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+}
+.pedidos-sub {
+  display: grid; gap: 6px; align-content: start;
+  padding: 14px 16px; border-radius: 14px;
+  background: #fafbf6; border: 1px solid var(--line-soft);
+}
+.pedidos-sub__encabezado {
+  font-size: 12px; letter-spacing: .07em; text-transform: uppercase;
+  color: var(--faint); font-weight: 750;
+}
+.pedidos-sub__numero {
+  font-size: 34px; font-weight: 800; letter-spacing: -.035em; line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.pedidos-sub__numeros { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.pedidos-sub__numero--monto { font-size: 24px; color: var(--verde-2); }
+.pedidos-sub__numlinea { font-size: 15px; font-weight: 800; }
+.pedidos-sub .inicio-estados { margin: 4px 0 0; }
+.pedidos-sub .inicio-estados li { padding: 3px 0; }
+
+/* Estados agrupados de la ficha En curso (mayorista): fichas gráficas. */
+.pedidos-estados {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px;
+}
+.pedidos-estado {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 12px; border-radius: 11px;
+  background: #fff; border: 1px solid var(--line-soft);
+}
+.pedidos-estado strong { font-size: 17px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.pedidos-sub__pie { font-size: 12px; color: var(--faint); margin-top: 6px; }
+.pedidos-sub--vendidos { background: linear-gradient(180deg, #fafbf6 0%, #f2f7f0 100%); }
+
+/* ==========================================================================
+   Pulido del panel lateral de creación de anuncio
+   ========================================================================== */
+.publicador__archivo {
+  transition: border-color var(--t-fast), background var(--t-fast), color var(--t-fast);
+}
+.publicador__caja textarea,
+.publicador__caja input[type='text'] {
+  width: 100%; min-height: 44px; padding: 10px 12px;
+  border: 1px solid var(--line); border-radius: 11px;
+  background: #fff; color: var(--ink); font: inherit; font-size: 14px;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+.publicador__caja textarea:focus,
+.publicador__caja input[type='text']:focus {
+  outline: none; border-color: var(--verde-3); box-shadow: 0 0 0 3px rgba(47, 158, 99, .16);
+}
+.publicador__cuerpo .campo span {
+  font-size: 12px; font-weight: 700; letter-spacing: .04em; color: var(--muted);
+  display: block; margin-bottom: 5px;
+}
+.publicador__cab .perfil-enlace { font-weight: 600; font-size: 12.5px; color: var(--muted); }
+.publicador__cab .perfil-enlace:hover { color: var(--rojo); }
+.publicador__pie .btn {
+  min-height: 48px; font-size: 15px; font-weight: 750;
+  border-radius: 13px; border: 0; color: #0c130f;
+}
+.publicador__pie .btn:disabled { opacity: .45; cursor: not-allowed; }
+
+/* ==========================================================================
+   Fichas de anuncios del inicio del comercio: más presencia
+   ========================================================================== */
+.publicidad {
+  box-shadow: var(--s-1);
+  animation: rise var(--t-base) var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 40ms);
+}
+.publicidad__imagen { box-shadow: inset 0 0 0 1px rgba(15, 23, 20, .06); }
+.publicidad:hover .publicidad__imagen { transform: scale(1.04); }
+.publicidad__imagen { transition: transform var(--t-base) var(--ease-out); }
+
+/* ---------- pulido visual de la sección de anuncios ---------- */
+.publicidad {
+  background: linear-gradient(180deg, #fff 0%, #fbfcf8 100%);
+}
+.publicidad:hover .publicidad__texto strong { color: var(--verde); }
+.publicidad__texto strong { transition: color var(--t-fast); }
+.publicidades__columna::-webkit-scrollbar { width: 6px; }
+.publicidades__columna::-webkit-scrollbar-thumb { background: var(--line); border-radius: 999px; }
+.publicidades__columna::-webkit-scrollbar-track { background: transparent; }
+
+/* ---------- ritmo del panel: separar pasos con aire ---------- */
+.publicador__cuerpo { gap: 22px; }
+.publicador__paso h3 {
+  display: flex; align-items: center; gap: 8px;
+}
+.publicador__paso h3::before {
+  content: ''; width: 18px; height: 2px; border-radius: 2px;
+  background: var(--verde-3); flex: 0 0 auto;
+}
+.publicador__archivo {
+  min-height: 170px; border-radius: 16px;
+}
+.publicador__planes { gap: 10px; }
+.publicador__plan { padding: 14px 8px; }
+.publicador__pago { padding: 13px 0; }
+
+/* ==========================================================================
+   Tarjetas gráficas del punto de venta (inicio del comercio)
+   ========================================================================== */
+.pos-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(180px, 100%), 1fr));
+  gap: 12px; padding: 18px;
+}
+.pos-tarjeta {
+  position: relative;
+  display: grid; gap: 4px; align-content: start;
+  padding: 16px; border-radius: 14px;
+  background: linear-gradient(180deg, #fff 0%, #f7faf5 100%);
+  border: 1px solid var(--line-soft);
+  text-decoration: none; color: inherit;
+  transition: transform var(--t-base) var(--ease-out), box-shadow var(--t-base), border-color var(--t-base);
+  animation: rise var(--t-base) var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 40ms);
+}
+.pos-tarjeta:hover {
+  transform: translateY(-3px); box-shadow: var(--s-2); border-color: #c9d8cc;
+}
+.pos-tarjeta__icono {
+  width: 44px; height: 44px; border-radius: 12px;
+  display: grid; place-items: center;
+  background: var(--verde-suave); color: var(--verde);
+  margin-bottom: 6px;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+.pos-tarjeta:hover .pos-tarjeta__icono { background: var(--verde); color: #fff; }
+.pos-tarjeta strong { font-size: 14.5px; letter-spacing: -.01em; }
+.pos-tarjeta__texto { font-size: 12.5px; color: var(--muted); line-height: 1.35; }
+.pos-tarjeta__globo { position: absolute; top: 12px; right: 12px; }
+

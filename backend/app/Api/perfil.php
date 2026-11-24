@@ -31,7 +31,9 @@ $perfilMetodo = (string) (api_ctx()['metodo'] ?? 'GET');
 $perfilEsMia = str_starts_with($perfilRuta, '/perfil/')
     || $perfilRuta === '/perfil'
     || $perfilRuta === '/kyc'
-    || $perfilRuta === '/ayuda';
+    || $perfilRuta === '/ayuda'
+    || $perfilRuta === '/anuncios/caducar'
+    || $perfilRuta === '/session/onboarding';
 
 if (!$perfilEsMia) {
     return;
@@ -104,12 +106,12 @@ function perfil_avatar_url(int $uid): ?string
 /** Preferencias del usuario con los valores por defecto del panel. */
 function perfil_preferencias(int $uid): array
 {
-    $stmt = api_pdo()->prepare('SELECT notificaciones, sms, correo, ubicacion, tema FROM preferencias_usuario WHERE usuario_id = ? LIMIT 1');
+    $stmt = api_pdo()->prepare('SELECT notificaciones, sms, correo, ubicacion, tema, onboarding FROM preferencias_usuario WHERE usuario_id = ? LIMIT 1');
     $stmt->execute([$uid]);
     $fila = $stmt->fetch();
 
     if (!is_array($fila)) {
-        return ['notificaciones' => 1, 'sms' => 1, 'correo' => 1, 'ubicacion' => 1, 'tema' => 'claro'];
+        return ['notificaciones' => 1, 'sms' => 1, 'correo' => 1, 'ubicacion' => 1, 'tema' => 'claro', 'onboarding' => 0];
     }
 
     return [
@@ -118,6 +120,7 @@ function perfil_preferencias(int $uid): array
         'correo'         => (int) $fila['correo'],
         'ubicacion'      => (int) $fila['ubicacion'],
         'tema'           => ($fila['tema'] ?? '') === 'oscuro' ? 'oscuro' : 'claro',
+        'onboarding'     => (int) ($fila['onboarding'] ?? 0),
     ];
 }
 
@@ -1010,11 +1013,42 @@ if ($perfilRuta === '/kyc' && $perfilMetodo === 'POST') {
          VALUES (?, ?, ?, ?, ?)'
     )->execute([$uid, $tipo, $nombre, $mime, strlen($bin)]);
 
+    // Verificación externa de identidad (modo demo): corre automático para
+    // documentos de identidad de repartidor y mayorista.
+    if (in_array($tipo, ['identificacion', 'selfie'], true)) {
+        $stmt = api_pdo()->prepare('SELECT id FROM kyc_documentos WHERE usuario_id = ? AND tipo = ? ORDER BY id DESC LIMIT 1');
+        $stmt->execute([$uid, $tipo]);
+
+        try {
+            $verificador = new \App\Modules\Kyc\VerificacionExtService(
+                api_pdo(),
+                new \App\Modules\Kyc\VerificadorDemo(api_pdo()),
+            );
+            $verificador->verificarDocumento((int) $stmt->fetchColumn());
+        } catch (\Throwable $e) {
+            error_log('[ares-kyc] verificación externa falló: ' . $e->getMessage());
+        }
+    }
+
     responder([
         'ok'      => true,
         'mensaje' => 'Documento recibido. Queda en revisión.',
         'estado'  => perfil_kyc_estado($uid, $rol),
     ]);
+}
+
+// ===========================================================================
+// POST /anuncios/caducar — archiva lo vencido (cualquier cuenta con perfil).
+// ===========================================================================
+if ($perfilRuta === '/anuncios/caducar' && $perfilMetodo === 'POST') {
+    perfil_exigir_cuenta();
+
+    api_pdo()->prepare(
+        "UPDATE anuncios SET estado = 'caducado', activo = 0
+          WHERE estado = 'activo' AND vence_el IS NOT NULL AND vence_el < CURDATE()"
+    )->execute();
+
+    responder(['ok' => true]);
 }
 
 // ===========================================================================
@@ -1060,7 +1094,7 @@ if ($perfilRuta === '/ayuda' && $perfilMetodo === 'GET') {
         ],
         'legal' => [
             ['texto' => 'Términos y condiciones', 'href' => '/terminos'],
-            ['texto' => 'Aviso de privacidad', 'href' => '/aviso-privacidad'],
+            ['texto' => 'Aviso de privacidad', 'href' => '/privacidad'],
         ],
     ]);
 }
@@ -1086,6 +1120,10 @@ if ($perfilRuta === '/perfil/eliminar' && $perfilMetodo === 'POST') {
     $pdo->beginTransaction();
 
     try {
+        // Los anuncios del cuenta mueren con la cuenta.
+        $pdo->prepare('UPDATE anuncios SET estado = "caducado", activo = 0 WHERE mayorista_id IN (SELECT id FROM mayoristas_perfil WHERE usuario_id = ?)')
+            ->execute([$uid]);
+
         $pdo->prepare('UPDATE usuarios SET deleted_at = NOW(), eliminado_motivo = ? WHERE id = ?')
             ->execute([$motivo !== '' ? $motivo : null, $uid]);
 
@@ -1210,4 +1248,51 @@ if ($perfilRuta === '/perfil/calificar' && $perfilMetodo === 'POST') {
     ]);
 }
 
+// POST /session/onboarding — marca la configuración inicial como completada.
+// Idempotente: siempre escribe 1 y responde el estado nuevo.
+if ($perfilRuta === '/session/onboarding' && $perfilMetodo === 'POST') {
+    perfil_exigir_cuenta();
+    $uid = api_uid();
+
+    api_pdo()->prepare(
+        'INSERT INTO preferencias_usuario (usuario_id, onboarding) VALUES (?, 1)
+         ON DUPLICATE KEY UPDATE onboarding = 1'
+    )->execute([$uid]);
+
+    responder(['ok' => true, 'onboarding_completo' => true]);
+}
+
 // Ninguna ruta del módulo coincidió: el siguiente módulo recibe el control.
+
+// =====================================================================
+// GET /perfil/categorias — catálogo para la encuesta de preferencias.
+// POST /perfil/categorias — guarda las categorías marcadas por el usuario.
+// =====================================================================
+if ($perfilRuta === '/perfil/categorias' && $perfilMetodo === 'GET') {
+    perfil_exigir_cuenta();
+
+    $categorias = array_map(static fn (array $c): array => [
+        'id' => (int) $c['id'], 'nombre' => (string) $c['nombre'],
+    ], api_pdo()->query('SELECT id, nombre FROM categorias WHERE activa = 1 ORDER BY nombre')->fetchAll() ?: []);
+
+    $stmt = api_pdo()->prepare('SELECT categoria_id FROM usuario_preferencias_categorias WHERE usuario_id = ? AND interes = 1');
+    $stmt->execute([api_uid()]);
+
+    responder(['ok' => true, 'categorias' => $categorias, 'seleccionadas' => array_map('intval', $stmt->fetchAll(PDO::FETCH_COLUMN) ?: [])]);
+}
+
+if ($perfilRuta === '/perfil/categorias' && $perfilMetodo === 'POST') {
+    perfil_exigir_cuenta();
+
+    $ids = array_slice(array_map('intval', (array) (api_cuerpo()['categoria_ids'] ?? [])), 0, 20);
+    $uid = api_uid();
+
+    api_pdo()->prepare('DELETE FROM usuario_preferencias_categorias WHERE usuario_id = ?')->execute([$uid]);
+
+    foreach ($ids as $id) {
+        api_pdo()->prepare('INSERT IGNORE INTO usuario_preferencias_categorias (usuario_id, categoria_id, interes) VALUES (?, ?, 1)')
+            ->execute([$uid, $id]);
+    }
+
+    responder(['ok' => true, 'guardadas' => count($ids)]);
+}

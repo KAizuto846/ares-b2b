@@ -39,81 +39,6 @@ function Atajo({ icono, titulo, texto, onClick }: { icono: string; titulo: strin
   )
 }
 
-function DialogoBaja({ abierto, cerrar }: { abierto: boolean; cerrar: () => void }) {
-  const { salir } = useSesion()
-  const [confirmacion, setConfirmacion] = useState('')
-  const [motivo, setMotivo] = useState('')
-  const [error, setError] = useState('')
-  const [enviando, setEnviando] = useState(false)
-
-  useEffect(() => {
-    if (!abierto) {
-      setConfirmacion('')
-      setMotivo('')
-      setError('')
-      setEnviando(false)
-    }
-  }, [abierto])
-
-  useEffect(() => {
-    if (!abierto) return
-    const alTeclear = (e: KeyboardEvent) => { if (e.key === 'Escape') cerrar() }
-    document.addEventListener('keydown', alTeclear)
-    return () => document.removeEventListener('keydown', alTeclear)
-  }, [abierto, cerrar])
-
-  if (!abierto) return null
-
-  const eliminar = async () => {
-    setEnviando(true)
-    setError('')
-    try {
-      await apiPerfil.eliminar(confirmacion, motivo)
-      await salir()
-    } catch (e) {
-      setError((e as Error).message)
-      setEnviando(false)
-    }
-  }
-
-  return (
-    <div className="perfil-dialogo" role="dialog" aria-modal="true" aria-labelledby="baja-titulo">
-      <div className="perfil-dialogo__velo" onClick={cerrar} />
-      <div className="perfil-dialogo__caja">
-        <h2 id="baja-titulo">Eliminar mi cuenta</h2>
-        <p>Esta acción no se puede deshacer. Escribe <strong>ELIMINAR</strong> para confirmar.</p>
-        <label className="campo">
-          <span>Confirmación</span>
-          <input
-            type="text"
-            value={confirmacion}
-            onChange={(e) => setConfirmacion(e.target.value)}
-            placeholder="ELIMINAR"
-            autoComplete="off"
-            autoFocus
-          />
-        </label>
-        <label className="campo">
-          <span>Motivo (opcional)</span>
-          <input type="text" value={motivo} maxLength={120} onChange={(e) => setMotivo(e.target.value)} placeholder="Ya no lo necesito" />
-        </label>
-        {error && <div className="aviso aviso--error" role="alert">{error}</div>}
-        <div className="perfil-dialogo__acciones">
-          <button type="button" className="btn btn--claro" onClick={cerrar}>Cancelar</button>
-          <button
-            type="button"
-            className="btn btn--peligro"
-            onClick={eliminar}
-            disabled={enviando || confirmacion.trim().toUpperCase() !== 'ELIMINAR'}
-          >
-            {enviando ? 'Eliminando…' : 'Eliminar definitivamente'}
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 function Dato({ etiqueta, children }: { etiqueta: string; children: ReactNode }) {
   return (
     <div className="perfil-dato">
@@ -126,7 +51,6 @@ function Dato({ etiqueta, children }: { etiqueta: string; children: ReactNode })
 export default function Perfil() {
   const [datos, setDatos] = useState<PerfilDetalle | null>(null)
   const [error, setError] = useState('')
-  const [baja, setBaja] = useState(false)
   const { salir } = useSesion()
   const navegar = useNavegar()
 
@@ -195,69 +119,67 @@ export default function Perfil() {
         </div>
       </section>
 
-      <nav className="perfil-atajos rise" style={{ ['--i' as string]: 2 }} aria-label="Accesos de la cuenta">
-        <Atajo icono="seguridad" titulo="Seguridad" texto="Contraseña y baja de la cuenta" onClick={() => navegar('/perfil/seguridad')} />
-        <Atajo icono="ayuda" titulo="Ayuda" texto="Preguntas frecuentes y soporte" onClick={() => navegar('/ayuda')} />
-        <Atajo icono="ajustes" titulo="Ajustes" texto="Privacidad, permisos y tema" onClick={() => navegar('/perfil/ajustes')} />
-      </nav>
-
-      <section className="card rise" style={{ ['--i' as string]: 3 }}>
-        <div className="card__cab">
-          <h2 style={{ fontSize: 16 }}>Verificaciones y calificaciones</h2>
-          <button type="button" className="btn btn--claro btn--mini" style={{ marginLeft: 'auto' }} onClick={() => navegar('/kyc')}>
-            <Icon name="kyc" size={15} /> Ir a verificación
-          </button>
-        </div>
-        <div className="card__cuerpo perfil-calif">
-          <div className="perfil-calif__resumen">
-            <div>
-              <div className="perfil-calif__nota">{datos.calificacion.promedio !== null ? datos.calificacion.promedio.toFixed(1) : '—'}</div>
-              <div className="perfil-pista">{datos.calificacion.total} calificaciones</div>
+      {/* Fichas en dos columnas: verificación a la izquierda y accesos a la derecha. */}
+      <div className="perfil-columnas">
+        <section className="card rise" style={{ ['--i' as string]: 2 }}>
+          <div className="card__cab">
+            <h2 style={{ fontSize: 16 }}>Verificaciones y calificaciones</h2>
+            <button type="button" className="btn btn--claro btn--mini" style={{ marginLeft: 'auto' }} onClick={() => navegar('/kyc')}>
+              <Icon name="kyc" size={15} /> Ir a verificación
+            </button>
+          </div>
+          <div className="card__cuerpo perfil-calif">
+            <div className="perfil-calif__resumen">
+              <div>
+                <div className="perfil-calif__nota">{datos.calificacion.promedio !== null ? datos.calificacion.promedio.toFixed(1) : '—'}</div>
+                <div className="perfil-pista">{datos.calificacion.total} calificaciones</div>
+              </div>
+              <div className="perfil-calif__barras">
+                {['5', '4', '3', '2', '1'].map((estrella) => {
+                  const n = datos.desglose.por_estrella[estrella] ?? 0
+                  return (
+                    <div className="perfil-barra" key={estrella}>
+                      <span>{estrella}</span>
+                      <span className="perfil-barra__pista"><span style={{ width: `${Math.round((n / mayorBarra) * 100)}%` }} /></span>
+                      <span>{n}</span>
+                    </div>
+                  )
+                })}
+              </div>
             </div>
-            <div className="perfil-calif__barras">
-              {['5', '4', '3', '2', '1'].map((estrella) => {
-                const n = datos.desglose.por_estrella[estrella] ?? 0
-                return (
-                  <div className="perfil-barra" key={estrella}>
-                    <span>{estrella}</span>
-                    <span className="perfil-barra__pista"><span style={{ width: `${Math.round((n / mayorBarra) * 100)}%` }} /></span>
-                    <span>{n}</span>
-                  </div>
-                )
-              })}
+
+            <div className="perfil-comentarios">
+              <h3>Comentarios recibidos</h3>
+              {datos.desglose.comentarios.length === 0
+                ? <p className="perfil-pista">Aún no hay comentarios escritos.</p>
+                : datos.desglose.comentarios.map((c, i) => (
+                  <article className="perfil-comentario" key={`${c.created_at}-${i}`}>
+                    <header>
+                      <strong>{c.autor}</strong>
+                      <span className="perfil-pista">{fecha(c.created_at)}</span>
+                    </header>
+                    <div className="perfil-comentario__estrellas" aria-label={`${c.puntaje} de 5`}>
+                      {'★'.repeat(c.puntaje)}{'☆'.repeat(5 - c.puntaje)}
+                    </div>
+                    <p>{c.comentario}</p>
+                  </article>
+                ))}
             </div>
           </div>
+        </section>
 
-          <div className="perfil-comentarios">
-            <h3>Comentarios recibidos</h3>
-            {datos.desglose.comentarios.length === 0
-              ? <p className="perfil-pista">Aún no hay comentarios escritos.</p>
-              : datos.desglose.comentarios.map((c, i) => (
-                <article className="perfil-comentario" key={`${c.created_at}-${i}`}>
-                  <header>
-                    <strong>{c.autor}</strong>
-                    <span className="perfil-pista">{fecha(c.created_at)}</span>
-                  </header>
-                  <div className="perfil-comentario__estrellas" aria-label={`${c.puntaje} de 5`}>
-                    {'★'.repeat(c.puntaje)}{'☆'.repeat(5 - c.puntaje)}
-                  </div>
-                  <p>{c.comentario}</p>
-                </article>
-              ))}
-          </div>
-        </div>
-      </section>
+        <nav className="perfil-atajos" aria-label="Accesos de la cuenta">
+          <Atajo icono="seguridad" titulo="Seguridad" texto="Contraseña y baja de la cuenta" onClick={() => navegar('/perfil/seguridad')} />
+          <Atajo icono="ayuda" titulo="Ayuda" texto="Preguntas frecuentes y soporte" onClick={() => navegar('/ayuda')} />
+          <Atajo icono="ajustes" titulo="Ajustes" texto="Privacidad, permisos y tema" onClick={() => navegar('/perfil/ajustes')} />
+        </nav>
+      </div>
 
-      <div className="perfil-sesion rise" style={{ ['--i' as string]: 4 }}>
+      <div className="perfil-sesion rise" style={{ ['--i' as string]: 3 }}>
         <button type="button" className="btn btn--claro btn--bloque" onClick={() => salir()}>
           <Icon name="salir" size={16} /> Cerrar sesión
         </button>
-        <button type="button" className="btn btn--peligro btn--bloque" onClick={() => setBaja(true)}>
-          <Icon name="basura" size={16} /> Eliminar cuenta
-        </button>
       </div>
-
-      <DialogoBaja abierto={baja} cerrar={() => setBaja(false)} />
     </div>
   )
 }

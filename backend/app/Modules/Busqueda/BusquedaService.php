@@ -68,22 +68,26 @@ final class BusquedaService
         $orden = in_array($entrada['orden'] ?? '', self::ORDENES, true) ? (string) $entrada['orden'] : 'distancia';
         $q = mb_substr(trim((string) ($entrada['q'] ?? '')), 0, 80);
         $categoria = (int) ($entrada['categoria_id'] ?? 0) ?: null;
+        $mayoristaUuid = preg_match('/^[a-f0-9-]{36}$/i', (string) ($entrada['mayorista_uuid'] ?? ''))
+            ? (string) $entrada['mayorista_uuid']
+            : null;
 
         $filtros = [
-            'q'            => $q,
-            'categoria_id' => $categoria,
-            'lat'          => $lat,
-            'lng'          => $lng,
-            'radio'        => $radio,
-            'orden'        => $orden,
-            'page'         => $page,
-            'per_page'     => $perPage,
+            'q'              => $q,
+            'categoria_id'   => $categoria,
+            'mayorista_uuid' => $mayoristaUuid,
+            'lat'            => $lat,
+            'lng'            => $lng,
+            'radio'          => $radio,
+            'orden'          => $orden,
+            'page'           => $page,
+            'per_page'       => $perPage,
         ];
 
         // Clave con coordenadas redondeadas a ~110 m: búsquedas vecinas comparten
         // resultado en vez de generar una entrada por cada metro.
         $clave = 'busqueda:' . md5(json_encode([
-            round($lat, 3), round($lng, 3), $radio, $categoria, $q, $orden, $page, $perPage,
+            round($lat, 3), round($lng, 3), $radio, $categoria, $mayoristaUuid, $q, $orden, $page, $perPage,
         ]) ?: '');
 
         $cacheado = $this->cache->get($clave);

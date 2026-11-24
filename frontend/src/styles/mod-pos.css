@@ -3,7 +3,7 @@
 /* --------------------------------------------------------------- caja */
 .pos {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 372px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
   gap: 18px;
   align-items: start;
 }
@@ -265,7 +265,7 @@
 /* --------------------------------------------------------- inventario */
 .pos-inv {
   display: grid;
-  grid-template-columns: minmax(0, 1.65fr) minmax(280px, .9fr);
+  grid-template-columns: minmax(0, 1.65fr) minmax(240px, .9fr);
   gap: 16px;
   align-items: start;
 }
@@ -353,14 +353,14 @@
 .pos-hoja__total { display: flex; justify-content: space-between; margin-top: 6px; font-size: 16px; font-weight: 700; }
 
 /* ------------------------------------------------------------ móvil */
-@media (max-width: 1023px) {
-  .pos-inv { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 939px) {
+@media (max-width: 1120px) {
   .pos { grid-template-columns: minmax(0, 1fr); }
   .pos__ticket { position: static; }
   .pos__lineas { max-height: none; }
+}
+
+@media (max-width: 939px) {
+  .pos-inv { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 560px) {

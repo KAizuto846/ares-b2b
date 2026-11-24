@@ -29,7 +29,11 @@ $asignacion = new \App\Modules\Logistica\AsignacionService(
     $pdo,
     new \App\Modules\Logistica\TarifaService($pdo),
     $pedidoService,
+    new \App\Modules\Logistica\ConsolidacionService($pdo, new \App\Modules\Logistica\TarifaService($pdo)),
+    new \App\Modules\Logistica\ParametrosReparto($pdo),
 );
+
+$rescate = new \App\Modules\Logistica\RescateRedService($pdo, new \App\Core\AuditLogger($pdo));
 
 $worker = new Worker(
     $pdo,
@@ -37,6 +41,8 @@ $worker = new Worker(
     $notificaciones,
     new ProgramadoService($pdo, new \App\Modules\Catalogo\PrecioService(), $notificaciones),
     $asignacion,
+    $rescate,
+    new \App\Modules\Logistica\LiquidacionService($pdo),
 );
 
 $inicio = microtime(true);

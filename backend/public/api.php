@@ -147,11 +147,21 @@ try {
             $tema = (string) ($stmt->fetchColumn() ?: 'claro');
         }
 
+        // Onboarding: la cuenta sin bandera (y sin rol admin) salta a la
+        // pantalla de configuración inicial antes de ver el panel.
+        $onboarding = null;
+        if ($usuarioId > 0 && $rol !== '' && !str_starts_with($rol, 'admin')) {
+            $stmt = $pdo->prepare('SELECT onboarding FROM preferencias_usuario WHERE usuario_id = ? LIMIT 1');
+            $stmt->execute([$usuarioId]);
+            $onboarding = (bool) ((int) ($stmt->fetchColumn() ?: 0));
+        }
+
         responder([
             'ok'      => true,
             'usuario' => $usuarioId > 0 ? $datosUsuario() : null,
             'rol'     => $rol,
             'tema'    => $tema === 'oscuro' ? 'oscuro' : 'claro',
+            'onboarding_completo' => $onboarding,
         ]);
     }
 
@@ -179,13 +189,18 @@ try {
         Session::poner('roles', $resultado['roles']);
 
         $roles = (array) (Session::obtener('roles') ?? []);
-        $tema = $pdo->prepare('SELECT tema FROM preferencias_usuario WHERE usuario_id = ? LIMIT 1');
+        $tema = $pdo->prepare('SELECT tema, onboarding FROM preferencias_usuario WHERE usuario_id = ? LIMIT 1');
         $tema->execute([(int) $resultado['usuario']['id']]);
+        $pref = $tema->fetch() ?: [];
+        $rolLogin = (string) ($roles[0] ?? '');
         responder([
             'ok'      => true,
             'usuario' => $datosUsuario(),
             'rol'     => $roles[0] ?? null,
-            'tema'    => ((string) ($tema->fetchColumn() ?: 'claro')) === 'oscuro' ? 'oscuro' : 'claro',
+            'tema'    => ((string) ($pref['tema'] ?? 'claro')) === 'oscuro' ? 'oscuro' : 'claro',
+            'onboarding_completo' => ($rolLogin !== '' && !str_starts_with($rolLogin, 'admin'))
+                ? (bool) ((int) ($pref['onboarding'] ?? 0))
+                : null,
         ]);
     }
 
@@ -203,6 +218,9 @@ try {
         '/auth/verificar',
         '/legales/terminos',
         '/legales/privacidad',
+        // Webhook de la red externa de reparto: se autentica por firma HMAC,
+        // no por sesión (verificado dentro del módulo).
+        '/logistica/red/webhook',
     ];
 
     if ($usuarioId <= 0 && !in_array($ruta, $publicas, true)) {

@@ -39,7 +39,7 @@
 .filtro-estado--ok.activo { border-color: var(--verde-2); background: var(--verde-suave); color: var(--verde); }
 
 /* --- detalle del pedido -------------------------------------------------- */
-.detalle-cab__lado { display: grid; justify-items: end; gap: 4px; }
+.detalle-cab__lado { display: grid; justify-items: end; gap: 6px; }
 .detalle-total { font-size: 26px; font-weight: 750; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
 
 .detalle-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 18px; align-items: start; }
@@ -151,7 +151,7 @@
 .pago-monto { font-size: 34px; font-weight: 750; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
 
 /* --- responsive ---------------------------------------------------------- */
-@media (max-width: 900px) {
+@media (max-width: 1120px) {
   .detalle-grid { grid-template-columns: minmax(0, 1fr); }
   .detalle-cab__lado { justify-items: start; }
 }

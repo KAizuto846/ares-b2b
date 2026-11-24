@@ -5,29 +5,51 @@ import { useNavegar } from '../../store/session'
 import { Skeleton } from '../../components/UI'
 import Icon from '../../components/Icon'
 
-const VERIFICACION: Record<string, { texto: string; tono: string }> = {
-  aprobado: { texto: 'Verificado', tono: 'ok' },
-  en_revision: { texto: 'En revisión', tono: 'alerta' },
-  rechazado: { texto: 'Rechazado', tono: 'malo' },
-  sin_verificar: { texto: 'Sin verificar', tono: 'neutro' },
+const CLAVE_ALMACEN = 'ares-permisos-dispositivo'
+
+/** Estado guardado de los permisos (encendido por defecto). */
+function leerPermisos(claves: string[]): Record<string, boolean> {
+  let guardados: Record<string, boolean> = {}
+  try {
+    guardados = JSON.parse(localStorage.getItem(CLAVE_ALMACEN) ?? '{}') as Record<string, boolean>
+  } catch {
+    guardados = {}
+  }
+  const estados: Record<string, boolean> = {}
+  for (const c of claves) estados[c] = guardados[c] !== false
+  return estados
 }
 
 export default function Permisos() {
   const [datos, setDatos] = useState<DatosPermisos | null>(null)
   const [error, setError] = useState('')
+  const [estados, setEstados] = useState<Record<string, boolean>>({})
   const navegar = useNavegar()
 
   useEffect(() => {
     apiPerfil.permisos()
       .then((d) => {
         setDatos(d)
+        setEstados(leerPermisos(d.dispositivo.map((x) => x.clave)))
         document.documentElement.dataset.tema = d.tema
       })
       .catch((e) => setError((e as Error).message))
   }, [])
 
+  const alternar = (clave: string, valor: boolean) => {
+    setEstados((e) => {
+      const siguiente = { ...e, [clave]: valor }
+      try {
+        localStorage.setItem(CLAVE_ALMACEN, JSON.stringify(siguiente))
+      } catch {
+        /* sin almacenamiento local la preferencia vive solo en la sesión */
+      }
+      return siguiente
+    })
+  }
+
   if (error) return <div className="aviso aviso--error" role="alert">{error}</div>
-  if (!datos) return <div style={{ display: 'grid', gap: 12 }}><Skeleton h={80} /><Skeleton h={220} /><Skeleton h={180} /></div>
+  if (!datos) return <div style={{ display: 'grid', gap: 12 }}><Skeleton h={220} /></div>
 
   return (
     <div className="perfil-form">
@@ -42,44 +64,11 @@ export default function Permisos() {
       </header>
 
       <section className="card rise" style={{ ['--i' as string]: 1 }}>
-        <div className="card__cab"><h2 style={{ fontSize: 16 }}>Tu cuenta</h2></div>
-        <div className="card__cuerpo perfil-permisos">
-          {datos.roles.map((r) => {
-            const v = VERIFICACION[r.verificacion] ?? VERIFICACION.sin_verificar
-            return (
-              <article className="perfil-permiso" key={r.nombre}>
-                <header className="perfil-permiso__cab">
-                  <div>
-                    <strong>{r.etiqueta}</strong>
-                    <small className="perfil-pista">Rol «{r.nombre}»</small>
-                  </div>
-                  <span className={`chip chip--${v.tono}`}>{v.texto}</span>
-                </header>
-
-                <ul className="perfil-permiso__lista">
-                  {r.permite.map((p) => (
-                    <li key={p}><Icon name="ok" size={14} /> {p}</li>
-                  ))}
-                </ul>
-
-                {r.kyc.length > 0 && (
-                  <p className="perfil-pista">
-                    Documentos de verificación: {r.kyc.join(', ')}.{' '}
-                    <button type="button" className="perfil-enlace" onClick={() => navegar('/kyc')}>Revisar</button>
-                  </p>
-                )}
-              </article>
-            )
-          })}
-        </div>
-      </section>
-
-      <section className="card rise" style={{ ['--i' as string]: 2 }}>
         <div className="card__cab"><h2 style={{ fontSize: 16 }}>Permisos del dispositivo</h2></div>
         <div className="card__cuerpo perfil-opciones">
           <p className="perfil-pista" style={{ margin: 0 }}>
-            Ares te los pide al navegador solo cuando de verdad los necesita; puedes revocarlos en cualquier
-            momento desde la configuración del navegador y te los volverá a pedir la próxima vez.
+            Ares te los pide al navegador solo cuando de verdad los necesita; apágalo aquí y el navegador
+            dejará de ofrecerlo en esta app.
           </p>
           {datos.dispositivo.map((d) => (
             <div className="perfil-opcion" key={d.clave}>
@@ -87,7 +76,15 @@ export default function Permisos() {
                 <strong>{d.titulo}</strong>
                 <small>{d.texto}</small>
               </div>
-              <span className="chip chip--neutro">Se pide al usarse</span>
+              <label className="perfil-interruptor">
+                <input
+                  type="checkbox"
+                  checked={estados[d.clave] !== false}
+                  onChange={(e) => alternar(d.clave, e.target.checked)}
+                  aria-label={d.titulo}
+                />
+                <span className="perfil-interruptor__pista" aria-hidden="true" />
+              </label>
             </div>
           ))}
         </div>

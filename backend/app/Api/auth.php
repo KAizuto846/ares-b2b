@@ -510,6 +510,16 @@ if ($authRuta === '/auth/registro') {
         $pdo->beginTransaction();
         $pdo->prepare('UPDATE usuarios SET nombre = ? WHERE id = ?')->execute([$nombre, $usuarioId]);
         (new \App\Modules\Perfil\PerfilRepository($pdo))->asegurarPerfil($usuarioId, $rol, $negocio !== '' ? $negocio : $nombre);
+
+        // Aceptación de términos versionada (obligatoria en el alta).
+        $stmtVersion = $pdo->query('SELECT id FROM terminos_versiones WHERE publicado = 1 ORDER BY id DESC LIMIT 1');
+        $versionId = (int) ($stmtVersion->fetchColumn() ?: 0);
+
+        if ($versionId > 0) {
+            $pdo->prepare('INSERT IGNORE INTO terminos_aceptaciones (usuario_id, version_id, ip) VALUES (?, ?, ?)')
+                ->execute([$usuarioId, $versionId, auth_ip()]);
+        }
+
         $pdo->commit();
     } catch (\Throwable $e) {
         if ($pdo->inTransaction()) {
@@ -675,3 +685,20 @@ if ($authRuta === '/legales/terminos' || $authRuta === '/legales/privacidad') {
 }
 
 fallo('Ruta no encontrada: ' . $authRuta, 404, 'NO_ENCONTRADA');
+
+// GET /auth/terminos — versión vigente de los términos (público).
+// La SPA la consulta en el registro y para avisar cuando hay versión nueva.
+if ($authRuta === '/auth/terminos' && $authMetodo === 'GET') {
+    $stmt = auth_pdo()->prepare('SELECT id, version, archivo FROM terminos_versiones WHERE publicado = 1 ORDER BY id DESC LIMIT 1');
+    $stmt->execute();
+    $vigente = $stmt->fetch() ?: null;
+
+    responder([
+        'ok' => true,
+        'vigente' => $vigente === null ? null : [
+            'id' => (int) $vigente['id'],
+            'version' => (string) $vigente['version'],
+            'archivo' => (string) $vigente['archivo'],
+        ],
+    ]);
+}

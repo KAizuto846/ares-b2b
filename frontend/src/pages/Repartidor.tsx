@@ -4,7 +4,7 @@ import { Skeleton, Vacio } from '../components/UI'
 import { useNavegar, useSesion } from '../store/session'
 import Icon from '../components/Icon'
 import { apiPedidos, apiRepartidor, apiTracking } from '../lib/api-pedidos'
-import type { Punto, PanelRepartidor, ViajeRepartidor } from '../lib/api-pedidos'
+import type { Punto, PanelRepartidor, ViajeRepartidor, ViajeRuta } from '../lib/api-pedidos'
 
 /** Estados en los que el repartidor transmite posición (mismos que el backend). */
 const TRANSMITEN = ['en_recoleccion', 'en_camino', 'en_puerta']
@@ -14,6 +14,7 @@ export default function Repartidor() {
   const navegar = useNavegar()
 
   const [panel, setPanel] = useState<PanelRepartidor | null>(null)
+  const [ruta, setRuta] = useState<ViajeRuta | null>(null)
   const [error, setError] = useState('')
   const [ocupado, setOcupado] = useState('')
   const [pines, setPines] = useState<Record<string, string>>({})
@@ -21,7 +22,12 @@ export default function Repartidor() {
 
   const cargar = useCallback(async () => {
     try {
-      setPanel(await apiRepartidor.panel())
+      const [p, v] = await Promise.all([
+        apiRepartidor.panel(),
+        apiRepartidor.viajeActual().catch(() => null),
+      ])
+      setPanel(p)
+      setRuta(v?.viaje ?? null)
       setError('')
     } catch (e) {
       setError((e as Error).message)
@@ -156,6 +162,65 @@ export default function Repartidor() {
 
       {error && <div className="aviso aviso--error">{error}</div>}
 
+      {/* Ruta consolidada: paradas en orden óptimo (OSRM). Solo aparece con
+          más de un envío en el mismo viaje. */}
+      {ruta && ruta.paradas.filter((p) => p.parada_completada_at === null).length > 1 && (
+        <section className="card rise" style={{ ['--i' as string]: 1, borderColor: 'rgba(47,158,99,.35)' }}>
+          <div className="card__cab">
+            <h2>Tu ruta</h2>
+            <span className="chip chip--ok" style={{ marginLeft: 'auto' }}>
+              {ruta.paradas.filter((p) => p.parada_completada_at === null).length} parada{ruta.paradas.filter((p) => p.parada_completada_at === null).length === 1 ? '' : 's'} pendiente{ruta.paradas.filter((p) => p.parada_completada_at === null).length === 1 ? '' : 's'}
+            </span>
+            {ruta.duracion_est_min !== null && (
+              <span className="apunte">≈ {ruta.duracion_est_min} min · {ruta.distancia_total_km ? Number(ruta.distancia_total_km).toFixed(1) : '—'} km</span>
+            )}
+          </div>
+          <div className="card__cuerpo" style={{ display: 'grid', gap: 10 }}>
+            {ruta.paradas.map((p, i) => {
+              const hecha = p.parada_completada_at !== null
+              const siguiente = !hecha && ruta.paradas.slice(0, i).every((x) => x.parada_completada_at !== null)
+              return (
+                <div
+                  key={p.id}
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: 12, padding: '10px 12px',
+                    borderRadius: 12, border: `1px solid ${hecha ? 'var(--line-soft)' : siguiente ? 'rgba(47,158,99,.4)' : 'var(--line)'}`,
+                    background: hecha ? 'var(--line-soft)' : siguiente ? 'var(--verde-suave)' : '#fff',
+                    opacity: hecha ? 0.65 : 1, flexWrap: 'wrap',
+                  }}
+                >
+                  <span className={`chip ${hecha ? 'chip--ok' : siguiente ? 'chip--info' : 'chip--neutro'}`}>#{i + 1}</span>
+                  <div style={{ flex: 1, minWidth: 160 }}>
+                    <strong style={{ fontSize: 13.5 }}>{p.mayorista} → {p.colonia || p.ciudad}</strong>
+                    <span className="apunte" style={{ display: 'block' }}>
+                      {p.calle} · {money(Number(p.total))}{p.tarifa !== null ? ` · tarifa ${money(Number(p.tarifa))}` : ''}
+                    </span>
+                  </div>
+                  {p.destino_lat !== null && p.destino_lng !== null && !hecha && (
+                    <a
+                      className="btn btn--claro btn--mini"
+                      href={`https://waze.com/ul?ll=${p.destino_lat},${p.destino_lng}&navigate=yes`}
+                      target="_blank" rel="noreferrer"
+                    >
+                      <Icon name="mapa" size={14} /> Ir
+                    </a>
+                  )}
+                  <button
+                    type="button"
+                    className="btn btn--mini"
+                    disabled={hecha || !siguiente}
+                    onClick={() => navegar(`/pedidos/${p.uuid}`)}
+                  >
+                    {hecha ? <Icon name="ok" size={15} /> : siguiente ? 'Atender parada' : 'En espera'}
+                  </button>
+                </div>
+              )
+            })}
+            <p className="apunte">El orden lo calcula el sistema para acortar tu camino. Las paradas se atienden en secuencia.</p>
+          </div>
+        </section>
+      )}
+
       <div className="kpis rise" style={{ ['--i' as string]: 1 }}>
         <div className={`kpi${repartidor.disponible ? '' : ' kpi--alerta'}`}>
           <span className="kpi__valor">{repartidor.disponible ? 'En línea' : 'Fuera'}</span>
@@ -285,6 +350,28 @@ export default function Repartidor() {
                   )}
                   {v.estado === 'en_camino' && (
                     <button className="btn" disabled={ocupado !== ''} onClick={() => void paso(v, 'llegue')}>Llegué al comercio</button>
+                  )}
+                  {v.destino.lat !== null && v.destino.lng !== null && (
+                    <>
+                      <a
+                        className="btn btn--claro btn--mini"
+                        href={`https://waze.com/ul?ll=${v.destino.lat},${v.destino.lng}&navigate=yes`}
+                        target="_blank"
+                        rel="noreferrer"
+                        title="Navegar con Waze"
+                      >
+                        <Icon name="mapa" size={14} /> Waze
+                      </a>
+                      <a
+                        className="btn btn--claro btn--mini"
+                        href={`https://www.google.com/maps/dir/?api=1&destination=${v.destino.lat},${v.destino.lng}&travelmode=driving`}
+                        target="_blank"
+                        rel="noreferrer"
+                        title="Navegar con Google Maps"
+                      >
+                        <Icon name="mapa" size={14} /> Maps
+                      </a>
+                    </>
                   )}
                   <button className="btn btn--claro btn--mini" onClick={() => navegar(`/pedidos/${v.uuid}`)}>
                     Abrir pedido

@@ -137,6 +137,10 @@ const json = (metodo: string, cuerpo?: unknown): RequestInit => ({
 
 export const apiPerfil = {
   detalle: () => pedir<PerfilDetalle>('/perfil/detalle'),
+  categorias: () =>
+    pedir<{ categorias: { id: number; nombre: string }[]; seleccionadas: number[] }>('/perfil/categorias'),
+  guardarPreferencias: (categoria_ids: number[]) =>
+    pedir<{ ok: true; guardadas: number }>('/perfil/categorias', json('POST', { categoria_ids })),
   guardar: (datos: { nombre: string; email: string; telefono: string; nombre_negocio?: string }) =>
     pedir<DatosEdicion & { mensaje: string }>('/perfil', json('PATCH', datos)),
   subirAvatar: (data_url: string) => pedir<{ ok: true; mensaje: string; avatar: string }>('/perfil/avatar', json('POST', { data_url })),

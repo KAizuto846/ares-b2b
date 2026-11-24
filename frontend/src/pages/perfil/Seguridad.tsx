@@ -172,8 +172,8 @@ export default function Seguridad() {
           <h1>Seguridad</h1>
           <p>Contraseña, últimos accesos y baja de la cuenta.</p>
         </div>
-        <button type="button" className="btn btn--claro rise" style={{ ['--i' as string]: 1 }} onClick={() => navegar('/perfil/ajustes')}>
-          <Icon name="flecha" size={15} /> Ajustes
+        <button type="button" className="btn btn--claro rise" style={{ ['--i' as string]: 1 }} onClick={() => navegar('/perfil')}>
+          <Icon name="flecha" size={15} /> Mi perfil
         </button>
       </header>
 
@@ -246,39 +246,13 @@ export default function Seguridad() {
         </div>
       </section>
 
-      <section className="card rise" style={{ ['--i' as string]: 3 }}>
-        <div className="card__cab"><h2 style={{ fontSize: 16 }}>Últimos accesos</h2></div>
-        <div className="tabla-scroll">
-          {datos.accesos.length === 0 ? (
-            <div className="card__cuerpo"><p className="perfil-pista">Todavía no hay accesos registrados.</p></div>
-          ) : (
-            <table className="tabla">
-              <thead>
-                <tr><th>Acción</th><th>Cuándo</th><th>IP</th><th>Equipo</th></tr>
-              </thead>
-              <tbody>
-                {datos.accesos.map((a, i) => (
-                  <tr key={`${a.created_at}-${i}`}>
-                    <td>{a.accion.replace(/_/g, ' ')}</td>
-                    <td>{a.created_at}</td>
-                    <td><code style={{ fontSize: 12 }}>{a.ip || '—'}</code></td>
-                    <td><span className="perfil-pista">{a.user_agent ? a.user_agent.slice(0, 48) : '—'}</span></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
+      <section className="card rise perfil-centrar" style={{ ['--i' as string]: 3 }}>
+        <div className="card__cab"><h2 style={{ fontSize: 16 }}>Eliminar cuenta</h2></div>
+        <div className="card__cuerpo">
+          <button type="button" className="btn btn--peligro btn--bloque" onClick={() => setBaja(true)}>
+            <Icon name="basura" size={16} /> Eliminar cuenta
+          </button>
         </div>
-      </section>
-
-      <section className="perfil-peligro rise" style={{ ['--i' as string]: 4 }}>
-        <div>
-          <strong>Eliminar mi cuenta</strong>
-          <p className="perfil-pista" style={{ margin: '2px 0 0' }}>
-            Se borran tu foto, tus direcciones y el acceso. Los pedidos realizados se conservan por obligaciones fiscales.
-          </p>
-        </div>
-        <button type="button" className="btn btn--peligro" onClick={() => setBaja(true)}>Eliminar cuenta</button>
       </section>
 
       <DialogoBaja abierto={baja} cerrar={() => setBaja(false)} />

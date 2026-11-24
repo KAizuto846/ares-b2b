@@ -72,6 +72,7 @@ function bus_filtros(int $perPageDefecto = BusquedaService::PER_PAGE_DEFAULT): a
     return [
         'q'            => api_q('q'),
         'categoria_id' => api_qint('categoria_id', 0),
+        'mayorista_uuid' => api_q('mayorista_uuid'),
         'lat'          => $lat,
         'lng'          => $lng,
         'radio'        => api_q('radio', (string) BusquedaService::RADIO_DEFAULT),

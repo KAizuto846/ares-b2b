@@ -89,6 +89,7 @@ export type RespuestaOpciones = {
 export type ParametrosBusqueda = {
   q?: string
   categoria_id?: number
+  mayorista_uuid?: string
   radio?: number
   orden?: string
   lat?: number

@@ -14,6 +14,12 @@ export type Contadores = {
   kyc_perfiles: number
   reclamos_abiertos: number
   envios_sin_repartidor: number
+  flota?: {
+    repartidores_en_linea: number
+    viajes_activos: number
+    paradas_pendientes: number
+    rescatados_hoy: number
+  }
 }
 
 export type Pendiente = {

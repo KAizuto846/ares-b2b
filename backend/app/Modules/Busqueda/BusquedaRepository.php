@@ -30,7 +30,7 @@ final class BusquedaRepository
     }
 
     /**
-     * @param array{q?:?string, categoria_id?:?int, lat:float, lng:float, radio:float,
+     * @param array{q?:?string, categoria_id?:?int, mayorista_uuid?:?string, lat:float, lng:float, radio:float,
      *              orden?:string, page?:int, per_page?:int} $filtros
      * @return array{filas:array<int,array<string,mixed>>, total:int}
      */
@@ -72,6 +72,11 @@ final class BusquedaRepository
             // BOOLEAN MODE con comodín al final: "caf*" encuentra "café" y "cafetera".
             $condiciones .= ' AND MATCH(p.nombre, p.descripcion) AGAINST (:q IN BOOLEAN MODE)';
             $params[':q'] = $this->textoBoolean($q);
+        }
+
+        if (!empty($filtros['mayorista_uuid'])) {
+            $condiciones .= ' AND m.uuid = :mayorista';
+            $params[':mayorista'] = (string) $filtros['mayorista_uuid'];
         }
 
         $base = "

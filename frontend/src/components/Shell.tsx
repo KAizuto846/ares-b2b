@@ -6,6 +6,7 @@ import { useSesion, useNavegar } from '../store/session'
 import { money } from '../lib/format'
 import { pedir, urlApp } from '../lib/api'
 import type { Carrito } from '../lib/api'
+import type { Anuncio } from '../lib/api-comercio'
 
 const TITULOS: Record<string, string> = {
   '/': 'Inicio',
@@ -15,6 +16,7 @@ const TITULOS: Record<string, string> = {
   '/pedidos': 'Pedidos',
   '/perfil': 'Mi perfil',
   '/finanzas': 'Finanzas',
+  '/planes': 'Planes',
   '/facturacion': 'Facturación',
   '/portafolio': 'Portafolio',
   '/agendar': 'Agendar pedido',
@@ -32,16 +34,16 @@ const TITULOS: Record<string, string> = {
 }
 
 type Enlace = { to: string; texto: string; icono: string; movil?: boolean }
-type Bloque = { grupo?: string; items: Enlace[] }
+type Bloque = { grupo: string; items: Enlace[] }
 
 function navDe(rol: string | null): Bloque[] {
   if (rol === 'comercio') {
     return [
       {
+        grupo: 'Principal',
         items: [
           { to: '/', texto: 'Inicio', icono: 'inicio', movil: true },
           { to: '/buscar', texto: 'Buscar', icono: 'buscar', movil: true },
-          { to: '/carrito', texto: 'Carrito', icono: 'carrito', movil: true },
           { to: '/pedidos', texto: 'Pedidos', icono: 'pedidos' },
           { to: '/finanzas', texto: 'Finanzas', icono: 'finanzas' },
           { to: '/portafolio', texto: 'Portafolio', icono: 'estrella' },
@@ -64,14 +66,16 @@ function navDe(rol: string | null): Bloque[] {
   }
 
   if (rol === 'mayorista') {
+    // El mayorista no navega a Buscar, Portafolio ni Agendar: no existen para su rol.
     return [{
+      grupo: 'Principal',
       items: [
         { to: '/', texto: 'Inicio', icono: 'inicio', movil: true },
-        { to: '/buscar', texto: 'Buscar', icono: 'buscar' },
-        { to: '/productos', texto: 'Mis productos', icono: 'productos', movil: true },
+        { to: '/productos', texto: 'Catálogo', icono: 'productos', movil: true },
         { to: '/pedidos', texto: 'Pedidos', icono: 'pedidos', movil: true },
         { to: '/facturacion', texto: 'Facturación', icono: 'facturacion' },
         { to: '/finanzas', texto: 'Finanzas', icono: 'finanzas' },
+        { to: '/planes', texto: 'Planes', icono: 'estrella' },
         { to: '/mensajes', texto: 'Mensajes', icono: 'mensajes', movil: true },
         { to: '/perfil', texto: 'Perfil', icono: 'perfil', movil: true },
       ],
@@ -80,6 +84,7 @@ function navDe(rol: string | null): Bloque[] {
 
   if (rol === 'repartidor') {
     return [{
+      grupo: 'Principal',
       items: [
         { to: '/', texto: 'Inicio', icono: 'inicio', movil: true },
         { to: '/repartidor', texto: 'Reparto', icono: 'reparto', movil: true },
@@ -93,6 +98,7 @@ function navDe(rol: string | null): Bloque[] {
 
   if (rol && rol.startsWith('admin')) {
     return [{
+      grupo: 'Administración',
       items: [
         { to: '/', texto: 'Inicio', icono: 'inicio', movil: true },
         { to: '/admin', texto: 'Panel', icono: 'admin', movil: true },
@@ -106,7 +112,7 @@ function navDe(rol: string | null): Bloque[] {
     }]
   }
 
-  return [{ items: [{ to: '/', texto: 'Inicio', icono: 'inicio', movil: true }] }]
+  return [{ grupo: 'Principal', items: [{ to: '/', texto: 'Inicio', icono: 'inicio', movil: true }] }]
 }
 
 function Drawer({ carrito }: { carrito: Carrito | null }) {
@@ -262,6 +268,8 @@ export default function Shell({ children }: { children: ReactNode }) {
   const bloques = navDe(rol)
   const unidades = carrito?.grupos.reduce((s, g) => s + g.items.reduce((x, i) => x + i.cantidad, 0), 0) ?? 0
   const [sinLeer, setSinLeer] = useState(0)
+  // Anuncio personalizado en ventana aparte: máx. 2 impresiones por usuario.
+  const [anuncio, setAnuncio] = useState<Anuncio | null>(null)
 
   // Globo de mensajes sin leer; si el módulo aún no responde, se queda en 0.
   useEffect(() => {
@@ -271,6 +279,24 @@ export default function Shell({ children }: { children: ReactNode }) {
       .catch(() => { if (vivo) setSinLeer(0) })
     return () => { vivo = false }
   }, [pathname])
+
+  // Anuncio: se pide una vez por sesión de página y solo se muestra en Inicio
+  // para no interrumpir operaciones; la ventana abre a los 900 ms con delay.
+  useEffect(() => {
+    let vivo = true
+    pedir<{ anuncio: Anuncio | null }>('/anuncios')
+      .then((r) => { if (vivo && r.anuncio && pathname === '/') {
+        const t = window.setTimeout(() => { if (vivo) setAnuncio(r.anuncio) }, 900)
+        return () => window.clearTimeout(t)
+      } })
+      .catch(() => {})
+    return () => { vivo = false }
+  }, [pathname])
+
+  const marcarAnuncio = async (id: number, clic = false) => {
+    setAnuncio(null)
+    try { await pedir(`/anuncios/${id}/${clic ? 'clic' : 'visto'}`, { method: 'POST', body: '{}' }) } catch { /* silencio */ }
+  }
 
   const titulo = TITULOS[pathname]
     ?? bloques.flatMap((b) => b.items).find((n) => n.to === pathname)?.texto
@@ -302,6 +328,21 @@ export default function Shell({ children }: { children: ReactNode }) {
     </NavLink>
   )
 
+  // Grupos colapsables: abiertos por defecto; se recuerdan entre páginas.
+  const gruposKey = bloques.map((b) => b.grupo).join('|')
+  const [contraidos, setContraidos] = useState<Record<string, boolean>>({})
+  useEffect(() => {
+    try {
+      const guardado = JSON.parse(sessionStorage.getItem('ares-nav-contraidos') ?? '{}')
+      setContraidos(guardado && typeof guardado === 'object' ? guardado : {})
+    } catch { /* ignore */ }
+  }, [])
+  useEffect(() => {
+    sessionStorage.setItem('ares-nav-contraidos', JSON.stringify(contraidos))
+  }, [contraidos])
+  const alternar = (g: string) => setContraidos((c) => ({ ...c, [g]: !c[g] }))
+  void gruposKey
+
   return (
     <div className="app">
       <aside className="rail">
@@ -311,12 +352,28 @@ export default function Shell({ children }: { children: ReactNode }) {
         </a>
 
         <nav className="nav" aria-label="Principal">
-          {bloques.map((b, i) => (
-            <div key={`b${i}`} style={{ display: 'contents' }}>
-              {b.grupo && <div className="nav__grupo">{b.grupo}</div>}
-              {b.items.map(enlace)}
-            </div>
-          ))}
+          {bloques.map((b, i) => {
+            const abierto = !contraidos[b.grupo]
+            return (
+              <section className={`nav__seccion ${abierto ? '' : 'nav__seccion--cerrada'}`} key={`b${i}`}>
+                <button
+                  type="button"
+                  className="nav__grupo"
+                  onClick={() => alternar(b.grupo)}
+                  aria-expanded={abierto}
+                  aria-controls={`nav-grupo-${i}`}
+                >
+                  <span>{b.grupo}</span>
+                  <Icon name="flecha" size={13} stroke={2.2} />
+                </button>
+                {abierto && (
+                  <div className="nav__items" id={`nav-grupo-${i}`}>
+                    {b.items.map(enlace)}
+                  </div>
+                )}
+              </section>
+            )
+          })}
         </nav>
 
         <div className="rail__pie">
@@ -329,9 +386,8 @@ export default function Shell({ children }: { children: ReactNode }) {
               <small>{rolUi}</small>
             </span>
           </a>
-          <a className="rail__clasico" href="/explorar">Panel clásico</a>
-          <button className="btn btn--fantasma" style={{ color: '#c3d3c9', justifyContent: 'flex-start', gap: 10 }} onClick={() => salir()}>
-            <Icon name="salir" size={18} /> Cerrar sesión
+          <button className="btn btn--fantasma rail__salir" style={{ color: '#c3d3c9', justifyContent: 'flex-start', gap: 10 }} onClick={() => salir()}>
+            <Icon name="salir" size={17} /> Cerrar sesión
           </button>
         </div>
       </aside>
@@ -362,6 +418,31 @@ export default function Shell({ children }: { children: ReactNode }) {
           </div>
         ))}
       </div>
+
+      {/* Anuncio en ventana aparte: la URL lo abre con su href y marca clic. */}
+      {anuncio && (
+        <div className="anuncio-modal" role="dialog" aria-modal="true" aria-label={anuncio.titulo}>
+          <div className="anuncio-modal__velo" onClick={() => void marcarAnuncio(anuncio.id)} />
+          <div className="anuncio-modal__caja">
+            <header>
+              <span className="chip chip--info">Para ti</span>
+              <button className="icono-btn icono-btn--mini" aria-label="Cerrar" onClick={() => void marcarAnuncio(anuncio.id)}>
+                <Icon name="cerrar" size={15} />
+              </button>
+            </header>
+            <h2>{anuncio.titulo}</h2>
+            <p>{anuncio.cuerpo}</p>
+            {anuncio.cta_href && (
+              <button
+                className="btn btn--bloque"
+                onClick={() => { void marcarAnuncio(anuncio.id, true); navegar(anuncio.cta_href as string) }}
+              >
+                {anuncio.cta_texto ?? 'Ver más'}
+              </button>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   )
 }

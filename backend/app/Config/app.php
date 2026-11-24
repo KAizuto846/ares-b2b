@@ -243,7 +243,13 @@ $pasarela = new SimuladoGateway($configPagos['webhook_secret'], 300);
 $pagoService = new PagoService($pdo, $pedidoService, $pasarela, $auditoria, $configPagos);
 
 $tarifas = new TarifaService($pdo);
-$asignacion = new AsignacionService($pdo, $tarifas, $pedidoService);
+$asignacion = new AsignacionService(
+    $pdo,
+    $tarifas,
+    $pedidoService,
+    new \App\Modules\Logistica\ConsolidacionService($pdo, $tarifas),
+    new \App\Modules\Logistica\ParametrosReparto($pdo),
+);
 
 // El worker necesita la asignación para vencer ofertas: se construye después.
 $worker = new Worker($pdo, $pedidoService, $notificaciones, $programadoService, $asignacion);

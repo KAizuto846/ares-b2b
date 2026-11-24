@@ -6,13 +6,14 @@ import { Skeleton } from '../components/UI'
 import { useNavegar, useSesion } from '../store/session'
 import Icon from '../components/Icon'
 import { apiPedidos, apiRepartidor } from '../lib/api-pedidos'
+import { apiComercio } from '../lib/api-comercio'
 import { mensajes } from '../lib/api-mensajes'
 import type { Mensaje } from '../lib/api-mensajes'
 import type { AccionPedido, PedidoDetalle as Pedido } from '../lib/api-pedidos'
 
 export default function PedidoDetalle() {
   const { uuid = '' } = useParams()
-  const { aviso } = useSesion()
+  const { aviso, rol, refrescarCarrito } = useSesion()
   const navegar = useNavegar()
 
   const [p, setP] = useState<Pedido | null>(null)
@@ -187,6 +188,32 @@ export default function PedidoDetalle() {
         <div className="detalle-cab__lado">
           <span className={`chip chip--${e.tono}`}>{e.texto}</span>
           <strong className="detalle-total">{money(p.total)}</strong>
+          {rol === 'comercio' && (p.estado === 'entregado' || p.estado === 'recibido' || p.estado === 'completado') && (
+            <button
+              type="button"
+              className="btn btn--claro btn--mini"
+              disabled={ocupado === 'recompra'}
+              onClick={async () => {
+                setOcupado('recompra')
+                try {
+                  const r = await apiComercio.recompra(uuid)
+                  await refrescarCarrito()
+                  aviso(r.agregados > 0
+                    ? `${r.agregados} producto${r.agregados === 1 ? '' : 's'} agregado${r.agregados === 1 ? '' : 's'} al carrito`
+                    : r.mensaje, {
+                    texto: 'Ver carrito',
+                    hacer: () => navegar('/carrito'),
+                  })
+                } catch (err) {
+                  aviso((err as Error).message)
+                } finally {
+                  setOcupado('')
+                }
+              }}
+            >
+              <Icon name="carrito" size={15} /> Volver a pedir
+            </button>
+          )}
         </div>
       </header>
 

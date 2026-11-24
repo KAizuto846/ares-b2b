@@ -30,6 +30,7 @@ require_once __DIR__ . '/_comun.php';
  *   POST   /admin/postmvp/bnpl
  *   POST   /admin/postmvp/licitaciones
  *   POST   /admin/postmvp/{recurso}/{id}/estado
+ *   GET    /admin/kyc/{id}/archivo         → streaming del documento (preview)
  */
 
 // ---------------------------------------------------------------- ayudas
@@ -211,6 +212,14 @@ if ($adminSeccion === 'panel' && $adminMetodo === 'GET') {
     $reclamosAbiertos = $cuenta("SELECT COUNT(*) FROM reclamos WHERE estado = 'abierto'");
     $enviosSinRepartidor = $cuenta("SELECT COUNT(*) FROM envios WHERE repartidor_id IS NULL AND estado NOT IN ('entregado','cancelado','devuelto')");
 
+    // Flota: repartidores disponibles y viajes consolidados del día.
+    $flota = [
+        'repartidores_en_linea' => $cuenta('SELECT COUNT(*) FROM repartidores_perfil WHERE disponible = 1 AND estado_kyc = \'aprobado\''),
+        'viajes_activos' => $cuenta("SELECT COUNT(*) FROM viajes_ruta WHERE estado IN ('planeada','en_curso')"),
+        'paradas_pendientes' => $cuenta('SELECT COUNT(*) FROM envios e WHERE e.viaje_ruta_id IS NOT NULL AND e.parada_completada_at IS NULL'),
+        'rescatados_hoy' => $cuenta("SELECT COUNT(*) FROM envios WHERE red_referencia IS NOT NULL AND DATE(updated_at) = CURDATE()"),
+    ];
+
     $contadores = [
         'usuarios' => $cuenta('SELECT COUNT(*) FROM usuarios WHERE deleted_at IS NULL'),
         'comercios' => $cuenta('SELECT COUNT(*) FROM comercios_perfil'),
@@ -221,6 +230,7 @@ if ($adminSeccion === 'panel' && $adminMetodo === 'GET') {
         'kyc_perfiles' => $kycPerfiles,
         'reclamos_abiertos' => $reclamosAbiertos,
         'envios_sin_repartidor' => $enviosSinRepartidor,
+        'flota' => $flota,
     ];
 
     $pendientes = [];
@@ -674,6 +684,46 @@ if ($adminSeccion === 'kyc') {
                 : 'Documento rechazado. El motivo queda visible para el usuario.',
             'estado' => $estadoDocumento,
         ]);
+    }
+
+    // GET /admin/kyc/{id}/archivo — streaming del documento con permisos.
+    if ($adminMetodo === 'GET' && count($adminPartes) === 3 && $adminPartes[2] === 'archivo') {
+        admin_exigir_lectura();
+
+        $id = (int) $adminPartes[1];
+        $stmt = $adminPdo->prepare(
+            'SELECT ruta_archivo, mime, tamano_bytes FROM kyc_documentos WHERE id = ? LIMIT 1'
+        );
+        $stmt->execute([$id]);
+        $doc = $stmt->fetch();
+
+        if ($doc === false) {
+            fallo('Ese documento no existe.', 404, 'NO_ENCONTRADO');
+        }
+
+        // El repositorio guarda el nombre del archivo, nunca rutas absolutas:
+        // se fuerza a que caiga dentro del directorio de KYC.
+        $nombre = basename((string) $doc['ruta_archivo']);
+        $ruta = __DIR__ . '/../../storage/kyc/' . $nombre;
+        $real = realpath($ruta);
+
+        if ($real === false || !str_starts_with($real, (string) realpath(__DIR__ . '/../../storage/kyc')) || !is_file($real)) {
+            fallo('El archivo del documento no está disponible.', 404, 'ARCHIVO_FALTANTE');
+        }
+
+        $mime = (string) $doc['mime'];
+        $esPdf = str_contains($mime, 'pdf');
+
+        header('Content-Type: ' . ($mime !== '' ? $mime : 'application/octet-stream'));
+        header('Content-Length: ' . (string) filesize($real));
+        header('X-Content-Type-Options: nosniff');
+        header('Cache-Control: private, max-age=300');
+        header(
+            'Content-Disposition: ' . ($esPdf ? 'inline' : 'attachment') . '; filename="kyc-' . $id . '-' . $nombre . '"'
+        );
+
+        readfile($real);
+        exit;
     }
 
     // GET /admin/kyc?estado=

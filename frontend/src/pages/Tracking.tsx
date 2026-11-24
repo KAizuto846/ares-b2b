@@ -233,7 +233,40 @@ export default function Tracking() {
         </div>
       )}
 
+      {datos.consolidado && (
+        <div className="aviso aviso--info" role="status">
+          <span>
+            Tu pedido comparte ruta con otros envíos
+            {datos.consolidado.orden ? `: es la parada ${datos.consolidado.orden} de ${Math.max(datos.consolidado.orden, datos.consolidado.pendientes)}` : ''}
+            {datos.consolidado.pendientes > 1 ? ` · quedan ${datos.consolidado.pendientes} paradas antes o en tu punto` : ''}.
+            Por consolidar, el envío fue más barato.
+          </span>
+        </div>
+      )}
+
       <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+        {datos.destino?.lat != null && datos.destino?.lng != null && (
+          <>
+            <a
+              className="btn btn--claro"
+              href={`https://waze.com/ul?ll=${datos.destino.lat},${datos.destino.lng}&navigate=yes`}
+              target="_blank"
+              rel="noreferrer"
+              title="Navegar al destino con Waze"
+            >
+              <Icon name="mapa" size={16} /> Waze
+            </a>
+            <a
+              className="btn btn--claro"
+              href={`https://www.google.com/maps/dir/?api=1&destination=${datos.destino.lat},${datos.destino.lng}&travelmode=driving`}
+              target="_blank"
+              rel="noreferrer"
+              title="Navegar al destino con Google Maps"
+            >
+              <Icon name="mapa" size={16} /> Google Maps
+            </a>
+          </>
+        )}
         <button className="btn btn--claro" onClick={() => void cargar()}>Actualizar ahora</button>
         <button className="btn btn--claro" onClick={() => navegar(`/pedidos/${uuid}`)}>Volver al pedido</button>
       </div>

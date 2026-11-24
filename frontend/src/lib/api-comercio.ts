@@ -13,7 +13,10 @@ export type Explorar = {
   metricas: Metrica[]
   accesos: Acceso[]
   atajos: Acceso[]
-  resumen: { mensajes: number; portafolio: number; pedidos: number }
+  resumen: { mensajes: number; portafolio: number; pedidos: number; detalle: { estado: string; cuantos: number }[] }
+  /** Cifras del día para el bloque «Pedidos» del mayorista. */
+  pedidos_hoy: { pedidos: number; monto: number }
+  preferencias?: { id: number; nombre: string }[]
 }
 
 /** Línea del carrito con los campos de precio que devuelve el backend. */
@@ -105,4 +108,62 @@ export const apiComercio = {
     pedir<{ mensaje: string }>(`/agendar/${id}`, { method: 'DELETE', body: '{}' }),
   estadoLista: (id: number, estado: 'activa' | 'pausada') =>
     pedir<{ mensaje: string }>(`/agendar/${id}/estado`, { method: 'POST', body: JSON.stringify({ estado }) }),
+}
+
+// ---------------------------------------------------------------- extras
+export type Banner = { id: number; titulo: string; texto: string; imagen: string | null; color: string; href: string }
+export type Anuncio = { id: number; titulo: string; cuerpo: string; imagen: string | null; cta_href: string | null; cta_texto: string | null }
+/** Anuncio publicado en la sección del inicio del comercio. */
+export type AnuncioPublicacion = {
+  id: number
+  titulo: string
+  cuerpo: string
+  imagen: string | null
+  monto_pagado: number
+  vence_el: string
+  mayorista: string
+  mayorista_uuid: string
+}
+/** Anuncio del mayorista con su avance de días y clics. */
+export type AnuncioPublicador = {
+  id: number
+  titulo: string
+  cuerpo: string
+  imagen: string | null
+  monto: number
+  estado: 'pendiente_pago' | 'activo' | 'caducado'
+  dias: { lleva: number; total: number }
+  vence_el: string | null
+  clics: number
+}
+export type PublicarAnuncio = { titulo: string; cuerpo: string; plan: number; metodo_pago: 'efectivo' | 'tarjeta'; imagen?: string | null }
+export type Plan = { clave: string; nombre: string; descripcion: string; precio_mensual: number; flags: Record<string, boolean | number | null> }
+export type Suscripcion = { plan: string; nombre: string; hasta: string | null } | null
+
+export const apiExtras = {
+  banners: () => pedir<{ banners: Banner[] }>('/banners'),
+  anuncio: () => pedir<{ anuncio: Anuncio | null }>('/anuncios'),
+  anuncioVisto: (id: number, clic = false) =>
+    pedir<{ ok: true }>(`/anuncios/${id}/${clic ? 'clic' : 'visto'}`, { method: 'POST', body: '{}' }),
+  planes: () => pedir<{ planes: Plan[]; suscripcion: Suscripcion }>('/planes'),
+  suscribir: (plan: string) =>
+    pedir<{ mensaje: string; referencia: string }>('/planes/suscribir', { method: 'POST', body: JSON.stringify({ plan }) }),
+  preferenciasCategorias: () =>
+    pedir<{ categorias: { id: number; nombre: string }[]; seleccionadas: number[] }>('/perfil/categorias'),
+  guardarPreferencias: (categoria_ids: number[]) =>
+    pedir<{ ok: true; guardadas: number }>('/perfil/categorias', { method: 'POST', body: JSON.stringify({ categoria_ids }) }),
+}
+
+/** Sección de anuncios de mercado (marketplace) y publicaciones del mayorista. */
+export const apiAnuncios = {
+  /** 20 anuncios activos para el inicio del comercio, priorizados por pago. */
+  marketplace: () => pedir<{ anuncios: AnuncioPublicacion[] }>('/anuncios/marketplace'),
+  /** Los anuncios del mayorista en sesión. */
+  publicaciones: () => pedir<{ anuncios: AnuncioPublicador[] }>('/anuncios/publicaciones'),
+  publicar: (datos: PublicarAnuncio) =>
+    pedir<{ ok: true; id: number; estado: string; referencia: string; vence_el: string | null; mensaje: string }>(
+      '/anuncios/publicaciones',
+      { method: 'POST', body: JSON.stringify(datos) },
+    ),
+  clic: (id: number) => pedir<{ ok: true }>(`/anuncios/${id}/clic`, { method: 'POST', body: '{}' }),
 }

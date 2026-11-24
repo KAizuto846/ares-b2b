@@ -36,6 +36,14 @@
 .perfil-nota__estrella { color: var(--oro); font-size: 17px; line-height: 1; }
 
 /* atajos y sesión: grupos centrados, 100 % en móvil */
+.perfil-columnas {
+  display: grid; grid-template-columns: minmax(0, 2.1fr) minmax(260px, 1fr);
+  gap: 16px; align-items: start;
+}
+.perfil-columnas .perfil-atajos {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;
+  width: min(480px, 100%); margin: 0 auto;
+}
 .perfil-atajos {
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;
   width: min(480px, 100%); margin: 0 auto;
@@ -54,6 +62,10 @@
 }
 .perfil-atajo strong { font-size: 13.5px; }
 .perfil-atajo small { color: var(--muted); font-size: 12px; line-height: 1.3; }
+
+/* Ficha centrada (seguridad) y zona de peligro compacta. */
+.perfil-centrar { width: min(640px, 100%); margin: 0 auto; }
+.perfil-centrar .btn--bloque { width: 100%; }
 
 .perfil-sesion { display: flex; flex-direction: column; gap: 10px; width: min(560px, 100%); margin: 4px auto 0; }
 
@@ -227,8 +239,10 @@ input[type='file'] { font-size: 13px; color: var(--ink-2); max-width: 100%; }
 .tabla-scroll .tabla { min-width: 520px; }
 
 @media (max-width: 720px) {
+  .perfil-columnas { grid-template-columns: minmax(0, 1fr); }
   .perfil-atajos { grid-template-columns: minmax(0, 1fr); width: 100%; }
   .perfil-sesion { width: 100%; }
+  .perfil-centrar { width: 100%; }
   .perfil-peligro { width: 100%; }
   .perfil-form__rejilla { grid-template-columns: minmax(0, 1fr); }
   .perfil-calif__resumen { grid-template-columns: 1fr; }
@@ -293,3 +307,99 @@ html[data-tema='oscuro'] .perfil-peligro strong,
 html[data-tema='oscuro'] .perfil-peligro .perfil-pista { color: #f3a79f; }
 html[data-tema='oscuro'] .perfil-barra__pista { background: #26322b; }
 html[data-tema='oscuro'] .vacio { background: transparent; }
+
+/* ---------------------------------------------------------------- modo oscuro
+   Cobertura completa: cualquier superficie que quedó con blanco duro (o texto
+   blanco) en el tema oscuro se mapea a los tokens del tema. Así no hay letras
+   blancas en fondos blancos. */
+/* Repintado ordenado: elementos que en oscuro sí llevan tarjeta o acento. */
+html[data-tema='oscuro'] .card,
+html[data-tema='oscuro'] .grupo,
+html[data-tema='oscuro'] .atajo,
+html[data-tema='oscuro'] .publicidad,
+html[data-tema='oscuro'] .publicador__caja,
+html[data-tema='oscuro'] .portafolio,
+html[data-tema='oscuro'] .lista,
+html[data-tema='oscuro'] .dialogo__caja,
+html[data-tema='oscuro'] .perfil-dialogo__caja,
+html[data-tema='oscuro'] .tabla th,
+html[data-tema='oscuro'] .banner,
+html[data-tema='oscuro'] .anuncio-modal__caja { background-color: var(--card); }
+html[data-tema='oscuro'] .publicador__plan,
+html[data-tema='oscuro'] .publicador__pago,
+html[data-tema='oscuro'] .publicador__archivo,
+html[data-tema='oscuro'] .stepper,
+html[data-tema='oscuro'] .linea-form__quitar { background-color: var(--card); }
+html[data-tema='oscuro'] .cajon__caja,
+html[data-tema='oscuro'] .cajon__pie,
+html[data-tema='oscuro'] .dialogo__acciones,
+html[data-tema='oscuro'] .publicador__pie { background-color: var(--card); }
+html[data-tema='oscuro'] input,
+html[data-tema='oscuro'] select,
+html[data-tema='oscuro'] textarea { background-color: #121a16 !important; color: var(--ink) !important; border-color: var(--line) !important; }
+html[data-tema='oscuro'] .btn { background-color: var(--verde-2); color: #0c130f; }
+html[data-tema='oscuro'] .btn--claro { background-color: #1d2922; color: var(--ink); }
+html[data-tema='oscuro'] .btn--fantasma { background-color: transparent; color: var(--verde-2); }
+html[data-tema='oscuro'] .btn--peligro { background-color: #5b211d; color: #f3a79f; }
+html[data-tema='oscuro'] .perfil-interruptor__pista { background-color: #38453c; }
+html[data-tema='oscuro'] .perfil-opcion__avatar,
+html[data-tema='oscuro'] .acceso__icono,
+html[data-tema='oscuro'] .publicidad__imagen { background-color: var(--verde-suave); }
+html[data-tema='oscuro'] .kpi { background-color: #1a231e; }
+html[data-tema='oscuro'] .publicidad__archivo,
+html[data-tema='oscuro'] .lista__cuando { background-color: #1b2620; }
+
+/* Superficies menores del resto de módulos. */
+html[data-tema='oscuro'] .fin-tabs { background-color: #1b2620; }
+html[data-tema='oscuro'] .fin-tab.activo { background-color: var(--card); }
+html[data-tema='oscuro'] .fin-tab:hover { background-color: rgba(255, 255, 255, .06); }
+html[data-tema='oscuro'] .fin-segmento { background-color: #1b2620; }
+html[data-tema='oscuro'] .fin-segmento button:hover { background-color: rgba(255, 255, 255, .06); }
+html[data-tema='oscuro'] .fin-segmento button.activo { background-color: var(--card); }
+html[data-tema='oscuro'] .filtro-estado { background-color: var(--card); color: var(--ink-2); }
+html[data-tema='oscuro'] .filtro-estado:hover { background-color: #1b2620; border-color: #3a4a40; }
+html[data-tema='oscuro'] .filtro-estado--alerta.activo { background-color: var(--oro-suave); color: #f0cd85; }
+html[data-tema='oscuro'] .filtro-estado--alerta.activo strong { color: #f0cd85; }
+html[data-tema='oscuro'] .filtro-estado--malo.activo { background-color: var(--rojo-suave); color: #f3a79f; }
+html[data-tema='oscuro'] .atajo { background-color: var(--card); }
+html[data-tema='oscuro'] .atajo:hover { background-color: var(--card); }
+html[data-tema='oscuro'] .grupo__mas { color: var(--verde-2); }
+html[data-tema='oscuro'] .linea { background-color: transparent; }
+html[data-tema='oscuro'] .vacio,
+html[data-tema='oscuro'] .cifras { background-color: transparent; }
+html[data-tema='oscuro'] .tabla tbody tr:hover { background-color: #1c2721; }
+html[data-tema='oscuro'] code { background-color: #1b2620; color: var(--ink-2); padding: 1px 6px; border-radius: 6px; }
+html[data-tema='oscuro'] .chip { border: 0; }
+html[data-tema='oscuro'] .chip--ok { border: 0; }
+html[data-tema='oscuro'] .dialogo__cuerpo { background-color: var(--card); }
+html[data-tema='oscuro'] .anuncio-modal__caja .icono-btn { background-color: var(--card); }
+html[data-tema='oscuro'] .grupo__prog { background-color: #26322b; }
+html[data-tema='oscuro'] .grupo__prog i { background-color: var(--verde-3); }
+html[data-tema='oscuro'] .perfil-peligro { background-color: var(--rojo-suave); }
+
+/* El modo oscuro redefinido con tokens ya cubre el resto; cualquier blanco duro
+   que sobreviva es un error y se corrige desde el token --card de arriba. */
+
+/* Controles del mapa Leaflet: unificados al tema oscuro. */
+html[data-tema='oscuro'] .leaflet-control-zoom a {
+  background-color: var(--card) !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+}
+html[data-tema='oscuro'] .leaflet-control-zoom a:hover { background-color: #1b2620 !important; }
+html[data-tema='oscuro'] .leaflet-tile { filter: brightness(.82) contrast(1.05); }
+
+/* Tarjeta Pedidos del mayorista y panel del anuncio en modo oscuro. */
+html[data-tema='oscuro'] .pedidos-sub { background-color: #1b2620; border-color: var(--line-soft); }
+html[data-tema='oscuro'] .pedidos-sub--vendidos { background: linear-gradient(180deg, #1b2620 0%, #16221c 100%); }
+html[data-tema='oscuro'] .pedidos-estado { background-color: #16221c; border-color: var(--line-soft); }
+html[data-tema='oscuro'] .pos-tarjeta { background: linear-gradient(180deg, #1a231e 0%, #16221c 100%); border-color: var(--line-soft); }
+html[data-tema='oscuro'] .pos-tarjeta:hover { border-color: #3a4a40; }
+html[data-tema='oscuro'] .pos-tarjeta__icono { background-color: var(--verde-suave); }
+html[data-tema='oscuro'] .kpi { background: linear-gradient(180deg, #1a231e 0%, #17211c 100%); }
+html[data-tema='oscuro'] .kpi::after { background: radial-gradient(circle, rgba(143, 220, 176, .08) 0%, transparent 70%); }
+html[data-tema='oscuro'] .publicador__caja textarea,
+html[data-tema='oscuro'] .publicador__caja input[type='text'] { background-color: #121a16; color: var(--ink); border-color: var(--line); }
+html[data-tema='oscuro'] .publicador__archivo { background-color: #121a16; }
+html[data-tema='oscuro'] .publicidad { background: var(--card); }
+html[data-tema='oscuro'] .publicidades__columna::-webkit-scrollbar-thumb { background: var(--line); }

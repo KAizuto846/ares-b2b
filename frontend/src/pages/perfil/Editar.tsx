@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { urlApp } from '../../lib/api'
 import { apiPerfil, leerDataUrl } from '../../lib/api-perfil'
 import type { Direccion, PerfilDetalle } from '../../lib/api-perfil'
-import { useNavegar } from '../../store/session'
+import { useNavegar, useSesion } from '../../store/session'
 import { Skeleton } from '../../components/UI'
 import Icon from '../../components/Icon'
 
@@ -139,6 +139,7 @@ export default function EditarPerfil() {
   const [guardando, setGuardando] = useState(false)
   const [subiendo, setSubiendo] = useState(false)
   const archivo = useRef<HTMLInputElement>(null)
+  const { refrescarUsuario } = useSesion()
   const navegar = useNavegar()
 
   useEffect(() => {
@@ -251,6 +252,7 @@ export default function EditarPerfil() {
       }
 
       setOk(mensaje)
+      await refrescarUsuario()
       if (datos) {
         setDatos({
           ...datos,

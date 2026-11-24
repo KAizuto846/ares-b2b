@@ -175,7 +175,45 @@ final class PagoService
         $resultado = $this->pasarela->capturarPago((string) $pago['referencia_externa']);
         $this->pdo->prepare("UPDATE pagos SET estado = 'capturado' WHERE id = ?")->execute([(int) $pago['id']]);
 
+        // Asiento contable: el desglose del pago queda registrado una sola vez
+        // para el módulo de contabilidad.
+        $this->registrarAsiento((int) $pago['id'], $pedidoId);
+
         return ['ok' => true, 'captura' => $resultado];
+    }
+
+    /** Inserta el asiento contable del pago (idempotente). */
+    private function registrarAsiento(int $pagoId, int $pedidoId): void
+    {
+        $stmt = $this->pdo->prepare('SELECT * FROM pedidos WHERE id = ? LIMIT 1');
+        $stmt->execute([$pedidoId]);
+        $pedido = $stmt->fetch();
+
+        if ($pedido === false) {
+            return;
+        }
+
+        $dispersion = $this->calcularDispersion($pedido);
+
+        if (!$dispersion['ok']) {
+            return;
+        }
+
+        $d = $dispersion['detalle'];
+        $comision = (float) $d['comision_mayorista'] + (float) $d['comision_logistica'] + (float) $d['comision_servicio'] + (float) $d['comision_pasarela'];
+
+        $this->pdo->prepare(
+            'INSERT INTO contabilidad_asientos
+                (pago_id, pedido_id, subtotal, iva, envio, comision, neto_mayorista, total)
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+             ON DUPLICATE KEY UPDATE subtotal = VALUES(subtotal), iva = VALUES(iva),
+                 envio = VALUES(envio), comision = VALUES(comision),
+                 neto_mayorista = VALUES(neto_mayorista), total = VALUES(total)'
+        )->execute([
+            $pagoId, $pedidoId,
+            (float) $pedido['subtotal'], (float) $pedido['iva'], (float) $pedido['envio'],
+            round($comision, 2), (float) $d['disp_mayorista'], (float) $d['total_cobrado'],
+        ]);
     }
 
     /**

@@ -62,6 +62,14 @@ export default function AdminPanel() {
     },
   ]
 
+  const flota = c.flota
+    ? [
+        { valor: c.flota.repartidores_en_linea, etiqueta: 'Repartidores en línea', nota: 'Disponibles ahora' },
+        { valor: c.flota.viajes_activos, etiqueta: 'Rutas activas', nota: `${c.flota.paradas_pendientes} parada(s) pendiente(s)` },
+        { valor: c.flota.rescatados_hoy, etiqueta: 'Rescates hoy', nota: 'Vía red externa' },
+      ]
+    : []
+
   const accesos = [
     { href: '/admin/usuarios', texto: 'Usuarios', icono: 'usuarios' },
     { href: '/admin/kyc', texto: 'Verificaciones', icono: 'kyc' },
@@ -92,6 +100,24 @@ export default function AdminPanel() {
           </Link>
         ))}
       </div>
+
+      {flota.length > 0 && (
+        <section className="card card--plana rise" style={{ ['--i' as string]: 1 }}>
+          <div className="card__cab">
+            <h2>Flota de reparto</h2>
+            <span className="chip chip--neutro" style={{ marginLeft: 'auto' }}>Hoy</span>
+          </div>
+          <div className="kpis card__cuerpo" style={{ padding: '14px 16px' }}>
+            {flota.map((t) => (
+              <div key={t.etiqueta} className="kpi">
+                <span className="kpi__valor">{t.valor}</span>
+                <span className="kpi__etiqueta">{t.etiqueta}</span>
+                <span className="kpi__nota">{t.nota}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <div className="admin-doble rise" style={{ ['--i' as string]: 2 }}>
         <section className="card">

@@ -28,6 +28,38 @@ export default function Caja() {
   const [fondo, setFondo] = useState('200')
   const [abriendo, setAbriendo] = useState(false)
   const buscador = useRef<HTMLInputElement | null>(null)
+  const cobrandoRef = useRef(false)
+  const lineasRef = useRef<Linea[]>([])
+
+  useEffect(() => { cobrandoRef.current = cobrando }, [cobrando])
+  useEffect(() => { lineasRef.current = lineas }, [lineas])
+
+  // Atajos de caja: F2/Ctrl+K al buscador, F12/F8 abre el cobro, F4 limpia.
+  // Sólo activos con turno abierto y sin diálogos encima.
+  useEffect(() => {
+    const atajo = (e: KeyboardEvent) => {
+      if (!datos?.turno || cobrandoRef.current || hecha) return
+      const abiertoTurno = datos.turno
+      if (!abiertoTurno) return
+
+      if (e.key === 'F2' || (e.key === 'k' && e.ctrlKey)) {
+        e.preventDefault()
+        buscador.current?.focus()
+        buscador.current?.select()
+      } else if (e.key === 'F12' || e.key === 'F8') {
+        e.preventDefault()
+        if (lineasRef.current.length > 0) setCobrando(true)
+      } else if (e.key === 'F4') {
+        e.preventDefault()
+        if (lineasRef.current.length > 0) {
+          setLineas([])
+          setQ('')
+        }
+      }
+    }
+    window.addEventListener('keydown', atajo)
+    return () => window.removeEventListener('keydown', atajo)
+  }, [datos?.turno, hecha])
 
   const cargar = useCallback(() => {
     apiPos
@@ -229,7 +261,20 @@ export default function Caja() {
               type="search"
               value={q}
               onChange={(e) => setQ(e.target.value)}
-              placeholder="Buscar producto, clave o código…"
+              onKeyDown={(e) => {
+                // Enter con match exacto de clave/SKU/código de barras agrega
+                // directo al ticket: así trabaja un lector de códigos.
+                if (e.key !== 'Enter') return
+                e.preventDefault()
+                const exactos = encontrados.filter((p) => claveProducto(p) === clave)
+                const elegido = exactos.length === 1 ? exactos[0] : encontrados.length === 1 ? encontrados[0] : null
+                if (elegido) {
+                  agregar(elegido)
+                  setQ('')
+                  buscador.current?.focus()
+                }
+              }}
+              placeholder="Buscar producto, clave o código…  (F2 · F12 cobrar)"
               aria-label="Buscar producto, clave o código de barras"
               autoComplete="off"
               enterKeyHint="search"
@@ -248,6 +293,9 @@ export default function Caja() {
               <Icon name="buscar" size={26} />
               <strong>Busca un producto</strong>
               <span>Escribe el nombre o la clave, o pasa el lector de código de barras.</span>
+              <span className="apunte" style={{ lineHeight: 1.6 }}>
+                F2 buscador · Enter agrega exacto · F12 cobrar · F4 limpiar
+              </span>
             </div>
           ) : encontrados.length === 0 ? (
             <div className="pos__sin-buscar">

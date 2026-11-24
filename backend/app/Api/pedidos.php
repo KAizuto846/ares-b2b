@@ -101,7 +101,13 @@ function ped_asignacion(): AsignacionService
     static $servicio = null;
 
     if ($servicio === null) {
-        $servicio = new AsignacionService(ped_pdo(), new TarifaService(ped_pdo()), ped_pedidos());
+        $servicio = new AsignacionService(
+            ped_pdo(),
+            new TarifaService(ped_pdo()),
+            ped_pedidos(),
+            new \App\Modules\Logistica\ConsolidacionService(ped_pdo(), new TarifaService(ped_pdo())),
+            new \App\Modules\Logistica\ParametrosReparto(ped_pdo()),
+        );
     }
 
     return $servicio;
@@ -765,6 +771,50 @@ if ($metodoApi === 'POST' && $rutaApi === '/repartidor/disponibilidad') {
     ]);
 }
 
+// GET /repartidor/viaje-actual — ruta multi-parada del repartidor (RN-07b).
+// Devuelve el viaje con las paradas en orden óptimo y su estado por paquete.
+if ($metodoApi === 'GET' && $rutaApi === '/repartidor/viaje-actual') {
+    api_exigir('repartidor');
+    $repartidor = ped_repartidor();
+
+    if ($repartidor === null) {
+        fallo('Tu cuenta no tiene perfil de repartidor.', 403, 'SIN_PERFIL');
+    }
+
+    $consolidacion = new \App\Modules\Logistica\ConsolidacionService(ped_pdo(), new TarifaService(ped_pdo()));
+
+    // Se arma el viaje con los envíos asignados que aún no tengan ruta.
+    $viaje = $consolidacion->armarViaje((int) $repartidor['id']);
+
+    responder(['ok' => true, 'viaje' => $viaje]);
+}
+
+// GET /repartidor/liquidaciones — extractos semanales del repartidor.
+if ($metodoApi === 'GET' && $rutaApi === '/repartidor/liquidaciones') {
+    api_exigir('repartidor');
+    $repartidor = ped_repartidor();
+
+    if ($repartidor === null) {
+        fallo('Tu cuenta no tiene perfil de repartidor.', 403, 'SIN_PERFIL');
+    }
+
+    $liquidaciones = new \App\Modules\Logistica\LiquidacionService(ped_pdo());
+    $filas = $liquidaciones->deRepartidor((int) $repartidor['id']);
+
+    responder([
+        'ok' => true,
+        'liquidaciones' => array_map(static fn (array $l): array => [
+            'id'        => (int) $l['id'],
+            'semana'    => date('d M Y', strtotime((string) $l['semana_inicio'])) . ' – ' . date('d M Y', strtotime((string) $l['semana_fin'])),
+            'entregas'  => (int) $l['entregas'],
+            'km'        => (float) $l['km_recorridos'],
+            'ganancias' => (float) $l['ganancias'],
+            'estado'    => (string) $l['estado'],
+            'pagada_at' => $l['pagada_at'] !== null ? ped_fecha((string) $l['pagada_at']) : null,
+        ], $filas),
+    ]);
+}
+
 if ($metodoApi === 'POST' && preg_match('#^/repartidor/ofertas/(\d+)$#', $rutaApi, $m) === 1) {
     api_exigir('repartidor');
     $repartidor = ped_repartidor();
@@ -823,6 +873,7 @@ if ($metodoApi === 'POST' && preg_match(
 
     $pruebas = ped_pruebas();
     $id = (int) $pedido['id'];
+    $consolidacion = new \App\Modules\Logistica\ConsolidacionService(ped_pdo(), new TarifaService(ped_pdo()));
 
     if ($paso === 'recoger') {
         if (!$pruebas->validarRecoleccion($id, $pin)) {
@@ -834,6 +885,9 @@ if ($metodoApi === 'POST' && preg_match(
         if (!$r['ok']) {
             fallo((string) $r['mensaje'], 422, 'TRANSICION_INVALIDA');
         }
+
+        // La parada de recolección queda hecha: el viaje recalcula.
+        $consolidacion->completarParadaPorPedido($id);
 
         responder(['ok' => true, 'mensaje' => 'Recolección confirmada.', 'estado' => 'en_recoleccion', 'estado_texto' => ped_etiqueta('en_recoleccion')]);
     }
@@ -847,6 +901,8 @@ if ($metodoApi === 'POST' && preg_match(
     if (!$r['ok']) {
         fallo((string) $r['mensaje'], 422, 'TRANSICION_INVALIDA');
     }
+
+    $consolidacion->completarParadaPorPedido($id);
 
     responder(['ok' => true, 'mensaje' => 'Entrega confirmada.', 'estado' => 'entregado', 'estado_texto' => ped_etiqueta('entregado')]);
 }
@@ -896,6 +952,31 @@ if ($metodoApi === 'GET' && preg_match('#^/tracking/(' . $uuidPatron . ')$#', $r
 
         $datos = $consulta['ok'] ? $consulta['data'] : null;
 
+        // Consolidación: si el envío va en una ruta multi-parada, el comercio
+        // ve su posición en la secuencia y el estado del viaje.
+        $consolidado = null;
+        $stmtViaje = ped_pdo()->prepare(
+            "SELECT e.orden_parada, e.consolidado, v.id AS viaje_id, v.estado AS viaje_estado
+             FROM envios e LEFT JOIN viajes_ruta v ON v.id = e.viaje_ruta_id
+             WHERE e.pedido_id = ? LIMIT 1"
+        );
+        $stmtViaje->execute([(int) $fila['id']]);
+        $filaViaje = $stmtViaje->fetch() ?: null;
+
+        if ($filaViaje !== null && (int) $filaViaje['consolidado'] === 1 && $filaViaje['viaje_id'] !== null) {
+            $stmtParadas = ped_pdo()->prepare(
+                "SELECT COUNT(*) FROM envios WHERE viaje_ruta_id = ? AND parada_completada_at IS NULL"
+            );
+            $stmtParadas->execute([(int) $filaViaje['viaje_id']]);
+            $pendientes = (int) $stmtParadas->fetchColumn();
+
+            $consolidado = [
+                'orden'      => $filaViaje['orden_parada'] !== null ? (int) $filaViaje['orden_parada'] : null,
+                'pendientes' => $pendientes,
+                'estado_viaje' => (string) $filaViaje['viaje_estado'],
+            ];
+        }
+
         responder([
             'ok' => true,
             'tracking' => [
@@ -917,6 +998,7 @@ if ($metodoApi === 'GET' && preg_match('#^/tracking/(' . $uuidPatron . ')$#', $r
                 'eta_min'  => $datos['eta_min'] ?? null,
                 'distancia_km' => $datos['distancia_km'] ?? null,
                 'mayorista' => (string) $fila['mayorista_nombre'],
+                'consolidado' => $consolidado,
             ],
         ]);
     }
@@ -1006,6 +1088,63 @@ if (preg_match('#^/pedidos/([0-9a-fA-F-]{36})/pagar$#', $rutaApi, $m) === 1 && $
         'referencia' => (string) $intencion['intencion']['referencia'],
         'monto'      => (float) $intencion['intencion']['monto'],
     ]);
+}
+
+// ---------------------------------------------------------------- rescate: webhook de la red externa
+// Los estados de la entrega (Uber Direct u otra) llegan aquí. La petición es
+// sin sesión: se verifica por firma HMAC de Uber (cabecera X-Uber-Signature).
+if ($metodoApi === 'POST' && $rutaApi === '/logistica/red/webhook') {
+    $payload = file_get_contents('php://input') ?: '';
+    $firma = (string) ($_SERVER['HTTP_X_UBER_SIGNATURE'] ?? '');
+    $secreto = (string) (getenv('UBER_DIRECT_WEBHOOK_SECRET') ?: ($_ENV['UBER_DIRECT_WEBHOOK_SECRET'] ?? ''));
+
+    if ($secreto === '' || !hash_equals(hash_hmac('sha256', $payload, $secreto), $firma)) {
+        fallo('Firma del webhook inválida.', 401, 'FIRMA_INVALIDA');
+    }
+
+    $evento = json_decode($payload, true);
+
+    if (!is_array($evento) || !isset($evento['id'], $evento['status'])) {
+        fallo('Webhook sin referencia o estado.', 422, 'PAYLOAD_INVALIDO');
+    }
+
+    $estados = [
+        'created'           => 'creada',
+        'en_route'          => 'en_ruta',
+        'pickup_complete'   => 'recogida',
+        'dropoff_complete'  => 'entregada',
+        'canceled'          => 'cancelada',
+    ];
+    $nuevo = $estados[(string) $evento['status']] ?? null;
+
+    if ($nuevo === null) {
+        responder(['ok' => true, 'mensaje' => 'Estado no relevante, ignorado.']);
+    }
+
+    $stmt = ped_pdo()->prepare('SELECT id, pedido_id FROM envios WHERE red_referencia = ? LIMIT 1');
+    $stmt->execute([(string) $evento['id']]);
+    $envio = $stmt->fetch();
+
+    if ($envio === false) {
+        responder(['ok' => true, 'mensaje' => 'Referencia no encontrada, ignorado.']);
+    }
+
+    ped_pdo()->prepare('UPDATE envios SET red_estado = ? WHERE id = ?')
+        ->execute([$nuevo, (int) $envio['id']]);
+
+    // Mapeo a estados del pedido (solo los que avanzan el flujo real).
+    if ($nuevo === 'recogida') {
+        ped_pedidos()->transicionar((int) $envio['pedido_id'], 'en_recoleccion', null, ['sistema'], 'Recolección de la red externa');
+    } elseif ($nuevo === 'entregada') {
+        ped_pedidos()->transicionar((int) $envio['pedido_id'], 'entregado', null, ['sistema'], 'Entrega confirmada por la red externa');
+        (new \App\Modules\Logistica\ConsolidacionService(ped_pdo(), new TarifaService(ped_pdo())))->completarParadaPorPedido((int) $envio['pedido_id']);
+    } elseif ($nuevo === 'cancelada') {
+        ped_pedidos()->transicionar((int) $envio['pedido_id'], 'buscando_repartidor', null, ['sistema'], 'La red externa canceló; se busca repartidor de nuevo');
+        ped_pdo()->prepare("UPDATE envios SET estado = 'buscando_repartidor', red_codigo = NULL, red_referencia = NULL, red_costo = NULL, red_estado = NULL WHERE id = ?")
+            ->execute([(int) $envio['id']]);
+    }
+
+    responder(['ok' => true, 'estado' => $nuevo]);
 }
 
 // ----------------------------------------------------------- pago simulado

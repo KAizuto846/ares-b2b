@@ -71,7 +71,7 @@
 .cat-form { display: grid; gap: 16px; max-width: 940px; }
 .cat-form .card__cab h2 { font-size: 15px; letter-spacing: -.01em; }
 
-.cat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .cat-grid__ancho { grid-column: 1 / -1; }
 
 .cat-pagina .campo input,
@@ -95,7 +95,7 @@
 .cat-nota strong { color: var(--ink); }
 
 .cat-escala-fila {
-  display: grid; grid-template-columns: 1fr 1fr 0.9fr 44px;
+  display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, .9fr) 44px;
   gap: 10px; align-items: end; padding: 10px 0;
   border-bottom: 1px solid var(--line-soft);
 }

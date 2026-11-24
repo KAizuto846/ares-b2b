@@ -158,6 +158,67 @@ function fin_puntas_pedido(array $pedido): array
 }
 
 // =====================================================================
+// GET /finanzas/contabilidad — desglose contable de pagos capturados
+// Solo admin_finanzas/admin_total: es el libro mayor de la plataforma.
+// =====================================================================
+if (api_ctx()['ruta'] === '/finanzas/contabilidad' && api_ctx()['metodo'] === 'GET') {
+    $rol = api_rol();
+
+    if (!($rol === 'admin_total' || $rol === 'admin_finanzas')) {
+        fallo('Solo el equipo de finanzas ve el libro contable.', 403, 'SIN_PERMISO');
+    }
+
+    $pdo = api_pdo();
+    $desde = fin_fecha(api_q('desde'), date('Y-m-01'));
+    $hasta = fin_fecha(api_q('hasta'), date('Y-m-d'));
+
+    // Resumen por periodo: cifra neta de cada columna.
+    $stmt = $pdo->prepare(
+        'SELECT COUNT(*) AS pagos,
+                COALESCE(SUM(subtotal), 0) AS subtotal,
+                COALESCE(SUM(iva), 0) AS iva,
+                COALESCE(SUM(envio), 0) AS envio,
+                COALESCE(SUM(comision), 0) AS comision,
+                COALESCE(SUM(neto_mayorista), 0) AS neto_mayorista,
+                COALESCE(SUM(total), 0) AS total
+           FROM contabilidad_asientos
+          WHERE DATE(created_at) BETWEEN ? AND ?'
+    );
+    $stmt->execute([$desde, $hasta]);
+    $resumen = $stmt->fetch() ?: [];
+
+    // Asientos individuales con el pedido y las partes.
+    $stmt = $pdo->prepare(
+        'SELECT a.pedido_id, a.subtotal, a.iva, a.envio, a.comision, a.neto_mayorista, a.total, a.created_at,
+                pe.uuid, pe.estado,
+                c.nombre_negocio AS comercio, m.nombre_comercial AS mayorista
+           FROM contabilidad_asientos a
+           LEFT JOIN pedidos pe ON pe.id = a.pedido_id
+           LEFT JOIN comercios_perfil c ON c.id = pe.comercio_id
+           LEFT JOIN mayoristas_perfil m ON m.id = pe.mayorista_id
+          WHERE DATE(a.created_at) BETWEEN ? AND ?
+          ORDER BY a.created_at DESC
+          LIMIT 200'
+    );
+    $stmt->execute([$desde, $hasta]);
+
+    responder([
+        'ok' => true,
+        'resumen' => [
+            'pagos' => (int) ($resumen['pagos'] ?? 0),
+            'subtotal' => (float) ($resumen['subtotal'] ?? 0),
+            'iva' => (float) ($resumen['iva'] ?? 0),
+            'envio' => (float) ($resumen['envio'] ?? 0),
+            'comision' => (float) ($resumen['comision'] ?? 0),
+            'neto_mayorista' => (float) ($resumen['neto_mayorista'] ?? 0),
+            'total' => (float) ($resumen['total'] ?? 0),
+        ],
+        'asientos' => $stmt->fetchAll() ?: [],
+        'rango' => ['desde' => $desde, 'hasta' => $hasta],
+    ]);
+}
+
+// =====================================================================
 // GET /finanzas
 // =====================================================================
 if (api_ctx()['ruta'] === '/finanzas' && api_ctx()['metodo'] === 'GET') {
@@ -890,6 +951,39 @@ if (api_ctx()['ruta'] === '/facturacion' && api_ctx()['metodo'] === 'GET') {
         }
     }
 
+    // Cola de timbrado del mayorista: solicitudes recibidas pendientes de
+    // timbrar (el flujo real usa un PAC; en modo demo se marcan con un clic).
+    $colaTimbrado = [];
+    if (api_rol() === 'mayorista') {
+        $stmt = $pdo->prepare(
+            'SELECT f.uuid, f.serie, f.folio, f.total, f.created_at,
+                    c.nombre_negocio AS comercio
+               FROM facturas f
+               JOIN pedidos p ON p.id = f.pedido_id
+               JOIN comercios_perfil c ON c.id = p.comercio_id
+              WHERE f.emisor_usuario_id = ? AND f.estado = \'generada\' AND f.uuid_timbrado IS NULL
+           ORDER BY f.created_at
+              LIMIT 50'
+        );
+        $stmt->execute([$uid]);
+        foreach ($stmt->fetchAll() ?: [] as $f) {
+            $colaTimbrado[] = [
+                'uuid'       => (string) $f['uuid'],
+                'folio'      => (string) $f['serie'] . '-' . (string) $f['folio'],
+                'comercio'   => (string) $f['comercio'],
+                'total'      => (float) $f['total'],
+                'fecha'      => api_fecha((string) $f['created_at']),
+            ];
+        }
+
+        // CSD del mayorista (sin llave privada: solo metadatos del certificado).
+        $stmt = $pdo->prepare(
+            'SELECT certificado, huella, rfc_emisor, vigencia_hasta FROM facturacion_csd WHERE mayorista_id = ? LIMIT 1'
+        );
+        $stmt->execute([api_mayorista_id()]);
+        $csd = $stmt->fetch() ?: null;
+    }
+
     responder([
         'ok'             => true,
         'rol'            => api_rol(),
@@ -907,6 +1001,13 @@ if (api_ctx()['ruta'] === '/facturacion' && api_ctx()['metodo'] === 'GET') {
         'facturas'           => $facturas,
         'facturables'        => $facturables,
         'estados_facturables' => FIN_ESTADOS_CERRADOS,
+        'cola_timbrado'      => $colaTimbrado,
+        'csd'                => isset($csd) && $csd !== null ? [
+            'certificado'   => (string) $csd['certificado'],
+            'huella'        => (string) $csd['huella'],
+            'rfc_emisor'    => (string) $csd['rfc_emisor'],
+            'vigencia_hasta' => $csd['vigencia_hasta'] !== null ? api_fecha((string) $csd['vigencia_hasta']) : null,
+        ] : null,
     ]);
 }
 
@@ -1071,4 +1172,77 @@ if (preg_match('#^/pedidos/([0-9a-fA-F-]{36})/factura$#', (string) api_ctx()['ru
             'total'  => $total,
         ],
     ]);
+}
+
+// =====================================================================
+// POST /facturacion/timbrar/{uuid} — modo demo del timbrado (PAC simulado).
+// El mayorista "timbra" la factura: se asigna UUID del CFDI y cambia estado.
+// Con un PAC real, este punto se sustituye por la llamada del conector.
+// =====================================================================
+if (preg_match('#^/facturacion/timbrar/([0-9a-fA-F-]{36})$#', (string) api_ctx()['ruta'], $m) === 1
+    && api_ctx()['metodo'] === 'POST') {
+    if (api_rol() !== 'mayorista') {
+        fallo('Solo el mayorista timbra sus facturas.', 403, 'SIN_PERMISO');
+    }
+
+    $pdo = api_pdo();
+    $stmt = $pdo->prepare(
+        'SELECT f.uuid, f.estado FROM facturas f WHERE f.uuid = ? AND f.emisor_usuario_id = ? LIMIT 1'
+    );
+    $stmt->execute([$m[1], api_uid()]);
+    $factura = $stmt->fetch();
+
+    if ($factura === false) {
+        fallo('Esa factura no es tuya o no existe.', 404, 'NO_ENCONTRADO');
+    }
+
+    if ((string) $factura['estado'] !== 'generada') {
+        fallo('La factura ya fue timbrada o cancelada.', 422, 'ESTADO');
+    }
+
+    // PAC simulado: UUID determinista por factura (en real: respuesta del PAC).
+    $uuidCfdi = strtoupper(hash('md5', 'cfdi-' . $m[1]));
+
+    $pdo->prepare(
+        "UPDATE facturas SET estado = 'timbrada', uuid_timbrado = ?, fecha_timbrado = NOW() WHERE uuid = ?"
+    )->execute([$uuidCfdi, $m[1]]);
+
+    responder([
+        'ok' => true,
+        'mensaje' => 'Factura timbrada (PAC demo). Con un PAC real aquí llega el XML y la cadena original.',
+        'uuid_cfdi' => $uuidCfdi,
+    ]);
+}
+
+// =====================================================================
+// POST /facturacion/csd — registra metadatos del CSD del mayorista (demo).
+// El archivo .cer (público) se guarda; la .key NUNCA se almacena aquí.
+// =====================================================================
+if (api_ctx()['ruta'] === '/facturacion/csd' && api_ctx()['metodo'] === 'POST') {
+    if (api_rol() !== 'mayorista') {
+        fallo('Solo el mayorista registra su CSD.', 403, 'SIN_PERMISO');
+    }
+
+    $cuerpo = api_cuerpo();
+    $certificado = trim((string) ($cuerpo['certificado'] ?? ''));
+    $huella = strtoupper(substr(md5($certificado), 0, 40));
+
+    if ($certificado === '') {
+        fallo('Escribe el número de certificado del CSD (20 dígitos).', 422, 'DATOS_FALTANTES');
+    }
+
+    api_pdo()->prepare(
+        'INSERT INTO facturacion_csd (mayorista_id, certificado, huella, rfc_emisor, vigencia_hasta)
+         VALUES (?, ?, ?, ?, ?)
+         ON DUPLICATE KEY UPDATE certificado = VALUES(certificado), huella = VALUES(huella),
+             rfc_emisor = VALUES(rfc_emisor), vigencia_hasta = VALUES(vigencia_hasta)'
+    )->execute([
+        api_mayorista_id(),
+        $certificado,
+        $huella,
+        strtoupper(trim((string) ($cuerpo['rfc'] ?? ''))),
+        fin_fecha((string) ($cuerpo['vigencia'] ?? ''), ''),
+    ]);
+
+    responder(['ok' => true, 'mensaje' => 'CSD registrado. La llave privada jamás se guarda en la plataforma.']);
 }

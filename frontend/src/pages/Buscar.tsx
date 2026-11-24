@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import Icon from '../components/Icon'
 import { Skeleton, Vacio } from '../components/UI'
 import { money } from '../lib/format'
 import { urlApp } from '../lib/api'
 import { apiBusqueda } from '../lib/api-busqueda'
+import { apiComercio } from '../lib/api-comercio'
 import type { PuntoMapa, RespuestaMapa, RespuestaBusqueda, RespuestaOpciones, ResultadoBusqueda } from '../lib/api-busqueda'
 import { useSesion } from '../store/session'
 
@@ -104,14 +105,43 @@ function escapar(texto: string): string {
   })
 }
 
-type Filtros = { q: string; categoria: number; radio: number; orden: string }
+type Filtros = { q: string; categoria: number; radio: number; orden: string; mayorista: string }
 
 export default function Buscar() {
-  const { agregar, rol } = useSesion()
+  const { agregar, rol, aviso } = useSesion()
+  const [params] = useSearchParams()
+  // Enlace «Agregar más de este proveedor» del carrito: prefiltra por mayorista.
+  const mayoristaInicial = params.get('mayorista') ?? ''
+  // Guardados recientes para pintar la estrella activa sin pedir al servidor.
+  const [guardados, setGuardados] = useState<Record<string, boolean>>(() => {
+    try { return JSON.parse(localStorage.getItem('ares-guardados') ?? '{}') } catch { return {} }
+  })
+
+  const guardarEnPortafolio = async (p: ResultadoBusqueda, boton: HTMLButtonElement) => {
+    if (guardados[p.uuid]) {
+      aviso('Ya está en tu portafolio')
+      return
+    }
+    boton.disabled = true
+    try {
+      await apiComercio.guardar(p.uuid)
+      const siguientes = { ...guardados, [p.uuid]: true }
+      setGuardados(siguientes)
+      try { localStorage.setItem('ares-guardados', JSON.stringify(siguientes)) } catch { /* ignore */ }
+      aviso(`${p.nombre} guardado en tu portafolio`, {
+        texto: 'Ver',
+        hacer: () => { window.location.href = '/spa/portafolio' },
+      })
+    } catch (e) {
+      aviso((e as Error).message)
+    } finally {
+      boton.disabled = false
+    }
+  }
 
   const [opciones, setOpciones] = useState<RespuestaOpciones | null>(null)
   const [texto, setTexto] = useState('')
-  const [filtros, setFiltros] = useState<Filtros>({ q: '', categoria: 0, radio: 10, orden: 'distancia' })
+  const [filtros, setFiltros] = useState<Filtros>({ q: '', categoria: 0, radio: 10, orden: 'distancia', mayorista: mayoristaInicial })
   const [centro, setCentro] = useState<Punto>(CIUDAD)
   const [ubicacion, setUbicacion] = useState<'pendiente' | 'gps' | 'respaldo'>('pendiente')
   const [page, setPage] = useState(1)
@@ -235,6 +265,7 @@ export default function Buscar() {
     const parametros = {
       q: filtros.q,
       categoria_id: filtros.categoria > 0 ? filtros.categoria : undefined,
+      mayorista_uuid: filtros.mayorista !== '' ? filtros.mayorista : undefined,
       radio: filtros.radio,
       orden: filtros.orden,
       lat: Number(centro.lat.toFixed(6)),
@@ -464,7 +495,7 @@ export default function Buscar() {
 
   const limpiar = () => {
     setTexto('')
-    setFiltros({ q: '', categoria: 0, radio: opciones?.radio_default ?? 10, orden: 'distancia' })
+    setFiltros({ q: '', categoria: 0, radio: opciones?.radio_default ?? 10, orden: 'distancia', mayorista: '' })
     setPage(1)
   }
 
@@ -477,6 +508,7 @@ export default function Buscar() {
   const hayFiltros =
     filtros.q !== '' ||
     filtros.categoria > 0 ||
+    filtros.mayorista !== '' ||
     filtros.radio !== (opciones?.radio_default ?? 10) ||
     filtros.orden !== 'distancia'
 
@@ -532,6 +564,13 @@ export default function Buscar() {
           </select>
         </label>
 
+        {filtros.mayorista !== '' && (
+          <label className="campo busq-campo" title="Filtro desde el carrito: solo productos de este proveedor">
+            <span>Proveedor</span>
+            <input type="text" value="Prov." disabled aria-label="Proveedor filtrado" />
+          </label>
+        )}
+
         <label className="campo busq-campo busq-campo--corto">
           <span>Radio</span>
           <select value={filtros.radio} onChange={(e) => cambiarRadio(Number(e.target.value))}>
@@ -586,6 +625,18 @@ export default function Buscar() {
             {filtros.categoria > 0 && (
               <button type="button" className="chip chip--neutro busq-chip" onClick={() => cambiarCategoria(0)}>
                 {nombreCategoria} <Icon name="cerrar" size={11} />
+              </button>
+            )}
+            {filtros.mayorista !== '' && (
+              <button
+                type="button"
+                className="chip chip--neutro busq-chip"
+                onClick={() => {
+                  setFiltros((f) => ({ ...f, mayorista: '' }))
+                  setPage(1)
+                }}
+              >
+                {datos?.resultados?.[0]?.mayorista.nombre ?? 'Proveedor filtrado'} <Icon name="cerrar" size={11} />
               </button>
             )}
             {filtros.radio !== (opciones?.radio_default ?? 10) && (
@@ -727,13 +778,25 @@ export default function Buscar() {
                       </div>
                       <button
                         type="button"
-                        className="btn btn--mini busq-agregar"
+                        className={`btn btn--mini busq-agregar${guardados[p.uuid] ? ' busq-agregar--guardado' : ''}`}
                         disabled={p.stock_disponible <= 0}
                         onClick={(e) => {
                           void agregarProducto(p, e.currentTarget)
                         }}
                       >
                         <Icon name="carrito" size={15} /> Agregar
+                      </button>
+                      <button
+                        type="button"
+                        className={`icono-btn icono-btn--mini${guardados[p.uuid] ? ' icono-btn--oro' : ''}`}
+                        title={guardados[p.uuid] ? 'Ya está en tu portafolio' : 'Guardar en portafolio'}
+                        aria-label={guardados[p.uuid] ? 'Ya está en tu portafolio' : 'Guardar en portafolio'}
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          void guardarEnPortafolio(p, e.currentTarget)
+                        }}
+                      >
+                        <Icon name="estrella" size={16} />
                       </button>
                     </div>
                   )}

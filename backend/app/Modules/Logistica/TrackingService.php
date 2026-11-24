@@ -218,25 +218,36 @@ final class TrackingService
 
     private function etaOsrm(float $lat, float $lng, float $destLat, float $destLng): ?int
     {
-        $url = sprintf(
-            'https://router.project-osrm.org/route/v1/driving/%.6f,%.6f;%.6f,%.6f?overview=false',
-            $lng, $lat, $destLng, $destLat
-        );
+        // Servidor OSRM configurable: self-hosted en producción (sin cuotas) con
+        // el público como respaldo si el propio no responde.
+        $servidores = [
+            rtrim((string) (getenv('OSRM_URL') ?: ($_ENV['OSRM_URL'] ?? 'http://127.0.0.1:5000')), '/'),
+            'https://router.project-osrm.org',
+        ];
 
-        $contexto = stream_context_create(['http' => ['timeout' => 3, 'ignore_errors' => true]]);
-        $respuesta = @file_get_contents($url, false, $contexto);
+        foreach ($servidores as $base) {
+            $url = sprintf(
+                '%s/route/v1/driving/%.6f,%.6f;%.6f,%.6f?overview=false',
+                $base, $lng, $lat, $destLng, $destLat
+            );
 
-        if ($respuesta === false) {
-            return null;
+            $contexto = stream_context_create(['http' => ['timeout' => 3, 'ignore_errors' => true]]);
+            $respuesta = @file_get_contents($url, false, $contexto);
+
+            if ($respuesta === false) {
+                continue;
+            }
+
+            $datos = json_decode($respuesta, true);
+
+            if (!is_array($datos) || ($datos['code'] ?? '') !== 'Ok' || !isset($datos['routes'][0]['duration'])) {
+                continue;
+            }
+
+            return (int) max(1, ceil(((float) $datos['routes'][0]['duration']) / 60));
         }
 
-        $datos = json_decode($respuesta, true);
-
-        if (!is_array($datos) || ($datos['code'] ?? '') !== 'Ok' || !isset($datos['routes'][0]['duration'])) {
-            return null;
-        }
-
-        return (int) max(1, ceil(((float) $datos['routes'][0]['duration']) / 60));
+        return null;
     }
 
     public function distanciaKm(float $lat1, float $lng1, float $lat2, float $lng2): float

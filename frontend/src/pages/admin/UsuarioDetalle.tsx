@@ -4,6 +4,7 @@ import { apiCambiarEstado, apiGuardarRoles, apiUsuario } from '../../lib/api-adm
 import type { DetalleUsuario } from '../../lib/api-admin'
 import { estado as estadoPedido, fecha, money } from '../../lib/format'
 import Icon from '../../components/Icon'
+import DocPreview from '../../components/DocPreview'
 import { Skeleton, Vacio } from '../../components/UI'
 
 const tonoKyc = (valor: string) => {
@@ -333,6 +334,7 @@ export default function AdminUsuarioDetalle() {
                     </small>
                   </span>
                   <span className={`chip chip--${tonoKyc(d.estado)}`}>{d.estado}</span>
+                  <DocPreview id={d.id} mime={d.mime} tipo={d.tipo.replace(/_/g, ' ')} />
                 </div>
               ))}
             </div>

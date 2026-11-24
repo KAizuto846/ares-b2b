@@ -26,6 +26,8 @@ final class Worker
         private readonly NotificacionService $notificaciones,
         private readonly ?\App\Modules\Programados\ProgramadoService $programados = null,
         private readonly ?AsignacionService $asignacion = null,
+        private readonly ?\App\Modules\Logistica\RescateRedService $rescate = null,
+        private readonly ?\App\Modules\Logistica\LiquidacionService $liquidaciones = null,
     ) {
     }
 
@@ -49,6 +51,19 @@ final class Worker
             'programados'            => fn () => $this->prepararProgramados(),
             'notificaciones'         => fn () => $this->enviarNotificaciones(),
             'jobs'                   => fn () => $this->procesarJobs(),
+            // Liquidación semanal: solo corre una vez al día (lunes) porque
+            // el INSERT/UPDATE es idempotente por semana.
+            'liquidaciones'          => function () {
+                if (date('N') !== '1') {
+                    return 'no es lunes';
+                }
+
+                if ($this->liquidaciones === null) {
+                    return 'sin servicio';
+                }
+
+                return "{$this->liquidaciones->generarSemana()} liquidacion(es)";
+            },
             'limpieza'               => fn () => $this->limpieza(),
         ] as $nombre => $tarea) {
             $inicio = microtime(true);
@@ -190,6 +205,16 @@ final class Worker
                 $payload['enlace'] ?? null,
                 $payload['canales'] ?? ['bandeja', 'correo'],
             ),
+            // RN-07b: rescate por red externa cuando no hubo repartidor.
+            'rescate_red' => $this->rescate === null
+                ? throw new \RuntimeException('Servicio de rescate no disponible')
+                : (function () use ($payload) {
+                    $r = $this->rescate->desdeJob($payload);
+
+                    if (!$r['ok']) {
+                        throw new \RuntimeException((string) $r['mensaje']);
+                    }
+                })(),
             default => throw new \RuntimeException("Tipo de job desconocido: {$tipo}"),
         };
     }

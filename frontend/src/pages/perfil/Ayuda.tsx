@@ -30,7 +30,7 @@ export default function Ayuda() {
           <p>{datos.soporte.horario}</p>
         </div>
         <button type="button" className="btn btn--claro rise" style={{ ['--i' as string]: 1 }} onClick={() => navegar('/perfil')}>
-          <Icon name="flecha" size={15} /> Mi cuenta
+          <Icon name="flecha" size={15} /> Mi perfil
         </button>
       </header>
 
@@ -68,10 +68,6 @@ export default function Ayuda() {
             <span><strong>Verificación de identidad</strong><small>Documentos y estado de la cuenta</small></span>
             <Icon name="flecha" size={16} />
           </button>
-          <button type="button" className="perfil-fila" onClick={() => navegar('/perfil/seguridad')}>
-            <span><strong>Seguridad</strong><small>Contraseña y baja de la cuenta</small></span>
-            <Icon name="flecha" size={16} />
-          </button>
         </div>
       </section>
 
@@ -79,10 +75,10 @@ export default function Ayuda() {
         <div className="card__cab"><h2 style={{ fontSize: 16 }}>Legal</h2></div>
         <div className="perfil-lista">
           {datos.legal.map((l) => (
-            <div className="perfil-fila perfil-fila--estatica" key={l.href}>
-              <span><strong>{l.texto}</strong><small>Disponible en el sitio principal de Ares</small></span>
-              <span className="chip chip--neutro">{l.href}</span>
-            </div>
+            <button type="button" className="perfil-fila" key={l.href} onClick={() => navegar(l.href)}>
+              <span><strong>{l.texto}</strong><small>Ver el documento completo</small></span>
+              <Icon name="flecha" size={16} />
+            </button>
           ))}
         </div>
       </section>
