@@ -1,6 +1,6 @@
 // Didi2 B2B — serviceWorker para PWA
 // Cache-first para assets, network-first para HTML/API
-const CACHE_NAME = 'did2-v29';
+const CACHE_NAME = 'did2-v30';
 const STATIC_ASSETS = [
   '/',
   '/manifest.json',
@@ -35,7 +35,8 @@ self.addEventListener('fetch', (event) => {
 
   // HTML y API: network-first
   if (event.request.headers.get('Accept')?.includes('text/html') ||
-      url.pathname.startsWith('/api/')) {
+      url.pathname.startsWith('/api/') ||
+      url.pathname.startsWith('/spa/api/')) {
     event.respondWith(
       fetch(event.request).catch(() => caches.match(event.request))
     );

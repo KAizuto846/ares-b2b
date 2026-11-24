@@ -41,8 +41,8 @@
   gap: 16px; align-items: start;
 }
 .perfil-columnas .perfil-atajos {
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;
-  width: min(480px, 100%); margin: 0 auto;
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px;
+  align-content: start;
 }
 .perfil-atajos {
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;

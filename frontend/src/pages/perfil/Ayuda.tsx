@@ -70,18 +70,6 @@ export default function Ayuda() {
           </button>
         </div>
       </section>
-
-      <section className="card rise" style={{ ['--i' as string]: 4 }}>
-        <div className="card__cab"><h2 style={{ fontSize: 16 }}>Legal</h2></div>
-        <div className="perfil-lista">
-          {datos.legal.map((l) => (
-            <button type="button" className="perfil-fila" key={l.href} onClick={() => navegar(l.href)}>
-              <span><strong>{l.texto}</strong><small>Ver el documento completo</small></span>
-              <Icon name="flecha" size={16} />
-            </button>
-          ))}
-        </div>
-      </section>
     </div>
   )
 }

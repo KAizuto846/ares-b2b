@@ -229,6 +229,11 @@ img { max-width: 100%; display: block; }
   backdrop-filter: saturate(1.4) blur(10px);
   border-bottom: 1px solid rgba(228, 230, 221, .8);
 }
+/* Modo oscuro: la barra queda clara en el tema oscuro si no se redefinen sus
+   colores fijos. Se cubren aquí y no con tokens para mantener el vidrio. */
+html[data-tema='oscuro'] .topbar { background: rgba(15, 21, 18, .85); border-bottom-color: rgba(43, 55, 48, .8); }
+html[data-tema='oscuro'] .topbar__titulo { color: var(--muted); }
+html[data-tema='oscuro'] .topbar .icono-btn { background: #1a231e; color: var(--ink); border-color: var(--line); }
 .topbar__titulo { font-size: 13px; color: var(--muted); font-weight: 600; letter-spacing: .02em; }
 .topbar__acciones { margin-left: auto; display: flex; align-items: center; gap: 10px; }
 
@@ -674,3 +679,22 @@ input::placeholder { color: var(--faint); }
 .anuncio-modal__caja .icono-btn { margin-left: auto; }
 .anuncio-modal__caja h2 { font-size: 19px; }
 .anuncio-modal__caja p { color: var(--ink-2); font-size: 14px; line-height: 1.5; }
+
+/* ===== Modo oscuro: superficies blancas fijas que no heredaban el tema ===== */
+html[data-tema='oscuro'] .acceso,
+html[data-tema='oscuro'] .perfil-fila,
+html[data-tema='oscuro'] .perfil-faq__item,
+html[data-tema='oscuro'] .pos-tarjeta,
+html[data-tema='oscuro'] .portafolio,
+html[data-tema='oscuro'] .lista,
+html[data-tema='oscuro'] .publicidad,
+html[data-tema='oscuro'] .publicador__archivo,
+html[data-tema='oscuro'] .pedidos-estado,
+html[data-tema='oscuro'] .pos-prod,
+html[data-tema='oscuro'] .pos-modal__caja,
+html[data-tema='oscuro'] .perfil-dialogo__caja,
+html[data-tema='oscuro'] .dialogo__caja { background: var(--card); color: var(--ink); }
+html[data-tema='oscuro'] .acceso__texto small,
+html[data-tema='oscuro'] .perfil-fila small { color: var(--muted); }
+html[data-tema='oscuro'] .acceso:hover { border-color: #3a4a40; }
+html[data-tema='oscuro'] dialog.msg-dialogo { background: var(--card); color: var(--ink); }

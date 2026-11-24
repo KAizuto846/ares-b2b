@@ -13,7 +13,12 @@ export type Explorar = {
   metricas: Metrica[]
   accesos: Acceso[]
   atajos: Acceso[]
-  resumen: { mensajes: number; portafolio: number; pedidos: number; detalle: { estado: string; cuantos: number }[] }
+  resumen: {
+    mensajes: number; portafolio: number; pedidos: number
+    detalle: { estado: string; cuantos: number }[]
+    /** Lista individual de pedidos en curso (solo mayorista). */
+    lista?: { uuid: string; comercio: string; total: number; estado: string }[]
+  }
   /** Cifras del día para el bloque «Pedidos» del mayorista. */
   pedidos_hoy: { pedidos: number; monto: number }
   preferencias?: { id: number; nombre: string }[]

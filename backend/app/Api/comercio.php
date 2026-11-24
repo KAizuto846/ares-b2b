@@ -119,44 +119,8 @@ if ($rutaModulo === '/explorar' && $metodoModulo === 'GET') {
 
     try {
         if ($rolModulo === 'comercio') {
-            // Cifras del día en fichas gráficas: pedidos en curso, pedidos de hoy,
-            // monto de hoy y portafolio guardado.
-            $q = $pdoModulo->prepare(
-                "SELECT COUNT(*) FROM pedidos WHERE comercio_id = ?
-                  AND estado IN ('pendiente_aceptacion','buscando_repartidor','en_camino')"
-            );
-            $q->execute([$comercioIdModulo]);
-            $metricas[] = [
-                'valor'    => (string) (int) $q->fetchColumn(),
-                'etiqueta' => 'En curso',
-                'nota'     => 'pedidos en movimiento',
-                'href'     => '/pedidos',
-            ];
-            $metricas[] = [
-                'valor'    => (string) (int) $pedidosHoy['pedidos'],
-                'etiqueta' => 'Pedidos hoy',
-                'nota'     => 'solicitados el día de hoy',
-                'href'     => '/pedidos',
-            ];
-            $metricas[] = [
-                'valor'    => '$' . number_format((float) $pedidosHoy['monto'], 2),
-                'etiqueta' => 'Comprado hoy',
-                'nota'     => 'monto solicitado hoy',
-                'href'     => '/finanzas',
-            ];
-            // Portafolio se consulta aquí mismo (el resumen de globos va después).
-            try {
-                $q = $pdoModulo->prepare('SELECT COUNT(*) FROM favoritos WHERE comercio_id = ?');
-                $q->execute([$comercioIdModulo]);
-                $metricas[] = [
-                    'valor'    => (string) (int) $q->fetchColumn(),
-                    'etiqueta' => 'Portafolio',
-                    'nota'     => 'productos guardados',
-                    'href'     => '/portafolio',
-                ];
-            } catch (\Throwable $e) {
-                error_log('[ares-api] explorar métricas portafolio: ' . $e->getMessage());
-            }
+            // Sin fichas de cifras: el inicio del comercio va limpio (muro de
+            // anuncios + accesos). Las cifras viven en Finanzas y Pedidos.
         } elseif ($rolModulo === 'mayorista') {
             // Sin métricas sueltas: las cifras del día viven dentro de la tarjeta «Pedidos».
         } elseif ($rolModulo === 'repartidor') {
@@ -241,7 +205,7 @@ if ($rutaModulo === '/explorar' && $metodoModulo === 'GET') {
     // ------------------------------------------------ accesos por rol
     $accesos = match (true) {
         $rolModulo === 'comercio' => [
-            ['href' => '/buscar', 'titulo' => 'Buscar', 'texto' => 'Encuentra productos y mayoristas cerca de ti.', 'icono' => 'buscar'],
+            ['href' => '/mensajes', 'titulo' => 'Mensajes', 'texto' => 'Habla con tus mayoristas y con soporte.', 'icono' => 'mensajes'],
             ['href' => '/finanzas', 'titulo' => 'Finanzas', 'texto' => 'Tus gastos, la gráfica del año y tus facturas.', 'icono' => 'finanzas'],
             ['href' => '/portafolio', 'titulo' => 'Portafolio', 'texto' => 'Los productos que guardaste, listos para repetir.', 'icono' => 'estrella'],
             ['href' => '/agendar', 'titulo' => 'Agendar', 'texto' => 'Arma una lista y elige el día en que la quieres.', 'icono' => 'calendario'],
@@ -269,13 +233,9 @@ if ($rutaModulo === '/explorar' && $metodoModulo === 'GET') {
     // ------------------------------------------------ franja de atajos
     // El botón principal pasa a Mensajes para todos los roles; comercio
     // conserva el resto de herramientas, mayorista/admin solo Mensajes.
-    $atajos = $rolModulo === 'comercio' ? [
-        ['href' => '/mensajes', 'titulo' => 'Mensajes', 'texto' => 'Habla con mayoristas y soporte.', 'icono' => 'mensajes'],
-        ['href' => '/pos', 'titulo' => 'Caja', 'texto' => 'Cobrar en mostrador.', 'icono' => 'pos'],
-        ['href' => '/pos/inventario', 'titulo' => 'Inventario', 'texto' => 'Existencias y altas de producto.', 'icono' => 'inventario'],
-        ['href' => '/pos/ventas', 'titulo' => 'Ventas', 'texto' => 'El historial del día.', 'icono' => 'ventas'],
-        ['href' => '/pedidos', 'titulo' => 'Pedidos', 'texto' => 'El seguimiento de tus compras.', 'icono' => 'pedidos'],
-    ] : [];
+    // Sin franja de atajos: el botón de la cabecera «Mensajes» cumple ese rol
+    // para todos los roles y el resto de herramientas vive en el rail.
+    $atajos = [];
 
     // ------------------------------------------------ resumen (globos)
     $sinLeer = 0;
@@ -309,7 +269,8 @@ if ($rutaModulo === '/explorar' && $metodoModulo === 'GET') {
             $q->execute([$comercioIdModulo]);
             $enCurso = (int) $q->fetchColumn();
         } elseif ($rolModulo === 'mayorista') {
-            // Pedidos del día en curso con su estado para la ficha «En curso».
+            // Pedidos en curso con su estado: conteo agregado + lista individual
+            // para la ficha «Pedidos» del inicio del mayorista.
             $q = $pdoModulo->prepare(
                 "SELECT estado, COUNT(*) AS cuantos FROM pedidos
                   WHERE mayorista_id = ?
@@ -321,6 +282,23 @@ if ($rutaModulo === '/explorar' && $metodoModulo === 'GET') {
                 $enCurso += (int) $fila['cuantos'];
                 $detalle[] = ['estado' => (string) $fila['estado'], 'cuantos' => (int) $fila['cuantos']];
             }
+
+            $q = $pdoModulo->prepare(
+                "SELECT p.uuid, p.estado, p.total, cp.nombre_negocio AS comercio
+                   FROM pedidos p
+                   JOIN comercios_perfil cp ON cp.id = p.comercio_id
+                  WHERE p.mayorista_id = ?
+                    AND p.estado IN ('pendiente_aceptacion','aceptado','preparando','listo_para_recoger','buscando_repartidor','en_camino')
+                  ORDER BY p.created_at DESC
+                  LIMIT 8"
+            );
+            $q->execute([$perfilId('mayoristas_perfil', $usuarioIdModulo)]);
+            $enCursoLista = array_map(static fn (array $f): array => [
+                'uuid'     => (string) $f['uuid'],
+                'comercio' => (string) ($f['comercio'] ?? ''),
+                'total'    => (float) $f['total'],
+                'estado'   => (string) $f['estado'],
+            ], $q->fetchAll() ?: []);
         }
     } catch (\Throwable $e) {
         error_log('[ares-api] explorar resumen: ' . $e->getMessage());
@@ -330,6 +308,9 @@ if ($rutaModulo === '/explorar' && $metodoModulo === 'GET') {
     foreach ($accesos as $i => $a) {
         if ($a['href'] === '/portafolio' && $enPortafolio > 0) {
             $accesos[$i]['globos'] = $enPortafolio;
+        }
+        if ($a['href'] === '/mensajes' && $sinLeer > 0) {
+            $accesos[$i]['globos'] = $sinLeer;
         }
     }
     foreach ($atajos as $i => $a) {
@@ -358,7 +339,7 @@ if ($rutaModulo === '/explorar' && $metodoModulo === 'GET') {
         'metricas' => $metricas,
         'accesos'  => $accesos,
         'atajos'   => $atajos,
-        'resumen'  => ['mensajes' => $sinLeer, 'portafolio' => $enPortafolio, 'pedidos' => $enCurso, 'detalle' => $detalle],
+        'resumen'  => ['mensajes' => $sinLeer, 'portafolio' => $enPortafolio, 'pedidos' => $enCurso, 'detalle' => $detalle, 'lista' => $enCursoLista ?? []],
         'pedidos_hoy' => $pedidosHoy,
         'preferencias' => $preferencias,
     ]);
@@ -868,15 +849,33 @@ if ($rutaModulo === '/anuncios/marketplace' && $metodoModulo === 'GET') {
     )->execute([$hoy]);
 
     $stmt = api_pdo()->prepare(
-        "SELECT a.id, a.titulo, a.cuerpo, a.imagen, a.monto_pagado, a.vence_el,
+        "SELECT a.id, a.titulo, a.cuerpo, a.imagen, a.monto_pagado, a.pagado_en, a.vence_el,
                 m.nombre_comercial AS mayorista, m.uuid AS mayorista_uuid
            FROM anuncios a
            LEFT JOIN mayoristas_perfil m ON m.id = a.mayorista_id
           WHERE a.estado = 'activo' AND a.vence_el >= ?
-          ORDER BY a.monto_pagado DESC, a.pagado_en ASC, a.id ASC
-          LIMIT 20"
+          ORDER BY a.monto_pagado DESC, a.pagado_en ASC, a.id ASC"
     );
     $stmt->execute([$hoy]);
+
+    $todos = $stmt->fetchAll() ?: [];
+
+    // Se muestran 20 de todos los activos: la elección es al azar, pero el
+    // orden de presentación respeta la prioridad (más pagado primero; a
+    // igual monto, el que pagó antes).
+    if (count($todos) > 20) {
+        shuffle($todos);
+        $todos = array_slice($todos, 0, 20);
+        usort($todos, static function (array $x, array $y): int {
+            $mx = (float) $x['monto_pagado'];
+            $my = (float) $y['monto_pagado'];
+            if ($mx !== $my) return $my <=> $mx;
+            $px = (string) $x['pagado_en'];
+            $py = (string) $y['pagado_en'];
+            if ($px !== $py) return $px <=> $py;
+            return (int) $x['id'] <=> (int) $y['id'];
+        });
+    }
 
     $publicaciones = array_map(static fn (array $a): array => [
         'id'             => (int) $a['id'],
@@ -887,7 +886,7 @@ if ($rutaModulo === '/anuncios/marketplace' && $metodoModulo === 'GET') {
         'vence_el'       => (string) ($a['vence_el'] ?? ''),
         'mayorista'      => (string) ($a['mayorista'] ?? ''),
         'mayorista_uuid' => (string) ($a['mayorista_uuid'] ?? ''),
-    ], $stmt->fetchAll() ?: []);
+    ], $todos);
 
     responder(['ok' => true, 'anuncios' => $publicaciones]);
 }

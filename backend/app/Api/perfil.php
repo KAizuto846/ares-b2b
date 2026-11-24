@@ -422,6 +422,13 @@ if ($perfilRuta === '/perfil' && $perfilMetodo === 'PATCH') {
         $destino = perfil_tabla_nombre($rol);
         $nombreNegocio = trim((string) ($cuerpo['nombre_negocio'] ?? ''));
 
+        // El campo visible en el formulario ES el nombre del negocio para los roles
+        // con perfil: si llega vacío el de negocio, el nombre editado manda (así el
+        // cambio hecho en «Nombre del negocio» se ve reflejado al recargar).
+        if ($destino !== null && $nombreNegocio === '' && $nombre !== '') {
+            $nombreNegocio = $nombre;
+        }
+
         if ($destino !== null) {
             if ($nombreNegocio === '') {
                 $nombreNegocio = $nombre;

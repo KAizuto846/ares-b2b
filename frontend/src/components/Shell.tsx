@@ -73,7 +73,6 @@ function navDe(rol: string | null): Bloque[] {
         { to: '/', texto: 'Inicio', icono: 'inicio', movil: true },
         { to: '/productos', texto: 'Catálogo', icono: 'productos', movil: true },
         { to: '/pedidos', texto: 'Pedidos', icono: 'pedidos', movil: true },
-        { to: '/facturacion', texto: 'Facturación', icono: 'facturacion' },
         { to: '/finanzas', texto: 'Finanzas', icono: 'finanzas' },
         { to: '/planes', texto: 'Planes', icono: 'estrella' },
         { to: '/mensajes', texto: 'Mensajes', icono: 'mensajes', movil: true },

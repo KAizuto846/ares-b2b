@@ -170,7 +170,7 @@ export default function Seguridad() {
       <header className="pagina-cab">
         <div className="rise">
           <h1>Seguridad</h1>
-          <p>Contraseña, últimos accesos y baja de la cuenta.</p>
+          <p>Contraseña y baja de la cuenta.</p>
         </div>
         <button type="button" className="btn btn--claro rise" style={{ ['--i' as string]: 1 }} onClick={() => navegar('/perfil')}>
           <Icon name="flecha" size={15} /> Mi perfil
@@ -235,7 +235,6 @@ export default function Seguridad() {
           <dl className="perfil-ficha__lista">
             <div className="perfil-dato"><dt>Correo</dt><dd>{datos.correo}</dd></div>
             <div className="perfil-dato"><dt>Teléfono</dt><dd>{datos.telefono || 'Sin registrar'}</dd></div>
-            <div className="perfil-dato"><dt>Último acceso</dt><dd>{datos.ultimo_login || '—'}</dd></div>
             <div className="perfil-dato"><dt>Miembro desde</dt><dd>{datos.miembro || '—'}</dd></div>
           </dl>
           <div className="perfil-ficha__chips">
@@ -247,9 +246,8 @@ export default function Seguridad() {
       </section>
 
       <section className="card rise perfil-centrar" style={{ ['--i' as string]: 3 }}>
-        <div className="card__cab"><h2 style={{ fontSize: 16 }}>Eliminar cuenta</h2></div>
-        <div className="card__cuerpo">
-          <button type="button" className="btn btn--peligro btn--bloque" onClick={() => setBaja(true)}>
+        <div className="card__cuerpo" style={{ display: 'grid', justifyItems: 'center', gap: 10 }}>
+          <button type="button" className="btn btn--peligro" onClick={() => setBaja(true)}>
             <Icon name="basura" size={16} /> Eliminar cuenta
           </button>
         </div>

@@ -69,7 +69,7 @@ export default function Privacidad() {
           <p>Elige cómo quieres que te contactemos y qué compartes.</p>
         </div>
         <button type="button" className="btn btn--claro rise" style={{ ['--i' as string]: 1 }} onClick={() => navegar('/perfil')}>
-          <Icon name="flecha" size={15} /> Mi cuenta
+          <Icon name="flecha" size={15} /> Mi perfil
         </button>
       </header>
 

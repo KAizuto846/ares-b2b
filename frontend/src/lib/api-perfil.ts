@@ -114,7 +114,6 @@ export type Ayuda = {
   tema: 'claro' | 'oscuro'
   soporte: { href: string; texto: string; horario: string }
   faqs: Faq[]
-  legal: { texto: string; href: string }[]
 }
 
 export type DireccionNueva = {

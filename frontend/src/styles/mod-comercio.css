@@ -340,7 +340,7 @@
   background: rgba(120, 128, 120, .45); /* gris claro semitransparente */
 }
 .publicador__caja {
-  position: relative; width: min(420px, 92vw); height: 100vh; height: 100dvh;
+  position: relative; width: clamp(340px, 33.5vw, 480px); max-width: 92vw; height: 100vh; height: 100dvh;
   display: grid; grid-template-rows: auto 1fr auto;
   background: var(--card); border-left: 1px solid var(--line);
   box-shadow: var(--s-3);
@@ -639,3 +639,35 @@ html[data-tema='oscuro'] .publicidad__avatar { background: #17301f; color: #a6e8
 }
 .canva__pie .btn { flex: 1 1 auto; }
 
+
+/* ===== Muro de anuncios: dos columnas, scroll de filas, sin encabezado ===== */
+.publicidades--muro {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  max-height: min(78vh, 900px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 4px 6px 12px 4px;
+  scrollbar-width: thin;
+}
+.publicidades--muro .publicidad--visual { margin: 0; }
+@media (max-width: 720px) {
+  .publicidades--muro { grid-template-columns: minmax(0, 1fr); max-height: none; }
+}
+
+/* ===== Lista de pedidos en curso (ficha Pedidos del mayorista) ===== */
+.pedidos-lista { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 8px; }
+.pedidos-lista__fila {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 12px; border: 1px solid var(--line); border-radius: 11px;
+  background: var(--card);
+}
+.pedidos-lista__enlace {
+  display: flex; align-items: baseline; gap: 10px; flex: 1; min-width: 0;
+  background: none; border: 0; padding: 0; cursor: pointer; font: inherit; color: inherit; text-align: left;
+}
+.pedidos-lista__enlace:hover .pedidos-lista__comercio { text-decoration: underline; }
+.pedidos-lista__comercio { font-weight: 700; font-size: 13.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pedidos-lista__monto { font-size: 12.5px; color: var(--muted); flex: 0 0 auto; }
+.pedidos-lista__etiqueta { flex: 0 0 auto; margin-left: auto; }

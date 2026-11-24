@@ -153,7 +153,7 @@ export default function EditarPerfil() {
           nombre: d.usuario.nombre,
           email: d.usuario.email,
           telefono: d.usuario.telefono,
-          nombre_negocio: d.perfil.nombre_negocio || d.perfil.nombre_comercial || '',
+          nombre_negocio: d.perfil.nombre_negocio || d.perfil.nombre_comercial || d.usuario.nombre,
           calle: p?.calle ?? '',
           colonia: p?.colonia ?? '',
           ciudad: p?.ciudad ?? '',
@@ -216,12 +216,16 @@ export default function EditarPerfil() {
     setGuardando(true)
 
     try {
+      const nombreVisible = (datos && (datos.rol === 'comercio' || datos.rol === 'mayorista')
+        ? form.nombre_negocio.trim()
+        : form.nombre.trim()) || form.nombre.trim()
+
       const guardado = await apiPerfil.guardar({
-        nombre: form.nombre.trim(),
+        nombre: nombreVisible,
         email: form.email.trim(),
         telefono: form.telefono.trim(),
         ...(datos && (datos.rol === 'comercio' || datos.rol === 'mayorista')
-          ? { nombre_negocio: form.nombre_negocio.trim() }
+          ? { nombre_negocio: nombreVisible }
           : {}),
       })
 
@@ -322,15 +326,15 @@ export default function EditarPerfil() {
           <div className="card__cuerpo perfil-form__rejilla">
             <label className="campo">
               <span>{conNegocio ? 'Nombre del negocio' : 'Nombre'}</span>
-              <input type="text" value={form.nombre} onChange={cambiar('nombre')} required minLength={3} autoComplete="organization" />
+              <input
+                type="text"
+                value={conNegocio ? form.nombre_negocio : form.nombre}
+                onChange={conNegocio ? cambiar('nombre_negocio') : cambiar('nombre')}
+                required
+                minLength={3}
+                autoComplete="organization"
+              />
             </label>
-
-            {conNegocio && (
-              <label className="campo">
-                <span>Nombre comercial</span>
-                <input type="text" value={form.nombre_negocio} onChange={cambiar('nombre_negocio')} autoComplete="organization" />
-              </label>
-            )}
 
             <label className="campo">
               <span>Correo</span>

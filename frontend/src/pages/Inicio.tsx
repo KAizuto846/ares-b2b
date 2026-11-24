@@ -29,7 +29,7 @@ function iniciales(nombre: string): string {
   return (uno + dos).toUpperCase()
 }
 
-/** Fichas de anuncio tipo Instagram: marca, media 4:5 dominante y pie de texto. */
+/** Fichas de anuncio tipo Instagram: 20 en dos columnas con scroll, sin título. */
 function Publicidades() {
   const [publicaciones, setPublicaciones] = useState<AnuncioPublicacion[] | null>(null)
   const navegar = useNavegar()
@@ -53,7 +53,7 @@ function Publicidades() {
   }
 
   return (
-    <section className="publicidades publicidades--visual rise" style={{ ['--i' as string]: 1 }} aria-label="Anuncios">
+    <section className="publicidades publicidades--muro rise" style={{ ['--i' as string]: 1 }} aria-label="Anuncios">
       {anuncios.map((a, j) => (
         <button type="button" className="publicidad publicidad--visual" key={a.id} style={{ ['--i' as string]: j }} onClick={() => abrir(a)}>
           <span className="publicidad__marca">
@@ -108,10 +108,13 @@ function Publicador() {
   useEffect(() => { void cargar() }, [])
 
   const activos = publicaciones?.filter((a) => a.estado === 'activo') ?? []
+  const hayBorrador = borrador.titulo.trim() !== '' || borrador.cuerpo.trim() !== '' || borrador.plan !== null || borrador.imagen !== null
 
   const descartar = () => {
     setBorrador(borradorVacio)
     setVacio(true)
+    // El botón de la ficha vuelve a «+ Agregar nuevo anuncio».
+    setAbierto(false)
   }
 
   const abrirPanel = () => {
@@ -229,7 +232,7 @@ function Publicador() {
           onClick={() => (abierto ? cerrarPanel() : abrirPanel())}
         >
           <Icon name="mas" size={17} />
-          {abierto ? 'Seguir editando' : '+ Agregar nuevo anuncio'}
+          {abierto || hayBorrador ? 'Seguir editando' : '+ Agregar nuevo anuncio'}
         </button>
       </div>
 
@@ -422,24 +425,6 @@ export default function Inicio() {
         </button>
       </header>
 
-      {datos.metricas.length > 0 && (
-        <section className="kpis rise" style={{ ['--i' as string]: 1 }} aria-label="Tus cifras de hoy">
-          {datos.metricas.map((m) => (
-            <a
-              className="kpi"
-              key={m.etiqueta}
-              href={`/spa${m.href}`}
-              onClick={(e) => { e.preventDefault(); navegar(m.href) }}
-              title={m.nota ? `${m.etiqueta}: ${m.nota}` : m.etiqueta}
-            >
-              <span className="kpi__valor">{m.valor}</span>
-              <span className="kpi__etiqueta">{m.etiqueta}</span>
-              {m.nota && <span className="kpi__nota">{m.nota}</span>}
-            </a>
-          ))}
-        </section>
-      )}
-
       {esMayorista && (
         <section className="card rise pedidos-ficha" style={{ ['--i' as string]: 2 }}>
           <div className="card__cab"><h2>Pedidos</h2></div>
@@ -448,21 +433,26 @@ export default function Inicio() {
               <div className="pedidos-sub">
                 <span className="pedidos-sub__encabezado">En curso</span>
                 <strong className="pedidos-sub__numero">{datos.resumen.pedidos}</strong>
-                {datos.resumen.detalle.length > 0 && (
-                  <div className="pedidos-estados">
-                    {datos.resumen.detalle.map((d) => (
-                      <div className="pedidos-estado" key={d.estado}>
-                        <strong>{d.cuantos}</strong>
-                        <span className={`chip chip--${d.estado === 'listo_para_recoger' ? 'ok' : 'alerta'}`}>
-                          {d.estado === 'listo_para_recoger' ? 'Listo' : 'Preparando'}
+                {datos.resumen.lista && datos.resumen.lista.length > 0 && (
+                  <ul className="pedidos-lista">
+                    {datos.resumen.lista.map((p) => (
+                      <li className="pedidos-lista__fila" key={p.uuid}>
+                        <button type="button" className="pedidos-lista__enlace" onClick={() => navegar(`/pedidos/${p.uuid}`)}>
+                          <span className="pedidos-lista__comercio">{p.comercio || 'Pedido'}</span>
+                          <span className="pedidos-lista__monto">{MONTO.format(p.total)}</span>
+                        </button>
+                        <span className={`chip chip--${p.estado === 'listo_para_recoger' ? 'ok' : 'alerta'} pedidos-lista__etiqueta`}>
+                          {p.estado === 'listo_para_recoger'
+                            ? 'Listo'
+                            : (p.estado === 'en_camino' ? 'En camino' : 'Preparando')}
                         </span>
-                      </div>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 )}
               </div>
               <div className="pedidos-sub pedidos-sub--vendidos">
-                <span className="pedidos-sub__encabezado">Vendidos hoy</span>
+                <span className="pedidos-sub__encabezado">Vendidos</span>
                 <div className="pedidos-sub__numeros">
                   <strong className="pedidos-sub__numero">{datos.pedidos_hoy.pedidos}</strong>
                   <strong className="pedidos-sub__numero pedidos-sub__numero--monto">{MONTO.format(datos.pedidos_hoy.monto)}</strong>
@@ -500,31 +490,6 @@ export default function Inicio() {
             ))}
           </div>
         </section>
-
-        {esComercio && datos.atajos.length > 0 && (
-          <section className="card rise" style={{ ['--i' as string]: 3 }}>
-            <div className="card__cab">
-              <h2>Punto de venta</h2>
-              <span className="chip chip--neutro" style={{ marginLeft: 'auto' }}>tus herramientas</span>
-            </div>
-            <div className="pos-tarjetas">
-              {datos.atajos.map((a, i) => (
-                <a
-                  key={a.href + a.titulo}
-                  href={`/spa${a.href}`}
-                  onClick={(e) => { e.preventDefault(); navegar(a.href) }}
-                  className="pos-tarjeta"
-                  style={{ ['--i' as string]: i }}
-                >
-                  <span className="pos-tarjeta__icono"><Icon name={a.icono} size={22} /></span>
-                  <strong>{a.titulo}</strong>
-                  <span className="pos-tarjeta__texto">{a.texto}</span>
-                  {!!a.globos && a.globos > 0 && <span className="acceso__globo pos-tarjeta__globo">{a.globos > 99 ? '99+' : a.globos}</span>}
-                </a>
-              ))}
-            </div>
-          </section>
-        )}
 
         {esMayorista && <Publicador />}
       </div>
