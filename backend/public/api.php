@@ -14,6 +14,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use App\Config\Database;
 use App\Core\AuditLogger;
+use App\Core\Jwt;
 use App\Core\Session;
 use App\Modules\Auth\AuthService;
 use App\Modules\Auth\UsuarioRepository;
@@ -91,8 +92,66 @@ try {
     Session::iniciar();
 
     $pdo = Database::conexion();
-    $usuarioId = (int) (Session::obtener('user_id') ?? 0);
-    $roles = (array) (Session::obtener('roles') ?? []);
+
+    // ---------------------------------------------------------------- JWT
+    // La SPA se autentica por cabecera Authorization: Bearer <access_token>.
+    // Si no hay cabecera (o el token expiró), se cae a la cookie de sesión.
+    $jwtUid = 0;
+    $jwtRoles = [];
+    $jwtValido = false;
+    $jwtExpirado = false;
+
+    $cabeceraAuth = (string) ($_SERVER['HTTP_AUTHORIZATION'] ?? '');
+    if (preg_match('/^Bearer\s+(\S+)$/i', $cabeceraAuth, $m)) {
+    $carguio = Jwt::verificar($m[1]);
+
+    if ($carguio !== null && isset($carguio['sub'], $carguio['roles']) && ($carguio['typ'] ?? '') === 'access') {
+    $jwtValido = true;
+    $jwtUid = (int) $carguio['sub'];
+    $jwtRoles = (array) $carguio['roles'];
+    } elseif ($carguio === null) {
+    // Puede ser firma inválida o token expirado: distinguir por el payload sin validar exp.
+    $partes = explode('.', $m[1]);
+    if (count($partes) === 3) {
+    $crudo = json_decode((string) base64_decode(strtr($partes[1], '-_', '+/'), true), true);
+    if (is_array($crudo) && isset($crudo['exp']) && time() >= (int) $crudo['exp']) {
+    $jwtExpirado = true;
+    }
+    }
+    }
+    }
+
+    // Renovación: POST /auth/refresh con el refresh_token (vida larga).
+    if ($ruta === '/auth/refresh' && $metodo === 'POST') {
+    $refresh = trim((string) ($cuerpo['refresh_token'] ?? ''));
+    $carguio = $refresh !== '' ? Jwt::verificar($refresh) : null;
+
+    if ($carguio === null || ($carguio['typ'] ?? '') !== 'refresh' || !isset($carguio['sub'], $carguio['roles'])) {
+    fallo('Tu sesión expiró. Inicia sesión de nuevo.', 401, 'REFRESCO_INVALIDO');
+    }
+
+    $stmtRoles = $pdo->prepare('SELECT id FROM usuarios WHERE id = ? AND deleted_at IS NULL LIMIT 1');
+    $stmtRoles->execute([(int) $carguio['sub']]);
+
+    if ($stmtRoles->fetchColumn() === false) {
+    fallo('Tu cuenta ya no está disponible.', 401, 'REFRESCO_INVALIDO');
+    }
+
+    responder([
+    'ok' => true,
+    'access_token' => Jwt::emitir([
+    'sub' => (int) $carguio['sub'],
+    'roles' => (array) $carguio['roles'],
+    'typ' => 'access',
+    'exp' => time() + 1800,
+    ]),
+    'token_type' => 'Bearer',
+    'expires_in' => 1800,
+    ]);
+    }
+
+    $usuarioId = $jwtValido ? $jwtUid : (int) (Session::obtener('user_id') ?? 0);
+    $roles = $jwtValido ? $jwtRoles : (array) (Session::obtener('roles') ?? []);
     $rol = $roles[0] ?? null;
 
     // Contexto para los módulos de app/Api/*.php
@@ -214,15 +273,34 @@ try {
         $tema->execute([(int) $resultado['usuario']['id']]);
         $pref = $tema->fetch() ?: [];
         $rolLogin = (string) ($roles[0] ?? '');
+
+        // JWT: access token de 30 min + refresh de 30 días para la SPA.
+        $accessToken = Jwt::emitir([
+        'sub' => (int) $resultado['usuario']['id'],
+        'roles' => $roles,
+        'typ' => 'access',
+        'exp' => time() + 1800,
+        ]);
+        $refreshToken = Jwt::emitir([
+        'sub' => (int) $resultado['usuario']['id'],
+        'roles' => $roles,
+        'typ' => 'refresh',
+        'exp' => time() + 2592000,
+        ]);
+
         responder([
-            'ok'      => true,
-            'usuario' => $datosUsuario(),
-            'rol'     => $roles[0] ?? null,
-            'tema'    => ((string) ($pref['tema'] ?? 'claro')) === 'oscuro' ? 'oscuro' : 'claro',
-            'onboarding_completo' => ($rolLogin !== '' && !str_starts_with($rolLogin, 'admin'))
-                ? (bool) ((int) ($pref['onboarding'] ?? 0))
-                : null,
-            'suscripcion' => $suscripcionDe((int) $resultado['usuario']['id']),
+        'ok' => true,
+        'access_token' => $accessToken,
+        'refresh_token' => $refreshToken,
+        'token_type' => 'Bearer',
+        'expires_in' => 1800,
+        'usuario' => $datosUsuario(),
+        'rol' => $roles[0] ?? null,
+        'tema' => ((string) ($pref['tema'] ?? 'claro')) === 'oscuro' ? 'oscuro' : 'claro',
+        'onboarding_completo' => ($rolLogin !== '' && !str_starts_with($rolLogin, 'admin'))
+        ? (bool) ((int) ($pref['onboarding'] ?? 0))
+        : null,
+        'suscripcion' => $suscripcionDe((int) $resultado['usuario']['id']),
         ]);
     }
 
@@ -246,7 +324,13 @@ try {
     ];
 
     if ($usuarioId <= 0 && !in_array($ruta, $publicas, true)) {
-        fallo('Inicia sesión para continuar.', 401, 'SIN_SESION');
+    // Con Bearer expirado el cliente sabe que debe renovar (TOKEN_EXPIRADO);
+    // sin credenciales de ningún tipo es SIN_SESION.
+    fallo(
+    $jwtExpirado ? 'Tu sesión expiró.' : 'Inicia sesión para continuar.',
+    401,
+    $jwtExpirado ? 'TOKEN_EXPIRADO' : 'SIN_SESION',
+    );
     }
 
     // ------------------------------------------------------------ inicio

@@ -20,7 +20,8 @@ en una sola plataforma: catálogo real, pedidos trazables y reparto.
 - React: componentes, hooks (useState/useEffect/useRef), React Router, Context para sesión.
 - API externa: Leaflet + OpenStreetMap (mapa de cobertura) y Google Maps (ruta repartidor).
 - Backend: PHP + MySQL, CRUD completo, API REST, validación y saneamiento.
-- Seguridad: 100% prepared statements, Argon2id, cookies httponly.
+- Seguridad: **JWT (HS256) con access + refresh token**, 100% prepared statements,
+  Argon2id, cookies httponly como respaldo.
 
 ## 4. Aportaciones propias (60 s) — criterio 3
 - POS con cobro por tarjeta demo (validación Luhn, marca, CVV, vencimiento).

@@ -18,19 +18,71 @@ export const urlApp = (ruta?: string | null): string => {
   return `${BASE_APP}${ruta.startsWith('/') ? '' : '/'}${ruta}`
 }
 
+/**
+ * Tokens JWT (Bearer). El access token vive en localStorage (vida corta, 30 min)
+ * y el refresh token permite renovarlo sin volver a pedir credenciales.
+ */
+const CLAVE_TOKEN = 'ares_jwt'
+const CLAVE_REFRESCO = 'ares_jwt_refresh'
+
+export const jwtToken = (): string => localStorage.getItem(CLAVE_TOKEN) ?? ''
+export const jwtGuardar = (access: string, refresh?: string): void => {
+ localStorage.setItem(CLAVE_TOKEN, access)
+ if (refresh) localStorage.setItem(CLAVE_REFRESCO, refresh)
+}
+export const jwtLimpiar = (): void => {
+ localStorage.removeItem(CLAVE_TOKEN)
+ localStorage.removeItem(CLAVE_REFRESCO)
+}
+
+/** Renueva el access token con el refresh token. Devuelve true si logró renovar. */
+async function renovarToken(): Promise<boolean> {
+ const refresh = localStorage.getItem(CLAVE_REFRESCO)
+ if (!refresh) return false
+ const res = await fetch(`${URL_API}/auth/refresh`, {
+ method: 'POST',
+ credentials: 'same-origin',
+ headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+ body: JSON.stringify({ refresh_token: refresh }),
+ })
+ const data = await res.json().catch(() => null)
+ if (!res.ok || !data?.ok) {
+ jwtLimpiar()
+ return false
+ }
+ localStorage.setItem(CLAVE_TOKEN, data.access_token)
+ return true
+}
+
 /** Petición JSON genérica. Los módulos la reutilizan para no duplicar manejo de errores. */
 export async function pedir<T>(path: string, init: RequestInit = {}): Promise<T> {
-  const res = await fetch(`${URL_API}${path}`, {
-    credentials: 'same-origin',
-    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-    ...init,
-  })
-  const data = await res.json().catch(() => null)
-  if (!res.ok || !data || data.ok === false) {
-    const err: ApiError = data?.error ?? { code: 'RED', message: 'Sin conexión con el servidor.' }
-    throw Object.assign(new Error(err.message), { code: err.code })
-  }
-  return data as T
+ const token = jwtToken()
+ const cabeceras: Record<string, string> = {
+ 'Content-Type': 'application/json',
+ Accept: 'application/json',
+ ...(token ? { Authorization: `Bearer ${token}` } : {}),
+ ...((init.headers as Record<string, string>) ?? {}),
+ }
+
+ const res = await fetch(`${URL_API}${path}`, {
+ credentials: 'same-origin',
+ headers: cabeceras,
+ ...init,
+ })
+ const data = await res.json().catch(() => null)
+
+ // Access token expirado: un intento de renovación y reintento único.
+ if (res.status === 401 && data?.error?.code === 'TOKEN_EXPIRADO') {
+ if (await renovarToken()) {
+ return pedir<T>(path, init)
+ }
+ }
+
+ if (!res.ok || !data || data.ok === false) {
+ const err: ApiError = data?.error ?? { code: 'RED', message: 'Sin conexión con el servidor.' }
+ throw Object.assign(new Error(err.message), { code: err.code })
+ }
+ return data as T
 }
 
 const req = pedir
@@ -56,7 +108,7 @@ export type Suscripcion = { plan: string; flags: Record<string, boolean> }
 
 export const api = {
   session: () => req<{ usuario: Usuario | null; rol: string | null; tema?: 'claro' | 'oscuro'; onboarding_completo?: boolean | null; suscripcion?: Suscripcion | null }>('/session'),
-  login: (email: string, password: string, recordar = false) => req<{ usuario: Usuario; rol: string; tema?: 'claro' | 'oscuro'; onboarding_completo?: boolean | null; suscripcion?: Suscripcion | null }>('/login', { method: 'POST', body: JSON.stringify({ email, password, recordar }) }),
+  login: (email: string, password: string, recordar = false) => req<{ access_token: string; refresh_token: string; token_type: string; expires_in: number; usuario: Usuario; rol: string; tema?: 'claro' | 'oscuro'; onboarding_completo?: boolean | null; suscripcion?: Suscripcion | null }>('/login', { method: 'POST', body: JSON.stringify({ email, password, recordar }) }),
   completarOnboarding: () => req<{ ok: true; onboarding_completo: boolean }>('/session/onboarding', { method: 'POST', body: '{}' }),
   logout: () => req('/logout', { method: 'POST' }),
   inicio: () => req<{ nombre: string; rol: string; metricas: Metrica[]; accesos: Acceso[]; herramientas: Acceso[] }>('/inicio'),

@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { api } from '../lib/api'
+import { api, jwtGuardar, jwtLimpiar } from '../lib/api'
 import type { Carrito, Suscripcion, Usuario } from '../lib/api'
 
 type Aviso = { id: number; texto: string; accion?: { texto: string; hacer: () => void } }
@@ -114,8 +114,10 @@ export function Proveedor({ children }: { children: ReactNode }) {
   }, [])
 
   const entrar = useCallback(async (email: string, password: string, recordar = false) => {
-    const r = await api.login(email, password, recordar)
-    setUsuario(r.usuario)
+  const r = await api.login(email, password, recordar)
+  // JWT: se guardan los tokens para autenticar por Bearer en cada petición.
+  jwtGuardar(r.access_token, r.refresh_token)
+  setUsuario(r.usuario)
     setRol(r.rol)
     setOnboardingPendiente(r.onboarding_completo === null || r.onboarding_completo === undefined ? null : !r.onboarding_completo)
     setSuscripcion(r.suscripcion ?? null)
@@ -124,8 +126,9 @@ export function Proveedor({ children }: { children: ReactNode }) {
   }, [refrescarCarrito])
 
   const salir = useCallback(async () => {
-    await api.logout()
-    setUsuario(null)
+  await api.logout()
+  jwtLimpiar()
+  setUsuario(null)
     setRol(null)
     setOnboardingPendiente(null)
     setSuscripcion(null)

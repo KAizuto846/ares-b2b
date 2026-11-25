@@ -5,9 +5,15 @@
     "url": "/spa/",
     "desborde": 0,
     "chicos": [
+      "SMALL. 11.5px",
       "SPAN.publicidad__patrocinio 11.5px"
     ],
-    "taps": [],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item activo  193x37",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -17,8 +23,14 @@
     "ruta": "/buscar",
     "url": "/spa/buscar",
     "desborde": 0,
-    "chicos": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
     "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item activo  193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
       "BUTTON.icono-btn icono-btn--mini 34x44"
     ],
     "pendiente": false,
@@ -30,8 +42,13 @@
     "ruta": "/carrito",
     "url": "/spa/carrito",
     "desborde": 0,
-    "chicos": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
     "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
       "A.grupo__mas 195x17",
       "BUTTON.clinea__quitar 41x44"
     ],
@@ -44,8 +61,14 @@
     "ruta": "/checkout",
     "url": "/spa/checkout",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -55,8 +78,15 @@
     "ruta": "/pedidos",
     "url": "/spa/pedidos",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item activo nav__item--no-movil 193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -66,8 +96,15 @@
     "ruta": "/finanzas",
     "url": "/spa/finanzas",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -77,8 +114,15 @@
     "ruta": "/portafolio",
     "url": "/spa/portafolio",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -88,8 +132,15 @@
     "ruta": "/agendar",
     "url": "/spa/agendar",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -99,8 +150,15 @@
     "ruta": "/mensajes",
     "url": "/spa/mensajes",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo  193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -110,8 +168,15 @@
     "ruta": "/perfil",
     "url": "/spa/perfil",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo  193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -121,8 +186,15 @@
     "ruta": "/perfil/editar",
     "url": "/spa/perfil/editar",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo  193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -132,8 +204,15 @@
     "ruta": "/perfil/privacidad",
     "url": "/spa/perfil/privacidad",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo  193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -143,8 +222,15 @@
     "ruta": "/perfil/ajustes",
     "url": "/spa/perfil/ajustes",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo  193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -154,8 +240,15 @@
     "ruta": "/perfil/seguridad",
     "url": "/spa/perfil/seguridad",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo  193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -165,8 +258,15 @@
     "ruta": "/perfil/permisos",
     "url": "/spa/perfil/permisos",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo  193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -176,8 +276,14 @@
     "ruta": "/ayuda",
     "url": "/spa/ayuda",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -187,8 +293,14 @@
     "ruta": "/kyc",
     "url": "/spa/kyc",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -198,8 +310,15 @@
     "ruta": "/pos",
     "url": "/spa/pos",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -209,8 +328,15 @@
     "ruta": "/pos/inventario",
     "url": "/spa/pos/inventario",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -220,8 +346,15 @@
     "ruta": "/pos/ventas",
     "url": "/spa/pos/ventas",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -231,8 +364,15 @@
     "ruta": "/pos/corte",
     "url": "/spa/pos/corte",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -242,8 +382,15 @@
     "ruta": "/pos/clientes",
     "url": "/spa/pos/clientes",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -253,8 +400,15 @@
     "ruta": "/",
     "url": "/spa/",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item activo  193x37",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -264,8 +418,14 @@
     "ruta": "/buscar",
     "url": "/spa/buscar",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -275,8 +435,15 @@
     "ruta": "/productos",
     "url": "/spa/productos",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item activo  193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -286,8 +453,15 @@
     "ruta": "/productos/nuevo",
     "url": "/spa/productos/nuevo",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item activo  193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -297,8 +471,15 @@
     "ruta": "/productos/importar",
     "url": "/spa/productos/importar",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item activo  193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -308,8 +489,15 @@
     "ruta": "/pedidos",
     "url": "/spa/pedidos",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item activo  193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -319,8 +507,14 @@
     "ruta": "/facturacion",
     "url": "/spa/facturacion",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -330,8 +524,15 @@
     "ruta": "/finanzas",
     "url": "/spa/finanzas",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item activo nav__item--no-movil 193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -341,8 +542,15 @@
     "ruta": "/mensajes",
     "url": "/spa/mensajes",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo  193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -352,8 +560,15 @@
     "ruta": "/perfil",
     "url": "/spa/perfil",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo  193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -363,8 +578,15 @@
     "ruta": "/perfil/editar",
     "url": "/spa/perfil/editar",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo  193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -374,8 +596,14 @@
     "ruta": "/ayuda",
     "url": "/spa/ayuda",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -462,8 +690,15 @@
     "ruta": "/",
     "url": "/spa/",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item activo  193x37",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -473,8 +708,15 @@
     "ruta": "/admin",
     "url": "/spa/admin",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item activo  193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -484,8 +726,16 @@
     "ruta": "/admin/usuarios",
     "url": "/spa/admin/usuarios",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item activo  193x37",
+      "A.nav__item activo nav__item--no-movil 193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -495,8 +745,16 @@
     "ruta": "/admin/kyc",
     "url": "/spa/admin/kyc",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item activo  193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -506,8 +764,16 @@
     "ruta": "/admin/reclamos",
     "url": "/spa/admin/reclamos",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item activo  193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -517,8 +783,16 @@
     "ruta": "/admin/parametros",
     "url": "/spa/admin/parametros",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item activo  193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -528,8 +802,15 @@
     "ruta": "/admin/postmvp",
     "url": "/spa/admin/postmvp",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item activo  193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -539,8 +820,15 @@
     "ruta": "/mensajes",
     "url": "/spa/mensajes",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo  193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -550,8 +838,15 @@
     "ruta": "/perfil",
     "url": "/spa/perfil",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo  193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -561,8 +856,15 @@
     "ruta": "/perfil/editar",
     "url": "/spa/perfil/editar",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37",
+      "A.nav__item activo  193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
@@ -572,8 +874,14 @@
     "ruta": "/ayuda",
     "url": "/spa/ayuda",
     "desborde": 0,
-    "chicos": [],
-    "taps": [],
+    "chicos": [
+      "SMALL. 11.5px"
+    ],
+    "taps": [
+      "BUTTON.nav__grupo 193x33",
+      "A.nav__item   193x37",
+      "A.nav__item  nav__item--no-movil 193x37"
+    ],
     "pendiente": false,
     "vacio": false,
     "errores": []
